@@ -1,0 +1,19 @@
+rf128.name=ATmega128RFA1 Dev Board
+
+rf128.upload.protocol=arduino
+rf128.upload.maximum_size=126976
+rf128.upload.speed=57600
+
+rf128.bootloader.low_fuses=0xFF
+rf128.bootloader.high_fuses=0xDA
+rf128.bootloader.extended_fuses=0xF5
+rf128.bootloader.path=atmega
+rf128.bootloader.file=ATmegaBOOT_atmega128rfa1.hex
+rf128.bootloader.unlock_bits=0x3F
+rf128.bootloader.lock_bits=0x0F
+
+rf128.build.mcu=atmega128rfa1
+rf128.build.f_cpu=16000000L
+rf128.build.core=rf128
+rf128.build.variant=rf128
+
