@@ -47,6 +47,8 @@ int analogRead(uint8_t pin)
 	if (pin >= 18) pin -= 18; // allow for channel or pin numbers
 #elif defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__)
 	if (pin >= 24) pin -= 24; // allow for channel or pin numbers
+#elif defined(__AVR_ATmega128RFA1__)
+	if (pin >= 26) pin -= 26; // allow for channel or pin numbers
 #else
 	if (pin >= 14) pin -= 14; // allow for channel or pin numbers
 #endif
@@ -59,7 +61,6 @@ int analogRead(uint8_t pin)
 	// 0 to 7 (MUX5 low) or 8 to 15 (MUX5 high).
 	ADCSRB = (ADCSRB & ~(1 << MUX5)) | (((pin >> 3) & 0x01) << MUX5);
 #endif
-  
 	// set the analog reference (high two bits of ADMUX) and select the
 	// channel (low 4 bits).  this also sets ADLAR (left-adjust result)
 	// to 0 (the default).
