@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.1.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mic" unit="mic" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
@@ -614,7 +614,7 @@ chip</description>
 <text x="-1.905" y="-6.35" size="1.778" layer="95">&gt;NAME</text>
 <text x="-2.54" y="3.81" size="1.778" layer="96">&gt;VALUE</text>
 </symbol>
-<symbol name="TPS736*">
+<symbol name="LP3985*">
 <wire x1="0" y1="0" x2="0" y2="15.24" width="0.254" layer="94"/>
 <wire x1="0" y1="15.24" x2="17.78" y2="15.24" width="0.254" layer="94"/>
 <wire x1="17.78" y1="0" x2="0" y2="0" width="0.254" layer="94"/>
@@ -622,7 +622,7 @@ chip</description>
 <pin name="EN" x="-2.54" y="2.54" length="short" direction="pwr"/>
 <pin name="GND" x="-2.54" y="7.62" length="short" direction="in"/>
 <pin name="IN" x="-2.54" y="12.7" length="short" direction="in"/>
-<pin name="NC/FB" x="20.32" y="2.54" length="short" direction="pas" rot="R180"/>
+<pin name="BYPASS" x="20.32" y="2.54" length="short" direction="pas" rot="R180"/>
 <pin name="OUT" x="20.32" y="12.7" length="short" direction="pas" rot="R180"/>
 <text x="0" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
 <text x="0" y="16.51" size="1.778" layer="95">&gt;NAME</text>
@@ -938,25 +938,6 @@ DPDT SMT slide switch, AYZ0202, SWCH-08179</description>
 </device>
 </devices>
 </deviceset>
-<deviceset name="TPS73633-DBVT">
-<gates>
-<gate name="G$1" symbol="TPS736*" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="SOT23-DBV">
-<connects>
-<connect gate="G$1" pin="EN" pad="3"/>
-<connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="IN" pad="1"/>
-<connect gate="G$1" pin="NC/FB" pad="4"/>
-<connect gate="G$1" pin="OUT" pad="5"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="GND" prefix="GND">
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
@@ -1247,6 +1228,25 @@ Source: www.kingbright.com</description>
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LP3985IM5-3.0">
+<gates>
+<gate name="G$1" symbol="LP3985*" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOT23-DBV">
+<connects>
+<connect gate="G$1" pin="BYPASS" pad="4"/>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
