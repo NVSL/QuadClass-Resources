@@ -1,0 +1,28 @@
+
+menu.cpu=Processor
+
+##############################################################
+############# ATmega128RFA1 Development Board ################
+##############################################################
+
+atmega128rfa1.name=ATmega128RFA1 Dev Board
+
+atmega128rfa1.upload.tool=avrdude
+atmega128rfa1.upload.protocol=arduino
+atmega128rfa1.upload.maximum_size=126976
+atmega128rfa1.upload.maximum_data_size=16384
+atmega128rfa1.upload.speed=57600
+
+atmega128rfa1.bootloader.tool=avrdude
+atmega128rfa1.bootloader.low_fuses=0xFF
+atmega128rfa1.bootloader.high_fuses=0xDA
+atmega128rfa1.bootloader.extended_fuses=0xF5
+atmega128rfa1.bootloader.unlock_bits=0x3F
+atmega128rfa1.bootloader.lock_bits=0x0F
+atmega128rfa1.bootloader.file=atmega/ATmegaBOOT_168_atmega128rfa1.hex
+
+atmega128rfa1.build.mcu=atmega128rfa1
+atmega128rfa1.build.f_cpu=16000000L
+atmega128rfa1.build.board=ATMEGA128RFA1_DEV_BOARD
+atmega128rfa1.build.core=arduino:arduino
+atmega128rfa1.build.variant=rf128
