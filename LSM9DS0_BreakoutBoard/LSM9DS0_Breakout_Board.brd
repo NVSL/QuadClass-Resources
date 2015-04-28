@@ -143,7 +143,6 @@ Silkscreen Color: White
 Finish Plating: HASAL
 Revision Number: 0</text>
 <rectangle x1="-10.414" y1="-13.97" x2="53.34" y2="49.784" layer="37"/>
-<wire x1="-33.7058" y1="67.6148" x2="-41.0972" y2="67.6148" width="0.6096" layer="51"/>
 <rectangle x1="5.2705" y1="5.2197" x2="8.3439" y2="8.1661" layer="42" rot="R270"/>
 <text x="69.9008" y="-28.7274" size="1.778" layer="52" rot="MR180">0.276 inch
 7.0104 mm</text>
