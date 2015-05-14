@@ -13,6 +13,7 @@ Section=Sec_8
 [Sec_1]
 Name[de]="Bestückungsseite"
 Name[en]="Mechanical"
+Name[es]="Mechanical"
 Prompt=""
 Device="PS"
 Wheel=".whl"
@@ -32,6 +33,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_2]
 Name[de]="Bestückungsseite"
 Name[en]="Component side"
+Name[es]="Component side"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
@@ -51,6 +53,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_3]
 Name[de]="Lötseite"
 Name[en]="Solder side"
+Name[es]="Solder side"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
@@ -70,6 +73,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_4]
 Name[de]="Bestückungsdruck"
 Name[en]="Silk screen SOL"
+Name[es]="Silk screen SOL"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
@@ -89,6 +93,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_5]
 Name[de]="Bestückungsdruck"
 Name[en]="Silk screen CMP"
+Name[es]="Silk screen CMP"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
@@ -108,6 +113,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_6]
 Name[de]="Lötstopmaske Bestückungsseite"
 Name[en]="Solder stop mask CMP"
+Name[es]="Solder stop mask CMP"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
@@ -127,6 +133,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_7]
 Name[de]="Lötstopmaske Lötseite"
 Name[en]="Solder stop mask SOL"
+Name[es]="Solder stop mask SOL"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
@@ -146,6 +153,7 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 [Sec_8]
 Name[de]="Bohrdaten erzeugen"
 Name[en]="Generate drill data"
+Name[es]="Generate drill data"
 Prompt=""
 Device="EXCELLON"
 Wheel=".whl"
