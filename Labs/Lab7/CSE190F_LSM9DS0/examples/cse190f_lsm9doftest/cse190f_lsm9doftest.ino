@@ -88,28 +88,50 @@ void loop()
 
 // *** Acc/Gyro/Mag functions ***
 void ACC_init () {
-  i2c_writeReg(LSM9DS0_ACC_ADR,0x20,0x57);   // 50Hz data rate, XYZ enable
-  i2c_writeReg(LSM9DS0_ACC_ADR,0x21,0x00);   // Set scale to 2g
+  // Aceleration data rate
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0x47 );  // 25Hz
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0x57 ); // 50Hz
+  i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0x67 ); // 100Hz
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0x77 ); // 200Hz
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0x87 ); // 400Hz
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0x97 ); // 800Hz
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x20 ,0xA7 ); // 1600Hz
+
+  // Acceleration scale
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x21 ,0x00 ); // 2G
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x21 ,0x08 ); // 4G
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x21 ,0x10 ); // 6G
+  i2c_writeReg(LSM9DS0_ACC_ADR ,0x21 ,0x18 ); // 8G
+  //i2c_writeReg(LSM9DS0_ACC_ADR ,0x21 ,0x20 ); // 12G
 }
+
+#define ACC_DELIMETER 4
 
 void ACC_getADC () {   
   i2c_getSixRawADC(LSM9DS0_ACC_ADR, 0x28 | 0x80);
 
-  ACC_ORIENTATION( ((rawADC[1]<<8) | rawADC[0])>>4 ,
-                  ((rawADC[3]<<8) | rawADC[2])>>4 ,
-                  ((rawADC[5]<<8) | rawADC[4])>>4 );
+  ACC_ORIENTATION(((rawADC[1]<<8) | rawADC[0])>>ACC_DELIMETER,
+                  ((rawADC[3]<<8) | rawADC[2])>>ACC_DELIMETER,
+                  ((rawADC[5]<<8) | rawADC[4])>>ACC_DELIMETER);
 }
 
 void Gyro_init(){
+  // Gyro Enable
   i2c_writeReg(LSM9DS0_GYRO_ADR, 0x20, 0x0F);   //Ctrl reg 1: 100Hz, normal power, XYZ enable
+
+  // Gyro scales
+  //i2c_writeReg(LSM9DS0_GYRO_ADR, 0x23, 0x00);   //245 dps scale
+  //i2c_writeReg(LSM9DS0_GYRO_ADR, 0x23, 0x10);   //500 dps scale
   i2c_writeReg(LSM9DS0_GYRO_ADR, 0x23, 0x30);   //2000 dps scale
 }
 
+#define GYRO_DELIMETER 2
+
 void Gyro_getADC(){
   i2c_getSixRawADC(LSM9DS0_GYRO_ADR, 0x28 | 0x80);
-  GYRO_ORIENTATION( ((rawADC[1]<<8) | rawADC[0]) ,
-                    ((rawADC[3]<<8) | rawADC[2]) ,
-                    ((rawADC[5]<<8) | rawADC[4]) );
+  GYRO_ORIENTATION( ((rawADC[1]<<8) | rawADC[0])>>GYRO_DELIMETER,
+                    ((rawADC[3]<<8) | rawADC[2])>>GYRO_DELIMETER,
+                    ((rawADC[5]<<8) | rawADC[4])>>GYRO_DELIMETER);
 }
 
 void Mag_init() {
@@ -120,11 +142,13 @@ void Mag_init() {
   i2c_writeReg(LSM9DS0_MAG_ADR,0x12,0x09);  // [INT_CTRL_REG_M]
 }
 
+#define MAG_DELIMETER 4
+
 void Device_Mag_getADC() {
   i2c_getSixRawADC(LSM9DS0_MAG_ADR,0x08 | 0x80);
-  MAG_ORIENTATION( ((rawADC[1]<<8) | rawADC[0]) ,
-                   ((rawADC[3]<<8) | rawADC[2]) ,
-                   ((rawADC[5]<<8) | rawADC[4]) );
+      MAG_ORIENTATION( ((rawADC[1]<<8) | rawADC[0]) >> MAG_DELIMETER,
+                       ((rawADC[3]<<8) | rawADC[2]) >> MAG_DELIMETER,
+                       ((rawADC[5]<<8) | rawADC[4]) >> MAG_DELIMETER);
 }
 
 

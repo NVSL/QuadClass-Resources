@@ -12,7 +12,7 @@
   Written by Kevin Townsend for Adafruit Industries.  
   BSD license, all text above must be included in any redistribution
  ***************************************************************************/
-#include <Adafruit_LSM9DS0.h>
+#include <Ada_LSM9DS0.h>
 
 /***************************************************************************
  CONSTRUCTOR

@@ -1,6 +1,6 @@
 #include <Wire.h>
 #include <SPI.h>
-#include <Adafruit_LSM9DS0.h>
+#include <Ada_LSM9DS0.h>
 #include <Adafruit_Sensor.h>  // not used in this demo but required!
 
 // i2c
