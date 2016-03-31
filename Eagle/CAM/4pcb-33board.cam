@@ -32,14 +32,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_2]
 Name[de]="Bestückungsseite"
-Name[en]="Component side"
+Name[en]="Top copper"
 Name[es]="Component side"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.cmp"
+Output="%N.TOP"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
@@ -52,14 +52,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_3]
 Name[de]="Lötseite"
-Name[en]="Solder side"
+Name[en]="Bottom copper"
 Name[es]="Solder side"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.sol"
+Output="%N.BOT"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
@@ -72,14 +72,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_4]
 Name[de]="Bestückungsdruck"
-Name[en]="Silk screen SOL"
+Name[en]="Bottom silkscreen"
 Name[es]="Silk screen SOL"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.pls"
+Output="%N.PLS"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
@@ -92,14 +92,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_5]
 Name[de]="Bestückungsdruck"
-Name[en]="Silk screen CMP"
+Name[en]="Top silk screen"
 Name[es]="Silk screen CMP"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.plc"
+Output="%N.PLC"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
@@ -112,14 +112,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_6]
 Name[de]="Lötstopmaske Bestückungsseite"
-Name[en]="Solder stop mask CMP"
+Name[en]="Top solder mask"
 Name[es]="Solder stop mask CMP"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.stc"
+Output="%N.STC"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
@@ -132,14 +132,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_7]
 Name[de]="Lötstopmaske Lötseite"
-Name[en]="Solder stop mask SOL"
+Name[en]="Bottom solder mask"
 Name[es]="Solder stop mask SOL"
 Prompt=""
 Device="GERBER_RS274X"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.sts"
+Output="%N.STS"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
@@ -152,14 +152,14 @@ Colors=" 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 6 6 4 8 8 8 8 8 8 8 8 8 8 8 8 8 4 4 1 1
 
 [Sec_8]
 Name[de]="Bohrdaten erzeugen"
-Name[en]="Generate drill data"
+Name[en]="Drills"
 Name[es]="Generate drill data"
 Prompt=""
 Device="EXCELLON"
 Wheel=".whl"
 Rack=""
 Scale=1
-Output="%N.drd"
+Output="%N.DRD"
 Flags="0 0 0 1 0 1 1"
 Emulate="0"
 Offset="0.0mil 0.0mil"
