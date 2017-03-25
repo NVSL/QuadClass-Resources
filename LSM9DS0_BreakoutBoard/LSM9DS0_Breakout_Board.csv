@@ -1,9 +1,0 @@
-"Part";"Value";"Device";"Package";"Description";"MF";"MPN";"OC_FARNELL";"OC_NEWARK";
-"C1";"0.22uF";"C-USC0805";"C0805";"CAPACITOR, American symbol";"";"";"";"";
-"C2";"4.7uF";"C-USC0805";"C0805";"CAPACITOR, American symbol";"";"";"";"";
-"C3";"10uF";"C-USC0805";"C0805";"CAPACITOR, American symbol";"";"";"";"";
-"C4";"100nF";"C-USC0805";"C0805";"CAPACITOR, American symbol";"";"";"";"";
-"R1";"10k";"R-US_R0805";"R0805";"RESISTOR, American symbol";"";"";"";"";
-"R2";"10k";"R-US_R0805";"R0805";"RESISTOR, American symbol";"";"";"";"";
-"SV1";"JP1";"MA04-1";"MA04-1";"PIN HEADER";"";"";"unknown";"unknown";
-"U1";"LSM9DS0";"LSM9DS0";"LGA-24";"IMU";"";"";"";"";
