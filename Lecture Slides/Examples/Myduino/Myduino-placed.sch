@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.2.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -106,6 +106,8 @@
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="59" name="tFaceplate" color="11" fill="1" visible="no" active="no"/>
+<layer number="60" name="bFaceplate" color="13" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -116,6 +118,7 @@
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="169" name="internal" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="201" name="201bmp" color="2" fill="1" visible="no" active="no"/>
@@ -30646,7 +30649,7 @@ In this library the device names are the same as the pin names of the symbols, t
 <instance part="D4" gate="G$1" x="170.18" y="91.44" rot="R270"/>
 <instance part="D5" gate="G$1" x="99.06" y="30.48" rot="R270"/>
 <instance part="D6" gate="G$1" x="71.12" y="30.48" rot="R270"/>
-<instance part="FRAME9" gate="G$1" x="-2.54" y="0"/>
+<instance part="FRAME9" gate="G$1" x="-20.32" y="-27.94"/>
 <instance part="FTDI" gate="G$1" x="132.08" y="165.1" rot="R180"/>
 <instance part="GND1" gate="1" x="71.12" y="-2.54" rot="MR0"/>
 <instance part="GND16" gate="1" x="177.8" y="63.5" rot="MR0"/>
@@ -31291,6 +31294,11 @@ In this library the device names are the same as the pin names of the symbols, t
 <junction x="99.06" y="12.7"/>
 <junction x="99.06" y="26.67"/>
 <label x="129.54" y="12.7" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<wire x1="2.54" y1="127" x2="2.54" y2="124.46" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
