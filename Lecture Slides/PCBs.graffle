@@ -235,8 +235,8 @@
 			<integer>231</integer>
 			<key>Points</key>
 			<array>
-				<string>{422.91217163782238, 298.50000762939453}</string>
-				<string>{398.76464325971818, 319}</string>
+				<string>{422.91217163783239, 298.50000762939453}</string>
+				<string>{398.76464325974604, 319}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -270,8 +270,8 @@
 			<integer>230</integer>
 			<key>Points</key>
 			<array>
-				<string>{428.32271044931997, 204.49999237060547}</string>
-				<string>{406.74557105879842, 235}</string>
+				<string>{428.32270982718597, 204.49999237060547}</string>
+				<string>{406.74556878665652, 235}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -417,8 +417,8 @@
 			<integer>227</integer>
 			<key>Points</key>
 			<array>
-				<string>{182.47962938707965, 108.18332672119141}</string>
-				<string>{173.09581329360827, 151}</string>
+				<string>{182.47962939018069, 108.18332672119141}</string>
+				<string>{173.09581330825503, 151}</string>
 			</array>
 			<key>Style</key>
 			<dict>
@@ -540,7 +540,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{110, 329}, {77.844444444444377, 84}}</string>
+			<string>{{110, 328.96666717529297}, {77.844444444444377, 84}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -6151,7 +6151,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2017-03-26 03:33:36 +0000</string>
+	<string>2017-04-27 23:38:41 +0000</string>
 	<key>Modifier</key>
 	<string>Steven Swanson</string>
 	<key>NotesVisible</key>
@@ -6242,7 +6242,7 @@
 			</dict>
 		</array>
 		<key>Frame</key>
-		<string>{{410, -31}, {1270, 1023}}</string>
+		<string>{{274, 4}, {1270, 1023}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
