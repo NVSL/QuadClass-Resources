@@ -1,7 +1,7 @@
 {
     "author": {
-        "email": "support.eagle@autodesk.com",
-        "name": "Autodesk EAGLE"
+        "email": "swanson@cs.ucsd.edu",
+        "name": "Steven Swanson"
     },
     "description": {
         "EN": "CAM job description goes here."
@@ -43,7 +43,7 @@
                 {
                     "board_outline": true,
                     "config": {
-                        "description": "Other",
+                        "description": "Stencil",
                         "file_function": "Other"
                     },
                     "filename_format": "%N.crm",
@@ -51,7 +51,7 @@
                         31
                     ],
                     "milling": false,
-                    "name": "",
+                    "name": "Stencil",
                     "polarity": "positive",
                     "type": "gerber_layer"
                 },
@@ -247,7 +247,7 @@
             "version": "X2"
         }
     ],
-    "timestamp": "2017-11-30T16:59:58",
+    "timestamp": "2018-05-24T19:08:08",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
