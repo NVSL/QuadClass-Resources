@@ -196,7 +196,7 @@
                     "type": "gerber_layer"
                 }
             ],
-            "version": "X2"
+            "version": "RS274X"
         }
     ],
     "timestamp": "2018-07-01T14:04:08",
