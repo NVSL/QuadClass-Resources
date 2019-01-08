@@ -41,7 +41,7 @@
             "output_type": "gerber",
             "outputs": [
                 {
-                    "board_outline": true,
+                    "board_outline": false,
                     "config": {
                         "description": "Stencil",
                         "file_function": "Other"
@@ -255,7 +255,7 @@
             ]
         }
     ],
-    "timestamp": "2018-12-29T14:44:16",
+    "timestamp": "2019-01-07T20:48:15",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
