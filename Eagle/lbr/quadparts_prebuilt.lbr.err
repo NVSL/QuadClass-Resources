@@ -1,0 +1,4 @@
+Error: ../QuadClass-Quadcopter-Solution/lbr/quadparts_prebuilt.lbr:ANT_PCB_2.4GHZ_NRF8001_1.6MM_1OZ_REV -- Wires found in Top layer.  You probably want an SMD instead. (04F5319A)
+Warning: ../QuadClass-Quadcopter-Solution/lbr/quadparts_prebuilt.lbr:VIA-0.2MM -- Missing '>NAME' (29E12729)
+Error: ../QuadClass-Quadcopter-Solution/lbr/quadparts_prebuilt.lbr:VIA-0.2MM -- Nothing in tKeepout. (4B01B943)
+Error: ../QuadClass-Quadcopter-Solution/lbr/quadparts_prebuilt.lbr:ANT_PCB_2.4GHZ_NRF8001_1.6MM_1OZ -- Wires found in Top layer.  You probably want an SMD instead. (4494C71B)
