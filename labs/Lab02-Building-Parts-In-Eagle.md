@@ -37,17 +37,12 @@ In eagle, the safe thing to do is write it out. If you type ‘1mm’ or ‘1in�
 
 Create packages, symbols, and devices for the following electrical components.  You'll add these to `lbr/custom.lbr` in the lab repo.   That library contains some examples.  You will be able to use some packages for multiple parts.  Combine similar parts into a single Eagle device. Reuse the examples however you like.
 
-+--------------------------------+----------------------+-------------------------------------------+
 | Description                    | Digikey part number  | Notes                                     |
-+--------------------------------+----------------------+-------------------------------------------+
+|--------------------------------|----------------------|-------------------------------------------|
 | LSM9DS1TR 9-Axis IMU           | 497-14946-1-ND       |                                           |
-+--------------------------------+----------------------+-------------------------------------------+
 | N-Channel MOSFET               | SI2302CDS-T1-E3CT-ND |                                           | 
-+--------------------------------+----------------------+-------------------------------------------+
 | 0805 0Ohm resistor	         | 311-0.0ARCT-ND       |                                           |
-+--------------------------------+----------------------+-------------------------------------------+
 | Red Light emitting diode	     | 160-1178-1-ND        |                                           |
-+--------------------------------+----------------------+-------------------------------------------+
 
 You can find information about the part by typing the Digikey part number into google.  There will be a link to the datasheet.
 
