@@ -11,11 +11,9 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, and Software You will Need
 
 1. Eagle
-2. The [starter repo](https://classroom.github.com/a/AOGppG5g) for this lab. (Don’t clone it until the start of class, last minute changes are likely)
+2. The starter repo: for this lab: https://classroom.github.com/a/AOGppG5g. (Don’t clone it until the start of class, last minute changes are likely)
 
-## Tasks To Perform
-
-Create packages, symbols, and devices for some of the electrical components listed in `PartsList.xlsx`. The last two column show which parts to do for the lab. Two parts are unmarked.  They are provided as examples in `lbr/custom.lbr`.  You will be able to use some packages for multiple parts.  Combine similar parts into a single Eagle device. Reuse the examples however you like.
+## Preliminaries
 
 ### Make Eagle Easier to Use
 
@@ -35,14 +33,33 @@ This means you need to pay close attention to your units. Here’s a simple refe
 
 In eagle, the safe thing to do is write it out. If you type ‘1mm’ or ‘1in’ or ‘5mil’ into a length field in a dialog box, Eagle will do the "right" thing (namely convert it to whatever it wants to display and show that value).
 
+## Building Parts
+
+Create packages, symbols, and devices for the following electrical components.  You'll add these to `lbr/custom.lbr` in the lab repo.   That library contains some examples.  You will be able to use some packages for multiple parts.  Combine similar parts into a single Eagle device. Reuse the examples however you like.
+
++--------------------------------+----------------------+-------------------------------------------+
+| Description                    | Digikey part number  | Notes                                     |
++--------------------------------+----------------------+-------------------------------------------+
+| LSM9DS1TR 9-Axis IMU           | 497-14946-1-ND       |                                           |
++--------------------------------+----------------------+-------------------------------------------+
+| N-Channel MOSFET               | SI2302CDS-T1-E3CT-ND |                                           | 
++--------------------------------+----------------------+-------------------------------------------+
+| 0805 0Ohm resistor	         | 311-0.0ARCT-ND       |                                           |
++--------------------------------+----------------------+-------------------------------------------+
+| Red Light emitting diode	     | 160-1178-1-ND        |                                           |
++--------------------------------+----------------------+-------------------------------------------+
+
+You can find information about the part by typing the Digikey part number into google.  There will be a link to the datasheet.
+
 ### Guidelines for Building Schematic Symbols
+
 When you design symbols follow these guidelines:
 
 1. Choose a sensible name for the symbol. “Resistor” is a good name for your resistor symbol, since it can be used across all kinds of resistors. “CPU” is a bad name for the symbol for our microcontroller, since the symbol will be very specific to this particular chip, so the symbol name should reflect that.
 2. For polarized parts include markings that make the polarization clear.
 3. Make certain that your pins are placed with 0.1” grid settings. Failure to do so will cause you no end of pain.
 4. For an IC (on anything with simple, rectangular symbol) Almost all your pins should go on the sides. The only exceptions are power pins (which can go on top), and ground pins (which can go on the bottom). Generally, inputs should go on the left and outputs on the right (this is not always easy to follow, but try).
-5. Use standard symbols for components like resistors, capacitors, etc. Here are some examples: [https://goo.gl/enZ0v0](https://goo.gl/enZ0v0). You can also just google for “resistor schematic symbol” etc.
+5. Use standard symbols for components like resistors, capacitors, etc. Here are some examples: https://goo.gl/enZ0v0. You can also just google for “resistor schematic symbol” etc.
 6. For two terminal, polarized devices, draw the positive terminal on the left (so it matches the packages, see below).
 7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top, and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device. I’ll reject designs that do this for the IMU.
 8. Use sensible pin names that will you connect the symbol pins and package pins correctly. For example, ‘1’ and ‘2’ makes sense for a resistor symbol, but “C” and “A” makes more sense for a diode. For parts with many pins (like the IMU) use names from the datasheet. The goal is to make it as easy as possible to check that you have connected things properly.
@@ -139,7 +156,7 @@ Turn in Your Work
 ### Commit the following:
 
 1. Your `lbr/custom.lbr`
-2. Submit it though [Eaglint](http://eaglint.nvsl.io).
+2. Submit it though Eaglint: http://eaglint.nvsl.io.
 
 ### Rubric
 “Perfect” score: 10
