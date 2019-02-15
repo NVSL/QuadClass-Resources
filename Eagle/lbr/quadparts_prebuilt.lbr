@@ -3281,9 +3281,10 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="-5.08" y1="43.18" x2="-25.4" y2="43.18" width="0.254" layer="94"/>
 <wire x1="-5.08" y1="-43.18" x2="-5.08" y2="43.18" width="0.254" layer="94"/>
 <wire x1="6.35" y1="43.18" x2="6.35" y2="-43.18" width="0.254" layer="94"/>
-<text x="-2.54" y="15.875" size="2.032" layer="94" rot="R90" align="center">Sparkfun ATmega128RFA Breakout  Pins</text>
+<text x="-2.54" y="15.875" size="2.032" layer="94" rot="R90" align="center">CSE176e ATmega128RFA Breakout  Pins</text>
 <text x="3.81" y="-35.56" size="1.27" layer="94" align="center">36</text>
 <text x="3.81" y="-38.1" size="1.27" layer="94" align="center">37</text>
+<text x="11.43" y="-27.94" size="1.27" layer="94" align="center">Default LED</text>
 </symbol>
 <symbol name="AVR_SPI_PROGRAMMER_6">
 <text x="-11.938" y="-2.032" size="1.27" layer="94">RESET</text>
