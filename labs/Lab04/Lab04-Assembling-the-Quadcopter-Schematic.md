@@ -214,6 +214,8 @@ Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol
 
 The packages/devices you build need to meet all the standards described in Lab 4.
 
+Add an attribute called `CUSTOM` to the variants you create.  This will ensure they get ordered.
+
 ### Eaglint 
 
 Your design needs to pass http://eaglint.nvsl.io, so commit your design, submit it, and fix the problems it finds. Remember, each time you run the tool it lowers your grade on the lab, so you need to check your design carefully before submitting.

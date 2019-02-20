@@ -16,7 +16,7 @@ Begin by making sure you have everything you need.
 ### What You Need
 
 1. Blue tape
-2. *Solder stencil*
+2. Solder stencil
 3. 4 scrap PCBs the same thickness as your board. 
 4. 1 large putty knife
 5. 1 small putty knife
@@ -24,7 +24,7 @@ Begin by making sure you have everything you need.
 7. Gloves
 8. A magnifier
 9. Alcohol in a pump dispenser
-10. Chem wipes
+10. Kimwipes
 11. Compressed air
 12. Solder paste
 
@@ -60,30 +60,167 @@ You need a large, clear space to apply solder paste.
 
 ## Placing Components
 
-1. A complete part kit.
+### What You'll Need
+
+1. A complete part kit for your board.
 2. A pair of tweezers
-3. Magnifier.
+3. A magnifier.
 4. Steady hands.
+
+### Get Organized
+
+You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the remote or the FCB in 10 minutes.  You should not take more than an hour.  Getting organized will help you meet this goal.
+
+1. Get _everything_ you need together at once.
+2. Have a clean work area (preferably with a white surface).  The parts are _tiny_.  The less stuff there is around, the less likely you are to lose anything.
+3. Make sure there are no strong winds blowing (drafts, open doors)
+4. Make sure you are unlikely to be bumped.
+5. Allow adequate time.  
+    * Paste has a limited working time, and the course staff are not around forever.    
+    * Assembly will take ~1 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget ~30min.  
+    * So, you shouldn't start assembly unless you have _at least_ 1:45 left in class.
+5. Eat something before hand.
+
+### Tips
+
+1.  Dump out all the parts of a particular type on your work surface.
+2.  Once the part is down, don't fiddle.  Moving the parts smears the paste.  The parts will self-align a bit during reflow, so it doesn't have to be perfect.
+3.  If a part is upside-down, picking it up and dropping it is a good (if probablistc) way to turn it over.
+4.  Don't pick up the board.  You more likely to bump a part if you pick up the board.
+5.  Arrange your pile of parts at your board so you don't have to reach over the board, otherwise, you're more likely to bump parts.
+6.  Don't mess up.  If something goes significantly wrong, you have to start again.
+7.  Do one type of part at a time (e.g., 100Ohm resistors).  You have exactly the right number of them, so when they are gone, you're done.
+8.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board. 
+9.  You are to almost drop the parts onto the board.  Do not press them down.  It'll displace the solder paste.
+10.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
+
+### Notes Particular Parts
+
+I suggest you proceed in this order.  This is roughly from easiest to hardest.
+
+Note that on the remote, there are many parts you will leave unpopulated. Only put parts where there is solder paste.   
+
+#### Resistors
+
+1. These are pretty easy -- a good warm-up.
+2. Make sure they are marking-side-up.
+
+#### Capacitors
+
+1.  The small caps are non-polarized, so direction doesn't matter.
+2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only)
+3.  Align these carefully.  If you get it wrong your board will look ugly.
+
+#### MOSFETs (Quad/FCB Only)
+
+1. The correct orientation is obvious.
+2. You need to align the pins carefully.
+
+#### Voltage Regulator and Battery Charger.
+
+1. Orientation is obvious (there's three pins on one side and 2 on the other)
+2. Be sure not to confuse these two if you are assembly a remote.
+3. Only the remote has a charger.
+
+#### Button 
+
+1. Either orientation is ok.
+
+#### Crystal
+
+1.  It seems like orientation should be important, but it's not.  The part is diagonally symetric. 
+
+#### LEDs
+
+1. This is your first polarized component, pay close attention or your board will be doomed to darkness.
+2. The green line (yes, there really is one) goes near the dot. 
+
+#### Diodes
+
+1. These are also polarized, but the markings are extremely hard to see.  They are printed black on black.
+2. If you hold the diode and look at in the light, one end has a faint rectangular bar code on it.  The other has an "S"
+3. The barcode goes near the dot.
+
+#### Balun
+
+1.  The red dot faces up and goes next to the dot.  This means the red dot will be farther from the microcontroller and nearer the antenna.
+2.  Pay close attention to the aligment.
+3.  Check it with your magnifier.
+
+#### Microcontroller
+
+1.  Make sure you orient it correctly.  The dot goes next to the dot.
+2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. 
+3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
+4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  the need to be aligned with the patches of solder paste on the board.
+
+#### IMU
+
+1.  Similar to the microcontroller.
+2.  The dot goes near the dot.
+3.  Use the silkscreen markers to align it and the "drop" it on.
+4.  The pads are smaller, so alignment is more important.
+5.  Don't fiddle!
+
+#### 6-pin Header (Remote Only)
+
+1.  Not hard, but it sticks up and is easy to bump, so do it last.
+
+#### USB Recipcal (Remote Only)
+
+1.  The key point of alignment are the pins on the back and 5 pads on the board.
+2.  Check it with the magnifier.
 
 ## Reflow
 
-1. A TA or professor
-2. The reflow oven
+### What You Need
 
-## Touch Up
+1. A TA or professor.
+2. The reflow oven.
 
-1. Soldering station
-2. A syringe of flux
-3. Swaps and/or a horse-hair brush
-4. Alcohol in a squirt bottle.
-5. Chem wipes
+## Touch Up and Throughole Components
 
-## Through-hole Components
+### What You Need
 
-1. Blue tape
-2. Soldering iron
-3. Lead-free solder
-4. Alcohol in a squuirt bottle
-5. Horse hair brush or swabs
+1. Soldering station.
+2. A syringe of flux.
+3. Thin, lead-free solder.
+4. Swaps and/or a horse-hair brush.
+5. Alcohol in a squirt bottle.
+6. kimwipes.
+7. Blue tape.
+
+### Cleaning up Flux Residue
+
+Wire solder has flux in the middle to help the solder flow.  SMD rework requires adding flux manually.  In either case, the result is a yellow-brown, unattractive residue that starts out sticky and hardens over time.
+
+To keep your board looking nice and clean, you should remove it ASAP.  If you have several things to fix, do not wait till the end.  Due it one part at a time.  To clean up the flux, place a kimwipe over the area and squirt rubbing alcohol onto it.  Then, take a hair brush of swap and rub the kimwipe around over the area.  It'll absorb the flux residue.  Repeat once or twice.
+
+If you don't have alcohol in a squirt bottle, just get the kimwipe very moist with alcohol and put it on mannually.
+
+### Mounting Throughhole Parts
+
+#### Headers
+
+1.  Tape down the power jumper, debug header, FTDI header, and gimbal pins (remote only) using blue tape. 
+2.  The main challenge is getting them straight up and down and not crooked.  Do your best.
+3.  The white gimbal sockets go on top.  The 6-pin header connectors go on the bottom. (Remote only)
+
+#### Battery Terminals
+
+1.  Similar to the headers, but orientation matters.  The holes on the side should point toward the '+' and '-' on the board.
+
+#### Motor Recepticals (Quadcopter only)
+
+1.  Orientation is very important.  Removing/replacing these things is really hard. 
+2.  The pins are not centered, and part should be oriented so it fits completely inside the silkscreen outline.  If it's backwards it'll protrude on one side.
+
+### Common Reflow Problems
+
+You should inspect all the parts on your board for problems.  
+
+1. Sometimes solder won't reflow on some parts of the board.  You can tell because the solder paste is rough and not shiny.  To fix it, add a _tiny_ amount of flux and touch it with your soldering iron.
+2. Parts sometimes get dislodged during reflow (It's actually pretty windy in the oven).  If only one terminal of the device is still connected, melt that side and lift it up.  If two terminal are connected, see course staff.
+3.  You realize you forgot a part.  See course staff for a lesson in mannual surface mount assembly.
 
 

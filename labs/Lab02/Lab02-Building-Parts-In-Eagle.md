@@ -62,6 +62,7 @@ When you design symbols follow these guidelines:
 10. Include text elements with “>NAME” and “>VALUE” in layers “Names” and “Values” respectively, to show details about the parts. Only include “>VALUE” if the symbol will be used in devices that need a value (see notes below).
 
 ### Guidelines for Building Packages
+
 Each of your packages should contain the following elements:
 
 1. Choose a meaningful name: e.g, “0805_RESISTOR” or “RED_LED”. Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts that are the same size and you can reuse the package.
@@ -82,6 +83,7 @@ Each of your packages should contain the following elements:
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the package.
 14. We may be soldering by hand, so you need to make sure the SMDs extend out from under the part. This especially important for the IMU. The SMDs should extend 0.5mm away from the edge of the package.
+15. Eagle includes a package generator.  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
 
 ### Guidelines for Building Devices
 Devices connect packages to schematic symbols.
@@ -103,25 +105,16 @@ You can attach metadata to each variant of your device using “attributes.” (
 * DIST – distributer (For us, this is always “Digikey”)
 * DISTPN – Distributer part number. i.e., Digikey’s part number. This is different from the manufacturer’s part number.
 * CREATOR – Your name, if you designed the part.
+
 All these attributes should be “constant” which means you can’t change them on a per-part basis in the schematic.
 
 DIST and DISTPN are especially critical, because when we go to order parts for your quadcopter, we will use this information to know what to order.
 
 ### Notes on Individual Parts
 
-#### IMU
-
-* Include “IMU” in the name of the device you create.
-* Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
-* Check the orientation. Your view of the package in Eagle is looking “down” on the board.
-* Make sure the SMDs extend 1mm past the edge of the IMU.
-* The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
-* Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
-* The symbol for the IMU should have one VCC pin, one VCCIO pin, and one GND pin. It should not have a RES pin. For instance, in the device for for the IMU, you should connect all of the VCC SMDs to the single VCC pin in the symbol.
-
 #### LEDs
 
-* Include “LED” in the name of the device you create.
+* Include “LED” in the name of the device you create (so Eaglint can find them).
 * The prefix for your LED device should be “D” for diode.
 * Positive terminal on the left on both symbol and package.
 * Name the cathode ‘C’ and the anode ‘A’ on both the symbol and the package.
@@ -134,7 +127,7 @@ DIST and DISTPN are especially critical, because when we go to order parts for y
 * The prefix for your MOSFET device should be “Q” (that’s the conventional prefix for transistors).
 * Since we are using an NMOSFET (as opposed to a PMOSFET), current flows from the drain to source, so put the drain on top in the symbol.
 * Name the source, drain, and gate, “S”, “D”, and “G”, respectively in both the symbol and the package.
-* Read section in the datasheet about SMD layout starting on page 6.
+* Read the section in the datasheet about SMD layout starting on page 6.
     * There are two aspects of SMD sizing you you must address in this package. The first is the size of the metal SMD. The second is the hole in the solder mask, called the “stop mask” because it stops the solder mask. Normally, SMDs come with appropriate ‘stop’ by default. You’ll need to remove the default stop and add yours by hand.
     * Create the SMDs according to the guidance in the datasheet.
     * Use the info tool to edit each SMD, and uncheck ‘stop’.
@@ -146,7 +139,29 @@ DIST and DISTPN are especially critical, because when we go to order parts for y
 * Make sure SMDs extend 0.5 mm beyond the end of the resistor.
 * The prefix for your resistor device should be “R” for resistor.
 * Name the variant so it’s clear it’s a 0 Ohm resistor. Something like “-0Ohm” would make sense.
-Turn in Your Work
+
+#### IMU
+
+The IMU has caused us signficant problems in the past.  Be careful with it.
+
+* Include “IMU” in the name of the device you create.
+* Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
+* Check the orientation. Your view of the package in Eagle is looking “down” on the board.
+* Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
+* Make sure the SMDs should be 0.85mm wide.  They will extend slightly out from under the package.
+* The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
+* Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
+* The symbol for the IMU should have one VCC pin, one VCCIO pin, and one GND pin. It should not have a RES pin. For instance, in the device for for the IMU, you should connect all of the VCC SMDs to the single VCC pin in the symbol.
+* There should be no metal under the IMU.  To enforce this, you should do the following
+    1.  Draw a rectangle in `trestrict` that fills in the space in under the package, but does not overlap any of the pins.
+    2.  Draw a rectangle in `brestrict` that covers the entire package.
+    3.  Draw a rectangle in `vrestrict` that covers the entire package.
+* There should be no solder mask under the IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the packge.
+* You need to draw lines of `trestrict` between the pads.  They should be the same length as the pads and not overlap them.
+* Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
+
+
+## Turn in Your Work
 
 ### Commit the following:
 

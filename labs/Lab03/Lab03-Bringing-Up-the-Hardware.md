@@ -31,6 +31,7 @@ Skills to Learn
 13. Laser-cut 'pivot platform'
 14. 1 set of motors.
 15. 1 set of matched propellers (2xCW, 2xCCW)
+16. 4-6 small zip ties.
 
 ### Your Remote Control
 
@@ -187,8 +188,6 @@ Third, this struct and the related function will be shared between your quadcopt
 I recommend just sending the normalized values from the gimbals and buttons to the quadcopter.  That way, your remote control code won’t change much as your flight control software get’s more complex.  You’ll need to be careful when normalizing to make sure you don’t lose resolution on gimbal values.
 
 To test it, program the test stand board to receive the data from your remote and print it out. Verify that the values change as you move the gimbals, etc. Keep this code around, you will demo it for us.
-
-
 
 ## Putting it All Together: Remote Controlled Motors
 

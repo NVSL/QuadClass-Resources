@@ -1,4 +1,5 @@
 
+
 IMU and mosfets missing from FCB bom
 Notes about orientation of Balun and diodes and LEDs
 Use your magnifier
@@ -38,3 +39,39 @@ flux
 chemwipes
 
 
+TA Tasks
+
+0. Build a remote
+1. Build an FCB
+2. Make labels for each component type with space to write qty.
+3. Prepare part strips for remote control assembly.
+4. Take inventory.
+5. Cut bulk components into strips of ~100 and label.  Put into bags.
+6. Collect all the data sheets for quadparts_prebuilt.lbr.  Put them in the resources repo.
+
+Tasks
+
+1.  Set student count
+1.  Decide whether they can keep the remotes.
+1.  Laser cut remote kits
+2.  Order lots of stuff
+3.  Move layer label part into quadparts_prebuilt.  Require it's presence in the design.
+4.  
+
+Scenario 1: Keep em
+
+2 remotes/group
+1 FCB/group
+
+They each build their own remote.
+
+Scenario 2: no keep em
+
+build 1 remote
+build 1 FCB
+
+
+
+Generate unified BOM:
+
+python ../../Eagle-Lint//server/eaglint/BOM.py --sch controller_board_cheap.sch ../../QuadClass-Quadcopter-Solution/flight_control_board.sch --format csv --out controller_board_cheap.digikey-bom.csv --qty 45 30 --extra 0.2
