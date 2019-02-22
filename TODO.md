@@ -48,6 +48,7 @@ TA Tasks
 4. Take inventory.
 5. Cut bulk components into strips of ~100 and label.  Put into bags.
 6. Collect all the data sheets for quadparts_prebuilt.lbr.  Put them in the resources repo.
+7. Assemble the gimbals + wiring harnesses
 
 Tasks
 
@@ -56,7 +57,16 @@ Tasks
 1.  Laser cut remote kits
 2.  Order lots of stuff
 3.  Move layer label part into quadparts_prebuilt.  Require it's presence in the design.
-4.  
+4.  Create skills inventory for.
+5.  Remember to handout research release form at the beginning of class.
+6.  include major, year, etc. and demographics on both the pre-survey and the post-survey
+7.  Ask the "can you do X" questions on the presurvey.
+8.  Do a surveye on the first day, and another in two weeks to see who you lost.
+
+Next Time:
+1.  Integrate skill inventory into application.  It might help tell whether I could offer this to juniors
+
+
 
 Scenario 1: Keep em
 
