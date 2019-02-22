@@ -220,44 +220,17 @@ Add an attribute called `CUSTOM` to the variants you create.  This will ensure t
 
 Your design needs to pass http://eaglint.nvsl.io, so commit your design, submit it, and fix the problems it finds. Remember, each time you run the tool it lowers your grade on the lab, so you need to check your design carefully before submitting.
 
-## Part B: Design Review
-The due date for completing the design review is on the course schedule. There is no particular deadline for getting your completed, reviewed, and fixed schematic through Eaglint, but you won't be able to complete Lab 05, until that's done. You can start Lab 05 -- making small changes to your schematic won't interfere too much with laying out the board.
 
-To help ensure that your design is correct, another team will perform a design review of your design. You will also do a design review of another group's design.
-
-The pairs of groups you'll be using for this lab are listed below:
-
-If you want your quadcopter to work, the schematic and the layout need to be perfect. Almost any error will cause it to not work as expected and, unlike fixing a bug in software, fixing the bug will take at least a week or two. Given the schedule for the class, it's unlikely that you'll have a second chance at getting it to work. The design review is your opportunity to get additional eyes to look over your design and help ensure that its correct.
-
-The design review for this lab will cover the following components:
-
-1. The devices, symbols, and packages you designed in Lab 2.
-2. The schematic you designed as part of this lab.
-In conducting the design review, follow the guidelines the the lectures slides `05-Design Reviews.pptx`. In particular:
-
-1. As the reviewer, your team should perform the review ahead of time and prepare a list questions you have about the design. Make sure to check everything listed in the slides.
-2. Then, meet with the reviewee team and go over those questions with them.
-*Perform the Review*
-
-The first step is to exchange .sch files with team you are reviewing, and perform the review. You'll write up your comments for the other team in `design_reviews/questions_about_their_schematic.txt`. Be sure to include the other team's name at the top of the document. The document should be clearly organized and broken into bullet points that make it very clear where the problem is and what it is (something like the output of Eaglint).
-
-Send the document the reviewees. Take their comments and save them as design_reviews/questions_about_our_schematic.txt.
-
-*Fix the Problems*
-
-You must fix all the problem they found in your design, and briefly explain how you did so. Put these explanations in design_reviews/questions_about_our_schematic.txt. Write the explanations/resolution after each point. Use a consistent format that makes it clear where the comment ends and your resolution begins.
- 
 
 ## Turn in Your Work
- 
-### Rubric Part A
+
 "Perfect" score: 10
 
 Initial points: 12
 
 Things to remember:
 
-1. Sync your .lbr with your .sch: Library->Update All.
+1. Sync your .lbr with your .sch: `Library->Update All`.
 
 Submit the following to your github repo:
 
@@ -270,24 +243,4 @@ Submit it to Eaglint: http://eaglint.nvsl.io.
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
 
-Once it passes, create a tag called "Lab04a" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
-
-### Rubric Part B
-"Perfect" score: 10
-
-Initial points: 12
-
-Commit the following:
-
-* The list of questions your reviewers had about your design as `design_reviews/questions_about_our_schematic.txt`.
-* The list of questions you had about the design you reviewed as `design_reviews/questions_about_their_schematic.txt`.
-* Your changes to your schematic and libraries.
-Submit it to [Eaglint](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFrH7bQMLjAUWzVGFESRxTQu6D-EQ).
-
-Once it passes, tag your repo: `Lab04b`
-
-Grading for the design reviews is in two parts:
-
-1. You will lose points for any problems I find in your reviewee's design that you should have found.
-2. You will lose points for any problems your reviewees found in your design, but you did not fix correctly.
-3. You will lose a point for each failed submission to Eaglint and human review.
+Once it passes, create a tag called "Lab04" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
