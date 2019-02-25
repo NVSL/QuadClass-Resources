@@ -1,5 +1,12 @@
 # Assembling PCBs
 
+During this lab you will assemble and "bring up" a PCB.  This is practice for assembling and bringing up your quadcopter.
+
+The default lab has you assemble a simple Arduino-compatible board based on the microcontroller we are using for this course.  It's called the Bare Bones Board (BBB).
+
+Alternately, you can build a board for your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.  This will at least double the time spent assembling the board, so keep that in mind when deciding when to start assembling.
+
+
 folds over to the right.  Keep that space clear
 Tools on the left
 Put stencil in "portrait" orientation
@@ -69,7 +76,7 @@ You need a large, clear space to apply solder paste.
 
 ### Get Organized
 
-You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the remote or the FCB in 10 minutes.  You should not take more than an hour.  Getting organized will help you meet this goal.
+You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the breakout board in 10 minutes.  You should not take more than an hour.  Getting organized will help you meet this goal.
 
 1. Get _everything_ you need together at once.
 2. Have a clean work area (preferably with a white surface).  The parts are _tiny_.  The less stuff there is around, the less likely you are to lose anything.
@@ -111,7 +118,7 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only)
 3.  Align these carefully.  If you get it wrong your board will look ugly.
 
-#### MOSFETs (Quad/FCB Only)
+#### MOSFETs (Quad Only)
 
 1. The correct orientation is obvious.
 2. You need to align the pins carefully.
@@ -154,7 +161,7 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
 4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  the need to be aligned with the patches of solder paste on the board.
 
-#### IMU
+#### IMU (Quad only)
 
 1.  Similar to the microcontroller.
 2.  The dot goes near the dot.
@@ -164,7 +171,7 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 
 #### 6-pin Header (Remote Only)
 
-1.  Not hard, but it sticks up and is easy to bump, so do it last.
+1.  The surface-mount 6-pin header is not hard to place, but it sticks up and is easy to bump, so do it last.
 
 #### USB Recipcal (Remote Only)
 
@@ -178,7 +185,7 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 1. A TA or professor.
 2. The reflow oven.
 
-## Touch Up and Throughole Components
+## Touch Up and Throughhole Components
 
 ### What You Need
 
@@ -205,6 +212,7 @@ If you don't have alcohol in a squirt bottle, just get the kimwipe very moist wi
 1.  Tape down the power jumper, debug header, FTDI header, and gimbal pins (remote only) using blue tape. 
 2.  The main challenge is getting them straight up and down and not crooked.  Do your best.
 3.  The white gimbal sockets go on top.  The 6-pin header connectors go on the bottom. (Remote only)
+4.  You won't populate the big headers on the breakout board by default.
 
 #### Battery Terminals
 
@@ -223,4 +231,7 @@ You should inspect all the parts on your board for problems.
 2. Parts sometimes get dislodged during reflow (It's actually pretty windy in the oven).  If only one terminal of the device is still connected, melt that side and lift it up.  If two terminal are connected, see course staff.
 3.  You realize you forgot a part.  See course staff for a lesson in mannual surface mount assembly.
 
+## What's Next?
+
+Once you've assembled your board you need to [Flash the bootloader and bring up your board](Flashing-The-Bootloader.md)
 

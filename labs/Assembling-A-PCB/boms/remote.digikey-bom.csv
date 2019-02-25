@@ -1,0 +1,15 @@
+DIGIKEY,MCP73831T-2ACI/OTCT-ND,1,1,remote.sch,RemoteParts:MCP73831/2:,remote.sch-U2
+DIGIKEY,160-1172-1-ND,3,3,remote.sch,RemoteParts:LED-2X:-GREEN/RED,remote.sch-D6_D4_D1
+DIGIKEY,609-4613-1-ND ,1,1,remote.sch,RemoteParts:USB:-MICROA-AMPHENOL-10118192-0001LF,remote.sch-J1
+DIGIKEY,311-510ARCT-ND,6,6,remote.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-510,remote.sch-R1_R16_R17_R15_R18_R3
+DIGIKEY,1276-1026-1-ND,1,1,remote.sch,quadparts_prebuilt:CAPACITOR-NP_:SMD-2012-0805_CERAMIC-1UF,remote.sch-C1
+DIGIKEY,CRS08QMCT-ND,2,2,remote.sch,quadparts_prebuilt:DIODE-SCHOTTKY_:SMD-SOD123-360MV,remote.sch-D2_D3
+DIGIKEY,1722-1241-ND,1,1,remote.sch,RemoteParts:ROTARY-ENCODER-W/BUTTON:-BOURNS-PEC12R-4217F,remote.sch-E1
+DIGIKEY,311-1.20KARCT-ND,1,1,remote.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-1.2K,remote.sch-R8
+DIGIKEY,445-5984-1-ND,2,2,remote.sch,quadparts_prebuilt:CAPACITOR-NP_:SMD-2012-0805_CERAMIC-10UF,remote.sch-C6_C5
+DIGIKEY,LP3985IM5-3.3/NOPBCT-ND,1,1,remote.sch,quadparts_prebuilt:TPS73633-DBVT:3V3,remote.sch-U1
+DIGIKEY,YAG3776CT-ND ,2,2,remote.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-2.2K,remote.sch-R7_R2
+DIGIKEY,PEC12R-4217F-S0024-ND,1,1,remote.sch,RemoteParts:ROTARY-ENCODER-W/BUTTON:-BOURNS-PEC12R-4217F,remote.sch-E1
+DIGIKEY,EG5350CT-ND,7,7,remote.sch,quadparts_prebuilt:PUSHBUTTON_:-4.5X4.5,remote.sch-B4_B5_B6_B7_B8_B9_B10
+DIGIKEY,952-1922-ND,1,1,remote.sch,quadparts_prebuilt:AVR_SPI_PRG_6:-SMD,remote.sch-J4
+DIGIKEY,609-3327-ND,2,2,remote.sch,RemoteParts:FRSKY-GIMBAL:-2X-SERVO,remote.sch-J8_J7

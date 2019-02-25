@@ -89,7 +89,16 @@ Your board is not ready for use!
 
 There is a tendency to move to quickly during bringup, but take your time.  If you try to run a big piece of software at first, the bugs will be much harder to find.
 
+### Bringing up the BBB
+
+You should be able to the Arduino blinking light test.  You can also run `test_remote_harness.ino` on the BBB and `test_remote.ino` on your loaner remote.
+
+### Bringing up the Remote
+
 A purpose-built tester is useful here.  For instance, for the remote, there is `Quadcopter-Remote/src/test_remote/test_remote.ino` and `Quadcopter-Remote/src/test_remote/test_remote_harness.ino`.  `test_remote.ino` runs on the remote and transmits a bunch of data to another device (a working remote or a FCB) running `test_remote_harness.ino`.  It tests all the software-accessible components of the remote.
 It doesn't, however, check that the battery charger works.  So, you'll need to verify that mannually.
 
+### Bringing up Your Quadcopter
+
 Your code from the first remote/FCB can also serve as a good starting point.  When bringing up your quadcopter, remember that the pin assignments may be differnt, so you may need to modify the code slightly.
+
