@@ -9,7 +9,7 @@ Most modern PCBs use "surface mount" (also called SMD) parts that more compact a
 ## Creating a Surface Mount Device
 We will replace the through hole button with a surface mount version. We will use part number 1301.9315 from this [datasheet](http://www.google.com/url?q=http%3A%2F%2Fwww.schurter.ch%2Fbundles%2Fsnceschurter%2Fepim%2F_ProdPool_%2FnewDS%2Fen%2Ftyp_6x6_mm_tact_switches.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHtExOlXG7xE7EsTttPKfa7a4eS0w). It's the one that looks like this:
 
-[image:https://lh3.googleusercontent.com/ipQKmcLF5KH0FEmhhh2LshnmnWO_S6q-gVyUcMGCm8SqTT_b8pg88bL5_yflfAWCrWgID45S=w271]
+![](images/smd1.jpg)
 
 Adafruit has a very nice [tutorial about building new schematic symbols, packages, and devices in Eagle](https://www.google.com/url?q=https%3A%2F%2Flearn.adafruit.com%2Fktowns-ultimate-creating-parts-in-eagle-tutorial%2Fintroduction&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGsUFLtnS_nmz4ra63XcImFHoVf9A). Go through the tutorial using this tactile button instead of the lux sensor they use in the tutorial. The datasheet required is present in your Lab 01 repository. Make a copy of `Lab01.lbr` called `Lab01_smd.lbr` and create the package there. Create a new package, device, and symbol for the button by following the ADAFRUIT tutorial. 
 
@@ -49,9 +49,9 @@ There are a few other things you'll need to be sure of in the package you build:
 	* "CREATOR" This should be your name, since you created the variant.
 	* You can add attributes by clicking on "attributes" in the device editor window:
 
-[image:https://lh4.googleusercontent.com/RQN_yY4LOx5fnP-gO2C3XqTy9bbn9XhsK3nWCb8WqxxaqILB44G_hkMYicC3D94LWWNMsDI=w472]
+![](images/smd2.png)
 
-		* You also need to be sure to draw a box around your package in layer ‘tKeepout’.
+* You also need to be sure to draw a box around your package in layer ‘tKeepout’.
 * You need to add a text item in layer “tName” that contains “>NAME”. This will be replaced with the parts name. To render clearly, the next needs to be at least 1.27 mm high, have a weight of 8% and be in the “vector” font. You can set these parameters in the tool bar at the top of the window or by using the “info” tool to change the attributes of the text after you create it.
 ## 
 
@@ -63,21 +63,19 @@ You can use your new SMD button just like our own through-hole button. Just dele
 ## Fixing up the Board
 Since you just changed the package for the button, the board will need to be updated. Traces will probably be crossed, etc.:
 
-[image:https://lh5.googleusercontent.com/AVwRacLO22P7zuD7BeXjXtToZQG6QRMMy1JCc8HRg6KF4kznV3PGEvlc5DIqgulNssNODJd__BgDniEJvJ5othcLhSkigPbemCUlqTEVnaKbI2nA1HA=w1175]
+![](images/smd3.png)
 
 To fix this, we’ll rip up all the old traces and reroute the board. Use the “group” tool: To select everything on the board.
 
-[image:https://lh4.googleusercontent.com/9Aq0aP0DF8TTerynKV1TeOE8NxgMvgzhaXODZRmQaxQOKQwBcgpmGfUkq1jwSLN0344ebgsMGdfhZSMO4sbSYbd7_bMePx_FEUcm8XfK58q-CvN038Q=w170]
+![](images/smd4.png)
 
 Next, select the “ripup” tool. Everything will appear to be deselected, that’s ok. Now, right-click on the board, and select “Ripup: Group”. All of the routed traces will disappear:
 
-[image:https://lh5.googleusercontent.com/nHVrN0hNf5Om8ytAHzZmQgs31ozBH29vua2-Ssq9B4rkyhQx5ASXACa7f4f3MQoO7HVl1n_CmEGyCX5ihx5wFNdDfAEhwUIIQ-qk47ZFWqFj2nrt4A=w1175]
+![](images/smd5.png)
 
 Now, you need to re-route the board using the “route” tool:
 
-[image:https://lh4.googleusercontent.com/v6MNlOdBIvMrkJUyy_uLCWlp_Q9G56ueUqbgoAWZXP1EfNDFa3_HVf_mBAdczUT1s5NrZbEwtf8asPyRkDpSSHhPa0BdyetrfKvhGki1t_zO_uxL8co=w1175]
-
-## 
+![](images/smd6.png)
 
 ## Re-running the CAM Processor
 Follow the instructions for running the CAM processor given above. In the Gerber viewer, you can find the pads for the SMD button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not.    
