@@ -43,26 +43,26 @@ There are 11 labs divided into four sections.  Deadlines are on the course homep
 
 ### PCB Design
 
-1. [Introduction To Eagle](Introduction-To-Eagle/README.md)
-2. [Building Parts In Eagle](Building-Parts-In-Eagle/README.md)
-3. [Building The Quadcopter Schematic.md](Building-The-Quadcopter-Schematic/README.md)
-4. [Laying Out The Board](Laying-Out-The-Board/README.md)
-5. [Manufacturing The Board](Manufacturing-The-Board/README.md)
+1. [Introduction To Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle)
+2. [Building Parts In Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-Parts-In-Eagle)
+3. [Building The Quadcopter Schematic.md](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-The-Quadcopter-Schematic)
+4. [Laying Out The Board](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Laying-Out-The-Board)
+5. [Manufacturing The Board](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Manufacturing-The-Board)
 
 ### PCB Assembly
 
-6. [Assembling A PCB](Assembling-A-PCB/README.md)
+6. [Assembling A PCB](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Assembling-A-PCB)
 
 ### Software
 
-7. [Programming The Hardware](Programming-The-Hardware/README.md)
-8. [Sensing and Filtering](Sensing-And-Filtering/README.md)
-9. [Implementing PID](Implementing-PID/README.md)
+7. [Programming The Hardware](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Programming-The-Hardware)
+8. [Sensing and Filtering](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Sensing-And-Filtering)
+9. [Implementing PID](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Implementing-PID)
 
 ### Flight
 
-10. [Flight](Flight/Flight.md)
-11. [Cleanup](Cleanup/Cleanup.md)
+10. [Flight](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Flight)
+11. [Cleanup](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Cleanup)
 
 ## Lab Equipment
 
