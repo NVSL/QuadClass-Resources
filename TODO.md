@@ -6,9 +6,6 @@ Use your magnifier
 Solder is a little spares on MOSFET pads
 Drop your parts to get them oriented right
 
-
-
-
 folds over to the right.  Keep that space clear
 Tools on the left
 Put stencil in "portrait" orientation
