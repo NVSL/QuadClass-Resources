@@ -39,28 +39,30 @@ In particular, you'll learn and/or practice these skills/topics:
 
 ## Labs 
 
-There are eight labs divided into four sections
+There are 11 labs divided into four sections.  Deadlines are on the course homepage.
 
 ### PCB Design
 
-1. [Introduction To Eagle](Introduction-To-Eagle/Introduction-To-Eagle.md)
-2. [Building Parts In Eagle](Building-Parts-In-Eagle/Building-Parts-In-Eagle.md)
-3. [Building The Quadcopter Schematic.md](Building-The-Quadcopter-Schematic/Building-The-Quadcopter-Schematic.md)
-4. [Laying Out The Board](Laying-Out-The-Board/Laying-Out-The-Board.md)
-5. [Manufacturing The Board](Manufacturing-The-Board/Manufacturing-The-Board.md)
+1. [Introduction To Eagle](Introduction-To-Eagle/README.md)
+2. [Building Parts In Eagle](Building-Parts-In-Eagle/README.md)
+3. [Building The Quadcopter Schematic.md](Building-The-Quadcopter-Schematic/README.md)
+4. [Laying Out The Board](Laying-Out-The-Board/README.md)
+5. [Manufacturing The Board](Manufacturing-The-Board/README.md)
 
 ### PCB Assembly
 
-1. [Assembliyng A PCB](Assembliyng-A-PCB/Assembliyng-A-PCB.md)
+6. [Assembling A PCB](Assembling-A-PCB/README.md)
 
 ### Software
 
-1. [Programming The Hardware](Programming-The-Hardware/Programming-The-Hardware.md)
+7. [Programming The Hardware](Programming-The-Hardware/README.md)
+8. [Sensing and Filtering](Sensing-And-Filtering/README.md)
+9. [Implementing PID](Implementing-PID/README.md)
 
 ### Flight
 
-1. [Flight](Flight/Flight.md)
-2. [Cleanup](Cleanup/Cleanup.md)
+10. [Flight](Flight/Flight.md)
+11. [Cleanup](Cleanup/Cleanup.md)
 
 ## Lab Equipment
 
@@ -74,8 +76,7 @@ During the course you will also assemble a small Arduino-compatible breakout boa
 
 ### Keeping the Remote
 
-The remote control, however, you cannot keep by default, because providing them for each student is too expensive.  However, if you would like a remote control of your own, you can build one instead of the building the breakout board.  If you wish to do this, talk to the instructor to get a parts list.  You can order the parts, and assemble your robot during the PCB assembly lab.
-
+The remote control, however, you cannot keep by default, because providing them for each student is too expensive.  However, if you would like a remote control of your own, you can build one instead of the building the breakout board.  If you wish to do this, talk to the instructor to get a parts list.  You can order the parts, and assemble your robot during [the PCB assembly lab(Assembling-A-PCB/README.md).
 
 ### Returning the Equipment
 
