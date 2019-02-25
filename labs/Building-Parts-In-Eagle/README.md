@@ -39,10 +39,10 @@ Create packages, symbols, and devices for the following electrical components.  
 
 | Description                    | Digikey part number  | Notes                                     |
 |--------------------------------|----------------------|-------------------------------------------|
-| LSM9DS1TR 9-Axis IMU           | 497-14946-1-ND       |                                           |
-| N-Channel MOSFET               | SI2302CDS-T1-E3CT-ND |                                           | 
 | 0805 0Ohm resistor	         | 311-0.0ARCT-ND       |                                           |
-| Red Light emitting diode	     | 160-1178-1-ND        |                                           |
+| Red Light emitting diode	     | 160-1178-1-ND        |  Orientation is key                       |
+| N-Channel MOSFET               | SI2302CDS-T1-E3CT-ND |  Pay close attention to the pads          | 
+| LSM9DS1TR 9-Axis IMU           | 497-14946-1-ND       |  Read the datasheet _and_ tech note       |
 
 You can find information about the part by typing the Digikey part number into google.  There will be a link to the datasheet.
 
@@ -142,7 +142,7 @@ DIST and DISTPN are especially critical, because when we go to order parts for y
 
 #### IMU
 
-The IMU has caused us signficant problems in the past.  Be careful with it.
+The IMU has caused us signficant problems in the past.  Be careful with it.  You should read both the datasheet and the SMD tech note.
 
 * Include “IMU” in the name of the device you create.
 * Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.

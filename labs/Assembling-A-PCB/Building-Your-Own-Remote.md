@@ -17,31 +17,34 @@ I'll provide the PCB for your remote.
 
 **Digikey BOM:** [boms/remote.digikey-bom.csv](boms/remote.digikey-bom.csv)
 
+## Bells and Whistles
 
-## A Power Switch
+This option adds a power switch and a built in FTDI.
 
-Turn off your remote rather than unplugging the battery.  This is an easy upgrade it -- just one more component.
-
-**Digikey BOM:** [boms/remote+pwr.digikey-bom.csv](boms/remote+pwr.digikey-bom.csv)
-
-### Instructions
-
-On the back of the board, there's a jumper that needs to be cut.  See the course staff about how to do it.
-
-## FTDI
-
-This adds a builtin-FTDI for programming the remote _and_ lets you use the remote as an FTDI to program your quad.  Very fancy.  The alternative is to buy an FTDI programming board (like the ones we use in class) for about $15.  Building it into your quadcopter is a lot cheaper.
+The builtin-FTDI lets you program the remote _and_ lets you use the remote as an FTDI to program your quad.  Very fancy.  
 
 This requires several additional surface mount components.  It increases the complexity of the lab by a fair amount.   You'll need an special cable to connect your remote to your quadcopter.
 
 Adding this option after you've done the inital assembly and reflow is a good way to practice some more advanced soldering techinques. 
 
-**Digikey BOM:** [boms/remote+pwr+ftdi.digikey-bom.csv](boms/remote+pwr+ftdi.digikey-bom.csv)
+**Digikey BOM:** [boms/remote+pwr+ftdi+gim+lcd.digikey-bom.csv](boms/remote+pwr+ftdi+gim+lcd.digikey-bom.csv)
 
+**Part List**
+
+| Desc               |  URL                                               | Qty | 
+|--------------------|----------------------------------------------------|-----|
+| FTDI cable       |  **Find URL**       | 1 | 
+| USB Micro cable  |  You probably have one of these | 1 |
 
 ### Instructions
 
 On the back of the board, there are some jumpers that need to be reconfigured.  See the course staff about how to do it.
+
+## An IMU
+
+It's the same IMU that we use on the quadcopter.  It would, in principle, let you control your quadcopter by tilting the remote.
+ 
+**Digikey BOM:** [boms/remote+pwr+ftdi+gim+lcd+IMU.digikey-bom.csv](boms/remote+pwr+ftdi+gim+lcd+IMU.digikey-bom.csv)
 
 
 ## Nicer Gimbals
@@ -53,10 +56,7 @@ The base model gimbals are decent, but cheap -- $10/pair.  The nicer ones are ar
 | Desc               |  URL                                               | Qty | 
 |--------------------|----------------------------------------------------|-----|
 | Nice Gimbals       |  **Find URL**       | 2 |
-| 600 Ohm resistor   |  **Find URL**       | 1 |
-
-
-**Digikey BOM:** [boms/remote+pwr+ftdi+gim.digikey-bom.csv](boms/remote+pwr+ftdi+gim.digikey-bom.csv)
+| 600 Ohm resistor   |  I'll provide       | 1 |
 
 ## Display
 
@@ -70,8 +70,6 @@ This adds a fancy RGB backlit 2-line LCD display.  This is a little expensive bu
 | 1 1/4 scews        | I'll provide | 4  |
 
 
-**Digikey BOM:** [boms/remote+pwr+ftdi+gim+lcd.digikey-bom.csv](boms/remote+pwr+ftdi+gim+lcd.digikey-bom.csv)
-
 ### Instructions
 
 Barely insert the male header into the female header and the attach the display to the remote board using the screws.  You'll need 4 donuts between the LCD and the remote board.
@@ -80,8 +78,3 @@ Position the headers (without soldering them) so the male header connects to the
 
 The headers are now perfectly positioned for soldering.  Solder them to the display and the board.
 
-## An IMU
-
-It's the same IMU that we use on the quadcopter.  It would, in principle, let you control your quadcopter by tilting the remote.
- 
-**Digikey BOM:** [boms/remote+pwr+ftdi+gim+lcd+IMU.digikey-bom.csv](boms/remote+pwr+ftdi+gim+lcd+IMU.digikey-bom.csv)

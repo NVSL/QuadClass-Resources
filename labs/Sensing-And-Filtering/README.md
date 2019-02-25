@@ -80,24 +80,55 @@ Here's some basic terminology:
 
 1. A low-pass filter allows the low-frequency component of a signal to pass through.
 2. A high-pass filter allows the high-frequency component of a signal to pass through.
+
 Generally, we would like the low-frequency information from the accelerometers and some part of the higher-frequency information from the gyroscopes.
 
-To make these work, you need to apply information from the IMU datasheet to the code that interfaces with the IMU.
+#### Read Key Sections of the IMU Datasheet
 
-There are three things you need to do:
+1. 3.1
+2. 3.4
+3. 7.12
+4. 7.13
+5. 7.24
+6. 7.25
 
-1. Make sure you you aren't "clipping" your gyroscope values. The gyros have a configurable measurement range. If it is too narrow, high rates of change will get "clipped" (this will show up as a flat plateau where a maximum should be). Use `lsm.setupGyro()` to eliminate the clipping.
-2. Adjust the output data rate (ODR) so it's compatible with the rate at which you are sampling the data from the IMU. The ODR should be slightly faster than you can sample. The AHRS example prints the latency for each trip through the loop at the beginning of each line (usually ~4ms). Your sampling rate is 1/latency (e.g., 500Hz). You set the ODR for both the gyro and the accelerometer `CTRL_REG1_G` (Section 7.12) `.`
-3. You should "ODR ratio" for the accelerometer to filter out the high-frequency components using the IMU's built-in low-pass filter. The cutoff is set by dividing the ODR by the ODR ratio. For the default ORD (952Hz) and the default ratio (9), the low-pass cutoff is 105Hz. You set this with register `CTRL_REG7_XL` (Section 7.25).
-4. You can also set the low-pass cutoff for the gyroscope, although this is less critical. The default is 63Hz. You can control this with `CTRL_REG1_G`. Note that this is also the register that control the ODR. You need to set both of them at the same time.
+#### Configure the Gyroscope to Prevent Clipping
+
+"Clipping" occurs when a measured value exceeds the range the IMU can handle.  For the gyroscope, this means it rotates too quickly.
+Clipping will show up as a flat plateau where a maximum should be on a graph of the gyro output.
+ 
+ Use `lsm.setupGyro()` to adjust range of values the gyros measure to eliminate the clipping.
+ 
+#### Adjust the Output Data Rate (ODR)
+ 
+Adjust the output data rate (ODR) so it's compatible with the rate at which you are sampling the data from the IMU. The ODR should be as closes as possble to how quickly you can sample.
+
+The AHRS example prints the latency for each trip through the loop at the beginning of each line (usually ~4ms). Your sampling rate is 1/latency (e.g., 500Hz). You set the ODR for both the gyro and the accelerometer using `CTRL_REG1_G` (Section 7.12 of the IMU datasheet).
+
+As your software evolves and gets slower, you may need to adjust your ODR.
+
+#### Setup the Low-Pass Filter on the Accelerometer
+
+The low-pass filter for the accelerometer is shown in Figure 8 of the IMU datasheet.  The low-pass filter is labeled "LPF2 XL".  You need to route the output of that filter to the "Data Reg Fifo".  You'll need to configure the `CTRL_REG7_XL` to set the HR and FDS bits to select the output of LPF2.
+
+You also need to set the cutoff for LPF2 by setting the ORD Ratio.  The cutoff is set by dividing the ODR by the ODR ratio. For the default ORD (952Hz) and the default ratio (9), the low-pass cutoff is 105.7Hz.
+
+**Note:** There's an inconsistency in the datasheet between Figure 8 and Section 25.  Can you find it?  You'll need to experiment to see which part of the datasheet is correct.
+
+
+#### Setup Filters On the Gyroscope
+
+ `CTRL_REG1_G` (Section 7.12), `CTRL_REG2_G` (Section 7.13), and `CTRL_REG3_G` (Section 7.14).  Control the filters on the gyroscope.  you want to let as much of the high-frequency signal from the gyroscope through as possible.  Figure 28 shows the data path for the gyroscope measurements.  
+
+#### Coding Conventions
+
+You can do all this tuning in a function similar to `setupSensor()` from the IMU example program.  The example configures the IMU for all the values described above.  Make sure you understand how it is working before you proceed.
 
 In your code, you *must* use the macros and constants defined in [Adafruit_LSM9DS1.h](https://github.com/NVSL/QuadClass_LSM9DS1/blob/master/Adafruit_LSM9DS1.h).  If you should me code with magical hexadecimal values in it, I will tell you to go make your code readable first by using the macros and constants.
 
-With the new libraries, you can do all this tuning in a function like `setupSensor()` in the IMU example program. The example configures the IMU for all the values described above. Make sure you understand how it is working before you proceed.
-
-For the completion of this lab, your demo will be you wiggling your pivot platform with your motors going full blast and the plotting curves moving responsively but smoothly in response.
-
 ### What Your Output Should Look Like
+
+For the completion of this lab, your demo will be you wiggling the airframe on your test stand with your motors going full blast and the plotting curves moving responsively but smoothly in response.
 
 The output of your complimentary filter will be an estimate of your current pitch angle. When you have your IMU filters set properly and your complimentary filter set correctly, you should observe the following:
 
@@ -118,19 +149,25 @@ The figure below illustrates the the layers of filtering at their effect:
 
 ### Tuning Tips
 
-Neither the complimentary filter nor the IMU's filters are sufficient to get with we need: A smooth, non-drifting pitch angle in the presence of motor noise.  It will take some trial and error to get the right output. Here are some tips:
+Neither the complimentary filter nor the IMU's filters are sufficient on their own to get what we need: A smooth, non-drifting pitch angle in the presence of motor noise.  It will take some trial and error to get the right output. Here are some tips:
 
-1. Our gyroscopes are quite accurate, so integrating doesn't cause very much drift. They are are also pretty immune to vibrational noise.  This argues for a high complementary gain.
-2. The accelerometer has no drift, but is extremely susceptible to vibrations. This argues for an aggressive (i.e., very low) cut off frequency for the accelerometer. This is ok especially because the gyroscope will provide good high-frequency data.
+1. Our gyroscopes are quite accurate, so integrating doesn't cause very much drift. They are are also somewhat immune to vibrational noise.  This argues for a high complementary gain.
+2. The accelerometer has no drift, but is extremely susceptible to vibrations. This argues for a low cut off frequency for the accelerometer. This is ok especially because the gyroscope will provide good high-frequency data.
 3. If your complimentary gain is too high, your measurements will drift. The drift can be very, very slow, but so take time to make sure it's not there.
+
+You'll need to experiment quite a bit to get good measurement.  The more tuning you can do without recompiling, the better.
 
 ### Turn in Your Work
 
 Commit your results:
 
-1. `Commit an updated version of quad_firmware.ino` and `remote_firmware.ino`.
-2. Commit any modified libraries you use in your firmware.
-3. Include a file called `noise.txt` that describes succintly what settings you used for filtering in hardware and software.
+1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
+3. Include a file called `noise.txt` that lists these values:
+    1.  How quickly you are reading data from the IMU
+    2.  Your ODR
+    3.  Your ODR Ratio
+    4.  The cutoff frequencies for the accelerometer and gyro filters.
+    5.  The configuration values you used for the registers you medified (written using the macros.)
 
 Once you've committed everything, create a tag called "sensing-and-filtering" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 

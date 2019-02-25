@@ -57,6 +57,28 @@ You need a large, clear space to apply solder paste.
 5. Check it with course staff and point out any problems you spotted.
 6. If it looks good, carefully remove your board.
 7. If something is wrong, you'll need to remove all the paste using chemwipes and alcohol and start again.
+8. You need to be very selective about paste application.  The solder needs to be very crisply defined.  If it doesn't look good, you'll have to redo it.
+
+**Poor Stencil Alignment (some holes are dark)**
+
+![Poor stencil alignment](images/bad_alignment.jpg)
+
+**Good Stencil Alignment (all holes are gold)**
+
+![Poor stencil alignment](images/good_alignment.jpg)
+
+**Poor Paste Application**
+
+![Poor solder paste](images/bad_paste_application.jpg)
+
+![Poor solder paste](images/bad_paste2.jpg)
+
+**Good Paste Application**
+
+![Good solder paste](images/good_paste2.jpg)
+
+![Good solder paste](images/good_imu_paste.jpg)
+
 
 ### Cleanup
 
@@ -88,7 +110,7 @@ You need to place parts carefully and precisely.  You also need to work somewhat
     * So, you shouldn't start assembly unless you have _at least_ 1:45 left in class.
 5. Eat something before hand.
 
-### Tips
+### Placing Parts
 
 1.  Dump out all the parts of a particular type on your work surface.
 2.  Once the part is down, don't fiddle.  Moving the parts smears the paste.  The parts will self-align a bit during reflow, so it doesn't have to be perfect.
@@ -101,11 +123,20 @@ You need to place parts carefully and precisely.  You also need to work somewhat
 9.  You are to almost drop the parts onto the board.  Do not press them down.  It'll displace the solder paste.
 10.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
 
+**A Stencil**
+![Stencil](images/stencil.jpg)
+
+**Good Cap Placement**
+![Good cap placement](images/good_cap_placement.jpg)
+
+
 ### Notes Particular Parts
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
 
 Note that on the remote, there are many parts you will leave unpopulated. Only put parts where there is solder paste.   
+
+In the photos, I've highlighted the polarity markings on the beard and the part.
 
 #### Resistors
 
@@ -115,7 +146,7 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 #### Capacitors
 
 1.  The small caps are non-polarized, so direction doesn't matter.
-2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only)
+2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
 3.  Align these carefully.  If you get it wrong your board will look ugly.
 
 #### MOSFETs (Quad Only)
@@ -141,30 +172,38 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 
 1. This is your first polarized component, pay close attention or your board will be doomed to darkness.
 2. The green line (yes, there really is one) goes near the dot. 
+![LED orientation](images/led_orientation.jpg)
+
 
 #### Diodes
 
 1. These are also polarized, but the markings are extremely hard to see.  They are printed black on black.
 2. If you hold the diode and look at in the light, one end has a faint rectangular bar code on it.  The other has an "S"
 3. The barcode goes near the dot.
+![Diode orientation](images/diode_orientation.jpg)
 
 #### Balun
 
 1.  The red dot faces up and goes next to the dot.  This means the red dot will be farther from the microcontroller and nearer the antenna.
 2.  Pay close attention to the aligment.
 3.  Check it with your magnifier.
+![Balun orientation](images/balun_orientation.jpg)
 
 #### Microcontroller
 
 1.  Make sure you orient it correctly.  The dot goes next to the dot.
-2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. 
+2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. ![MCU orientation](images/imu_mcu_orientation.jpg)
+
 3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
 4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  the need to be aligned with the patches of solder paste on the board.
+
+**Good MCU Placement**
+![Good MCU Placement](images/MCU_alignment.jpg)
 
 #### IMU (Quad only)
 
 1.  Similar to the microcontroller.
-2.  The dot goes near the dot.
+2.  The dot goes near the dot. (see image above for MCU)
 3.  Use the silkscreen markers to align it and the "drop" it on.
 4.  The pads are smaller, so alignment is more important.
 5.  Don't fiddle!
@@ -197,6 +236,14 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 6. kimwipes.
 7. Blue tape.
 
+### Checking Soldering
+
+**Good MCU Soldering**
+![Good MCU Soldering](images/good_mcu_soldered.jpg)
+
+**MCU Soldering Requiring Touch Up**
+![Bad MCU Soldering](images/bad_mcu_soldering.jpg)
+
 ### Cleaning up Flux Residue
 
 Wire solder has flux in the middle to help the solder flow.  SMD rework requires adding flux manually.  In either case, the result is a yellow-brown, unattractive residue that starts out sticky and hardens over time.
@@ -217,6 +264,8 @@ If you don't have alcohol in a squirt bottle, just get the kimwipe very moist wi
 #### Battery Terminals
 
 1.  Similar to the headers, but orientation matters.  The holes on the side should point toward the '+' and '-' on the board.
+![battery orientation](images/battery_orientation.jpg)
+
 
 #### Motor Recepticals (Quadcopter only)
 

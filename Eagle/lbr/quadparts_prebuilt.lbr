@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -79,23 +79,23 @@
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="99" name="SpiceOrder" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="100" name="tFaceplateCover" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="101" name="bFaceplateCover" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="100" name="baseplate" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="101" name="bFaceplateCover" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="102" name="onBoard" color="10" fill="3" visible="yes" active="yes"/>
-<layer number="103" name="offBoard" color="9" fill="3" visible="yes" active="yes"/>
+<layer number="103" name="tMap" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="104" name="Name" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="108" name="fp8" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="109" name="fp9" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="108" name="tplace-old" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="109" name="ref-old" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="110" name="fp0" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="111" name="LPC17xx" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="112" name="tSilk" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="113" name="IDFDebug" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="114" name="Unresolved" color="12" fill="1" visible="yes" active="yes"/>
+<layer number="114" name="Unresolved" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="115" name="Resolved" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="116" name="Generic" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="116" name="Generic" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="117" name="BACKMAAT1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="118" name="Rect_Pads" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="119" name="KAP_TEKEN" color="7" fill="1" visible="yes" active="yes"/>
@@ -120,19 +120,19 @@
 <layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="145" name="DrillLegend_01-16" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="146" name="DrillLegend_01-20" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="150" name="tFaceplate" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="151" name="bFaceplate" color="11" fill="1" visible="yes" active="yes"/>
+<layer number="150" name="tFaceplate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="151" name="bFaceplate" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="152" name="_bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="153" name="FabDoc1" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="154" name="FabDoc2" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="155" name="FabDoc3" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="160" name="tMountFaceplate" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="161" name="bMountFaceplate" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="162" name="tCopperArt" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="163" name="bCopperArt" color="11" fill="1" visible="yes" active="yes"/>
-<layer number="164" name="tRubout" color="14" fill="3" visible="yes" active="yes"/>
-<layer number="165" name="bRubout" color="13" fill="3" visible="yes" active="yes"/>
-<layer number="167" name="Fiducials" color="13" fill="1" visible="yes" active="yes"/>
+<layer number="160" name="tMountFaceplate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="161" name="bMountFaceplate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="162" name="tCopperArt" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="163" name="bCopperArt" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="164" name="tRubout" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="165" name="bRubout" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="167" name="Fiducials" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="169" name="internal" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="199" name="Contour" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="200" name="200bmp" color="7" fill="1" visible="yes" active="yes"/>
@@ -166,7 +166,7 @@
 <layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="231" name="Eagle3D_PG1" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="232" name="Eagle3D_PG2" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="233" name="Eagle3D_PG3" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
@@ -3158,6 +3158,65 @@
 <wire x1="0" y1="0" x2="0" y2="0" width="0.508" layer="39"/>
 <pad name="P1" x="0" y="0" drill="0.2" diameter="0.3" stop="no" thermals="no"/>
 </package>
+<package name="LAYER_LABELS">
+<text x="-0.06" y="-12.43" size="1.778" layer="2" font="vector" align="bottom-center">Upper Inner Metal</text>
+<text x="0" y="-17.78" size="1.778" layer="16" font="vector" align="bottom-center">Bottom Metal</text>
+<text x="0" y="-20.32" size="1.778" layer="30" font="vector" align="bottom-center">Bottom Solder Mask</text>
+<text x="0" y="-22.86" size="1.778" layer="22" font="vector" align="bottom-center">Bottom Silkscreeen</text>
+<text x="0.18" y="-2.27" size="1.778" layer="31" font="vector" align="bottom-center">Top Solder Stencil</text>
+<text x="0.18" y="-4.81" size="1.778" layer="21" font="vector" align="bottom-center">Top Silkscreeen</text>
+<text x="0.18" y="-7.35" size="1.778" layer="29" font="vector" align="bottom-center">Top Solder Mask</text>
+<text x="0.18" y="-9.89" size="1.778" layer="1" font="vector" align="bottom-center">Top Metal</text>
+<text x="0.27" y="-14.97" size="1.778" layer="15" font="vector" align="bottom-center">Lower Inner Metal</text>
+<wire x1="0" y1="0" x2="0" y2="0" width="1" layer="39"/>
+</package>
+<package name="QUADCLASS_LOGO">
+<circle x="-3" y="-3" radius="0.5" width="1" layer="1"/>
+<circle x="-3" y="-3" radius="1.11803125" width="1" layer="1"/>
+<circle x="-3" y="-3" radius="1.5" width="1" layer="1"/>
+<circle x="-3" y="-3" radius="2" width="0.127" layer="1"/>
+<circle x="-3" y="-3" radius="2.236065625" width="0.5" layer="41"/>
+<wire x1="-3" y1="3" x2="0" y2="0" width="0.5" layer="21"/>
+<circle x="-3" y="3" radius="0.5" width="1" layer="1"/>
+<circle x="-3" y="3" radius="1" width="1" layer="1"/>
+<circle x="-3" y="3" radius="1.5" width="1" layer="1"/>
+<circle x="-3" y="3" radius="2" width="0.127" layer="1"/>
+<circle x="-3" y="3" radius="2.236065625" width="0.5" layer="41"/>
+<wire x1="0" y1="0" x2="-3" y2="-3" width="0.5" layer="21"/>
+<wire x1="0" y1="0" x2="3" y2="-3" width="0.5" layer="21"/>
+<polygon width="0.2" layer="1" spacing="0.1">
+<vertex x="-0.5" y="1"/>
+<vertex x="0.5" y="1"/>
+<vertex x="1" y="0.5"/>
+<vertex x="1" y="-0.5"/>
+<vertex x="0.5" y="-1"/>
+<vertex x="-0.5" y="-1"/>
+<vertex x="-1" y="-0.5"/>
+<vertex x="-1" y="0.5"/>
+</polygon>
+<polygon width="0.2" layer="29" spacing="0.1">
+<vertex x="-0.5" y="1"/>
+<vertex x="0.5" y="1"/>
+<vertex x="1" y="0.5"/>
+<vertex x="1" y="-0.5"/>
+<vertex x="0.5" y="-1"/>
+<vertex x="-0.5" y="-1"/>
+<vertex x="-1" y="-0.5"/>
+<vertex x="-1" y="0.5"/>
+</polygon>
+<wire x1="0" y1="0" x2="0" y2="0" width="1" layer="39"/>
+<circle x="3" y="-3" radius="0.5" width="1" layer="1"/>
+<circle x="3" y="-3" radius="1" width="1" layer="1"/>
+<circle x="3" y="-3" radius="1.5811375" width="1" layer="1"/>
+<circle x="3" y="-3" radius="2" width="0.127" layer="1"/>
+<circle x="3" y="-3" radius="2.236065625" width="0.5" layer="41"/>
+<wire x1="3" y1="3" x2="0" y2="0" width="0.5" layer="21"/>
+<circle x="3" y="3" radius="0.5" width="1" layer="1"/>
+<circle x="3" y="3" radius="1.11803125" width="1" layer="1"/>
+<circle x="3" y="3" radius="1.5" width="1" layer="1"/>
+<circle x="3" y="3" radius="2" width="0.127" layer="1"/>
+<circle x="3" y="3" radius="2.236065625" width="0.5" layer="41"/>
+</package>
 </packages>
 <symbols>
 <symbol name="3V3">
@@ -3918,7 +3977,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <attribute name="CREATOR" value="Swanson"/>
 <attribute name="DATASHEET" value="http://katalog.we-online.de/pbs/datasheet/748421245.pdf"/>
 <attribute name="DIST" value="Digikey"/>
-<attribute name="DISTPN" value="732-2230-6-ND"/>
+<attribute name="DISTPN" value="732-2230-1-ND"/>
 <attribute name="MFR" value="Wurth Electronics Inc"/>
 <attribute name="MOUNTING" value="SMD"/>
 <attribute name="MPN" value="748421245"/>
@@ -4517,7 +4576,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <technology name="">
 <attribute name="CREATOR" value="Swanson"/>
 <attribute name="DIST" value="DIGIKEY"/>
-<attribute name="DISTPN" value="311-1.20KARCT-ND"/>
+<attribute name="DISTPN" value="311-1.20KCRCT-ND"/>
 <attribute name="MOUNTING" value="SMD"/>
 <attribute name="VALUE" value="1.2K"/>
 </technology>

@@ -2,32 +2,33 @@
 
 To be completed in pairs.
 
-Check course schedule for the due dates. There are separate due dates for Part A (the schematic) and Part B (the design review).
+Check course schedule for the due dates. 
 
 ## Skills to Learn
-1. Assembling a large schematic in Eagle based on reference designs, written specifications, and device datasheets.
-2. Performing a design review of a complex schematic
+
+1. Design a schematic to match a written specification.
+2. Integrate portions of a referenc design into your schematic.
 3. Read and understand key portions of part datasheets.
 
-
 ## Equipment, Supplies, and Software You Will Need
-1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz.
-2. The `custom.lbr` library you built in Lab 02: Creating Eagle Parts. (Copy and commit it in your lbr/ directory for this lab).
-3. `labs/partlist.xlsx` in this repo.
-4. The design files for the remote: https://github.com/NVSL/Quadcopter-Remote.
 
+1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz.
+2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your lbr/ directory for this lab).
+3. The design files for the remote: https://github.com/NVSL/QuadClass-Remote.
 
 ## Preliminaries
 
 ### Install Eagle Premium Edition
+
 Sign up here to get an Autodesk Student account: http://www.autodesk.com/education/free-software/eagle.
 
 Download and install Eagle Premium.
 
 ### Setting up Eagle
-The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo. Instructions are in the write up for Lab 2 (in this repo).
 
-Copy and commit your `custom.lbr` from Lab 2 in `lbr`. You can decide to use one or another of the libraries from each of your team members, or you can copy them both as custom `_<name>.lbr`.
+The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
+
+Copy and commit your `custom.lbr` into `lbr`. You can decide to use one or another of the libraries from each of your team members, or you can copy them both as custom `_<name>.lbr`.
 
 ### Make Eagle Easier to Use
 
@@ -39,7 +40,7 @@ By default, Eagle comes configured with a bunch of libraries that can make it ha
 * User Language Programs: `<path to>/QuadClass-Resources/Eagle/ULP`
 If you don’t want to replace the defaults, you should at least append these to directories already there.
 
-Sometimes this does not cause the libraries to disappear from the “add part” dialogs. To make them go away, select “Options->Library Manager”, then select all the libraries you don’t want to use and click ‘remove’. There should just be handful left (e.g., Lab01.lbr, Lab01_smd.lbr, custom.lbr,…).
+Sometimes this does not cause the libraries to disappear from the “add part” dialogs. To make them go away, select `Options->Library Manager`, then select all the libraries you don’t want to use and click ‘remove’. There should just be handful left (e.g., Lab01.lbr, Lab01_smd.lbr, custom.lbr,…).
 
 ### Making Sure Your Repo is Up-to-Date
 
@@ -48,62 +49,55 @@ If I find a bug in the repo, I will commit changes to the base repo. I’ll anno
 To retrieve the new version, you can do the following:
 
 ```
-> git remote add upstream git@github.com:NVSL/QuadClass-Quadcopter.git
+git remote add upstream git@github.com:NVSL/QuadClass-Quadcopter.git
 ```
 
 ```
-> git fetch upstream
+git fetch upstream
 ```
 
 ```
-> git merge upstream/master
+git merge upstream/master
 ```
 
 Detailed instructions are here: https://help.github.com/articles/syncing-a-fork/.
 
 
-## Part A: Assembling the Schematic
+## Assembling the Schematic
 
-The due date for this part is on the course schedule.
+You’ll build the schematic for your quadcopter starting from an empty Eagle schematic.  You'll assemble the design by studying fragments of other design and the datasheets for the components you will use.
 
-You’ll build the schematic for your quadcopter starting from an empty Eagle schematic. You should build the design assembling portions of several other designs provided to you:
+The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr` (which you'll build).  Eagle comes with a bunch of built in libraries.  They are off limits.
 
-1. Quacopter remote design — microcontroller configuration, the radio, and the programming headers.
-2. The motor driver schematic in `Motor-Driver.sch`.
-You will design the power supply from scratch based on the voltage regulator’s datasheet, our battery, and the quadcopter’s electrical requirements.
-
-The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr`.  Eagle comes with a bunch of built in libraries. They are off limits.
-
-Name your schematic `quadcopter.sch`.
+Name your schematic `quadcopter.sch`.  Put it in the `hardware` directory of your quadcopter repo.
 
 ### General Schematic Style Guidelines
 
-Here are course style guidelines for schematics. Your schematics must adhere to these guidelines.  IF you don't Eaglint will give warnings and we won’t accept the design.
+Here are the course style guidelines for schematics. Your schematics must adhere to these guidelines.  If you don't, Eaglint will give warnings and we won’t accept the design.
 
 1. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
-2. All visible net and component names must not have “$” in them. When Eagle automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., in a net label), but if you it shows up on your schematic, you should give it a nice name like “C1” or “U1”.
+2. All visible net and component names must not have “$” in them. When Eagle automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like “C1” or “U1”.
 3. By convention power supply symbols point up, and ground symbols point down. Neither should ever point to the side.
 4. Nets should not cross each other unless they are electrically connected.
 5. Nets should only be drawn at right angles.
 6. Eagle embeds libraries in the `.sch` and `.brd` files. To keep them up-to-date, use `Library->Update` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
-7. Include ‘frame’. Use device `FRAME_B_L`.
-8. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the redboard schematic for examples. Drawn nets shouldn’t cross these boundaries.
-9. Use drawn nets connect components that are closely related.
+7. Include a frame around our schematic.  Use device `FRAME_B_L`.
+8. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
+9. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
 10. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
 
 ### The Microcontroller
 
-The schematic file for the remote control is in the `Quadcopter-Remote` repo listed above. You should use the schematic as guide for constructing the microcontroller portion of your schematic. You should not copy-and-paste anything from the schematic, because 1) your schematic is supposed to built by you from scratch and 2) it would introduce parts from forbidden libraries.
+Here's the schematic for the BBB without the voltage regulator.  It's the reference design for your microcontroller, the radio, and the associated circuits.
 
-The parts you should copy are the microcontroller and the associated circuitry.
+![Microcontroller schematic](images/microcontroller.png)
 
-There are some changes you will need to make:
+You should use the schematic as a guide for constructing the microcontroller portion of your schematic.
 
-1. The remote includes some items you’ll need to replace or change.
-	1. For consistency, you should use the name `3V3` for your power supply instead of `3.3V`. Using the supply symbols in `quadpart_prebuilt.lbr` will make this automatic.
-	2. The `VCC` pin of serial programmer interface should be disconnected.
-	3. Likewise, the 5V pin of the in-system programmer (ISP) header ( `J1` ) should not be connected.
-	
+There are some changes you will need to make to this schematic based on what's required by the other components.  This is just a starting point for your circuit.
+
+If you have questions about the parts attached directly to the microcontroller (including the radio), the first place to turn is the microcontroller datasheet.
+
 ### The IMU
 
 The IMU datasheet contains all the information you will need to use connect the IMU to the microcontroller. A few things to keep in mind:
@@ -114,20 +108,24 @@ The IMU datasheet contains all the information you will need to use connect the 
 4. You must follow all the recommendations regarding external capacitors attached the IMU.
 5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.
 6. Power supply voltage and IO voltage will be 3V3 in our design, so connect them to `3V3`.
-7. We aren't using the interrupt features, so you can leave INT_M, INT2_A/G, INT1_A/G, and DRDY_M disconnected.
-8. DEN_A/G should be connected to `3V3`.
+7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
+8. `DEN_A/G` should be connected to `3V3`.
 
 Most of the information you will need is Section 5 of the datasheet. A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables.
 
 ### The Motor Driver 
 
-You should model the motor driver after `Motor-Driver.sch`. Using it as a model, build four copies to drive the four motors you'll need. Be aware that that schematic uses parts that aren't in your library, so you'll need to rebuild the schematic using your own parts. Use the 220uF cap from the pre-built library for the decoupling cap between `VBAT` and `BAT_GND`.
+Here's a picture of the motor driver circuit:
+
+![Motor Driver](images/motor_driver.png)
+
+Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.  There's only one (non-light emitting) diode in the library, use it.
 
 You'll need to connect the PWM control lines to suitable pins on the microcontroller. The suitable pins are marked with "~" on microcontroller's schematic symbol.
 
 ### The Power Supply
 
-The quadcopter draws power from from a LiPo battery that nominally provides between 3.7 and 4.2V. This voltage is too high for the IMU and the microcontroller and the motors (which we will power directly from the battery) will create all kinds of noise on both the battery supply and ground rails.  To solve both of these problems, we will use a low-dropout voltage regulator to provide a stable 3.3V power supply to the IMU and the microcontroller.
+The quadcopter draws power from from a LiPo battery that nominally provides between 3.7 and 4.2V. This voltage is too high for the IMU and the microcontroller and the motors (which we will power directly from the battery) will create all kinds of noise on both the battery supply and ground rails.  To solve both of these problems, we will use a low-dropout (LDO) voltage regulator to provide a stable 3.3V power supply to the IMU and the microcontroller.
 
 As a result, your quadcopter will have two power rails: An unregulated power rail (called `VBAT`) that provides power to the motors and input of the voltage regulator and is driven directly by the battery, and a regulated supply driven by the voltage regulator (called `3V3`).
 
@@ -135,15 +133,19 @@ The power supply for quadcopter needs to contain the following parts:
 
 1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SCREW-TERMINAL` variant.
 2. A two-pin `jumper` to disconnect the positive terminal of the battery from `VBAT`.  Use the `-MALE` variant of `﻿HEADER-0.1IN-2POS` in `quadparts_prebuilt.lbr`.  
-3. A LP3985-series 3.3V regulator (see device `﻿TPS73633-DBVT`).  You can find it's datasheet by looking it up on Digikey.  Note that the remote control schematic is not a perfect model to follow, since it also includes a battery charger and some other components you don't need.
+3. A LP3985-series 3.3V regulator (see device `﻿TPS73633-DBVT`).  You can find it's datasheet by looking it up on Digikey.
 
-To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines. The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines. For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
+To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines.  The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines. For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
-For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in Lab 8 how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
+For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in Lab 8 how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
 
 A "net bridge" is PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a package that consists of two SMDs that touch one another. They can be very small. Remove the tstop on the pads, since we won't be soldering anything to them.
 
 Create a schematic symbol (what's a good symbol for something that just connects to nets?) and device for the bridge and use one to connect `BAT_GND` and `GND`. Put this new part in your `custom.lbr`.
+
+It would also be nice if you could program and debug your microcontroller without a battery or with the battery jumper disconnected.  To enable this, we will let the regulator also draw current from the FTDI or ISP headers.  To enable this, connect the FTDI 3V3 pin, the ISP 5V pin, and the input of the regulator with a net called `VIN`.
+
+Connect `VBAT` to `VIN` via a diode oriented to let current flow the battery to `VIN` but not the other direction.  This will protect the battery from the 5V that some FTDI and ISP programmers provide, while letting the battery drive the regulator when no programmer is attached. 
 
 ### Breakout Header
 
@@ -219,8 +221,6 @@ Add an attribute called `CUSTOM` to the variants you create.  This will ensure t
 ### Eaglint 
 
 Your design needs to pass http://eaglint.nvsl.io, so commit your design, submit it, and fix the problems it finds. Remember, each time you run the tool it lowers your grade on the lab, so you need to check your design carefully before submitting.
-
-
 
 ## Turn in Your Work
 

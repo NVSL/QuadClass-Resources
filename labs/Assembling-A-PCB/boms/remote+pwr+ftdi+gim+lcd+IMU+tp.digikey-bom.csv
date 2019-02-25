@@ -4,16 +4,15 @@ DIGIKEY,445-1418-1-ND,5,5,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:
 DIGIKEY,445-5984-1-ND,4,4,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:CAPACITOR-NP_:SMD-2012-0805_CERAMIC-10UF,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-C26_C7_C6_C5
 DIGIKEY,A100106-ND,2,2,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:FRSKY-GIMBAL:-FRYSKY,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-J2_J3
 DIGIKEY,EG5350CT-ND,7,7,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:PUSHBUTTON_:-4.5X4.5,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-B4_B5_B6_B7_B8_B9_B10
-DIGIKEY,YAG3776CT-ND ,2,2,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-2.2K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R7_R2
+DIGIKEY,952-1922-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:AVR_SPI_PRG_6:-SMD,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-J4
 DIGIKEY,311-10KARCT-ND,2,2,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-10K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R11_R6
 DIGIKEY,568-5300-1-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:DPDT-X2:,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-U5
 DIGIKEY,609-4613-1-ND ,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:USB:-MICROA-AMPHENOL-10118192-0001LF,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-J1
-DIGIKEY,497-14946-1-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,IMUs:LSM9DS1:-MEDIUM,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-U6
-DIGIKEY,311-510ARCT-ND,8,8,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-510,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R1_R16_R17_R14_R15_R13_R18_R3
+DIGIKEY,YAG3695CT-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-15K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R4
+DIGIKEY,YAG3776CT-ND ,2,2,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-2.2K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R7_R2
 DIGIKEY,768-1007-1-ND ,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:FT232RL:SSOP,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-U3
-DIGIKEY,952-1922-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:AVR_SPI_PRG_6:-SMD,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-J4
-DIGIKEY,LP3985IM5-3.3/NOPBCT-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:TPS73633-DBVT:3V3,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-U1
 DIGIKEY,S7008-ND  ,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:SPARKFUN_SERLCD_SERIAL_REDUCED:,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-L1
+DIGIKEY,311-510ARCT-ND,8,8,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-510,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R1_R16_R17_R14_R15_R13_R18_R3
 DIGIKEY,311-27.0KCRCT-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-27K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R5
 DIGIKEY,CRS08QMCT-ND,2,2,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:DIODE-SCHOTTKY_:SMD-SOD123-360MV,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-D2_D3
 DIGIKEY,PEC12R-4217F-S0024-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:ROTARY-ENCODER-W/BUTTON:-BOURNS-PEC12R-4217F,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-E1
@@ -22,7 +21,7 @@ DIGIKEY,MCP73831T-2ACI/OTCT-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemotePart
 DIGIKEY,160-1172-1-ND,4,4,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:LED-2X:-GREEN/RED,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-D6_D4_D5_D1
 DIGIKEY,36-5001-ND,4,4,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:TEST-POINT:,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-P2_P3_P1_P4
 DIGIKEY,311-1.20KARCT-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-1.2K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R8
-DIGIKEY,YAG3695CT-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:RESISTOR_:SMD-2012-0805-15K,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-R4
+DIGIKEY,497-14946-1-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,IMUs:LSM9DS1:-MEDIUM,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-U6
 DIGIKEY,1608-1458-1-ND ,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,quadparts_prebuilt:CAPACITOR-NP_:SMD-2012-0805_CERAMIC-0.01UF,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-C18
 DIGIKEY,952-1842-ND,1,1,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:SPARKFUN_SERLCD_SERIAL_REDUCED:,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-L1
 DIGIKEY,401-1999-1-ND,2,2,remote+pwr+ftdi+gim+lcd+IMU+tp.sch,RemoteParts:POWER-SWITCH-MFS201N-9-Z:JS102011SAQN,remote+pwr+ftdi+gim+lcd+IMU+tp.sch-S2_S1
