@@ -198,6 +198,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  the need to be aligned with the patches of solder paste on the board.
 
 **Good MCU Placement**
+
 ![Good MCU Placement](images/MCU_alignment.jpg)
 
 #### IMU (Quad only)
@@ -239,16 +240,19 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 ### Checking Soldering
 
 **Good MCU Soldering**
+
 ![Good MCU Soldering](images/good_mcu_soldered.jpg)
 
 **MCU Soldering Requiring Touch Up**
+
 ![Bad MCU Soldering](images/bad_mcu_soldering.jpg)
 
 ### Cleaning up Flux Residue
 
 Wire solder has flux in the middle to help the solder flow.  SMD rework requires adding flux manually.  In either case, the result is a yellow-brown, unattractive residue that starts out sticky and hardens over time.
 
-To keep your board looking nice and clean, you should remove it ASAP.  If you have several things to fix, do not wait till the end.  Due it one part at a time.  To clean up the flux, place a kimwipe over the area and squirt rubbing alcohol onto it.  Then, take a hair brush of swap and rub the kimwipe around over the area.  It'll absorb the flux residue.  Repeat once or twice.
+To keep your board looking nice and clean, you should remove it ASAP.  If you have several things to fix, do not wait till the end.  Due it one part at a time.  To clean up the flux, place a kimwipe over the area and squirt rubbing alcohol onto it.  Then, take a hair brush of swap and rub the kimwipe around over the area.  It'll absorb the flux residue.  Repeat once or 
+x  twice.
 
 If you don't have alcohol in a squirt bottle, just get the kimwipe very moist with alcohol and put it on mannually.
 
@@ -264,6 +268,7 @@ If you don't have alcohol in a squirt bottle, just get the kimwipe very moist wi
 #### Battery Terminals
 
 1.  Similar to the headers, but orientation matters.  The holes on the side should point toward the '+' and '-' on the board.
+
 ![battery orientation](images/battery_orientation.jpg)
 
 

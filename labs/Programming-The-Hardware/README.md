@@ -249,9 +249,9 @@ To avoid injury take the following precautions
    1. Be careful of the propellers on the motors. They can hurt you.
    2. Before you start, make sure the airframe is in the “locked” position.
 
-## Using the Wireless
+## Using the Radio
 
-The microcontroller on the remote and the FCB (and eventually your quadcopter) use has a built-in radio.  We will use it to send commands from the remote to the FCB and to return telemetry (if you want).
+The microcontroller on the remote and the FCB (and eventually your quadcopter) use has a built-in radio.  We will use it to send commands from the remote to the FCB and to return telemetry.
 
 First, find out your groups assigned channel.  You'll need to edit the examples below to pass a channel number to `rfBegin()`.  Eaglint will assign you a channel number.  It's at the top of your list of group design checks. 
 
@@ -273,9 +273,7 @@ Second, don’t spam the world with your radio traffic. Modify your remote firmw
 
 Third, this struct and the related function will be shared between your quadcopter firmware and your remote firmware. The clever way to do this is to create your own Arduino library that holds the struct and related code. Otherwise, if you change it in one place, you’ll have to remember to change it in another. This violates the [DRY principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-I recommend just sending the normalized values from the gimbals and buttons to the quadcopter.  That way, your remote control code won’t change much as your flight control software get’s more complex.  You’ll need to be careful when normalizing to make sure you don’t lose resolution on gimbal values.
-
-To test it, program the test stand board to receive the data from your remote and print it out. Verify that the values change as you move the gimbals, etc. Keep this code around, you will demo it for us.
+To test it, program the test stand board to receive the data from your remote and print it out. Verify that the values change as you move the gimbals, etc.
 
 ## Putting it All Together: Remote Controlled Motors and LEDs
 
@@ -300,7 +298,7 @@ The propellors are sharp enough and fast enough to hurt you.  To prevent acciden
 
 A typical arming sequence is to put the both gimbals in the lowest, outermost position.  This position is useful in two critical ways: 1) the pilot is unlikely to do it by accident and 2) it ensures that the throttle is at 0.  Turn on an LED on the quadcopter when it is armed.
 
-Your remote and the quadcopter need to always be in agreement about whether the quadcopter is armed.  For instance, if your reset your remote, the FCB should be disarmed.
+Your remote and the quadcopter need to always be in agreement about whether the quadcopter is armed.  For instance, if your reset your remote, the FCB should be disarmed.  If you reset the FCB it should disarm and remain disarmed until the remote arms it again.
 
 ### Throttle Control
 
