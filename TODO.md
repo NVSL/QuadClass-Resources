@@ -48,6 +48,7 @@ TA Tasks
 7. Assemble the gimbals + wiring harnesses
 8. Do Lab 1 and update the screen caps.
 9. Do Lab 1 and check that git@github.com:NVSL/QuadClass-Eagle-Intro-Solution.git is a solution that matches the lab.  In particular, cam generation has changed significantly.  Have them commit a zip file of their cam file.  Run the solution to eaglint to make sure. 
+10. Dismantle old remotes
 
 
 Tasks
