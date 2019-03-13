@@ -23,7 +23,6 @@ cam: $(DESIGN).cam
 	mkdir -p $@
 	$(EAGLE_EXE) -N -X -dCAMJOB -j$(CAM_FILE) -o$@ $<
 	mv $@/$@/*.ncd $@/ #unclear why it puts the ncd file here.
-	rm -rf $@/$@
 
 %.assembly-bom.html: %.sch
 	$(EAGLE_BOM) --sch $^ --mode smds --format html  --out $@
@@ -34,6 +33,13 @@ cam: $(DESIGN).cam
 %.cam.zip: %.cam
 	(cd $<; zip $(abspath $@) *.{cmp,crm,l1,l2,plc,pls,sol,stc,sts,ncd})
 
+%.stencil: %.cam
+	cp -r $< $@
+	(cd $@; ls | grep -v .crm | xargs rm -fr)
+
+%.stencil.zip: %.stencil
+	(cd $<; zip $(abspath $@) *.crm)
+
 RELEASE_DIR=releases/$(VERSION)
 .PRECIOUS: %.cam
 .PHONY:release
@@ -43,7 +49,7 @@ release: $(BRD) $(SCH) $(LBRS)
 	mkdir -p $(RELEASE_DIR)
 	cp $(BRD) $(SCH) $(RELEASE_DIR)
 	#python $(EAGLINT_HOME)/server/eaglint/set-attr.py $(RELEASE_DIR)/$(BRD) $(RELEASE_DIR)/$(SCH) --attr 'dict(VERSION="$(VERSION)")'
-	$(MAKE) $(RELEASE_DIR)/$(DESIGN).cam.zip
+	$(MAKE) $(RELEASE_DIR)/$(DESIGN).cam.zip $(RELEASE_DIR)/$(DESIGN).stencil.zip
 	git add $(RELEASE_DIR)	
 	git commit -m "Release $(VERSION)"
 	git tag -a $(VERSION) -m "Release $(VERSION)"
