@@ -294,7 +294,7 @@ For #2, you should only be able to enter calibration mode while the quadcopter i
 
 ### Arming your FCB
 
-The propellors are sharp enough and fast enough to hurt you.  To prevent accidents, your firmware should require you to "arm" your quadcopter before it will turn on the motors.  
+The propellers are sharp enough and fast enough to hurt you.  To prevent accidents, your firmware should require you to "arm" your quadcopter before it will turn on the motors.  
 
 A typical arming sequence is to put the both gimbals in the lowest, outermost position.  This position is useful in two critical ways: 1) the pilot is unlikely to do it by accident and 2) it ensures that the throttle is at 0.  Turn on an LED on the quadcopter when it is armed.
 

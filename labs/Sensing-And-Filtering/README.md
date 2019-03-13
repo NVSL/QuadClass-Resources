@@ -22,6 +22,7 @@ Check the course schedule for due date(s).
 * You can use the buttons too. For example, you could use the buttons to switch between parameters and adjust them with the knob.
 * Some enterprising groups have also use the gimbals to set parameters too.
 * You can send information over the serial port to your laptop to provide feedback to the user.
+* If you stall the motors (i.e., hold t7hem still with the throttle on), it may cause either your IMU reset, which will make it stop reporting any data.
 
 ## Tasks to Perform
 
