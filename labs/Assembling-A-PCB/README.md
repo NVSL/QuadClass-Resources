@@ -7,10 +7,6 @@ The default lab has you assemble a simple Arduino-compatible board based on the 
 Alternately, you can build a board for your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.  This will at least double the time spent assembling the board, so keep that in mind when deciding when to start assembling.
 
 
-folds over to the right.  Keep that space clear
-Tools on the left
-Put stencil in "portrait" orientation
-clean up stencil with alcohol
 
 ## Preparation
 
@@ -39,12 +35,14 @@ Begin by making sure you have everything you need.
 
 You need a large, clear space to apply solder paste.
 
-1. It can be messy, so cover everything with butcher paper.
+1. It can be messy, so cover everything with a big sheet of paper.
 2. Tape down your scrap PCBs so they will hold your board still.  The PCB should be oriented so the stencil aligns with it in "portrait" orienation (tall rather than wide).
 3. Align your stencil with your board so the wholes line up perfectly with the pads. This must be very precise.
-4. Tape down the right edge of your stencil so you can easily lift it on and off your board like a page of a book.
+4. Tape down the right edge of your stencil so you can easily lift it on and off your board like a page of a book.  The tape should be on the right, and there should be clear space for the stencil to lay flat.  
 5. Check the alignment again
 6. Verify your alignment with course staff.
+
+
 
 ### Apply Paste
 
@@ -112,9 +110,9 @@ You need to place parts carefully and precisely.  You also need to work somewhat
 
 ### Placing Parts
 
-1.  Dump out all the parts of a particular type on your work surface.
-2.  Once the part is down, don't fiddle.  Moving the parts smears the paste.  The parts will self-align a bit during reflow, so it doesn't have to be perfect.
+1.  Dump the parts out one at a time on your work surface.
 3.  If a part is upside-down, picking it up and dropping it is a good (if probablistc) way to turn it over.
+2.  Once the part is on the board, move it as little as possible.  Moving the parts smears the paste.  The parts will self-align a bit during reflow, so it doesn't have to be perfect.
 4.  Don't pick up the board.  You more likely to bump a part if you pick up the board.
 5.  Arrange your pile of parts at your board so you don't have to reach over the board, otherwise, you're more likely to bump parts.
 6.  Don't mess up.  If something goes significantly wrong, you have to start again.
@@ -124,9 +122,11 @@ You need to place parts carefully and precisely.  You also need to work somewhat
 10.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
 
 **A Stencil**
+
 ![Stencil](images/stencil.jpg)
 
 **Good Cap Placement**
+
 ![Good cap placement](images/good_cap_placement.jpg)
 
 
@@ -140,31 +140,43 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 
 #### Resistors
 
+![Resistors](images/resistors.jpg)
+
 1. These are pretty easy -- a good warm-up.
 2. Make sure they are marking-side-up.
 
 #### Capacitors
 
-1.  The small caps are non-polarized, so direction doesn't matter.
+1.  The small caps are non-polarized, so direction doesn't matter. ![Capacitors](images/capacitors.jpg)
+
 2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
 3.  Align these carefully.  If you get it wrong your board will look ugly.
 
 #### MOSFETs (Quad Only)
+
+![MOSFET](images/mosfet.jpg)
 
 1. The correct orientation is obvious.
 2. You need to align the pins carefully.
 
 #### Voltage Regulator and Battery Charger.
 
+![Voltage Regulator](images/voltage-regulator.jpg)
+
 1. Orientation is obvious (there's three pins on one side and 2 on the other)
 2. Be sure not to confuse these two if you are assembly a remote.
 3. Only the remote has a charger.
 
+
 #### Button 
+
+![Button](images/button.jpg)
 
 1. Either orientation is ok.
 
 #### Crystal
+
+![Resistors](images/crystal.jpg)
 
 1.  It seems like orientation should be important, but it's not.  The part is diagonally symetric. 
 
@@ -172,6 +184,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 
 1. This is your first polarized component, pay close attention or your board will be doomed to darkness.
 2. The green line (yes, there really is one) goes near the dot. 
+
 ![LED orientation](images/led_orientation.jpg)
 
 
@@ -180,6 +193,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 1. These are also polarized, but the markings are extremely hard to see.  They are printed black on black.
 2. If you hold the diode and look at in the light, one end has a faint rectangular bar code on it.  The other has an "S"
 3. The barcode goes near the dot.
+
 ![Diode orientation](images/diode_orientation.jpg)
 
 #### Balun
@@ -187,6 +201,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 1.  The red dot faces up and goes next to the dot.  This means the red dot will be farther from the microcontroller and nearer the antenna.
 2.  Pay close attention to the aligment.
 3.  Check it with your magnifier.
+
 ![Balun orientation](images/balun_orientation.jpg)
 
 #### Microcontroller
@@ -202,6 +217,8 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 ![Good MCU Placement](images/MCU_alignment.jpg)
 
 #### IMU (Quad only)
+
+![IMU](images/IMU.jpg)
 
 1.  Similar to the microcontroller.
 2.  The dot goes near the dot. (see image above for MCU)
@@ -260,6 +277,12 @@ If you don't have alcohol in a squirt bottle, just get the kimwipe very moist wi
 
 #### Headers
 
+![ISP](images/ISP-header.jpg)
+
+![FTDI](images/FTDI-header.jpg)
+
+![Power jumper](images/power-jumper.jpg)
+
 1.  Tape down the power jumper, debug header, FTDI header, and gimbal pins (remote only) using blue tape. 
 2.  The main challenge is getting them straight up and down and not crooked.  Do your best.
 3.  The white gimbal sockets go on top.  The 6-pin header connectors go on the bottom. (Remote only)
@@ -273,6 +296,8 @@ If you don't have alcohol in a squirt bottle, just get the kimwipe very moist wi
 
 
 #### Motor Recepticals (Quadcopter only)
+
+![Motor socket](images/motor-socket.jpg)
 
 1.  Orientation is very important.  Removing/replacing these things is really hard. 
 2.  The pins are not centered, and part should be oriented so it fits completely inside the silkscreen outline.  If it's backwards it'll protrude on one side.
