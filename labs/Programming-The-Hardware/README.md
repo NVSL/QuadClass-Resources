@@ -29,7 +29,8 @@ You will work on this lab and all future labs in teams of two. You will need to 
 13. Laser-cut airframe
 14. 1 set of motors.
 15. 1 set of matched propellers (2xCW, 2xCCW)
-16. 4-6 small zip ties.
+16. 4 small zip ties.
+17. Four short screws and four nuts.
 
 ### Your Remote Control
 
@@ -207,7 +208,7 @@ The FCB mounts to the wooden air frame as shown:
 
 
 
-1. Thread a small zip tie through the two holes on the board and the two on the airframe.  Include a wooden 'donut' to provide a gap between the two. Make it tight.  ![Air frame](images/fcb_to_airframe.jpg)
+1. Use four screws and nuts to attach the FCB to the airframe.  Include a wooden 'donut' to provide a gap between the two.  ![Air frame](images/fcb_to_airframe.jpg)
 2. Use another two zip ties to attach the air frame to the dowel.  Make it tight as well.
 3. Trim the tails of your zip ties.
 4. The battery should tuck neatly between the dowel and the FCB.
