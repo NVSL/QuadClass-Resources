@@ -41,7 +41,7 @@ Then click on the link for the starter repo listed in the "Equipment, Supplies, 
 
 We will be using Github a lot in class. If you aren't familiar with it, there are a bunch of good introductory tutorials. For example, [this one](http://try.github.io/).
 
-### Install Eagle (if you are using your laptop)
+### Install Eagle
 
 Sign up here to get an Autodesk Student account: http://www.autodesk.com/education/free-software/eagle
 
@@ -54,9 +54,6 @@ By default, Eagle comes configured with a bunch of libraries that can make it ha
 * Libraries: `<path to>/eagle-intro-<gitusername>/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
-* User Language Programs: `<path to>/QuadClass-Resources/Eagle/ULP`
-
-If you don't want to replace the defaults, you should at least append these to directories already there.
 
 ### Do the Button and Light Tutorial
 

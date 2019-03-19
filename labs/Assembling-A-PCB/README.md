@@ -2,17 +2,26 @@
 
 During this lab you will assemble and "bring up" a PCB.  This is practice for assembling and bringing up your quadcopter.
 
-The default lab has you assemble a simple Arduino-compatible board based on the microcontroller we are using for this course.  It's called the Bare Bones Board (BBB).
+You will assemble a simple Arduino-compatible board based on the microcontroller we are using for this course.  It's called the Bare Bones Board (BBB).
 
-Alternately, you can build a board for your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.  This will at least double the time spent assembling the board, so keep that in mind when deciding when to start assembling.
-
-
+These instructions apply to assembling your quadcopter and to building your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.
 
 ## Preparation
 
 Assembling a board (especially your first one) can take a couple hours.  Also, the working time for the solder paste is limited, so you need to work reasonably quickly once you start.
 
-Begin by making sure you have everything you need. 
+Begin by making sure you have everything you need.  For the BBB and quadcopter assemmblies we will, have everything you need set up ahead of time.
+
+## Safety
+
+The solder paste we use (like all solder paste) is potentially toxic (although it's lead-free).  The material safety datasheet is here: [MSDS](../../Datasheets/NP560_SDS_EN_(V3)US.pdf).
+
+You must take the following precautions:
+
+1.  You must wear eye protection while applying the paste or using a soldering iron.  The makerspace has glasses across the hall from our classroom.  Your own glasses are fine.
+2.  You must wear gloves while applying paste and placing parts.
+3.  You must not eat or drink while working with solder paste.  During assembly labs, no food or drink is allowed in the classroom.
+4.  You must wash your hands before eating or drinking after the lab.
 
 ## Applying Solder Paste
 
@@ -23,19 +32,20 @@ Begin by making sure you have everything you need.
 3. 4 scrap PCBs the same thickness as your board. 
 4. 1 large putty knife
 5. 1 small putty knife
-6. Butcher paper
+6. Butcher or craft paper
 7. Gloves
 8. A magnifier
 9. Alcohol in a pump dispenser
 10. Kimwipes
 11. Compressed air
 12. Solder paste
+13. Gloves
 
 ### Preparing Your Space and Aligning Your Stencil
 
 You need a large, clear space to apply solder paste.
 
-1. It can be messy, so cover everything with a big sheet of paper.
+1. It can be messy, so cover everything with a big sheet of butcher or craft paper.
 2. Tape down your scrap PCBs so they will hold your board still.  The PCB should be oriented so the stencil aligns with it in "portrait" orienation (tall rather than wide).
 3. Align your stencil with your board so the wholes line up perfectly with the pads. This must be very precise.
 4. Tape down the right edge of your stencil so you can easily lift it on and off your board like a page of a book.  The tape should be on the right, and there should be clear space for the stencil to lay flat.  
@@ -43,19 +53,24 @@ You need a large, clear space to apply solder paste.
 6. Verify your alignment with course staff.
 
 
-
 ### Apply Paste
 
 1. Use the narrow putty knife to apply a thin (1cm) bead of paste to the edge of the wide putty knife.
-2. Hold the wide putty knife at a 45-degree angle and drag it across the stencil, forcing the paste through the holes.  Press pretty hard and move smoothly.  Make sure you align the knife so it will pass over all the pads on the board.  You can only make one pass. 
-3. Carefully and gently and in one motion, lift up the stencil and fold it back.
-4. Examine the paste pattern with your magnifier.  Look out for
+2. Hold the wide putty knife at a 45-degree angle and drag it across the stencil, using firm (but not hard), constant pressure to apply a thin layer of paste across across the stencil.  Press just firmly enough that there is a thin layer of paste left on the stencil (see photo).  If you push too hard, it will force paste through and slightly under the stencil, which is not what you want.  Move smoothly.  Do not stop.  Make sure you align the knife so it will pass over all the pads on the board.  You can only make one pass.
+3. Turn the squeegee over and scrape the extra paste off the stencil push pushing (not dragging) the squeegee.  There should be very little paste left.  Again, you can only make one pass.
+4. Smoothly and in one motion lift up the stencil and fold it back.  Lifting it up and accidentally dropping it back onto the board is means redoing it.
+5. Examine the paste pattern with your magnifier.  Look out for
    * Pads with missing paste
-   * indistict or touching paste blobs (esp. on the IMU and microcontrollers)
-5. Check it with course staff and point out any problems you spotted.
-6. If it looks good, carefully remove your board.
-7. If something is wrong, you'll need to remove all the paste using chemwipes and alcohol and start again.
-8. You need to be very selective about paste application.  The solder needs to be very crisply defined.  If it doesn't look good, you'll have to redo it.
+   * Indistict or touching -- even slightly -- paste blobs (esp. on the IMU, microcontroller, and balun).
+6. Check it with course staff and point out any problems you spotted.
+7. If it looks good, carefully remove your board.
+8. If something is wrong, you'll need to remove all the paste using Kimwipes and alcohol and start again.  You can do this many times.
+9. You need to be very exacting about paste application.  The solder needs to be very crisply defined.  If it doesn't look good, you'll have to redo it.  Redoing it is not hard, and good practice, so there's no point in settling for sub-standard paste application.
+
+
+**A Stencil**
+
+![Stencil](images/stencil.jpg)
 
 **Poor Stencil Alignment (some holes are dark)**
 
@@ -81,7 +96,7 @@ You need a large, clear space to apply solder paste.
 ### Cleanup
 
 1. If someone else is going to use putty knifes immediately, you can leave them.
-2. If not (or in doubt), clean them my scraping the paste back into its container and wiping them with alchol and chemwipes.
+2. If not (or in doubt), clean them by scraping large blobs of paste back into its container and wiping them with alcohol and kimwipes.
 3. Wipe up any stray solder paste on the table, *both* sides of the stencil.
 4. Blow any remaining solder paste out of the stencil holes with compressed air.
 
@@ -99,38 +114,36 @@ You need a large, clear space to apply solder paste.
 You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the breakout board in 10 minutes.  You should not take more than an hour.  Getting organized will help you meet this goal.
 
 1. Get _everything_ you need together at once.
+2. Collect all the parts you will need (see below).  For the BBB assembly, you will need 1 packet of each type of part.  They will be laid out for you.
 2. Have a clean work area (preferably with a white surface).  The parts are _tiny_.  The less stuff there is around, the less likely you are to lose anything.
-3. Make sure there are no strong winds blowing (drafts, open doors)
-4. Make sure you are unlikely to be bumped.
-5. Allow adequate time.  
+3. Make sure you are unlikely to be bumped.
+4. Allow adequate time.  
     * Paste has a limited working time, and the course staff are not around forever.    
-    * Assembly will take ~1 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget ~30min.  
-    * So, you shouldn't start assembly unless you have _at least_ 1:45 left in class.
-5. Eat something before hand.
+    * For the BBB, Assembly will take ~0.5 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget ~30min.  
+    * So, you shouldn't start assembly unless you have _at least_ 1 hour left in class.
+    * For quadcopter or the remote, allocate 2 hours.
+5. Eat something before hand.  You need to patient and steady.
+
+Most of the parts come on paper or plastic tape.  We have cut the tape to the right length for you and labeled them.  There are part portions available in the size required for the BBB and for the typical number of parts needed for your quadcopters.  This means you should take 1 piece of tape for each type of part on your board.
+
+The throughhole parts are mostly loose.  Take just as many as you need.
 
 ### Placing Parts
 
-1.  Dump the parts out one at a time on your work surface.
-3.  If a part is upside-down, picking it up and dropping it is a good (if probablistc) way to turn it over.
-2.  Once the part is on the board, move it as little as possible.  Moving the parts smears the paste.  The parts will self-align a bit during reflow, so it doesn't have to be perfect.
-4.  Don't pick up the board.  You more likely to bump a part if you pick up the board.
-5.  Arrange your pile of parts at your board so you don't have to reach over the board, otherwise, you're more likely to bump parts.
-6.  Don't mess up.  If something goes significantly wrong, you have to start again.
-7.  Do one type of part at a time (e.g., 100Ohm resistors).  You have exactly the right number of them, so when they are gone, you're done.
-8.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board. 
-9.  You are to almost drop the parts onto the board.  Do not press them down.  It'll displace the solder paste.
-10.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
-
-**A Stencil**
-
-![Stencil](images/stencil.jpg)
-
-**Good Cap Placement**
-
-![Good cap placement](images/good_cap_placement.jpg)
+1.  Dump the parts from one a packet out on your work surface.
+2.  If a part is upside-down, picking it up and dropping it is a good (if probablistc) way to turn it over.
+3.  Place the part gently and as precisely as you can.
+4.  Once the part is on the board, move it as little as possible.  Moving the parts smears the paste.  The parts will self-align a bit during reflow, so it doesn't have to be perfect.
+5.  Don't pick up the board.  You more likely to bump a part if you pick up the board.
+6.  Arrange your pile of parts at your board so you don't have to reach over the board, otherwise, you're more likely to bump parts.
+7.  Don't mess up.  If something goes significantly wrong, you have to start again.
+8.  Do one type of part at a time (e.g., 1uF caps).  For the BBB, you should have exactly the right number of them, so when they are gone, you're done.
+9.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board.   You can also say `show C*` to see where all the caps are.
+10.  Place the parts very gently onto the board.  It should almost be like you are dropping them.  Do not press them down.  It'll displace the solder paste.
+11.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
 
 
-### Notes Particular Parts
+### Notes on Particular Parts
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
 
@@ -150,7 +163,11 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 1.  The small caps are non-polarized, so direction doesn't matter. ![Capacitors](images/capacitors.jpg)
 
 2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
-3.  Align these carefully.  If you get it wrong your board will look ugly.
+3.  Align the big caps carefully.  If you get it wrong your board will look ugly.
+
+**Good Cap Placement**
+
+![Good cap placement](images/good_cap_placement.jpg)
 
 #### MOSFETs (Quad Only)
 
@@ -210,7 +227,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. ![MCU orientation](images/imu_mcu_orientation.jpg)
 
 3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
-4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  the need to be aligned with the patches of solder paste on the board.
+4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  The pins on the package need to be aligned with the patches of solder paste on the board.
 
 **Good MCU Placement**
 

@@ -1,19 +1,11 @@
 # Part 1: Creating the Schematic in Eagle
 
 
-## This tutorial will take you through the steps of creating a schematic, creating a board, creating new devices, and preparing the board for manufacturing. It's broken into four parts.
-Now, we are going to (almost) build the same circuit on a PCB. There are couple things that will be different about this design.
+This tutorial will take you through the steps of creating a schematic, creating a board, creating new devices, and preparing the board for manufacturing. It's broken into four parts.
 
-1. We will have the option of using "surface mount" parts rather than the "through hole" parts we were forced to use with the bread board.
-2. Rather than just putting it together a bit a time, we will need to design the circuit and then build it.
+We are going to design a PCB to with a light controlled by a button.
 
-Here's what you will need:
-
-1. The electrical datasheets you used in the breadboard section of the tutorial.
-2. The `Lab01.lbr` file available in the [Lab 1 repo](https://www.google.com/url?q=https%3A%2F%2Fclassroom.github.com%2Fassignment-invitations%2F05a6bde38fa4241f0019fd08db4d1e99&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHcxQk8qcHy6V96okJCUYvXzNH9Dw).
-
-## Configuring Eagle
-First, we need to tell Eagle where to find some files we will be using. In particular, we need to tell it where to find the libraries, CAM files, and design rule files we will be using in this class. This video shows how to configure Eagle correctly (the name of the repo has changed since I made this video):
+You will need the `Lab01.lbr` file available in the lab starter repo.
 
 
 ## Making the Schematic

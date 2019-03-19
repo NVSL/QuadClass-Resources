@@ -14,7 +14,6 @@ Check course schedule for the due dates.
 
 1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz.
 2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your lbr/ directory for this lab).
-3. The design files for the remote: https://github.com/NVSL/QuadClass-Remote.
 
 ## Preliminaries
 
@@ -37,10 +36,8 @@ By default, Eagle comes configured with a bunch of libraries that can make it ha
 * Libraries: `<path to>/quadcopter-<gitusername>/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
-* User Language Programs: `<path to>/QuadClass-Resources/Eagle/ULP`
-If you don’t want to replace the defaults, you should at least append these to directories already there.
 
-Sometimes this does not cause the libraries to disappear from the “add part” dialogs. To make them go away, select `Options->Library Manager`, then select all the libraries you don’t want to use and click ‘remove’. There should just be handful left (e.g., Lab01.lbr, Lab01_smd.lbr, custom.lbr,…).
+Sometimes this does not cause the default set of libraries to disappear from the “add part” dialogs. To make them go away, select `Options->Library Manager`, then select all the libraries you don’t want to use and click ‘remove’. There should just be handful left (e.g., Lab01.lbr, Lab01_smd.lbr, custom.lbr,…).
 
 ### Making Sure Your Repo is Up-to-Date
 
@@ -166,7 +163,7 @@ You can also break up the debug header into smaller headers. For instance, you c
 
 You can model the breakout header symbol/device/package on the 2-pin jumper we use to connect the battery to `VBAT`. Put the new parts in `custom.lbr`.
 
-Debugging headers can be a little dangerous, because it can be easy to accidently create a short circuit between two of the pins when you are debugging.  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines.
+Debugging headers can be a little dangerous, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging.  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines.
 
 ### Some LEDs
 
@@ -179,9 +176,7 @@ You should also add some LEDs to your design. There are several reasons to add L
 There are several options for powering and/or controlling LEDs:
 
 1. You can connect them directly to battery power and battery ground. In this case, you can't turn them off, but they can be very bright.
-
 2. You can connect them to pins on the micro controller. If you use a digital pin, you can turn them on and off. If you use a PWM pin, you can control their brightness. In this case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
-
 3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin. Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine. If you do this, you can drive multiple LEDs with the same transistor and pin.
 
 Regardless of which approach you take, you will need to pick out your LED. To do this, go to http://digikey.com. And enter LED into the search field. You'll see a bunch of results. Likely candidates for smaller LEDs are to be found under "LED Indication - Discrete," while brighter LEDs can be found under "LED Lighting - White", "LED Lighting - Color".

@@ -26,7 +26,7 @@ To do this, connect the board to the AVR ISP programmer and the USB cable to you
 
 ![ISP polarity](images/ISP_polarity.jpg)
 
-Firs, check if your compute can communicate with the board.  For this (and the rest of the flashing process) we are going to use a command line tool called `avrdude`.  It can do tons of things to microcontrollers and is what Arduino uses internally.
+First, check if your compute can communicate with the board.  For this (and the rest of the flashing process) we are going to use a command line tool called `avrdude`.  It can do tons of things to microcontrollers and is what Arduino uses internally.
 
 Open your command line and type the following (it can take a few seconds to run):
 

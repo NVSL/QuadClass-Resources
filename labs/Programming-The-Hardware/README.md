@@ -169,7 +169,9 @@ Your first task to "bring up" your remote.  This means verifying that all of it'
 
 The `Remote` library provides a call-back-based mechanism for detecting when the user presses the buttons.  To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it, open the serial monitor, push some buttons, and see what happens.
 
-Then read the code to understand how it works.
+There is also a simple 'is_pressed()' function that you can use to tell if a given button is currently pressed.  You should pass the `*_PIN` constant for the button you want to test.  The `*_PIN` macros are in `quad-remote.h`.
+
+Read the code to understand how it works.
 
 ### Reading the Knob
 

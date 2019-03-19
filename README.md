@@ -45,7 +45,7 @@ There are 11 labs divided into four sections.  Deadlines are on the course homep
 
 1. [Introduction To Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle)
 2. [Building Parts In Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-Parts-In-Eagle)
-3. [Building The Quadcopter Schematic.md](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-The-Quadcopter-Schematic)
+3. [Building The Quadcopter Schematic](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-The-Quadcopter-Schematic)
 4. [Laying Out The Board](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Laying-Out-The-Board)
 5. [Manufacturing The Board](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Manufacturing-The-Board)
 
