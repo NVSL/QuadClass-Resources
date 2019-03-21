@@ -6,6 +6,10 @@ You will assemble a simple Arduino-compatible board based on the microcontroller
 
 These instructions apply to assembling your quadcopter and to building your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.
 
+## Assembly Drawings
+
+The assembly drawings for the BBB in [BBB-assembly.md](BBB-assembly.md).
+
 ## Preparation
 
 Assembling a board (especially your first one) can take a couple hours.  Also, the working time for the solder paste is limited, so you need to work reasonably quickly once you start.
