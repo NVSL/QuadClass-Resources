@@ -10,6 +10,11 @@ all:  $(TESTS) $(BOMS)
 
 test: $(TESTS)
 
+.PHONY: hooks
+hooks:
+	git config core.hooksPath $(RESOURCES_ROOT)/githooks/
+
+
 .PHONY: %.test
 %.test: %.brd %.sch $(LBRS)
 	$(EAGLINT) --files $*.brd $*.sch $(LBRS)

@@ -149,6 +149,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be 0.85mm wide.  They will extend slightly out from under the package.
+* Make sure you SMDs match the maximum width of the pads on the part.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
 * The symbol for the IMU should have one VCC pin, one VCCIO pin, and one GND pin. It should not have a RES pin. For instance, in the device for for the IMU, you should connect all of the VCC SMDs to the single VCC pin in the symbol.
