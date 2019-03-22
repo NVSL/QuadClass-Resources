@@ -20,6 +20,7 @@ hooks:
 	$(EAGLINT) --files $*.brd $*.sch $(LBRS)
 
 CAM_FILE=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-4layer-values-eagle9.cam
+STENCIL_CAM_FILE=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-stencil.cam
 EAGLE_EXE=/Applications/EAGLE-9.3.0/eagle.app/Contents/MacOS/eagle 
 
 .PHONY: cam
@@ -29,6 +30,11 @@ cam: $(DESIGN).cam
 	$(EAGLE_EXE) -N -X -dCAMJOB -j$(CAM_FILE) -o$@ $<
 	mv $@/$@/*.ncd $@/ #unclear why it puts the ncd file here.
 
+%.stencil: %.brd
+	mkdir -p $@
+	$(EAGLE_EXE) -N -X -dCAMJOB -j$(STENCIL_CAM_FILE) -o$@ $<
+	rm -rf $@/$@
+
 %.assembly-bom.html: %.sch
 	$(EAGLE_BOM) --sch $^ --mode smds --format html  --out $@
 
@@ -37,10 +43,6 @@ cam: $(DESIGN).cam
 
 %.cam.zip: %.cam
 	(cd $<; zip $(abspath $@) *.{cmp,crm,l1,l2,plc,pls,sol,stc,sts,ncd})
-
-%.stencil: %.cam
-	cp -r $< $@
-	(cd $@; ls | grep -v .crm | xargs rm -fr)
 
 %.stencil.zip: %.stencil
 	(cd $<; zip $(abspath $@) *.crm)
