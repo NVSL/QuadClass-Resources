@@ -54,6 +54,14 @@ Below are the assembly drawings for the BBB.  For each part, the locations of th
 
 ![images/bbb-mcu.png](images/bbb-mcu.png)
 
+## FTDI Header
+
 ![images/bbb-FTDI.png](images/bbb-FTDI.png)
+
+## SPI Header
+
 ![images/bbb-SPI.png](images/bbb-SPI.png)
+
+## Battery Terminal
+
 ![images/bbb-battery.png](images/bbb-battery.png)
