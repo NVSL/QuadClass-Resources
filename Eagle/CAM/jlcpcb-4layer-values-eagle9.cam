@@ -41,21 +41,6 @@
             "output_type": "gerber",
             "outputs": [
                 {
-                    "board_outline": false,
-                    "config": {
-                        "description": "Stencil",
-                        "file_function": "Other"
-                    },
-                    "filename_format": "%N.crm",
-                    "layers": [
-                        31
-                    ],
-                    "milling": false,
-                    "name": "Stencil",
-                    "polarity": "positive",
-                    "type": "gerber_layer"
-                },
-                {
                     "advanced_options": {
                         "mirror": false,
                         "offset_x": 0,
@@ -255,7 +240,7 @@
             ]
         }
     ],
-    "timestamp": "2019-01-07T20:48:15",
+    "timestamp": "2019-03-21T23:31:30",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
