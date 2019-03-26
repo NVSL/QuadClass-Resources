@@ -8,7 +8,7 @@ These instructions apply to assembling your quadcopter and to building your own 
 
 ## Assembly Drawings
 
-The assembly drawings for the BBB in [BBB-assembly.md](BBB-assembly.md).
+The assembly drawings for the BBB are in [BBB-Assembly.md](BBB-Assembly.md).
 
 ## Preparation
 
@@ -146,6 +146,13 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 10.  Place the parts very gently onto the board.  It should almost be like you are dropping them.  Do not press them down.  It'll displace the solder paste.
 11.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
 
+### BBB Part List
+
+| Part              | Qty | Picture                                            |
+|-------------------|-----|----------------------------------------------------|
+| Voltage regulator | 1   | ![Voltage Regulator](images/voltage-regulator.jpg) |
+
+ 
 
 ### Notes on Particular Parts
 
@@ -251,7 +258,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 
 1.  The surface-mount 6-pin header is not hard to place, but it sticks up and is easy to bump, so do it last.
 
-#### USB Recipcal (Remote Only)
+#### USB Receptical (Remote Only)
 
 1.  The key point of alignment are the pins on the back and 5 pads on the board.
 2.  Check it with the magnifier.
