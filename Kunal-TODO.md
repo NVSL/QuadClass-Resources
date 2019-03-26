@@ -9,9 +9,15 @@
 
 ## Due April 3th
 
-1. Make labels for each component type with space to write qty (Look in `Part Labels`)
+1. Make labels for each component type with space to write qty (Look in `Part Labels`).  We only need part labels for the parts that very hard to distinguish -- LEDs, resistors, and capacitors.  For easily distinguised components (E.g., the power switch and the button, the voltage regulator, crystal, MCU, and balun) that come on tape, you can just cut them into the appropriate lengths.  The same goes for the throughhole parts (headers, and battery terminals.)  Note that we not populating the 14-pin headers on the BBB. 
+
 2. Prepare part strips for BBB assembly.  Enough for 40 boards.
-3. Merge `BBB-assembly.md` into `README.md` so that each type of part has the assembly drawings for those parts on the BBB.
+
+3. Merge `BBB-assembly.md` into `README.md` so that each type of part has the assembly drawings for those parts on the BBB.  THe high-level goal is to convert `README.md` from a somewhate general document about assembling boards to a document that focuses primarily on assembly the BBB.  So the assembly drawings, part list, etc. should all be about BBB parts.  
+
+4. Move the sections of `REDAME.md` that labeled "Remote only" or "quadcopter only" to the bottom of the file. 
+
+5. Create a nice-looking (as much as that's possible in markdown) table in `README.md` for the assembly lab that lists all the parts they will need to pickup.    I"ve gotten this started in `README.md` look for "BBB Part List".  Pull images from further down in the document as needed.   The goal of these images is to help them collect their parts, so the parts need to be readily identifiable.  Don't worry about images for the caps, LEDs, and resistors, they will be labeled (see #1 above).
 
 ## Due April 8th
 
