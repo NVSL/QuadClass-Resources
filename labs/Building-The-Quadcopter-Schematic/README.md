@@ -130,7 +130,11 @@ The power supply for quadcopter needs to contain the following parts:
 
 1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SCREW-TERMINAL` variant.
 2. A two-pin `jumper` to disconnect the positive terminal of the battery from `VBAT`.  Use the `-MALE` variant of `﻿HEADER-0.1IN-2POS` in `quadparts_prebuilt.lbr`.  
-3. A LP3985-series 3.3V regulator (see device `﻿TPS73633-DBVT`).  You can find it's datasheet by looking it up on Digikey.
+3. A LP3985-series 3.3V regulator (see device `﻿TPS73633-DBVT`).  
+
+Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.  
+
+You'll note that the output of the voltage regulator has decoupling capacitor on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  To guard against this, add an additional 220uF decoupling cap (the same one we use for motors) to the output of the voltage regulator.
 
 To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines.  The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines. For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
@@ -144,7 +148,11 @@ It would also be nice if you could program and debug your microcontroller withou
 
 Connect `VBAT` to `VIN` via a diode oriented to let current flow the battery to `VIN` but not the other direction.  This will protect the battery from the 5V that some FTDI and ISP programmers provide, while letting the battery drive the regulator when no programmer is attached. 
 
-### Breakout Header
+### Breakout Headers
+
+You will face a couple challenges in bringing up your board and it's good to plan for them now.  Do this by adding two debugging headers to your design.  "Headers" are exposed connections to signals on your board.  You can attach pins or sockets to them as needed to help in debugging.
+
+#### Signal Breakouts
 
 When your quadcopter comes back from manufacturing and you assemble it, some debugging may be necessary and that may include the need to measure what's going on in different parts of the circuit. To make this easier, I suggest including a debugging header in your design.
 
@@ -157,6 +165,7 @@ A debugging header is a set of pins that connects key signals to pins that you c
 * The control lines to the four motors
 * `SDA`
 * `SCL`
+
 To create the header, you'll need a package, symbol, and device for an 10-pin (if you use the list above) header. Just connect these signals to the pins. You'll label them on the PCB when you do layout.
 
 You can also break up the debug header into smaller headers. For instance, you could put a 3 pin header next to each motor with `VBAT`, `BAT_GND`, and the control line. It's always a good idea to include a ground on each debug header.
@@ -164,6 +173,16 @@ You can also break up the debug header into smaller headers. For instance, you c
 You can model the breakout header symbol/device/package on the 2-pin jumper we use to connect the battery to `VBAT`. Put the new parts in `custom.lbr`.
 
 Debugging headers can be a little dangerous, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging.  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines.
+
+#### IMU Rescue Header
+
+Soldering the IMU is hard enough that it causes a fair number of
+quadcopters to fail.  To guard against this, add a header that will
+allow you to connect this berakout board
+(https://www.adafruit.com/product/3387) to your quadcopter.  You need
+four pins: `3V3`, `GND`, `SCL`, and `SCA`, which are conveniently
+located together on the breakout board.  Use the 4-pin female header
+in `quadparts_prebuilt.lbr`.
 
 ### Some LEDs
 

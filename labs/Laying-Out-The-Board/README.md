@@ -85,7 +85,7 @@ Your team may want a logo. Design it and then create a package in Eagle that con
 
 To power your quadcopter, you need provide ample current to the motors and clean 3.3V power to the microcontroller and IMU. The vast, vast majority of bugs I encounter in PCBs like you quadcopter have to do with the power supply. The power supply for the quadcopter is complicated because we have two different power systems that have different requirements: The motors need maximum power — high current and high voltage — while the IMU and microcontroller, need a clean, regulated, consistent voltage and don’t requirement current.
 
-To do this you will need to carefully layout the battery, the voltage regulator, the jumper that connects, them and the connection between `BAT_GND` and GND. You will also need to create a set of “pours” to efficiently regulated and unregulated power to the components that need it.
+To do this you will need to carefully layout the battery, the voltage regulator, the jumper that connects, them and the connection between `BAT_GND` and `GND`. You will also need to create a set of “pours” to efficiently regulated and unregulated power to the components that need it.
 
 You have already built your schematic to provide separate power and ground nets to these two sets of components. Now we are going to exploit that separation to physically realize two, mostly separate power distribution systems that will meet these needs.
 
@@ -96,7 +96,7 @@ For the 3.3V power supply (`3V3` and `GND`) here are the key considerations:
 1. We need to isolate them from the high-voltage supply, both physically and electrically.
 2. We need to provide adequate “decoupling capacitance” to minimize noise due to digital switching.
 3. We need to provide low-resistance path between the component and `3V3` and the components and `GND`.
-4. Correctly layout the voltage regulator.
+4. Correctly layout the voltage regulator according to the guidance in the datasheet.
 
 For the high-current supply (`VBAT` and `BAT_GND`), here are the key considerations:
 
@@ -189,6 +189,8 @@ There are three reasons that these components need to be close together:
 
 Section 10 of the voltage regulator data sheet has detailed instruction for layout your power supply. Follow them as closely as possible. Your 0805 caps are not quite small enough to do exactly what they request, but you can come close.
 
+Be sure that the decoupling capacitors on the output of the voltage regulator are close to the regulator, close to each other, and connect directly to the `3V3` pour in layer 15 and all three `GND` pours (layers 1, 2, and 16) through vias situated close to the capacitor's SMDs. 
+
 Simultaneously satisfying all these constraints will require careful thought and planning. In particular, these constraint will affect how you layout the power and ground pours.
 
 The traces from the battery to the jumper should be in your high-current net class (see below) as should `BAT_GND` and `VBAT`. 
@@ -247,6 +249,10 @@ The IMU datasheet (`datasheets/LSM9DS1.pdf`) and a technical note (`datasheets/L
 You should label each pin of your breakout header so you’ll know which pin is connected to which signal. The labels should go in `tPlace`.
 
 You should also think about where to put the breakout header. Near the edge of the board is a good choice, since it will provide easy access to the pins. it’s not a bad idea to put silkscreen on the top and bottom for the breakout header.
+
+### Laying out the IMU Rescue Header
+
+Position the IMU rescue header so that when you attach the breakout board (https://www.adafruit.com/product/3387), the IMU on the breakout board will roughly align with the center of your quadcopter.  It doesn't have to be perfect, but close is good.
 
 ### Routing the Board
 
