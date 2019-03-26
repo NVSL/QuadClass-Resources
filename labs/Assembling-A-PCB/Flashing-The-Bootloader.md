@@ -75,7 +75,7 @@ The last command will fail due to a big in `avrdude`. You’ll see something lik
 ![AVRDude Spurious Error](images/avrdude_spurious_error.jpg)
 
 This is a known issue and is because the `USBTinyISP` protocol that we are using with the “[Pocket AVR Programmer](https://www.google.com/url?q=https%3A%2F%2Fwww.sparkfun.com%2Fproducts%2F9825&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNE9r-L1FIzqw8_vdyJFJjEe-tV_Ew)" is incapable of addressing memory addresses in excess of 64 KB. In our case the atmega128RFA1 is of 128K.
-“… Someone in the code put uint_16 for the address so it overflows…”
+“… Someone in the code put uint_16 for the address so it overflows…” (Ignore the error!)
 
 ## Programming The Board With Arduino
 
