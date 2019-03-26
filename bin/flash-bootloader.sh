@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 avrdude -c usbtiny -p atmega128rfa1
 sleep 1;  
