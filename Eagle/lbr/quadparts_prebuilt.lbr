@@ -3217,7 +3217,7 @@
 <circle x="3" y="3" radius="2" width="0.127" layer="1"/>
 <circle x="3" y="3" radius="2.236065625" width="0.5" layer="41"/>
 </package>
-<package name="HDRVR3W80P254_1X3_812X254X850B" urn="urn:adsk.eagle:footprint:10071296/1">
+<package name="HDRVR3W80P254_1X3_812X254X850B" urn="urn:adsk.eagle:footprint:10071296/1" locally_modified="yes">
 <description>Single-row, 3-pin Receptacle Header (Female) Straight, 2.54 mm (0.10 in) col pitch, 8.50 mm insulator length, 8.12 X 2.54 X 8.50 mm body
 &lt;p&gt;Single-row (1X3), 3-pin Receptacle Header (Female) Straight package with 2.54 mm (0.10 in) col pitch, 0.80 mm lead width, 3.20 mm tail length and 8.50 mm insulator length with overall size 8.12 X 2.54 X 8.50 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
 <circle x="0" y="1.774" radius="0.25" width="0" layer="21"/>
@@ -3232,8 +3232,11 @@
 <pad name="1" x="0" y="0" drill="1.3314" diameter="1.9971"/>
 <pad name="2" x="2.54" y="0" drill="1.3314" diameter="1.9971"/>
 <pad name="3" x="5.08" y="0" drill="1.3314" diameter="1.9971"/>
-<text x="0" y="2.659" size="1.27" layer="25" align="bottom-center">&gt;NAME</text>
-<text x="0" y="-1.905" size="1.27" layer="27" align="top-center">&gt;VALUE</text>
+<text x="0" y="2.659" size="0.9" layer="25" font="vector" align="center">&gt;NAME</text>
+<wire x1="-2.5" y1="2" x2="-2.5" y2="-2" width="0.127" layer="39"/>
+<wire x1="-2.5" y1="-2" x2="7.5" y2="-2" width="0.127" layer="39"/>
+<wire x1="7.5" y1="-2" x2="7.5" y2="2" width="0.127" layer="39"/>
+<wire x1="7.5" y1="2" x2="-2.5" y2="2" width="0.127" layer="39"/>
 </package>
 <package name="HDRVR4W80P254_1X4_1066X254X850B" urn="urn:adsk.eagle:footprint:10071420/1" locally_modified="yes">
 <description>Single-row, 4-pin Receptacle Header (Female) Straight, 2.54 mm (0.10 in) col pitch, 8.50 mm insulator length, 10.66 X 2.54 X 8.50 mm body
@@ -3259,7 +3262,7 @@
 </package>
 </packages>
 <packages3d>
-<package3d name="HDRVR3W80P254_1X3_812X254X850B" urn="urn:adsk.eagle:package:10071293/1" type="model">
+<package3d name="HDRVR3W80P254_1X3_812X254X850B" urn="urn:adsk.eagle:package:10071293/1" locally_modified="yes" type="model">
 <description>Single-row, 3-pin Receptacle Header (Female) Straight, 2.54 mm (0.10 in) col pitch, 8.50 mm insulator length, 8.12 X 2.54 X 8.50 mm body
 &lt;p&gt;Single-row (1X3), 3-pin Receptacle Header (Female) Straight package with 2.54 mm (0.10 in) col pitch, 0.80 mm lead width, 3.20 mm tail length and 8.50 mm insulator length with overall size 8.12 X 2.54 X 8.50 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
 <packageinstances>
