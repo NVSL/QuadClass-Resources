@@ -18,11 +18,17 @@ Then apply the probes to the test points on or breakout headers.  If you hear a 
     
 ## Sanity Check (Device Signature Verification)
 
-The in-system programmer (ISP) let's us program the microcontroller while it is installed on a PCB.  The first step is to establish communication between your board and the ISP programmer. 
+The in-system programmer (ISP) let's us program the microcontroller while it is installed on a PCB.  The first step is to connect the ISP programmer to the board.  Here's picture of the programmer:
 
 ![AVR ISP Board](images/ISP_programmer.jpg)
 
-To do this, connect the board to the AVR ISP programmer and the USB cable to your computer.  The 6-pin connector attaches the 6-pin header on your board.  The cable should point toward the three dashed lines on the side of the header:
+Connect the board to the AVR ISP programmer and the USB cable to your computer.  The 6-pin connector attaches the 6-pin header on your board.  The cable should point toward the three dashed lines on the side of the header:
+
+![ISP polarity](images/ISP_polarity.jpg)
+
+If the lights on the programmer go out, you have an electrical problem.  Look for solder bridges, then talk to the course staff.
+
+The next step is to establish communication between your board and the ISP programmer. 
 
 ![ISP polarity](images/ISP_polarity.jpg)
 
@@ -79,7 +85,7 @@ This is a known issue and is because the `USBTinyISP` protocol that we are using
 
 ## Programming The Board With Arduino
 
-Open up the Arduino IDE and make sure it's configured properly.  The run the blink test on the board.  Your PCB should have a blinking light!  
+Open up the Arduino IDE and make sure it's configured properly (See notes in "Programmin The Hardware Lab").  The run the blink test on the board.  Your PCB should have a blinking light!  
 
 Your board is not ready for use!
 

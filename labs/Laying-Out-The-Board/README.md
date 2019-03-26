@@ -313,7 +313,7 @@ Below is a check list of items you should consider during your design review. Th
 
 * Headers
 
-	* Are the two FTDI headers oriented so the silkscreen is labels for the pins are on the board and the pins will protrude off the board?
+	* Is the FTDI header oriented so the silkscreen is labels for the pins are on the board and the pins will protrude off the board?
 
 * Microcontroller
 
@@ -348,8 +348,6 @@ Below is a check list of items you should consider during your design review. Th
 
 	* Does DRC check pass without errors?
 	* If DRC doesn’t pass with no errors, does the team have good explanations for why the errors are ok?
-	* Does DFM check pass with no show stoppers?
-	* Does Eagle Lint pass?
 
 * Gerber Files
 
@@ -359,12 +357,9 @@ Below is a check list of items you should consider during your design review. Th
 	* Are there any elements that should be in the silkscreen that show up in metal layers?
 	* Are there any elements that should be in the metal layers but that show up on the silkscreen?
 	* Does the board outline match what was draw in the brd file?
-	* Does FreeDFM pass?
 
-## 
 
 ## Turn in Your Work
-### 
 
 ### Rubric Part A
 “Perfect” score: 10
