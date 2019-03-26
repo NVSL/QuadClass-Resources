@@ -7,6 +7,14 @@
 
 2. Do Lab 1 and check that git@github.com:NVSL/QuadClass-Eagle-Intro-Solution.git is a solution that matches the lab.  In particular, cam generation has changed significantly.  Have them commit a zip file of their cam file.  Run the solution to eaglint to make sure. 
 
+3. Follow instructions in QuadClass-Quadcopter-Solution/hardware/README.md to start fixing FCBs.
+
+4. Finish throughhole soldering on remotes.
+
+5. Test remotes (QuadClass-Quadcopter-Solution/hardware/README.md)
+
+6. 
+
 ## Due April 3th
 
 1. Make labels for each component type with space to write qty (Look in `Part Labels`).  We only need part labels for the parts that very hard to distinguish -- LEDs, resistors, and capacitors.  For easily distinguised components (E.g., the power switch and the button, the voltage regulator, crystal, MCU, and balun) that come on tape, you can just cut them into the appropriate lengths.  The same goes for the throughhole parts (headers, and battery terminals.)  Note that we not populating the 14-pin headers on the BBB. 
