@@ -44,15 +44,15 @@ Select the “Add” tool again, and choose the “BUTTON-TACTILE-SQUARE” devi
 Next, we’ll add the LED. Choose the “LED5MM” device. Place the LED to the left of the power jack.
 Finally, add the resistor. Use the device “RESISTORTH-1/4W-CARBON.”
 
-![](images/schematic6.png)
+![](images/schematic6_new.png)
 
 Unfortunately, the schematic symbol for the switch is a bit sideways. To fix this, select the “rotate” tool from the palette:
 
-![](images/schematic7.png)
+![](images/schematic7_new.png)
 
 And click the symbol for the switch a few times. You can do the same for the LED if you want it horizontal:
 
-![](images/schematic8.png)
+![](images/schematic8_new.png)
 
 
 ## Connecting the Parts
