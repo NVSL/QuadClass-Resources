@@ -21,21 +21,21 @@ We need to load the Eagle Library that describes the components we are going to 
 ## Adding the Parts
 Now you are ready to build your schematic. Start by selecting the “Add” tool from the tool palette at left:
 
-![](images/schematic2.png)
+![](images/schematic2_new.png)
 
 This will open up the library browser:
 
-![](images/schematic3.png)
+![](images/schematic3_new.png)
 
 Click on the triangle next to “Lab01” to expand it. You’ll see four “devices” inside it. Go read [this page](http://goo.gl/HJtIzp) of the [Adafruit Eagle Parts Tutorial](http://goo.gl/GcM04V) to understand the difference between a schematic “symbol”, a “package”, and a “device.”
 
 A schematic should have a “frame” around it to contain the size. The frame also include space for documentation about the version and author. To add the frame select “FRAME_B_L” and click “OK”. You can then place your frame
 
-![](images/schematic4.png)
+![](images/schematic4_new.png)
 
 Select “2.1MMJACKTHM” and press “OK.” You’ll return to the schematic editor with the schematic symbol for the power jack attached to your mouse. Click to put it down somewhere:
 
-![](images/schematic5.png)
+![](images/schematic5_new.png)
 
 Save your schematic, so you don’t lose your work. Call the file “throughhole.sch”.
 
