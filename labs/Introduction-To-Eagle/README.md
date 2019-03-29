@@ -49,7 +49,7 @@ Download and install Eagle Premium. You may need to purchase a one month subscri
 
 ### Make Eagle Easier to Use
 
-By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting "Window->Control Panel" and the selecting "Options->Directories". I suggest the following settings:
+By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting "Options->Directories". I suggest the following settings:
 
 * Libraries: `<path to>/eagle-intro-<gitusername>/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
