@@ -58,21 +58,21 @@ And click the symbol for the switch a few times. You can do the same for the LED
 ## Connecting the Parts
 Next, we need to wire up the components. Let’s start by connecting the resistor to the switch. Notice that the switch’s symbol gives a clear picture of how it operates: There is a pair of connected terminals on each side (“P” and “P2” on the left and “S” and “S2” on the right), and when we press the button the two pairs will be connected. We need to connect the resistor to one of the pairs. Select the “wire” tool:
 
-![](images/schematic9.png)
+![](images/schematic9_new.png)
 
 Then draw a connection between one terminal of the resistor and one of the terminals of the switch:
 
-![](images/schematic10.png)
+![](images/schematic10_new.png)
 
 Next, connect the other end of the resistor to the cathode of the led (the cathode is at the tip of the triangle in the LED symbol).
 
-![](images/schematic11.png)
+![](images/schematic11_new.png)
 
 Finally, we need to connect everything to the power supply. The symbol for the power jack has three connection pins. The top pin will be connected to the tip of the power plug. The other two will be connected to the barrel. So, if the power supply is tip-positive, the top connector will be 5V and the bottom two will be ground (0V).
 
 Connect the anode on the LED to the 5V pin and then connect the pin on the other side of the switch to the ground pin. Just be sure to wire both of the ground pins together (see below). Also rename and label the power and ground nets by typing ‘name GND’ into the command line box above the drawing and then clicking on the ground net. A label will appear. Make sure you place it so it’s touching part of the net it labels. Do the same for the positive side of the power plug, naming it “5V”.
 
-![](images/schematic12.png)
+![](images/schematic12_new.png)
 
 Now, think through how the schematic will operate and convince yourself that this matches what we build on the breadboard.
 
