@@ -41,8 +41,7 @@ Save your schematic, so you don’t lose your work. Call the file “throughhole
 
 Select the “Add” tool again, and choose the “BUTTON-TACTILE-SQUARE” device. Place it to the right of the power jack.
 
-Next, we’ll add the LED. Select “Add” again, then click the triangle next to “LED”. The list will expand to show you several LEDs to choose from. Each of these has the same electrical interface, so they will appear the same on the schematic. For now, choose “LED5MM” since the corresponds the LED we used in our breadboard design. Place the LED to the left of the power jack.
-
+Next, we’ll add the LED. Choose the “LED5MM” device. Place the LED to the left of the power jack.
 Finally, add the resistor. Use the device “RESISTORTH-1/4W-CARBON.”
 
 ![](images/schematic6.png)
