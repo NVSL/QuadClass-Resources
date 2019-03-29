@@ -15,7 +15,7 @@ Open up Eagle, and select File->New->Schematic. It will open up the schematic ed
 
 ![](images/schematic1_new.png)
 
-We need to load the Eagle Library that describes the components we are going to use. From your eagle-intro repository move the Lab01.lbr file to the Eagle/lbr/.. folder on your computer. Back in the schematic window, select Library->Use…, navigate to `Eagle/lbr/Lab01.lbr` and select it.
+We need to load the Eagle Library that describes the components we are going to use. From your eagle-intro repository move the Lab01.lbr file (located in /lbr) to the Eagle/libraries/.. folder on your computer (check Documents folder ?). Back in the schematic window, select Library->Open Library…, navigate to `Eagle/lbr/Lab01.lbr` and select it.
 
 
 ## Adding the Parts
