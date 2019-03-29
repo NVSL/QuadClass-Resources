@@ -6,11 +6,11 @@ The next step is to generate the board, place the parts on it, and to connect th
 
 To do this, click the "show board" icon near the top of the Eagle schematic editor
 
-![](images/board1.png)
+![](images/board1_new.png)
 
 And click "OK" if a dialog box appears. You should now see the Eagle board editor window. Eagle has automatically created a board for you and named it "throughhole.brd." Select "View->Zoom out" a couple time so you can see everything. You should see a black rectangle and a collection of shapes in the bottom left. Those shapes will each correspond to one of the devices in your schematic:
 
-![](images/board2.png)
+![](images/board2_new.png)
 
 In my window, the power jack is on top, followed by the LED, the button, and the resistor.
 
@@ -18,7 +18,7 @@ In my window, the power jack is on top, followed by the LED, the button, and the
 
 The black box is the board outline, which means that none of the devices are actually on the board. We can move the devices with "move" tool.
 
-![](images/board3.png)
+![](images/board3_new.png)
 
 Select it and then use it drag the devices around until you like the positions. You can use the rotate tool to rotate the devices as you like. You should also adjust the board outline so that fits somewhat snugly around the devices. The easiest way to adjust the board outline is by using the move tool to move the edges of the rectangle. You should also zoom in a bit so you can see what's going on:
 
@@ -30,11 +30,11 @@ The default board outline that Eagle provides is the maximum size of a board tha
 
 To fix this, we need to change its thickness. Do this with the "info" tool:
 
-![](images/board4.png)
+![](images/board4_new.png)
 
 Select the tool and click on one of the lines. A "Properties" window will appear:
 
-![](images/board5.png)
+![](images/board5_new.png)
 
 Change "width" to 0.01. Click OK and repeat for the other three sides of the board outline. The board outline should now be noticeably thicker.
 
@@ -46,21 +46,21 @@ The devices are not placed on the board, but there are no wires (or “traces”
 
 To convert these logical wires into physical traces, we use the “route” tool (you may need to expand the board editing window a bit to see all the tools in the palette):
 
-![](images/board6.png)
+![](images/board6_new.png)
 
 This tool lets you draw wires or traces on the board. The traces can be on either top or bottom of the board. We want ours on the top, so we need to make sure we are routing the traces in the top layer. You can control which layer you are working in with the layers drop-down menu in the upper left of the PCB editor window:
 
-![](images/board7.png)
+![](images/board7_new.png)
 
 The screenshot above shows that layer 16 is selected. This corresponds to traces on the bottom of the board. Use the menu to select layer “1 Top”. It should show up as red instead of blue.
 
 Select it and then click on one of the gray lines. It will turn into thicker, red line. You can click to add corners, and you need to add segments so that the two pins the gray line connected are connected with the blue line. You also need to make sure that the traces don’t touch each other or touch pads that they should not be connected to. You are done routing the board, when there are no more gray lines and all the pads are properly connected:
 
-![](images/board8.png)
+![](images/board8_new.png)
 
 If you make a mistake while routing you can either undo the action from the Edit menu or use the “ripup” up tool to unroute a trace:
 
-![](images/board9.png)
+![](images/board9_new.png)
 
 You now have a routed board!
 
@@ -68,7 +68,7 @@ You now have a routed board!
 
 Once you have a board the way you want it, need to run the design rule check (DRC) to help ensure that board can be manufactured. The rules for DRC vary from manufacturer to manufacturer. They include things like how narrow a wire can be and close a drilled hole can be to the edge of the board.
 
-![](images/board10.png)
+![](images/board10_new.png)
 
 To start DRC select “Tools->DRC…” and then click “Load.” Navigate to select “EAGLE/DRU/4pcb-33board.dru” in your copy of the git QuadClass-Resources-master repository. Then click “Check.”
 
