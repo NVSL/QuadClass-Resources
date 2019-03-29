@@ -4,15 +4,15 @@ The next step is to generate the board, place the parts on it, and to connect th
 
 ## Auto-generate the board
 
-To do this, click the "show board" icon near the top of the Eagle schematic editor
+To do this, click the "Generate/switch to board" icon near the top of the Eagle schematic editor
 
 ![](images/board1_new.png)
 
-And click "OK" if a dialog box appears. You should now see the Eagle board editor window. Eagle has automatically created a board for you and named it "throughhole.brd." Select "View->Zoom out" a couple time so you can see everything. You should see a black rectangle and a collection of shapes in the bottom left. Those shapes will each correspond to one of the devices in your schematic:
+And click "OK" if a dialog box appears. You should now see the Eagle board editor window. Eagle has automatically created a board for you and named it "throughhole.brd." Select "View->Zoom out" a couple time so you can see everything. You should see a black rectangle and a collection of shapes to its left. Those shapes will each correspond to one of the devices in your schematic:
 
 ![](images/board2_new.png)
 
-In my window, the power jack is on top, followed by the LED, the button, and the resistor.
+In my window, the resistor is on top, followed by the LED, power jack and the button.
 
 ## Placing the devices
 
@@ -42,7 +42,7 @@ The “Info” tool is a critical part of Eagle. You can use it to query and cha
 
 ## Routing the board
 
-The devices are not placed on the board, but there are no wires (or “traces”) connecting them. The light gray lines you see correspond to the electrical connections in the schematic, but they do not correspond to an actual piece of metal yet.
+The devices are placed on the board, but there are no wires (or “traces”) connecting them. The yellow lines you see correspond to the electrical connections in the schematic, but they do not correspond to an actual piece of metal yet.
 
 To convert these logical wires into physical traces, we use the “route” tool (you may need to expand the board editing window a bit to see all the tools in the palette):
 
@@ -54,7 +54,7 @@ This tool lets you draw wires or traces on the board. The traces can be on eithe
 
 The screenshot above shows that layer 16 is selected. This corresponds to traces on the bottom of the board. Use the menu to select layer “1 Top”. It should show up as red instead of blue.
 
-Select it and then click on one of the gray lines. It will turn into thicker, red line. You can click to add corners, and you need to add segments so that the two pins the gray line connected are connected with the blue line. You also need to make sure that the traces don’t touch each other or touch pads that they should not be connected to. You are done routing the board, when there are no more gray lines and all the pads are properly connected:
+Select it and then click on one of the yellow lines. It will turn into thicker, red line. You can click to add corners, and you need to add segments so that the two pins the yellow line connected are connected with the blue line. You also need to make sure that the traces don’t touch each other or touch pads that they should not be connected to. You are done routing the board, when there are no more yellow lines and all the pads are properly connected:
 
 ![](images/board8_new.png)
 
