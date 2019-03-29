@@ -17,7 +17,7 @@ You should see a window like this:
 ![](images/cam1.png)
 Leave this window open and return to the board editor window. 
 -->
-To select the CAM file, return to the board editor wondow, select "File->CAM Processor..." a window will appear like this:
+To select the CAM file, return to the board editor window, select "File->CAM Processor..." a window will appear like this:
 <!--
 the same window will reappear but with some additional information filled in:
 -->
