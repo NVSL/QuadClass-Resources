@@ -13,7 +13,7 @@ Next, we will create the schematic for our circuit. This video walks through the
 
 Open up Eagle, and select File->New->Schematic. It will open up the schematic editor window:
 
-![](images/schematic1.png)
+![](images/schematic1_new.png)
 
 We need to load the Eagle Library that describes the components we are going to use. From your eagle-intro repository move the Lab01.lbr file to the Eagle/lbr/.. folder on your computer. Back in the schematic window, select Library->Use…, navigate to `Eagle/lbr/Lab01.lbr` and select it.
 
