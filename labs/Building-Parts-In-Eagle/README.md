@@ -11,7 +11,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, and Software You will Need
 
 1. Eagle
-2. The starter repo: for this lab: https://classroom.github.com/a/AOGppG5g. (Don’t clone it until the start of class, last minute changes are likely)
+2. The starter repo: for this lab: https://classroom.github.com/a/1q--BEFJ. (Don’t clone it until the start of class, last minute changes are likely)
 
 ## Preliminaries
 
@@ -19,7 +19,7 @@ Check the course schedule for due date(s).
 
 Set your grid to mm, you can follow the instructions [here](https://electronics.stackexchange.com/questions/197876/eagle-cad-choosing-mm-as-default). 
 
-A sample eagle.scr is available in this repo under `Eagle/eagle.scr`  It will set the grids to the correct defaults in new schematics, boards, and libraries you create.
+A sample `eagle.scr` is available in this repo under `QuadClass-Resources/Eagle/eagle.scr`  It will set the grids to the correct defaults in new schematics, boards, and libraries you create.
 
 ### Units of Measure
 
@@ -40,7 +40,7 @@ Create packages, symbols, and devices for the following electrical components.  
 | Description                    | Digikey part number  | Notes                                     |
 |--------------------------------|----------------------|-------------------------------------------|
 | 0805 0Ohm resistor	         | 311-0.0ARCT-ND       |                                           |
-| Red Light emitting diode	     | 160-1178-1-ND        |  Orientation is key                       |
+| Red Light emitting diode	 | 160-1178-1-ND        |  Orientation is key                       |
 | N-Channel MOSFET               | SI2302CDS-T1-E3CT-ND |  Pay close attention to the pads          | 
 | LSM9DS1TR 9-Axis IMU           | 497-14946-1-ND       |  Read the datasheet _and_ tech note       |
 
@@ -86,6 +86,7 @@ Each of your packages should contain the following elements:
 15. Eagle includes a package generator.  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
 
 ### Guidelines for Building Devices
+
 Devices connect packages to schematic symbols.
 
 Follow these guidelines when creating devices:

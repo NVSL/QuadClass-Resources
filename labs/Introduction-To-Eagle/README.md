@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Eagle installed (either in the Maker Studio, the basement CSE labs, or your own laptop).
-2. The [*** starter repo]() for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/AOGppG5g) for this lab (Don't clone it until the start of class, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
@@ -45,11 +45,11 @@ We will be using Github a lot in class. If you aren't familiar with it, there ar
 
 Sign up here to get an Autodesk Student account: http://www.autodesk.com/education/free-software/eagle
 
-Download and install Eagle Premium. You may need to purchase a one month subscription.  You can get by without "premium" until Lab 04.
+Download and install Eagle Premium. You may need to purchase a one month subscription.  You can get by without "premium" until you need to layout your board.
 
 ### Make Eagle Easier to Use
 
-By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting "Window->Control Panel" and the selecting "Options->Directories". I suggest the following settings:
+By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting `Window->Control Panel` and the selecting `Options->Directories`. I suggest the following settings:
 
 * Libraries: `<path to>/eagle-intro-<gitusername>/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
@@ -70,19 +70,19 @@ Most board designers include a logo or other artwork on the board, and you will 
 
 Here are the steps:
 
-1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library "Logos.lbr". Put it in the `lbr` directory in your git repo for this lab.
+1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos.lbr`. Put it in the `lbr` directory in your git repo for this lab.
 
 ![](images/artwork1.png)
 
-2. Go to Library -> Package and name this new package UCSD_LOGO, then press OK.
+2. Go to `Library -> Package` and name this new package UCSD_LOGO, then press OK.
 
 ![](images/artwork2.png)
 
-3. A new blank page will appear. Go then to File->Run UPL... and open the script named "import-bmp.upl".
+3. A new blank page will appear. Go then to `File->Run UPL...` and open the script named `import-bmp.upl`.
 
 ![](images/artwork3.png)
 
-4. After this, a new message will appear. Press OK. Then search for the bmp image you want to transfer, in this case, we will transfer the UCSD logo. It is recommended that you change the image format to "Monochrome bmp" this means that the image will only have two colors, black and white. You can find the UCSD logo in your GitHub eagle-intro repository with the filename of "UCSD-logos-horizontal.bmp".
+4. After this, a new message will appear. Press OK. Then search for the bmp image you want to transfer, in this case, we will transfer the UCSD logo. It is recommended that you change the image format to "Monochrome bmp" this means that the image will only have two colors, black and white. You can find the UCSD logo in your GitHub eagle-intro repository with the filename of `UCSD-logos-horizontal.bmp`.
 
 ![](images/artwork4.png)
 
@@ -102,7 +102,7 @@ Layer: 21
 
 ![](images/artwork6.png)
 
-7. Select OK, after this a new window will appear, for that windows select “Run script”.
+7. Select OK, after this a new window will appear, for that windows select `Run script`.
 
 ![](images/artwork7.png)
 ![image:https://lh3.googleusercontent.com/YcdkkNKLKyJf67RqU08ilv-10IL8KpCXNO1J4E0Z_Hy3fwpQgy9Nw7ImLgUAhKLY]
@@ -115,7 +115,7 @@ Layer: 21
 
 ![](images/artwork9.png)
 
-10. Now open the Button-and-Light schematic and select Library-> use. After this search and open the library Logos.lbr or the library where you saved the logo.
+10. Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
 
 ![](images/artwork10.png)
 
