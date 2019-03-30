@@ -11,17 +11,22 @@ The first is the .cam file. This defines the set of gerber files we will send to
 
 The DRU and CAM files you need for this lab are in `Eagle/CAM/jlcpcb-2layer-eagle9.cam` and `Eagle/CAM/jlcpcb-4layer-eagle9.cam`.
 
+<!--
 To select the CAM file you will use, select "Window->Control Panel" Then select "File->Open->Cam Job..." and navigate to Eagle/CAM/jlcpcb-2layer-eagle9.cam.
-
 You should see a window like this:
-
 ![](images/cam1.png)
+Leave this window open and return to the board editor window. 
+-->
+To select the CAM file, return to the board editor window, select "File->CAM Processor..." a window will appear like this:
+<!--
+the same window will reappear but with some additional information filled in:
+-->
+![](images/cam1_new.png)
 
-Leave this window open and return to the board editor window. Select "File->CAM Processor..." the same window will reappear but with some additional information filled in:
+Then click on the "load job -> Open Cam File". This will allow you to select the required CAM file. 
+![](images/cam2_new.png)
 
-![](images/cam2.png)
-
-The tabs across the top correspond to the CAM files that the CAM processor will generate for this design. The body of the window contains configuration parameters for each of the CAM files. Don't touch any of these settings.
+The tabs on the left correspond to the CAM files that the CAM processor will generate for this design. The body of the window contains configuration parameters for each of the CAM files. Don't touch any of these settings.
 
 Click "Process Job". A progress bar will appear briefly and then vanish. The CAM files have been generated, and are now in the same directory as your schematic and board files.
 

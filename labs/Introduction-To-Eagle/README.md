@@ -29,7 +29,7 @@ Skills to Learn
 
 ### Complete the Responsibility Contract
 
-Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page as a pdf called `responsibility.pdf,` commit it to your repo.
+Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page as a pdf called `responsibility.pdf,` commit it to your repo. (Not clear where to find the `responsibility.pdf`?)
 
 ### Get set up Github
 
@@ -37,7 +37,7 @@ We are going to use Github classroom for this course. You'll need to [create a G
 
 First, you'll need to authorize github classroom to access your github account. To do that, visit https://classroom.github.com and sign in with your github account.
 
-Then click on the link for the starter repo listed in the "Equipment, Supplies, ..." section above.
+Then click on the link for the starter repo listed in the "Equipment, Supplies, ..." section above. (Not able to verify this!)
 
 We will be using Github a lot in class. If you aren't familiar with it, there are a bunch of good introductory tutorials. For example, [this one](http://try.github.io/).
 
