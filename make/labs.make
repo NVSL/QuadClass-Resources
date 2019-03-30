@@ -1,11 +1,24 @@
+#-*- Makefile -*-
 
-.PHONY: starter-repo
-starter-repo:
-	#@if ! git diff --exit-code --quiet || ! git diff --quiet --exit-code --cached; then echo "You have uncommitted changes."; exit 1;fi
-	rm -rf starter
-	mkdir /tmp/starter
-	git clone . /tmp/starter/
-	mv /tmp/starter ./
-	rm -rf starter/.git
-	(cd starter; rm -fr $(SOLUTION_FILES))
-	find starter
+QUARTER?=sp19
+LAB_NAME=$(patsubst %-Solution,%,$(notdir $(PWD)))
+STARTER_REPO_NAME=$(LAB_NAME)-Starter-$(QUARTER)
+GITHUB_ORG?=UCSD-Quadcopter-Class
+
+.PHONY: starter
+starter:
+	@if ! git diff --exit-code --quiet || ! git diff --quiet --exit-code --cached; then echo "You have uncommitted changes."; exit 1;fi
+	rm -rf $@
+	mkdir /tmp/$@
+	git clone . /tmp/$@/
+	mv /tmp/$@ ./
+	rm -rf $@/.git
+	(cd $@; rm -fr $(SOLUTION_FILES))
+	@echo Starter files:
+	@find $@
+	@echo "Create $(GITHUB_ORG)/$(STARTER_REPO_NAME) before pushing"
+
+.PHONY: push-starter-repo
+push-starter-repo: starter
+	(cd starter; git init; git remote add origin git@github.com:$(GITHUB_ORG)/$(STARTER_REPO_NAME).git)
+	(cd starter; git add .; git commit -m "Initial import"; git push --set-upstream origin master)
