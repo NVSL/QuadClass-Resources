@@ -122,7 +122,7 @@ You will notice some text below the image (red circle), this is the path of the 
 
 ![](images/artwork9_new.png)
 
-10. Click on the ``Add Part`` on the left and select ``Logos.lbr`` then place it on your board.
+10. Click on the ``Add Part`` on the left and select ``Logos.lbr``.
 <!--
 Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
 -->
