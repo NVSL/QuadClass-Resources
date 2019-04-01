@@ -72,16 +72,17 @@ Name your schematic `quadcopter.sch`.  Put it in the `hardware` directory of you
 
 Here are the course style guidelines for schematics. Your schematics must adhere to these guidelines.  If you don't, Eaglint will give warnings and we won’t accept the design.
 
-1. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
-2. All visible net and component names must not have “$” in them. When Eagle automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like “C1” or “U1”.
-3. By convention power supply symbols point up, and ground symbols point down. Neither should ever point to the side.
-4. Nets should not cross each other unless they are electrically connected.
-5. Nets should only be drawn at right angles.
-6. Eagle embeds libraries in the `.sch` and `.brd` files. To keep them up-to-date, use `Library->Update` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
-7. Include a frame around our schematic.  Use device `FRAME_B_L`.
-8. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
-9. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
-10. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
+1. All visible net and component names must not have “$” in them. When Eagle automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like “C1” or “U1”.
+2. By convention power supply symbols point up, and ground symbols point down. Neither should ever point to the side.
+3. Nets should not cross each other unless they are electrically connected.
+4. Nets should only be drawn at right angles.
+5. Eagle embeds libraries in the `.sch` and `.brd` files. To keep them up-to-date, use `Library->Update` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
+6. Include a frame around our schematic.  Use device `FRAME_B_L`.
+7. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
+8. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
+9. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
+10. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
+11. Schematic symbols should all be aligned to 0.1in grid.
 
 ### The Microcontroller
 
@@ -94,6 +95,8 @@ You should use the schematic as a guide for constructing the microcontroller por
 There are some changes you will need to make to this schematic based on what's required by the other components.  This is just a starting point for your circuit.
 
 If you have questions about the parts attached directly to the microcontroller (including the radio), the first place to turn is the microcontroller datasheet.
+
+
 
 ### The IMU
 
@@ -109,6 +112,10 @@ The IMU datasheet contains all the information you will need to use connect the 
 8. `DEN_A/G` should be connected to `3V3`.
 
 Most of the information you will need is Section 5 of the datasheet. A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables.
+
+### The I2C Bus
+
+Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  you should "pull up" these lines to `VCC` using 1kOhm resistors.
 
 ### The Motor Driver 
 
@@ -204,9 +211,9 @@ You'll note there are a dizzying array of options (at this moment there are over
 
 1. Any LED you choose needs to be available in small quantities (the "minimum quantity" column should say "1").
 2. The need to be at least 0805 (1.25mm x 2mm).
-3. They need to be reasonably cheap: no more than a dollar per LED.
+3. They need to be reasonably cheap: no more than $1 per LED.
 5. If you are going to drive the LEDs directly with a microcontroller pin, you must limit current to 8mA and you should make sure that the LED will actually light up with 8mA (many bright LEDs will not).
-6. They need to be compatible with the power supply you are going to use: 3.7-4.2V if you use the battery. 3V if you are going to drive them from the microcontroller.
+6. They need to be compatible with the power supply you are going to use: 3.7-4.2V if you use the battery. 3.3V if you are going to drive them from the microcontroller.
 7. Their current draw needs to be within the limits of how you are powering them.
 	1. The microcontroller limits how much current each pin will supply.
 	2. The microcontroller consumes some current, as does the IMU (check the datasheets).
@@ -224,9 +231,17 @@ You'll need to build the library entries for the LED you want to use and then in
 
 One thing to keep in mind is that most LEDs are extremely bright when driven at full current. Indicator LEDs can be driven very gently and still be visible.  LEDs added for visual effect can be driven harder, but they can easily become so bright that you can't even look at your quadcopter without being blinded.  For this reason, any LEDs that you want to be bright need to be attached to PWM pins, so you can moderate their brightness.
 
-Once you have picked your LEDs, write up a brief description of why your design will work. It should include the manufacturer and digikey part numbers for the LEDs, voltage and current you intend to run the LEDs at, how you plan to supply that voltage and current (some combination of IO pins, FETs, and resistors), and a brief calculation showing that you aren't drawing too much current from the IO pins/microcontroller (8mA/pin) or the battery (500mA). Put this in a file called `led_notes.txt`.
+Once you have picked your LEDs, write up a brief description of why
+your design will work.  For each LED (identified by it's reference
+designator), you should give it's forward voltage, supply voltage
+(e.g., 3.3V or 4.2V), the resistance of the current limiting resistor,
+and the current you expect to flow through the LED.  You should also
+specify whether it's driven directly with a pin or with a MOSFET.
+Put this in a file called `led_notes.txt`.
 
-Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from quadparts_prebulit.lbr.
+Feel free to get creative with the LEDs!
+
+Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from `quadparts_prebulit.lbr`.
 
 The packages/devices you build need to meet all the standards described in Lab 4.
 
@@ -253,6 +268,7 @@ Submit the following to your github repo:
 3. Your `lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
 5. Datasheets for your leds in `datasheets/`.
 6. Your `led_notes.txt`.
+
 Submit it to Eaglint: http://eaglint.nvsl.io.
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.

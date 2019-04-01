@@ -1,14 +1,15 @@
 # Part 1: Creating the Schematic in Eagle
 
-
 This tutorial will take you through the steps of creating a schematic, creating a board, creating new devices, and preparing the board for manufacturing. It's broken into four parts.
 
 We are going to design a PCB to with a light controlled by a button.
 
+The course style guidelines for schematics are in the "General Schematic Style Guidelines" section of https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-The-Quadcopter-Schematic/README.md.  Read and follow them.  Eaglint will complain if you don't.
+
 You will need the `Lab01.lbr` file available in the lab starter repo.
 
-
 ## Making the Schematic
+
 Next, we will create the schematic for our circuit. This video walks through the process, and detailed instructions are below.
 
 Open up Eagle, and select File->New->Schematic. It will open up the schematic editor window:
@@ -19,6 +20,7 @@ We need to load the Eagle Library that describes the components we are going to 
 
 
 ## Adding the Parts
+
 Now you are ready to build your schematic. Start by selecting the “Add” tool from the tool palette at left:
 
 ![](images/schematic2_new.png)

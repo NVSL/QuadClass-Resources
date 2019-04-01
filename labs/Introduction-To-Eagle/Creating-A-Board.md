@@ -2,6 +2,8 @@
 
 The next step is to generate the board, place the parts on it, and to connect them with wires.
 
+The course style guidelines for board layout are in the "Board Layout Style Guide" section of section of https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Laying-Out-The-Board.  Read and follow them.  Eaglint will complain if you don't.
+
 ## Auto-generate the board
 
 To do this, click the "Generate/switch to board" icon near the top of the Eagle schematic editor

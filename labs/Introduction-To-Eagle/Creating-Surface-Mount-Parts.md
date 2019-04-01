@@ -4,9 +4,10 @@ The design we have so far for the flashlight uses "through hole" parts. This mea
 
 Most modern PCBs use "surface mount" (also called SMD) parts that more compact and only require connections to one side of the board. They are also harder to solder. Many of the components we will use are only available as surface mount, and many components are available as both surface mount and through hole.
 
-## 
+The course style guidelines for libraries are in the "Guidelines for Building..." section of section of https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-Parts-In-Eagle/README.md.  Read and follow them.  Eaglint will complain if you don't.
 
 ## Creating a Surface Mount Device
+
 We will replace the through hole button with a surface mount version. We will use part number 1301.9315 from this [datasheet](http://www.google.com/url?q=http%3A%2F%2Fwww.schurter.ch%2Fbundles%2Fsnceschurter%2Fepim%2F_ProdPool_%2FnewDS%2Fen%2Ftyp_6x6_mm_tact_switches.pdf&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHtExOlXG7xE7EsTttPKfa7a4eS0w). It's the one that looks like this:
 
 ![](images/smd1.jpg)

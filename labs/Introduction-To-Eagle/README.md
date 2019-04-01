@@ -154,5 +154,5 @@ Checklist:
 6. Your `responsibility.pdf`.
 7. Pour `survey.pdf`
 
-You will lose one point for each day late your solution is and one point for each rejected submission to eaglint.
+You will lose one point for each day late your solution is and one point for each rejected submission to eaglint.  Note that the maximum possible points in 10, but you get start out with 15.  This lets you submit a few full checks to get used to what eaglint is expecting.
 
