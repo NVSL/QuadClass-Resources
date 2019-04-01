@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Eagle installed (either in the Maker Studio, the basement CSE labs, or your own laptop).
-2. The [starter repo](https://classroom.github.com/a/AOGppG5g) for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/1q--BEFJ) for this lab (Don't clone it until the start of class, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
@@ -30,6 +30,11 @@ Skills to Learn
 ### Complete the Responsibility Contract
 
 Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page as a pdf called `responsibility.pdf,` commit it to your repo. (Not clear where to find the `responsibility.pdf`?)
+
+### Fill Out The Self Evaluation
+
+Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSdY2ymtVFEI_7CQra3eP1GEthNj2aCQCzFrduqjD7a3Ln4OEA/viewform).  You will receive
+a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
 ### Get set up Github
 
@@ -147,5 +152,7 @@ Checklist:
 4. Your `lbr/Logos.lbr`.
 5. A PDF of the report from FreeDFM showing that your design passed called `freedfm.pdf`.
 6. Your `responsibility.pdf`.
+7. Pour `survey.pdf`
+
 You will lose one point for each day late your solution is and one point for each rejected submission to eaglint.
 
