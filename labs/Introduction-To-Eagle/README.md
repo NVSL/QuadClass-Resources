@@ -79,7 +79,7 @@ Here are the steps:
 
 ![](images/artwork1_new.png)
 
-2. Go to `Library -> Package` and name this new package UCSD_LOGO, then press OK.
+2. Go to `Library -> Manage Package` and name this new package UCSD_LOGO, then press OK.
 
 ![](images/artwork2_new.png)
 
@@ -112,25 +112,32 @@ Layer: 21
 ![](images/artwork7_new.png)
 ![image:https://lh3.googleusercontent.com/YcdkkNKLKyJf67RqU08ilv-10IL8KpCXNO1J4E0Z_Hy3fwpQgy9Nw7ImLgUAhKLY]
 
-8. Now the image should be transferred. You will notice some text below the image (red circle), this is the path of the image. Zoom to it and delete it.
-
+8. Now the image should be transferred. 
+<!--
+You will notice some text below the image (red circle), this is the path of the image. Zoom to it and delete it.
+-->
 ![](images/artwork8_new.png)
 
 9. Save the library as Logos.lbr (if you are using an existing library just click save).
 
 ![](images/artwork9_new.png)
 
-10. Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
-
+10. Click on the ``Add Part`` on the left and select ``Logos.lbr`` then place it on your board.
+<!--
+Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
+-->
 ![](images/artwork10_new.png)
 
+<!--
 11. Select “Add” for adding an element and search for the UCSD_LOGO.
-
+-->
+11. Select OK and finally, you should see the UCSD logo on the board
 ![](images/artwork11_new.png)
 
+<!--
 12. Select OK and finally, you should see the UCSD logo on the board.
-
 ![](images/artwork12.png)
+-->
 
 ## Turn in Your Work
 
