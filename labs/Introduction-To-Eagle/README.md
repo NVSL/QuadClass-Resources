@@ -126,7 +126,7 @@ Layer: 21
 
 11. Select “Add” for adding an element and search for the UCSD_LOGO.
 
-![](images/artwork11.png)
+![](images/artwork11_new.png)
 
 12. Select OK and finally, you should see the UCSD logo on the board.
 
