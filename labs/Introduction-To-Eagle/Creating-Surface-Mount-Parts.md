@@ -63,7 +63,7 @@ You can use your new SMD button just like our own through-hole button. Just dele
 ## Fixing up the Board
 Since you just changed the package for the button, the board will need to be updated. Traces will probably be crossed, etc.:
 
-![](images/smd3.png)
+![](images/sm3.png)
 
 To fix this, we’ll rip up all the old traces and reroute the board. Use the “group” tool: To select everything on the board.
 

@@ -72,23 +72,23 @@ Here are the steps:
 
 1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos.lbr`. Put it in the `lbr` directory in your git repo for this lab.
 
-![](images/artwork1.png)
+![](images/artwork1_new.png)
 
 2. Go to `Library -> Package` and name this new package UCSD_LOGO, then press OK.
 
-![](images/artwork2.png)
+![](images/artwork2_new.png)
 
 3. A new blank page will appear. Go then to `File->Run UPL...` and open the script named `import-bmp.upl`.
 
-![](images/artwork3.png)
+![](images/artwork3_new.png)
 
 4. After this, a new message will appear. Press OK. Then search for the bmp image you want to transfer, in this case, we will transfer the UCSD logo. It is recommended that you change the image format to "Monochrome bmp" this means that the image will only have two colors, black and white. You can find the UCSD logo in your GitHub eagle-intro repository with the filename of `UCSD-logos-horizontal.bmp`.
 
-![](images/artwork4.png)
+![](images/artwork4_new.png)
 
 5. After selecting the UCSD Logo you will need to choose which color pixels to transfer. For this case select only Black.
 
-![](images/artwork5.png)
+![](images/artwork5_new.png)
 
 6. Then select the scale and layer of the image to transfer. For this image use the following parameters.
 
@@ -100,24 +100,24 @@ Scale: 0.5
 
 Layer: 21
 
-![](images/artwork6.png)
+![](images/artwork6_new.png)
 
 7. Select OK, after this a new window will appear, for that windows select `Run script`.
 
-![](images/artwork7.png)
+![](images/artwork7_new.png)
 ![image:https://lh3.googleusercontent.com/YcdkkNKLKyJf67RqU08ilv-10IL8KpCXNO1J4E0Z_Hy3fwpQgy9Nw7ImLgUAhKLY]
 
 8. Now the image should be transferred. You will notice some text below the image (red circle), this is the path of the image. Zoom to it and delete it.
 
-![](images/artwork8.png)
+![](images/artwork8_new.png)
 
 9. Save the library as Logos.lbr (if you are using an existing library just click save).
 
-![](images/artwork9.png)
+![](images/artwork9_new.png)
 
 10. Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
 
-![](images/artwork10.png)
+![](images/artwork10_new.png)
 
 11. Select “Add” for adding an element and search for the UCSD_LOGO.
 
