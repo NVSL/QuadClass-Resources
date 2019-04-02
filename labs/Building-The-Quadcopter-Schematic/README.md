@@ -12,7 +12,7 @@ Check course schedule for the due dates.
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz.
+1. The starter repo for this lab: https://classroom.github.com/g/<TBD>.
 2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your lbr/ directory for this lab).
 
 ## Preliminaries
