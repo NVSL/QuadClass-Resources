@@ -64,19 +64,19 @@ You can use your new SMD button just like our own through-hole button. Just dele
 ## Fixing up the Board
 Since you just changed the package for the button, the board will need to be updated. Traces will probably be crossed, etc.:
 
-![](images/sm3.png)
+![](images/sm3_new.png)
 
 To fix this, we’ll rip up all the old traces and reroute the board. Use the “group” tool: To select everything on the board.
 
-![](images/smd4.png)
+![](images/sm4_new.png)
 
 Next, select the “ripup” tool. Everything will appear to be deselected, that’s ok. Now, right-click on the board, and select “Ripup: Group”. All of the routed traces will disappear:
 
-![](images/smd5.png)
+![](images/sm5_new.png)
 
 Now, you need to re-route the board using the “route” tool:
 
-![](images/smd6.png)
+![](images/sm6_new.png)
 
 ## Re-running the CAM Processor
 Follow the instructions for running the CAM processor given above. In the Gerber viewer, you can find the pads for the SMD button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not.    
