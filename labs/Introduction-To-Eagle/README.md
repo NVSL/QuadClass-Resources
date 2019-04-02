@@ -56,9 +56,11 @@ Download and install Eagle Premium. You may need to purchase a one month subscri
 
 By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting `Window->Control Panel` and the selecting `Options->Directories`. I suggest the following settings:
 
-* Libraries: `<path to>/eagle-intro-<gitusername>/lbr`
+* Libraries: `<path to>/eagle-intro-sp19-<gitusername>/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
+
+You should restart Eagle after maring these changes.
 
 ### Do the Button and Light Tutorial
 
