@@ -60,6 +60,12 @@ By default, Eagle comes configured with a bunch of libraries that can make it ha
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
 
+For instance, for me, the values might be:
+
+* Libraries: `/Users/swanson/cse176/eagle-intro-sp19-stevenjswanson/lbr`
+* Design Rules: `/Users/swanson/cse176/QuadClass-Resources/Eagle/DRU`
+* CAM Jobs: `/Users/swanson/cse176/QuadClass-Resources/Eagle/CAM`
+
 You should restart Eagle after maring these changes.
 
 ### Do the Button and Light Tutorial
