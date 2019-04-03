@@ -165,9 +165,8 @@ Checklist:
 2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip` ).
 3. Your modified version of `Lab01.lbr, i.e, Lab01_smd.lbr.`
 4. Your `lbr/Logos.lbr`.
-5. A PDF of the report from FreeDFM showing that your design passed called `freedfm.pdf`.
-6. Your `responsibility.pdf`.
-7. Pour `survey.pdf`
+5. Your `responsibility.pdf`.
+6. Pour `survey.pdf`
 
 You will lose one point for each day late your solution is and one point for each rejected submission to eaglint.  Note that the maximum possible points in 10, but you get start out with 15.  This lets you submit a few full checks to get used to what eaglint is expecting.
 
