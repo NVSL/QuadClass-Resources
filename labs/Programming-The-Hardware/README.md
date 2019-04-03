@@ -72,6 +72,7 @@ You’ll need a few libraries, so you might as well install them now, but you wo
 1. Attitude, Heading, and Reference System (AHRS): https://github.com/NVSL/QuadClass_AHRS 
 2. Adafruit LSM96S1 library: https://github.com/NVSL/QuadClass_LSM9DS1
 3. Adafruit unified sensor library: https://github.com/NVSL/QuadClass_Sensor
+4. Sparkfun SerLCD library: https://github.com/sparkfun/SparkFun_SerLCD_Arduino_Library
 
 Clone them into `firmware/libraries`.
 
@@ -94,12 +95,13 @@ or create symbolic links:
 Here's the command sequence on my machine: 
 
 ```
-ln -sf ../QuadClass-Remote/firmware/libraries/Remote ./firmware/libraries/
-ln -sf ../QuadClass-Remote/firmware/libraries/RotaryEncoder ./firmware/libraries/
-ln -sf ../QuadClass-Remote/firmware/libraries/Radio ./firmware/libraries/
+ln -sf ../../QuadClass-Remote/firmware/libraries/Remote ./firmware/libraries/
+ln -sf ../../QuadClass-Remote/firmware/libraries/RotaryEncoder ./firmware/libraries/
+ln -sf ../../QuadClass-Remote/firmware/libraries/Radio ./firmware/libraries/
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-AHRS.git)
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-LSM9DS1.git)
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-Sensor.git)
+(cd ./firmware/libraries/; git clone git@github.com:sparkfun/SparkFun_SerLCD_Arduino_Library.git)
 (cd ./firmware/hardware/; git clone git@github.com:NVSL/QuadClass-Atmega128RFA-Arduino-Addon.git)
 ```
 
