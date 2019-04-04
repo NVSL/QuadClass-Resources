@@ -70,10 +70,10 @@ Each of your packages should contain the following elements:
 3. A text item that displays the reference designator for the part. It should be on layer `tName` and the magic string “>NAME” is replaced with the reference designator.
 4. A text item that displays the value of the part. It should be on layer tValues. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
 5. Drawing elements on `tKeepout` showing the area in which other part are not allowed. This should include the physical extent of the device and other other areas that need to be kept clear.
-6. The text for the package name should be in the “vector” font and of size at least 0.9mm with a “ratio” of 8. This is not the default for text in the package editor (if you figure how to make it the default, let me know).
+6. The text for the reference designator (which appears as '>NAME' in layer `tNames`) package name should be in the “vector” font and of size 0.9mm with a “ratio” of 8. This is not the default for text in the package editor (if you figure how to make it the default, let me know).  These settings make the reference designators as small as possible while still be legible.
 7. The text for the reference designator should not overlap with each other or the silkscreen for the device.
-8. The text for the reference designator should be aligned to 0.1mm grid.
-9. You can optionally include text with “>VALUE” in the the “tValues” layer. Real-world designs don’t usually do this, but it makes hand assembly easier. The remote board has values on the board. If you include them, the same requirements apply to them regarding their size and alignment as applies to “>NAME”.
+8. The text for the reference designator should be aligned to 0.1mm grid (using a 0.5mm grid is better but not always possible).
+9. You should tnclude text with “>VALUE” in the the `tValues` layer if the part has a value (e.g., resistors and capacitors).  Real-world designs don’t usually do this, but it makes hand assembly easier.  ALl the boards for the class have values on the board. If you include them, the same requirements apply to them regarding their size and alignment as applies to “>NAME”.
 10. Add lines on `tPlace` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
     1. For polarized components, draw with the positive terminal on the left.
     2. For polarized components, make the positive terminal the first terminal.
@@ -83,7 +83,7 @@ Each of your packages should contain the following elements:
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the package.
 14. We may be soldering by hand, so you need to make sure the SMDs extend out from under the part. This especially important for the IMU. The SMDs should extend 0.5mm away from the edge of the package.
-15. Eagle includes a package generator.  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
+15. Eagle includes a package generator (access it via the "new" button in the device window and select "Create with package generator").  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
 
 ### Guidelines for Building Devices
 
@@ -94,24 +94,33 @@ Follow these guidelines when creating devices:
 1. The device should have a generic name, if it will have many variants. For instance, a “Resistor” or “Capacitor” device will have variants for different package sizes and values.
 2. Put the symbol at the origin (in the left-hand pane of the device editing window)
 3. Choose a sensible name for the device. The guidelines for symbols generally apply here as well.
-4. When you create variants in the device, give them descriptive names. For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant (e.g., for the IMU).
+4. When you create variants in the device, give them descriptive names. For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant.
 5. Make sure to connect the symbol pins to package pins correctly. Check it, check it again, have your partner check it. This is a common source of hard-to-find bugs.
-6. Set the “Value” radio button appropriately. Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.
+6. Set the “Value” radio button appropriately.  Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.  If you set the value radio button, your schematic symbol should include ">NAME" in layer `Names`.
 7. Set the prefix appropriately: “R” for resistor, “Q” for mosfets, “U” for ICs, “D” for diodes, etc. This is what Eagle will start the reference designator with (e.g., “R1”, “Q2”).
 
 You should have one variant for each different physical device you might include in your design. For instance, if you have two 0805 resistors with different resistances, you should one variant for each of them. In this case, you should add attribute (see below) called “VALUE” that specifies the value (e.g., “10R” for 10 Ohms, “1nF” for 1 nanofarad).
 
-You can attach metadata to each variant of your device using “attributes.” (Eagle provides the notion of “technologies” which are different sets of attributes for a device. You should always use the unnamed technology: “”) All your variants should have the following attributes.
+You can attach metadata to each variant of your device using "attributes." (Eagle provides the notion of "technologies" which are different sets of attributes for a device. You should always use the unnamed technology: "") All your variants should have the following attributes:
 
 * DIST – distributer (For us, this is always “Digikey”)
 * DISTPN – Distributer part number. i.e., Digikey’s part number. This is different from the manufacturer’s part number.
 * CREATOR – Your name, if you designed the part.
 
-All these attributes should be “constant” which means you can’t change them on a per-part basis in the schematic.
+All these attributes should be “constant” which means you can’t change them on a per-part basis in the schematic.  Set this via the drop down in the attribute editor window.
 
 DIST and DISTPN are especially critical, because when we go to order parts for your quadcopter, we will use this information to know what to order.
 
 ### Notes on Individual Parts
+
+The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
+
+#### Resistor
+
+* Include “RES” in the name of the device your create.
+* Make sure SMDs extend 0.5 mm beyond the end of the resistor.
+* The prefix for your resistor device should be “R” for resistor.
+* Name the variant so it’s clear it’s a 0 Ohm resistor. Something like “-0Ohm” would make sense.
 
 #### LEDs
 
@@ -134,16 +143,10 @@ DIST and DISTPN are especially critical, because when we go to order parts for y
     * Use the info tool to edit each SMD, and uncheck ‘stop’.
     * Draw in the stop by hand in layer ‘tstop’ with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet, except that they should be longer by 0.5mm or to make soldering easier.
 
-#### Resistor
-
-* Include “RES” in the name of the device your create.
-* Make sure SMDs extend 0.5 mm beyond the end of the resistor.
-* The prefix for your resistor device should be “R” for resistor.
-* Name the variant so it’s clear it’s a 0 Ohm resistor. Something like “-0Ohm” would make sense.
 
 #### IMU
 
-The IMU has caused us signficant problems in the past.  Be careful with it.  You should read both the datasheet and the SMD tech note.
+The IMU has caused us signficant problems in the past.  Be careful with it.  You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 
 * Include “IMU” in the name of the device you create.
 * Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
