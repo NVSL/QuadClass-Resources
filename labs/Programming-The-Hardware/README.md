@@ -138,6 +138,87 @@ The programmer target is controlled by the `quad/RC` switch at the top of the re
 * Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
 * Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the right stick on your remote should cause it to change.
 
+### Arduino Troubleshooting
+
+Programming Arduino microcontrollers can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of whi
+h seem like black magic):
+
+* Make sure you have the right board and programmer selected.
+* Try a different USB port. Computer have internal USB hubs and some hubs don’t play well with Arduino.
+* Try a USB 2.0 port. Sometimes programming doesn’t work over USB 3.0. If your computer has a USB 2.0 hub use it. If not, get a USB 2.0 hub and plug the Arduino into that.  On some machines
+he blue USB ports are 3.0 and black ones are 2.0.
+* Unplug everything, quit Arduino, plug everything back in, restart Arduino.
+* Google the error. Chances are you are not alone.
+
+In rare cases, you may need to install drivers for the FTDI programming board. Read the How to Install FTDI Drivers Tutorial https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers
+.
+
+## Bringing Up the Remote
+
+Your first task to "bring up" your remote.  This means verifying that all of it's components work and that you can successfully access them via software.
+
+### Reading the Buttons
+
+The `Remote` library provides a call-back-based mechanism for detecting when the user presses the buttons.  To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
+pen the serial monitor, push some buttons, and see what happens.
+
+There is also a simple 'is_pressed()' function that you can use to tell if a given button is currently pressed.  You should pass the `*_PIN` constant for the button you want to test.  The `*_PIN` macros are in `quad-remote.h`.
+
+Read the code to understand how it works.
+
+### Reading the Knob
+
+There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback when it's value changes.  You can access the current value of the knob with `knob1->getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.
+
+Checkout `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
+
+### Reading the Gimbals
+
+1. Write a function that reads values from the gimbals and use it to writes them to the serial port.
+       * Check out [analog_read()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
+       * The [Arduino Serial monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) will tell you how to get output to the serial port.
+       * The function should go in your  `firmware/remote_firmware/remote_firmware.ino`, which will slowly grow into your remote’s firmware.
+2. Does the value you read from the gimbals vary across the gimbals’ full range of motion? If not, let us know.
+3. Have your code scale the values you get from the gimbals so the full range of motion corresponds to the range 0-1023. Don’t use floating point arithmetic — it’s very, very slow.
+
+## Assemble your Test Stand
+
+### Assemble the Frame
+
+The test stand assembles without any tools, and should look like this when it's done:
+
+![Test Stand](images/teststand.jpg)
+
+1. The middle brace slides into the slots on the two end pieces.  You can use either the vertical or horizontal slot.
+2. The wooden dowel goes through the holes
+3. You can attach two small zip ties to the down to keep it from sliding too much.
+
+It's easy to disassemble as well, although the corners are a bit sharp.
+
+### Assemble the FCB and Airframe
+
+The FCB mounts to the wooden air frame as shown:
+
+![Air frame](images/airframe.jpg)
+
+1. Use four screws and nuts to attach the FCB to the airframe.  Include a wooden 'donut' to provide a gap between the two.  ![Air frame](images/fcb_to_airframe.jpg)
+2. Use another two zip ties to attach the air frame to the dowel.  Make it tight as well.
+3. Trim the tails of your zip ties.
+4. The battery should tuck neatly between the dowel and the FCB.
+5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
+6. Wrap the wire around the arms once or twice and then insert the motor into its holder.  It is a tight fit.
+7. Install the four propellers.  You need two clockwise (labeled "A" -- see below) and two counter-clockwise propellers (labeled 'B').  Matched propellers should be diagonally opposite eachother.  Color has no relationship to direction.  Check the motor direction before installing the propeller to make sure they blow down.
+
+![Air frame](images/clockwise_motor.jpg)
+![Air frame](images/counterclockwise_motor.jpg)
+
+8. If you need to attach a battery cable, unscrew the two screws on the green terminal block and insert the lead on the battery cable.  Make sure you get the polarity right: red is positive:
+![Air frame](images/battery_polarity.jpg)
+
+
+## Bringing up the FCB
+
+The FCB has three key hardware components you'll need to test:  The microcontroller, the accelerameter, and the motors.
 
 ### Run a Test Program on the FCB
 
