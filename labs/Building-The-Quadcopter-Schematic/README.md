@@ -83,6 +83,9 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 9. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
 10. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
 11. Schematic symbols should all be aligned to 0.1in grid.
+12. Labels for nets (created using the 'label' tool) should need to placed on the net the label.  This means the label's location (which is marked with a '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
+
+
 
 ### The Microcontroller
 

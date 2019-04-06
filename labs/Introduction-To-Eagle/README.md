@@ -29,7 +29,7 @@ Skills to Learn
 
 ### Complete the Responsibility Contract
 
-Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page as a pdf called `responsibility.pdf,` commit it to your repo.
+Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo.
 
 ### Fill Out The Self Evaluation
 

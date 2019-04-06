@@ -1,8 +1,10 @@
 # Arduino, Wireless, and Quadcopter Hardware
 
-This is big lab, but there shouldn’t be many surprises. You’re mostly getting parts and pieces together for future labs. However, don’t assume it won’t take much time. There’s a lot to do. Get started!
+This is big lab, but there shouldn’t be many surprises. You’re mostly getting parts and pieces together for future labs, but you do have to integrate everything into one app at the end, and integration is always harder than you think.  
+There’s a lot to do. Get started!
 
 ## Pick your Team
+
 You will work on this lab and all future labs in teams of two. You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
 
 ## Skills to Learn
@@ -18,7 +20,7 @@ You will work on this lab and all future labs in teams of two. You will need to 
 ## Equipment, Supplies, and Software You Will Need
 
 1. The starter repo for this lab: .
-2. 1 fully-assembled remote control.
+2. test stand and remote control part kit.
 4. 1 micro USB cable.
 5. The contents of the github repo for the remote control (https://github.com/NVSL/Quadcopter-Remote) for reference.
 6. 1 flight control board (FCB).
@@ -48,10 +50,13 @@ The flight control boards are provided for your use during the class.
 
 ## Preliminaries 
 
+### Assembling the Remote
+
+### Assembling the Flight Test Stand
+
 ### Install Arduino
 
-Install Arduino 1.8.5 or
-later.  This is the only version we will be supporting in class.
+Install Arduino 1.8.5 or later.  This is the only version we will be supporting in class.
 
 ### Setup Your Firmware Development Environment
 
@@ -76,33 +81,14 @@ You’ll need a few libraries, so you might as well install them now, but you wo
 
 Clone them into `firmware/libraries`.
 
-There are a few libraries you'll need for the remote as well.  These are in  `Quadcopter-Remote/src/libraries/`.  From there, copy `quad_remote`, `RotaryEncoder` and `radio' into your `firmware/libraries/` directory:
- 
-```
- $ cp -r <path to>/Quadcopter-Remote/src/libraries/quad_remote firmware/libraries
- $ cp -r <path to>/Quadcopter-Remote/src/libraries/RotaryEncoder firmware/libraries
- $ cp -r <path to>/Quadcopter-Remote/src/libraries/radio firmware/libraries
- ```
- 
-or create symbolic links:
-
-```
- $ ln -sf <path to>/Quadcopter-Remote/src/libraries/quad_remote firmware/libraries
- $ ln -sf <path to>/Quadcopter-Remote/src/libraries/RotaryEncoder firmware/libraries
- $ ln -sf <path to>/Quadcopter-Remote/src/libraries/radio firmware/libraries
- ```
-
 Here's the command sequence on my machine: 
 
 ```
-ln -sf ../../QuadClass-Remote/firmware/libraries/Remote ./firmware/libraries/
-ln -sf ../../QuadClass-Remote/firmware/libraries/RotaryEncoder ./firmware/libraries/
-ln -sf ../../QuadClass-Remote/firmware/libraries/Radio ./firmware/libraries/
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-AHRS.git)
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-LSM9DS1.git)
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-Sensor.git)
 (cd ./firmware/libraries/; git clone git@github.com:sparkfun/SparkFun_SerLCD_Arduino_Library.git)
-(cd ./firmware/hardware/; git clone git@github.com:NVSL/QuadClass-Atmega128RFA-Arduino-Addon.git)
+(cd ./firmware/hardware/;  git clone git@github.com:NVSL/QuadClass-Atmega128RFA-Arduino-Addon.git)
 ```
 
 When you're done, the top few levels of your repo should look like this:
@@ -117,6 +103,7 @@ When you're done, the top few levels of your repo should look like this:
 ./firmware/RFChat/RFChat.ino
 ./firmware/libraries
 ./firmware/libraries/Radio
+./firmware/libraries/SparkFun_SerLCD_Arduino_Library
 ./firmware/libraries/RotaryEncoder
 ./firmware/libraries/QuadClass-Sensor
 ./firmware/libraries/QuadClass-AHRS
@@ -138,23 +125,43 @@ Create sketches for your quad ard remote control firmware.
 * `firmware/quad_firmware/quad_firmware.ino` will hold the firmware (i.e., flight control software) for your quadcopter
 * `firmware/remote_firmware/remote_firmware.ino` will hold the code for your remote control. 
 
-### Run a Test Program 
+### Run a Test Program On the Remote
 
+The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.  
+The programmer target is controlled by the `quad/RC` switch at the top of the remote.
+
+* Plug your USB cable into the the remote.
+* Set the the RC/Quad switch to 'RC'
 * Open up `File->Examples->01.Basics->Blink`. 
 * Compile and download to the remote.
 * One of the LEDs on the board will start blinking.
 * Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
 * Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the right stick on your remote should cause it to change.
 
+
+### Run a Test Program on the FCB
+
+The FCB can be programmed via the remote control's USB-to-serial converter.  The same cable will also power the FCB's microcontroller and IMU.  
+
+* Set the 'RC/Quad' switch to 'Quad'.
+* Run the `Blink` example.  The light should blink.
+* Run the `AnalogReadSerial` example.  It will print at you, but the number won't change.
+
 ### Reading from the IMU
 
-Load, compile, and run `Open->Examples->QuadClass Adafruit LSM9DS1 Library->lsm9ds1`.  Open the serial monitor (You may need to adjust the BAUD rate to 115200), and you should see something like this:
+Load, compile, and run `Open->Examples->QuadClass Adafruit LSM9DS1 Library->lsm9ds1` on the FCB.  Open the serial monitor (You may need to adjust the BAUD rate to 115200), and you should see something like this:
 
 ![IMU Output](images/IMU_Output.png)
 
 Shows the raw sensor readings from your IMU.  As you move the FCB, they should respond accordingly.  See if you can find gravity.  It's 9.8 m/s^2.
 
 ### Driving the Motors
+
+The FCB's motors are driven directly by the battery, and the battery is connected to the board via 2-pin header.  Your FCB has a small 'jumper' that connects the pin.  
+When it's not in use, you should leave the jumper disconnected.  Otherwise, the FCB will discharge your battery to a dangerously low level.
+
+* Attach a changed battery to the FCB.
+* Install the jumper.
 
 The motors on the FCB are attached to pins 8, 3, 4, and 5.
 
@@ -180,9 +187,9 @@ To test the wireless, open `firmware/RFCount/RFEcho.ino` and run it on
 your FCB.
 
 Then run `firmware/RFChat/RFChat.ino` on your remote.  Open the serial
-monitor and type some text into the field at the top, and hit return.
+monitor (while it's connected to the remote) and type some text into the field at the top, and hit return.
 It'll bounce the data off the FCB and print out the result.  You might
-get some garbage too, that's fine.
+get some garbage too, don't worry about it.
 
 Look at the `RFChat` code to understand how it works: It checks if
 data is available from the radio and writes it to the serial
@@ -192,7 +199,7 @@ radio.  Note that it sends and recevies multi-byte packets.
 ## Sending Useful Data
 
 Your next task is to think about how you will transmit data from your
-remote to the quadcopter. A reasonable approach is to create a struct
+remote to the quadcopter.  A reasonable approach is to create a `struct`
 that holds all the control values you want to send to the
 teststand/quadcopter and transmit that struct, using `rfWrite()`. You
 should include the gimbal values and the buttons.

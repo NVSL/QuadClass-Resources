@@ -20,7 +20,7 @@ Adafruit has a very nice [tutorial about building new schematic symbols, package
 Interpreting datasheets takes some practice. Here are some tips:
 
 * The datasheet includes data on many switches. Make sure you are looking at the correct part of the sheet.
-* There are several mechanical drawings. For creating a package, you are interested in solder pad layout.
+* There are several mechanical drawings. For creating a package, you are interested in solder pad layout (in the "Drilling diagrams" section, since most of the drawings are for throughhole parts).
 * Don't assume drawings are for scale. Instead, use the numerical values given.
 ### 
 
