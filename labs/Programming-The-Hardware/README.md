@@ -50,10 +50,6 @@ The flight control boards are provided for your use during the class.
 
 ## Preliminaries 
 
-### Assembling the Remote
-
-### Assembling the Flight Test Stand
-
 ### Install Arduino
 
 Install Arduino 1.8.5 or later.  This is the only version we will be supporting in class.
@@ -125,19 +121,6 @@ Create sketches for your quad ard remote control firmware.
 * `firmware/quad_firmware/quad_firmware.ino` will hold the firmware (i.e., flight control software) for your quadcopter
 * `firmware/remote_firmware/remote_firmware.ino` will hold the code for your remote control. 
 
-### Run a Test Program On the Remote
-
-The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.  
-The programmer target is controlled by the `quad/RC` switch at the top of the remote.
-
-* Plug your USB cable into the the remote.
-* Set the the RC/Quad switch to 'RC'
-* Open up `File->Examples->01.Basics->Blink`. 
-* Compile and download to the remote.
-* One of the LEDs on the board will start blinking.
-* Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
-* Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the right stick on your remote should cause it to change.
-
 ### Arduino Troubleshooting
 
 Programming Arduino microcontrollers can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of whi
@@ -157,6 +140,79 @@ In rare cases, you may need to install drivers for the FTDI programming board. R
 
 Your first task to "bring up" your remote.  This means verifying that all of it's components work and that you can successfully access them via software.
 
+### Assembling the Remote 
+
+To assemble the remote you will need the following:
+
+* 8x 1-inch standoffs
+* 4x 1/2-inch standoffs
+* 4x 3/8-inch standoffs
+* 8x 1-1/2-inch screws
+* 4x 1-1/4-inch screws
+* 12x nuts
+* 4x small zip ties
+* 1x PCB
+* 1x LCD
+* 1x battery cable
+* 2x gimbals 
+
+##### 
+
+**Remote Parts** 
+
+![Remote Parts](images/remote_parts.jpg)
+
+**Add Screws**
+
+![Add Screws](images/add-screws.jpg)
+
+**Add Standoffs**
+
+![Add standoffs](images/add-standoffs.jpg)
+
+**Add Gimbals and PCB**
+
+![Add gimbals](images/add-gimbals-pcb.jpg)
+
+**Add Gimbal Nuts**
+
+![Add gimbal nuts](images/add-gimbal-nuts.jpg)
+
+**Plug in Gimbals**
+
+![Plug in gimbals](images/plug-in-gimbals.jpg)
+
+**Install Standoffs and LCD**
+
+![Install standoffs and lcds](images/install-standoffs-and-lcd.jpg)
+
+**Add LCD Nuts**
+
+![Add LCD nuts](images/add-lcd-nuts.jpg)
+
+**Attach Battery**
+
+![Add battery](images/add-battery.jpg)
+
+
+### Installing a Battery
+
+The remote can be powered either via USB or via a LiPo battery.  It also has a builtin LiPo charger that will charge the battery when it's attached to USB.  You'll have two batteries.  Keep one charging on the remote and the other
+hooked to the FCB.
+
+### Run a Test Program On the Remote
+
+The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.  
+Whether it will program the remote or the quadcopter target is controlled by the `quad/RC` switch at the top of the remote.
+
+* Plug your USB cable into the the remote.
+* Set the the RC/Quad switch to 'RC'
+* Open up `File->Examples->01.Basics->Blink`. 
+* Compile and download to the remote.
+* One of the LEDs on the board will start blinking.
+* Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
+* Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the right stick on your remote should cause it to change.
+
 ### Reading the Buttons
 
 The `Remote` library provides a call-back-based mechanism for detecting when the user presses the buttons.  To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
@@ -171,6 +227,11 @@ Read the code to understand how it works.
 There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback when it's value changes.  You can access the current value of the knob with `knob1->getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.
 
 Checkout `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
+
+### Writing to the LCD
+
+The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://www.sparkfun.com/products/14073).
+
 
 ### Reading the Gimbals
 
