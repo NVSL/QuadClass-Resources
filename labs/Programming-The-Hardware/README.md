@@ -215,7 +215,10 @@ Whether it will program the remote or the quadcopter target is controlled by the
 
 ### Reading the Buttons
 
-The `Remote` library provides a call-back-based mechanism for detecting when the user presses the buttons.  To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
+
+The `Remote` library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released. 
+ 
+To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
 pen the serial monitor, push some buttons, and see what happens.
 
 There is also a simple 'is_pressed()' function that you can use to tell if a given button is currently pressed.  You should pass the `*_PIN` constant for the button you want to test.  The `*_PIN` macros are in `quad-remote.h`.
@@ -224,7 +227,8 @@ Read the code to understand how it works.
 
 ### Reading the Knob
 
-There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback when it's value changes.  You can access the current value of the knob with `knob1->getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.
+There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback (`knobs_update_cb`) when it's value changes.  
+You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
 
 Checkout `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
 
@@ -236,11 +240,11 @@ The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://
 ### Reading the Gimbals
 
 1. Write a function that reads values from the gimbals and use it to writes them to the serial port.
-       * Check out [analog_read()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
-       * The [Arduino Serial monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) will tell you how to get output to the serial port.
-       * The function should go in your  `firmware/remote_firmware/remote_firmware.ino`, which will slowly grow into your remote’s firmware.
-2. Does the value you read from the gimbals vary across the gimbals’ full range of motion? If not, let us know.
-3. Have your code scale the values you get from the gimbals so the full range of motion corresponds to the range 0-1023. Don’t use floating point arithmetic — it’s very, very slow.
+  * Check out [analog_read()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
+  * The [Arduino Serial monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) will tell you how to get output to the serial port.
+  * The function should go in your  `firmware/remote_firmware/remote_firmware.ino`, which will slowly grow into your remote’s firmware.
+2. Does the value you read from the gimbals vary across the gimbals’ full range of motion?  If not, let us know.
+3. Have your code scale the values you get from the gimbals so the full range of motion corresponds to the range 0-255. Arduino's `map()` and `constrain()` functions are useful here.
 
 ## Assemble your Test Stand
 
@@ -262,8 +266,8 @@ The FCB mounts to the wooden air frame as shown:
 
 ![Air frame](images/airframe.jpg)
 
-1. Use four screws and nuts to attach the FCB to the airframe.  Include a wooden 'donut' to provide a gap between the two.  ![Air frame](images/fcb_to_airframe.jpg)
-2. Use another two zip ties to attach the air frame to the dowel.  Make it tight as well.
+1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" spacer to provide a gap between the two.  ![Air frame](images/fcb_to_airframe.jpg)
+2. Use another two zip ties to attach the air frame to the dowel.  Make it as tight as you can. ![Air frame](images/airframe-zip-ties.jpg)
 3. Trim the tails of your zip ties.
 4. The battery should tuck neatly between the dowel and the FCB.
 5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
@@ -408,7 +412,7 @@ The propellers are sharp enough and fast enough to hurt you.  To
 prevent accidents, your firmware should require you to "arm" your
 quadcopter before it will turn on the motors.
 
-A typical arming sequence is to put the both gimbals in the lowest,
+Our arming sequence is to put the both gimbals in the lowest,
 outermost position.  This position is useful in two critical ways: 1)
 the pilot is unlikely to do it by accident and 2) it ensures that the
 throttle is at 0.  Turn on the LED on the quadcopter when it is armed.
@@ -436,8 +440,9 @@ Make sure of the following:
 
 1. Your remote firmware in `firmware/remote_firmware/remote_firmware.ino`.
 2. Your quad firmware in `firmware/quad_firmware/quad_firmware.ino`.
+3. Any other code you created (e.g., a library with your radio packet format).
 
-Once you’ve committed everything, create a tag called “Lab03” Be sure to make it an “annotated” tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
+Once you’ve committed everything, create a tag called “programming-the-hardware” Be sure to make it an “annotated” tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 
 ### Demo Your Code
 
@@ -455,10 +460,10 @@ Check list (1 point each):
 4.  FCB reset disarms.
 5.  Remote reset disarms.
 6.  Calibration works.
-7.  Calibration values saved
+7.  Calibration values saved.
 8.  Calibration mode unavailable when armed.
 9.  Pushing sticks past calibrated values doesn't result in strange behavior.
 10.  Zero motor activity at 0 throttle.
 11.  Throttle smoothly controls motor output across full gimbal range.
 
-You will lose one point for each day late your solution is.
+You will lose one point for each day late your solution is. 
