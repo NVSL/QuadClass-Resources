@@ -248,6 +248,22 @@ The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://
 
 ## Assemble your Test Stand
 
+Parts:
+
+* 1x FCB
+* 1x Air frame
+* 4x of the smallest spaces
+* 4x of the shortest screws (which are 1/2 in I think)
+* 4x nuts
+* 1 set of motors
+* 2x small white zip ties
+* 1x skewer
+* 1x battery
+* 2x test stand sides
+* 1x test stand cross-brace
+* 1x 6-pin FTDI-to-FTDI cable
+* 1x 2-pin jumper
+
 ### Assemble the Frame
 
 The test stand assembles without any tools, and should look like this when it's done:
@@ -287,7 +303,8 @@ The FCB has three key hardware components you'll need to test:  The microcontrol
 
 ### Run a Test Program on the FCB
 
-The FCB can be programmed via the remote control's USB-to-serial converter.  The same cable will also power the FCB's microcontroller and IMU.  
+The FCB can be programmed via the remote control's USB-to-serial converter.  The colorful 6-strand cable is for this purpose.  The remote control and the FCB both have `B` and `G` marking the correct location of the blue and green wires in the cable.
+The cable will also power the FCB's microcontroller and IMU even if no battery is attached.
 
 * Set the 'RC/Quad' switch to 'Quad'.
 * Run the `Blink` example.  The light should blink.
