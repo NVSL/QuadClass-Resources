@@ -6,3 +6,6 @@ Info: lbr/quadparts_prebuilt.lbr -- Examined lbr/quadparts_prebuilt.lbr (Library
 Warning: lbr/quadparts_prebuilt.lbr:QUADCLASS_LOGO -- Missing '>NAME' (LibraryStyle.py:129:62A141A4)
 Error: lbr/quadparts_prebuilt.lbr:QUADCLASS_LOGO -- Wires found in Top layer.  You probably want an SMD instead. (LibraryStyle.py:182:52DC83BC)
 Warning: lbr/quadparts_prebuilt.lbr:LAYER_LABELS -- Missing '>NAME' (LibraryStyle.py:129:451E3208)
+Warning: lbr/quadparts_prebuilt.lbr:VIA-0.2MM -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:128:4D63C431)
+Warning: lbr/quadparts_prebuilt.lbr:QUADCLASS_LOGO -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:128:2D11C98C)
+Warning: lbr/quadparts_prebuilt.lbr:LAYER_LABELS -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:128:3898894F)

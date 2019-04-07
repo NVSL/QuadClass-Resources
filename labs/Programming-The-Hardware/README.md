@@ -156,9 +156,9 @@ To assemble the remote you will need the following:
 * 1x battery cable
 * 2x gimbals 
 
-##### 
+##### Steps
 
-**Remote Parts** 
+**All the Parts** 
 
 ![Remote Parts](images/remote_parts.jpg)
 
