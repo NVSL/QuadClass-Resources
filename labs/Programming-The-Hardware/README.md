@@ -152,6 +152,7 @@ To assemble the remote you will need the following:
 * 1x LCD
 * 1x battery cable
 * 2x gimbals 
+* 1x USB Micro cable
 
 ##### Steps
 
@@ -265,8 +266,9 @@ Parts:
 
 * 1x FCB
 * 1x Air frame
-* 4x of the smallest spaces
-* 4x of the shortest screws (which are 1/2 in I think)
+* 4x smallest nylon spacers
+* 4x small wooden spacers
+* 4x 1/2-inch (or 5/8th) screws
 * 4x nuts
 * 1 set of motors
 * 2x small white zip ties
