@@ -12,7 +12,7 @@ You will work on this lab and all future labs in teams of two. You will need to 
 1. Installing the Arduino GUI.
 2. Programming your remote and the test stand board.
 3. Communicating with the boards using an FTDI serial port.
-4. Communicate wirelessly between the two boards.
+4. Communicate wirelessly between the remote and the FCB.
 5. Reading values from the controller gimbals.
 6. Use the other features of the remote.
 7. Driving a DC motor with PWM.
@@ -21,17 +21,12 @@ You will work on this lab and all future labs in teams of two. You will need to 
 
 1. The starter repo for this lab: .
 2. test stand and remote control part kit.
+3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
-5. The contents of the github repo for the remote control (https://github.com/NVSL/Quadcopter-Remote) for reference.
-6. 1 flight control board (FCB).
-7. Two LiPo batteries.
-8. Laser-cut parts for a test stand and airframe.
-9. 1 set of motors.
-10. 1 set of matched propellers (2xCW, 2xCCW)
-11. 4 small zip ties.
-12. Four short screws, four nuts, and four 3mm nylon spacers.
-13. One set of four motors.
-14. One set of propellors: 2 CW and 2 CCW.
+5. 1 flight control board (FCB).
+6. Two LiPo batteries.
+7. 1 set of motors.
+8. 1 set of matched propellers (2xCW, 2xCCW)
 
 ### Your Remote Control
 
@@ -40,6 +35,8 @@ You are responsible for the care of the remote:
 1. If you break it, you'll need to pay replace the broken parts.
 2. Be reasonably gentle with the gimbals (joysticks). They are of high quality, but are not indestructible.
 3. Be careful to install the batteries in the correct orientation.  This mostly means attaching the battery leads to the screw terminals correctly (red is '+').
+
+Unfortunately, you cannot keep the remote.  However, it is pretty easy to build you own.  Ask the professor, if you are interested.
 
 ### Your Flight Control Board and Test Stand
 
@@ -172,6 +169,8 @@ To assemble the remote you will need the following:
 
 **Add Gimbals and PCB**
 
+The vertical axis of the left gimbal should not return to the center position automatically.  The other gimbal axes will. 
+
 ![Add gimbals](images/add-gimbals-pcb.jpg)
 
 **Add Gimbal Nuts**
@@ -202,8 +201,7 @@ hooked to the FCB.
 
 ### Run a Test Program On the Remote
 
-The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.  
-Whether it will program the remote or the quadcopter target is controlled by the `quad/RC` switch at the top of the remote.
+The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.   Whether it will program the remote or the quadcopter target is controlled by the `quad/RC` switch at the top of the remote.
 
 * Plug your USB cable into the the remote.
 * Set the the RC/Quad switch to 'RC'
@@ -215,8 +213,9 @@ Whether it will program the remote or the quadcopter target is controlled by the
 
 ### Reading the Buttons
 
+The `Radio` library provides access to the basic hardware features of the remote.  You get access to the library with `#include "quad_remote.h"` and calling `quad_remote_setup()` in your Arduino `setup()` function.
 
-The `Remote` library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released. 
+The library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released. 
  
 To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
 pen the serial monitor, push some buttons, and see what happens.
@@ -228,14 +227,28 @@ Read the code to understand how it works.
 ### Reading the Knob
 
 There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback (`knobs_update_cb`) when it's value changes.  
-You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
 
-Checkout `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
+You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
+o
+
+Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
 
 ### Writing to the LCD
 
-The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://www.sparkfun.com/products/14073).
+The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://www.sparkfun.com/products/14073).  
 
+The `Radio` library sets up the lcd for you as an object called `lcd`.
+
+THe `knobs_and_buttons.ino` example shows how to use it:  It displays the value of the knob and lets you move it's location around on the display.
+
+Here are the basic commands.
+
+* `lcd.clear()` clears the display
+* `lcd.home()` move the cursor to the top left position.
+* `lcd.print(char *)` write some text to the display.  It works with `int`, `float`, `char *`, etc.
+* `lcd.setCursor(int c, int r)` Move the cursor to the `c` position of row `r`.
+
+There's some other fancy stuff you can do, too, like scrolling, changing the contrast setting, and changing the backlight color.  Checkout the examples, but note that the examples all assume I2C connectivity, but the remote uses `SoftwareSerial`, so you'll have to adapt/copy from the examples rather than running them directly.    
 
 ### Reading the Gimbals
 
@@ -369,10 +382,12 @@ should include the gimbal values and the buttons.
 
 There are some caveats:
 
-First, you should include a “magic number” in your command struct so
+First, you must tolerate the fact that the the radio channel you are using is a shared resource (it's the same RF range as WiFi).
+This means you may pick up data that is not yours, so you must be able to tell which packets are meant for you and which aren't. 
+
+One way to do this is to include a “magic number” in your command struct so
 you can make sure you are getting commands from your remote and not
-some other random data or packets from another team (we may have more
-teams than channels). If you want to be more careful, you can include
+some other random data or packets from another team or noise. If you want to be more careful, you can include
 a checksum as well. For instance, the last entry in the struct could
 hold the `XOR` of all the other words in the struct. If they don’t
 match, it’s a packet from somewhere else.
@@ -387,7 +402,8 @@ your quadcopter firmware and your remote firmware. The clever way to
 do this is to create your own Arduino library that holds the struct
 and related code. Otherwise, if you change it in one place, you’ll
 have to remember to change it in another. This violates the [DRY
-principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
+principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).  Here's a tutorial on writing an Arduino library: https://www.arduino.cc/en/Hacking/libraryTutorial.  
+Or you can look at the librarise in your repo for guidance (`firmware/libraries`).
 
 To test it, program the test stand board to receive the data from your
 remote and print it out. Verify that the values change as you move the
@@ -423,6 +439,8 @@ For #2, you should only be able to enter calibration mode while the
 quadcopter is not armed (see below).  You will also need a way to
 trigger calibration mode (e.g., pressing one of the buttons).
 
+Use the LCD to tell the user that they are in calibration mode.
+
 ### Arming your FCB
 
 The propellers are sharp enough and fast enough to hurt you.  To
@@ -430,9 +448,9 @@ prevent accidents, your firmware should require you to "arm" your
 quadcopter before it will turn on the motors.
 
 Our arming sequence is to put the both gimbals in the lowest,
-outermost position.  This position is useful in two critical ways: 1)
+outermost position (left gimbal to lower-left, right gimbal to lower-right).  This position is useful in two critical ways: 1)
 the pilot is unlikely to do it by accident and 2) it ensures that the
-throttle is at 0.  Turn on the LED on the quadcopter when it is armed.
+throttle is at 0 when the quadcopter is initially armed.  Turn on the LED on the quadcopter when it is armed.
 
 Your remote and the quadcopter need to always be in agreement about
 whether the quadcopter is armed.  For instance, if your reset your
@@ -448,7 +466,7 @@ Make sure of the following:
 
 1. When the stick is all the way down, the motor should turn off (I.e., writing 0 with `analogWrite()`).
 2. When the stick is all the way up, you should be driving the motor at full power (i.e., writing 255 with `analogWrite()` )
-3.  As you move the stick, motor power should vary smoothly with the sticks position.  (i.e., If the stick is at its midway paint, you should be writing 128).
+3. As you move the stick, motor power should vary smoothly with the sticks position.  (i.e., If the stick is at its midway paint, you should be writing 128).
 4. If you push a little bit on the stick when it is all the way up or down, it shouldn’t behave strangely.  Achieving this will require you to deal with non-idealness of the gimbals.  The Arduino `constrain` function is useful here.
 
 ## Turn in Your Work
@@ -469,7 +487,7 @@ Once you’ve committed everything, create a tag called “programming-the-hardw
 
 Possible points: 10
 
-Check list (1 point each):
+Check list (-1 point for each missing item):
 
 1.  No motor activity when disarmed.
 2.  Motor control active when armed.
@@ -479,8 +497,9 @@ Check list (1 point each):
 6.  Calibration works.
 7.  Calibration values saved.
 8.  Calibration mode unavailable when armed.
-9.  Pushing sticks past calibrated values doesn't result in strange behavior.
-10.  Zero motor activity at 0 throttle.
-11.  Throttle smoothly controls motor output across full gimbal range.
+9.  Calibration feedback on LCD.
+10.  Pushing sticks past calibrated values doesn't result in strange behavior.
+11.  Zero motor activity at 0 throttle.
+12.  Throttle smoothly controls motor output across full gimbal range.
 
 You will lose one point for each day late your solution is. 
