@@ -189,7 +189,7 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Add LCD nuts](images/add-lcd-nuts.jpg)
 
-**Attach Battery**
+**Attach Battery, small white zip ties and 2-pin jumper**
 
 ![Add battery](images/add-battery.jpg)
 
@@ -276,6 +276,8 @@ Parts:
 * 1x test stand cross-brace
 * 1x 6-pin FTDI-to-FTDI cable
 * 1x 2-pin jumper
+* 2x Blades (A)
+* 2x Blades (B)
 
 ### Assemble the Frame
 
