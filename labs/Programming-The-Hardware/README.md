@@ -157,7 +157,7 @@ To assemble the remote you will need the following:
 
 **All the Parts** 
 
-![Remote Parts](images/remote_parts.jpg)
+![Remote Parts](images/remote-parts.jpg)
 
 **Add Screws**
 
@@ -183,7 +183,7 @@ The vertical axis of the left gimbal should not return to the center position au
 
 **Install Standoffs and LCD**
 
-![Install standoffs and lcds](images/install-standoffs-and-lcd.jpg)
+![Install standoffs and lcds](images/add-standoffs-and-lcd.jpg)
 
 **Add LCD Nuts**
 
