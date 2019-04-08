@@ -58,7 +58,7 @@ When you design symbols follow these guidelines:
 6. For two terminal, polarized devices, draw the positive terminal on the left (so it matches the packages, see below).
 7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top, and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device. I’ll reject designs that do this for the IMU.
 8. Use sensible pin names that will you connect the symbol pins and package pins correctly. For example, ‘1’ and ‘2’ makes sense for a resistor symbol, but “C” and “A” makes more sense for a diode. For parts with many pins (like the IMU) use names from the datasheet. The goal is to make it as easy as possible to check that you have connected things properly.
-9. Sizes the symbols sensibly. Discrete components (e.g., resistors and capacitors) should be small, so they don’t take up too much space. Complex parts should be bigger to make them easy to wire up.
+9. Sizes the symbols sensibly. Discrete components (e.g., resistors and capacitors) should be small, so they don’t take up too much space. Complex parts should be bigger to make them easy to wire up.  For instance, the standard resistor symbol is 0.4x0.2 inches.
 10. Include text elements with “>NAME” and “>VALUE” in layers “Names” and “Values” respectively, to show details about the parts. Only include “>VALUE” if the symbol will be used in devices that need a value (see notes below).
 
 ### Guidelines for Building Packages
@@ -154,6 +154,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be 0.85mm wide.  They will extend slightly out from under the package.
 * Make sure you SMDs match the maximum width of the pads on the part.
+* Use 0.1" spacing within logically-related groups of pins for the pins on the IMU.  You can have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
 * The symbol for the IMU should have one VCC pin, one VCCIO pin, and one GND pin. It should not have a RES pin. For instance, in the device for for the IMU, you should connect all of the VCC SMDs to the single VCC pin in the symbol.
@@ -164,7 +165,6 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * There should be no solder mask under the IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the packge.
 * You need to draw lines of `trestrict` between the pads.  They should be the same length as the pads and not overlap them.
 * Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
-
 
 ## Turn in Your Work
 
