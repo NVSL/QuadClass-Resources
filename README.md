@@ -41,6 +41,8 @@ In particular, you'll learn and/or practice these skills/topics:
 
 There are 11 labs divided into four sections.  Deadlines are on the course homepage.
 
+The slides for each lab are in the directory with the lab description.
+
 ### PCB Design
 
 1. [Introduction To Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle)
