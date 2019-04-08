@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.0">
+<eagle version="9.3.1">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -1256,7 +1256,6 @@
 <rectangle x1="4.826" y1="-0.254" x2="5.334" y2="0.254" layer="51"/>
 <wire x1="5.715" y1="-1.27" x2="4.445" y2="-1.27" width="0.2032" layer="21"/>
 <wire x1="5.715" y1="1.27" x2="6.35" y2="0.635" width="0.2032" layer="21"/>
-<text x="6.27" y="-2.375" size="1.27" layer="27" font="vector" align="center">&gt;VALUE</text>
 <text x="6.2938" y="2.3288" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
 <wire x1="6.35" y1="-0.635" x2="5.715" y2="-1.27" width="0.2032" layer="21"/>
 <wire x1="6.35" y1="-0.635" x2="6.985" y2="-1.27" width="0.2032" layer="21"/>
@@ -5014,7 +5013,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </device>
 </devices>
 </deviceset>
-<deviceset name="TPS73633-DBVT">
+<deviceset name="TPS73633-DBVT" uservalue="yes">
 <description>LP3985-series voltage regulators.</description>
 <gates>
 <gate name="G$1" symbol="TPS736*" x="0" y="0"/>
