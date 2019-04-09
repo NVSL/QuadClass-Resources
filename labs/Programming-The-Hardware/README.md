@@ -19,7 +19,7 @@ You will work on this lab and all future labs in teams of two. You will need to 
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: .
+1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz.
 2. test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
@@ -295,12 +295,18 @@ It's easy to disassemble as well, although the corners are a bit sharp.
 
 ### Assemble the FCB and Airframe
 
-The FCB mounts to the wooden air frame as shown:
-
 ![Air frame](images/airframe.jpg)
 
-1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" spacer to provide a gap between the two.  ![Air frame](images/fcb_to_airframe.jpg)
-2. Use another two zip ties to attach the air frame to the dowel.  Make it as tight as you can. ![Air frame](images/airframe-zip-ties.jpg)
+The FCB mounts to the wooden air frame as shown above by following the steps below:
+
+1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" nylon space and a wooden spacer (not shown in this photo) to provide a gap between the two.  
+
+![Air frame](images/fcb_to_airframe.jpg)
+
+2. Use another two zip ties to attach the air frame to the dowel.  Make it as tight as you can. 
+
+![Air frame](images/airframe-zip-ties.jpg)
+
 3. Trim the tails of your zip ties.
 4. The battery should tuck neatly between the dowel and the FCB.
 5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
