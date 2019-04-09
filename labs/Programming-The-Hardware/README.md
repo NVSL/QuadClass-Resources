@@ -111,6 +111,25 @@ Restart Arduino and the bottom of your `Sketch->Include Library`  menu should lo
 
 ![Libraries installed](images/installed_libraries.png)
 
+#### Getting Updates For the Starter Repo
+
+Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do:
+
+```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
+
+or (if you don't have public key set up on github):
+
+
+```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
+
+Then, each time I push a new update you should do this:
+
+```
+git fetch upstream
+git merge remotes/upstream/master
+git push
+``` 
+
 #### Create Your Firmware Source Files
 
 Create sketches for your quad ard remote control firmware.  
