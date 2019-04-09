@@ -190,7 +190,11 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Add LCD nuts](images/add-lcd-nuts.jpg)
 
-**Attach Battery, small white zip ties and 2-pin jumper**
+**Attach Zip ties as 'feet'**
+
+![Remote FTDI](images/remote-feet.jpg)
+
+**Attach Battery and 2-pin jumper**
 
 ![Add battery](images/add-battery.jpg)
 
@@ -327,6 +331,11 @@ The FCB has three key hardware components you'll need to test:  The microcontrol
 ### Run a Test Program on the FCB
 
 The FCB can be programmed via the remote control's USB-to-serial converter.  The colorful 6-strand cable is for this purpose.  The remote control and the FCB both have `B` and `G` marking the correct location of the blue and green wires in the cable.
+
+![FCB FTDI](images/fcb-ftdi.jpg)
+
+![Remote FTDI](images/remote-ftdi.jpg)
+
 The cable will also power the FCB's microcontroller and IMU even if no battery is attached.
 
 * Set the 'RC/Quad' switch to 'Quad'.
