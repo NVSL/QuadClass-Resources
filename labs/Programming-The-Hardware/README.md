@@ -233,7 +233,7 @@ The Remote has a builtin USB-to-serial converter that allows it to program the m
 * Compile and download to the remote.
 * One of the LEDs on the board will start blinking.
 * Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
-* Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the right stick on your remote should cause it to change.
+* Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the left stick on your remote should cause it to change.
 
 ### Reading the Buttons
 
