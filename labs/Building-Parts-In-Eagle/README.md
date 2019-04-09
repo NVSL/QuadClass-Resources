@@ -142,7 +142,7 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
     * Create the SMDs according to the guidance in the datasheet.
     * Use the info tool to edit each SMD, and uncheck ‘stop’.
     * Draw in the stop by hand in layer ‘tstop’ with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet, except that they should be longer by 0.5mm or to make soldering easier.
-
+    * You will need to draw in rectangle on `tCream` as well (and disable the "Cream" check box in properties dialog).  Your `tCream` can (and should) be identical to your `tStop'.
 
 #### IMU
 
