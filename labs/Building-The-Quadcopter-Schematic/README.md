@@ -7,13 +7,13 @@ Check course schedule for the due dates.
 ## Skills to Learn
 
 1. Design a schematic to match a written specification.
-2. Integrate portions of a referenc design into your schematic.
+2. Integrate portions of a reference design into your schematic.
 3. Read and understand key portions of part datasheets.
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: https://classroom.github.com/g/<TBD>.
-2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your lbr/ directory for this lab).
+1. The repo you started in "Programming the Hardware Lab"
+2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your `hardware/lbr/` directory for this lab and commit it).
 
 ## Preliminaries
 
@@ -21,52 +21,30 @@ Check course schedule for the due dates.
 
 Sign up here to get an Autodesk Student account: http://www.autodesk.com/education/free-software/eagle.
 
-Download and install Eagle Premium.
+Download and install Eagle Premium, if you don't have it already.
 
 ### Setting up Eagle
 
 The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
 
-Copy and commit your `custom.lbr` into `lbr`. You can decide to use one or another of the libraries from each of your team members, or you can copy them both as custom `_<name>.lbr`.
+Copy and commit your `custom.lbr` into `lbr`. You can decide to use one or another of the libraries from each of your team members, or you can copy them both as `custom_<name>.lbr`.
 
 ### Make Eagle Easier to Use
 
 By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class.  This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting “Window->Control Panel” and the selecting “Options->Directories”. I suggest the following settings:
 
-* Libraries: `<path to>/quadcopter-<gitusername>/lbr`
+* Libraries: `<path to>/<your-repo>/hardware/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
 
 Sometimes this does not cause the default set of libraries to disappear from the “add part” dialogs. To make them go away, select `Options->Library Manager`, then select all the libraries you don’t want to use and click ‘remove’. There should just be handful left (e.g., Lab01.lbr, Lab01_smd.lbr, custom.lbr,…).
 
-### Making Sure Your Repo is Up-to-Date
-
-If I find a bug in the repo, I will commit changes to the base repo. I’ll announce these commits via piazza or email.
-
-To retrieve the new version, you can do the following:
-
-```
-git remote add upstream git@github.com:NVSL/QuadClass-Quadcopter.git
-```
-
-```
-git fetch upstream
-```
-
-```
-git merge upstream/master
-```
-
-Detailed instructions are here: https://help.github.com/articles/syncing-a-fork/.
-
 
 ## Assembling the Schematic
 
-You’ll build the schematic for your quadcopter starting from an empty Eagle schematic.  You'll assemble the design by studying fragments of other design and the datasheets for the components you will use.
+You’ll build the schematic for your quadcopter starting from an empty Eagle schematic called `hardware/quadcopter.sch`.  You'll assemble the design by studying reference designs and the datasheets for the components you will use.
 
 The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr` (which you'll build).  Eagle comes with a bunch of built in libraries.  They are off limits.
-
-Name your schematic `quadcopter.sch`.  Put it in the `hardware` directory of your quadcopter repo.
 
 ### General Schematic Style Guidelines
 
@@ -82,31 +60,37 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 8. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
 9. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
 10. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
-11. Schematic symbols should all be aligned to 0.1in grid.
+11. Schematic symbols and wires should all be aligned to 0.05in grid (or, even better 0.1in grid).
 12. Labels for nets (created using the 'label' tool) should need to placed on the net the label.  This means the label's location (which is marked with a '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
-
-
 
 ### The Microcontroller
 
-Here's the schematic for the BBB without the voltage regulator.  It's the reference design for your microcontroller, the radio, and the associated circuits.
+Here's the schematic for the Basic Breakout Board (BBB) without the voltage regulator. It's the reference design for your microcontroller, the radio, and the programming headers.
+
+Why did I give a picture of hat you need to build?  Because reference designs are a very common practice in real PCB designs.  Why reinvent the wheel?
 
 ![Microcontroller schematic](images/microcontroller.png)
 
-You should use the schematic as a guide for constructing the microcontroller portion of your schematic.
+You should use the schematic as a guide for constructing the microcontroller portion of your schematic.  Build it from parts from `quadparts_prebuilt.lbr`:
+
+1.  Use one of the `ANT_PCB...` variants for the antenna.  There's a left and right-handed version.  Depending on your ultimate board design, you might one or the other.
+2. `B1` is a 'balun'.  Pay attention to the pin numbers.
+3. Use the `0.45x0.45` button.
+4. Replace one of the green LEDs with your red LED.
+5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact (as seen on the FCB).
+
+You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or your can mirror parts by editing their properties.
 
 There are some changes you will need to make to this schematic based on what's required by the other components.  This is just a starting point for your circuit.
 
 If you have questions about the parts attached directly to the microcontroller (including the radio), the first place to turn is the microcontroller datasheet.
-
-
 
 ### The IMU
 
 The IMU datasheet contains all the information you will need to use connect the IMU to the microcontroller. A few things to keep in mind:
 
 1. The IMU datasheet is not the best. If something doesn't make sense search the pdf.
-2. There are actually two logical devices in this package: the accelerometer/gyroscope (A/G in the datasheet ) and the magnetometer (M).
+2. There are actually two logical devices in this package: the accelerometer/gyroscope (referred to as 'A/G' in the datasheet ) and the magnetometer ('M').
 3. Both devices will operate in I2C mode only and connect to microcontroller via I2C.
 4. You must follow all the recommendations regarding external capacitors attached the IMU.
 5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.
@@ -114,19 +98,23 @@ The IMU datasheet contains all the information you will need to use connect the 
 7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
 8. `DEN_A/G` should be connected to `3V3`.
 
-Most of the information you will need is Section 5 of the datasheet. A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables.
+Most of the information you will need is Section 5 of the datasheet. A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables and the text, there are specific answers to most questions you might have in there.
 
 ### The I2C Bus
 
-Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  you should "pull up" these lines to `VCC` using 1kOhm resistors.
+Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  You should "pull up" these lines to `3V3` by connecting them to `3V3` using 1kOhm resistors.
 
-### The Motor Driver 
+##  # The Motor Driver 
 
 Here's a picture of the motor driver circuit:
 
 ![Motor Driver](images/motor_driver.png)
 
-Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.  There's only one (non-light emitting) diode in the library, use it.
+Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.  
+
+1. There's only one (non-light emitting) diode in the library, use it.
+2. Use the `-Molex-...` variant of the motor pads.
+3. Use your MOSFET, of course.
 
 You'll need to connect the PWM control lines to suitable pins on the microcontroller. The suitable pins are marked with "~" on microcontroller's schematic symbol.
 
@@ -144,15 +132,15 @@ The power supply for quadcopter needs to contain the following parts:
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.  
 
-You'll note that the output of the voltage regulator has decoupling capacitor on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  To guard against this, add an additional 220uF decoupling cap (the same one we use for motors) to the output of the voltage regulator.
+You'll note that the output of the voltage regulator has decoupling capacitor on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  To guard against this, add an additional 220uF decoupling cap (the same one we use for motors) to the output of the voltage regulator.  Note that this capacitor is polarized.  The flat line should connect to the positive voltage, and the curved line to ground.
 
 To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines.  The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines. For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
-For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in Lab 8 how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
+For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
 
-A "net bridge" is PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a package that consists of two SMDs that touch one another. They can be very small. Remove the tstop on the pads, since we won't be soldering anything to them.
+A "net bridge" is PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tstop` and `tcream` on the pads, since we won't be soldering anything to them.
 
-Create a schematic symbol (what's a good symbol for something that just connects to nets?) and device for the bridge and use one to connect `BAT_GND` and `GND`. Put this new part in your `custom.lbr`.
+Use bridge to connect `BAT_GND` and `GND`.
 
 It would also be nice if you could program and debug your microcontroller without a battery or with the battery jumper disconnected.  To enable this, we will let the regulator also draw current from the FTDI or ISP headers.  To enable this, connect the FTDI 3V3 pin, the ISP 5V pin, and the input of the regulator with a net called `VIN`.
 
@@ -176,23 +164,21 @@ A debugging header is a set of pins that connects key signals to pins that you c
 * `SDA`
 * `SCL`
 
-To create the header, you'll need a package, symbol, and device for an 10-pin (if you use the list above) header. Just connect these signals to the pins. You'll label them on the PCB when you do layout.
+There's a 10-pin header in the librar you can use for this.  You can also break up the debug header into smaller headers. For instance, you could put a 3 pin header next to each motor with `VBAT`, `BAT_GND`, and the control line. It's always a good idea to include a ground on each debug header.
 
-You can also break up the debug header into smaller headers. For instance, you could put a 3 pin header next to each motor with `VBAT`, `BAT_GND`, and the control line. It's always a good idea to include a ground on each debug header.
-
-You can model the breakout header symbol/device/package on the 2-pin jumper we use to connect the battery to `VBAT`. Put the new parts in `custom.lbr`.
-
-Debugging headers can be a little dangerous, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging.  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines.
+Debugging headers can be a little dangerous, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging.  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines, so that no power pin is next to ground pin.
 
 #### IMU Rescue Header
 
 Soldering the IMU is hard enough that it causes a fair number of
 quadcopters to fail.  To guard against this, add a header that will
-allow you to connect this berakout board
+allow you to connect this breakout board
 (https://www.adafruit.com/product/3387) to your quadcopter.  You need
 four pins: `3V3`, `GND`, `SCL`, and `SCA`, which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt.lbr`.
+
+If you feel like being efficient, you can leave `SCA` and `SCL` off the signal breakout header.
 
 ### Some LEDs
 
@@ -205,7 +191,7 @@ You should also add some LEDs to your design. There are several reasons to add L
 There are several options for powering and/or controlling LEDs:
 
 1. You can connect them directly to battery power and battery ground. In this case, you can't turn them off, but they can be very bright.
-2. You can connect them to pins on the micro controller. If you use a digital pin, you can turn them on and off. If you use a PWM pin, you can control their brightness. In this case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
+2. You can connect them to pins on the micro controller. If you use a digital pin, you can turn them on and off. If you use a PWM pin, you can control their brightness. In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
 3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin. Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine. If you do this, you can drive multiple LEDs with the same transistor and pin.
 
 Regardless of which approach you take, you will need to pick out your LED. To do this, go to http://digikey.com. And enter LED into the search field. You'll see a bunch of results. Likely candidates for smaller LEDs are to be found under "LED Indication - Discrete," while brighter LEDs can be found under "LED Lighting - White", "LED Lighting - Color".
@@ -240,15 +226,15 @@ designator), you should give it's forward voltage, supply voltage
 (e.g., 3.3V or 4.2V), the resistance of the current limiting resistor,
 and the current you expect to flow through the LED.  You should also
 specify whether it's driven directly with a pin or with a MOSFET.
-Put this in a file called `led_notes.txt`.
+Put this in a file called `hardware/led_notes.txt`.
 
 Feel free to get creative with the LEDs!
 
-Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from `quadparts_prebulit.lbr`.
+Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from `quadparts_prebulit.lbr` or your `custom.lbr`.
 
-The packages/devices you build need to meet all the standards described in Lab 4.
+The packages/devices you build need to meet all the standards described in `Building Parts in Eagle Lab`.
 
-Add an attribute called `CUSTOM` to the variants you create.  This will ensure they get ordered.
+Add an attribute called `CUSTOM` to the variants you create.  It should be constant but without a value.  This will ensure they get ordered.
 
 ### Eaglint 
 
@@ -266,14 +252,14 @@ Things to remember:
 
 Submit the following to your github repo:
 
-1. Your `quadcopter.sch`.
-2. Your `lbr/LED.lbr`.
-3. Your `lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
+1. Your `hardware/quadcopter.sch`.
+2. Your `hardware/lbr/LED.lbr`.
+3. Your `hardware/lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
 5. Datasheets for your leds in `datasheets/`.
-6. Your `led_notes.txt`.
+6. Your `hardware/led_notes.txt`.
 
 Submit it to Eaglint: http://eaglint.nvsl.io.
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
 
-Once it passes, create a tag called "Lab04" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
+Once it passes, create a tag called "initial-schematic" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.

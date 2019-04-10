@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.3.1">
+<eagle version="9.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -4953,7 +4953,7 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </device>
 </devices>
 </deviceset>
-<deviceset name="SIP-10_" prefix="J" uservalue="yes">
+<deviceset name="HEADER-10POS" prefix="J" uservalue="yes">
 <description>10 pin single inline pin header, socket, or connector</description>
 <gates>
 <gate name="G$1" symbol="RESOLVED-SIP-10_" x="0" y="0"/>
