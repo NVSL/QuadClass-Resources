@@ -83,7 +83,8 @@ Each of your packages should contain the following elements:
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the package.
 14. We may be soldering by hand, so you need to make sure the SMDs extend out from under the part. This especially important for the IMU. The SMDs should extend 0.5mm away from the edge of the package.
-15. Eagle includes a package generator (access it via the "new" button in the device window and select "Create with package generator").  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
+15. Include lines or symbols in `tPlace` to guide placement of the part.  For parts like the IMU and MCU, this should make easy to precisely place the part by showing the correct, precise location of all four corners.  For other parts an outine (or partial outline is sufficient).
+16. Eagle includes a package generator (access it via the "new " button in the device window and select "Create with package generator").  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
 
 ### Guidelines for Building Devices
 
@@ -118,9 +119,10 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 #### Resistor
 
 * Include “RES” in the name of the device your create.
+* Check the `resistor_mounting_PYu-R_Mount_10.pdf` for guidance about the footprint, but...
 * Make sure SMDs extend 0.5 mm beyond the end of the resistor.
 * The prefix for your resistor device should be “R” for resistor.
-* Name the variant so it’s clear it’s a 0 Ohm resistor. Something like “-0Ohm” would make sense.
+* Name the variant so it’s clear it’s a 0 Ohm resistor. Something like “-0Ohm” or "-0805-OOhm" would make sense.
 
 #### LEDs
 
@@ -141,7 +143,7 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
     * There are two aspects of SMD sizing you you must address in this package. The first is the size of the metal SMD. The second is the hole in the solder mask, called the “stop mask” because it stops the solder mask. Normally, SMDs come with appropriate ‘stop’ by default. You’ll need to remove the default stop and add yours by hand.
     * Create the SMDs according to the guidance in the datasheet.
     * Use the info tool to edit each SMD, and uncheck ‘stop’.
-    * Draw in the stop by hand in layer ‘tstop’ with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet, except that they should be longer by 0.5mm or to make soldering easier.
+    * Draw in the stop by hand in layer ‘tstop’ with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet.
     * You will need to draw in rectangle on `tCream` as well (and disable the "Cream" check box in properties dialog).  Your `tCream` can (and should) be identical to your `tStop'.
 
 #### IMU
@@ -152,17 +154,17 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
-* Make sure the SMDs should be 0.85mm wide.  They will extend slightly out from under the package.
+* Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
 * Make sure you SMDs match the maximum width of the pads on the part.
 * Use 0.1" spacing within logically-related groups of pins for the pins on the IMU.  You can have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
-* The symbol for the IMU should have one VCC pin, one VCCIO pin, and one GND pin. It should not have a RES pin. For instance, in the device for for the IMU, you should connect all of the VCC SMDs to the single VCC pin in the symbol.
+* The symbol for the IMU should have one `VCC` pin, one `VCCIO` pin, and one `GND` pin. It should not have a `RES` pin.  In the device for for the IMU, you should connect all of the VCC SMDs to the single `VCC` pin in the symbol.  Connect the `RES` SMDs to the `GND` pin.
 * There should be no metal under the IMU.  To enforce this, you should do the following
-    1.  Draw a rectangle in `trestrict` that fills in the space in under the package, but does not overlap any of the pins.
+    1.  Draw a rectangle in `trestrict` that fills most of the space in under the package, but does not overlap any of the pins.
     2.  Draw a rectangle in `brestrict` that covers the entire package.
     3.  Draw a rectangle in `vrestrict` that covers the entire package.
-* There should be no solder mask under the IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the packge.
+* There should be no solder mask under the middle of IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the package, but does not overlap the pins.
 * You need to draw lines of `trestrict` between the pads.  They should be the same length as the pads and not overlap them.
 * Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
 
