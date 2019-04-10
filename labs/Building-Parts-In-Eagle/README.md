@@ -155,6 +155,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
+* You should compute the SMD width based on the IMU datasheet and the 'Datasheets/IMU_Soldering\ guidance-{1,2}.pdf' documents.
 * Make sure you SMDs match the maximum width of the pads on the part.
 * Use 0.1" spacing within logically-related groups of pins for the pins on the IMU.  You can have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
