@@ -246,16 +246,19 @@ Your design needs to pass http://eaglint.nvsl.io, so commit your design, submit 
 
 Initial points: 12
 
-Things to remember:
+### Things to remember:
 
-1. Sync your .lbr with your .sch: `Library->Update All`.
+1. Remember to sync your libraries with your schematic: `Library->Update All`.
+2. Eaglint automatically uses the latest `quadparts_prebuilt.lbr` when processing your design.  If you haven't pulled the latest version, eaglint will give you a lot of errors.
 
-Submit the following to your github repo:
+### Things to Submit
+
+Include these in your github repo:
 
 1. Your `hardware/quadcopter.sch`.
 2. Your `hardware/lbr/LED.lbr`.
 3. Your `hardware/lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
-5. Datasheets for your leds in `datasheets/`.
+5. Datasheets for your LEDs in `datasheets/`.
 6. Your `hardware/led_notes.txt`.
 
 Submit it to Eaglint: http://eaglint.nvsl.io.
