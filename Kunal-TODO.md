@@ -35,7 +35,7 @@
 
 ## Due April 10th
 
-6. Collect all the data sheets for quadparts_prebuilt.lbr.  Put them in the resources repo in `Datasheets`
+6. Collect all the data sheets of parts used in the FCB.  Put them in the resources repo in `Datasheets` if they aren't there already.  Note that naming convention:  <descriptive name>-<original datasheet name>.pdf
 
 ## Due May 8th
 

@@ -1,5 +1,7 @@
 # Building Your Own Remote
 
+**This write up is out of date.  Talk to Steve if you want to build a remote**
+
 The base model of the remote is what we have in class.  There are several options you can add.
 
 You'll need to order the parts that are required for the remote but not for the breakout board.  To do so:

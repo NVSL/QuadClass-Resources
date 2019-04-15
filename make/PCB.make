@@ -1,7 +1,7 @@
 # -*- Makefile -*-
 BRD=$(DESIGN).brd
 SCH=$(DESIGN).sch
-EAGLINT=python $(abspath $(EAGLINT_HOME))/server/eaglint/swoop_lint.py --strict $(CHECKS)
+EAGLINT=eaglelint  --strict $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
 EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/server/eaglint/BOM.py
 BOMS=$(patsubst %.sch,%.assembly-bom.html,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
 

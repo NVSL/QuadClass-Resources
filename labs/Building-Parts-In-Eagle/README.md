@@ -65,7 +65,7 @@ When you design symbols follow these guidelines:
 
 Each of your packages should contain the following elements:
 
-1. Choose a meaningful name: e.g, “0805_RESISTOR” or “RED_LED”. Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts that are the same size and you can reuse the package.
+1. Choose a meaningful name: e.g, “0805_RESISTOR” or “0805_LED”. Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts (with different colors, resistances, etc.) that are the same size and you can reuse the package.
 2. Draw a box in tDocu that matches the nominal dimensions of the part. For parts with leads that extend from the part’s package (e.g., the MOSFET), you can draw in the leads too, if you want. tDocu doesn’t show up on the board.
 3. A text item that displays the reference designator for the part. It should be on layer `tName` and the magic string “>NAME” is replaced with the reference designator.
 4. A text item that displays the value of the part. It should be on layer tValues. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
@@ -77,8 +77,8 @@ Each of your packages should contain the following elements:
 10. Add lines on `tPlace` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
     1. For polarized components, draw with the positive terminal on the left.
     2. For polarized components, make the positive terminal the first terminal.
-    3. For polarized components, clearly mark positive terminal with a dot or extra line.
-    4. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode)
+    3. For polarized components, clearly mark the distinguished terminal with a dot or extra line.  The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
+    4. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode).  Design your package so that at least one polarity marker is visible when the part is installed.
 11. Make sure that the “>NAME” doesn’t overlap with the elements that show the orientation, placement, and alignment of the parts.
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the package.
@@ -96,9 +96,10 @@ Follow these guidelines when creating devices:
 2. Put the symbol at the origin (in the left-hand pane of the device editing window)
 3. Choose a sensible name for the device. The guidelines for symbols generally apply here as well.
 4. When you create variants in the device, give them descriptive names. For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant.
-5. Make sure to connect the symbol pins to package pins correctly. Check it, check it again, have your partner check it. This is a common source of hard-to-find bugs.
-6. Set the “Value” radio button appropriately.  Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.  If you set the value radio button, your schematic symbol should include ">NAME" in layer `Names`.
-7. Set the prefix appropriately: “R” for resistor, “Q” for mosfets, “U” for ICs, “D” for diodes, etc. This is what Eagle will start the reference designator with (e.g., “R1”, “Q2”).
+5. Be selective about what information you put in the variant name.  The size, value (resistance, capacitance, color, etc.), is a good idea.  The part number is a good choice because it's not human-undestandable.  Basically, you should only include information that will be useful to you when selecting which variant to use.
+6. Make sure to connect the symbol pins to package pins correctly. Check it, check it again, have your partner check it. This is a common source of hard-to-find bugs.
+7. Set the “Value” radio button appropriately.  Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.  If you set the value radio button, your schematic symbol should include ">NAME" in layer `Names`.
+8. Set the prefix appropriately: “R” for resistor, “Q” for mosfets, “U” for ICs, “D” for diodes, etc. This is what Eagle will start the reference designator with (e.g., “R1”, “Q2”).
 
 You should have one variant for each different physical device you might include in your design. For instance, if you have two 0805 resistors with different resistances, you should one variant for each of them. In this case, you should add attribute (see below) called “VALUE” that specifies the value (e.g., “10R” for 10 Ohms, “1nF” for 1 nanofarad).
 
