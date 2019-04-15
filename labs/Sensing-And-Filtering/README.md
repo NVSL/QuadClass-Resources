@@ -5,10 +5,12 @@ To be completed in your groups.
 Check the course schedule for due date(s).
 
 ## Skills to Learn
-1. Filter and combine sensor inputs from an IMU.
-2. Implement a PID control loop in Arduino.
-3. Tune a PID control loop
-4. Implement useful features on an quadcopter.
+
+1.  Read data from the IMU.
+2.  Using the Arduino plotting tool.
+3.  Configure the builtin filters.
+4.  Implement a complimentary filter in software.
+5.  Tune the filters to provide good readings of FCB orientation.
 
 ## Equipment, Supplies, and Software You Will Need
 
@@ -17,22 +19,24 @@ Check the course schedule for due date(s).
 
 ## Tips
 
-* Your algorithms will have some parameters to tune.
-* The remote's knob and buttons are meant to help tune them.  You can use the knobs on your remote control to changes these dynamically, it will make tuning much faster than having to recompile.
+* Your algorithms will have some parameters to tune.  The remote's knob and buttons are meant to help tune them.  You can use the knobs on your remote control to changes these dynamically, it will make tuning much faster than having to recompile.
 * You can use the buttons too. For example, you could use the buttons to switch between parameters and adjust them with the knob.
 * Some enterprising groups have also use the gimbals to set parameters too.
 * You can send information over the serial port to your laptop to provide feedback to the user.
-* If you stall the motors (i.e., hold t7hem still with the throttle on), it may cause either your IMU reset, which will make it stop reporting any data.
+* If you stall the motors (i.e., hold them still with the throttle on), it may cause either your IMU reset, which will make it stop reporting any data.
+* If your FCB resets when you turn on the motors, it's likely your battery is dying.  
 
 ## Tasks to Perform
 
-You cannot control what you cannot measure.  In this lab, you will use the IMU and some software to accurately measure the orientation of the quadcopter.  In the next lab, you'll use this measurement as the input to a control algorithm that will keep the quadcopter stable.
+You cannot control what you cannot measure.  
+
+In this lab, you will use the IMU and some software to accurately measure the orientation of the quadcopter.  In the next lab, you'll use this measurement as the input to a control algorithm that will keep the quadcopter stable.
 
 ### Reading Data from the IMU
 
 Verify that your your FCB is working properly and that you can program it and that you can read from the IMU by re-running your code from the previous lab.
 
-The the IMU provide a 3-axis accelerometer and a 3-axis gyroscope. For the quadcopter, you won't use the accelerometer data directly. Instead, your code will use them to compute the pitch and roll angles.   You installed the library for this in the previous lab (https://github.com/NVSL/QuadClass_AHRS).
+The the IMU provide a 3-axis accelerometer and a 3-axis gyroscope. You won't use the accelerometer data directly. Instead, your code will use them to compute the pitch and roll angles.   You installed the library for this in the previous lab (https://github.com/NVSL/QuadClass_AHRS).
 
 The key function in this library is: `Adafruit_Simple_AHRS::getQuad()` that fills in a new struct: `quad_data_t` with all the information you'll need: pitch and roll angles and the three axes of the gyro. There is also an new example: `File->Examples->QuadClass AHRS->ahrs_quad.ino` that will print out these values.
 
@@ -73,9 +77,9 @@ The filter is weighted average of two terms:
 
 The filter's single parameter (called the complementary gain) ranges from 0 to 1 and controls how each of these terms contributes to the output. The higher the gain, the more influence the gyroscope has over the output.
 
-### The IMU's Filters
+### Configuring the IMU
 
-The IMU has some built in filters that can remove noise from its output.  This is great, because it doesn't place any load on the microcontroller. Unfortunately, the documentation is kinda terrible. 
+The IMU has a bunch of settings that control how it collects and reports data.  It also has some built in filters that can remove noise from its output.  This is great, because it doesn't place any load on the microcontroller. Unfortunately, the documentation is kinda terrible. 
 
 Here's some basic terminology:
 
@@ -96,13 +100,13 @@ Generally, we would like the low-frequency information from the accelerometers a
 #### Configure the Gyroscope to Prevent Clipping
 
 "Clipping" occurs when a measured value exceeds the range the IMU can handle.  For the gyroscope, this means it rotates too quickly.
-Clipping will show up as a flat plateau where a maximum should be on a graph of the gyro output.
+Clipping will show up as a flat plateau where a maximum should be on a graph of the gyro output.  This is bad, because we will be relying on the integral of the gyro data to approximate Euler angles.
  
- Use `lsm.setupGyro()` to adjust range of values the gyros measure to eliminate the clipping.
+Use `lsm.setupGyro()` to adjust range of values the gyros measure to eliminate the clipping.
  
 #### Adjust the Output Data Rate (ODR)
  
-Adjust the output data rate (ODR) so it's compatible with the rate at which you are sampling the data from the IMU. The ODR should be as closes as possble to how quickly you can sample.
+Adjust the output data rate (ODR) so it's compatible with the rate at which you are sampling the data from the IMU. The ODR should be as closes as possible to how quickly you can sample (i.e., how frequently your `loop()` runs.)
 
 The AHRS example prints the latency for each trip through the loop at the beginning of each line (usually ~4ms). Your sampling rate is 1/latency (e.g., 500Hz). You set the ODR for both the gyro and the accelerometer using `CTRL_REG1_G` (Section 7.12 of the IMU datasheet).
 
@@ -115,7 +119,6 @@ The low-pass filter for the accelerometer is shown in Figure 8 of the IMU datash
 You also need to set the cutoff for LPF2 by setting the ORD Ratio.  The cutoff is set by dividing the ODR by the ODR ratio. For the default ORD (952Hz) and the default ratio (9), the low-pass cutoff is 105.7Hz.
 
 **Note:** There's an inconsistency in the datasheet between Figure 8 and Section 25.  Can you find it?  You'll need to experiment to see which part of the datasheet is correct.
-
 
 #### Setup Filters On the Gyroscope
 

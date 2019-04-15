@@ -2,6 +2,8 @@
 
 During this lab you will assemble and "bring up" a PCB.  This is practice for assembling and bringing up your quadcopter.
 
+This lab is to be completed on your own.
+
 You will assemble a simple Arduino-compatible board based on the microcontroller we are using for this course.  It's called the Bare Bones Board (BBB).
 
 These instructions apply to assembling your quadcopter and to building your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.
@@ -49,8 +51,8 @@ You must take the following precautions:
 
 You need a large, clear space to apply solder paste.
 
-1. It can be messy, so cover everything with a big sheet of butcher or craft paper.
-2. Tape down your scrap PCBs so they will hold your board still.  The PCB should be oriented so the stencil aligns with it in "portrait" orienation (tall rather than wide).
+1. It can be messy, so cover everything with a big sheet of butcher or craft paper.  Tape down the paper, so it's not sliding around.
+2. Tape down some scrap PCBs so they will hold your board still.  The PCB should be oriented so the stencil aligns with it in "portrait" orienation (tall rather than wide).
 3. Align your stencil with your board so the wholes line up perfectly with the pads. This must be very precise.
 4. Tape down the right edge of your stencil so you can easily lift it on and off your board like a page of a book.  The tape should be on the right, and there should be clear space for the stencil to lay flat.  
 5. Check the alignment again
@@ -60,8 +62,8 @@ You need a large, clear space to apply solder paste.
 ### Apply Paste
 
 1. Use the narrow putty knife to apply a thin (1cm) bead of paste to the edge of the wide putty knife.
-2. Hold the wide putty knife at a 45-degree angle and drag it across the stencil, using firm (but not hard), constant pressure to apply a thin layer of paste across across the stencil.  Press just firmly enough that there is a thin layer of paste left on the stencil (see photo).  If you push too hard, it will force paste through and slightly under the stencil, which is not what you want.  Move smoothly.  Do not stop.  Make sure you align the knife so it will pass over all the pads on the board.  You can only make one pass.
-3. Turn the squeegee over and scrape the extra paste off the stencil push pushing (not dragging) the squeegee.  There should be very little paste left.  Again, you can only make one pass.
+2. Hold the wide putty knife at a 45-degree angle and drag it across the stencil, using firm (but not too hard), constant pressure to apply a thin layer of paste across across the stencil.  Press just firmly enough that there is a thin layer of paste left on the stencil (see photo).  If you push too hard, it will force paste through and slightly under the stencil, which is not what you want.  Move smoothly.  Do not stop.  Make sure you align the knife so it will pass over all the pads on the board.  You can only make one pass.
+3. Turn the squeegee over and scrape the extra paste off the stencil with the squeegee almost vertical and held gently against the stencil.  There should be very little paste left.  Again, you can only make one pass.
 4. Smoothly and in one motion lift up the stencil and fold it back.  Lifting it up and accidentally dropping it back onto the board is means redoing it.
 5. Examine the paste pattern with your magnifier.  Look out for
    * Pads with missing paste
@@ -69,7 +71,7 @@ You need a large, clear space to apply solder paste.
 6. Check it with course staff and point out any problems you spotted.
 7. If it looks good, carefully remove your board.
 8. If something is wrong, you'll need to remove all the paste using Kimwipes and alcohol and start again.  You can do this many times.
-9. You need to be very exacting about paste application.  The solder needs to be very crisply defined.  If it doesn't look good, you'll have to redo it.  Redoing it is not hard, and good practice, so there's no point in settling for sub-standard paste application.
+9. You need to be very exacting about paste application.  The solder needs to be very crisply defined.  If it doesn't look good, you'll have to redo it.  Redoing it is not hard, and it's good practice, so there's no point in settling for sub-standard paste application.
 
 
 **A Stencil**
@@ -115,15 +117,14 @@ You need a large, clear space to apply solder paste.
 
 ### Get Organized
 
-You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the breakout board in 10 minutes.  You should not take more than an hour.  Getting organized will help you meet this goal.
+You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the BBB in 10 minutes.  You should not take more than an 45 minutes.  Getting organized will help you meet this goal.
 
 1. Get _everything_ you need together at once.
 2. Collect all the parts you will need (see below).  For the BBB assembly, you will need 1 packet of each type of part.  They will be laid out for you.
-2. Have a clean work area (preferably with a white surface).  The parts are _tiny_.  The less stuff there is around, the less likely you are to lose anything.
-3. Make sure you are unlikely to be bumped.
-4. Allow adequate time.  
+3. Have a clean work area (preferably with a white surface).  The parts are _tiny_.  The less stuff there is around, the less likely you are to lose anything.
+3. Allow adequate time.  
     * Paste has a limited working time, and the course staff are not around forever.    
-    * For the BBB, Assembly will take ~0.5 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget ~30min.  
+    * For the BBB, Assembly will take ~0.5 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget an extra ~15min.  
     * So, you shouldn't start assembly unless you have _at least_ 1 hour left in class.
     * For quadcopter or the remote, allocate 2 hours.
 5. Eat something before hand.  You need to patient and steady.
@@ -142,7 +143,7 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 6.  Arrange your pile of parts at your board so you don't have to reach over the board, otherwise, you're more likely to bump parts.
 7.  Don't mess up.  If something goes significantly wrong, you have to start again.
 8.  Do one type of part at a time (e.g., 1uF caps).  For the BBB, you should have exactly the right number of them, so when they are gone, you're done.
-9.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board.   You can also say `show C*` to see where all the caps are.
+9.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board.   You can also say `show C*` to see where all the caps are.  For the BBB refer to the assembly drawings below.
 10.  Place the parts very gently onto the board.  It should almost be like you are dropping them.  Do not press them down.  It'll displace the solder paste.
 11.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
 
@@ -158,9 +159,11 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
 
+This list covers all the parts on the BBB, your quadcopter, and the quadcopter remote.  Some parts only apply to one or two of those boards.  The parts that are relevant for BBB assembly have a BBB assembly drawing showing where, exactly, those parts should go.
+
 Note that on the remote, there are many parts you will leave unpopulated. Only put parts where there is solder paste.   
 
-In the photos, I've highlighted the polarity markings on the beard and the part.
+In the photos, I've highlighted the polarity markings on the board and the part.
 
 #### Resistors
 
@@ -169,10 +172,18 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 1. These are pretty easy -- a good warm-up.
 2. Make sure they are marking-side-up.
 
+##### BBB: 10KOhm Resistors
+
+![images/bbb-10kOhm.png](images/bbb-10kOhm.png)
+
+##### BBB: 330Ohm Resistors
+
+![images/bbb-333Ohm.png](images/bbb-333Ohm.png)
+
+
 #### Capacitors
 
 1.  The small caps are non-polarized, so direction doesn't matter. ![Capacitors](images/capacitors.jpg)
-
 2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
 3.  Align the big caps carefully.  If you get it wrong your board will look ugly.
 
@@ -184,7 +195,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 
 ![MOSFET](images/mosfet.jpg)
 
-1. The correct orientation is obvious.
+1. The correct orientation is obvious, since the package asymmetrical.
 2. You need to align the pins carefully.
 
 #### Voltage Regulator and Battery Charger.
@@ -194,7 +205,6 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 1. Orientation is obvious (there's three pins on one side and 2 on the other)
 2. Be sure not to confuse these two if you are assembly a remote.
 3. Only the remote has a charger.
-
 
 #### Button 
 
@@ -219,7 +229,7 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 #### Diodes
 
 1. These are also polarized, but the markings are extremely hard to see.  They are printed black on black.
-2. If you hold the diode and look at in the light, one end has a faint rectangular bar code on it.  The other has an "S"
+2. If you hold the diode and look at in the light, one end has a faint rectangular bar code on it.  The other has an "8"
 3. The barcode goes near the dot.
 
 ![Diode orientation](images/diode_orientation.jpg)
@@ -235,10 +245,13 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 #### Microcontroller
 
 1.  Make sure you orient it correctly.  The dot goes next to the dot.
-2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. ![MCU orientation](images/imu_mcu_orientation.jpg)
-
+2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. 
 3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
 4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  The pins on the package need to be aligned with the patches of solder paste on the board.
+
+**MCU Alignment**
+
+![MCU orientation](images/imu_mcu_orientation.jpg)
 
 **Good MCU Placement**
 
@@ -297,31 +310,37 @@ In the photos, I've highlighted the polarity markings on the beard and the part.
 Wire solder has flux in the middle to help the solder flow.  SMD rework requires adding flux manually.  In either case, the result is a yellow-brown, unattractive residue that starts out sticky and hardens over time.
 
 To keep your board looking nice and clean, you should remove it ASAP.  If you have several things to fix, do not wait till the end.  Due it one part at a time.  To clean up the flux, place a kimwipe over the area and squirt rubbing alcohol onto it.  Then, take a hair brush of swap and rub the kimwipe around over the area.  It'll absorb the flux residue.  Repeat once or 
-x  twice.
+ twice.  Don't be shy with the alcohol, it won't hurt anything.
 
 If you don't have alcohol in a squirt bottle, just get the kimwipe very moist with alcohol and put it on mannually.
 
 ### Mounting Throughhole Parts
 
-#### Headers
+You'll have to solder the through-hole parts by hand. The process is the same for all of them:
+
+1.  The part goes on the side of the board with the reference designator.
+2.  Tape down the part using blue tape. 
+3.  The main challenge is getting them straight up and down and not crooked.  Do your best.
+
+We aren't populating the big headers on the BBB to save time in class.
+
+#### ISP Header
 
 ![ISP](images/ISP-header.jpg)
 
+#### FTDI Header
+
 ![FTDI](images/FTDI-header.jpg)
 
-![Power jumper](images/power-jumper.jpg)
+#### Power Jumper
 
-1.  Tape down the power jumper, debug header, FTDI header, and gimbal pins (remote only) using blue tape. 
-2.  The main challenge is getting them straight up and down and not crooked.  Do your best.
-3.  The white gimbal sockets go on top.  The 6-pin header connectors go on the bottom. (Remote only)
-4.  You won't populate the big headers on the breakout board by default.
+![Power jumper](images/power-jumper.jpg)
 
 #### Battery Terminals
 
 1.  Similar to the headers, but orientation matters.  The holes on the side should point toward the '+' and '-' on the board.
 
 ![battery orientation](images/battery_orientation.jpg)
-
 
 #### Motor Recepticals (Quadcopter only)
 
@@ -338,7 +357,18 @@ You should inspect all the parts on your board for problems.
 2. Parts sometimes get dislodged during reflow (It's actually pretty windy in the oven).  If only one terminal of the device is still connected, melt that side and lift it up.  If two terminal are connected, see course staff.
 3.  You realize you forgot a part.  See course staff for a lesson in mannual surface mount assembly.
 
-## What's Next?
+## Flashing The Bootloader
 
 Once you've assembled your board you need to [Flash the bootloader and bring up your board](Flashing-The-Bootloader.md)
+
+## Turn in Your Work
+
+Demo you working BBB for the course staff:
+
+1.  Upload a sketch
+2.  Blink an LED (using the example code is fine)
+
+
+
+
 
