@@ -197,8 +197,7 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 #### Capacitors
 
 1.  The small caps are non-polarized, so direction doesn't matter. ![Capacitors](images/capacitors.jpg)
-2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
-3.  Align the big caps carefully.  If you get it wrong your board will look ugly.
+2.  Align the big caps carefully.  If you get it wrong your board will look ugly.
 
 ## 0.75 pF Caps
 
@@ -220,12 +219,7 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 
 ![Good cap placement](images/good_cap_placement.jpg)
 
-#### MOSFETs (Quad Only)
 
-![MOSFET](images/mosfet.jpg)
-
-1. The correct orientation is obvious, since the package asymmetrical.
-2. You need to align the pins carefully.
 
 #### Voltage Regulator and Battery Charger.
 
@@ -310,24 +304,8 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 
 ![Good MCU Placement](images/MCU_alignment.jpg)
 
-#### IMU (Quad only)
 
-![IMU](images/IMU.jpg)
 
-1.  Similar to the microcontroller.
-2.  The dot goes near the dot. (see image above for MCU)
-3.  Use the silkscreen markers to align it and the "drop" it on.
-4.  The pads are smaller, so alignment is more important.
-5.  Don't fiddle!
-
-#### 6-pin Header (Remote Only)
-
-1.  The surface-mount 6-pin header is not hard to place, but it sticks up and is easy to bump, so do it last.
-
-#### USB Receptical (Remote Only)
-
-1.  The key point of alignment are the pins on the back and 5 pads on the board.
-2.  Check it with the magnifier.
 
 ## Reflow
 
@@ -405,12 +383,7 @@ We aren't populating the big headers on the BBB to save time in class.
 
 ![battery orientation](images/battery_orientation.jpg)
 
-#### Motor Recepticals (Quadcopter only)
 
-![Motor socket](images/motor-socket.jpg)
-
-1.  Orientation is very important.  Removing/replacing these things is really hard. 
-2.  The pins are not centered, and part should be oriented so it fits completely inside the silkscreen outline.  If it's backwards it'll protrude on one side.
 
 ### Common Reflow Problems
 
@@ -432,6 +405,37 @@ Demo you working BBB for the course staff:
 2.  Blink an LED (using the example code is fine)
 
 
+## Remote/Quad only 
 
+#### MOSFETs (Quad Only)
 
+![MOSFET](images/mosfet.jpg)
 
+1. The correct orientation is obvious, since the package asymmetrical.
+2. You need to align the pins carefully.
+
+#### IMU (Quad only)
+
+![IMU](images/IMU.jpg)
+
+1.  Similar to the microcontroller.
+2.  The dot goes near the dot. (see image above for MCU)
+3.  Use the silkscreen markers to align it and the "drop" it on.
+4.  The pads are smaller, so alignment is more important.
+5.  Don't fiddle!
+
+#### Motor Recepticals (Quadcopter only)
+
+![Motor socket](images/motor-socket.jpg)
+
+1.  Orientation is very important.  Removing/replacing these things is really hard. 
+2.  The pins are not centered, and part should be oriented so it fits completely inside the silkscreen outline.  If it's backwards it'll protrude on one side.
+
+#### 6-pin Header (Remote Only)
+
+1.  The surface-mount 6-pin header is not hard to place, but it sticks up and is easy to bump, so do it last.
+
+#### USB Receptical (Remote Only)
+
+1.  The key point of alignment are the pins on the back and 5 pads on the board.
+2.  Check it with the magnifier.
