@@ -151,7 +151,7 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 
 | Part              | Qty | Picture                                            |
 |-------------------|-----|----------------------------------------------------|
-| Resistor 10K Ohm  | 1   | ![Resistor](images/resistors.jpg).                 |
+| Resistor 10K Ohm & Resistor 330 Ohm| 1   | ![Resistor](images/resistors.jpg).                 |
 | Resistor 330 Ohm  | 2   | ![Resistor](images/resistors.jpg).                 |
 | Capacitor .75pF   | 1   | ![Small Capacitors](images/capacitors.jpg)         |
 | Capacitor 12 pF   | 2   | ![Small Capacitors](images/capacitors.jpg)         |
