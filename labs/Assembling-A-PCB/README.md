@@ -164,7 +164,7 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 | Power Switch      | 1   |                                                    |
 | Microcontroller   | 1   | ![Microcontroller](images/imu_mcu_orientation.jpg) |
 | Voltage regulator | 1   | ![Voltage Regulator](images/voltage-regulator.jpg) |
-| Headers(ISP)      | 1   | ![ISP]((images/ISP-header.jpg)                     |
+| Headers(ISP)      | 1   | ![ISP](images/ISP-header.jpg)                     |
 | Headers(FTDI)     | 1   | ![FTDI](images/FTDI-header.jpg)                    |
 | Headers(Power Jumper)   | 1   | ![Power jumper](images/power-jumper.jpg))          |
 
