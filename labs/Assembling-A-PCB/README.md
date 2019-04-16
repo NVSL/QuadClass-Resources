@@ -200,6 +200,22 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
 3.  Align the big caps carefully.  If you get it wrong your board will look ugly.
 
+## 0.75 pF Caps
+
+![images/bbb-0.75pf.png](images/bbb-0.75pf.png)
+
+## 12 pF Caps
+
+![images/bbb-12pF.png](images/bbb-12pF.png)
+
+## 1 uF Caps
+
+![images/bbb-1uf.png](images/bbb-1uf.png)
+
+## 22 pF Caps
+
+![images/bbb-22pF.png](images/bbb-22pF.png)
+
 **Good Cap Placement**
 
 ![Good cap placement](images/good_cap_placement.jpg)
@@ -219,15 +235,27 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 2. Be sure not to confuse these two if you are assembly a remote.
 3. Only the remote has a charger.
 
+## Voltage Regulator
+
+![images/bbb-vreg.png](images/bbb-vreg.png)
+
 #### Button 
 
 ![Button](images/button.jpg)
+
+## Button
+
+![images/bbb-button.png](images/bbb-button.png)
 
 1. Either orientation is ok.
 
 #### Crystal
 
 ![Resistors](images/crystal.jpg)
+
+## Crystal
+
+![images/bbb-crystal.png](images/bbb-crystal.png)
 
 1.  It seems like orientation should be important, but it's not.  The part is diagonally symetric. 
 
@@ -237,6 +265,10 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 2. The green line (yes, there really is one) goes near the dot. 
 
 ![LED orientation](images/led_orientation.jpg)
+
+## LEDs
+
+![images/bbb-green.png](images/bbb-green.png)
 
 
 #### Diodes
