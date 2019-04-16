@@ -152,8 +152,16 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 | Part              | Qty | Picture                                            |
 |-------------------|-----|----------------------------------------------------|
 | Voltage regulator | 1   | ![Voltage Regulator](images/voltage-regulator.jpg) |
+| Resistor 10K      | 1   | ![Resistor](images/resistors.jpg).                 |
+| Capacitor .75pF   | 1   | ![Small Capacitors](images/capacitors.jpg)         |
+| Capacitor 1uF     | 6   | ![Big Capacitors](images/big_cap_orientation.jpg)  |
+| Button            | 1   | ![Button](images/button.jpg)                       |
+| Crystal           | 1   | ![Crystal](images/crystal.jpg)                     |
+| LEDs              | 2   | ![LEDs](images/led_orientation.jpg)                |
+| Balun             | 1   | ![Balun](images/balun_orientation.jpg)             |
+| Microcontroller   | 1   | ![Microcontroller](images/imu_mcu_orientation.jpg) |
+| IMU               | 1   | ![IMU](images/IMU.jpg)                             |
 
- 
 
 ### Notes on Particular Parts
 
