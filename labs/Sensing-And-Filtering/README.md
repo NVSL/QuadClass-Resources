@@ -25,6 +25,7 @@ Check the course schedule for due date(s).
 * You can send information over the serial port to your laptop to provide feedback to the user.
 * If you stall the motors (i.e., hold them still with the throttle on), it may cause either your IMU reset, which will make it stop reporting any data.
 * If your FCB resets when you turn on the motors, it's likely your battery is dying.  
+* Your IMU stops returning sensible numbers, it's likely your battery is dying.
 
 ## Tasks to Perform
 
@@ -124,6 +125,10 @@ You also need to set the cutoff for LPF2 by setting the ORD Ratio.  The cutoff i
 
  `CTRL_REG1_G` (Section 7.12), `CTRL_REG2_G` (Section 7.13), and `CTRL_REG3_G` (Section 7.14).  Control the filters on the gyroscope.  you want to let as much of the high-frequency signal from the gyroscope through as possible.  Figure 28 shows the data path for the gyroscope measurements.  
 
+#### Adjust for Offsets
+
+When your FCB is still and level, it will probably not return zero pitch and zero pitch rate.  When your FCB starts up (or maybe when you arm it) it should check the values coming from the IMU to see what offsets you are measuring.  You should correct for these offsets so that the measured values are correct.
+
 #### Coding Conventions
 
 You can do all this tuning in a function similar to `setupSensor()` from the IMU example program.  The example configures the IMU for all the values described above.  Make sure you understand how it is working before you proceed.
@@ -177,4 +182,12 @@ Once you've committed everything, create a tag called "sensing-and-filtering" Be
 
 #### Demo your work:
 
-1. Demo your clean orientation measurements for me or the TA.
+Demo your clean orientation measurements for me or the TA.
+
+Here are the criteria:
+
+1.  Motors off, Quadcopter horizontal, your filter outputs should be zeros.
+2.  Good phase alignment (Gyro zeros aligned with angle maxima)
+3.  Minimal noise at high motor speeds.
+
+
