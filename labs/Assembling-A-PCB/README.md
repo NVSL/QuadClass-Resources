@@ -367,8 +367,4 @@ Demo you working BBB for the course staff:
 
 1.  Upload a sketch
 2.  Blink an LED (using the example code is fine)
-
-
-
-
-
+3.  	  Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLScKSJucU3BTdXCpcaoRSXui36gL--QQvO2Y9j9LpOaGY0qj-w/viewform

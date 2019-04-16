@@ -261,7 +261,7 @@ Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/Rotary
 
 The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://www.sparkfun.com/products/14073).  
 
-The `Radio` library sets up the lcd for you as an object called `lcd`.
+The `Remote` library sets up the lcd for you as an object called `lcd`.
 
 THe `knobs_and_buttons.ino` example shows how to use it:  It displays the value of the knob and lets you move it's location around on the display.
 
@@ -388,6 +388,9 @@ To avoid injury take the following precautions
 
 ## Using the Radio
 
+**Note:** In your `setup()` function, you should call `rfBegin()` after you
+  call `quad_remote_setup()`, otherwise things won't work.
+
 The microcontroller on the remote and the FCB (and eventually your
 quadcopter) use has a built-in radio.  We will use it to send commands
 from the remote to the FCB and to return telemetry.
@@ -497,9 +500,9 @@ disarm and remain disarmed until the remote arms it again.
 
 ### Throttle Control
 
-Once the FCB is armed, the throttle gimbal (the vertical axis of the
-left stick) should control the speed of all four of your motors.
- 
+Once the FCB is armed, the throttle gimbal (the vertical axis of the left
+stick) should control the speed of all four of your motors.
+
 Make sure of the following:
 
 1. When the stick is all the way down, the motor should turn off (I.e., writing 0 with `analogWrite()`).
@@ -520,6 +523,7 @@ Once you’ve committed everything, create a tag called “programming-the-hardw
 ### Demo Your Code
 
 1. Demo your remote controlled motors.
+2. Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLScKSJucU3BTdXCpcaoRSXui36gL--QQvO2Y9j9LpOaGY0qj-w/viewform
 
 ### Rubric
 
