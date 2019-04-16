@@ -287,12 +287,20 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 
 ![Balun orientation](images/balun_orientation.jpg)
 
+## Balun
+
+![images/bbb-balun.png](images/bbb-balun.png)
+
 #### Microcontroller
 
 1.  Make sure you orient it correctly.  The dot goes next to the dot.
 2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. 
 3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
 4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  The pins on the package need to be aligned with the patches of solder paste on the board.
+
+## Microcontroller
+
+![images/bbb-mcu.png](images/bbb-mcu.png)
 
 **MCU Alignment**
 
@@ -373,9 +381,19 @@ We aren't populating the big headers on the BBB to save time in class.
 
 ![ISP](images/ISP-header.jpg)
 
+## SPI Header
+
+![images/bbb-SPI.png](images/bbb-SPI.png)
+
+
 #### FTDI Header
 
 ![FTDI](images/FTDI-header.jpg)
+
+## FTDI Header
+
+![images/bbb-FTDI.png](images/bbb-FTDI.png)
+
 
 #### Power Jumper
 
