@@ -167,7 +167,7 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 | Headers(ISP)      | 1   | ![ISP](images/ISP-header.jpg)                     |
 | Headers(FTDI)     | 1   | ![FTDI](images/FTDI-header.jpg)                    |
 | Headers(Power Jumper)   | 1   | ![Power jumper](images/power-jumper.jpg))          |
-
+| Battery Terminals | 1 | ![battery orientation](images/battery_orientation.jpg)  |
 ### Notes on Particular Parts
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
