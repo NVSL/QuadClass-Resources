@@ -102,9 +102,9 @@ Most of the information you will need is Section 5 of the datasheet. A thing to 
 
 ### The I2C Bus
 
-Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  You should "pull up" these lines to `3V3` by connecting them to `3V3` using 1kOhm resistors.
+Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  You should "pull up" these lines to `3V3` by connecting them to `3V3` using 10kOhm resistors.
 
-##  # The Motor Driver 
+### The Motor Driver 
 
 Here's a picture of the motor driver circuit:
 

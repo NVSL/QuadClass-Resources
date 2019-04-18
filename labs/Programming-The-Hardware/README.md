@@ -19,7 +19,7 @@ You will work on this lab and all future labs in teams of two. You will need to 
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz.
+1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
 2. test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
@@ -239,7 +239,7 @@ The Remote has a builtin USB-to-serial converter that allows it to program the m
 
 The `Radio` library provides access to the basic hardware features of the remote.  You get access to the library with `#include "quad_remote.h"` and calling `quad_remote_setup()` in your Arduino `setup()` function.
 
-The library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released. 
+The library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released.  The callbacks you set need to run quickly (e.g., ideally, they should not print anything to the serial port). 
  
 To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
 pen the serial monitor, push some buttons, and see what happens.
@@ -250,10 +250,9 @@ Read the code to understand how it works.
 
 ### Reading the Knob
 
-There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback (`knobs_update_cb`) when it's value changes.  
+There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback (`knobs_update_cb`) when it's value might have changed (i.e., sometimes it'll be called even though the value remains the same).  This funtion needs to run very quickly (e.g., it should not write anything to te serial port), otherwise you might miss some movement of the knob.
 
 You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
-o
 
 Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
 

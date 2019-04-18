@@ -151,10 +151,23 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 
 | Part              | Qty | Picture                                            |
 |-------------------|-----|----------------------------------------------------|
+| Resistor 10K Ohm  | 1   | ![Resistor](images/resistors.jpg).                 |
+| Resistor 330 Ohm  | 2   |                                                    |
+| Capacitor .75pF   | 1   | ![Small Capacitors](images/capacitors.jpg)         |
+| Capacitor 12 pF   | 2   |                                                    |
+| Capacitor 1uF     | 6   |                                                    |
+| Capacitor 22 pF   | 2   |                                                    |
+| Button            | 1   | ![Button](images/button.jpg)                       |
+| Crystal           | 1   | ![Crystal](images/crystal.jpg)                     |
+| LEDs              | 2   | ![LEDs](images/led_orientation.jpg)                |
+| Balun             | 1   | ![Balun](images/balun_orientation.jpg)             |
+| Power Switch      | 1   |                                                    |
+| Microcontroller   | 1   | ![Microcontroller](images/imu_mcu_orientation.jpg) |
 | Voltage regulator | 1   | ![Voltage Regulator](images/voltage-regulator.jpg) |
-
- 
-
+| Headers(ISP)      | 1   | ![ISP](images/ISP-header.jpg)                     |
+| Headers(FTDI)     | 1   | ![FTDI](images/FTDI-header.jpg)                    |
+| Headers(Power Jumper)   | 1   | ![Power jumper](images/power-jumper.jpg))          |
+| Battery Terminals | 1 | ![battery orientation](images/battery_orientation.jpg)  |
 ### Notes on Particular Parts
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
@@ -184,19 +197,29 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 #### Capacitors
 
 1.  The small caps are non-polarized, so direction doesn't matter. ![Capacitors](images/capacitors.jpg)
-2.  The big caps are polarized. The stripe goes near the dot. (Quad/FCB only) ![Big Cap](images/big_cap_orientation.jpg)
-3.  Align the big caps carefully.  If you get it wrong your board will look ugly.
+2.  Align the big caps carefully.  If you get it wrong your board will look ugly.
+
+## 0.75 pF Caps
+
+![images/bbb-0.75pf.png](images/bbb-0.75pf.png)
+
+## 12 pF Caps
+
+![images/bbb-12pF.png](images/bbb-12pF.png)
+
+## 1 uF Caps
+
+![images/bbb-1uf.png](images/bbb-1uf.png)
+
+## 22 pF Caps
+
+![images/bbb-22pF.png](images/bbb-22pF.png)
 
 **Good Cap Placement**
 
 ![Good cap placement](images/good_cap_placement.jpg)
 
-#### MOSFETs (Quad Only)
 
-![MOSFET](images/mosfet.jpg)
-
-1. The correct orientation is obvious, since the package asymmetrical.
-2. You need to align the pins carefully.
 
 #### Voltage Regulator and Battery Charger.
 
@@ -206,15 +229,27 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 2. Be sure not to confuse these two if you are assembly a remote.
 3. Only the remote has a charger.
 
+## Voltage Regulator
+
+![images/bbb-vreg.png](images/bbb-vreg.png)
+
 #### Button 
 
 ![Button](images/button.jpg)
+
+## Button
+
+![images/bbb-button.png](images/bbb-button.png)
 
 1. Either orientation is ok.
 
 #### Crystal
 
 ![Resistors](images/crystal.jpg)
+
+## Crystal
+
+![images/bbb-crystal.png](images/bbb-crystal.png)
 
 1.  It seems like orientation should be important, but it's not.  The part is diagonally symetric. 
 
@@ -224,6 +259,10 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 2. The green line (yes, there really is one) goes near the dot. 
 
 ![LED orientation](images/led_orientation.jpg)
+
+## LEDs
+
+![images/bbb-green.png](images/bbb-green.png)
 
 
 #### Diodes
@@ -242,12 +281,20 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 
 ![Balun orientation](images/balun_orientation.jpg)
 
+## Balun
+
+![images/bbb-balun.png](images/bbb-balun.png)
+
 #### Microcontroller
 
 1.  Make sure you orient it correctly.  The dot goes next to the dot.
 2.  The silkscreen markings fit tightly to the corners of the package, so use them as a guide. 
 3.  Once it's down, check the alignment.  If it's not perfect, do not pick it up.  Instead, nudge it every so gently to align it.
 4.  The magnifier will help you check alignment.  You can see the pads on the side of the package.  The pins on the package need to be aligned with the patches of solder paste on the board.
+
+## Microcontroller
+
+![images/bbb-mcu.png](images/bbb-mcu.png)
 
 **MCU Alignment**
 
@@ -256,25 +303,6 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 **Good MCU Placement**
 
 ![Good MCU Placement](images/MCU_alignment.jpg)
-
-#### IMU (Quad only)
-
-![IMU](images/IMU.jpg)
-
-1.  Similar to the microcontroller.
-2.  The dot goes near the dot. (see image above for MCU)
-3.  Use the silkscreen markers to align it and the "drop" it on.
-4.  The pads are smaller, so alignment is more important.
-5.  Don't fiddle!
-
-#### 6-pin Header (Remote Only)
-
-1.  The surface-mount 6-pin header is not hard to place, but it sticks up and is easy to bump, so do it last.
-
-#### USB Receptical (Remote Only)
-
-1.  The key point of alignment are the pins on the back and 5 pads on the board.
-2.  Check it with the magnifier.
 
 ## Reflow
 
@@ -328,9 +356,19 @@ We aren't populating the big headers on the BBB to save time in class.
 
 ![ISP](images/ISP-header.jpg)
 
+## SPI Header
+
+![images/bbb-SPI.png](images/bbb-SPI.png)
+
+
 #### FTDI Header
 
 ![FTDI](images/FTDI-header.jpg)
+
+## FTDI Header
+
+![images/bbb-FTDI.png](images/bbb-FTDI.png)
+
 
 #### Power Jumper
 
@@ -342,12 +380,6 @@ We aren't populating the big headers on the BBB to save time in class.
 
 ![battery orientation](images/battery_orientation.jpg)
 
-#### Motor Recepticals (Quadcopter only)
-
-![Motor socket](images/motor-socket.jpg)
-
-1.  Orientation is very important.  Removing/replacing these things is really hard. 
-2.  The pins are not centered, and part should be oriented so it fits completely inside the silkscreen outline.  If it's backwards it'll protrude on one side.
 
 ### Common Reflow Problems
 
@@ -367,4 +399,39 @@ Demo you working BBB for the course staff:
 
 1.  Upload a sketch
 2.  Blink an LED (using the example code is fine)
-3.  	  Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLScKSJucU3BTdXCpcaoRSXui36gL--QQvO2Y9j9LpOaGY0qj-w/viewform
+3.  Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLScKSJucU3BTdXCpcaoRSXui36gL--QQvO2Y9j9LpOaGY0qj-w/viewform
+
+## Remote/Quad only 
+
+#### MOSFETs (Quad Only)
+
+![MOSFET](images/mosfet.jpg)
+
+1. The correct orientation is obvious, since the package asymmetrical.
+2. You need to align the pins carefully.
+
+#### IMU (Quad only)
+
+![IMU](images/IMU.jpg)
+
+1.  Similar to the microcontroller.
+2.  The dot goes near the dot. (see image above for MCU)
+3.  Use the silkscreen markers to align it and the "drop" it on.
+4.  The pads are smaller, so alignment is more important.
+5.  Don't fiddle!
+
+#### Motor Recepticals (Quadcopter only)
+
+![Motor socket](images/motor-socket.jpg)
+
+1.  Orientation is very important.  Removing/replacing these things is really hard. 
+2.  The pins are not centered, and part should be oriented so it fits completely inside the silkscreen outline.  If it's backwards it'll protrude on one side.
+
+#### 6-pin Header (Remote Only)
+
+1.  The surface-mount 6-pin header is not hard to place, but it sticks up and is easy to bump, so do it last.
+
+#### USB Receptical (Remote Only)
+
+1.  The key point of alignment are the pins on the back and 5 pads on the board.
+2.  Check it with the magnifier.
