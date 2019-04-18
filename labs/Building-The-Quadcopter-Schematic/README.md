@@ -258,7 +258,7 @@ Include these in your github repo:
 1. Your `hardware/quadcopter.sch`.
 2. Your `hardware/lbr/LED.lbr`.
 3. Your `hardware/lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
-5. Datasheets for your LEDs in `datasheets/`.
+5. Datasheets for your LEDs in `hardware/datasheets/`.
 6. Your `hardware/led_notes.txt`.
 
 Submit it to Eaglint: http://eaglint.nvsl.io.
