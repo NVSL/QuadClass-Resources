@@ -29,8 +29,13 @@ Here are some useful commands for working in Eagle.  For the commands that go in
 ### Get Help
 
 1. `help info` -- get documentation about `info`
-2. 'help move` -- get documentation about `move`
+2. `help move` -- get documentation about `move`
 3.  etc.
+
+### Finding Parts
+
+1.  `show C1` -- Highlight `C1`
+2.  `show C2` -- highlight `C1` and draw a box around it.
 
 ### Working with Layers
 
@@ -68,6 +73,7 @@ Here are some useful commands for working in Eagle.  For the commands that go in
 9.  `ripup ! GND` -- Ripup everything but `GND`.
 10. `ripup @;` -- Draw pours as polygons.
 11. `ratsnest` -- Recompute unrouted nets and fill in pours.
+12. `ripup ! RFN RFP CLK_POS CLK_NEG; fanout signal GND BAT_GND 3V3 VBAT; auto;` -- Reroute your board (tweak to suit your design.)
 
 ### Create a Pour
 
@@ -83,7 +89,6 @@ Here are some useful commands for working in Eagle.  For the commands that go in
 1. `drc` -- inspect and configure design rule check settings.
 2. `drc;` -- Just run DRC.
 3. `display none unrounted` -- Just show unrouted nets.
-4.   
 
 ## Tasks To Perform (Part A)
 
@@ -302,7 +307,9 @@ To create or edit a net class, select `Edit->Net Classes`. The dialog box that a
 
 First, enter “RFSIG” into box next to ‘1’ and enter ‘50mil’ (to match the width of the antenna) for the width. Leave the “drill” and clearance fields at ‘0’ (which mean use the defaults).
 
-Then, enter “HIGHCURRENT” (or something similar) into box 2. This net class is going to be for wires that carry current to the motors, but how wide should those wires be?  This depends how much current the wire will carry, how hot we are willing to let it get, how large a voltage drop we can tolerate, how long the wire is, and how thick the copper is. The calculation for this are complex, but fortunately, there are tools online to figure it out for you. [This is a good one](https://www.4pcb.com/trace-width-calculator.html).
+Next, enter "PWR" (or something similar) into box 2. This net class is for the regulated power and ground nets.  They should be 10mil.
+
+Then, enter “HIGHCURRENT” (or something similar) into box 3. This net class is going to be for wires that carry current to the motors, but how wide should those wires be?  This depends how much current the wire will carry, how hot we are willing to let it get, how large a voltage drop we can tolerate, how long the wire is, and how thick the copper is. The calculation for this are complex, but fortunately, there are tools online to figure it out for you. [This is a good one](https://www.4pcb.com/trace-width-calculator.html).
 
 Our motors can draw about 2A, so peak current is something over 8 amps.  The batteries we use can deliver up to 9.5.  We are using 1oz copper (which means one square foot of the copper foil weighs 1oz.  THis works out to 0.035mm).  10 degrees Celsius is a reasonable rise in temperature.  Room temperature is 25 degrees C. The traces will be pretty short — probably less than 0.5in (or 12.7mm).
 
@@ -338,7 +345,7 @@ The final step is routing the board. The steps above have given the autorouter m
 
 There are few things you should route by hand.  The most important are the traces between the microcontroller and balun.  Routing the nets from the microcontroller through the crystal to the associated caps is also a good idea.
 
-You will also need to autoroute the connection between the antenna and the balun.  This requires a trick.  If you try to use the semi-automated "follow me" router, it will not work.  This is because the width of the trace (50mil) is so wide that connecting it to one pin of the balun puts the edge of the trace too close to the adjacent pin of the balun.  To avoid this, route as much of the trace as you can at 50mils.  You should be able to get close enough that the trace mostly-engulfs the balun pin.  Then select the "ignore obstacles" option for the routing tool and set the diameter manually to something smaller (like 5mil) and complete the last bit.  The narrower segment should be completely covered by the wider portion of the trace, so it won't make any difference.
+You will also need to autoroute the connection between the antenna and the balun.  This requires a trick.  If you try to use the semi-automated "walkaround obstacles" router, it will not work.  This is because the width of the trace (50mil) is so wide that connecting it to one pin of the balun puts the edge of the trace too close to the adjacent pin of the balun.  To avoid this, route as much of the trace as you can at 50mils.  You should be able to get close enough that the trace mostly-engulfs the balun pin.  Then select the "ignore obstacles" option for the routing tool and set the diameter manually to something smaller (like 5mil) and complete the last bit.  The narrower segment should be completely covered by the wider portion of the trace, so it won't make any difference.  You'll get an warning when you run DRC, but you can 'approve' it.
 
 Once this is done, in the best case, the autorouter will successfully route your board. However, many things can prevent the autorouter from completing successfully.  If not, you can try hand routing signals that give you trouble.  If you get badly stuck ask the course staff.
 
@@ -352,14 +359,25 @@ Once you get your board, you will need to mount it to the test stand. You can fa
 
 #### Alternate FTDI Connector
 
-Your FCB has two female headers on the bottom that connect to the FTDI pins.  These are for connecting a flexible tether to the FCB during PID testing.  You can add something like this too.  Note that on the FCB the pins are **mislabled*.  You need `DTR`, `GND`, `TX`, and `RX` (you don't need `CTS`)
+Your FCB has two female headers on the bottom that connect to the FTDI pins.  These are for connecting a flexible tether to the FCB during PID testing.  You can add something like this too (you'll need change your schematic, of course)  Note that on the FCB the pins are **mislabled**.  You need `DTR`, `GND`, `TX`, and `RX`  -- you don't need `CTS`.  You also don't need `3V3`, although this means that you'll need your battery installed to program your quadcopter (I guess, you could use add more pins -- like 2 3-pin headers -- and connect all the FTDI pins).
 
 #### Battery Voltage Meter
 
 You can monitor the batteries voltage using a voltage divider and one of the MCU's analog pins (https://learn.sparkfun.com/tutorials/voltage-dividers/all).  The basic idea is to divide the battery voltage so that the maximum output of the divider is less than 3.3V.  Then you can measure the that voltage with one of the MCU's analog inputs.
 
-You should use large resistors in your divider (e.g. 10kOhm) so that not much current flows through it.
+You should use large resistors in your divider (e.g., in the kOhms range) so that not much current flows through it.
   
+### Performing Design Rule Check
+
+You must run Eagle's design rule checker (DRC).  It checks for a bunch of common problems.  Look through the list of errors it generates.  Do you best to understand what they mean (they are somewhat cryptic).  Here's a cheat sheet:
+
+1.  "Airwire" -- unrouted net.  Never acceptable.
+2.  "Wire stub" -- A short bit of wire.  Often these are remnants of partially deleted nets.  If they go somewhere useful, they are fine.
+3.  "Keepout" -- There is metal in side a keepout region.  Rarely ok, but you'll get some of these for the antenna and maybe your logo.
+4.  "Overlap" -- Two things (e.g., two different nets or a net and an SMD) overlap.  Usually bad, but you'll probably see some for you bridge and the antenna triggers some as well.
+5.  "Width" -- A net is thinner than it should be.  You'll get one of these between the antenna net and the balun.  Usually they are not a good idea, but sometimes they are ok.  For instance, the IMU datasheet says that narrow power/ground traces are fine for that part, so you could route those nets with thinner traces than the other power nets.
+
+You can approve errors, but your peer reviewers (and me) will be looking at them closely.  You should be skeptical about approving errors.  They are called errors for a reason.
 
 ## Task To Perform (Part B: Design Review)
 
@@ -454,10 +472,10 @@ Below is a check list of items you should consider during your design review. Th
 	* Are there any elements that should be in the metal layers but that show up on the silkscreen?
 	* Does the board outline match what was draw in the brd file?
 
-
 ## Turn in Your Work
 
 ### Rubric Part A
+
 “Perfect” score: 10
 
 Initial points: 12
@@ -497,32 +515,3 @@ Grading for the design reviews is in two parts:
 1. You will lose points for any problems I find in your reviewee’s design that you should have found.
 2. You will lose points for any problems your reviewees found in your design, but you did not fix correctly.
 3. You will lose a point for each failed submission to Eaglint and human review.
-
-
-## Routing
-
-Fanout
-design explorer
-
-
-## Guidelines
-
-1.  Images are basically bit maps and they are stored ineffeciently.  If your drawing is to large or complex, it'll crash eaglint.  Large blocks and shapes are fine.  Lots of fine detail is not good.
-
-## IMU
-
-1.  There should be no metal under the IMU.  You need to create a ''
-
-## Things to Check
-
-1.  The trace from the balun through the cap and to the antenna should be the same width as the antenna trace and the transition should be smooth.
-2.  Gap distance in motor holder >=2mm
-3.  Do RF diff pairs enter through the center of the pad?
-
-- Antenna layout.
-    - symmetrical RFN/RFP
-    - short line to antenna
-    - metal under the driver (m2)
-    - Metal under on separate pour.
-    - metal on top
-    - vias
