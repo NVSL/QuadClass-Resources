@@ -22,6 +22,69 @@ Check the course schedule for due date(s).
 3. Patience.
 4. Attention to detail.
 
+## Eagle Tips and Tricks and Recipes
+
+Here are some useful commands for working in Eagle.  For the commands that go in the command line window, pay attention to "@" and ";" -- change the meaning of some commands significantly.
+
+### Get Help
+
+1. `help info` -- get documentation about `info`
+2. 'help move` -- get documentation about `move`
+3.  etc.
+
+### Working with Layers
+
+1.  `display none` -- hide everything.
+2.  `display all` -- show everything.
+3.  `display none tplace tnames` -- show just `tplace` and `tnames`.
+4.  `display all -tplace` -- show everything but `tplace`
+
+### Placing and Moving Parts
+
+1.  `move c1` -- start moving `C1`.
+2.  ctrl-click to rotate the part.
+3.  `grid mm; grid 1` -- set grid for part placement.
+4.  `grid mm; grid 0.5` -- set grid for reference designator and value placement.
+5.  `move;`  -- then select parts with `group` tool.  Ctrl-click and select `move: group` to move the group.
+6.  command-click (on my mac; not sure on windows) -- snap to grid.
+7.  `move` then shift-click -- move a whole polygon.
+
+### Setting Properties
+
+1.  `change width 10mil` -- change wire widths to 10mil by clicking on them.
+2.  `change align center` -- change alignment of text items to 'center'
+3.  `display none tplace tdocument tnames`, select all (command-A), `change align center`, right-click select "Change: group" -- change alignment of all reference designators and values.
+
+### Routing 
+
+1.  `route` -- start routing.  Select particular router from tool bar. "walkaround obstacles" is a good default.
+2.  `route gnd` -- start routing `GND`
+3.  `fanout device U1` -- fanout `U1` by adding stubby wires and vias to the pins on `U1`
+4.  `fanout signal GND` -- fanout `GND` by adding stubby wires and vias to all the pins on `GND`
+5.  `auto` -- Open the auto router configuration window.
+6.  `auto;` -- just run the auto router.
+7.  `ripup;` -- ripup (unroute) all nets.
+8.  `ripup GND` -- Just ripup `GND`.
+9.  `ripup ! GND` -- Ripup everything but `GND`.
+10. `ripup @;` -- Draw pours as polygons.
+11. `ratsnest` -- Recompute unrouted nets and fill in pours.
+
+### Create a Pour
+
+1. Draw a polygon in the metal layer you want the pour in (e.g., `Top).
+2. Set the signal you want the pour to carry (either in the pop-up that appears when you finish drawing the polygon or by `info` to set properties of the polygon).
+
+### Create a Cutout in a Pour
+
+1.  Draw a polygon in the metal laye you want the cutout in.  Use `info` to set the 'Polygon pour' property to `cutout`.
+
+### Checking and Fixing Designs
+
+1. `drc` -- inspect and configure design rule check settings.
+2. `drc;` -- Just run DRC.
+3. `display none unrounted` -- Just show unrouted nets.
+4.   
+
 ## Tasks To Perform (Part A)
 
 ### Board Shape and Quadcopter Orientation
@@ -297,7 +360,7 @@ You can monitor the batteries voltage using a voltage divider and one of the MCU
 
 You should use large resistors in your divider (e.g. 10kOhm) so that not much current flows through it.
   
- 
+
 ## Task To Perform (Part B: Design Review)
 
 For this design review, you need to be as careful, meticulous, and demanding as you were on your schematic design review. Everything I said in class about the importance and value of design reviews applies here as well, only more so. There are many more things that can go wrong in the layout phase than in the schematic.
@@ -413,7 +476,6 @@ For this part of the lab, human review will succeed instantly, if you have no er
 
 Once it passes, create a tag called “Lab07a” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
 
-### 
 
 ### Rubric Part B
 “Perfect” score: 10
