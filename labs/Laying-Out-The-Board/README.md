@@ -281,7 +281,7 @@ The radio is one of the delicate parts of the board because it require special a
 
 1. Except for the pad that is attached to the circuitry, the antenna should be mounted near the edge of the board without any metal nearby (i.e., there should be no metal in any layer in that area). The one exception is the pad that the other end of the antenna attaches to. 
 2. The two capacitors and the balun that make up the antenna driver should not have any other signals near them.
-3. The length of the traces from the micro controller, through the capacitors to the balun should be as symmetric as possible: Equal length and mirrored geometry.
+3. The length of the traces from the micro controller to the balun should be as symmetric as possible: Equal length and mirrored geometry.
 4. All the wires in the antenna should be as short as reasonably possible. This constraint, combined with the need for the antenna to be near the edge of the board constrains where you can place your microcontroller.
 5. The wire between the balun, the antenna, and the capacitor between them should be the same width as the antenna (50mil), and the wire should transition smoothly into the antenna. There should be no sharp corners.
 
@@ -295,7 +295,7 @@ To side-step that problem we are borrowing tested antenna design and layout.  Yo
 
 ![Antenna Layout](images/antenna-layout.png)
 
-The antenna also needs a ground plane (https://www.electronics-notes.com/articles/antennas-propagation/grounding-earthing/antenna-ground-plane-theory-design.php).  This is simply a large area of metal extending out from the base of the antenna.  It's radius should be something 1/4 of the wavelength the antenna should emit.  Four our 2.4Ghz radio, that's about 31mm.  The ground pours in the PCB will work just fine.
+The antenna also needs a ground plane (https://www.electronics-notes.com/articles/antennas-propagation/grounding-earthing/antenna-ground-plane-theory-design.php).  This is simply a large area of metal extending out from the base of the antenna.  It's radius should be something 1/4 of the wavelength the antenna should emit.  Four our 2.4Ghz radio, that's about 31mm.  The ground pours in the PCB will work just fine (so you don't need add any additional metal to satisfy this requirement).
 
 ### Setting Trace Widths
 
