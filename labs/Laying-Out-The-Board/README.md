@@ -379,6 +379,16 @@ You must run Eagle's design rule checker (DRC).  It checks for a bunch of common
 
 You can approve errors, but your peer reviewers (and me) will be looking at them closely.  You should be skeptical about approving errors.  They are called errors for a reason.
 
+### Generating Gerbers
+
+You will need to generate two separate `.zip` files with your cam files it.
+
+1.  `hardware/quadcopter.cam.zip` -- Use the `Eagle/CAM/jlcpcb-4layer-values-eagle9.cam` 
+2.  `hardware/quadcopter.stencil.zip` -- Use the `Eagle/CAM/jlcpcb-stencil.cam`
+
+When you create the CAM file, you should check the "Export as ZIP" box in the CAM dialog.  After you generate the first one, you'll need to rename (Eagle will name with the current date).  Then generate the second one and rename it as well.  Commit both to your repo.
+
+
 ## Task To Perform (Part B: Design Review)
 
 For this design review, you need to be as careful, meticulous, and demanding as you were on your schematic design review. Everything I said in class about the importance and value of design reviews applies here as well, only more so. There are many more things that can go wrong in the layout phase than in the schematic.
@@ -487,7 +497,7 @@ Submit the following to your github repo (you can leave other files in there. Th
 3. Your `lbr/LED.lbr`.
 4. Your `lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
 5. `lbr/quadparts_prebuilt.lbr`.
-6. A file called quadcopter.cam.zip that contains the CAM files for the design.
+6. A files called quadcopter.cam.zip that contains the CAM files for the design.
 Submit it to [Eaglint](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFrH7bQMLjAUWzVGFESRxTQu6D-EQ). The tool will not look at any other libraries, so if you use any other libraries the consistency checks will fail.
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
