@@ -391,40 +391,61 @@ When you create the CAM file, you should check the "Export as ZIP" box in the CA
 
 ## Task To Perform (Part B: Design Review)
 
-For this design review, you need to be as careful, meticulous, and demanding as you were on your schematic design review. Everything I said in class about the importance and value of design reviews applies here as well, only more so. There are many more things that can go wrong in the layout phase than in the schematic.
+For this design review, you need to be careful, meticulous, and demanding.  These are the hallmarks of a good design reviewer.
 
-Use the same reviewer/reviewee team pairs listed for [Lab 03: Arduino and Wireless](/a/eng.ucsd.edu/quadcopterclass/labs/lab-98-new-labs/lab-1-github-arduino-and-wireless).
+Once assigned, your groups design review partners are listed on your Eaglint homepage.
 
-The reviewee needs to provide the following materials to the reviewers:
+The reviewee needs to provide a zip file of their `hardware` directory (but not their entire github repo).
 
-1. A fully-routed brd file.
-2. The corresponding sch file.
-3. Copies of the libraries used.
-4. A set of gerbers for the same file.
-5. A description of any changes they made to standard library parts, whether it autoroutes, and, if not, what what parts of the design require manual routing.
-Below is a check list of items you should consider during your design review. The reviewee team should already have used this list as checklist for their design.
+After you have performed an initial, thorough review, you should meet with the other team to go over any questions you have.
+After that meeting you should produce a file called describing any problems you found.  You'll commit this to your repo as `design_reviews/questions_about_their_board.txt`.
+
+You'll commit the corresponding file you receive as `design_reviews/questions_about_our_board.txt`.  In it, you'll also provide your responses to your reviewer's comments.  You should mark each comment as `fixed` or provide a carefully reasoned explanation of why you don't think it's problem.
+
+These file needs to include the following:
+
+1.  The reviewer team name (and student names/email addresses)
+2.  The reviewee team name (and sudent names/email addresses)
+3.  The date and time that you met face-to-face
+
+### What To Check For
+
+As the reviewer, your job is spot potential problems with the design you are reviewing.  Since you have built a very similar design, you are familiar with the various problems that can arise, hence you are an expert.
+
+Your review needs to include their schematic, their board layout, and the library entries they created and use.
+
+As you look over the design you should keep in mind the contents of:
+
+1.  The lab write ups
+2.  The lecture slides
+3.  What I said in class about the design.
+4.  What you have learned from the data sheets for the components.
+
+There is a (very incomplete) checklist of questions for you to consider below.  But, ultimately, you are responsible for identifying any and all ways that the design you are reviewing fails to match the spec for the class.
+
+Your grade as the reviewer is based on how many errors I find in the design that you missed.
+ 
+### Sample Checklist
+
+Below is a check list of items you should consider during your design review.
 
 * Antenna and Antenna Driver
 
 	* Do all the traces for the antenna driver reside in layer 1?
-	* Is the trace between the balun and the antenna extra-thick?
+	* Is the trace between the balun and the antenna in the correct net class and the correct width?
 	* Are the other two capacitors close to the balun?
-	* Is the trace between the balun and the antenna short (no longer than the corresponding trace on the red board)?
-	* Is there a ground pour in layer Top surrounding the antenna driver components?
-	* Is there a ground pour in layer 2 surround the antenna driver?
-	* Are there vias connecting the two pours and roughly surrounding the antenna driver? are they connected to `GND`?
-	* Is one of the antenna’s pads surrounded by the pours?
+	* Is the trace between the balun and the antenna short (no longer than the corresponding trace in the reference design)?
 	* Is there ample space around the antenna that is free of metal on all four layers?
-	* Does the layout roughly match the layout on the red board?
-	* Are there any traces routed through the antenna driver area that are not related to the driver?
+	* Does the layout roughly match the layout on the FCB?
+	* Are there any traces routed through the antenna driver area that are not related to the driver in any layer (there should not be)?
 
 * Power and Ground
 
 	* Does the `VBAT` power plane reach under all four motor drivers?
 	* Is the `VBAT` power plane wider than 0.5mm everywhere?
-	* Does the `3V` power plane run under microcontroller and near the IMU’s power pins?
+	* Does the `3V3` power plane run under microcontroller and near the IMU’s power pins?
 	* Does the combination of the `BAT_GND` and `GND` ground plane extend to almost every area of the board (with the exception of the area round the antenna)?
-	* Are the `VBAT` and `3V` power pours both in the same metal layer (probably layer 2)?
+	* Are the `VBAT` and `3V3` power pours both in the same metal layer?
 	* Are there any parts of the power our ground pours that are very narrow? They should be no “necks” narrower than 0.5mm.
 	* Does the `VBAT` power plane extend to the battery connector?
 
@@ -433,7 +454,7 @@ Below is a check list of items you should consider during your design review. Th
 	* Is the IMU at the center of the board?
 	* Are the capacitors specified in the IMU datasheet located as close as is practical to the IMU?
 	* Is the IMU oriented so that the X and Y axes are aligned with the pitch and roll axis of the quadcopter?
-	* Are there any traces under the IMU? Is there anything other than ground plane under the IMU?
+	* Are there any traces under the IMU? Is there anything under IMU?
 
 * Headers
 
@@ -449,7 +470,7 @@ Below is a check list of items you should consider during your design review. Th
 
 	* Are the caps associated with the voltage regulator located near the regulator?
 	* Is the voltage regulator located near the battery connector?
-	* Does the `3V` power plane run underneath the voltage regulator?
+	* Does the `3V3` power plane run underneath the voltage regulator?
 
 * Motor Drivers
 
@@ -468,12 +489,16 @@ Below is a check list of items you should consider during your design review. Th
 	* Are there any large internal holes in the board?
 	* Is the board roughly symmetrical?
 
+* LEDs
+
+    * Does the contents of their `led_notes.txt` make sense?
+    
 * Checks
 
 	* Does DRC check pass without errors?
 	* If DRC doesn’t pass with no errors, does the team have good explanations for why the errors are ok?
 
-* Gerber Files
+* Gerber Files (ignore for now)
 
 	* Are areas around the antenna clear in the gerber files?
 	* Are the power planes where you expect them to be in the gerber files?
@@ -502,10 +527,10 @@ Submit it to [Eaglint](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io%
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
 
-Once it passes, create a tag called “Lab07a” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
-
+Once it passes, create a tag called “board-layout-prereview” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
 
 ### Rubric Part B
+
 “Perfect” score: 10
 
 Initial points: 14
@@ -515,13 +540,12 @@ Commit the following:
 * The list of questions your reviewers had about your design as `design_reviews/questions_about_our_board.txt`.
 * The list of questions you had about the design you reviewed as `design_reviews/questions_about_their_board.txt`.
 * Your changes to your schematic, board, and libraries.
-* An updated quadcopter.cam.zip.
+
 Submit it to [Eaglint](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFrH7bQMLjAUWzVGFESRxTQu6D-EQ). 
 
-Once it passes and human review, tag your repo: Lab07b.
+Once it passes and human review, tag your repo: 'board-layout-postreview'.
 
 Grading for the design reviews is in two parts:
 
 1. You will lose points for any problems I find in your reviewee’s design that you should have found.
-2. You will lose points for any problems your reviewees found in your design, but you did not fix correctly.
-3. You will lose a point for each failed submission to Eaglint and human review.
+2. You will lose a point for each failed submission to Eaglint and human review.
