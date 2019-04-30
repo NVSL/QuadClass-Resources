@@ -53,12 +53,27 @@ Here are some useful commands for working in Eagle.  For the commands that go in
 5.  `move;`  -- then select parts with `group` tool.  Ctrl-click and select `move: group` to move the group.
 6.  command-click (on my mac; not sure on windows) -- snap to grid.
 7.  `move` then shift-click -- move a whole polygon.
+8.  `grid mm; grid 0.85` -- move items by 0.85mm
 
 ### Setting Properties
 
 1.  `change width 10mil` -- change wire widths to 10mil by clicking on them.
 2.  `change align center` -- change alignment of text items to 'center'
 3.  `display none tplace tdocument tnames`, select all (command-A), `change align center`, right-click select "Change: group" -- change alignment of all reference designators and values.
+
+### Quickly Laying Out SMDs and Pads
+
+Example:  Create a row of 6 SMDs at 0.7mm pitch at 0.8mm above the origin. 
+
+1.  `grid mm`
+2.  `grid 0.7`
+3.  Place the SMDs in a row starting at (0, 0).
+4.  `grid 0.8`
+5.  Select all the SMDs.
+6.  Group move them up one grid square (0.8mm)
+7.  `grid 0.21`
+8.  Select all SMDs
+9.  Group move them to the lift one grid square (6 * 0.7/2 = 0.21mm).
 
 ### Routing 
 
@@ -374,7 +389,7 @@ You must run Eagle's design rule checker (DRC).  It checks for a bunch of common
 1.  "Airwire" -- unrouted net.  Never acceptable.
 2.  "Wire stub" -- A short bit of wire.  Often these are remnants of partially deleted nets.  If they go somewhere useful, they are fine.
 3.  "Keepout" -- There is metal in side a keepout region.  Rarely ok, but you'll get some of these for the antenna and maybe your logo.
-4.  "Overlap" -- Two things (e.g., two different nets or a net and an SMD) overlap.  Usually bad, but you'll probably see some for you bridge and the antenna triggers some as well.
+4.  "Overlap" -- Two things (e.g., two different nets or a net and an SMD) overlap.  Usually bad, but you'll probably see some for you bridge and the antenna triggers some as well, you can approve these particular ones. 
 5.  "Width" -- A net is thinner than it should be.  You'll get one of these between the antenna net and the balun.  Usually they are not a good idea, but sometimes they are ok.  For instance, the IMU datasheet says that narrow power/ground traces are fine for that part, so you could route those nets with thinner traces than the other power nets.
 
 You can approve errors, but your peer reviewers (and me) will be looking at them closely.  You should be skeptical about approving errors.  They are called errors for a reason.
@@ -407,6 +422,9 @@ These file needs to include the following:
 1.  The reviewer team name (and student names/email addresses)
 2.  The reviewee team name (and sudent names/email addresses)
 3.  The date and time that you met face-to-face
+
+Please only list potential issues in the document.  Do not remark on things that look good or seem ok, since doing so makes the reviews harder to read.
+
 
 ### What To Check For
 
