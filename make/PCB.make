@@ -2,7 +2,7 @@
 BRD=$(DESIGN).brd
 SCH=$(DESIGN).sch
 EAGLINT=eaglelint  --strict $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
-EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/server/eaglint/BOM.py
+EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/eaglint/BOM.py
 BOMS=$(patsubst %.sch,%.assembly-bom.html,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
 
 .PHONY: all
@@ -44,6 +44,7 @@ cam: $(DESIGN).cam
 %.cam.zip: %.cam
 	(cd $<; zip $(abspath $@) *.{cmp,crm,l1,l2,plc,pls,sol,stc,sts,ncd})
 
+.PRECIOUS: %.stencil
 %.stencil.zip: %.stencil
 	(cd $<; zip $(abspath $@) *.crm)
 

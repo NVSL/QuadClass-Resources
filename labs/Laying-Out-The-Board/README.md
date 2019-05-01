@@ -403,6 +403,21 @@ You will need to generate two separate `.zip` files with your cam files it.
 
 When you create the CAM file, you should check the "Export as ZIP" box in the CAM dialog.  After you generate the first one, you'll need to rename (Eagle will name with the current date).  Then generate the second one and rename it as well.  Commit both to your repo.
 
+Your .zip file needs to contain exactly the files required to build your board and no others (to avoid confusing the board house).  For your `.cam.zip` file you should have these:
+
+1. `quadcopter.sol`
+2. `quadcopter.l1`
+3. `quadcopter.stc`
+4. `quadcopter.cmp`
+5. `quadcopter.plc`
+6. `quadcopter.ncd`
+7. `quadcopter.l2`
+8. `quadcopter.sts`
+9. `quadcopter.pls`
+
+For your `.stencil.zip`  you should have just this:
+
+1. `quadcopter.crm`
 
 ## Task To Perform (Part B: Design Review)
 
