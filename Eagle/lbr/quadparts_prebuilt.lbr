@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -3158,7 +3158,6 @@
 <text x="0" y="-17.78" size="1.778" layer="16" font="vector" align="bottom-center">Bottom Metal</text>
 <text x="0" y="-20.32" size="1.778" layer="30" font="vector" align="bottom-center">Bottom Solder Mask</text>
 <text x="0" y="-22.86" size="1.778" layer="22" font="vector" align="bottom-center">Bottom Silkscreeen</text>
-<text x="0.18" y="-2.27" size="1.778" layer="31" font="vector" align="bottom-center">Top Solder Stencil</text>
 <text x="0.18" y="-4.81" size="1.778" layer="21" font="vector" align="bottom-center">Top Silkscreeen</text>
 <text x="0.18" y="-7.35" size="1.778" layer="29" font="vector" align="bottom-center">Top Solder Mask</text>
 <text x="0.18" y="-9.89" size="1.778" layer="1" font="vector" align="bottom-center">Top Metal</text>
