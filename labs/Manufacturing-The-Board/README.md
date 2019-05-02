@@ -24,20 +24,18 @@ You should also be on the look out for any moments when a small voice in your he
 
 Follow the guidelines in the board layout lab under the heading "Generating Gerbers" to generate your final cam files.
 
-
 ### Commit Your Final Design
 
 Commit your final design to your github repo. This should include
 
-* Your updated quadcopter.sch and `quadcopter.brd`
-* Your final `quadcopter.cam.zip`. Please be _certain_ that this the right cam files. I suggest deleting all cam files in your repo, regenerating them and zipping them up. Be sure to commit.
-* A file called “metadata.txt” that has the following:
+* Your updated `hardware/quadcopter.sch` and `hardware/quadcopter.brd`
+* Your final `hardware/quadcopter.cam.zip`. Please be _certain_ that this the right cam files. I suggest deleting all cam files in your repo, regenerating them and zipping them up. Be sure to commit.
+* A file called `hardware/metadata.txt` that has the following:
 
     1. Color you want your quadcopter to be. Choices are: Green, red, white, yellow, blue, or black.
     2. The dimensions of your board in mm.
 
 Submit it via Eaglint. You can expect the reviews to be quite stringent.
-
 
 ### The Ordering Process
 
@@ -52,7 +50,7 @@ Basically, you just upload the zip file of your cam files, and select some optio
 * 4 layers
 * 5 boards (you’ll get 5 copies of your board)
 * thickness 1.6mm
-* color: based on your color.txt
+* color: based on your `metadata.txt`
 * Surface finish: LeadFree ENIG
 * Copper thickness: 1oz
 * Gold fingers: no
