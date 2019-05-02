@@ -9,29 +9,6 @@
     "output_type": "zip",
     "outputs": [
         {
-            "format_specifier": {
-                "decimal": 3,
-                "integer": 3
-            },
-            "output_type": "drill",
-            "outputs": [
-                {
-                    "drills": {
-                        "NPTH": true,
-                        "PTH": true,
-                        "VIA": true
-                    },
-                    "filename_format": "%N.ncd",
-                    "layers": {
-                        "from": 1,
-                        "to": 16
-                    },
-                    "name": "Generate drill data",
-                    "type": "excellon"
-                }
-            ]
-        },
-        {
             "filename_prefix": "outputs",
             "format_specifier": {
                 "decimal": 4,
@@ -169,7 +146,7 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": false,
+                    "board_outline": true,
                     "config": {
                         "description": "Silk screen CMP",
                         "file_function": "Other"
@@ -234,13 +211,42 @@
             "version": "RS274X"
         },
         {
+            "format_specifier": {
+                "decimal": 3,
+                "integer": 3
+            },
+            "output_type": "drill",
+            "outputs": [
+                {
+                    "drills": {
+                        "NPTH": true,
+                        "PTH": true,
+                        "VIA": true
+                    },
+                    "filename_format": "%N.ncd",
+                    "layers": {
+                        "from": 1,
+                        "to": 16
+                    },
+                    "name": "Generate drill data",
+                    "type": "excellon"
+                }
+            ]
+        },
+        {
+            "filename_prefix": "CAMOutputs/Assembly",
+            "output_type": "assembly",
+            "outputs": [
+            ]
+        },
+        {
             "filename_prefix": "CAMOutputs/DrawingFiles",
             "output_type": "drawing",
             "outputs": [
             ]
         }
     ],
-    "timestamp": "2019-03-21T23:31:30",
+    "timestamp": "2019-05-02T12:33:52",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
