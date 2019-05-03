@@ -157,7 +157,9 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
 * You should compute the SMD width based on the IMU datasheet and the 'Datasheets/IMU_Soldering\ guidance-{1,2}.pdf' documents.  You will need to read them quite carefully.
-* Make sure you SMDs match the maximum width of the pads on the part.
+* Setting the width of the SMDs requires balancing several constraints.  
+    1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.  
+    2. Our board house sets the minimum space between two pieces of copper to 5mils.  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
 * Use 0.1" spacing within logically-related groups of pins for the pins on the IMU.  You can have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
