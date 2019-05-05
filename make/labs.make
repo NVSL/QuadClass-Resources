@@ -29,3 +29,11 @@ push-starter-repo:
 	$(MAKE) starter
 	(cd starter; git init; git remote add origin git@github.com:$(GITHUB_ORG)/$(STARTER_REPO_NAME).git)
 	(cd starter; git add .; )#git commit -m "Initial import"; git push --set-upstream origin master)
+
+.PHONY: help
+help: labs.make.help
+
+.PHONY: labs.make.help
+labs.make.help:
+	@echo 'make starter           # Prepare starter repo to be pushed for the first time'
+	@echo 'make push-starter-repo # Push a starter repo for the first time'

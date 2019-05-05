@@ -4,9 +4,11 @@ SCH=$(DESIGN).sch
 EAGLINT=eaglelint  --strict $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
 EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/eaglint/BOM.py
 BOMS=$(patsubst %.sch,%.assembly-bom.html,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
+CAMS=$(DESIGN).cam $(DESIGN).cam.zip $(DESIGN).stencil  $(DESIGN).stencil.zip
+VERSION?=$(cat VERSION.txt)
 
 .PHONY: all
-all:  $(TESTS) $(BOMS)
+all:  $(TESTS) $(BOMS) $(CAMS)
 
 test: $(TESTS)
 
@@ -24,7 +26,9 @@ STENCIL_CAM_FILE=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-stencil.cam
 EAGLE_EXE=/Applications/EAGLE-9.3.0/eagle.app/Contents/MacOS/eagle 
 
 .PHONY: cam
-cam: $(DESIGN).cam
+cam: $(DESIGN).cam $(DESIGN).stencil
+
+.PRECIOUS: %.cam 
 %.cam: %.brd
 	mkdir -p $@
 	$(EAGLE_EXE) -N -X -dCAMJOB -j$(CAM_FILE) -o$@ $<
@@ -49,7 +53,6 @@ cam: $(DESIGN).cam
 	(cd $<; zip $(abspath $@) *.crm)
 
 RELEASE_DIR=releases/$(VERSION)
-.PRECIOUS: %.cam
 .PHONY:release
 release: $(BRD) $(SCH) $(LBRS)
 	@if ! git diff --exit-code --quiet || ! git diff --quiet --exit-code --cached; then echo "You have uncommitted changes."; exit 1;fi
@@ -66,5 +69,17 @@ release: $(BRD) $(SCH) $(LBRS)
 .PHONY: clean
 clean:
 	rm -rf $(BOMS)
-	rm -rf $(CAMDIR).zip
-	rm -rf $(CAMDIR)
+	rm -rf $(DESIGN).cam.zip
+	rm -rf $(DESIGN).stencil.zip
+	rm -rf $(DESIGN).cam
+	rm -rf $(DESIGN).stencil
+
+.PHONY: help
+help: PCB.make.help
+
+.PHONY: PCB.make.help
+PCB.make.help:
+	@echo 'make hooks   # install git hooks'
+	@echo 'make cam     # build cam files'
+	@echo 'make bom     # build bom files'
+	@echo 'make release # create a release'
