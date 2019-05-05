@@ -128,7 +128,7 @@ The power supply for quadcopter needs to contain the following parts:
 
 1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SCREW-TERMINAL` variant.
 2. A two-pin `jumper` to disconnect the positive terminal of the battery from `VBAT`.  Use the `-MALE` variant of `﻿HEADER-0.1IN-2POS` in `quadparts_prebuilt.lbr`.  
-3. A LP3985-series 3.3V regulator (see device `﻿TPS73633-DBVT`).  
+3. A LP3985-series 3.3V regulator (see device `TPS73633-DBVT`.  Don't use the 3V version).  
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.  
 
@@ -167,7 +167,7 @@ A debugging header is a set of pins that connects key signals to pins that you c
 * `GND`
 * `BAT_GND`
 * `VBAT`
-* `3V`
+* `3V3`
 * The control lines to the four motors
 * `SDA`
 * `SCL`

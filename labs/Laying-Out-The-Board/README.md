@@ -144,9 +144,9 @@ The next stage is to place all the parts on board. Placing most of the parts is 
 	4. The IMU should be at the center of your quad.
 	5. Any other LEDs you added should placed in an artistic way (or to achieve whatever effect you are going for).
 	6. The FTDI headers need to placed along the edge of the board. The silk screen labels for the pins *must be on the board*. This will ensure that they are oriented correctly and that you can plug in the FTDI serial connector right side up.
-	7. The location of the micro-controller is not, in itself, important, but it’s location does drive the location of the antenna and the oscillator.
+	7. The location of the micro-controller is not, in itself, important, but it’s location does drive the location of the antenna and the crystal.
 	8. The antenna needs to be close to the edge of the board and it needs a fair amount of space around it.
-1. You should mimic the layout of the FCB in places where signal integrity is important. This includes antenna (see below) and the oscillator.
+1. You should mimic the layout of the FCB in places where signal integrity is important. This includes antenna (see below) and the crystal.
 1. Make your board look good! Align components that are next to each other, make the spacing between components consistent, etc. Board designers appreciate a good-looking board.
 
 
@@ -354,15 +354,37 @@ You should also think about where to put the breakout header.  Near the edge of 
 
 Position the IMU rescue header so that when you attach the breakout board (https://www.adafruit.com/product/3387), the IMU on the breakout board will roughly align with the center of your quadcopter.  It doesn't have to be perfect, but close is good.  Ideally, you should also align it so that the IMU on the breakout board will be oriented in the same way as the IMU on your board.  Then, the same software will work either way.
 
+### Laying out the Crystal
+
+The crystal provides the clock to the MCU, and it's important that it be stable, especially for the radio's operation.  You should mimic the layout of the crystal seen on the FCB.  One detail that's not obvious:  the crystal provide a differential clock (two wires)
+ that run to two adjacent pins on the MCU.  On either side of those pins are ground pins.  These are there to make it easy to isolate the clock signals from other parts of the circuit.  Ideally, the crystal and it's signals should be surrounded by an unbroken band of grounded metal that extends from under the MCU, through the ground pins and around the crystal via the top ground pour.  Even better is if the ground pour in layer two is also unbroken under the crystal.  Here's an example of what it should look like (red: `Top`; orange `Route2`):
+ 
+![Crystal layout](images/crystal-layout.png)
+  
 ### Routing the Board
 
 The final step is routing the board. The steps above have given the autorouter most of the information it needs to route your design.  It will set the trace widths correctly and respect all the `t/bRestrict` information that you added.
 
-There are few things you should route by hand.  The most important are the traces between the microcontroller and balun.  Routing the nets from the microcontroller through the crystal to the associated caps is also a good idea.
+There are few things you should route by hand.  Routing the nets from the microcontroller through the crystal to the associated caps is also a good idea.  They should as short, straight, and direct as possible.
 
-You will also need to autoroute the connection between the antenna and the balun.  This requires a trick.  If you try to use the semi-automated "walkaround obstacles" router, it will not work.  This is because the width of the trace (50mil) is so wide that connecting it to one pin of the balun puts the edge of the trace too close to the adjacent pin of the balun.  To avoid this, route as much of the trace as you can at 50mils.  You should be able to get close enough that the trace mostly-engulfs the balun pin.  Then select the "ignore obstacles" option for the routing tool and set the diameter manually to something smaller (like 5mil) and complete the last bit.  The narrower segment should be completely covered by the wider portion of the trace, so it won't make any difference.  You'll get an warning when you run DRC, but you can 'approve' it.
+The most important are the traces between the microcontroller and balun.  Note (like the crystal) the antenna outputs have ground on either side.  These are (like with the crystal) to let you protect these signals from noise.  
 
-Once this is done, in the best case, the autorouter will successfully route your board. However, many things can prevent the autorouter from completing successfully.  If not, you can try hand routing signals that give you trouble.  If you get badly stuck ask the course staff.
+You will also need to manually the connection between the antenna and the balun.  This requires a trick.  If you try to use the semi-automated "walkaround obstacles" router, it will not work.  This is because the width of the trace (50mil) is so wide that connecting it to one pin of the balun puts the edge of the trace too close to the adjacent pin of the balun.  To avoid this, route as much of the trace as you can at 50mils.  You should be able to get close enough that the trace mostly-engulfs the balun pin.  Then select the "ignore obstacles" option for the routing tool and set the diameter manually to something smaller (like 5mil) and complete the last bit.  The narrower segment should be completely covered by the wider portion of the trace, so it won't make any difference.  You'll get an warning when you run DRC, but you can 'approve' it.
+
+The end result of your routing and pours should look like this (red: `Top`; orange `Route2`):
+
+![Crystal layout](images/radio-layout.png)
+
+Note that ground completely surrounds (both around on layer 1 and under via layer 2) the radio outputs and the antenna driver components.  Also note that boundary between the SMD on the cap, the SMD on the antenna and the trace from the balun to the antenna all run together.  This is as it should be.
+
+Once this is done, the autorouter will probably successfully route your board. However, many things can prevent the autorouter from completing successfully.  If not, you can try hand routing signals that give you trouble.  If you get badly stuck ask the course staff.
+
+The autoroute is a useful tool, but it is not a substitute for your judgement.  The internet is rife with people complaining that autorouters are no good or that "real" board designers don't use them.  This is a bit extreme, but it is the case that you need to keep an eye on them.  Here are somethings to watch out for:
+
+1.  Routing nets under your antenna driver.
+2.  Routing nets under your IMU.
+3.  Failing to utilize your pours.  This is a big one.  Most of your connections to `3V3`, `GND`, `VBAT`, and `BAT_GND` should use vias to connect components to the pour.  The pours are electrically better than traces and it also save space for routing other signals.  If you do `show 3v3` (or any other of these signals) you should see your pours, a bunch of short traces from SMDs to vias, and that's about it.  The `fanout` tool is a big help here.
+4.  Routing traces via needlessly long paths. 
 
 ### Optional Features
 
@@ -388,9 +410,10 @@ You must run Eagle's design rule checker (DRC).  It checks for a bunch of common
 
 1.  "Airwire" -- unrouted net.  Never acceptable.
 2.  "Wire stub" -- A short bit of wire.  Often these are remnants of partially deleted nets.  If they go somewhere useful, they are fine.
-3.  "Keepout" -- There is metal in side a keepout region.  Rarely ok, but you'll get some of these for the antenna and maybe your logo.
+3.  "Keepout" -- There is metal in side a keepout region.  Rarely ok, but you may get some of these for the antenna and maybe your logo.
 4.  "Overlap" -- Two things (e.g., two different nets or a net and an SMD) overlap.  Usually bad, but you'll probably see some for you bridge and the antenna triggers some as well, you can approve these particular ones. 
 5.  "Width" -- A net is thinner than it should be.  You'll get one of these between the antenna net and the balun.  Usually they are not a good idea, but sometimes they are ok.  For instance, the IMU datasheet says that narrow power/ground traces are fine for that part, so you could route those nets with thinner traces than the other power nets.
+6.  "Clearance" -- Two separate pieces of metal are too close.  Generally, you should cannot ignore these, since the minimum spacing is manufacturing constraint.
 
 You can approve errors, but your peer reviewers (and me) will be looking at them closely.  You should be skeptical about approving errors.  They are called errors for a reason.
 

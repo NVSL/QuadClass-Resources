@@ -14,7 +14,7 @@
                 "decimal": 4,
                 "integer": 3
             },
-            "generate_job_file": true,
+            "generate_job_file": false,
             "output_type": "gerber",
             "outputs": [
                 {
@@ -246,7 +246,7 @@
             ]
         }
     ],
-    "timestamp": "2019-05-02T12:33:52",
+    "timestamp": "2019-05-04T21:28:04",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
