@@ -115,8 +115,11 @@ The first step is to define the size, shape, and orientation of your quadcopter.
 2. You should ensure that most of the area the propellers will sweep out as they spin will not be over the board. For instance, putting the motor at the end of an arm will accomplish this. The arm must be long enough, however. The diameter of the propellers is 55mm.
 3. Your design must fit with a rectangle whose area is less than 30 sq in (19,354 sq mm).
 4. Your design may not contain any internal holes. That is, it must be possible to cut out the board with a single (possibly circuitous) cut.
-5. The layout of the motors should be roughly symmetric, but it doesn’t need to be precisely so.
+5. The layout of the motors should be mostly symmetric, but it doesn’t need to be prefectly so.
 6. I recommend centering your board shape on Eagle’s origin. It will make it easier to place parts symmetrically.
+7. The cutting tool the board uses is a 2mm in diameter.  This means if you should corners that are less than 180 degrees (i.e., the corners point into the body of your quadcopter), they will be rounded.
+8. The cutting tool diameter also limits the smallest gap between two the board and itself.  Openings must be at least 2mm wide.  You can get a feel for this by doing `hole 2mm` which will give you 2mm circle that you can slide use to guage how the cutting tool will behave.
+9. The board house will not build boards with "bridges" narrower than 2mm.  The guidance they give is not totally clear, but protrusions seems to be OK, while "necks" between larger parts are not.  If you want something unusual, we can always send it in and see what they say.  
 
 To verify that you have the dimensions correct, please add dimension elements to your board in `tDocu`. You need these four dimensions (all in mm, of course):
 
@@ -128,6 +131,7 @@ To verify that you have the dimensions correct, please add dimension elements to
 
 
 ### Configure Eagle
+
 We will be building 4-layer boards. You’ll need to set up Eagle for this. Here are the steps:
 
 1. Select `Edit->Design Rules`
@@ -254,6 +258,8 @@ There should should be a corresponding ground pour above these two pours (on lay
 Note that these pours should not form a complete ring or "donut". 
 
 The top and bottom layers should have a single, large pour of `GND` that covers everything except the area around the antenna.
+
+Ideally, your pours should not have sharp (90-degree) corners, since it leads to "current crowding".  This is not a big deal in our designs, but it is an interesting phenomenon (https://www.signalintegrityjournal.com/blogs/6-expert-advice-on-power-integrity/post/534-the-perils-of-right-angle-turns-at-dc).
 
 #### Exploiting Your Power and Ground Planes
 

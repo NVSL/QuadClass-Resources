@@ -35,7 +35,7 @@ Eagle cannot open or view CAM/Gerber files. For that you need a Gerber viewer:
 
 * Mac: I like Cuprum: http://www.wortum.com/cuprum/.
 * Windows: http://www.viewplot.com/
-* Linux: You'll need to find one. Let me know if you find a good one.
+* Linux: http://gerbv.geda-project.org/ (It might already be installed. Or do `sudo apt-get install gerbv`)
 
 The instructions below are for the Cuprum viewer on a Mac.
 

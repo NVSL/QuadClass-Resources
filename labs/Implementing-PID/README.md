@@ -71,30 +71,54 @@ The easiest way to compute the derivative is by dividing the change in error by 
 * Be sure you have the sign right on e(t) and de/dt. If you get it backwards nothing will work.
 * To use the actual elapse time since your last measurement.
 
-In principle, you should also be able to use the output of your gyroscope as the derivative of error (perhaps with a different sign).  I have never gotten this to work satisfactorily, but your milage may vary.
-
 #### The Integral of Error
 
 This one is a little trickier. The obvious answer is to just sum the error term forever. The problem here is that if you happen to hold your test platform steady with your hand, the integral will grow rapidly. 
 
 For instance, if you hold it in a position where the error term is positive for 10 seconds, the integral term will come to a large positive value. When you release the platform, the platform will move sharply to a position with negative error (because it has been trying for 10 seconds to reduce the positive error). It will then take a while (maybe another 10 seconds) to “unwind” the integral by adding in the negative error.
 
+Another common problem:  If your Ki = 0, and the integral of error becomes large (which is just what you would expect to happen when Ki = 0), and then you increasing Ki, your quadcopter will massively overadjust. 
+
 There are couple of solution to this:
 
-* You can have the integral decay over time. For instance, instead computing `sum = sum + e` each iteration, you could do `sum = 3*sum/4 + e`.
-* You can also just bound the integral at some value. Some trial and error may be required to find a reasonable bound.
+* You can have the integral decay over time. For instance, instead computing `sum = sum + e` each iteration, you could do `sum = 3*sum/4 + e`.  The downside of this is that it will make your kI term's behavior more complex.  Complexity is your enemy.
+* You can also just bound the integral at some value. Some trial and error may be required to find a reasonable bound.  Same problem as above -- this introduces a discontinuity is the algorithm's behavior.
+* You can reset the integral when throttle is 0.
 
-### Implementation Strategies
+### Implementating PID
 
-The PID controller gets to be pretty complicated once you have taken all the above challenges into consideratios. It is also hard to debug, since bugs will manifest in strange system behaviors. Here are some suggestions:
+The PID algorithm is pretty simple and no complex tricks are required to get it to work.  That does not mean it's easy, though.  The big challenge is that it involves several interacting pieces: 
 
+#### The IMU and your Filters
+
+The PID controller does not control actually try to control the orientation of your quadcopter.  Rather, it tries to control the output of the IMU.  If the IMU's output does not accurately reflect the orientation of the quadcopter, all is lost.
+
+You need to pay close attention to the output of your IMU and the complimentary filter.  For instance:
+
+1.  Is the measurement accurate?
+2.  Does track reality quickly and accurately? (your quad copter must react at sub-second time scales, if it takes 5 seconds for your pitch angle estimate to converge, the quadcopter cannot react faster than that.)
+3.  Is there any clipping?
+4.  Is there a lot of noise?
+
+One particularly useful tip:  Don't worry about stability at low throttles settings.  I get horrible harmonic noise in my accelerometer at moderate throttle settings.  It's impossible to filter out, but the throttle is too low to take off at that level, so it's unimportant.
+
+#### Your PID Implementation
+
+The implementation can (and should) be pretty simple.  Trying to tweak the algorithm by having it behave differently in different situation, etc., is a recipe for poor performance.  Even without special cases, there are many simple errors to avoid.  Keep you code simple, clean, and well-organized.  If you code is a mess, and you have a sign wrong somewhere, you'll never find it.
+
+If you get strange behavior, make your implementation simpler rather than more complex.
+
+Pay attention to your PID update rate.  100Hz (10ms/iteration) is good. The call to lsm.getQuad() takes about 1.8ms. You will eventually have 3 ID loops. So that means you have about (5-1.8)/3 = 1ms per PID channel.  If you implementation is simple, this should not be a problem.
+
+#### Your Mixer
+
+The output of your PID controller is number that specifies how adjust the relative power of the front and back motors.  If that variation can't happen (because your motor outputs are saturated), PID cannot possibly work.  Implementing the PID's will is actually more important that implementing the pilot's requested throttle level (although you should strive for both).
+
+#### Debugging and Tuning
+
+* Use the knobs and buttons on your remote to tune parameters.  It’s much faster than recompiling.  Spending time on the code to support this will pay you back many times over.
 * Use Arduino’s serial plotter to debug. You can put all sorts of stuff on there: Coefficients, the values of individual terms, etc.
-* Start by just implementing an P controller (no I or D). This should get you an oscillating test stand, but it should change the angle around which it oscillates.
-* Use the knobs and buttons on your remote to tune parameters.  It’s much faster than recompiling.  Spending time on the code to support this is well worth it.
-* Write you code in a clean, disciplined way that makes it easy to identify errors.  If your code is a mess, you’ll miss something like a flipped sign and never find it.
-* Pay attention to your PID update rate.  200Hz (5ms/iteration) is great. The call to lsm.getQuad() takes about 1.8ms. You will eventually have 3 ID loops. So that means you have about (5-1.8)/3 = 1ms per PID channel.
-
-### Debugging Strategies
+* Start by just implementing an P controller (no I or D). This should get you an oscillating test stand.
 
 When you encounter a problem in this lab, it really pays off to be methodical about how you track down the underlying cause.  Here is what I recommend as a check list:
 
@@ -149,7 +173,7 @@ Here's the pinout for the FTDI cable:
 
 **Note** the labels on the FCB are such that you need to connect the FTDI `RX` pin to the `TX` header and vice versa.
 
-### Tuning Your Controller
+### Tuning Resources
 
 Much has been written about how to tune PID controllers. I have used these two techniques with success:
 
