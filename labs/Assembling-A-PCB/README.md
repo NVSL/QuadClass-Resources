@@ -8,10 +8,7 @@ You will assemble a simple Arduino-compatible board based on the microcontroller
 
 These instructions apply to assembling your quadcopter and to building your own remote control that you can keep after the class is over.  [Read this](Building-Your-Own-Remote.md) for more details.
 
-## Assembly Drawings
-
-The assembly drawings for the BBB are in [BBB-Assembly.md](BBB-Assembly.md).
-
+Note specific to assembling your quadcopter are [here](Quadcopter-Assembly.md).
 ## Preparation
 
 Assembling a board (especially your first one) can take a couple hours.  Also, the working time for the solder paste is limited, so you need to work reasonably quickly once you start.
@@ -168,6 +165,7 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 | Headers(FTDI)     | 1   | ![FTDI](images/FTDI-header.jpg)                    |
 | Headers(Power Jumper)   | 1   | ![Power jumper](images/power-jumper.jpg))          |
 | Battery Terminals | 1 | ![battery orientation](images/battery_orientation.jpg)  |
+
 ### Notes on Particular Parts
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
@@ -303,6 +301,7 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 **Good MCU Placement**
 
 ![Good MCU Placement](images/MCU_alignment.jpg)
+
 
 ## Reflow
 

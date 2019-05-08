@@ -333,7 +333,7 @@ The FCB mounts to the wooden air frame as shown above by following the steps bel
 4. The battery should tuck neatly between the dowel and the FCB.
 5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
 6. Wrap the wire around the arms once or twice and then insert the motor into its holder.  It is a tight fit.
-7. Install the four propellers.  You need two clockwise (labeled "A" -- see below) and two counter-clockwise propellers (labeled 'B').  Matched propellers should be diagonally opposite eachother.  Color has no relationship to direction.  Check the motor direction before installing the propeller to make sure they blow down.
+7. Install the four propellers.  You need two clockwise (labeled "A" -- see below) and two counter-clockwise propellers (labeled 'B').  Matched propellers should be diagonally opposite eachother.  Color has no relationship to direction.  Check the motor direction before installing the propeller to make sure they blow down.  "B" props go on the black/white motors.  "A" props go on the red/blue motors.
 
 ![Air frame](images/clockwise_motor.jpg)
 ![Air frame](images/counterclockwise_motor.jpg)
