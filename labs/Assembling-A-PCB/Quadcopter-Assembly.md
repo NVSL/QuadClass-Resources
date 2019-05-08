@@ -40,6 +40,14 @@ The quadcopters have a few parts that were not on the BBB.  Here they are (quant
 | Motor Sockets     | 4   | |
 
 
+## Assembly Drawings
+
+Eagle provides a simple mechanisms to help you place parts.  Open your `.brd` file.  You need to enable  the "Design Manager" (`View->Design Manager`).
+
+The "Devices" pane shows a list of all the parts in your design.  Sort the list by "value" and hide the other columns (wrench icon).
+
+You can now select all the parts of a given type and Eagle will highlight their location on the board.
+
 ## Time Management
 
 Assembling your boards will take longer than the BBB, because there are more parts, and class time is limited.  To ensure you have time to apply paste, place parts, and reflow the boards, you must start applying paste **at the beginning of class**.  
