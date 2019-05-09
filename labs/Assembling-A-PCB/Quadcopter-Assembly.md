@@ -29,17 +29,21 @@ The quadcopters have a few parts that were not on the BBB.  Here they are (quant
 | MOSFET            | 4   |   ![Mosfet](images/mosfet.jpg).                    |
 | IMU               | 1.  | ![IMU](images/IMU.jpg).                            | 
 | 10KOhm Resistors  | 6   | ![Resistor](images/resistors.jpg).                 |
+| 330Ohm Resistors. | 2.  ||
 | 220 uF Capacitor  | 5   |   ![Caps](images/big_cap_orientation.jpg)          |
-| 0.01uF Capacitor \n 0.1uF Capacitor| 1   | ![Capacitors](images/capacitors.jpg).              |
+| 0.01uF Capacitor  | 1   | ![Capacitors](images/capacitors.jpg).              |
+| 0.1uF Capacitor.  | 4   ||
+| 10uF Capacitor.  | 1   ||
+| 12uF Capacitor.  | 2   ||
+| 22uF Capacitor.  | 1   ||
+| 0.75uF Capacitor.  | 1   ||
 | Diode             | 4   | ![Diode](images/diode_orientation.jpg).            | 
 | MCU.              | 1   | ![MCU](images/MCU_alignment.jpg).                  |
-| Crystal           | 1   | ![Diode](images/crystal.jpg).                      |
-| Diode             | 4   | ![Diode](images/diode_orientation.jpg).            |
-| Diode             | 4   | ![Diode](images/diode_orientation.jpg).            |
-| Diode             | 4   | ![Diode](images/diode_orientation.jpg).            |
-| Diode             | 4   | ![Diode](images/diode_orientation.jpg).            |
-| Diode             | 4   | ![Diode](images/diode_orientation.jpg).            |
-| Diode             | 4   | ![Diode](images/diode_orientation.jpg).            |
+| Crystal           | 1   | ![Crystal](images/crystal.jpg).                      |
+| Balun             | 1   | ![Balun](images/balun_orientation.jpg).            |
+| LED Red &Green    | 1   | ![LED](images/led_orientation.jpg).                |
+| Voltage Regulator | 1   | ![Vgg](images/voltage-regulator.jpg).            |
+
 ### Through Hole Parts
 
 | Part              | Qty | Picture                                            |
