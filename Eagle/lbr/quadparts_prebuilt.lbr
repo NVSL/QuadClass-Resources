@@ -3150,7 +3150,6 @@
 <smd name="4" x="2.25" y="-4.55" dx="1.4" dy="2.1" layer="1" stop="no" cream="no"/>
 </package>
 <package name="VIA-0.2MM">
-<wire x1="0" y1="0" x2="0" y2="0" width="0.508" layer="39"/>
 <pad name="P1" x="0" y="0" drill="0.2" diameter="0.3" stop="no" thermals="no"/>
 </package>
 <package name="LAYER_LABELS">
@@ -3253,6 +3252,38 @@
 <wire x1="10" y1="2" x2="10" y2="-2" width="0.127" layer="39"/>
 <wire x1="10" y1="-2" x2="-2.5" y2="-2" width="0.127" layer="39"/>
 <wire x1="-2.5" y1="-2" x2="-2.5" y2="2" width="0.127" layer="39"/>
+</package>
+<package name="FTDI-BASIC-SMD">
+<smd name="GND" x="-6.35" y="0.635" dx="3.17" dy="1.02" layer="1" rot="R90"/>
+<smd name="CTS" x="-3.81" y="0.635" dx="3.17" dy="1.02" layer="1" rot="R90"/>
+<smd name="VCC" x="-1.27" y="0.635" dx="3.17" dy="1.02" layer="1" rot="R90"/>
+<smd name="TXO" x="1.27" y="0.635" dx="3.17" dy="1.02" layer="1" rot="R90"/>
+<smd name="RXI" x="3.81" y="0.635" dx="3.17" dy="1.02" layer="1" rot="R90"/>
+<smd name="DTR" x="6.35" y="0.635" dx="3.17" dy="1.02" layer="1" rot="R90"/>
+<wire x1="-8" y1="3" x2="-8" y2="5.5" width="0.127" layer="21"/>
+<wire x1="-8" y1="5.5" x2="7.873" y2="5.5" width="0.127" layer="21"/>
+<wire x1="7.873" y1="5.5" x2="7.873" y2="3" width="0.127" layer="21"/>
+<wire x1="7.873" y1="3" x2="-8" y2="3" width="0.127" layer="21"/>
+<wire x1="-9" y1="-2" x2="-9" y2="12" width="0.127" layer="39"/>
+<wire x1="-9" y1="12" x2="9" y2="12" width="0.127" layer="39"/>
+<wire x1="9" y1="12" x2="9" y2="-2" width="0.127" layer="39"/>
+<wire x1="9" y1="-2" x2="-9" y2="-2" width="0.127" layer="39"/>
+<text x="0" y="-2" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="-8" y="2" size="1.27" layer="21" font="vector" align="center">B</text>
+<text x="8" y="2" size="1.27" layer="21" font="vector" align="center">G</text>
+</package>
+<package name="SCREW-TERMINAL-1X2-3.5MM-SMD">
+<text x="-1.75" y="-4.25" size="0.9" layer="21" font="vector" rot="SR270" align="center-left">&gt;PIN1</text>
+<text x="-5.25" y="1.84" size="0.9" layer="25" font="vector" rot="R180" align="center">&gt;NAME</text>
+<text x="1.75" y="-4.25" size="0.9" layer="21" font="vector" rot="SR270" align="center-left">&gt;PIN2</text>
+<smd name="1" x="-1.75" y="4.95" dx="5.1" dy="1.4" layer="1" rot="R90"/>
+<smd name="2" x="1.75" y="4.95" dx="5.1" dy="1.4" layer="1" rot="R90"/>
+<hole x="-4.5" y="0" drill="1.7"/>
+<hole x="4.5" y="0" drill="1.7"/>
+<wire x1="-3.6" y1="3.7" x2="3.6" y2="3.7" width="0.127" layer="21"/>
+<wire x1="3.6" y1="3.7" x2="3.6" y2="-3.7" width="0.127" layer="21"/>
+<wire x1="3.6" y1="-3.7" x2="-3.6" y2="-3.7" width="0.127" layer="21"/>
+<wire x1="-3.6" y1="-3.7" x2="-3.6" y2="3.7" width="0.127" layer="21"/>
 </package>
 </packages>
 <packages3d>
@@ -4122,6 +4153,15 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </technology>
 </technologies>
 </device>
+<device name="-SCREW-TERMINAL-SMD" package="SCREW-TERMINAL-1X2-3.5MM-SMD">
+<connects>
+<connect gate="G$1" pin="N" pad="2"/>
+<connect gate="G$1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
 </devices>
 </deviceset>
 <deviceset name="BAT_GND" prefix="GND">
@@ -4460,6 +4500,23 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <attribute name="MPN" value="68016-406HLF"/>
 <attribute name="PRICE" value="0.33"/>
 <attribute name="REVIEWER" value="Swanson"/>
+</technology>
+</technologies>
+</device>
+<device name="-SMD" package="FTDI-BASIC-SMD">
+<connects>
+<connect gate="G$1" pin="1" pad="DTR"/>
+<connect gate="G$1" pin="2" pad="RXI"/>
+<connect gate="G$1" pin="3" pad="TXO"/>
+<connect gate="G$1" pin="4" pad="VCC"/>
+<connect gate="G$1" pin="5" pad="CTS"/>
+<connect gate="G$1" pin="6" pad="GND"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIST" value="DIGIKEY"/>
+<attribute name="DISTPN" value="952-3235-ND "/>
+<attribute name="MOUNTING" value="SMD"/>
 </technology>
 </technologies>
 </device>
