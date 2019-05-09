@@ -1,78 +1,49 @@
 # Building Your Own Remote
 
-**This write up is out of date.  Talk to Steve if you want to build a remote**
 
 The base model of the remote is what we have in class.  There are several options you can add.
+
+## Electrical Components
 
 You'll need to order the parts that are required for the remote but not for the breakout board.  To do so:
 
 1.  Go to https://www.digikey.com/ordering/shoppingcart?lang=en
-2.  Click `Upload a File` select [QuadRemoteExtras.csv](QuadRemoteExtras.csv).
+2.  Click `Upload a File` select [remove.digikey-bom.csv](boms/remove.digikey-bom.csv).
 3.  Column B is the Digikey part number.  Column C is the quantity.  Ordering 1 spare of everything is not a bad idea. 
 4.  Complete you order.
 
-For each version of the remote, there's a different bill of materials (BOM).  They are cummulative, so the ones listed later contain the parts for the previous ones as well. 
+## Mechanical Components
 
-## Base Model
-
-I'll provide the PCB for your remote.
-
-**Digikey BOM:** [boms/remote.digikey-bom.csv](boms/remote.digikey-bom.csv)
-
-## Bells and Whistles
-
-This option adds a power switch and a built in FTDI.
-
-The builtin-FTDI lets you program the remote _and_ lets you use the remote as an FTDI to program your quad.  Very fancy.  
-
-This requires several additional surface mount components.  It increases the complexity of the lab by a fair amount.   You'll need an special cable to connect your remote to your quadcopter.
-
-Adding this option after you've done the inital assembly and reflow is a good way to practice some more advanced soldering techinques. 
-
-**Digikey BOM:** [boms/remote+pwr+ftdi+gim+lcd.digikey-bom.csv](boms/remote+pwr+ftdi+gim+lcd.digikey-bom.csv)
-
-**Part List**
+Items with a "*" I can provide, since I buy them in bulk.
 
 | Desc               |  URL                                               | Qty | 
 |--------------------|----------------------------------------------------|-----|
-| FTDI cable       |  **Find URL**       | 1 | 
+| FTDI cable       |  https://www.adafruit.com/product/206       | 1 | 
 | USB Micro cable  |  You probably have one of these | 1 |
-
-### Instructions
-
-On the back of the board, there are some jumpers that need to be reconfigured.  See the course staff about how to do it.
-
-## An IMU
-
-It's the same IMU that we use on the quadcopter.  It would, in principle, let you control your quadcopter by tilting the remote.
- 
-**Digikey BOM:** [boms/remote+pwr+ftdi+gim+lcd+IMU.digikey-bom.csv](boms/remote+pwr+ftdi+gim+lcd+IMU.digikey-bom.csv)
-
-
-## Nicer Gimbals
- 
-The base model gimbals are decent, but cheap -- $10/pair.  The nicer ones are are $30/pair.  Will you notice the difference?  But they are pretty cool.
-
-**Part list**
-
-| Desc               |  URL                                               | Qty | 
-|--------------------|----------------------------------------------------|-----|
-| Nice Gimbals       |  **Find URL**       | 2 |
-| 600 Ohm resistor   |  I'll provide       | 1 |
-
-## Display
-
-This adds a fancy RGB backlit 2-line LCD display.  This is a little expensive but easy to add.  You need to solder on a header and screw on the display.
-
-**Part list**
-
-| Desc               |  URL                                               | Qty | 
-|--------------------|----------------------------------------------------|-----|
 | Display            | https://www.sparkfun.com/products/14072            |  1  |
-| 1 1/4 scews        | I'll provide | 4  |
+| LCD mount screws	1 1/4 in | 	https://www.mcmaster.com/90272a087 | 4 *| 
+| Gimbal screws	1 1/2 in |	https://www.mcmaster.com/90272a088 | 8 *|
+| Nuts for gimbals and PCB	|	https://www.mcmaster.com/90480a003 | 12 *| 
+| Servo cable 	| https://www.amazon.com/gp/product/B01J81HQ9Y | 2 *|
+| 3/8" spacer | https://www.mcmaster.com/94639a709 | 4 * |
+| 1/2" spacer | https://www.mcmaster.com/94639a713 | 4 * |
+| 1" spacer |  https://www.mcmaster.com/94639a667 | 8 * |
+| Battery cable | https://www.alibaba.com/product-detail/Wholesales-explosion-proof-2-pin-Molex_60813679908.html?spm=a2700.7724838.2017115.357.357674c1etkkOn | 1 *|
+| Baseplate | na | 1 * |
+
+## Gimbals
+
+These are a little harder.  They are frequently out of stock.  They are also different than the ones on the remote I loaned you.  Unfortunately, those gimblas have been discontinuned.
+
+| Desc | URL | Qty | 
+|------|-----|-----|
+|Gimbal (L) |https://hobbyking.com/en_us/turnigy-9x-9ch-transmitter-replacement-throttle-rudder-gimbal-1pc.html|	hobbyking|
+|Gimbal (R) |https://hobbyking.com/en_us/turnigy-9x-9ch-transmitter-replacement-elevator-aileron-gimbal-1pc.html|	hobbyking|
 
 
-### Instructions
+## Assembling the Display
+
+The remote includes a female header on the board that connects to a male header on the display.  Soldering the headers so they align is tricky, but there's a trick:
 
 Barely insert the male header into the female header and the attach the display to the remote board using the screws.  You'll need 4 donuts between the LCD and the remote board.
  

@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -3285,6 +3285,23 @@
 <wire x1="3.6" y1="-3.7" x2="-3.6" y2="-3.7" width="0.127" layer="21"/>
 <wire x1="-3.6" y1="-3.7" x2="-3.6" y2="3.7" width="0.127" layer="21"/>
 </package>
+<package name="WIRE-TERMINAL-1X2-2.5MM-SMD-AVX-009276002021106">
+<smd name="2B" x="-3.6" y="1.25" dx="1.2" dy="1.8" layer="1" rot="R270"/>
+<smd name="1B" x="-3.6" y="-1.25" dx="1.2" dy="1.8" layer="1" rot="R270"/>
+<smd name="1A" x="3.6" y="-1.25" dx="1.5" dy="1.8" layer="1" rot="R270"/>
+<smd name="2A" x="3.6" y="1.25" dx="1.5" dy="1.8" layer="1" rot="R270"/>
+<wire x1="4.5" y1="-2.5" x2="4.5" y2="2.5" width="0.2" layer="21"/>
+<wire x1="4.5" y1="2.5" x2="-4.5" y2="2.5" width="0.2" layer="21"/>
+<wire x1="-4.5" y1="2.5" x2="-4.5" y2="-2.5" width="0.2" layer="21"/>
+<wire x1="-4.5" y1="-2.5" x2="4.5" y2="-2.5" width="0.2" layer="21"/>
+<text x="5" y="-1.25" size="1.27" layer="21" font="vector" rot="SR0" align="center-left">&gt;PIN1</text>
+<text x="5" y="1.25" size="1.27" layer="21" font="vector" rot="SR0" align="center-left">&gt;PIN2</text>
+<text x="0" y="-3.75" size="0.9" layer="25" font="vector" rot="R180" align="center">&gt;NAME</text>
+<wire x1="-6" y1="4" x2="-6" y2="-4" width="0.127" layer="41"/>
+<wire x1="-6" y1="-4" x2="8" y2="-4" width="0.127" layer="41"/>
+<wire x1="8" y1="-4" x2="8" y2="4" width="0.127" layer="41"/>
+<wire x1="8" y1="4" x2="-6" y2="4" width="0.127" layer="41"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="HDRVR3W80P254_1X3_812X254X850B" urn="urn:adsk.eagle:package:10071293/1" locally_modified="yes" type="model">
@@ -4160,6 +4177,21 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 </connects>
 <technologies>
 <technology name=""/>
+</technologies>
+</device>
+<device name="-SPRING-SMD" package="WIRE-TERMINAL-1X2-2.5MM-SMD-AVX-009276002021106">
+<connects>
+<connect gate="G$1" pin="N" pad="2A 2B"/>
+<connect gate="G$1" pin="P" pad="1A 1B"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="DIST" value="DIGIKEY"/>
+<attribute name="DISTPN" value="478-6169-1-ND"/>
+<attribute name="MOUNTING" value="SMD"/>
+<attribute name="PIN1" value="+" constant="no"/>
+<attribute name="PIN2" value="-" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>

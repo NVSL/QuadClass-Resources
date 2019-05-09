@@ -4,6 +4,8 @@ Assembling your quadcopter is similar to assembling the BBB board, but more invo
 
 You should re-read the [BBB assembly lab](Readme.md).  Everything there applies here as well, including the suggested order for assembly.  Below are just the differences.
 
+If you want to build a remote to keep, here are [the instructions](Building-Your-Own-Remote.md).
+
 ## Preparing Your Part Kit
 
 You can think of the part kit for your quadcopter as breaking into three parts:
@@ -28,7 +30,7 @@ The quadcopters have a few parts that were not on the BBB.  Here they are (quant
 |-------------------|-----|----------------------------------------------------|
 | MOSFET            | 4   | ![Resistor](images/resistors.jpg).                 |
 | Polarized Caps    | 5   |                                                    |
-| IMU               | 1 || 
+| IMU               | 1 | | 
 | 10KOhm Resistors | 6 | |
 | 0.01uF Capacitor | 1 | |
 | Diode            | 4 | | 
