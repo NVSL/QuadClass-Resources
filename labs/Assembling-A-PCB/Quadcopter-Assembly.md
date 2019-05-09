@@ -28,7 +28,7 @@ The quadcopters have a few parts that were not on the BBB.  Here they are (quant
 |-------------------|-----|----------------------------------------------------|
 | MOSFET            | 4   | ![Resistor](images/resistors.jpg).                 |
 | Polarized Caps    | 5   |                                                    |
-| IMU               | 1 || 
+| IMU               | 1 || ![IMU](images/IMU.jpg).
 | 10KOhm Resistors | 6 | |
 | 0.01uF Capacitor | 1 | |
 | Diode            | 4 | | 
