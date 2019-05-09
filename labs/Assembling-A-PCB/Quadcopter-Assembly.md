@@ -49,7 +49,7 @@ The quadcopters have a few parts that were not on the BBB.  Here they are (quant
 | Part              | Qty | Picture                                            |
 |-------------------|-----|----------------------------------------------------|
 | Motor Sockets     | 4   | ![Motor Socket](images/motor-socket.jpg).          |
-| FTDI Header.      | 1   | ![FTDI](images/motor-socket.jpg).                  |
+| FTDI Header.      | 1   | ![FTDI](images/FTDI-header.jpg).                  |
 | Button            | 1   | ![Button](images/button.jpg).                      |
 | Screw Terminals   | 1   | ![Screw](images/battery_orientation.jpg).          |
 | 2-pin Header      | 3   | ![header](images/power-jumper.jpg).                |
