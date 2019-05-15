@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -3302,6 +3302,27 @@
 <wire x1="8" y1="-4" x2="8" y2="4" width="0.127" layer="41"/>
 <wire x1="8" y1="4" x2="-6" y2="4" width="0.127" layer="41"/>
 </package>
+<package name="RESCAXS50P200X100X45-8" urn="urn:adsk.eagle:footprint:10895054/1" locally_modified="yes">
+<description>8-Chiparray 2-Side Convex, 0.50 mm pitch, 2.00 X 1.00 X 0.45 mm body
+&lt;p&gt;8-pin Chiparray 2-Side Convex package with 0.50 mm pitch with body size 2.00 X 1.00 X 0.45 mm&lt;/p&gt;</description>
+<circle x="-1.004" y="1.4736" radius="0.25" width="0" layer="21"/>
+<wire x1="-0.5" y1="1.2836" x2="0.5" y2="1.2836" width="0.12" layer="21"/>
+<wire x1="-0.5" y1="-1.2836" x2="0.5" y2="-1.2836" width="0.12" layer="21"/>
+<wire x1="0.55" y1="-1.05" x2="-0.55" y2="-1.05" width="0.12" layer="51"/>
+<wire x1="-0.55" y1="-1.05" x2="-0.55" y2="1.05" width="0.12" layer="51"/>
+<wire x1="-0.55" y1="1.05" x2="0.55" y2="1.05" width="0.12" layer="51"/>
+<wire x1="0.55" y1="1.05" x2="0.55" y2="-1.05" width="0.12" layer="51"/>
+<smd name="1" x="-0.6196" y="0.75" dx="0.79" dy="0.4391" layer="1"/>
+<smd name="2" x="-0.6196" y="0.25" dx="0.79" dy="0.3391" layer="1"/>
+<smd name="3" x="-0.6196" y="-0.25" dx="0.79" dy="0.3391" layer="1"/>
+<smd name="4" x="-0.6196" y="-0.75" dx="0.79" dy="0.4391" layer="1"/>
+<smd name="5" x="0.6196" y="-0.75" dx="0.79" dy="0.4391" layer="1"/>
+<smd name="6" x="0.6196" y="-0.25" dx="0.79" dy="0.3391" layer="1"/>
+<smd name="7" x="0.6196" y="0.25" dx="0.79" dy="0.3391" layer="1"/>
+<smd name="8" x="0.6196" y="0.75" dx="0.79" dy="0.4391" layer="1"/>
+<text x="0" y="2.3586" size="0.9" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-1.9186" size="0.9" layer="27" font="vector" align="center">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="HDRVR3W80P254_1X3_812X254X850B" urn="urn:adsk.eagle:package:10071293/1" locally_modified="yes" type="model">
@@ -3316,6 +3337,13 @@
 &lt;p&gt;Single-row (1X4), 4-pin Receptacle Header (Female) Straight package with 2.54 mm (0.10 in) col pitch, 0.80 mm lead width, 3.20 mm tail length and 8.50 mm insulator length with overall size 10.66 X 2.54 X 8.50 mm, pin pattern - clockwise from top left&lt;/p&gt;</description>
 <packageinstances>
 <packageinstance name="HDRVR4W80P254_1X4_1066X254X850B"/>
+</packageinstances>
+</package3d>
+<package3d name="RESCAXS50P200X100X45-8" urn="urn:adsk.eagle:package:10895048/1" type="model">
+<description>8-Chiparray 2-Side Convex, 0.50 mm pitch, 2.00 X 1.00 X 0.45 mm body
+&lt;p&gt;8-pin Chiparray 2-Side Convex package with 0.50 mm pitch with body size 2.00 X 1.00 X 0.45 mm&lt;/p&gt;</description>
+<packageinstances>
+<packageinstance name="RESCAXS50P200X100X45-8"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -5207,6 +5235,37 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <attribute name="CREATOR" value="Swanson"/>
 <attribute name="DIST" value="Digikey"/>
 <attribute name="DISTPN" value="S7002-ND "/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RESISTOR-PACK-4X" prefix="R" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="RESOLVED-RESISTOR_" x="-0.16455" y="-0.164796875"/>
+<gate name="G$2" symbol="RESOLVED-RESISTOR_" x="0" y="-7.62"/>
+<gate name="G$3" symbol="RESOLVED-RESISTOR_" x="0" y="-15.24"/>
+<gate name="G$4" symbol="RESOLVED-RESISTOR_" x="0" y="-22.86"/>
+</gates>
+<devices>
+<device name="-510" package="RESCAXS50P200X100X45-8">
+<connects>
+<connect gate="G$1" pin="1" pad="4"/>
+<connect gate="G$1" pin="2" pad="5"/>
+<connect gate="G$2" pin="1" pad="3"/>
+<connect gate="G$2" pin="2" pad="6"/>
+<connect gate="G$3" pin="1" pad="2"/>
+<connect gate="G$3" pin="2" pad="7"/>
+<connect gate="G$4" pin="1" pad="1"/>
+<connect gate="G$4" pin="2" pad="8"/>
+</connects>
+<package3dinstances>
+<package3dinstance package3d_urn="urn:adsk.eagle:package:10895048/1"/>
+</package3dinstances>
+<technologies>
+<technology name="">
+<attribute name="DIST" value="DIGIKEY"/>
+<attribute name="DISTPN" value="Y10511CT-ND"/>
 </technology>
 </technologies>
 </device>

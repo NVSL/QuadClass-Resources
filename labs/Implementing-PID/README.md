@@ -108,7 +108,7 @@ The implementation can (and should) be pretty simple.  Trying to tweak the algor
 
 If you get strange behavior, make your implementation simpler rather than more complex.
 
-Pay attention to your PID update rate.  100Hz (10ms/iteration) is good. The call to lsm.getQuad() takes about 1.8ms. You will eventually have 3 ID loops. So that means you have about (5-1.8)/3 = 1ms per PID channel.  If you implementation is simple, this should not be a problem.
+Pay attention to your PID update rate.  100Hz (10ms/iteration) is good. The call to lsm.getQuad() takes about 1.8ms. You will eventually have 3 ID loops. So that means you have about (10-1.8)/3 = 2.7ms per PID channel.  If you implementation is simple, this should not be a problem.
 
 #### Your Mixer
 
@@ -129,14 +129,15 @@ When you encounter a problem in this lab, it really pays off to be methodical ab
 4.  Are the prop blowing down?  Check by holding your hand underneath.
 5.  Are your motors+props able to move your quad in either direction easily?  
 6.  Check your raw IMU measurements -- are they reasonable?
-7.  Check your filtered IMU measurements -- are they not-so-noisy when the motors are on?
-8.  Check your error calculation -- Does it change correctly when you tilt the FCB?  Does it change correctly when you move the pitch stick?
-9.  Do the motor outputs change as you expect as you move the platform (i.e., do the motors on the lower side get stronger)?  Do they get stronger more aggressively when you turn up kP?
-10.  Does it behave sensibly with just P?  Are your kP a reasonable value?
-11.  Check your derivative calculation -- Does it match up with your error calculation?  Is dT in the right units (i.e., compute using the right time scale)?  Does dErr have the correct sign (i.e., when error is positive and decreasing is dErr/dT negative?  When error is negative and increasing, is dErr/dT positive?)
-12.  Does it behave sensibly with P and D?  ARe your kD and KP reasonable values?
-13.  Check your integral calculation -- Do you handle wind up correctly?  Is dT in the right units?
-14.  Does it behave sensibly with PID? Is kI a reasonable value?
+7.  Is the sign of your pitch and roll rates correct (i.e., when the pitch rate is positive, is pitch increasing)?
+8.  Check your filtered IMU measurements -- are they not-so-noisy when the motors are on?
+9.  Check your error calculation -- Does it change correctly when you tilt the FCB?  Does it change correctly when you move the pitch stick?
+10.  Do the motor outputs change as you expect as you move the platform (i.e., do the motors on the lower side get stronger)?  Do they get stronger more aggressively when you turn up kP?
+11.  Does it behave sensibly with just P?  Are your kP a reasonable value?
+12.  Check your derivative calculation -- Does it match up with your error calculation?  Is dT in the right units (i.e., compute using the right time scale)?  Does dErr have the correct sign (i.e., when error is positive and decreasing is dErr/dT negative?  When error is negative and increasing, is dErr/dT positive?)
+13.  Does it behave sensibly with P and D?  ARe your kD and KP reasonable values?
+14.  Check your integral calculation -- Do you handle wind up correctly?  Is dT in the right units?
+15.  Does it behave sensibly with PID? Is kI a reasonable value?
 
 Almost always, overall PID problems are caused by something pretty early in this list.  It would be not be a bad idea to provide the means to run these tests quickly using the remote.  Then, if you have an error, you can quickly check whether all the underlying parts are working properly.
 
@@ -145,7 +146,7 @@ Be assured that the first time you ask me or the TA for help, I will go through 
 Here are some implementation notes suggested by the above:
 
 1.  It'd be useful to have a mode where you can easily turn on one motor at time.
-2.  It's useful to have a "manual" mode where your pitch stick directly controls the differential in power between the front and back props.
+2.  It's useful to have a "manual" mode where your pitch stick directly controls the differential in power between the front and back props.  Might as well add left and right (for roll) and clockwise/counter-clockwise (for yaw).
 3.  It's useful if the logic to disable the motors when the quad is disarmed does so at the last possible stage.  Then you can watch what sense/filter/PID/mix datapath is doing while the quad is disarmed.  It's very hard to concentrate on debugging when your quadcopter is flopping around.
 
 ### Using the Alternate FTDI Headers
