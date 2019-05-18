@@ -23,6 +23,17 @@ You will build a PID-stabilized test stand. You should be able to control the fo
 
 So you should be able to move your pitch gimbal and see the test platform quickly and and stably move in response. You should also be able to turn the throttle up and down without observing much change in the angle of the test platform.
 
+
+### What Should be Simple and What Should be Complex
+
+Your implementation of PID should not be complicated.  The PID algorithm is not complex, and simple, straightforward translation of the math into C code works just fine.  The same goes for the complimentary filter.
+
+My reference implementation of one PID controller is 5 lines and 252 characters.  There are no tricks in the code.  It is a direct transcription of the PID equation into C.  You just need to implement the math carefully and correctly.  My implementation of the complimentary filter is equally simple.  Simplicity here is a real virtue.  
+
+This is not to say that the lab is easy.  It is not.  Debugging simple code can be quite hard -- all the more when the bugs will manifest themselves as a crashing quadcopter.  Tuning the PID loop is tricky, time consuming, and frustrating.  This source of difficulty is reflected in the reference design:  While my PID implementation is short and sweet, the code that allows me to quickly and easily tune my filters and PID coefficients from my remote is several hundred lines of code, contains some pretty tricky parts, and represents many more hours of my life.  
+
+In most (and possibly all cases), the solution is not in more complexity in your control code.  It is in more careful debugging, simplification, and careful, methodical testing.  That, making sure that your battery is adequately charged.
+
 ### The Control Loop
 
 You will implement one controller in this lab for pitch.  Your quadcopter will eventually have three: one for pitch, one for roll, and one for yaw.
@@ -36,6 +47,7 @@ The "System" is your quadcopter. The "controller" is your PID code. The "input" 
 The controller takes the difference between the desired state of system (input) with the current state of the system (output) as the "error."  Based on this error (and it's behavior over time), it computes a set of control setting (i.e., power levels for the motors) that will, hopefully, reduce the error.
 
 You should compute the set point based on the position of your pitch gimbal (right hand joy stick, vertical axis). Plus or minus 10 degrees from horizontal is a reasonable range. That is enough to make your quadcopter move forward or backward at a reasonable speed.
+
 
 ### The Mixer
 
@@ -148,6 +160,7 @@ Here are some implementation notes suggested by the above:
 1.  It'd be useful to have a mode where you can easily turn on one motor at time.
 2.  It's useful to have a "manual" mode where your pitch stick directly controls the differential in power between the front and back props.  Might as well add left and right (for roll) and clockwise/counter-clockwise (for yaw).
 3.  It's useful if the logic to disable the motors when the quad is disarmed does so at the last possible stage.  Then you can watch what sense/filter/PID/mix datapath is doing while the quad is disarmed.  It's very hard to concentrate on debugging when your quadcopter is flopping around.
+
 
 ### Using the Alternate FTDI Headers
 
