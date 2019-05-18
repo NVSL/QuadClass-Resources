@@ -6,6 +6,7 @@ EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/eaglint/BOM.py
 BOMS=$(patsubst %.sch,%.assembly-bom.html,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
 CAMS=$(DESIGN).cam $(DESIGN).cam.zip $(DESIGN).stencil  $(DESIGN).stencil.zip
 VERSION?=$(cat VERSION.txt)
+BOM_QTY?=5
 
 .PHONY: all
 all:  $(TESTS) $(BOMS) $(CAMS)
@@ -42,8 +43,11 @@ cam: $(DESIGN).cam $(DESIGN).stencil
 %.assembly-bom.html: %.sch
 	$(EAGLE_BOM) --sch $^ --mode smds --format html  --out $@
 
+.PHONY: bom
+bom: $(DESIGN).digikey-bom.csv
+
 %.digikey-bom.csv: %.sch
-	$(EAGLE_BOM) --sch $^ --format csv --out $@
+	$(EAGLE_BOM) --sch $^ --format csv --out $@  --qty $(BOM_QTY)
 
 %.cam.zip: %.cam
 	(cd $<; zip $(abspath $@) *.{cmp,crm,l1,l2,plc,pls,sol,stc,sts,ncd})
@@ -61,6 +65,8 @@ release: $(BRD) $(SCH) $(LBRS)
 	cp $(BRD) $(SCH) $(RELEASE_DIR)
 	#python $(EAGLINT_HOME)/server/eaglint/set-attr.py $(RELEASE_DIR)/$(BRD) $(RELEASE_DIR)/$(SCH) --attr 'dict(VERSION="$(VERSION)")'
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).cam.zip $(RELEASE_DIR)/$(DESIGN).stencil.zip
+	$(MAKE) $(RELEASE_DIR)/$(DESIGN).digikey-bom.csv
+	#false
 	git add $(RELEASE_DIR)	
 	git commit -m "Release $(VERSION)"
 	git tag -a $(VERSION) -m "Release $(VERSION)"
