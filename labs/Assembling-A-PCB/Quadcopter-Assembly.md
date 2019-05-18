@@ -89,3 +89,31 @@ The TA and I both have other obligations after class after on some days.  This m
 
 The soldering stations are available for hand-soldering the through-hole parts.  You can work on this whenever the maker studio is open.
 
+## Tips, Tricks, Bells, and Whistles
+
+### Attaching the Motors
+
+The spec for the board, should provide a snug fit for your motors, but the board milling process is not perfectly precise.  Also, the motors are subject to significant stress during testing (as your board bangs around the test stand).  To hold the motors in place, hot glue works well.  Position the motors as you like and apply 1-2 _small_ amount of got glue to the corner formed between your PCB and the motor.   You don't need very much and applying alot will make a mess and make it difficult to remove the motors later.
+
+Do not using anything stronger (e.g., super glue or gorilla glue).  It makes a mess, is too brittle, and is very hard to remove.  Hot glue is really the about perfect.
+
+### "Feet" for Your Quadcopter
+
+It's useful to have something for your quadcopter to stand on so it sits level on the ground.  This is especially handy when you are calibrating your IMU.   You have several options:
+
+1.  You can use the motors.  Position them to ride low, so the bottom extends down a ways, and make sure you put them all at the same height.  The draw back is that wires can get banged around.
+2.  3D print something.   Go crazy, but remember that weight is an issue.
+3.  A piece of light foam would make a pretty good landing pad.  You can even use part of a household sponge.
+4.  The battery can also help here if you mount it underneath.
+
+### Attaching the Battery
+
+The battery is awkward, and it's a hard problem to solve.  Many things can work, but few look great:  Blue tape, rubber bands, velcro.  
+
+One thing that might help is shortening the wiring harness that connects to your quadcopter.  Play around until you find a good length and then trim it short.
+
+We also have some plastic "cages" you're welcome to use.
+
+
+
+
