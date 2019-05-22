@@ -143,9 +143,10 @@ When you encounter a problem in this lab, it really pays off to be methodical ab
 6.  Check your raw IMU measurements -- are they reasonable?
 7.  Is the sign of your pitch and roll rates correct (i.e., when the pitch rate is positive, is pitch increasing)?
 8.  Check your filtered IMU measurements -- are they not-so-noisy when the motors are on?
+9.  Is your IMU calibrated correctly?  When it's sitting does it show 0-degrees pitch and roll and 0 yaw rate?
 9.  Check your error calculation -- Does it change correctly when you tilt the FCB?  Does it change correctly when you move the pitch stick?
 10.  Do the motor outputs change as you expect as you move the platform (i.e., do the motors on the lower side get stronger)?  Do they get stronger more aggressively when you turn up kP?
-11.  Does it behave sensibly with just P?  Are your kP a reasonable value?
+11.  Does it behave sensibly with just P?  Can I feel it trying to correct in the right direction?
 12.  Check your derivative calculation -- Does it match up with your error calculation?  Is dT in the right units (i.e., compute using the right time scale)?  Does dErr have the correct sign (i.e., when error is positive and decreasing is dErr/dT negative?  When error is negative and increasing, is dErr/dT positive?)
 13.  Does it behave sensibly with P and D?  ARe your kD and KP reasonable values?
 14.  Check your integral calculation -- Do you handle wind up correctly?  Is dT in the right units?

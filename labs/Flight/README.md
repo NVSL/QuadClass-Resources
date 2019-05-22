@@ -26,11 +26,19 @@ I have found it useful to attach the quadcopter to end of a stick (like the pivo
 
 ### Adding the Yaw PID Channel
 
-The Yaw channel is a little different.  Use the left-right axis of the left controller gimbal to set the rate of rotation. This is exactly what the gyro gives you. The gyro is also pretty low noise, so you probably won’t need to do much filtering.  It's possible that you might want to filter out some of the high-frequency (i.e., reducing cutoff for the gyro's low-pass filter)
+The Yaw channel is a little different.  Use the left-right axis of the left controller gimbal to set the rate of rotation.  You should get yaw working reasonably well before attempting flight.  Spinning in the air makes it very hard to tell what's going wrong with pitch and roll.
 
-The inputs for the yaw controller are different than for pitch and roll.  Since you only get the rate of change for the yaw rate, so there’s no need or use for a complimentary filter.   Instead, use the yaw rate as the input and use PID to keep the yaw rate at zero (i.e., so you quadcopter is not spinning in space).  You should, eventually, also be able to make your quadcopter spin in a controlled manner using the yaw stick.
+There are a few things that make yaw easier to deal with:
 
-Tuning this PID loop is harder, since the test stand doesn’t spin. However, yaw is also not as critical for stable flight so you can probably tune it while the quadcopter is in the air.
+1.  The gyro gives you yaw rate directly, and it's pretty low noise.
+2.  Yaw rate changes pretty slowly because the torque that the motors apply to the yaw axis is much smaller than the torqe the propellers apply to the pitch and roll axes.
+3.  Small errors in yaw rate (i.e., rotating slowly) won't hurt quadcopter stabilty.p
+
+The gyro is also pretty low noise, so you probably won’t need to do much filtering.  It's possible that you might want to filter out some of the high-frequency (i.e., reducing cutoff for the gyro's low-pass filter)
+
+The inputs for the yaw controller are different than for pitch and roll.  Since you only get the rate of change for the yaw rate, so there’s no need or use for a complimentary filter.   Instead, use the yaw rate as the input and use PID to keep the yaw rate at zero (i.e., so you quadcopter is not rotating).  You should, eventually, also be able to make your quadcopter spin in a controlled manner using the yaw stick.
+
+Tuning this PID loop is harder, since the test stand doesn’t spin.  An alternative is to suspend the quadcopter with string by it's arms so it hangs level in the air and can spin freely.  The makerspace has string.
 
 
 

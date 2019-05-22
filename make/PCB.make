@@ -8,6 +8,7 @@ CAMS=$(DESIGN).cam $(DESIGN).cam.zip $(DESIGN).stencil  $(DESIGN).stencil.zip
 VERSION?=$(cat VERSION.txt)
 BOM_QTY?=5
 
+FULL_VERSION=$(DESIGN)-$(VERSION)
 .PHONY: all
 all:  $(TESTS) $(BOMS) $(CAMS)
 
@@ -60,17 +61,17 @@ RELEASE_DIR=releases/$(VERSION)
 .PHONY:release
 release: $(BRD) $(SCH) $(LBRS)
 	@if ! git diff --exit-code --quiet || ! git diff --quiet --exit-code --cached; then echo "You have uncommitted changes."; exit 1;fi
-	@if git rev-parse "$(VERSION)^{tag}" --; then echo "$(VERSION) has already been released"; exit 1; else exit 0; fi
+	@if git rev-parse "$(FULL_VERSION)^{tag}" --; then echo "$(FULL_VERSION) has already been released"; exit 1; else exit 0; fi
 	mkdir -p $(RELEASE_DIR)
 	cp $(BRD) $(SCH) $(RELEASE_DIR)
-	#python $(EAGLINT_HOME)/server/eaglint/set-attr.py $(RELEASE_DIR)/$(BRD) $(RELEASE_DIR)/$(SCH) --attr 'dict(VERSION="$(VERSION)")'
+	#python $(EAGLINT_HOME)/server/eaglint/set-attr.py $(RELEASE_DIR)/$(BRD) $(RELEASE_DIR)/$(SCH) --attr 'dict(VERSION="$(FULL_VERSION)")'
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).cam.zip $(RELEASE_DIR)/$(DESIGN).stencil.zip
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).digikey-bom.csv
 	#false
 	git add $(RELEASE_DIR)	
-	git commit -m "Release $(VERSION)"
-	git tag -a $(VERSION) -m "Release $(VERSION)"
-	git push origin $(VERSION)
+	git commit -m "Release $(FULL_VERSION)"
+	git tag -a $(FULL_VERSION) -m "Release $(FULL_VERSION)"
+	git push origin $(FULL_VERSION)
 
 .PHONY: clean
 clean:
