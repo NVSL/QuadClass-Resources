@@ -73,6 +73,9 @@ Tuning this PID loop is both harder and easier that roll and pitch.  It's harder
 
 Tuning yaw is easier because it's more forgiving, since the amount of force yours can apply to the yaw axis is relatively small.  You probably don't need an D term, and I find the P and I terms are pretty forgiving.
 
+### Trim
+
+The calibration of your IMU is never perfect, and you will probably find that your quadcopter tends to drift/flop to one side.  Adding a trimming mechanism can help with this.  "Trimming" means adding a small, fixed offset to the controls (or the sensor readings) that can be adjusted in real time from the remote.  The D-pad of buttons is great for (actually built for) this.  It needs to be very easy to use -- it's not unusual to adjust trim while the quadcopter is airborne.  You probably only need to trim pitch and roll, and the D-pad is very intuitive for them.  If you want to be able to trim yaw as well, use the knob.
 
 ### Testing in All Together
 
