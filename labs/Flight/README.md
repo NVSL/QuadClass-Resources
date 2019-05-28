@@ -24,6 +24,18 @@ You need to firmly attach the motors to your airframe.  Hot glue is the best way
 
 ![An appropriate amount of hot glue](images/hot-glue.jpg)
 
+You'll need to securely attach your batteries to your quadcopter.  Velcro works well for this, and we have some.  The soft, fuzzy side goes on the quadcopter.  It can be on the top or bottom, but it needs to be near the center.  For the FCB place it as shown below.  The hard, rough side goes on the battery:
+
+![Velcro'd battery](images/velcro-on-battery.jpg)
+
+Here it is installed:
+
+![Velcro'd battery](images/velcroed-battery.jpg)
+
+You can also put some soft velcro on your remote somewhere to hold its battery.
+
+You may want to shorten the battery cable on your quad.  For the FCB, 1-2inches is pretty good.  THe right value for your quadcopter will vary according to its design.
+
 
 ### Complete The Flight Controller
 
