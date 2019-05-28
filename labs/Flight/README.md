@@ -2,7 +2,7 @@
 
 To be completed in groups.  Due during the final period for the course (see the schedule).
 
-## Tasks to Perform (Software)
+## Tasks to Perform
 
 This lab should get your quadcopter flying!  
 
@@ -53,9 +53,11 @@ There are a few things that make yaw easier to deal with:
 
 The gyro is also pretty low noise, so you probably won’t need to do much filtering.
 
-The inputs for the yaw controller are different than for pitch and roll.  Since you only get the rate of change for the yaw rate, so there’s no need or use for a complimentary filter.   Instead, use the yaw rate as the input and use PID to keep the yaw rate at zero (i.e., so you quadcopter is not rotating).  You should, eventually, also be able to make your quadcopter spin in a controlled manner using the yaw stick.
+The inputs for the yaw controller are different than for pitch and roll.  Since you only get the rate of change for the yaw rate, so there’s no need or use for a complimentary filter.   Instead, use the yaw rate as the input and use PID to keep the yaw rate at zero (i.e., so you quadcopter is not rotating).  You should also be able to make your quadcopter spin in a controlled manner using the yaw stick.
 
-Tuning this PID loop is harder and easier that roll and pitch.  It's harder since the test stand doesn’t spin.  You can get around this by tying string to the four arms of your quadcopter so it  hangs level in the air and can spin freely.  The makerspace has string and I have monofiliment fishing line.  Make sure they don't get caught in the propellers.
+Tuning this PID loop is both harder and easier that roll and pitch.  It's harder since the test stand doesn’t spin.  You can get around this by tying string to the four arms of your quadcopter so it  hangs level in the air and can spin freely.  The makerspace has string and I have monofiliment fishing line.  Make sure they don't get caught in the propellers.  It will look something like this:
+
+![suspended to tune yaw](images/suspended-quad.jpg)
 
 Tuning yaw is easier because it's more forgiving, since the amount of force yours can apply to the yaw axis is relatively small.  You probably don't need an D term, and I find the P and I terms are pretty forgiving.
 
@@ -74,7 +76,8 @@ This will let you  fly the quadcopter against a table:
 
 It makes it easier to switch from pitch to roll and lets you check whether the controls affect the quadcopter like you would expect.  
 
-Once things seems pretty stable, you can put the quadcopter the floor with the stabilizers.  They  will reduce the likelihood of your quadcopter flipping over (a common failure mode).
+Once things seems pretty stable, you can put the quadcopter the floor with the stabilizers.  They  will reduce the likelihood of your quadcopter flipping over (a common failure mode).  Flight with the stabilizers is not recommended.  They break easily.
+
 
  
 
