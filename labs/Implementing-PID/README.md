@@ -188,6 +188,10 @@ Here's the pinout for the FTDI cable:
 
 **Note** the labels on the FCB are such that you need to connect the FTDI `RX` pin to the `TX` header and vice versa.
 
+### The Other Axes
+
+Once you have the pitch PID working pretty well and have this lab checked off, you should move immediately to the flight lab, even if you quadcopter is not assembled/working yet.  It'll take quite a bit of work to get flight working.  If you wait for your quadcopter board to be up and running, you may not have time to finish the flight lab.
+
 ### Tuning Resources
 
 Much has been written about how to tune PID controllers. I have used these two techniques with success:
