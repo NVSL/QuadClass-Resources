@@ -8,7 +8,7 @@ The base model of the remote is what we have in class.  There are several option
 You'll need to order the parts that are required for the remote but not for the breakout board.  To do so:
 
 1.  Go to https://www.digikey.com/ordering/shoppingcart?lang=en
-2.  Click `Upload a File` select [remove.digikey-bom.csv](boms/remove.digikey-bom.csv).
+2.  Click `Upload a File` select [remote.digikey-bom.csv](boms/remote.digikey-bom.csv).
 3.  Column B is the Digikey part number.  Column C is the quantity.  Ordering 1 spare of everything is not a bad idea. 
 4.  Complete you order.
 
