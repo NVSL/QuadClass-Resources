@@ -162,6 +162,24 @@ Here are some implementation notes suggested by the above:
 2.  It's useful to have a "manual" mode where your pitch stick directly controls the differential in power between the front and back props.  Might as well add left and right (for roll) and clockwise/counter-clockwise (for yaw).
 3.  It's useful if the logic to disable the motors when the quad is disarmed does so at the last possible stage.  Then you can watch what sense/filter/PID/mix datapath is doing while the quad is disarmed.  It's very hard to concentrate on debugging when your quadcopter is flopping around.
 
+#### Interpreting Your PID Parameters
+
+As you tune and debug, you should think about what the value of each of your PID coefficients means.  This will help you tell if the values you are using make sense, and that will give you insight into whether your code is correct.
+
+To make your PID coefficients easier to interpret, it is critical that you be calculating the derivitive and integral terms properly.  In particular, you need to calculate the derivitive by dividing the change in error by the change in time _in seconds_.  Likewise, you need compute the integral by summing the error times the change in time _in seconds_.  Remember, `millis()` gives you milliseconds, not seconds.
+
+I'll also assume that your mixer takes the sum of the three PID terms and the sum to adjust the output of the motors over their range of power settings from 0 to 255.
+
+The P term controls how your quadcopter responds to error (measured in degrees).  Practically, this means that if P = 1 and error = 1 degree, than you are going to be changing your motor output by about 0.39% (1 * 1/255).  You can use this observation in several ways: 
+
+1.  Check whether your motor outputs actually change by that amount when the error = 1 degree (or some other known quantity).
+2.  You can experiment to see how big a change in motor output is required to change the orientation of the quadcopter on the test stand.
+3.  If you need very large P values (e.g., P = 100) to get significant movement, something is wrong.  That means that a 1 degree change 
+ gr84sex
+ in orientation would result in 1*100/255 a 50% change in motor output.  
+
+You can apply similar to reasoning to the D term.  The error derivitive is measured in degrees/second, and if you aren't moving your gimbals, it's just a measure of how quickly your quadcopter is rotating.  If error is change by 45 degrees/second and D = 1, then it will cause a 45/255=17% change in your motor output.  Experiment with your test stand to see how fast or slow 45 degrees per second is.  Does a 17% change in thrust seems like a reasonable response to rotating at that rate?
+
 
 ### Using the Alternate FTDI Headers
 

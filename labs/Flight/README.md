@@ -93,10 +93,39 @@ It makes it easier to switch from pitch to roll and lets you check whether the c
 
 Once things seems pretty stable, you can put the quadcopter the floor with the stabilizers.  They  will reduce the likelihood of your quadcopter flipping over (a common failure mode).  Flight with the stabilizers is not recommended.  They break easily.
 
+### Common Flight Pathologies
 
+Lots of things go wrong during flight testing.  Here are some common problems.
  
+#### Crashes 
 
+You are going to crash alot. Crashes can damage your motors and propellers, causing your quadcopter to suddenly become unflyable.
 
+If things are working pretty well, you crash, and then nothing seems to work, check the following:
 
+1.  **Check your battery** Weak batteries can't fly a quadcopter.
+2.  **Propellers** Bent propeller tips can reduce thrust enough to making the quadcopter uncontrollable.  Try replacing any that look damaged.
+3.  **Motors** If one side of your quad seems weak and the propellers are good, try a new motor.  If it helps, cut the wires on the motor that was bad.  You never want to use it again.
+
+#### Trouble Getting Airborne
+
+You may also find that you have trouble getting your qudacopter off the ground cleanly.  Near the ground, the ground interferes with the propellers, causing the quadcopter to misbehave.
+
+The bottom of the quadcopter may catch on the ground, causing it to tend to flip over.
+
+A (sometimes) solution to both of these problems is to give it a quick boost to get it off (and away from) the ground.  You can also try launching from your hand.  The downside is that both of these techniques will increase the severity of crashes.
+
+### The Big Push
+
+Your quadcopter will hopefully make a lot of progress between the last class period and the final meeting time.  In order to work on your quadcopter successfully over the weekend, you'll need some equipment:
+
+1.  Several sets of propellers.
+2.  Several charged batteries.
+3.  3 feet of monofiliment (if you haven't already tuned your yaw loop)
+4.  An extra set of motors.
+5.  Some zip ties to hold your quadcopter to a stick.
+6.  A length of masking tape.
+
+I'll set up all the battery charger next to the reflow oven in the maker studio.  If need batteries and the maker studio is open, come in, take some charged batteries, and start your batteries charging.  **For the big red chargers, you need to push the button until the light turns red to start them charging).
 
 
