@@ -3,10 +3,11 @@
 ## You Will Need
 
 1. Your board
-2. ISP Programmer
-3. FTDI Board 
-4. Multimeter
-5. A computer with Arduino
+2. A battery.
+3. ISP Programmer
+4. FTDI Board 
+5. Multimeter
+6. A computer with Arduino
 
 ## Electrical Short Test
 
@@ -22,7 +23,7 @@ The in-system programmer (ISP) let's us program the microcontroller while it is 
 
 ![AVR ISP Board](images/ISP_programmer.jpg)
 
-Connect the board to the AVR ISP programmer and the USB cable to your computer.  The 6-pin connector attaches the 6-pin header on your board.  The cable should point toward the three dashed lines on the side of the header:
+Attach a charged battery to your board, then connect the board to the AVR ISP programmer and the USB cable to your computer.  The 6-pin connector attaches the 6-pin header on your board.  The cable should point toward the three dashed lines on the side of the header:
 
 ![ISP polarity](images/ISP_polarity.jpg)
 
