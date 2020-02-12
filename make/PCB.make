@@ -3,7 +3,7 @@ BRD=$(DESIGN).brd
 SCH=$(DESIGN).sch
 EAGLINT=eaglelint  --strict $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
 EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/eaglint/BOM.py
-BOMS=$(patsubst %.sch,%.assembly-bom.html,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
+BOMS=$(patsubst %.sch,%.assembly-bom.csv,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
 CAMS=$(DESIGN).cam $(DESIGN).cam.zip $(DESIGN).stencil  $(DESIGN).stencil.zip
 VERSION?=$(cat VERSION.txt)
 BOM_QTY?=5
@@ -23,8 +23,8 @@ hooks:
 %.test: %.brd %.sch $(LBRS)
 	$(EAGLINT) --files $*.brd $*.sch $(LBRS)
 
-CAM_FILE=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-4layer-values-eagle9.cam
-STENCIL_CAM_FILE=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-stencil.cam
+CAM_FILE?=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-4layer-values-eagle9.cam
+STENCIL_CAM_FILE?=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-stencil.cam
 EAGLE_EXE=/Applications/EAGLE-9.3.0/eagle.app/Contents/MacOS/eagle 
 
 .PHONY: cam
@@ -41,8 +41,8 @@ cam: $(DESIGN).cam $(DESIGN).stencil
 	$(EAGLE_EXE) -N -X -dCAMJOB -j$(STENCIL_CAM_FILE) -o$@ $<
 	rm -rf $@/$@
 
-%.assembly-bom.html: %.sch
-	$(EAGLE_BOM) --sch $^ --mode smds --format html  --out $@
+%.assembly-bom.csv: %.sch
+	$(EAGLE_BOM) --sch $^ --mode assembly --format csv --header  --out $@
 
 .PHONY: bom
 bom: $(DESIGN).digikey-bom.csv
@@ -67,6 +67,7 @@ release: $(BRD) $(SCH) $(LBRS)
 	#python $(EAGLINT_HOME)/server/eaglint/set-attr.py $(RELEASE_DIR)/$(BRD) $(RELEASE_DIR)/$(SCH) --attr 'dict(VERSION="$(FULL_VERSION)")'
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).cam.zip $(RELEASE_DIR)/$(DESIGN).stencil.zip
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).digikey-bom.csv
+	$(MAKE) $(RELEASE_DIR)/$(DESIGN).assembly-bom.csv
 	#false
 	git add $(RELEASE_DIR)	
 	git commit -m "Release $(FULL_VERSION)"
