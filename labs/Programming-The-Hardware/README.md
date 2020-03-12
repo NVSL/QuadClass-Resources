@@ -5,7 +5,7 @@ There’s a lot to do. Get started!
 
 ## Pick your Team
 
-You will work on this lab and all future labs in teams of two. You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
+You will work on this lab and all future labs in teams of two. **FIXME COVID** You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
 
 ## Skills to Learn
 
@@ -19,7 +19,7 @@ You will work on this lab and all future labs in teams of two. You will need to 
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
+1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **FIXME** **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
 2. test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
@@ -113,12 +113,11 @@ Restart Arduino and the bottom of your `Sketch->Include Library`  menu should lo
 
 #### Getting Updates For the Starter Repo
 
-Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do:
+Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do **FIXME URLS**:
 
 ```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
 
 or (if you don't have public key set up on github):
-
 
 ```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
 
@@ -129,6 +128,8 @@ git fetch upstream
 git merge remotes/upstream/master
 git push
 ``` 
+
+I'll announce pushes on Piazza.
 
 #### Create Your Firmware Source Files
 
@@ -158,7 +159,7 @@ Your first task to "bring up" your remote.  This means verifying that all of it'
 
 ### Assembling the Remote 
 
-To assemble the remote you will need the following:
+To assemble the remote you will need the following **FIXME CHECK**:
 
 * 8x 1-inch standoffs
 * 4x 1/2-inch standoffs
@@ -228,11 +229,17 @@ hooked to the FCB.
 The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.   Whether it will program the remote or the quadcopter target is controlled by the `quad/RC` switch at the top of the remote.
 
 * Plug your USB cable into the the remote.
+
 * Set the the RC/Quad switch to 'RC'
+
 * Open up `File->Examples->01.Basics->Blink`. 
+
 * Compile and download to the remote.
+
 * One of the LEDs on the board will start blinking.
+
 * Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
+
 * Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the left stick on your remote should cause it to change.
 
 ### Reading the Buttons
@@ -284,7 +291,7 @@ There's some other fancy stuff you can do, too, like scrolling, changing the con
 
 ## Assemble your Test Stand
 
-Parts:
+Parts **FIXME UPADATE**:
 
 * 1x FCB
 * 1x Air frame
@@ -321,7 +328,7 @@ It's easy to disassemble as well, although the corners are a bit sharp.
 
 The FCB mounts to the wooden air frame as shown above by following the steps below:
 
-1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" nylon space and a wooden spacer (not shown in this photo) to provide a gap between the two.  
+1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" nylon space and a wooden spacer (not shown in this photo) to provide a gap between the two.  **FIXME**
 
 ![Air frame](images/fcb_to_airframe.jpg)
 
@@ -330,21 +337,31 @@ The FCB mounts to the wooden air frame as shown above by following the steps bel
 ![Air frame](images/airframe-zip-ties.jpg)
 
 3. Trim the tails of your zip ties.
+
 4. The battery should tuck neatly between the dowel and the FCB.
+
 5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
+
 6. Wrap the wire around the arms once or twice and then insert the motor into its holder.  It is a tight fit.
+
 7. Install the four propellers.  You need two clockwise (labeled "A" -- see below) and two counter-clockwise propellers (labeled 'B').  Matched propellers should be diagonally opposite eachother.  Color has no relationship to direction.  Check the motor direction before installing the propeller to make sure they blow down.  "B" props go on the black/white motors.  "A" props go on the red/blue motors.
 
 ![Air frame](images/clockwise_motor.jpg)
 ![Air frame](images/counterclockwise_motor.jpg)
 
-8. If you need to attach a battery cable, unscrew the two screws on the green terminal block and insert the lead on the battery cable.  Make sure you get the polarity right: red is positive:
+8. **FIXME REMOVE** If you need to attach a battery cable, unscrew the two screws on the green terminal block and insert the lead on the battery cable.  Make sure you get the polarity right: red is positive:
 ![Air frame](images/battery_polarity.jpg)
 
 
 ## Bringing up the FCB
 
 The FCB has three key hardware components you'll need to test:  The microcontroller, the accelerameter, and the motors.
+
+### Flashing the Bootloader 
+
+Flashing the bootloader is a step you typically performance once after a board is manufactured.  It installs a small piece of software that makes the board compatible with Arduino.  You'll need to do this with your quadcopters when they are manufactured.  We are doing it here for practice.
+
+**FIXME Link to or copy instructions for this**
 
 ### Run a Test Program on the FCB
 
@@ -370,7 +387,7 @@ Shows the raw sensor readings from your IMU.  As you move the FCB, they should r
 
 ### Driving the Motors
 
-The FCB's motors are driven directly by the battery, and the battery is connected to the board via 2-pin header.  Your FCB has a small 'jumper' that connects the pin.  
+The FCB's motors are driven directly by the battery, and the battery is connected to the board via 2-pin header.  Your FCB has a small 'jumper' that connects the pin. **FIXME UPDATE**  
 When it's not in use, you should leave the jumper disconnected.  Otherwise, the FCB will discharge your battery to a dangerously low level.
 
 * Attach a changed battery to the FCB.
@@ -466,10 +483,11 @@ the actual values for your gimbals so you can know, for instance,
 where the neutral position for pitch, yaw, and roll are.  To collect
 these values, you'll need a calibration mode.  The Arduino `map` functions is useful here.
 
-A few nice things to have in a calibration mode:
+A few nice (i.e., required) things to have in a calibration mode:
 
 1.  You don't have to do it every time your quadcopter restarts.
-2.  You can't accidently enter it while your quadcopter is flying (since it requires you moving te sticks all over the place)
+
+2.  You can't accidently enter it while your quadcopter is flying (since it requires you moving the sticks all over the place)
 
 For #1, the Arduino EEPROM library is useful:
 https://www.arduino.cc/en/Reference/EEPROM.  It let's you store data
@@ -505,8 +523,11 @@ stick) should control the speed of all four of your motors.
 Make sure of the following:
 
 1. When the stick is all the way down, the motor should turn off (I.e., writing 0 with `analogWrite()`).
+
 2. When the stick is all the way up, you should be driving the motor at full power (i.e., writing 255 with `analogWrite()` )
+
 3. As you move the stick, motor power should vary smoothly with the sticks position.  (i.e., If the stick is at its midway paint, you should be writing 128).
+
 4. If you push a little bit on the stick when it is all the way up or down, it shouldn’t behave strangely.  Achieving this will require you to deal with non-idealness of the gimbals.  The Arduino `constrain` function is useful here.
 
 ## Turn in Your Work
