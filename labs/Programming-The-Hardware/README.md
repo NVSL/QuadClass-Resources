@@ -49,7 +49,7 @@ The flight control boards are provided for your use during the class.
 
 ### Install Arduino
 
-Install Arduino 1.8.5 or later.  This is the only version we will be supporting in class.
+Install Arduino 1.8.12 or later.  This is the only version we will be supporting in class.
 
 ### Setup Your Firmware Development Environment
 
