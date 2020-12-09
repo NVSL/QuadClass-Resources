@@ -2,13 +2,15 @@
 
 Welcome to CSE176e Robotic System Design and Implementation (AKA, the Quadcopter Class).
 
+*Note:* This page written for the non-COVID-constrained, in-person version of the course.  We will discuss the COVID-induced differences in class.  The most important is that it is very unlikely that we will actually be able to build and assemble your custom-desingend quadcopter.  This is a huge bummer, but there's not much we can do about it.
+
 This repo serves an the homepage for the course labs.  It contains all
 the lab write ups and several resources you will use throughout the
 course.
 
 * `labs` has all the labs.  The write ups reference the starter repos they use.
 * `Eagle` has the pre-built parts library, CAM files, and design rule files to use with Eagle.
-* `Lecture Slides` has the slides.
+* `Lecture Slides` has slides that aren't part of any particular lab.
 
 Please see the course home page (https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) for schedule, due dates, and other logistical issues.
 
@@ -70,11 +72,12 @@ The slides for each lab are in the directory with the lab description.
 
 The course requires several pieces of equipment:
 
-1. A remote control
-2. A PID test stand
-3. A flight control board.
+1. A remote control.
+2. A PID test stand.
+3. A quadcopter prototype.
+4. Miscelleneous cables, parts, etc.
 
-During the course you will also assemble a small Arduino-compatible breakout board that is yours to keep, if you like.  You will also build a quadcopter, which you can also keep.
+You will also build a quadcopter, which you can also keep.
 
 ### Keeping the Remote
 
@@ -82,5 +85,5 @@ The remote control, however, you cannot keep by default, because providing them 
 
 ### Returning the Equipment
 
-The PID test stand, flight control board, "loaner" remote, and other miscelleneous equipment you borrow for the labs must be returned or replaced before I will assign you a grade in the course.
+The PID test stand, flight control board, remote, and other miscelleneous equipment you borrow for the labs must be returned or replaced before I will assign you a grade in the course.
 

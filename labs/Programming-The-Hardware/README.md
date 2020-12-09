@@ -5,12 +5,12 @@ There’s a lot to do. Get started!
 
 ## Pick your Team
 
-You will work on this lab and all future labs in teams of two. You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
+You will work on this lab and all future labs in teams of two.  You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
 
 ## Skills to Learn
 
 1. Installing the Arduino GUI.
-2. Programming your remote and the test stand board.
+2. Programming your remote and the flight control board.
 3. Communicating with the boards using an FTDI serial port.
 4. Communicate wirelessly between the remote and the FCB.
 5. Reading values from the controller gimbals.
@@ -19,12 +19,12 @@ You will work on this lab and all future labs in teams of two. You will need to 
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
-2. test stand and remote control part kit.
+1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **FIXME** **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
+2. Test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
 5. 1 flight control board (FCB).
-6. Two LiPo batteries.
+6. Three LiPo batteries.
 7. 1 set of motors.
 8. 1 set of matched propellers (2xCW, 2xCCW)
 
@@ -34,7 +34,6 @@ You are responsible for the care of the remote:
 
 1. If you break it, you'll need to pay replace the broken parts.
 2. Be reasonably gentle with the gimbals (joysticks). They are of high quality, but are not indestructible.
-3. Be careful to install the batteries in the correct orientation.  This mostly means attaching the battery leads to the screw terminals correctly (red is '+').
 
 Unfortunately, you cannot keep the remote.  However, it is pretty easy to build you own.  Ask the professor, if you are interested.
 
@@ -43,13 +42,13 @@ Unfortunately, you cannot keep the remote.  However, it is pretty easy to build 
 The flight control board (FCB) is a PCB very similar to the quadcopter
 you will eventually build.  It mounts to the test stand and will
 provide a platform for your initial quadcopter firmware development.
-The flight control boards are provided for your use during the class.
+The FCBs are provided for your use during the class.
 
 ## Preliminaries 
 
 ### Install Arduino
 
-Install Arduino 1.8.5 or later.  This is the only version we will be supporting in class.
+Install Arduino 1.8.12 or later.  This is the only version we will be supporting in class.
 
 ### Setup Your Firmware Development Environment
 
@@ -113,14 +112,13 @@ Restart Arduino and the bottom of your `Sketch->Include Library`  menu should lo
 
 #### Getting Updates For the Starter Repo
 
-Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do:
+Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do **FIXME URLS**:
 
-```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
+```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-wi21.git```
 
 or (if you don't have public key set up on github):
 
-
-```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
+```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-w21.git```
 
 Then, each time I push a new update you should do this:
 
@@ -130,27 +128,43 @@ git merge remotes/upstream/master
 git push
 ``` 
 
+I'll announce pushes on Piazza.
+
 #### Create Your Firmware Source Files
 
-Create sketches for your quad ard remote control firmware.  
+Create sketches for your quad and remote control firmware.  
 
 * `firmware/quad_firmware/quad_firmware.ino` will hold the firmware (i.e., flight control software) for your quadcopter
 * `firmware/remote_firmware/remote_firmware.ino` will hold the code for your remote control. 
 
+Add the following code to `remote_firmware.ino`:
+
+```
+#include <radio.h>
+#include "quad_remote.h"      // Header file with pin definitions and setup
+#include <serLCD.h>
+serLCD lcd;
+
+void setup() {
+}
+
+void loop() {
+}
+```
+
 ### Arduino Troubleshooting
 
-Programming Arduino microcontrollers can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of whi
-h seem like black magic):
+Programming Arduino microcontrollers (i.e., transfering the compiled to the device) can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of which seem like black magic):
 
 * Make sure you have the right board and programmer selected.
-* Try a different USB port. Computer have internal USB hubs and some hubs don’t play well with Arduino.
-* Try a USB 2.0 port. Sometimes programming doesn’t work over USB 3.0. If your computer has a USB 2.0 hub use it. If not, get a USB 2.0 hub and plug the Arduino into that.  On some machines
-he blue USB ports are 3.0 and black ones are 2.0.
+  * On a Mac, this will be something like `/dev/cu.usbserial-AG0JL8H4`.  It is definitely not anything like `tty.usbserial-AG0JL8H4` or `cu.Bluetooth-Incoming-Port` or `cu.iPhone-WirelessiAPv2`.
+  * On a PC, it is probably the lowest-numbered "COM" port.
+* Try a different USB port. Laptops generally have multiple, internal USB hubs and some don’t play well with Arduino.
+* Try a USB 2.0 port. Sometimes programming doesn’t work over USB 3.0. If your computer has a USB 2.0 hub use it. If not, get a USB 2.0 hub and plug the Arduino into that.  On some machines the blue USB ports are 3.0 and black ones are 2.0.
 * Unplug everything, quit Arduino, plug everything back in, restart Arduino.
 * Google the error. Chances are you are not alone.
 
-In rare cases, you may need to install drivers for the FTDI programming board. Read the How to Install FTDI Drivers Tutorial https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers
-.
+In rare cases, you may need to install drivers for the FTDI programming board. Read the How to Install FTDI Drivers Tutorial https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers.
 
 ## Bringing Up the Remote
 
@@ -158,7 +172,9 @@ Your first task to "bring up" your remote.  This means verifying that all of it'
 
 ### Assembling the Remote 
 
-To assemble the remote you will need the following:
+**The pictures below are for an older model of the remote.  The steps are very similar.  Differences are noted.**
+
+To assemble the remote you will need the following **FIXME CHECK**:
 
 * 8x 1-inch standoffs
 * 4x 1/2-inch standoffs
@@ -201,11 +217,11 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Plug in gimbals](images/plug-in-gimbals.jpg)
 
-**Install Standoffs and LCD**
+**Install Standoffs, LCD Nuts, and LCD**
+
+The pictures show the nuts going *over* the LCD, but they should actually go under.  This makes it much easier to remove the LCD if you needed.
 
 ![Install standoffs and lcds](images/add-standoffs-and-lcd.jpg)
-
-**Add LCD Nuts**
 
 ![Add LCD nuts](images/add-lcd-nuts.jpg)
 
@@ -213,26 +229,39 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Remote FTDI](images/remote-feet.jpg)
 
-**Attach Battery and 2-pin jumper**
-
-![Add battery](images/add-battery.jpg)
-
 
 ### Installing a Battery
 
-The remote can be powered either via USB or via a LiPo battery.  It also has a builtin LiPo charger that will charge the battery when it's attached to USB.  You'll have two batteries.  Keep one charging on the remote and the other
-hooked to the FCB.
+The remote can be powered either via USB or via a LiPo battery.  It also has a builtin LiPo charger that will charge the battery when it's attached to USB.  You'll have three batteries.  Keep one charging on the remote and the other hooked to the FCB.
+
+Plug the battery in by inserting the plug into the white connector.
+
+![Connect Battery](images/connect-battery.jpg)
+
+The wooden base of the remote has cutout to accomodate a battery. Apply a piece of _fuzzy_ velcro to the to the PCB under that gap.
+
+![Remote battery hold](images/remote-battery-hole.jpg)
+
+and attach the battery:
+
+![Install Battery](images/install-battery.jpg)
 
 ### Run a Test Program On the Remote
 
 The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.   Whether it will program the remote or the quadcopter target is controlled by the `quad/RC` switch at the top of the remote.
 
 * Plug your USB cable into the the remote.
+
 * Set the the RC/Quad switch to 'RC'
+
 * Open up `File->Examples->01.Basics->Blink`. 
+
 * Compile and download to the remote.
+
 * One of the LEDs on the board will start blinking.
+
 * Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
+
 * Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the left stick on your remote should cause it to change.
 
 ### Reading the Buttons
@@ -284,7 +313,7 @@ There's some other fancy stuff you can do, too, like scrolling, changing the con
 
 ## Assemble your Test Stand
 
-Parts:
+Parts **FIXME UPADATE**:
 
 * 1x FCB
 * 1x Air frame
@@ -321,7 +350,7 @@ It's easy to disassemble as well, although the corners are a bit sharp.
 
 The FCB mounts to the wooden air frame as shown above by following the steps below:
 
-1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" nylon space and a wooden spacer (not shown in this photo) to provide a gap between the two.  
+1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" nylon space and a wooden spacer (not shown in this photo) to provide a gap between the two.  **FIXME**
 
 ![Air frame](images/fcb_to_airframe.jpg)
 
@@ -330,21 +359,31 @@ The FCB mounts to the wooden air frame as shown above by following the steps bel
 ![Air frame](images/airframe-zip-ties.jpg)
 
 3. Trim the tails of your zip ties.
+
 4. The battery should tuck neatly between the dowel and the FCB.
+
 5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
+
 6. Wrap the wire around the arms once or twice and then insert the motor into its holder.  It is a tight fit.
+
 7. Install the four propellers.  You need two clockwise (labeled "A" -- see below) and two counter-clockwise propellers (labeled 'B').  Matched propellers should be diagonally opposite eachother.  Color has no relationship to direction.  Check the motor direction before installing the propeller to make sure they blow down.  "B" props go on the black/white motors.  "A" props go on the red/blue motors.
 
 ![Air frame](images/clockwise_motor.jpg)
 ![Air frame](images/counterclockwise_motor.jpg)
 
-8. If you need to attach a battery cable, unscrew the two screws on the green terminal block and insert the lead on the battery cable.  Make sure you get the polarity right: red is positive:
+8. **FIXME REMOVE** If you need to attach a battery cable, unscrew the two screws on the green terminal block and insert the lead on the battery cable.  Make sure you get the polarity right: red is positive:
 ![Air frame](images/battery_polarity.jpg)
 
 
 ## Bringing up the FCB
 
 The FCB has three key hardware components you'll need to test:  The microcontroller, the accelerameter, and the motors.
+
+### Flashing the Bootloader 
+
+Flashing the bootloader is a step you typically performance once after a board is manufactured.  It installs a small piece of software that makes the board compatible with Arduino.  You'll need to do this with your quadcopters when they are manufactured.  We are doing it here for practice.
+
+**FIXME Link to or copy instructions for this**
 
 ### Run a Test Program on the FCB
 
@@ -356,7 +395,7 @@ The FCB can be programmed via the remote control's USB-to-serial converter.  The
 
 The cable will also power the FCB's microcontroller and IMU even if no battery is attached.
 
-* Set the 'RC/Quad' switch to 'Quad'.
+* Set the `RC/Quad` switch to "QUAD".
 * Run the `Blink` example.  The light should blink.
 * Run the `AnalogReadSerial` example.  It will print at you, but the number won't change.
 
@@ -370,7 +409,7 @@ Shows the raw sensor readings from your IMU.  As you move the FCB, they should r
 
 ### Driving the Motors
 
-The FCB's motors are driven directly by the battery, and the battery is connected to the board via 2-pin header.  Your FCB has a small 'jumper' that connects the pin.  
+The FCB's motors are driven directly by the battery, and the battery is connected to the board via 2-pin header.  Your FCB has a small 'jumper' that connects the pin. **FIXME UPDATE**  
 When it's not in use, you should leave the jumper disconnected.  Otherwise, the FCB will discharge your battery to a dangerously low level.
 
 * Attach a changed battery to the FCB.
@@ -466,10 +505,11 @@ the actual values for your gimbals so you can know, for instance,
 where the neutral position for pitch, yaw, and roll are.  To collect
 these values, you'll need a calibration mode.  The Arduino `map` functions is useful here.
 
-A few nice things to have in a calibration mode:
+A few nice (i.e., required) things to have in a calibration mode:
 
 1.  You don't have to do it every time your quadcopter restarts.
-2.  You can't accidently enter it while your quadcopter is flying (since it requires you moving te sticks all over the place)
+
+2.  You can't accidently enter it while your quadcopter is flying (since it requires you moving the sticks all over the place)
 
 For #1, the Arduino EEPROM library is useful:
 https://www.arduino.cc/en/Reference/EEPROM.  It let's you store data
@@ -479,7 +519,7 @@ For #2, you should only be able to enter calibration mode while the
 quadcopter is not armed (see below).  You will also need a way to
 trigger calibration mode (e.g., pressing one of the buttons).
 
-Use the LCD to tell the user that they are in calibration mode.
+Use the LCD to tell the user that they are in calibration mod
 
 ### Arming your FCB
 
@@ -505,8 +545,11 @@ stick) should control the speed of all four of your motors.
 Make sure of the following:
 
 1. When the stick is all the way down, the motor should turn off (I.e., writing 0 with `analogWrite()`).
+
 2. When the stick is all the way up, you should be driving the motor at full power (i.e., writing 255 with `analogWrite()` )
+
 3. As you move the stick, motor power should vary smoothly with the sticks position.  (i.e., If the stick is at its midway paint, you should be writing 128).
+
 4. If you push a little bit on the stick when it is all the way up or down, it shouldn’t behave strangely.  Achieving this will require you to deal with non-idealness of the gimbals.  The Arduino `constrain` function is useful here.
 
 ## Turn in Your Work
