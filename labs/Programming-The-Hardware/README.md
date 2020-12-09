@@ -246,11 +246,20 @@ and attach the battery:
 
 ![Install Battery](images/install-battery.jpg)
 
+You may need to put velcro on the battery as well. If so, make sure the velcro is oriented like this (note the position of the wire coming off the upper-right corner):
+
+![Battery Velcro](images/battery-velcro.jpg)
+
+
 ### Run a Test Program On the Remote
 
 The Remote has a builtin USB-to-serial converter that allows it to program the microcontroller on the remote.  It can also program the FCB via a cable.   Whether it will program the remote or the quadcopter target is controlled by the `quad/RC` switch at the top of the remote.
 
-* Plug your USB cable into the the remote.
+Plug your USB cable into your laptop and the remote, and make sure you're Board, Port, and Programmer are set correctly: 
+
+![Tool menu settings](images/tool-menu.png)
+
+Then...
 
 * Set the the RC/Quad switch to 'RC'
 
@@ -258,19 +267,21 @@ The Remote has a builtin USB-to-serial converter that allows it to program the m
 
 * Compile and download to the remote.
 
-* One of the LEDs on the board will start blinking.
+* One of the LEDs on the board will start blinking slowly.
 
 * Open up `File->Examples->01.Basics->AnalogReadSerial`, and run it. 
 
 * Then, open `Tools->Serial Monitor`. You should find it printing a number at you.  Moving the left stick on your remote should cause it to change.
 
+* For fun, close the serial monitor, then `Tools->Serial Plotter` and you should be able to draw curvy lives by moving the left joystick.
+
 ### Reading the Buttons
 
-The `Radio` library provides access to the basic hardware features of the remote.  You get access to the library with `#include "quad_remote.h"` and calling `quad_remote_setup()` in your Arduino `setup()` function.
+The `QuadClass Remote Library` library provides access to the basic hardware features of the remote.  You get access to the library with `#include "quad_remote.h"` and calling `quad_remote_setup()` in your Arduino `setup()` function.
 
 The library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released.  The callbacks you set need to run quickly (e.g., ideally, they should not print anything to the serial port). 
  
-To see how it works open `Open->Examples->Remote->knob_and_buttons.ino`.  Run it,
+To see how it works open `Open->Examples->QuadClass Remote Control Library->knob_and_buttons.ino`.  Run it,
 pen the serial monitor, push some buttons, and see what happens.
 
 There is also a simple 'is_pressed()' function that you can use to tell if a given button is currently pressed.  You should pass the `*_PIN` constant for the button you want to test.  The `*_PIN` macros are in `quad-remote.h`.
@@ -279,7 +290,7 @@ Read the code to understand how it works.
 
 ### Reading the Knob
 
-There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback (`knobs_update_cb`) when it's value might have changed (i.e., sometimes it'll be called even though the value remains the same).  This funtion needs to run very quickly (e.g., it should not write anything to te serial port), otherwise you might miss some movement of the knob.
+There's a similar mechanism for the knob.  The library defines an object called `knob1`, and calls a callback (`knobs_update_cb`) when it's value might have changed (i.e., sometimes it'll be called even though the value remains the same).  This funtion needs to run very quickly (e.g., it should not write anything to the serial port), otherwise you might miss some movement of the knob.
 
 You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
 
@@ -287,11 +298,11 @@ Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/Rotary
 
 ### Writing to the LCD
 
-The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://www.sparkfun.com/products/14073).  
+The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://www.sparkfun.com/products/16397).  
 
 The `Remote` library sets up the lcd for you as an object called `lcd`.
 
-THe `knobs_and_buttons.ino` example shows how to use it:  It displays the value of the knob and lets you move it's location around on the display.
+THe `knobs_and_buttons.ino` example shows how to use it:  It displays the value of the knob and lets you move it's location around on the display.  It's pretty faint because it's redrawing so quickly but it should be visible.
 
 Here are the basic commands.
 
@@ -317,20 +328,19 @@ Parts **FIXME UPADATE**:
 
 * 1x FCB
 * 1x Air frame
-* 4x smallest nylon spacers
-* 4x small wooden spacers
+* 8x small wooden spacers
 * 4x 1/2-inch (or 5/8th) screws
 * 4x nuts
 * 1 set of motors
-* 2x small white zip ties
-* 1x skewer
+* 4x small white zip ties
+* 2x skewer
 * 1x battery
 * 2x test stand sides
 * 1x test stand cross-brace
-* 1x 6-pin FTDI-to-FTDI cable
-* 1x 2-pin jumper
-* 2x Blades (A)
-* 2x Blades (B)
+* 1x 4-pin programming cable
+* 2x Clockwise Blades 
+* 2x Counter-clockwise Blades 
+* 4x blade guards
 
 ### Assemble the Frame
 
@@ -350,36 +360,56 @@ It's easy to disassemble as well, although the corners are a bit sharp.
 
 The FCB mounts to the wooden air frame as shown above by following the steps below:
 
-1. Use four screws and nuts to attach the FCB to the airframe.  Include a 1/8" nylon space and a wooden spacer (not shown in this photo) to provide a gap between the two.  **FIXME**
+1. Use four screws and nuts to attach the FCB to the airframe.  Use 2 of the wood spacers on each screw to provide a gap between the two.  The photo shows a single space, but you will need 2.
 
 ![Air frame](images/fcb_to_airframe.jpg)
 
-2. Use another two zip ties to attach the air frame to the dowel.  Make it as tight as you can. 
+2. Use another four zip ties to attach two of your dowels to the air frame to the dowel.  One dowel should go above the air frame the other goes below.  They should be snug but not super tight.  They need to hold it securely.  You should be able to move the dowel back and forth with some friction.
 
 ![Air frame](images/airframe-zip-ties.jpg)
 
-3. Trim the tails of your zip ties.
+3. Trim the tails of your zip ties as short as you can.  Nail clippers work well.
 
-4. The battery should tuck neatly between the dowel and the FCB.
+4. Put a piece of _fuzzy_ velcro on the top of the FCB as seen above.
 
-5. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above)
+5. Plug a battery into the connector on the top of the board.  If the battery doesn't have velcro, add _scratchy_ velcro to the battery as described for the remote.  Mount the battery on FCB.
 
-6. Wrap the wire around the arms once or twice and then insert the motor into its holder.  It is a tight fit.
+6. The motors plug into the four recepticals on the FCB.  You need two read/blue and two black/white motors and matching colors need to diagonally opposite eachother (like in the picture above).  It's hard to see but there is "RB" on the corner next to the connectors for the red/blue wires and "BW" next to the connectors for the black/white wires.
 
-7. Install the four propellers.  You need two clockwise (labeled "A" -- see below) and two counter-clockwise propellers (labeled 'B').  Matched propellers should be diagonally opposite eachother.  Color has no relationship to direction.  Check the motor direction before installing the propeller to make sure they blow down.  "B" props go on the black/white motors.  "A" props go on the red/blue motors.
+7. Insert 4 rubber grommets into the holes at the end of each arm.  Work carefully so you don't break your airframe.  It takes some effort.
 
-![Air frame](images/clockwise_motor.jpg)
-![Air frame](images/counterclockwise_motor.jpg)
+8. Wrap the wire around the arms once or twice and then insert the motor through the grommet.  It is a tight fit.
 
-8. **FIXME REMOVE** If you need to attach a battery cable, unscrew the two screws on the green terminal block and insert the lead on the battery cable.  Make sure you get the polarity right: red is positive:
-![Air frame](images/battery_polarity.jpg)
+9. Install the four propellers.  You need two clockwise and two counter-clockwise motors.  The clockwise props go on the red/blue-wired motors.  The counter-clockwise props go on the black/white-wired motors.  See note below about identifying clockwise vs counter-clockwise props.
+
+10. Install the four motor covers on the bottoms of the motors.  This will give the quadcopter 4 rubber "feet".
+
+#### Identifying Props
+
+We have two different styles of props.  The first have two long, slender blades.  The clockwise props are labeled labeled "A" (see below) and the counter-clockwise props are labeled 'B'.  
+
+![thin clockwise](images/clockwise_motor.jpg)
+![this counter-clockwise](images/counterclockwise_motor.jpg)
+
+The second type of prop are smaller and have four wider blades.  They have arrows on them showing the direction they spin.
+
+![thin clockwise](images/new_clockwise_motor.jpg)
+![this counter-clockwise](images/new_counterclockwise_motor.jpg)
+
+#### Removing Props
+
+Getting the props off can be hard.  You have a little lever tool in your kit to help with this:
+
+![prop remover](images/prop-remover.jpg)
 
 
 ## Bringing up the FCB
 
-The FCB has three key hardware components you'll need to test:  The microcontroller, the accelerameter, and the motors.
+The FCB has three key hardware components you'll need to test:  The microcontroller, the accelerometer, and the motors.
 
 ### Flashing the Bootloader 
+
+**We are skipping this for wi21**
 
 Flashing the bootloader is a step you typically performance once after a board is manufactured.  It installs a small piece of software that makes the board compatible with Arduino.  You'll need to do this with your quadcopters when they are manufactured.  We are doing it here for practice.
 
@@ -387,13 +417,11 @@ Flashing the bootloader is a step you typically performance once after a board i
 
 ### Run a Test Program on the FCB
 
-The FCB can be programmed via the remote control's USB-to-serial converter.  The colorful 6-strand cable is for this purpose.  The remote control and the FCB both have `B` and `G` marking the correct location of the blue and green wires in the cable.
+The FCB can be programmed via the remote control's USB-to-serial converter.  The colorful 4-strand cable is for this purpose.  The 2x2 female end connects to the remote.  The 1x4 male end connects to the FCB.  The pins on both boards are labeled by color ('G', 'B', 'O', 'Y').  It can connect to the FCB from either top or the bottom.
 
 ![FCB FTDI](images/fcb-ftdi.jpg)
 
 ![Remote FTDI](images/remote-ftdi.jpg)
-
-The cable will also power the FCB's microcontroller and IMU even if no battery is attached.
 
 * Set the `RC/Quad` switch to "QUAD".
 * Run the `Blink` example.  The light should blink.
@@ -401,19 +429,13 @@ The cable will also power the FCB's microcontroller and IMU even if no battery i
 
 ### Reading from the IMU
 
-Load, compile, and run `Open->Examples->QuadClass Adafruit LSM9DS1 Library->lsm9ds1` on the FCB.  Open the serial monitor (You may need to adjust the BAUD rate to 115200), and you should see something like this:
+Load, compile, and run `Open->Examples->QuadClass Adafruit LSM9DS1 Library->lsm9ds1` on the FCB.  Open the serial monitor (You will probably need to adjust the BAUD rate to 115200 using the menu in the lower right), and you should see something like this:
 
 ![IMU Output](images/IMU_Output.png)
 
 Shows the raw sensor readings from your IMU.  As you move the FCB, they should respond accordingly.  See if you can find gravity.  It's 9.8 m/s^2.
 
 ### Driving the Motors
-
-The FCB's motors are driven directly by the battery, and the battery is connected to the board via 2-pin header.  Your FCB has a small 'jumper' that connects the pin. **FIXME UPDATE**  
-When it's not in use, you should leave the jumper disconnected.  Otherwise, the FCB will discharge your battery to a dangerously low level.
-
-* Attach a changed battery to the FCB.
-* Install the jumper.
 
 The motors on the FCB are attached to pins 8, 3, 4, and 5.
 
@@ -422,7 +444,9 @@ Add some code to `firmware/quad_firmware/quad_firmware.ino` to control the speed
 To avoid injury take the following precautions
 
    1. Be careful of the propellers on the motors. They can hurt you.
-   2. Before you start, make sure the airframe is in the “locked” position.
+   2. Before you start, make sure the airframe is in the “locked” position.  This means mounting it on the test frame and sliding the stubby arms into the slots on the sides of the test stand, like this:
+   
+![Docked FCB](images/docked.jpg)
 
 ## Using the Radio
 
