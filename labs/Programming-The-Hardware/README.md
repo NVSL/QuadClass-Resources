@@ -5,12 +5,12 @@ There’s a lot to do. Get started!
 
 ## Pick your Team
 
-You will work on this lab and all future labs in teams of two. **FIXME COVID** You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
+You will work on this lab and all future labs in teams of two.  You will need to create a team on Eaglint and via the github classroom interface. The name of your team in github classroom must match the team name you use in Eaglint, or Eaglint will refuse to check your work.
 
 ## Skills to Learn
 
 1. Installing the Arduino GUI.
-2. Programming your remote and the test stand board.
+2. Programming your remote and the flight control board.
 3. Communicating with the boards using an FTDI serial port.
 4. Communicate wirelessly between the remote and the FCB.
 5. Reading values from the controller gimbals.
@@ -20,11 +20,11 @@ You will work on this lab and all future labs in teams of two. **FIXME COVID** Y
 ## Equipment, Supplies, and Software You Will Need
 
 1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **FIXME** **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
-2. test stand and remote control part kit.
+2. Test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
 5. 1 flight control board (FCB).
-6. Two LiPo batteries.
+6. Three LiPo batteries.
 7. 1 set of motors.
 8. 1 set of matched propellers (2xCW, 2xCCW)
 
@@ -34,7 +34,6 @@ You are responsible for the care of the remote:
 
 1. If you break it, you'll need to pay replace the broken parts.
 2. Be reasonably gentle with the gimbals (joysticks). They are of high quality, but are not indestructible.
-3. Be careful to install the batteries in the correct orientation.  This mostly means attaching the battery leads to the screw terminals correctly (red is '+').
 
 Unfortunately, you cannot keep the remote.  However, it is pretty easy to build you own.  Ask the professor, if you are interested.
 
@@ -43,7 +42,7 @@ Unfortunately, you cannot keep the remote.  However, it is pretty easy to build 
 The flight control board (FCB) is a PCB very similar to the quadcopter
 you will eventually build.  It mounts to the test stand and will
 provide a platform for your initial quadcopter firmware development.
-The flight control boards are provided for your use during the class.
+The FCBs are provided for your use during the class.
 
 ## Preliminaries 
 
@@ -115,11 +114,11 @@ Restart Arduino and the bottom of your `Sketch->Include Library`  menu should lo
 
 Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do **FIXME URLS**:
 
-```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
+```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-wi21.git```
 
 or (if you don't have public key set up on github):
 
-```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp19.git```
+```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-w21.git```
 
 Then, each time I push a new update you should do this:
 
@@ -133,25 +132,39 @@ I'll announce pushes on Piazza.
 
 #### Create Your Firmware Source Files
 
-Create sketches for your quad ard remote control firmware.  
+Create sketches for your quad and remote control firmware.  
 
 * `firmware/quad_firmware/quad_firmware.ino` will hold the firmware (i.e., flight control software) for your quadcopter
 * `firmware/remote_firmware/remote_firmware.ino` will hold the code for your remote control. 
 
+Add the following code to `remote_firmware.ino`:
+
+```
+#include <radio.h>
+#include "quad_remote.h"      // Header file with pin definitions and setup
+#include <serLCD.h>
+serLCD lcd;
+
+void setup() {
+}
+
+void loop() {
+}
+```
+
 ### Arduino Troubleshooting
 
-Programming Arduino microcontrollers can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of whi
-h seem like black magic):
+Programming Arduino microcontrollers (i.e., transfering the compiled to the device) can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of which seem like black magic):
 
 * Make sure you have the right board and programmer selected.
-* Try a different USB port. Computer have internal USB hubs and some hubs don’t play well with Arduino.
-* Try a USB 2.0 port. Sometimes programming doesn’t work over USB 3.0. If your computer has a USB 2.0 hub use it. If not, get a USB 2.0 hub and plug the Arduino into that.  On some machines
-he blue USB ports are 3.0 and black ones are 2.0.
+  * On a Mac, this will be something like `/dev/cu.usbserial-AG0JL8H4`.  It is definitely not anything like `tty.usbserial-AG0JL8H4` or `cu.Bluetooth-Incoming-Port` or `cu.iPhone-WirelessiAPv2`.
+  * On a PC, it is probably the lowest-numbered "COM" port.
+* Try a different USB port. Laptops generally have multiple, internal USB hubs and some don’t play well with Arduino.
+* Try a USB 2.0 port. Sometimes programming doesn’t work over USB 3.0. If your computer has a USB 2.0 hub use it. If not, get a USB 2.0 hub and plug the Arduino into that.  On some machines the blue USB ports are 3.0 and black ones are 2.0.
 * Unplug everything, quit Arduino, plug everything back in, restart Arduino.
 * Google the error. Chances are you are not alone.
 
-In rare cases, you may need to install drivers for the FTDI programming board. Read the How to Install FTDI Drivers Tutorial https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers
-.
+In rare cases, you may need to install drivers for the FTDI programming board. Read the How to Install FTDI Drivers Tutorial https://learn.sparkfun.com/tutorials/how-to-install-ftdi-drivers.
 
 ## Bringing Up the Remote
 
