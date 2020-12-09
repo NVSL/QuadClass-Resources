@@ -172,6 +172,8 @@ Your first task to "bring up" your remote.  This means verifying that all of it'
 
 ### Assembling the Remote 
 
+**The pictures below are for an older model of the remote.  The steps are very similar.  Differences are noted.**
+
 To assemble the remote you will need the following **FIXME CHECK**:
 
 * 8x 1-inch standoffs
@@ -215,11 +217,11 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Plug in gimbals](images/plug-in-gimbals.jpg)
 
-**Install Standoffs and LCD**
+**Install Standoffs, LCD Nuts, and LCD**
+
+The pictures show the nuts going *over* the LCD, but they should actually go under.  This makes it much easier to remove the LCD if you needed.
 
 ![Install standoffs and lcds](images/add-standoffs-and-lcd.jpg)
-
-**Add LCD Nuts**
 
 ![Add LCD nuts](images/add-lcd-nuts.jpg)
 
@@ -227,15 +229,22 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Remote FTDI](images/remote-feet.jpg)
 
-**Attach Battery and 2-pin jumper**
-
-![Add battery](images/add-battery.jpg)
-
 
 ### Installing a Battery
 
-The remote can be powered either via USB or via a LiPo battery.  It also has a builtin LiPo charger that will charge the battery when it's attached to USB.  You'll have two batteries.  Keep one charging on the remote and the other
-hooked to the FCB.
+The remote can be powered either via USB or via a LiPo battery.  It also has a builtin LiPo charger that will charge the battery when it's attached to USB.  You'll have three batteries.  Keep one charging on the remote and the other hooked to the FCB.
+
+Plug the battery in by inserting the plug into the white connector.
+
+![Connect Battery](images/connect-battery.jpg)
+
+The wooden base of the remote has cutout to accomodate a battery. Apply a piece of _fuzzy_ velcro to the to the PCB under that gap.
+
+![Remote battery hold](images/remote-battery-hole.jpg)
+
+and attach the battery:
+
+![Install Battery](images/install-battery.jpg)
 
 ### Run a Test Program On the Remote
 
@@ -386,7 +395,7 @@ The FCB can be programmed via the remote control's USB-to-serial converter.  The
 
 The cable will also power the FCB's microcontroller and IMU even if no battery is attached.
 
-* Set the 'RC/Quad' switch to 'Quad'.
+* Set the `RC/Quad` switch to "QUAD".
 * Run the `Blink` example.  The light should blink.
 * Run the `AnalogReadSerial` example.  It will print at you, but the number won't change.
 
@@ -510,7 +519,7 @@ For #2, you should only be able to enter calibration mode while the
 quadcopter is not armed (see below).  You will also need a way to
 trigger calibration mode (e.g., pressing one of the buttons).
 
-Use the LCD to tell the user that they are in calibration mode.
+Use the LCD to tell the user that they are in calibration mod
 
 ### Arming your FCB
 
