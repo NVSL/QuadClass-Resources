@@ -324,7 +324,7 @@ There's some other fancy stuff you can do, too, like scrolling, changing the con
 
 ## Assemble your Test Stand
 
-Parts **FIXME UPADATE**:
+Parts:
 
 * 1x FCB
 * 1x Air frame
@@ -383,6 +383,9 @@ The FCB mounts to the wooden air frame as shown above by following the steps bel
 9. Install the four propellers.  You need two clockwise and two counter-clockwise motors.  The clockwise props go on the red/blue-wired motors.  The counter-clockwise props go on the black/white-wired motors.  See note below about identifying clockwise vs counter-clockwise props.
 
 10. Install the four motor covers on the bottoms of the motors.  This will give the quadcopter 4 rubber "feet".
+
+![install motors profile](images/motor-profile.jpg)
+![install motors upside down](images/motor-bottom.jpg)
 
 #### Identifying Props
 
@@ -454,7 +457,7 @@ To avoid injury take the following precautions
   call `quad_remote_setup()`, otherwise things won't work.
 
 The microcontroller on the remote and the FCB (and eventually your
-quadcopter) use has a built-in radio.  We will use it to send commands
+quadcopter)  has a built-in radio.  We will use it to send commands
 from the remote to the FCB and to return telemetry.
 
 First, find out your groups assigned channel.  You'll need to edit the
@@ -466,7 +469,7 @@ To test the wireless, open `firmware/RFCount/RFEcho.ino` and run it on
 your FCB.
 
 Then run `firmware/RFChat/RFChat.ino` on your remote.  Open the serial
-monitor (while it's connected to the remote) and type some text into the field at the top, and hit return.
+monitor, set the BAUD rate to 9600 (while it's connected to the remote) and type some text into the field at the top, and hit return.
 It'll bounce the data off the FCB and print out the result.  You might
 get some garbage too, don't worry about it.
 
@@ -485,8 +488,7 @@ should include the gimbal values and the buttons.
 
 There are some caveats:
 
-First, you must tolerate the fact that the the radio channel you are using is a shared resource (it's the same RF range as WiFi).
-This means you may pick up data that is not yours, so you must be able to tell which packets are meant for you and which aren't. 
+First, you must tolerate the fact that the the radio channel you are using is a shared resource (it's the same RF range as WiFi).  This means you may pick up data that is not yours, so you must be able to tell which packets are meant for you and which aren't. 
 
 One way to do this is to include a “magic number” in your command struct so
 you can make sure you are getting commands from your remote and not
@@ -529,11 +531,13 @@ the actual values for your gimbals so you can know, for instance,
 where the neutral position for pitch, yaw, and roll are.  To collect
 these values, you'll need a calibration mode.  The Arduino `map` functions is useful here.
 
-A few nice (i.e., required) things to have in a calibration mode:
+A few things are required in your calibration mode:
 
 1.  You don't have to do it every time your quadcopter restarts.
 
 2.  You can't accidently enter it while your quadcopter is flying (since it requires you moving the sticks all over the place)
+
+3.  The LCD should provide feedback about when calibration is in progress and when it's finished.
 
 For #1, the Arduino EEPROM library is useful:
 https://www.arduino.cc/en/Reference/EEPROM.  It let's you store data
@@ -542,8 +546,6 @@ across resets.
 For #2, you should only be able to enter calibration mode while the
 quadcopter is not armed (see below).  You will also need a way to
 trigger calibration mode (e.g., pressing one of the buttons).
-
-Use the LCD to tell the user that they are in calibration mod
 
 ### Arming your FCB
 
@@ -554,12 +556,18 @@ quadcopter before it will turn on the motors.
 Our arming sequence is to put the both gimbals in the lowest,
 outermost position (left gimbal to lower-left, right gimbal to lower-right).  This position is useful in two critical ways: 1)
 the pilot is unlikely to do it by accident and 2) it ensures that the
-throttle is at 0 when the quadcopter is initially armed.  Turn on the LED on the quadcopter when it is armed.
+throttle is at 0 when the quadcopter is initially armed.  
 
-Your remote and the quadcopter need to always be in agreement about
-whether the quadcopter is armed.  For instance, if your reset your
+Requirements:
+
+1. Turn on the LED on the quadcopter when it is armed.
+2. Provide feedback to the pilot (via the remote) that the quad is armed.
+3. Make one of the remote buttons disarm the quad.
+4. The quadcopter and remote must agree about when the quad is armed.
+
+For #4:  For instance, if your reset your
 remote, the FCB should be disarmed.  If you reset the FCB it should
-disarm and remain disarmed until the remote arms it again.
+disarm and remain disarmed until the remote arms it again.  If you press the button to disarm, it should disarm the quad.  If the remote turns off, the quad should disarm.
 
 ### Throttle Control
 
@@ -589,7 +597,7 @@ Once you’ve committed everything, create a tag called “programming-the-hardw
 ### Demo Your Code
 
 1. Demo your remote controlled motors.
-2. Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLScKSJucU3BTdXCpcaoRSXui36gL--QQvO2Y9j9LpOaGY0qj-w/viewform
+2. Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLSfB8XsDV8FtTZYO1mv3FZrd9mUs1hDlFvQxnfAK0K2zptTjxQ/viewform
 
 ### Rubric
 
@@ -609,5 +617,6 @@ Check list (-1 point for each missing item):
 10.  Pushing sticks past calibrated values doesn't result in strange behavior.
 11.  Zero motor activity at 0 throttle.
 12.  Throttle smoothly controls motor output across full gimbal range.
+13.  Turning off remote disarms quad.
 
 You will lose one point for each day late your solution is. 
