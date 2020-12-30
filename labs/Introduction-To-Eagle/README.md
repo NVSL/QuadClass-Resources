@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Eagle installed (either in the Maker Studio, the basement CSE labs, or your own laptop).
-2. The [starter repo](https://classroom.github.com/a/AOGppG5g) for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/l4ET6aPa) for this lab (Don't clone it until the start of class, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
