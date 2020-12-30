@@ -29,11 +29,11 @@ Skills to Learn
 
 ### Complete the Responsibility Contract
 
-Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo.
+Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo. **In wi21, you can skip this part, but put something in your repo named `responsibility.pdf`**
 
 ### Fill Out The Self Evaluation
 
-Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSdY2ymtVFEI_7CQra3eP1GEthNj2aCQCzFrduqjD7a3Ln4OEA/viewform).  You will receive
+Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSeZYMLvERBZXjFBk37r7zPQzxHMs6EL5wyJXrrprGN1FkCuJQ/viewform).  You will receive
 a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
 ### Get set up Github
