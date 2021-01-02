@@ -65,7 +65,7 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 
 ### The Microcontroller
 
-Here's the schematic for the Basic Breakout Board (BBB) without the voltage regulator. It's the reference design for your microcontroller, the radio, and the programming headers.
+Here's the schematic for the Basic Breakout Board (BBB) without the voltage regulator. It's the reference design for your microcontroller, the radio.  It also includes some stuff your design won't need (e.g., the 1x6 programming header).
 
 Why did I give a picture of hat you need to build?  Because reference designs are a very common practice in real PCB designs.  Why reinvent the wheel?
 
@@ -142,17 +142,16 @@ A "net bridge" is PCB part whose only purpose is to electrically connect two net
 
 Use bridge to connect `BAT_GND` and `GND`.
 
-#### Powering the Quad Via FTDI
+### Programming Header
 
-**This paragraph is new**  To allow you to program and debug your microcontroller without a battery or with the battery jumper disconnected, we will connect 3V3 to the power pin on the FTDI programming header (but not the SPI header).
+Your quad will use a 4-pin programming header to load code into the IMU.  It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom.  To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt.lbr`.  The four signals must appear in this order:
 
-**This Part Of The Lab Is Removed**
-let the regulator also draw current from the FTDI or ISP headers.  To enable this, connect the FTDI 3V3 pin, the ISP 5V pin, and the input of the regulator with a net called `VIN`.
+1.  Serial TX
+2.  Serial RX
+3.  GND
+4.  Reset
 
-Connect `VBAT` to `VIN` via a diode oriented to let current flow the battery to `VIN` but not the other direction.  This will protect the battery from the 5V that some FTDI and ISP programmers provide, while letting the battery drive the regulator when no programmer is attached. 
-**END REMOVAL**
-
-THis means you should no longer incude the diode or have a net called `VIN`.  `VBAT` should connect to the vreg input and the vreg enable. `3V3` should connect to the power pins of the FTDI header (But not the SPI header).
+These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
 
 ### Breakout Headers
 
