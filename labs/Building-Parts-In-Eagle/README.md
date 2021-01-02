@@ -11,7 +11,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, and Software You will Need
 
 1. Eagle
-2. The starter repo: for this lab: https://classroom.github.com/a/1q--BEFJ. (Don’t clone it until the start of class, last minute changes are likely)
+2. The starter repo: for this lab: https://classroom.github.com/a/LVBobRH0. (Don’t clone it until the start of class, last minute changes are likely)
 
 ## Preliminaries
 
