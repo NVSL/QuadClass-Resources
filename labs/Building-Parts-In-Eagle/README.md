@@ -96,7 +96,7 @@ Follow these guidelines when creating devices:
 2. Put the symbol at the origin (in the left-hand pane of the device editing window)
 3. Choose a sensible name for the device. The guidelines for symbols generally apply here as well.
 4. When you create variants in the device, give them descriptive names. For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant.
-5. Be selective about what information you put in the variant name.  The size, value (resistance, capacitance, color, etc.), is a good idea.  The part number is a good choice because it's not human-undestandable.  Basically, you should only include information that will be useful to you when selecting which variant to use.
+5. Be selective about what information you put in the variant name.  The size, value (resistance, capacitance, color, etc.), is a good idea.  You should only include information that will be useful to you when selecting which variant to use.
 6. Make sure to connect the symbol pins to package pins correctly. Check it, check it again, have your partner check it. This is a common source of hard-to-find bugs.
 7. Set the “Value” radio button appropriately.  Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.  If you set the value radio button, your schematic symbol should include ">NAME" in layer `Names`.
 8. Set the prefix appropriately: “R” for resistor, “Q” for mosfets, “U” for ICs, “D” for diodes, etc. This is what Eagle will start the reference designator with (e.g., “R1”, “Q2”).
@@ -119,7 +119,7 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 
 #### Resistor
 
-* Include “RES” in the name of the device your create.
+* Include “RES” in the name of the device you create.
 * Check the `resistor_mounting_PYu-R_Mount_10.pdf` for guidance about the footprint, but...
 * Make sure SMDs extend 0.5 mm beyond the end of the resistor.
 * The prefix for your resistor device should be “R” for resistor.
@@ -154,13 +154,13 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Include “IMU” in the name of the device you create.
 * Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
-* Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
+* Draw your package so it is wider than it is tall (rather than the other way around).  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
 * You should compute the SMD width based on the IMU datasheet and the 'Datasheets/IMU_Soldering\ guidance-{1,2}.pdf' documents.  You will need to read them quite carefully.
 * Setting the width of the SMDs requires balancing several constraints.  
     1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.  
     2. Our board house sets the minimum space between two pieces of copper to 5mils.  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
-* Use 0.1" spacing within logically-related groups of pins for the pins on the IMU.  You can have larger gaps separating groups of pins.
+* Use 0.1" spacing within logically-related groups of pins for the pins on the symbol for the IMU.  You can have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
 * The symbol for the IMU should have one `VCC` pin, one `VCCIO` pin, and one `GND` pin. It should not have a `RES` pin.  In the device for for the IMU, you should connect all of the VCC SMDs to the single `VCC` pin in the symbol.  Connect the `RES` SMDs to the `GND` pin.
