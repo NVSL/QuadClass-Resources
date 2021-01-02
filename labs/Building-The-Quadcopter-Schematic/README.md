@@ -186,7 +186,7 @@ four pins: `3V3`, `GND`, `SCL`, and `SCA`, which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt.lbr`.
 
-If you feel like being efficient, you can leave `SCA` and `SCL` off the signal breakout header.
+If you feel like being efficient, you can leave `SDA` and `SCL` off the signal breakout header.
 
 ### Some LEDs
 
