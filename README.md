@@ -79,9 +79,9 @@ The course requires several pieces of equipment:
 
 You will also build a quadcopter, which you can also keep.
 
-### Keeping the Remote
+### ~~Keeping the Remote~~
 
-The remote control, however, you cannot keep by default, because providing them for each student is too expensive.  However, if you would like a remote control of your own, you can build one instead of the building the breakout board.  If you wish to do this, talk to the instructor to get a parts list.  You can order the parts, and assemble your robot during [the PCB assembly lab(Assembling-A-PCB/README.md).
+~~The remote control, however, you cannot keep by default, because providing them for each student is too expensive.  However, if you would like a remote control of your own, you can build one instead of the building the breakout board.  If you wish to do this, talk to the instructor to get a parts list.  You can order the parts, and assemble your robot during [the PCB assembly lab(Assembling-A-PCB/README.md).~~
 
 ### Returning the Equipment
 
