@@ -5,11 +5,11 @@ Once the design is finished, we need to translate it a format that the manufactu
 ## Generating the CAM files
 In order to have a board manufactured an Eagle file is not sufficient. Instead, you need to produce a set of computer aided manufacturing (CAM) files for the design. Eagle provides a tool called the "CAM processor" to generate these files for your design. CAM files are also called "Gerber files."
 
-Different board manufacturers (i.e., "board houses") require different types of CAM files and some require different CAM setups for different levels of board complexity. We will be using https://jlcpcb.com/capabilities/Capabilities, a Chinese manufacturer that is pretty reliable and fast. Each board house and service level has different sets of restrictions the design must meet and, potentially, a different set of design files they require. Two files define how Eagle interacts with the board manufacturing process.
+Different board manufacturers (i.e., "board houses") require different types of CAM files and some require different CAM setups for different levels of board complexity. We will be using https://www.pcbcart.com/, a Chinese manufacturer that is pretty reliable and fast. Each board house and service level has different sets of restrictions the design must meet and, potentially, a different set of design files they require. Two files define how Eagle interacts with the board manufacturing process.
 
-The first is the .cam file. This defines the set of gerber files we will send to the manufacturer. The second in the .dru file that defines the design rules for the board house. The specs for JLCPCB's PCBs are here: https://jlcpcb.com/capabilities/Capabilities. Eagle uses the design file to, for instance, guide the autorouter and perform sanity checks on our design.
+The first is the .cam file. This defines the set of gerber files we will send to the manufacturer. The second in the .dru file that defines the design rules for the board house. The specs for JLCPCB's PCBs are here: https://www.pcbcart.com/pcb-fab/standard-pcb.html. Eagle uses the design file to, for instance, guide the autorouter and perform sanity checks on our design.
 
-The DRU and CAM files you need for this lab are in `Eagle/CAM/jlcpcb-2layer-eagle9.cam` and `Eagle/CAM/jlcpcb-4layer-eagle9.cam`.
+The DRU and CAM files you need for this lab are in `Eagle/CAM/pcbcart-4layer.cam` and `Eagle/CAM/pcbcart-4layer.cam`.
 
 <!--
 To select the CAM file you will use, select "Window->Control Panel" Then select "File->Open->Cam Job..." and navigate to Eagle/CAM/jlcpcb-2layer-eagle9.cam.
