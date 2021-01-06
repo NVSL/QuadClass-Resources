@@ -1,6 +1,6 @@
 {
     "author": {
-        "email": "swanson@cs.ucsd.edu",
+        "email": "swanson@eng.ucsd.edu",
         "name": "Steven Swanson"
     },
     "description": {
@@ -261,9 +261,9 @@
             "output_type": "assembly",
             "outputs": [
                 {
-                    "filename_format": "PnP_%N_%BOARDSIDE",
+                    "filename_format": "%N.pnp.%BOARDSIDE",
                     "name": "Pick and Place",
-                    "output_format": "txt",
+                    "output_format": "csv",
                     "type": "pick_and_place"
                 }
             ]
@@ -275,7 +275,7 @@
             ]
         }
     ],
-    "timestamp": "2020-02-19T21:30:34",
+    "timestamp": "2020-12-28T16:20:50",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"

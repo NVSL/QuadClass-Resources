@@ -96,7 +96,18 @@ Once things seems pretty stable, you can put the quadcopter the floor with the s
 ### Common Flight Pathologies
 
 Lots of things go wrong during flight testing.  Here are some common problems.
- 
+
+#### Instable Flight
+
+* When your quadcopter starts to leave the ground, it should not slip sideways across the floor.  If it does, adjust the trim until it takes off evenly.
+* Your quadcopter's trim may change as the battery drains.  Re-trim frequently if flight becomes more difficult.
+* Watch how your quadcopter's props slow down.  If one stops significantly before the others, it might be rubbing on something, which will make it ineffective.
+* After a crash, it's common for your prop guards to move up and sometimes touch the propellors, reducing lift.  Push down on the prop guard to reseat.
+* high-frequency occilations (2-3/sec) -- decrease D coefficient for that axis.
+* Low frequency occsilations (0.5/sec, which will manifest as the quadcopter swinging back and forth in the air) -- increase P.
+* Crashes immediately and repeatedly -- put it back on the test stand and tune some more.
+* Check your battery frequently.
+
 #### Crashes 
 
 You are going to crash alot. Crashes can damage your motors and propellers, causing your quadcopter to suddenly become unflyable.

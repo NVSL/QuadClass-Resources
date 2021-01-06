@@ -7,7 +7,7 @@
 <setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
@@ -3858,6 +3858,30 @@
 <smd name="5" x="1.8375" y="2.9" dx="1.6" dy="0.8" layer="1" rot="R90"/>
 <smd name="6" x="3.0625" y="2.9" dx="1.6" dy="0.8" layer="1" rot="R90"/>
 </package>
+<package name="2-56-MOUNTING-HOLE-NO-METAL">
+<circle x="0" y="0" radius="1.0922" width="0.127" layer="47"/>
+<circle x="0" y="0" radius="1.13" width="0.1" layer="100"/>
+<circle x="0" y="0" radius="2.1209" width="0.127" layer="47"/>
+<hole x="0" y="0" drill="2.2606"/>
+<circle x="0" y="0" radius="2.4" width="0.05" layer="39"/>
+</package>
+<package name="NEW_TACTILE_SWICH">
+</package>
+<package name="NEW-BUTTON">
+<smd name="1" x="-3.6" y="-1.5" dx="1.4" dy="1.6" layer="1" rot="R90"/>
+<smd name="2" x="3.6" y="-1.5" dx="1.4" dy="1.6" layer="1" rot="R90"/>
+<smd name="4" x="3.6" y="1.5" dx="1.4" dy="1.6" layer="1" rot="R90"/>
+<smd name="3" x="-3.6" y="1.5" dx="1.4" dy="1.6" layer="1" rot="R90"/>
+<wire x1="-2.25" y1="2.25" x2="2.25" y2="2.25" width="0.127" layer="21"/>
+<wire x1="2.25" y1="2.25" x2="2.25" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="2.25" y1="-2.25" x2="-2.25" y2="-2.25" width="0.127" layer="21"/>
+<wire x1="-2.25" y1="-2.25" x2="-2.25" y2="2.25" width="0.127" layer="21"/>
+<text x="0" y="3" size="1" layer="25" font="vector" align="center">&gt;NAME</text>
+<wire x1="5.4" y1="-3.4" x2="5.4" y2="3.4" width="0.127" layer="39"/>
+<wire x1="5.4" y1="3.4" x2="-5.4" y2="3.4" width="0.127" layer="39"/>
+<wire x1="-5.4" y1="3.4" x2="-5.4" y2="-3.4" width="0.127" layer="39"/>
+<wire x1="-5.4" y1="-3.4" x2="5.4" y2="-3.4" width="0.127" layer="39"/>
+</package>
 </packages>
 <packages3d>
 <package3d name="CAPC1608X100" urn="urn:adsk.eagle:package:11135716/1" type="model">
@@ -4378,6 +4402,8 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <wire x1="2.54" y1="7.62" x2="2.54" y2="-2.54" width="0.254" layer="94"/>
 <pin name="V+" x="7.62" y="5.08" length="middle" rot="R180"/>
 <pin name="V-" x="7.62" y="0" length="middle" rot="R180"/>
+<pin name="GND" x="0" y="-5.08" visible="off" length="short" rot="R90"/>
+<text x="0" y="-1.778" size="0.8128" layer="97" align="center">GND</text>
 </symbol>
 <symbol name="Q">
 <wire x1="-0.381" y1="-1.524" x2="0.381" y2="-1.524" width="0.254" layer="94"/>
@@ -4611,6 +4637,14 @@ This symbol includes Arduino pin assignments for the Sparkfun ATmega128RFA break
 <text x="6.858" y="0" size="1.778" layer="95">&gt;NAME</text>
 <pin name="1" x="10.16" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="2" x="10.16" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="NEW-BUTTON">
+<pin name="1" x="-10.16" y="0" length="middle"/>
+<pin name="2" x="10.16" y="0" length="middle" rot="R180"/>
+<wire x1="-5.08" y1="0" x2="-2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="5.08" y1="0" x2="2.54" y2="0" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="0" x2="2.54" y2="2.54" width="0.254" layer="94"/>
+<text x="0" y="5.08" size="1.27" layer="95" font="vector" align="center">&gt;NAME</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -6871,14 +6905,13 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <description>Connections a brushed motor.</description>
 <gates>
 <gate name="G$1" symbol="MOTOR_PADS" x="0" y="0"/>
-<gate name="G$2" symbol="BAT_GND" x="10.16" y="-5.08"/>
 </gates>
 <devices>
 <device name="-MOLEX-SMD" package="MOLEX-0532610271">
 <connects>
+<connect gate="G$1" pin="GND" pad="G1 G2"/>
 <connect gate="G$1" pin="V+" pad="1"/>
 <connect gate="G$1" pin="V-" pad="2"/>
-<connect gate="G$2" pin="BAT_GND" pad="G1 G2"/>
 </connects>
 <technologies>
 <technology name="">
@@ -6889,6 +6922,26 @@ This is the in-system programming (ISP) connector for Atmel Microcontrollers pro
 <attribute name="MFR" value="Molex"/>
 <attribute name="MOUNTING" value="SMD"/>
 <attribute name="MPN" value="532610271"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="NEW-BUTTON" prefix="B">
+<gates>
+<gate name="G$1" symbol="NEW-BUTTON" x="0" y="0"/>
+</gates>
+<devices>
+<device name="-TL3305" package="NEW-BUTTON">
+<connects>
+<connect gate="G$1" pin="1" pad="1 2"/>
+<connect gate="G$1" pin="2" pad="3 4"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="CREATOR" value="Swanson"/>
+<attribute name="DIST" value="Digikey"/>
+<attribute name="DISTPN" value="EG5350CT-ND"/>
 </technology>
 </technologies>
 </device>

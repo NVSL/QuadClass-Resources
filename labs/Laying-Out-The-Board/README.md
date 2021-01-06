@@ -1,3 +1,22 @@
+# TO ADD
+
+1.  Battery connector needs to be completely on the board and have clear space in "front" of it.
+2.  Layout mouting holes to match FCB so you can mount it on your test stand.
+3.  Maybe place programming header in the same place (if you want)
+4.  Label (at least some) pins on programmin header.
+
+### Mounting Holes
+
+** Add checks for this
+
+It can be useful to mount your quadcopter to the test stand.  The easiest way
+to do this is to replicate the whole pattern on the FCB, and then mount your
+quadcopter to the same plywood piece we attach to the FCB.
+
+The holes are `2-56-MOUNTING-HOLE-NO-METAL`.  There are four of them and they are centered on the board center of gravity (which should also be your IMU).  They are located at +/-20mm and +/-11.5mm.
+
+You can put them in different spots, but you'll need to build your own adapter plate to attach it to the test stand (or drill holes in plywood for the FCB).  Depending on the size of your quad, drilling holes in the arms should work fine.
+
 # Laying Out the Board
 
 To be completed in your groups.
@@ -249,7 +268,7 @@ To unfill the pours (they can make it hard to see things in your design), you ca
 
 #### Design Your Power and Ground Planes
 
-In our design, we have two power supply signals ( `VBAT` and `3V3` ), so we will use two power planes in layer 15.  How exactly they should be configured will depend on your design, but one reasonable way to start is to draw a polygon around the perimeter of the board (shaped like a “C” if your board is round). It should be no narrower than 4-5 mm at any point. It should pass under all four of your motor drivers and it should also extend to area where your battery terminals, jumper, and voltage regulator are located. This will allow you to avoid long, thin, high-current wires.
+In our design, we have two power supply signals ( `VBAT` and `3V3` ), so we will use two power planes in layer 15.  How exactly they should be configured will depend on your design, but one reasonable way to start is to draw a polygon around the perimeter of the board (shaped like a “C” if your board is round). It should be no narrower than 4-5 mm at any point. It should pass under all four of your motor drivers and it should also extend to area where your battery connector, jumper, and voltage regulator are located. This will allow you to avoid long, thin, high-current wires.
 
 The `3V3` pour should cover the rest of the board (except around the antenna. See below). Set the net for that pour to `3V3`.
 
@@ -269,16 +288,17 @@ This means that, wherever possible, you should route your board to use the power
 
 The easy way to do this is with the `fanout` command.  It'll draw a short wire attached to each pad and put a via at the end.  `fanout SIGNAL GND` will do this for all your ground pins.
 
-It also makes sense to shape your power and ground planes so that the planes are available where the signal is needed. This is why `VBAT` and `BAT_GND` should extend under all the motor drivers, the battery terminals, and the jumper.
+It also makes sense to shape your power and ground planes so that the planes are available where the signal is needed. This is why `VBAT` and `BAT_GND` should extend under all the motor drivers, the battery connector, and the jumper.
 
 #### Laying out the Power Supply
 
 There are three reasons that these components need to be close together:
 
-1. The battery terminals need to be close to the jumper to minimize the length of the high-current trace between them. It should be just a few mm long.
+1. The battery connector need to be close to the jumper to minimize the length of the high-current trace between them. It should be just a few mm long.
 2. The jumper needs to be close to the voltage regulator to minimize the length the high-current trace between them. Just a few mm’s away.
 3. The wire bridge needs to be close to the battery’s negative terminal to minimize the length of the trace connecting them. Again, a few mm’s.
 4. The capacitors for the voltage regulator need to be as close as possible to the regulator.
+5. The battery connector needs to be set back a little bit from the edge of the board.  There's a white box in the frontprint that represents a plugged-in battery.  The whole things needs to be on the board.  This is to prevent damage to the connect during crashes.  If you look at the FCB, the battery connector is not quite far enough on the board.
 
 Section 10 of the voltage regulator data sheet has detailed instruction for layout your power supply. Follow them as closely as possible. Your 0805 caps are not quite small enough to do exactly what they request, but you can come close.
 

@@ -65,9 +65,9 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 
 ### The Microcontroller
 
-Here's the schematic for the Basic Breakout Board (BBB) without the voltage regulator. It's the reference design for your microcontroller, the radio, and the programming headers.
+Here's the schematic for a board called the Basic Breakout Board (BBB).  It uses the same microcontroller as your quadocpter, but it does not include the voltage regulator. It's the reference design for your microcontroller, and the radio.  The design also includes the 6-pin programming header you can see on the bottom of the FCB.
 
-Why did I give a picture of hat you need to build?  Because reference designs are a very common practice in real PCB designs.  Why reinvent the wheel?
+Why did I give a picture of what you need to build?  Because reference designs are a very common practice in real PCB designs.  The most reliable way to convey design requirements is to provide a working design.  Why reinvent the wheel?
 
 ![Microcontroller schematic](images/microcontroller.png)
 
@@ -77,13 +77,23 @@ You should use the schematic as a guide for constructing the microcontroller por
 2. `B1` is a 'balun'.  Pay attention to the pin numbers.
 3. Use the `0.45x0.45` button.
 4. Replace one of the green LEDs with your red LED.
-5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact (as seen on the FCB).
+5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact.
 
 You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or your can mirror parts by editing their properties.
 
 There are some changes you will need to make to this schematic based on what's required by the other components.  This is just a starting point for your circuit.
 
 If you have questions about the parts attached directly to the microcontroller (including the radio), the first place to turn is the microcontroller datasheet.
+
+### Custom Programming Headers
+
+Your design should also include a 4-pin programming header you use to program the FCB.  Use the part `HEADER-4POS-0.1IN-FEMALE-SMD-BOTTOM-ENTRY`.  Pins should be connected in this order:
+
+1. `TX0`
+2. `RX0`
+3. `GND`
+4. `DTR`
+
 
 ### The IMU
 
@@ -98,7 +108,9 @@ The IMU datasheet contains all the information you will need to use connect the 
 7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
 8. `DEN_A/G` should be connected to `3V3`.
 
-Most of the information you will need is Section 5 of the datasheet. A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables and the text, there are specific answers to most questions you might have in there.
+Most of the information you will need is Section 5 of the datasheet. 
+
+A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know.  They don't, however, make it easy.  You need to read carefully and thoroughly.  You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables and the text, there are specific answers to most questions you might have in there.
 
 ### The I2C Bus
 
@@ -110,13 +122,20 @@ Here's a picture of the motor driver circuit:
 
 ![Motor Driver](images/motor_driver.png)
 
-Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.  
+Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.
 
 1. There's only one (non-light emitting) diode in the library, use it.
-2. Use the `-Molex-...` variant of the motor pads.
+2. Use the `MOLEX-0532610271` variant of the motor pads.
 3. Use your MOSFET, of course.
 
+The ground pin on the motor pads is not actually connectod to the motor.  It just goes to the metal "feet" that hold the connector down.  You can see them on your FCB.
+
 You'll need to connect the PWM control lines to suitable pins on the microcontroller. The suitable pins are marked with "~" on microcontroller's schematic symbol.
+
+You need to include one 47uF decoupling capacitor between `VBAT` and `BAT_GND`.  It's to help absorb switching noise from the motors.  Note that 47uF capacitor in the library is polarized.
+
+*Explain how to use "invoke" or fix the part for the motor so it has teh ground built in*
+
 
 ### The Power Supply
 
@@ -126,33 +145,20 @@ As a result, your quadcopter will have two power rails: An unregulated power rai
 
 The power supply for quadcopter needs to contain the following parts:
 
-1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SCREW-TERMINAL` variant.
-2. A two-pin `jumper` to disconnect the positive terminal of the battery from `VBAT`.  Use the `-MALE` variant of `﻿HEADER-0.1IN-2POS` in `quadparts_prebuilt.lbr`.  
-3. A LP3985-series 3.3V regulator (see device `TPS73633-DBVT`.  Don't use the 3V version).  
+1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SMD` variant.
+3. A LP3985-series 3.3V regulator (see device `TPS73633-DBVT`.  Don't use the 3V version).
 
-Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.  
+Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
 
-You'll note that the output of the voltage regulator has decoupling capacitor on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  To guard against this, add an additional 220uF decoupling cap (the same one we use for motors) to the output of the voltage regulator.  Note that this capacitor is polarized.  The flat line should connect to the positive voltage, and the curved line to ground.
+You'll note that the output of the voltage regulator has decoupling capacitors on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  Add a 47uF decoupling cap (the same one we use for motors) to the output of the voltage regulator between `3V3` and `GND`.  Note that this capacitor is polarized.  The flat line should connect to the positive voltage, and the curved line to ground.
 
 To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines.  The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines. For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
-For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
+For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
 
 A "net bridge" is PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tstop` and `tcream` on the pads, since we won't be soldering anything to them.
 
 Use bridge to connect `BAT_GND` and `GND`.
-
-#### Powering the Quad Via FTDI
-
-**This paragraph is new**  To allow you to program and debug your microcontroller without a battery or with the battery jumper disconnected, we will connect 3V3 to the power pin on the FTDI programming header (but not the SPI header).
-
-**This Part Of The Lab Is Removed**
-let the regulator also draw current from the FTDI or ISP headers.  To enable this, connect the FTDI 3V3 pin, the ISP 5V pin, and the input of the regulator with a net called `VIN`.
-
-Connect `VBAT` to `VIN` via a diode oriented to let current flow the battery to `VIN` but not the other direction.  This will protect the battery from the 5V that some FTDI and ISP programmers provide, while letting the battery drive the regulator when no programmer is attached. 
-**END REMOVAL**
-
-THis means you should no longer incude the diode or have a net called `VIN`.  `VBAT` should connect to the vreg input and the vreg enable. `3V3` should connect to the power pins of the FTDI header (But not the SPI header).
 
 ### Breakout Headers
 

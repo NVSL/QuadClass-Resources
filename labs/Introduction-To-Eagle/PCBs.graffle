@@ -5,7 +5,7 @@
 	<key>ApplicationVersion</key>
 	<array>
 		<string>com.omnigroup.OmniGraffle7</string>
-		<string>192.21.0.323236</string>
+		<string>196.7.0.336351</string>
 	</array>
 	<key>ColorProfiles</key>
 	<array>
@@ -117,7 +117,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2019-03-03 06:02:14 +0000</string>
+	<string>2020-03-15 06:22:41 +0000</string>
 	<key>Modifier</key>
 	<string>Steven Swanson</string>
 	<key>MovementHandleVisible</key>
@@ -148,7 +148,7 @@
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{611.99997234344482, 792}</string>
+			<string>{612.00000953674316, 792}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
@@ -180,7 +180,7 @@
 			<key>BackgroundGraphic</key>
 			<dict>
 				<key>Bounds</key>
-				<string>{{0, 0}, {2304, 2199}}</string>
+				<string>{{0, 0}, {2308, 2199}}</string>
 				<key>Class</key>
 				<string>GraffleShapes.CanvasBackgroundGraphic</string>
 				<key>ID</key>
@@ -197,6 +197,11 @@
 						<key>Draws</key>
 						<string>NO</string>
 					</dict>
+				</dict>
+				<key>Text</key>
+				<dict>
+					<key>TextAlongPathGlyphAnchor</key>
+					<string>center</string>
 				</dict>
 			</dict>
 			<key>BaseZoom</key>
@@ -500,6 +505,60 @@
 			<array>
 				<dict>
 					<key>Bounds</key>
+					<string>{{1489.551628316442, 276.63999538123608}, {144, 53.360004618763924}}</string>
+					<key>Class</key>
+					<string>ShapedGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>Helvetica</string>
+						<key>Size</key>
+						<real>10</real>
+					</dict>
+					<key>ID</key>
+					<integer>512</integer>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.72512500000000002</real>
+								<key>g</key>
+								<real>0.99221400000000004</real>
+								<key>r</key>
+								<real>0.97808799999999996</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
+				</dict>
+				<dict>
+					<key>Bounds</key>
 					<string>{{1700.6399619877338, 1725.8399614244699}, {204, 15.929727840406278}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
@@ -515,7 +574,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>35</real>
 					</dict>
 					<key>ID</key>
 					<integer>511</integer>
@@ -542,13 +601,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 via}</string>
+\f0\fs70 \cf0 via}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -597,12 +658,25 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 				</dict>
@@ -654,6 +728,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -702,6 +781,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -752,6 +836,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -800,6 +889,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -852,6 +946,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -900,6 +999,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -950,6 +1054,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -998,6 +1107,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1048,6 +1162,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1096,6 +1215,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1146,6 +1270,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1194,6 +1323,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1244,6 +1378,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1292,6 +1431,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1342,6 +1486,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1390,6 +1539,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1440,6 +1594,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1488,6 +1647,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1538,6 +1702,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1586,6 +1755,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1636,6 +1810,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1684,6 +1863,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1734,6 +1918,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -1782,6 +1971,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1832,6 +2026,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -1875,12 +2074,25 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 					<key>Tail</key>
@@ -1906,7 +2118,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>35</real>
 					</dict>
 					<key>ID</key>
 					<integer>481</integer>
@@ -1933,13 +2145,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 Solder}</string>
+\f0\fs70 \cf0 Solder}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1993,12 +2207,25 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 					<key>Tail</key>
@@ -2024,7 +2251,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>35</real>
 					</dict>
 					<key>ID</key>
 					<integer>479</integer>
@@ -2051,13 +2278,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 Pin}</string>
+\f0\fs70 \cf0 Pin}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -2077,7 +2306,7 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{1647.3002449096582, 1193.9681942358216}</string>
+								<string>{1605.1343159711271, 1197.628182469331}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -2089,7 +2318,7 @@
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{1647.3002449096582, 1193.9681942358216}</string>
+						<string>{1605.1343159711271, 1197.628182469331}</string>
 						<string>{1579.3441136539971, 1222.8333358764648}</string>
 					</array>
 					<key>Style</key>
@@ -2106,12 +2335,25 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 					<key>Tail</key>
@@ -2122,7 +2364,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1564.0516283164416, 1178.0384663954151}, {204, 15.929727840406278}}</string>
+					<string>{{1526.0516283164416, 1152.8333129882812}, {204, 44.794869481049773}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -2137,7 +2379,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>35</real>
 					</dict>
 					<key>ID</key>
 					<integer>477</integer>
@@ -2164,13 +2406,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 Throughhole device}</string>
+\f0\fs70 \cf0 Throughhole pin}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -2207,20 +2451,14 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<real>0.0</real>
-								<key>g</key>
-								<real>0.0</real>
-								<key>r</key>
-								<real>0.0</real>
-								<key>space</key>
-								<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
-							</dict>
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2265,6 +2503,11 @@
 								<string>srgb</string>
 							</dict>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2315,6 +2558,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2363,6 +2611,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2413,6 +2666,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2461,6 +2719,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2513,6 +2776,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2561,6 +2829,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2611,6 +2884,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2659,6 +2937,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2709,6 +2992,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2757,6 +3045,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2807,6 +3100,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2855,6 +3153,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2905,6 +3208,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -2953,6 +3261,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3003,6 +3316,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3051,6 +3369,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3101,6 +3424,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3149,6 +3477,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3199,6 +3532,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3247,6 +3585,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3297,6 +3640,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3345,6 +3693,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3395,6 +3748,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3443,6 +3801,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3493,6 +3856,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3541,6 +3909,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3591,6 +3964,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3639,6 +4017,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3689,6 +4072,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3738,6 +4126,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3786,6 +4179,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3838,6 +4236,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3886,6 +4289,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3936,6 +4344,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -3984,6 +4397,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4034,6 +4452,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4082,6 +4505,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4132,6 +4560,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4180,6 +4613,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4230,6 +4668,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4278,6 +4721,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4328,6 +4776,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4376,6 +4829,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4426,6 +4884,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4474,6 +4937,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4524,6 +4992,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4572,6 +5045,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4622,6 +5100,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -4670,6 +5153,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -4720,6 +5208,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -4734,7 +5227,7 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{1376.6136327789316, 190.64401052596469}</string>
+								<string>{1382.4752228113084, 190.64401052596475}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -4746,7 +5239,7 @@
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{1376.6136327789316, 190.64401052596469}</string>
+						<string>{1382.4752228113084, 190.64401052596475}</string>
 						<string>{1424.159716975973, 246.93220338983028}</string>
 					</array>
 					<key>Style</key>
@@ -4763,12 +5256,25 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 					<key>Tail</key>
@@ -4779,7 +5285,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1267.8857903789483, 174.71428268555843}, {204, 15.929727840406278}}</string>
+					<string>{{1267.8857903789483, 156.64401052596472}, {204, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -4794,7 +5300,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>28</real>
 					</dict>
 					<key>ID</key>
 					<integer>360</integer>
@@ -4821,13 +5327,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 Solder}</string>
+\f0\fs56 \cf0 Solder}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -4847,7 +5355,7 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{1723.888585822915, 173.0144736031173}</string>
+								<string>{1705.8663510674221, 171.09762491386869}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -4859,7 +5367,7 @@
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{1723.888585822915, 173.0144736031173}</string>
+						<string>{1705.8663510674221, 171.09762491386869}</string>
 						<string>{1655.9324545672539, 201.87961524376018}</string>
 					</array>
 					<key>Style</key>
@@ -4876,12 +5384,25 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 					<key>Tail</key>
@@ -4892,7 +5413,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1640.6399692296984, 157.08474576271101}, {204, 15.929727840406278}}</string>
+					<string>{{1636.4682949831083, 130.90237508613131}, {204, 40.195249827737371}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FontInfo</key>
@@ -4907,7 +5428,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>28</real>
 					</dict>
 					<key>ID</key>
 					<integer>353</integer>
@@ -4934,13 +5455,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 Surface mount device}</string>
+\f0\fs56 \cf0 Surface mount device}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -4977,20 +5500,14 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<real>0.0</real>
-								<key>g</key>
-								<real>0.0</real>
-								<key>r</key>
-								<real>0.0</real>
-								<key>space</key>
-								<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
-							</dict>
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5023,20 +5540,14 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<real>0.0</real>
-								<key>g</key>
-								<real>0.0</real>
-								<key>r</key>
-								<real>0.0</real>
-								<key>space</key>
-								<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
-							</dict>
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5087,6 +5598,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5136,6 +5652,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -5179,18 +5700,31 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
+							<key>Color</key>
+							<dict>
+								<key>b</key>
+								<real>0.0</real>
+								<key>g</key>
+								<real>0.14913141730000001</real>
+								<key>r</key>
+								<real>1</real>
+								<key>space</key>
+								<string>srgb</string>
+							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
 							<true/>
 							<key>LineType</key>
 							<integer>1</integer>
+							<key>Width</key>
+							<real>3</real>
 						</dict>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{1865.8163737006478, 199.76951311848606}, {51, 23}}</string>
+					<string>{{1858.7509440131478, 194.26951311848606}, {65.130859375, 34}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -5209,7 +5743,7 @@
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
-						<real>19</real>
+						<real>28</real>
 					</dict>
 					<key>ID</key>
 					<integer>317</integer>
@@ -5236,13 +5770,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
-\f0\fs38 \cf0 VIA}</string>
+\f0\fs56 \cf0 VIA}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -5297,6 +5833,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5345,6 +5886,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5395,6 +5941,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5443,6 +5994,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5495,6 +6051,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5543,6 +6104,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5593,6 +6159,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5641,6 +6212,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5691,6 +6267,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5739,6 +6320,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5789,6 +6375,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5837,6 +6428,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5887,6 +6483,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -5935,6 +6536,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5985,6 +6591,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -6033,6 +6644,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6083,6 +6699,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -6131,6 +6752,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6181,6 +6807,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -6229,6 +6860,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6279,6 +6915,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -6327,6 +6968,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6377,6 +7023,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -6425,6 +7076,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6531,13 +7187,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 non-oxidizing metal (Tin or Gold)}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -6648,13 +7306,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Copper plating}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -6831,13 +7491,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Connected plane}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -6892,13 +7554,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Unconnected plane}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -7014,13 +7678,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Connected trace}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -7075,6 +7741,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7123,6 +7794,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7173,6 +7849,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7221,6 +7902,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7273,6 +7959,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7321,6 +8012,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7371,6 +8067,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7419,6 +8120,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7469,6 +8175,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7517,6 +8228,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7567,6 +8283,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7615,6 +8336,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7665,6 +8391,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7713,6 +8444,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7763,6 +8499,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7811,6 +8552,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7861,6 +8607,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -7909,6 +8660,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7959,6 +8715,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -8007,6 +8768,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -8057,6 +8823,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -8105,6 +8876,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -8155,6 +8931,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -8204,6 +8985,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -8252,6 +9038,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -8358,13 +9149,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Tin/Gold plating}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8475,13 +9268,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Copper plating}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8658,13 +9453,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Connected plane}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8719,13 +9516,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Unconnected plane}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8841,13 +9640,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Connected trace}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8902,6 +9703,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -8951,6 +9757,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -8999,6 +9810,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -9176,13 +9992,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Bottom Silkscreen}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -9242,13 +10060,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Top Silkscreen}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -9308,6 +10128,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9362,6 +10187,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9397,6 +10227,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9431,6 +10266,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -9486,6 +10326,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9539,6 +10384,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -9594,6 +10444,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9647,6 +10502,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -9702,6 +10562,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9756,6 +10621,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -9809,6 +10679,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -9988,13 +10863,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Bottom Solder Mask}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -10054,13 +10931,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Top Solder Mask}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -10120,6 +10999,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10174,6 +11058,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10209,6 +11098,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10243,6 +11137,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -10298,6 +11197,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10351,6 +11255,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -10406,6 +11315,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10459,6 +11373,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -10514,6 +11433,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10568,6 +11492,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -10621,6 +11550,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -10863,13 +11797,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 dielectric}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -10929,13 +11865,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 dielectric}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -10995,13 +11933,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 dielectric}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11061,6 +12001,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11115,6 +12060,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11150,6 +12100,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11184,6 +12139,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -11239,6 +12199,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11292,6 +12257,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -11347,6 +12317,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11400,6 +12375,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -11455,6 +12435,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11509,6 +12494,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -11562,6 +12552,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -11682,13 +12677,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Top Metal}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11935,13 +12932,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Bottom Metal}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -12001,13 +13000,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Internal Layer 2}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -12067,13 +13068,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Internal Layer 1}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -12133,6 +13136,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12187,6 +13195,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12222,6 +13235,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12256,6 +13274,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -12311,6 +13334,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12364,6 +13392,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -12419,6 +13452,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12472,6 +13510,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -12527,6 +13570,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12581,6 +13629,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -12634,6 +13687,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -12754,13 +13812,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Top Metal}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13440,13 +14500,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Bottom Silkscreen}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13506,13 +14568,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Bottom Solder Mask}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13572,13 +14636,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Bottom Metal}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13638,13 +14704,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 dieletric}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13704,13 +14772,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Internal Layer 2}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13770,13 +14840,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 dielectric}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13836,13 +14908,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Internal Layer 1}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13902,13 +14976,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 dielectric}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13968,13 +15044,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Top Solder Mask}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -14034,13 +15112,15 @@
 						<key>Pad</key>
 						<real>10</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\qc\partightenfactor0
 
 \f0\fs38 \cf0 Top Silkscreen}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -14095,6 +15175,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>AllowConnections</key>
@@ -14145,6 +15230,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14200,6 +15290,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14254,6 +15349,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14289,6 +15389,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14323,6 +15428,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14378,6 +15488,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14431,6 +15546,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14486,6 +15606,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14539,6 +15664,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14594,6 +15724,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14647,6 +15782,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14702,6 +15842,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14750,6 +15895,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14800,6 +15950,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14848,6 +16003,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14898,6 +16058,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -14946,6 +16111,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14996,6 +16166,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15044,6 +16219,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15094,6 +16274,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15142,6 +16327,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15192,6 +16382,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15240,6 +16435,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15290,6 +16490,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15338,6 +16543,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15388,6 +16598,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15436,6 +16651,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15486,6 +16706,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15534,6 +16759,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15584,6 +16814,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15632,6 +16867,11 @@
 							<key>Draws</key>
 							<string>NO</string>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -15682,6 +16922,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15727,6 +16972,11 @@
 								<string>srgb</string>
 							</dict>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 					<key>TextRelativeArea</key>
 					<string>{{0, 0}, {1, 1}}</string>
@@ -15779,6 +17029,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15828,6 +17083,11 @@
 							<string>NO</string>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
@@ -15874,6 +17134,11 @@
 							</dict>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 					<key>TextRelativeArea</key>
 					<string>{{0, 0}, {1, 1}}</string>
 				</dict>
@@ -15899,23 +17164,6 @@
 					<true/>
 				</dict>
 			</array>
-			<key>LayoutInfo</key>
-			<dict>
-				<key>Animate</key>
-				<string>NO</string>
-				<key>circoMinDist</key>
-				<real>18</real>
-				<key>circoSeparation</key>
-				<real>0.0</real>
-				<key>layoutEngine</key>
-				<string>dot</string>
-				<key>neatoLineLength</key>
-				<real>0.20000000298023224</real>
-				<key>neatoSeparation</key>
-				<real>0.0</real>
-				<key>twopiSeparation</key>
-				<real>0.0</real>
-			</dict>
 			<key>Orientation</key>
 			<integer>2</integer>
 			<key>PrintOnePage</key>
@@ -15955,7 +17203,7 @@
 		<key>Sidebar_Tab</key>
 		<integer>0</integer>
 		<key>VisibleRegion</key>
-		<string>{{-350.84745762711856, -181.35593220338978}, {2911.8644067796613, 2301.694915254237}}</string>
+		<string>{{-350.84745762711856, -181.3559322033901}, {2911.8644067796613, 2301.694915254237}}</string>
 		<key>WindowInfo_InspectorTab</key>
 		<array>
 			<string>com.omnigroup.OmniGraffle.inspectorGroup.object</string>

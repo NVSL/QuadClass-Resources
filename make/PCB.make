@@ -3,7 +3,11 @@ BRD=$(DESIGN).brd
 SCH=$(DESIGN).sch
 EAGLINT=eaglelint  --strict $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
 EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/eaglint/BOM.py
-BOMS=$(patsubst %.sch,%.assembly-bom.csv,$(SCH)) $(patsubst %.sch,%.digikey-bom.csv,$(SCH))
+ifeq ($(ASSEMBLY),no)
+BOMS=$(patsubst %.sch,%.digikey-bom.csv,$(SCH))
+else
+BOMS=$(patsubst %.sch,%.digikey-bom.csv,$(SCH)) $(patsubst %.sch,%.assembly-bom.csv,$(SCH)) 
+endif
 CAMS=$(DESIGN).cam $(DESIGN).cam.zip $(DESIGN).stencil  $(DESIGN).stencil.zip
 VERSION?=$(cat VERSION.txt)
 BOM_QTY?=5
@@ -67,7 +71,9 @@ release: $(BRD) $(SCH) $(LBRS)
 	#python $(EAGLINT_HOME)/server/eaglint/set-attr.py $(RELEASE_DIR)/$(BRD) $(RELEASE_DIR)/$(SCH) --attr 'dict(VERSION="$(FULL_VERSION)")'
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).cam.zip $(RELEASE_DIR)/$(DESIGN).stencil.zip
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).digikey-bom.csv
+ifneq ($(ASSEMBLY),no)
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).assembly-bom.csv
+endif
 	#false
 	git add $(RELEASE_DIR)	
 	git commit -m "Release $(FULL_VERSION)"
