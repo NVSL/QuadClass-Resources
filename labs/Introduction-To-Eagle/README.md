@@ -22,18 +22,18 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Eagle installed (either in the Maker Studio, the basement CSE labs, or your own laptop).
-2. The [starter repo](https://classroom.github.com/a/AOGppG5g) for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/l4ET6aPa) for this lab (Don't clone it until the start of class, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
 
 ### Complete the Responsibility Contract
 
-Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo.
+Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo. **In wi21, you can skip this part, but put something in your repo named `responsibility.pdf`**
 
 ### Fill Out The Self Evaluation
 
-Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSdY2ymtVFEI_7CQra3eP1GEthNj2aCQCzFrduqjD7a3Ln4OEA/viewform).  You will receive
+Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSeZYMLvERBZXjFBk37r7zPQzxHMs6EL5wyJXrrprGN1FkCuJQ/viewform).  You will receive
 a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
 ### Get set up Github

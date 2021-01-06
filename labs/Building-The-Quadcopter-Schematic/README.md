@@ -65,7 +65,8 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 
 ### The Microcontroller
 
-Here's the schematic for a board called the Basic Breakout Board (BBB).  It uses the same microcontroller as your quadocpter, but it does not include the voltage regulator. It's the reference design for your microcontroller, and the radio.  The design also includes the 6-pin programming header you can see on the bottom of the FCB.
+
+Here's the schematic for a board called the Basic Breakout Board (BBB).  It uses the same microcontroller as your quadocpter, but it does not include the voltage regulator. It's the reference design for your microcontroller, and the radio.  The design also includes the 1x6-pin programming header you can see on the bottom of the FCB.  YOu don't need to include that header in your design. 
 
 Why did I give a picture of what you need to build?  Because reference designs are a very common practice in real PCB designs.  The most reliable way to convey design requirements is to provide a working design.  Why reinvent the wheel?
 
@@ -160,6 +161,19 @@ A "net bridge" is PCB part whose only purpose is to electrically connect two net
 
 Use bridge to connect `BAT_GND` and `GND`.
 
+
+### Programming Header
+
+Your quad will use a 4-pin programming header to load code into the IMU.  It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom.  To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt.lbr`.  The four signals must appear in this order:
+
+1.  Serial TX
+2.  Serial RX
+3.  GND
+4.  Reset
+
+These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
+
+
 ### Breakout Headers
 
 You will face a couple challenges in bringing up your board and it's good to plan for them now.  Do this by adding two debugging headers to your design.  "Headers" are exposed connections to signals on your board.  You can attach pins or sockets to them as needed to help in debugging.
@@ -192,7 +206,7 @@ four pins: `3V3`, `GND`, `SCL`, and `SCA`, which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt.lbr`.
 
-If you feel like being efficient, you can leave `SCA` and `SCL` off the signal breakout header.
+If you feel like being efficient, you can leave `SDA` and `SCL` off the signal breakout header.
 
 ### Some LEDs
 

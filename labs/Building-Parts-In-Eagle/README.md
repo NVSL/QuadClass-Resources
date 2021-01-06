@@ -11,7 +11,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, and Software You will Need
 
 1. Eagle
-2. The starter repo: for this lab: https://classroom.github.com/a/1q--BEFJ. (Don’t clone it until the start of class, last minute changes are likely)
+2. The starter repo: for this lab: https://classroom.github.com/a/LVBobRH0. (Don’t clone it until the start of class, last minute changes are likely)
 
 ## Preliminaries
 
@@ -56,8 +56,8 @@ When you design symbols follow these guidelines:
 4. For an IC (on anything with simple, rectangular symbol) Almost all your pins should go on the sides. The only exceptions are power pins (which can go on top), and ground pins (which can go on the bottom). Generally, inputs should go on the left and outputs on the right (this is not always easy to follow, but try).
 5. Use standard symbols for components like resistors, capacitors, etc. Here are some examples: https://goo.gl/enZ0v0. You can also just google for “resistor schematic symbol” etc.
 6. For two terminal, polarized devices, draw the positive terminal on the left (so it matches the packages, see below).
-7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top, and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device. I’ll reject designs that do this for the IMU.
-8. Use sensible pin names that will you connect the symbol pins and package pins correctly. For example, ‘1’ and ‘2’ makes sense for a resistor symbol, but “C” and “A” makes more sense for a diode. For parts with many pins (like the IMU) use names from the datasheet. The goal is to make it as easy as possible to check that you have connected things properly.
+7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top, and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device:  The physical arrangement of the pins based on engineering decisions.  Your schematic symbol is about creating an easy-to-read schematic.  I’ll reject designs for the IMU schematic symbol that just mimic the layout of the IMU pins.
+8. Use sensible pin names that will help you connect the symbol pins and package pins correctly. For example, ‘1’ and ‘2’ makes sense for a resistor symbol, but “C” and “A” makes more sense for a diode. For parts with many pins (like the IMU) use names from the datasheet. The goal is to make it as easy as possible to check that you have connected things properly.
 9. Sizes the symbols sensibly. Discrete components (e.g., resistors and capacitors) should be small, so they don’t take up too much space. Complex parts should be bigger to make them easy to wire up.  For instance, the standard resistor symbol is 0.4x0.2 inches.
 10. Include text elements with “>NAME” and “>VALUE” in layers “Names” and “Values” respectively, to show details about the parts. Only include “>VALUE” if the symbol will be used in devices that need a value (see notes below).
 
@@ -65,20 +65,20 @@ When you design symbols follow these guidelines:
 
 Each of your packages should contain the following elements:
 
-1. Choose a meaningful name: e.g, “0805_RESISTOR” or “0805_LED”. Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts (with different colors, resistances, etc.) that are the same size and you can reuse the package.
+1. Choose a meaningful name: e.g, “0805_RESISTOR” or “0805_LED”. Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts (with different colors, resistances, etc.) that are the same size and you can reuse the package.  Therefore, a name that reflects the type of _package_ the part uses is appropriate (e.g., `0805_RESISTOR` is descriptive in this way).
 2. Draw a box in tDocu that matches the nominal dimensions of the part. For parts with leads that extend from the part’s package (e.g., the MOSFET), you can draw in the leads too, if you want. tDocu doesn’t show up on the board.
-3. A text item that displays the reference designator for the part. It should be on layer `tName` and the magic string “>NAME” is replaced with the reference designator.
-4. A text item that displays the value of the part. It should be on layer tValues. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
-5. Drawing elements on `tKeepout` showing the area in which other part are not allowed. This should include the physical extent of the device and other other areas that need to be kept clear.
+3. Include a text item that displays the reference designator for the part. It should be on layer `tName` and the magic string “>NAME” is replaced with the reference designator.
+4. Include a text item that displays the value of the part. It should be on layer tValues. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
+5. Drawing elements on `tKeepout` showing the area in which other part are not allowed. This should include the physical extent of the device and other other areas that need to be kept clear.  See the note below about how to structure your `tKeepout` lines.
 6. The text for the reference designator (which appears as '>NAME' in layer `tNames`) package name should be in the “vector” font and of size 0.9mm with a “ratio” of 8. This is not the default for text in the package editor (if you figure how to make it the default, let me know).  These settings make the reference designators as small as possible while still be legible.
 7. The text for the reference designator should not overlap with each other or the silkscreen for the device.
 8. The text for the reference designator should be aligned to 0.1mm grid (using a 0.5mm grid is better but not always possible).
-9. You should tnclude text with “>VALUE” in the the `tValues` layer if the part has a value (e.g., resistors and capacitors).  Real-world designs don’t usually do this, but it makes hand assembly easier.  ALl the boards for the class have values on the board. If you include them, the same requirements apply to them regarding their size and alignment as applies to “>NAME”.
+9. You should tnclude text with “>VALUE” in the the `tValues` layer if the part has a value (e.g., resistors and capacitors).  Real-world designs don’t usually do this, but it makes hand assembly easier.  ALl the boards for the class have values on the board. They should use the same font as the the reference designators (">NAME").
 10. Add lines on `tPlace` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
     1. For polarized components, draw with the positive terminal on the left.
     2. For polarized components, make the positive terminal the first terminal.
     3. For polarized components, clearly mark the distinguished terminal with a dot or extra line.  The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
-    4. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode).  Design your package so that at least one polarity marker is visible when the part is installed.
+    4. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode).  Design your package so that at least one polarity marker is visible when the part is installed (i.e. make sure all the polarity markers are not covered by the part.)
 11. Make sure that the “>NAME” doesn’t overlap with the elements that show the orientation, placement, and alignment of the parts.
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the package.
@@ -96,7 +96,7 @@ Follow these guidelines when creating devices:
 2. Put the symbol at the origin (in the left-hand pane of the device editing window)
 3. Choose a sensible name for the device. The guidelines for symbols generally apply here as well.
 4. When you create variants in the device, give them descriptive names. For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant.
-5. Be selective about what information you put in the variant name.  The size, value (resistance, capacitance, color, etc.), is a good idea.  The part number is a good choice because it's not human-undestandable.  Basically, you should only include information that will be useful to you when selecting which variant to use.
+5. Be selective about what information you put in the variant name.  The size, value (resistance, capacitance, color, etc.), is a good idea.  You should only include information that will be useful to you when selecting which variant to use.
 6. Make sure to connect the symbol pins to package pins correctly. Check it, check it again, have your partner check it. This is a common source of hard-to-find bugs.
 7. Set the “Value” radio button appropriately.  Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.  If you set the value radio button, your schematic symbol should include ">NAME" in layer `Names`.
 8. Set the prefix appropriately: “R” for resistor, “Q” for mosfets, “U” for ICs, “D” for diodes, etc. This is what Eagle will start the reference designator with (e.g., “R1”, “Q2”).
@@ -119,7 +119,7 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 
 #### Resistor
 
-* Include “RES” in the name of the device your create.
+* Include “RES” in the name of the device you create.
 * Check the `resistor_mounting_PYu-R_Mount_10.pdf` for guidance about the footprint, but...
 * Make sure SMDs extend 0.5 mm beyond the end of the resistor.
 * The prefix for your resistor device should be “R” for resistor.
@@ -154,13 +154,13 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Include “IMU” in the name of the device you create.
 * Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
-* Draw your package so it is wider than it is tall.  Otherwise Eaglint will get confused.
+* Draw your package so it is wider than it is tall (rather than the other way around).  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
 * You should compute the SMD width based on the IMU datasheet and the 'Datasheets/IMU_Soldering\ guidance-{1,2}.pdf' documents.  You will need to read them quite carefully.
 * Setting the width of the SMDs requires balancing several constraints.  
     1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.  
     2. Our board house sets the minimum space between two pieces of copper to 5mils.  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
-* Use 0.1" spacing within logically-related groups of pins for the pins on the IMU.  You can have larger gaps separating groups of pins.
+* Use 0.1" spacing within logically-related groups of pins for the pins on the symbol for the IMU.  You can have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
 * The symbol for the IMU should have one `VCC` pin, one `VCCIO` pin, and one `GND` pin. It should not have a `RES` pin.  In the device for for the IMU, you should connect all of the VCC SMDs to the single `VCC` pin in the symbol.  Connect the `RES` SMDs to the `GND` pin.

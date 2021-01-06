@@ -3865,8 +3865,6 @@
 <hole x="0" y="0" drill="2.2606"/>
 <circle x="0" y="0" radius="2.4" width="0.05" layer="39"/>
 </package>
-<package name="NEW_TACTILE_SWICH">
-</package>
 <package name="NEW-BUTTON">
 <smd name="1" x="-3.6" y="-1.5" dx="1.4" dy="1.6" layer="1" rot="R90"/>
 <smd name="2" x="3.6" y="-1.5" dx="1.4" dy="1.6" layer="1" rot="R90"/>
