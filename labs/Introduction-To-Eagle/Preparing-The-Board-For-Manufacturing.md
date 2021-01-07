@@ -34,7 +34,7 @@ Click "Process Job". A progress bar will appear briefly and then vanish. The CAM
 Eagle cannot open or view CAM/Gerber files. For that you need a Gerber viewer:
 
 * Mac: I like Cuprum: http://www.wortum.com/cuprum/.
-* Windows: http://www.viewplot.com/
+* Windows: http://www.viewplot.com/ or https://www.pentalogix.com/t/software-products/viewmate.
 * Linux: http://gerbv.geda-project.org/ (It might already be installed. Or do `sudo apt-get install gerbv`)
 
 The instructions below are for the Cuprum viewer on a Mac.
