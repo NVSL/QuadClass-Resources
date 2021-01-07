@@ -186,4 +186,4 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 
 Initial points: 12
 
-You will lose one point for failed full design check or human review.
+You will lose 0.5 points for failed full design check or human review and 1 point for each day late.
