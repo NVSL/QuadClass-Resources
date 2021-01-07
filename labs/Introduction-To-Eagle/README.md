@@ -121,9 +121,9 @@ Layer: 21
 ![image:https://lh3.googleusercontent.com/YcdkkNKLKyJf67RqU08ilv-10IL8KpCXNO1J4E0Z_Hy3fwpQgy9Nw7ImLgUAhKLY]
 
 8. Now the image should be transferred. 
-<!--
-You will notice some text below the image (red circle), this is the path of the image. Zoom to it and delete it.
--->
+
+You will notice some text below the image, this is the path of the image. Zoom to it and delete it.
+
 ![](images/artwork8_new.png)
 
 9. Save the library as Logos.lbr (if you are using an existing library just click save).
