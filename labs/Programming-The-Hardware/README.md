@@ -66,10 +66,10 @@ This will let Arduino talk to all the boards we will be using in this class, inc
 
 You’ll need a few libraries, so you might as well install them now, but you won’t use all of them in this lab:
 
-1. Attitude, Heading, and Reference System (AHRS): https://github.com/NVSL/QuadClass_AHRS 
-2. Adafruit LSM96S1 library: https://github.com/NVSL/QuadClass_LSM9DS1
-3. Adafruit unified sensor library: https://github.com/NVSL/QuadClass_Sensor
-4. Sparkfun SerLCD library: https://github.com/sparkfun/SparkFun_SerLCD_Arduino_Library
+1. Attitude, Heading, and Reference System (AHRS): https://github.com/NVSL/QuadClass_AHRS.git 
+2. Adafruit LSM96S1 library: https://github.com/NVSL/QuadClass_LSM9DS1.git
+3. Adafruit unified sensor library: https://github.com/NVSL/QuadClass_Sensor.git
+4. Sparkfun SerLCD library: https://github.com/sparkfun/SparkFun_SerLCD_Arduino_Library.git
 
 Clone them into `firmware/libraries`.
 
