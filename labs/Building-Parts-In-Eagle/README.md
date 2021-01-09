@@ -86,32 +86,40 @@ Each of your packages should contain the following elements:
 15. Include lines or symbols in `tPlace` to guide placement of the part.  For parts like the IMU and MCU, this should make easy to precisely place the part by showing the correct, precise location of all four corners.  For other parts an outine (or partial outline is sufficient).
 16. Eagle includes a package generator (access it via the "new " button in the device window and select "Create with package generator").  You are welcome to use it, but the packages it generates do not meet all of our requirements.  You'll need to edit them a bit.
 
+#### The Courtyard and tKeepout
+
+One of the goals of a good library is to make it easy to make sure your board looks good, is easy to assemble, and easy to verify.  Part placement is a key part of all three, and the "courtyard" is the key to guiding how you place parts.  The courtyard defines the area of the PCB that the part occupies.  This includes the part physically and it's pads, but also include some extra space that makes it possible to place the part on the board.  The size of the courtyard depends on how the board will be assembled.  In our case, it's by hand, so we need a pretty big courtyard.  I should suggest having the courtyard extend at least 1mm beyond the boundary of the part and its pads.
+
+Eagle use `tKeepout` to describe the courtyard.  The rule is that if `tKeepout` for different parts overlap, it is an error that will be flagged during DRC.  Unfortunately, this means that if you draw your courtyard on a consistent grid (which you should), then when two parts are perfectly placed next to eachother, the `tKeepout` defining their courtyards will overlap.  There are two bad options: move the parts farther apart (which takes up space) or tolerate the DRC error (which will increase the possibility that you ignore real errors).
+
+The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are exc
+
 ### Guidelines for Building Devices
 
-Devices connect packages to schematic symbols.
+Devices connect packages to schematic symbols and provide information necessary to purchase and install an eletronic component.
 
 Follow these guidelines when creating devices:
 
-1. The device should have a generic name, if it will have many variants. For instance, a “Resistor” or “Capacitor” device will have variants for different package sizes and values.
+1. The device should have a generic name, if it will have many variants.  For instance, a “Resistor” or “Capacitor” device will have variants for different package sizes and values.
 2. Put the symbol at the origin (in the left-hand pane of the device editing window)
 3. Choose a sensible name for the device. The guidelines for symbols generally apply here as well.
-4. When you create variants in the device, give them descriptive names. For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant.
+4. When you create variants in the device, give them descriptive names.  For instance, for 10Ohm, 0805 resistor, “-100R-0805” would be good name. Avoid having an unnamed variant unless there is really only ever going to be one variant.
 5. Be selective about what information you put in the variant name.  The size, value (resistance, capacitance, color, etc.), is a good idea.  You should only include information that will be useful to you when selecting which variant to use.
-6. Make sure to connect the symbol pins to package pins correctly. Check it, check it again, have your partner check it. This is a common source of hard-to-find bugs.
+6. Make sure to connect the symbol pins to package pins correctly.  Check it, check it again, have your partner check it.  This is a common source of hard-to-find bugs.
 7. Set the “Value” radio button appropriately.  Things like resistors and capacitors naturally have a value (i.e., a resistance or a capacitance), others, like the microcontroller, do not.  If you set the value radio button, your schematic symbol should include ">NAME" in layer `Names`.
 8. Set the prefix appropriately: “R” for resistor, “Q” for mosfets, “U” for ICs, “D” for diodes, etc. This is what Eagle will start the reference designator with (e.g., “R1”, “Q2”).
 
-You should have one variant for each different physical device you might include in your design. For instance, if you have two 0805 resistors with different resistances, you should one variant for each of them. In this case, you should add attribute (see below) called “VALUE” that specifies the value (e.g., “10R” for 10 Ohms, “1nF” for 1 nanofarad).
+You should have one variant for each different physical device you might include in your design.  For instance, if you have two 0805 resistors with different resistances, you should one variant for each of them.  In this case, you should add an attribute (see below) called “VALUE” that specifies the value (e.g., “10R” for 10 Ohms, “1nF” for 1 nanofarad).
 
 You can attach metadata to each variant of your device using "attributes." (Eagle provides the notion of "technologies" which are different sets of attributes for a device. You should always use the unnamed technology: "") All your variants should have the following attributes:
 
-* DIST – distributer (For us, this is always “Digikey”)
-* DISTPN – Distributer part number. i.e., Digikey’s part number. This is different from the manufacturer’s part number.
-* CREATOR – Your name, if you designed the part.
+* `DIST` – distributer (For us, this is always “Digikey”)
+* `DISTPN` – Distributer part number. i.e., Digikey’s part number. This is different from the manufacturer’s part number.
+* `CREATOR` – Your name, if you designed the part.
 
 All these attributes should be “constant” which means you can’t change them on a per-part basis in the schematic.  Set this via the drop down in the attribute editor window.
 
-DIST and DISTPN are especially critical, because when we go to order parts for your quadcopter, we will use this information to know what to order.
+`DIST` and `DISTPN` are especially critical, because when we go to order parts for your quadcopter, we will use this information to know what to order.
 
 ### Notes on Individual Parts
 
@@ -119,7 +127,7 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 
 #### Resistor
 
-* Include “RES” in the name of the device you create.
+* Include “RES” in the name of the device you create, so Eaglint can find it.
 * Check the `resistor_mounting_PYu-R_Mount_10.pdf` for guidance about the footprint, but...
 * Make sure SMDs extend 0.5 mm beyond the end of the resistor.
 * The prefix for your resistor device should be “R” for resistor.
@@ -140,12 +148,12 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 * The prefix for your MOSFET device should be “Q” (that’s the conventional prefix for transistors).
 * Since we are using an NMOSFET (as opposed to a PMOSFET), current flows from the drain to source, so put the drain on top in the symbol.
 * Name the source, drain, and gate, “S”, “D”, and “G”, respectively in both the symbol and the package.
-* Read the section in the datasheet about SMD layout starting on page 6.
-    * There are two aspects of SMD sizing you you must address in this package. The first is the size of the metal SMD. The second is the hole in the solder mask, called the “stop mask” because it stops the solder mask. Normally, SMDs come with appropriate ‘stop’ by default. You’ll need to remove the default stop and add yours by hand.
+* Read the section in the datasheet about SMD layout starting on page 6 (make sure your looking at the datasheet provided in the "Resources" git repo.  The datasheet online is missing this page).
+    * There are two aspects of SMD sizing you you must address in this package. The first is the size of the metal SMD. The second is the hole in the solder mask, called the “stop mask” because it stops the solder mask.  Normally, SMDs come with appropriate ‘stop’ by default.  You’ll need to remove the default stop and add yours by hand.
     * Create the SMDs according to the guidance in the datasheet.
     * Use the info tool to edit each SMD, and uncheck ‘stop’.
-    * Draw in the stop by hand in layer ‘tstop’ with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet.
-    * You will need to draw in rectangle on `tCream` as well (and disable the "Cream" check box in properties dialog).  Your `tCream` can (and should) be identical to your `tStop'.
+    * Draw in the stop by hand in layer `tStop` with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet.
+    * You will need to draw in rectangle on `tCream` as well (and disable the "Cream" check box in properties dialog).  Your `tCream` can (and should) be identical to your `tStop`.  `tCream` specifies where solder paste will be applied during assembly.
 
 #### IMU
 
@@ -156,23 +164,23 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall (rather than the other way around).  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
-* You should compute the SMD width based on the IMU datasheet and the 'Datasheets/IMU_Soldering\ guidance-{1,2}.pdf' documents.  You will need to read them quite carefully.
+* You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents.  You will need to read them quite carefully.
 * Setting the width of the SMDs requires balancing several constraints.  
-    1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.  
-    2. Our board house sets the minimum space between two pieces of copper to 5mils.  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
-* Use 0.1" spacing within logically-related groups of pins for the pins on the symbol for the IMU.  You can have larger gaps separating groups of pins.
+    1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.
+    2. Our board house sets the minimum space between two pieces of copper to 5mils (pay attention to your units).  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
+* Use 0.1" spacing within logically-related groups of pins for the pins on the symbol for the IMU.  You should have larger gaps separating groups of pins.
 * The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 * Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
 * The symbol for the IMU should have one `VCC` pin, one `VCCIO` pin, and one `GND` pin. It should not have a `RES` pin.  In the device for for the IMU, you should connect all of the VCC SMDs to the single `VCC` pin in the symbol.  Connect the `RES` SMDs to the `GND` pin.
 * There should be no metal under the IMU.  To enforce this, you should do the following
-    1.  Draw a rectangle in `trestrict` that fills most of the space in under the package, but does not overlap any of the pins.
-    2.  Draw a rectangle in `brestrict` that covers the entire package.
-    3.  Draw a rectangle in `vrestrict` that covers the entire package.
+    1.  Draw a rectangle in `tRestrict` that fills most of the space in under the package, but does not overlap any of the pins.
+    2.  Draw a rectangle in `bRestrict` that covers the entire package.
+    3.  Draw a rectangle in `vRestrict` that covers the entire package.
 * There should be no solder mask under the middle of IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the package, but does not overlap the pins.
-* You need to draw lines of `trestrict` between the pads.  They should be the same length as the pads and not overlap them.
+* You need to draw lines of `tRestrict` between the pads.  They should be the same length as the pads and not overlap them.
 * Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
-* There are a bunch notes in the technical notes about soldering guidance that say to not solder the pin-1 indicator.  Our IMU does not have the kind of pin-1 indicator they are referring to.
-* You will note that it appears that there will be no solder mask between the pads because the `tstop` for the pads overlap.  The width of the automatically added `tstop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains.  However, the DRU file doesn't affect how the `tstop` appears in the package editor. 
+* There are a bunch notes in the technical notes about soldering guidance that say to not solder the pin-1 indicator.  Our IMU does not have the kind of pin-1 indicator they are referring to, so that guidance does not apply.
+* You will note that it appears that there will be no solder mask between the pads because the `tStop` for the pads overlap.  The width of the automatically added `tStop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains.  However, the DRU file doesn't affect how the `tStop` appears in the package editor. 
 
 ## Turn in Your Work
 
