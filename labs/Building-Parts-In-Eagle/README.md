@@ -35,7 +35,7 @@ In eagle, the safe thing to do is write it out. If you type ‘1mm’ or ‘1in�
 
 ## Building Parts
 
-Create packages, symbols, and devices for the following electrical components.  You'll add these to `lbr/custom.lbr` in the lab repo.   That library contains some examples.  You will be able to use some packages for multiple parts.  Combine similar parts into a single Eagle device. Reuse the examples however you like.
+Create packages, symbols, and devices for the following electrical components.  You'll add these to a newly-created (by you) `lbr/custom.lbr` in the lab repo. 
 
 | Description                    | Digikey part number  | Notes                                     |
 |--------------------------------|----------------------|-------------------------------------------|
@@ -194,4 +194,4 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 
 Initial points: 12
 
-You will lose one point for failed full design check or human review.
+You will lose 0.5 points for failed full design check or human review and 1 point for each day late.

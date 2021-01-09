@@ -19,7 +19,8 @@ You will work on this lab and all future labs in teams of two.  You will need to
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The starter repo for this lab: https://classroom.github.com/g/LqnP9DDz. **FIXME** **You should create you GitHub classroom team before you create your eaglint group, and you must use exactly the same name for the Eaglint group.**
+1. Create a team in eaglint.  You _must_ do this before clicking the starter link below.
+1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. 
 2. Test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
@@ -66,10 +67,10 @@ This will let Arduino talk to all the boards we will be using in this class, inc
 
 You’ll need a few libraries, so you might as well install them now, but you won’t use all of them in this lab:
 
-1. Attitude, Heading, and Reference System (AHRS): https://github.com/NVSL/QuadClass_AHRS 
-2. Adafruit LSM96S1 library: https://github.com/NVSL/QuadClass_LSM9DS1
-3. Adafruit unified sensor library: https://github.com/NVSL/QuadClass_Sensor
-4. Sparkfun SerLCD library: https://github.com/sparkfun/SparkFun_SerLCD_Arduino_Library
+1. Attitude, Heading, and Reference System (AHRS): https://github.com/NVSL/QuadClass_AHRS.git 
+2. Adafruit LSM96S1 library: https://github.com/NVSL/QuadClass_LSM9DS1.git
+3. Adafruit unified sensor library: https://github.com/NVSL/QuadClass_Sensor.git
+4. Sparkfun SerLCD library: https://github.com/sparkfun/SparkFun_SerLCD_Arduino_Library.git
 
 Clone them into `firmware/libraries`.
 
