@@ -133,6 +133,11 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 * Name the cathode ‘C’ and the anode ‘A’ on both the symbol and the package.
 * Make sure SMDs extend 0.5 mm beyond the end of the LED.
 * Name the variant so it’s clear it’s a red LED (it is a red LED because it has the DISTPN that corresponds to a red LED)
+* In your footprint, mark the SMD that connects to 'distinguished' pin of the physical device (see below).
+
+Any physical part for which orientation (or polarity) is important will have some marking on it that distinguishes one terminal from the others.   On the IMU or the microcontroller or the IMU, this is a dot near pin 1.  For tiny devices like LEDs, it'll be some kind of mark.  For this LED it is two green rectangle drawn on the top of the LED under the plastic 'lens' that forms the top of the LED.  You can see them drawn on the mechanical drawing in the data sheet.
+
+Your package should include some kind of marking that marks the SMD that should attach to the distinguished pin.  Is the distinguished pin the cathode or the anode?
 
 #### MOSFET
 
