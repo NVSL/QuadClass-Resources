@@ -16,6 +16,7 @@ Check course schedule for the due dates.
 1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONly -->
 <!-- 1. The repo you started in "Programming the Hardware Lab"-- >
 2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your `hardware/lbr/` directory for this lab and commit it).
+3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
 
 ## Preliminaries
 
@@ -159,6 +160,16 @@ For the ground line, it is more challenging, since all the devices on the quadco
 A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.
 
 Use bridge to connect `BAT_GND` and `GND`.
+
+#### Basic Principle: Decoupling
+
+Your quadcopter is full of transistors (small ones in your microcontroller and big ones in your motor drivers), and as they switch they cause noise on the power and ground planes. Noise on the power line can cause digital circuits to stop working (because 1’s start looking like 0’s) and noise on GND can cause all kinds problems between all voltages are relative to GND.
+
+The minimize this noise, we want to increase the capacitance of the power and ground planes. One way to think of capacitance is as a resistance to changes in voltage, so adding more will reduce noise (which is an unwanted change in voltage).  Small capacitors can filter out high-frequency noise, while larger capacitors filter out lower-frequency noise.
+
+There are two ways to add capacitance.  The first is to add capacitors. The IMU and the microcontroller both describe the number and kind of decoupling capacitors you should incorporate and they tell you to place them as close as possible to the power and ground pins on the device.  This is because, to be most effective, the extra capacitance we add needs to be as close to the source of the noise as possible (to minimize resistance and inductance between the cap and the device).
+
+The second way to add capacitance is to build a capacitor into the board. A capacitor is just two layers of metal separated by an insulator.  We can easily construct this in a PCB by laying down metal in two layers on top of eachother, and connecting one to power and one to ground. The result is a very small capacitor but one that we can put nearly everywhere on the PCB (so it will be a close as physically possible to the devices).  In our design this capacitance is not critical, but in higher-speed design, it is critical to filtering out the higher-frequency switching noise.
 
 
 ### Breakout Headers
