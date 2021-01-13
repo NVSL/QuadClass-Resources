@@ -28,7 +28,7 @@ push-starter-repo:
 	$(MAKE) clean
 	$(MAKE) starter
 	(cd starter; git init; git remote add origin git@github.com:$(GITHUB_ORG)/$(STARTER_REPO_NAME).git)
-	(cd starter; git add .; git commit -m "Initial import"; git push --set-upstream origin master)
+	(cd starter; git add --force .; git commit -m "Initial import"; git push --set-upstream origin master)
 
 .PHONY: help
 help: labs.make.help

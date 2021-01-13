@@ -33,6 +33,7 @@ This means you need to pay close attention to your units. Here’s a simple refe
 
 In eagle, the safe thing to do is write it out. If you type ‘1mm’ or ‘1in’ or ‘5mil’ into a length field in a dialog box, Eagle will do the "right" thing (namely convert it to whatever it wants to display and show that value).
 
+
 ## Building Parts
 
 Create packages, symbols, and devices for the following electrical components.  You'll add these to a newly-created (by you) `lbr/custom.lbr` in the lab repo. 

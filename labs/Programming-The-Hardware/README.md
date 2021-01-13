@@ -19,8 +19,9 @@ You will work on this lab and all future labs in teams of two.  You will need to
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. Create a team in eaglint.  You _must_ do this before clicking the starter link below.
-1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. 
+1. The repo you started in "Programming the Hardware Lab" <!-- COVID only -->
+<!-- NOT FOR COVID 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below.
+1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. -->
 2. Test stand and remote control part kit.
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
