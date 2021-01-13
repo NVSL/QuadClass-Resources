@@ -608,16 +608,17 @@ Check list (-1 point for each missing item):
 
 1.  No motor activity when disarmed.
 2.  Motor control active when armed.
-3.  Arming turns on FCB LED.
-4.  FCB reset disarms.
-5.  Remote reset disarms.
-6.  Calibration works.
-7.  Calibration values saved.
-8.  Calibration mode unavailable when armed.
-9.  Calibration feedback on LCD.
-10.  Pushing sticks past calibrated values doesn't result in strange behavior.
-11.  Zero motor activity at 0 throttle.
-12.  Throttle smoothly controls motor output across full gimbal range.
-13.  Turning off remote disarms quad.
+3.  User feedback on the remote when the quad is armed.
+5.  Arming turns on FCB LED.
+6.  FCB reset disarms.
+7.  Remote reset disarms.
+8.  Calibration works.
+9.  Calibration values saved.
+10.  Calibration mode unavailable when armed.
+11.  Calibration feedback on LCD.
+12.  Pushing sticks past calibrated values doesn't result in strange behavior.
+13.  Zero motor activity at 0 throttle.
+14.  Throttle smoothly controls motor output across full gimbal range.
+15.  Turning off remote disarms quad.
 
 You will lose one point for each day late your solution is. 
