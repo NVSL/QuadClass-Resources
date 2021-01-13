@@ -186,7 +186,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
     2.  Draw a rectangle in `bRestrict` that covers the entire package.
     3.  Draw a rectangle in `vRestrict` that covers the entire package.
 * There should be no solder mask under the middle of IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the package, but does not overlap the pins.
-* You need to draw lines of `tRestrict` between the pads.  They should be the same length as the pads and not overlap them.
+* You need to draw lines of `tRestrict` between the pads (including between the pads at the cornerns of the package).  They should be the same length as the pads and not overlap them.
 * Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
 * There are a bunch notes in the technical notes about soldering guidance that say to not solder the pin-1 indicator.  Our IMU does not have the kind of pin-1 indicator they are referring to, so that guidance does not apply.
 * You will note that it appears that there will be no solder mask between the pads because the `tStop` for the pads overlap.  The width of the automatically added `tStop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains.  However, the DRU file doesn't affect how the `tStop` appears in the package editor. 
