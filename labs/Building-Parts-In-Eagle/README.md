@@ -57,10 +57,12 @@ When you design symbols follow these guidelines:
 4. For an IC (on anything with simple, rectangular symbol) Almost all your pins should go on the sides. The only exceptions are power pins (which can go on top), and ground pins (which can go on the bottom). Generally, inputs should go on the left and outputs on the right (this is not always easy to follow, but try).
 5. Use standard symbols for components like resistors, capacitors, etc. Here are some examples: https://goo.gl/enZ0v0. You can also just google for “resistor schematic symbol” etc.
 6. For two terminal, polarized devices, draw the positive terminal on the left (so it matches the packages, see below).
-7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top, and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device:  The physical arrangement of the pins based on engineering decisions.  Your schematic symbol is about creating an easy-to-read schematic.  I’ll reject designs for the IMU schematic symbol that just mimic the layout of the IMU pins.
+7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top (although they can go on the sides as well, probably near eachother and probably with power above ground), and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device:  The physical arrangement of the pins based on engineering decisions.  Your schematic symbol is about creating an easy-to-read schematic.  I’ll reject designs for the IMU schematic symbol that just mimic the layout of the IMU pins.
 8. Use sensible pin names that will help you connect the symbol pins and package pins correctly. For example, ‘1’ and ‘2’ makes sense for a resistor symbol, but “C” and “A” makes more sense for a diode. For parts with many pins (like the IMU) use names from the datasheet. The goal is to make it as easy as possible to check that you have connected things properly.
 9. Sizes the symbols sensibly. Discrete components (e.g., resistors and capacitors) should be small, so they don’t take up too much space. Complex parts should be bigger to make them easy to wire up.  For instance, the standard resistor symbol is 0.4x0.2 inches.
 10. Include text elements with “>NAME” and “>VALUE” in layers “Names” and “Values” respectively, to show details about the parts. Only include “>VALUE” if the symbol will be used in devices that need a value (see notes below).
+
+For the IMU, take a look at the microcontroller symbol for inspiration.  It's in `quadparts_prebuilt.lbr`.  It's laid out pretty nicely.  It's more complex than the IMU and has more documentation on it than the IMU needs.
 
 ### Guidelines for Building Packages
 
@@ -142,6 +144,11 @@ The data sheets for all the parts are in `QuadClass-Resources/Datasheets`.
 * Name the cathode ‘C’ and the anode ‘A’ on both the symbol and the package.
 * Make sure SMDs extend 0.5 mm beyond the end of the LED.
 * Name the variant so it’s clear it’s a red LED (it is a red LED because it has the DISTPN that corresponds to a red LED)
+* In your footprint, mark the SMD that connects to 'distinguished' pin of the physical device (see below).
+
+Any physical part for which orientation (or polarity) is important will have some marking on it that distinguishes one terminal from the others.   On the IMU or the microcontroller or the IMU, this is a dot near pin 1.  For tiny devices like LEDs, it'll be some kind of mark.  For this LED it is two green rectangle drawn on the top of the LED under the plastic 'lens' that forms the top of the LED.  You can see them drawn on the mechanical drawing in the data sheet.
+
+Your package should include some kind of marking that marks the SMD that should attach to the distinguished pin.  Is the distinguished pin the cathode or the anode?
 
 #### MOSFET
 
