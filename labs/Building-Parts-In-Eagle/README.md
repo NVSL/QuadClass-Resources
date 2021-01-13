@@ -173,7 +173,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall (rather than the other way around).  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
-* You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents.  You will need to read them quite carefully.
+* You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents.  You will need to read them quite carefully.  Use the "max" width for the SMDs from the datasheet.
 * Setting the width of the SMDs requires balancing several constraints.  
     1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.
     2. Our board house sets the minimum space between two pieces of copper to 5mils (pay attention to your units).  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
