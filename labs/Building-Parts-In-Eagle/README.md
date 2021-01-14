@@ -96,7 +96,13 @@ One of the goals of a good library is to make it easy to make sure your board lo
 
 Eagle use `tKeepout` to describe the courtyard.  The rule is that if `tKeepout` for different parts overlap, it is an error that will be flagged during DRC.  Unfortunately, this means that if you draw your courtyard on a consistent grid (which you should), then when two parts are perfectly placed next to eachother, the `tKeepout` defining their courtyards will overlap.  There are two bad options: move the parts farther apart (which takes up space) or tolerate the DRC error (which will increase the possibility that you ignore real errors).
 
-The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are exc
+The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are very tidy.
+
+Note that the courtyard should not surround the `>NAME` and `>VALUE`.  Two reasons:
+
+1.  You'll probably end up moving the reference designators around (which you can do freely on the board layout)
+2.  You'll have to pack parts together more closely than such a large courtyard will allow.  The result will be that you'll ignore a bunch of DRC errors and endup having to manually enforce reasonable spacing between parts. 
+
 
 ### Guidelines for Building Devices
 
@@ -173,7 +179,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall (rather than the other way around).  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
-* You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents.  You will need to read them quite carefully.
+* You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents.  You will need to read them quite carefully.  Use the "max" width for the SMDs from the datasheet.
 * Setting the width of the SMDs requires balancing several constraints.  
     1. First, the datasheet suggests a range of sizes the pads on the package might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.
     2. Our board house sets the minimum space between two pieces of copper to 5mils (pay attention to your units).  They will refuse to manufacture boards that don't meet this constraint, so your package must satisfy it.
@@ -186,7 +192,7 @@ The IMU has caused us signficant problems in the past.  Be careful with it.  You
     2.  Draw a rectangle in `bRestrict` that covers the entire package.
     3.  Draw a rectangle in `vRestrict` that covers the entire package.
 * There should be no solder mask under the middle of IMU.  To enforce this, draw a rectangle of `tStop` that covers the area under the package, but does not overlap the pins.
-* You need to draw lines of `tRestrict` between the pads.  They should be the same length as the pads and not overlap them.
+* You need to draw lines of `tRestrict` between the pads (including between the pads at the cornerns of the package).  They should be the same length as the pads and not overlap them.
 * Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
 * There are a bunch notes in the technical notes about soldering guidance that say to not solder the pin-1 indicator.  Our IMU does not have the kind of pin-1 indicator they are referring to, so that guidance does not apply.
 * You will note that it appears that there will be no solder mask between the pads because the `tStop` for the pads overlap.  The width of the automatically added `tStop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains.  However, the DRU file doesn't affect how the `tStop` appears in the package editor. 
