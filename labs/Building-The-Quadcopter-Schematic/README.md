@@ -136,7 +136,7 @@ The ground pin on the motor pads is not actually connected to the motor.  It jus
 
 You'll need to connect the PWM control lines to suitable pins on the microcontroller. The suitable pins are marked with "~" on microcontroller's schematic symbol.
 
-You need to include one 47uF decoupling capacitor between `VBAT` and `BAT_GND`.  It's to help absorb switching noise from the motors.  Note that 47uF capacitor in the library is polarized.  In the schematic the curved "plate" on the symbol should be connected to ground.
+You need to include one 47uF decoupling capacitor between `VBAT` and `BAT_GND` (just one; not one per motor).  It's to help absorb switching noise from the motors.  Note that 47uF capacitor in the library is polarized.  In the schematic the curved "plate" on the symbol should be connected to ground.
 
 ### The Power Supply
 
