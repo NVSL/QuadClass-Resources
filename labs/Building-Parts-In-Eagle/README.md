@@ -96,7 +96,13 @@ One of the goals of a good library is to make it easy to make sure your board lo
 
 Eagle use `tKeepout` to describe the courtyard.  The rule is that if `tKeepout` for different parts overlap, it is an error that will be flagged during DRC.  Unfortunately, this means that if you draw your courtyard on a consistent grid (which you should), then when two parts are perfectly placed next to eachother, the `tKeepout` defining their courtyards will overlap.  There are two bad options: move the parts farther apart (which takes up space) or tolerate the DRC error (which will increase the possibility that you ignore real errors).
 
-The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are exc
+The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are very tidy.
+
+Note that the courtyard should not surround the `>NAME` and `>VALUE`.  Two reasons:
+
+1.  You'll probably end up moving the reference designators around (which you can do freely on the board layout)
+2.  You'll have to pack parts together more closely than such a large courtyard will allow.  The result will be that you'll ignore a bunch of DRC errors and endup having to manually enforce reasonable spacing between parts. 
+
 
 ### Guidelines for Building Devices
 
