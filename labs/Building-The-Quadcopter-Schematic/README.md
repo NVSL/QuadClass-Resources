@@ -107,7 +107,7 @@ The IMU datasheet contains all the information you will need to use connect the 
 2. There are actually two logical devices in this package: the accelerometer/gyroscope (referred to as 'A/G' in the datasheet ) and the magnetometer ('M').
 3. Both devices will operate in I2C mode only and connect to microcontroller via I2C, so you can ignore the stuff in the data sheet that refers to SPI.
 4. You must follow all the recommendations regarding external capacitors attached the IMU.
-5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.
+5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.  Note that there is an inconsistency between Table 2 and Tables 19 and 20.  Tables 18 and 19 are correct.
 6. Power supply voltage and IO voltage will be 3.3V in our design, so connect them to `3V3`.
 7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
 8. `DEN_A/G` should be connected to `3V3`.
@@ -128,7 +128,7 @@ Here's a picture of the motor driver circuit:
 
 Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.
 
-1. There's only one (non-light emitting) diode in the library, use it.
+1. Use the `-SMD-SOD123` diode in the library.
 2. Use the `-MOLEX-SMD` variant of the `MOTOR_PADS_GND` device of the motor connector.
 3. Use your MOSFET, of course.
 
