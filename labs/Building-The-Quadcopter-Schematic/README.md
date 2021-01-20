@@ -13,7 +13,7 @@ Check course schedule for the due dates.
 ## Equipment, Supplies, and Software You Will Need
 
 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below. <!-- Covid ONly -->
-1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONly -->
+1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONLY --> <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
 <!-- 1. The repo you started in "Programming the Hardware Lab" -->
 2. The `custom.lbr` library you built in previous lab. 
 3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
