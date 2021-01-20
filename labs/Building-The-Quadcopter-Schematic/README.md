@@ -246,7 +246,10 @@ You'll need to build the library entries for the LED you want to use and then in
 
 One thing to keep in mind is that most LEDs are extremely bright when driven at full current. Indicator LEDs can be driven very gently and still be visible.  LEDs added for visual effect can be driven harder, but they can easily become so bright that you can't even look at your quadcopter without being blinded.  For this reason, any LEDs that you want to be bright need to be attached to PWM pins, so you can moderate their brightness.
 
-Once you have picked your LEDs, write up a brief description of why
+**Preferred** Once you have picked your LEDs, document your LED design using text in the `Info` layer in your schematic.  For each type of LED, you should note its forward voltage, the resistance of the current limiting resistor,
+and the current you expect to flow through the LED. 
+
+**Deprecated but acceptable:** Once you have picked your LEDs, write up a brief description of why
 your design will work.  For each LED (identified by it's reference
 designator), you should give it's forward voltage, supply voltage
 (e.g., 3.3V or 4.2V), the resistance of the current limiting resistor,
