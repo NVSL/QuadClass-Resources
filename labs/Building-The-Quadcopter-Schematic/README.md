@@ -15,7 +15,7 @@ Check course schedule for the due dates.
 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below. <!-- Covid ONly -->
 1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONly -->
 <!-- 1. The repo you started in "Programming the Hardware Lab" -->
-2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your `hardware/lbr/` directory for this lab and commit it).
+2. The `custom.lbr` library you built in previous lab. 
 3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
 
 ## Preliminaries
@@ -30,7 +30,7 @@ Download and install Eagle Premium, if you don't have it already.
 
 The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
 
-Copy and commit your `custom.lbr` into `lbr`. You can decide to use one or another of the libraries from each of your team members, or you can copy them both as `custom_<name>.lbr`.
+Copy your `custom.lbr` into `lbr` and rename it as `custom_<name>.lbr` the versions from both team members can co-exist.
 
 ### Make Eagle Easier to Use
 
