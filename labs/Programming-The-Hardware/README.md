@@ -21,8 +21,8 @@ You will work on this lab and all future labs in teams of two.  You will need to
 
 1. The repo you started in "Programming the Hardware Lab" <!-- COVID only -->
 <!-- NOT FOR COVID 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below.
-1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. -->
-2. Test stand and remote control part kit.
+1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. --><!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
+2. Test stand and remote control part kit.  
 3. Laser-cut parts for a test stand and airframe.
 4. 1 micro USB cable.
 5. 1 flight control board (FCB).

@@ -13,9 +13,9 @@ Check course schedule for the due dates.
 ## Equipment, Supplies, and Software You Will Need
 
 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below. <!-- Covid ONly -->
-1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONly -->
+1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONLY --> <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
 <!-- 1. The repo you started in "Programming the Hardware Lab" -->
-2. The `custom.lbr` library you built in previous lab. (Copy and commit it in your `hardware/lbr/` directory for this lab and commit it).
+2. The `custom.lbr` library you built in previous lab. 
 3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
 
 ## Preliminaries
@@ -30,7 +30,7 @@ Download and install Eagle Premium, if you don't have it already.
 
 The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
 
-Copy and commit your `custom.lbr` into `lbr`. You can decide to use one or another of the libraries from each of your team members, or you can copy them both as `custom_<name>.lbr`.
+Copy your `custom.lbr` into `lbr` and rename it as `custom_<name>.lbr` the versions from both team members can co-exist.
 
 ### Make Eagle Easier to Use
 
@@ -107,7 +107,7 @@ The IMU datasheet contains all the information you will need to use connect the 
 2. There are actually two logical devices in this package: the accelerometer/gyroscope (referred to as 'A/G' in the datasheet ) and the magnetometer ('M').
 3. Both devices will operate in I2C mode only and connect to microcontroller via I2C, so you can ignore the stuff in the data sheet that refers to SPI.
 4. You must follow all the recommendations regarding external capacitors attached the IMU.
-5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.
+5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.  Note that there is an inconsistency between Table 2 and Tables 19 and 20.  Tables 18 and 19 are correct.
 6. Power supply voltage and IO voltage will be 3.3V in our design, so connect them to `3V3`.
 7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
 8. `DEN_A/G` should be connected to `3V3`.
@@ -128,7 +128,7 @@ Here's a picture of the motor driver circuit:
 
 Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.
 
-1. There's only one (non-light emitting) diode in the library, use it.
+1. Use the `-SMD-SOD123` diode in the library.
 2. Use the `-MOLEX-SMD` variant of the `MOTOR_PADS_GND` device of the motor connector.
 3. Use your MOSFET, of course.
 
@@ -157,7 +157,7 @@ To the extent possible, we need to isolate the the IMU and the microcontroller f
 
 For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
 
-A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.
+A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.  You don't need `tKeepout` anything in `tPlace` for the net bridge.  If eaglint complains, just explain that it's not necessary since it's the net bridge.
 
 Use bridge to connect `BAT_GND` and `GND`.
 
@@ -200,7 +200,7 @@ Soldering the IMU is hard enough that it causes a fair number of
 quadcopters to fail.  To guard against this, add a header that will
 allow you to connect this breakout board
 (https://www.adafruit.com/product/3387) to your quadcopter.  You need
-four pins: `3V3`, `GND`, `SCL`, and `SCA`, which are conveniently
+four pins: `3V3`, `GND`, `SCL`, and `SCA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt.lbr`.
 
@@ -246,7 +246,10 @@ You'll need to build the library entries for the LED you want to use and then in
 
 One thing to keep in mind is that most LEDs are extremely bright when driven at full current. Indicator LEDs can be driven very gently and still be visible.  LEDs added for visual effect can be driven harder, but they can easily become so bright that you can't even look at your quadcopter without being blinded.  For this reason, any LEDs that you want to be bright need to be attached to PWM pins, so you can moderate their brightness.
 
-Once you have picked your LEDs, write up a brief description of why
+**Preferred** Once you have picked your LEDs, document your LED design using text in the `Info` layer in your schematic.  For each type of LED, you should note its forward voltage, the resistance of the current limiting resistor,
+and the current you expect to flow through the LED. 
+
+**Deprecated but acceptable:** Once you have picked your LEDs, write up a brief description of why
 your design will work.  For each LED (identified by it's reference
 designator), you should give it's forward voltage, supply voltage
 (e.g., 3.3V or 4.2V), the resistance of the current limiting resistor,
