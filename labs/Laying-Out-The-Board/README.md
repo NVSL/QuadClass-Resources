@@ -187,9 +187,9 @@ There are three reasons that these components need to be close together:
 4. The capacitors for the voltage regulator need to be as close as possible to the regulator because the datasheet says so.
 5. The battery connector needs to be set back a little bit from the edge of the board.  There's a white box in the frontprint that represents a plugged-in battery.  The whole things needs to be on the board.  This is to prevent damage to the connect during crashes.  If you look at the FCB, the battery connector is not quite far enough onto the board.
 
-Section 10 of the voltage regulator data sheet has detailed instruction for layout your power supply. Follow them as closely as possible. Your 0805 caps are not quite small enough to do exactly what they request, but you can come close.
+Section 10 of the voltage regulator data sheet has detailed instruction for layout your power supply. Follow them as closely as possible. Your 0805 caps are not quite small enough to do exactly what they request, but you can come close.  Eaglint requires the 1uF caps to be with in 5mm of the regulator, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.  The 47uF cap on the regulated side needs to be with 10mm.
 
-Be sure that the decoupling capacitors on the output of the voltage regulator are close to the regulator, close to each other, and connect directly to the `3V3` pour in layer 15 and all three `GND` pours (layers 1, 2, and 16) through vias situated close to the capacitor's SMDs. 
+Be sure that the decoupling capacitors on the output of the voltage regulator are close to the regulator, close to each other, and connect directly to the `3V3` pour in layer 15 and all three `GND` pours (layers 1, 2, and 16) through vias situated close to the capacitor's SMDs.  You also want the traces from the capacitor terminals to the voltage regulator to be as short as possible.
 
 Simultaneously satisfying all these constraints will require careful thought and planning. In particular, these constraint will affect how you layout the power and ground pours.
 
@@ -207,11 +207,12 @@ The routing for the low-current components of the motor driver (i.e, the resisto
 
 The radio is one of the delicate parts of the board because it require special attention for good signal integrity. You should copy the layout on the remote as closely as you can. The key things you’ll need to get right are:
 
-1. Except for the pad that is attached to the circuitry, the antenna should be mounted near the edge of the board without any metal nearby (i.e., there should be no metal in any layer in that area). 
-2. The two capacitors and the balun that make up the antenna driver should not have any other signals near them.
-3. The length of the traces from the micro controller to the balun should be as symmetric as possible: Equal length and mirrored geometry.
-4. All the wires in the antenna should be as short as reasonably possible.  This constraint, combined with the need for the antenna to be near the edge of the board constrains where you can place your microcontroller.
-5. The wire between the balun, the antenna, and the capacitor between them should be the same width as the antenna (50mil), and the wire should transition smoothly into the antenna. There should be no sharp corners.
+1. You can ignore the grid requirements in placin these parts.  Matching the reference design is more important.  If eaglint complains, add a note of explanation.
+2. Except for the pad that is attached to the circuitry, the antenna should be mounted near the edge of the board without any metal nearby (i.e., there should be no metal in any layer in that area). 
+3. The two capacitors and the balun that make up the antenna driver should not have any other signals near them.
+4. The length of the traces from the micro controller to the balun should be as symmetric as possible: Equal length and mirrored geometry.
+5. All the wires in the antenna should be as short as reasonably possible.  This constraint, combined with the need for the antenna to be near the edge of the board constrains where you can place your microcontroller.
+6. The wire between the balun, the antenna, and the capacitor between them should be the same width as the antenna (50mil), and the wire should transition smoothly into the antenna. There should be no sharp corners.
 
 Enforcing all of these requirements will require applying multiple techniques. Begin by laying out the parts to match the layout on the red board. Then read on for tips on how to implement the rest of the requirements.
 
@@ -259,6 +260,8 @@ To create a cutout, use the polygon tool, and check the 'cutout' box in the prop
 
 The IMU datasheet (`datasheets/LSM9DS1.pdf`) and a technical note (`datasheets/LSM9DS1_smd_tech_note.pdf`) provide guidelines for layout the IMU and its associated components. Follow them.
 
+The caps for the IMU need to be as close to the IMU as possible, and the traces between the caps and the IMU need to be as short as possible.  For decoupling caps, the length of the `3v3` trace is most important.  Eaglint requires all these caps to be with in 7mm of the IMU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
+
 ### Laying out and Labeling the Breakout Header
 
 You should label each pin of your breakout header so you’ll know which pin is connected to which signal. The labels should go in `tPlace`.
@@ -275,6 +278,10 @@ The crystal provides the clock to the MCU, and it's important that it be stable,
  that run to two adjacent pins on the MCU.  On either side of those pins are ground pins.  These are there to make it easy to isolate the clock signals from other parts of the circuit.  Ideally, the crystal and it's signals should be surrounded by an unbroken band of grounded metal that extends from under the MCU, through the ground pins and around the crystal via the top ground pour.  Even better is if the ground pour in layer two is also unbroken under the crystal.  Here's an example of what it should look like (red: `Top`; orange `Route2`):
  
 ![Crystal layout](images/crystal-layout.png)
+
+### Laying out the MCU
+
+The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible.  For decoupling caps, the length of the `3v3` trace is most important.  Eaglint requires all these caps to be with in 11mm of the IMU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
   
 ### Routing the Board
 
