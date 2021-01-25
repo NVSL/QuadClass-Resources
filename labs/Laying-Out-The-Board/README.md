@@ -74,8 +74,8 @@ The next stage is to place all the parts on board.  Placing most of the parts is
 
 Eaglint will warn about most of these.
 
-1.  Align your parts to a 1mm grid.  This will go a long way toward making your board look really good.  The antenna and  the capacitor attached to it are excepted, because signal integrity is more important.
-2.  Align your reference designators and values to a 0.5mm grid.
+1.  Align your parts to a 1mm grid.  This will go a long way toward making your board look really good.  The antenna and the capacitor attached to it are excepted, because signal integrity is more important.  You can also bend the rules and use 0.5mm grid for placing caps need the IMU and MCU.  Eaglint enforces the 0.5mm grid.
+2.  Align your reference designators and values to a 0.5mm grid.  Sometimes this is too restrictive.  If you must, you can use 0.1mm.  Eaglint will complain otherwise.
 3.  Allow 1-2mm between parts to make assembly easy.  If you designed your `tKeepout` appropriately in the library, this should be no problem.
 4.  Orienting all your parts in the same direction makes assembly easier (notice this on the FCB and your remote board).
 5.  To be legible, any silkscreen text needs to be at least 0.9mm high, with a 'ratio' of 8%.  You should use the `vector` font.  Eaglint forces you to use exactly these settings on the reference designators.
