@@ -343,6 +343,9 @@ grid 0.5                            # restore the grid
 
 You can either save this as an `.scr` file and run it the `script` command, but I find it easier to just copy and paste it into the command area in Eagle.
 
+### Layer Labels
+
+To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt.lbr` for this purpose: `LAYER_LABELS`.  Use the `add` tool to add a copy to the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
 
 ### Optional Features
 
