@@ -174,6 +174,8 @@ The goal of the pours is to provide a low-resistance path for current to and fro
 
 This means that, wherever possible, you should route your board to use the power and ground planes rather than traces. So, you want the traces that carry `GND`, `BAT_GND`, `3V3`, and `VBAT` to be as short and as few as possible.
 
+If Eaglint complains about trace length on high-current traces, you can offer an explanation about traces to LEDs and the breakout header.
+
 The easy way to do this is with the `fanout` command.  It'll draw a short wire attached to each pad and put a via at the end.  `fanout SIGNAL GND` will do this for all your ground pins.  The `fanout` command is imperfect, so may have to fix up its work.
 
 It also makes sense to shape your power and ground planes so that the planes are available where the signal is needed. This is why `VBAT` and `BAT_GND` should extend under all the motor drivers the battery connector.
