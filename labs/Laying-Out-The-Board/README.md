@@ -283,7 +283,7 @@ The crystal provides the clock to the MCU, and it's important that it be stable,
 
 ### Laying out the MCU
 
-The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible.  For decoupling caps, the length of the `3v3` trace is most important.  Eaglint requires all these caps to be with in 11mm of the IMU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
+The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible.  For decoupling caps, the length of the `3v3` trace is most important.  Eaglint requires all these caps to be with in 11mm of the MCU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
   
 ### Routing the Board
 
