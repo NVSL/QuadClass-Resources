@@ -168,17 +168,19 @@ The top and bottom layers should have a single, large pour of `GND` that covers 
 
 Ideally, your pours should not have sharp (90-degree) corners, since it leads to "current crowding".  This is not a big deal in our designs, but it is an interesting phenomenon (https://www.signalintegrityjournal.com/blogs/6-expert-advice-on-power-integrity/post/534-the-perils-of-right-angle-turns-at-dc).
 
+You should also pay attention to the narrowest point on your `VBAT` and `BAT_GND` pours.  We want wide wires all the way from the battery to the motors, if there's a narrow spot that can significantly increase the resistance.  We are interested in width of the actual metal, not the polygon you've drawn.  Pay attention for anything that might reduce the effective width of your pours (e.g., throughholes).
+
 #### Exploiting Your Power and Ground Planes
 
 The goal of the pours is to provide a low-resistance path for current to and from the battery, but they can only do this if your design uses them.
 
 This means that, wherever possible, you should route your board to use the power and ground planes rather than traces. So, you want the traces that carry `GND`, `BAT_GND`, `3V3`, and `VBAT` to be as short and as few as possible.
 
-If Eaglint complains about trace length on high-current traces, you can offer an explanation about traces to LEDs and the breakout header.
-
 The easy way to do this is with the `fanout` command.  It'll draw a short wire attached to each pad and put a via at the end.  `fanout SIGNAL GND` will do this for all your ground pins.  The `fanout` command is imperfect, so may have to fix up its work.
 
 It also makes sense to shape your power and ground planes so that the planes are available where the signal is needed. This is why `VBAT` and `BAT_GND` should extend under all the motor drivers the battery connector.
+
+If Eaglint complains about trace length on high-current traces, you can offer an explanation about traces to LEDs and the breakout header.
 
 #### Laying out the Power Supply
 
