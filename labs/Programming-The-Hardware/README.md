@@ -296,7 +296,7 @@ There's a similar mechanism for the knob.  The library defines an object called 
 
 You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
 
-Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
+Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details (Don't bother with `RotaryEncoder` example.  It's broken and `knob_and_buttons.ino` is more useful).  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons. 
 
 ### Writing to the LCD
 
