@@ -499,6 +499,8 @@ a checksum as well. For instance, the last entry in the struct could
 hold the `XOR` of all the other words in the struct. If they don’t
 match, it’s a packet from somewhere else.
 
+**Note:** If you receive a bad packet, you should called `rfFlush()` to make sure there's no unread data in the radio's buffers that will cause future calls to `rfRead()` to read misaligned data.
+
 Second, don’t spam the world with your radio traffic. Modify your
 remote firmware to send the command packet between 10 and 20 times per
 second.  The `millis()` functions (search for “arduino millis") will
