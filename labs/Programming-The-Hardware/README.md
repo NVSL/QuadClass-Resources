@@ -453,6 +453,10 @@ To avoid injury take the following precautions
    
 ![Docked FCB](images/docked.jpg)
 
+#### If Your Motors Spin the Wrong Way
+
+Some of the motors we purchased are wired backwards:  The Red-Blue motors and the Black-White motors spin in the same direction.  To fix this, you can use a pin to gently lift up the white tabs on the motor plug to remove the wires and the reinsert them.  Here's a video showing how: https://youtu.be/G3APCQteYaQ.
+
 ## Using the Radio
 
 **Note:** In your `setup()` function, you should call `rfBegin()` after you
