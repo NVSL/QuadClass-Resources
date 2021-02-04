@@ -168,6 +168,8 @@ The top and bottom layers should have a single, large pour of `GND` that covers 
 
 Ideally, your pours should not have sharp (90-degree) corners, since it leads to "current crowding".  This is not a big deal in our designs, but it is an interesting phenomenon (https://www.signalintegrityjournal.com/blogs/6-expert-advice-on-power-integrity/post/534-the-perils-of-right-angle-turns-at-dc).
 
+You should also be careful that your pours are not cut in two more pieces by traces routed through them.  The goal is to have the pours provide a nice, wide, low-resistance path to the battery, the voltage regulator, the battery, or the net bridge (depending on the pour).  If it's cut in to pieces, all but one of the pieces will usually be connected by a single trace instead.
+
 You should also pay attention to the narrowest point on your `VBAT` and `BAT_GND` pours.  We want wide wires all the way from the battery to the motors, if there's a narrow spot that can significantly increase the resistance.  We are interested in width of the actual metal, not the polygon you've drawn.  Pay attention for anything that might reduce the effective width of your pours (e.g., throughholes).
 
 #### Exploiting Your Power and Ground Planes
@@ -456,12 +458,13 @@ Below is a check list of items you should consider during your design review.
 * Power and Ground
 
 	* Does the `VBAT` power plane reach under all four motor drivers?
-	* Is the `VBAT` power plane wider than 0.5mm everywhere?
+	* Is the `VBAT` power plane wider than 3mm everywhere?
 	* Does the `3V3` power plane run under microcontroller and near the IMU’s power pins?
 	* Does the combination of the `BAT_GND` and `GND` ground plane extend to almost every area of the board (with the exception of the area round the antenna)?
 	* Are the `VBAT` and `3V3` power pours both in the same metal layer?
-	* Are there any parts of the power our ground pours that are very narrow? They should be no “necks” narrower than 0.5mm.
+	* Are there any parts of the power our ground pours that are very narrow? They should be no “necks” narrower than 1mm.
 	* Does the `VBAT` power plane extend to the battery connector?
+	* Are the pours in `Route2` and `Route15` cut into pieces by traces routed through them?  They should not be.
 
 * IMU
 
