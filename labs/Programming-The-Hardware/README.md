@@ -296,7 +296,7 @@ There's a similar mechanism for the knob.  The library defines an object called 
 
 You can access the current value of the knob with `knob1.getCurrentPos()`.  The knob can turn indefinitely in either direction and the number will grow and shrink accordingly.  You can also set the current knob value with `knob1->setCurrentPos()` (see `knob_pressed()` in the example).
 
-Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details.  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons.
+Look at `Open->Examples->Remote->knob_and_buttons.ino` and the `libraries/RotaryEncoder/RotaryEncoder.h` for details (Don't bother with `RotaryEncoder` example.  It's broken and `knob_and_buttons.ino` is more useful).  Run the example and turn the knob.  The knob has a builtin button, too.  It works just like the other buttons. 
 
 ### Writing to the LCD
 
@@ -453,6 +453,10 @@ To avoid injury take the following precautions
    
 ![Docked FCB](images/docked.jpg)
 
+#### If Your Motors Spin the Wrong Way
+
+Some of the motors we purchased are wired backwards:  The Red-Blue motors and the Black-White motors spin in the same direction.  To fix this, you can use a pin to gently lift up the white tabs on the motor plug to remove the wires and the reinsert them.  Here's a video showing how: https://youtu.be/G3APCQteYaQ.
+
 ## Using the Radio
 
 **Note:** In your `setup()` function, you should call `rfBegin()` after you
@@ -498,6 +502,8 @@ some other random data or packets from another team or noise. If you want to be 
 a checksum as well. For instance, the last entry in the struct could
 hold the `XOR` of all the other words in the struct. If they don’t
 match, it’s a packet from somewhere else.
+
+**Note:** If you receive a bad packet, you should called `rfFlush()` to make sure there's no unread data in the radio's buffers that will cause future calls to `rfRead()` to read misaligned data.
 
 Second, don’t spam the world with your radio traffic. Modify your
 remote firmware to send the command packet between 10 and 20 times per
