@@ -590,7 +590,7 @@ Make sure of the following:
 
 3. As you move the stick, motor power should vary smoothly with the sticks position.  (i.e., If the stick is at its midway paint, you should be writing 128).
 
-4. If you push a little bit on the stick when it is all the way up or down, it shouldn’t behave strangely.  Achieving this will require you to deal with non-idealness of the gimbals.  The Arduino `constrain` function is useful here.
+4. If you push up on the stick when it is all the way up or down on the stick when it's all the way down, it shouldn’t behave strangely.  Achieving this will require you to deal with non-idealness of the gimbals.  The Arduino `constrain` function is useful here.
 
 ## Turn in Your Work
 

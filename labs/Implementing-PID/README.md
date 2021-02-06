@@ -16,12 +16,17 @@ Check the course schedule for due date(s).
 
 ## Tasks To Complete
 
-You will build a PID-stabilized test stand. You should be able to control the following:
+You will write the software to stablilize the FCB's yaw and pitch axes.  You should be able to control the following:
 
-1. The angle of the FCB on your test stand.
-2. The overall thrust of the motors (using the throttle gimbal of your remote).
+1. The spin rate of the FCB hanging from monofilament.
+2. The pitch angle of the FCB on your test stand.
+3. The overall thrust of the motors (using the throttle gimbal of your remote).
 
-So you should be able to move your pitch gimbal and see the test platform quickly and and stably move in response. You should also be able to turn the throttle up and down without observing much change in the angle of the test platform.
+Using the yaw stick you should be able to easily control the rate of rotation of the quadcopter.  It should start and stop spinning quickly.
+
+So you should be able to move your pitch gimbal and see the test platform quickly and stably move in response. 
+
+For both pitch and yaw, you should should also be able to turn the throttle up and down without observing much change in the pitch angle or spin rate.
 
 
 ### What Should be Simple and What Should be Complex
@@ -30,34 +35,33 @@ Your implementation of PID should not be complicated.  The PID algorithm is not 
 
 My reference implementation of one PID controller is 5 lines and 252 characters.  There are no tricks in the code.  It is a direct transcription of the PID equation into C.  You just need to implement the math carefully and correctly.  My implementation of the complimentary filter is equally simple.  Simplicity here is a real virtue.  
 
-This is not to say that the lab is easy.  It is not.  Debugging simple code can be quite hard -- all the more when the bugs will manifest themselves as a crashing quadcopter.  Tuning the PID loop is tricky, time consuming, and frustrating.  This source of difficulty is reflected in the reference design:  While my PID implementation is short and sweet, the code that allows me to quickly and easily tune my filters and PID coefficients from my remote is several hundred lines of code, contains some pretty tricky parts, and represents many more hours of my life.  
+This is not to say that the lab is easy.  It is not.  Debugging simple code can be quite hard -- all the more when the bugs will manifest themselves as a crashing quadcopter.  Tuning the PID loop is tricky, time consuming, and frustrating.  This source of difficulty is reflected in the reference design:  While my PID implementation is short and sweet, the code that allows me to quickly and easily tune my filters and PID coefficients from my remote is several hundred lines of code, contains some pretty tricky parts, and represents many more hours of my life.
 
-In most (and possibly all cases), the solution is not in more complexity in your control code.  It is in more careful debugging, simplification, and careful, methodical testing.  That, making sure that your battery is adequately charged.
+In most (and possibly all cases), the solution is not in more complexity in your control code.  It is in more careful debugging, simplification, and careful, methodical testing.  That, and making sure that your battery is adequately charged.
 
 ### The Control Loop
 
-You will implement one controller in this lab for pitch.  Your quadcopter will eventually have three: one for pitch, one for roll, and one for yaw.
+You will implement two controllers in the lab:  one for yaw and one for pitch.  Your quadcopter will eventually have a third controller for roll.
 
 The PID controlled is a closed loop controller. Here's the flow chart for a generic closed loop controller.
 
 ![Closed loop](images/closed-loop.png)
 
-The "System" is your quadcopter. The "controller" is your PID code. The "input" is the target "angle of attack" for your quadcopter (0 means flat). This is also called the "set point" because it is what you want to set system to do (e.g., setting a thermostat).  The "output" is estimate of the quadcopter's pitch produced by your complementary filter.
+The "System" is your quadcopter. The "controller" is your PID code. The "input" is the target "angle of attack" or "rate of spin" for your quadcopter (0 means flat and not spinning).  This is also called the "set point" because it is what you want to set system to do (e.g., setting a thermostat).  The "output" is estimate of the quadcopter's pitch produced by your complementary filter and the yaw provided directly from the gyroscope.
 
 The controller takes the difference between the desired state of system (input) with the current state of the system (output) as the "error."  Based on this error (and it's behavior over time), it computes a set of control setting (i.e., power levels for the motors) that will, hopefully, reduce the error.
 
-You should compute the set point based on the position of your pitch gimbal (right hand joy stick, vertical axis). Plus or minus 10 degrees from horizontal is a reasonable range. That is enough to make your quadcopter move forward or backward at a reasonable speed.
-
+You'll need to calculate the setpoint based on the position of your yaw and pitch gimbals.  For yaw, +/-180 degrees/sec is a good starting range.  For pitch, +/-10 degrees from horizontal is a reasonable range.  That is enough to make your quadcopter move forward or backward at a reasonable speed.
 
 ### The Mixer
 
 The mixer (which would be inside the "system" box in the diagram above) is responsible for combining the current throttle setting with the outputs from the controller to set power levels for the motors.
 
-A key consideration in the mixer is that the total angular speed of the propellers needs to remain constant. That means that if you increase the speed of one counter-clockwise propeller you must decrease the speed of another one by the same amount. This explain why propellers that are diagonally opposite one another rotate in the same direction.
+A key consideration in the mixer is that the total angular speed of the propellers needs to remain constant.  That means that if you increase the speed of one counter-clockwise propeller you must decrease the speed of another one by the same amount.  This explain why propellers that are diagonally opposite one another rotate in the same direction.
 
-The simplest way to implement the mixer is something like this: `power = throttle + PID_output` for the front motors and `power = throttle - PID_output` for the back motors. A potential problem is that the PID adjustment might be larger than the current throttle value or the throttle value maybe very close to the max motor power. In both of these cases, the quadcopter will be able to completely implement the output of the PID control. 
+The simplest way to implement the mixer is something like this: `power = throttle + PID_output` for the front motors and `power = throttle - PID_output` for the back motors.  A potential problem is that the PID adjustment might be larger than the current throttle value or the throttle value maybe very close to the max motor power. In both of these cases, the quadcopter will be able to completely implement the output of the PID control. 
 
-Initially, you can ignore this problem: Set test with your throttle in the middle or so.  You may need to compensate for this later, or you may not.
+Initially, you can ignore this problem: Test with your throttle in the middle or so.  You may need to compensate for this problem later, or you may not.
 
 For your real quadcopter, your mixer will need to account for inputs from all three PID controllers (Pitch, Roll, and Yaw).
 
@@ -79,9 +83,9 @@ Implementing the PID controller requires you computing the integral and derivati
 
 The easiest way to compute the derivative is by dividing the change in error by the change in time. Just remember:
 
-* To measure time in seconds.
+* Measure time in seconds.
 * Be sure you have the sign right on e(t) and de/dt. If you get it backwards nothing will work.
-* To use the actual elapse time since your last measurement.
+* Use the actual elapse time since your last measurement.
 
 #### The Integral of Error
 
@@ -93,9 +97,12 @@ Another common problem:  If your Ki = 0, and the integral of error becomes large
 
 There are couple of solution to this:
 
-* You can have the integral decay over time. For instance, instead computing `sum = sum + e` each iteration, you could do `sum = 3*sum/4 + e`.  The downside of this is that it will make your kI term's behavior more complex.  Complexity is your enemy.
+* You can have the integral decay over time.  For instance, instead computing `sum = sum + e` each iteration, you could do `sum = 3*sum/4 + e`.  The downside of this is that it will make your kI term's behavior more complex.  Complexity is your enemy.
 * You can also just bound the integral at some value. Some trial and error may be required to find a reasonable bound.  Same problem as above -- this introduces a discontinuity is the algorithm's behavior.
-* You can reset the integral when throttle is 0.
+* You can reset the integral when throttle is 0 or when `Ki` is zero.
+
+You might also want to implement a "deadband" on throttle, so that if the throttle is below some small value, it reads as 0.  If your throttle is at 1, your motors probably won't turn on, but it would keep your error integral from reseting if you implement the last item above.
+
 
 ### Implementating PID
 
@@ -103,7 +110,7 @@ The PID algorithm is pretty simple and no complex tricks are required to get it 
 
 #### The IMU and your Filters
 
-The PID controller does not control actually try to control the orientation of your quadcopter.  Rather, it tries to control the output of the IMU.  If the IMU's output does not accurately reflect the orientation of the quadcopter, all is lost.
+The PID controller does not control actually try to control the orientation of your quadcopter.  Rather, it tries to control the output of your complimentary filter.  If the filter's output does not accurately reflect the orientation of the quadcopter, all is lost.
 
 You need to pay close attention to the output of your IMU and the complimentary filter.  For instance:
 
@@ -120,7 +127,7 @@ The implementation can (and should) be pretty simple.  Trying to tweak the algor
 
 If you get strange behavior, make your implementation simpler rather than more complex.
 
-Pay attention to your PID update rate.  100Hz (10ms/iteration) is good. The call to lsm.getQuad() takes about 1.8ms. You will eventually have 3 ID loops. So that means you have about (10-1.8)/3 = 2.7ms per PID channel.  If you implementation is simple, this should not be a problem.
+Pay attention to your PID update rate.  100Hz (10ms/iteration) is good.  The call to lsm.getQuad() takes about 1.8ms.  You will eventually have 3 PID loops. So that means you have about (10-1.8)/3 = 2.7ms per PID channel.  If you implementation is simple, this should not be a problem.
 
 #### Your Mixer
 
@@ -130,31 +137,30 @@ The output of your PID controller is number that specifies how adjust the relati
 
 * Use the knobs and buttons on your remote to tune parameters.  It’s much faster than recompiling.  Spending time on the code to support this will pay you back many times over.
 * Use Arduino’s serial plotter to debug. You can put all sorts of stuff on there: Coefficients, the values of individual terms, etc.
-* Start by just implementing an P controller (no I or D). This should get you an oscillating test stand.
+* Start by just implementing an P controller (no I or D).  This should get you an oscillating test stand (for pitch) and spinning (for yaw).
+* Save your PID parameters in the EEPROM.
 
 When you encounter a problem in this lab, it really pays off to be methodical about how you track down the underlying cause.  Here is what I recommend as a check list:
 
 0.  How's your battery?  If it's low, you'll have trouble.
 1.  Are you controlling the right motors?  If the 2x3 SPI programming header is "front" of the FCB, the pins are: front-left: pin 4; front-right: pin 3; back-left: pin 5; back-right: pin 6.
-2.  Do you have the right props on?  "A" props go on the motors with the red and blue wires.  "B" props go on the motors with the black and white wires.  The color of your props tells you nothing.
+2.  Do you have the right props on?  Make sure they are all blowing air down and that thy are turning the correct direction.
 3.  Are you motors installed properly?  Diagonally opposite motors should have the same wire colors (i.e., red/blue motors should be on opposite corners).
-4.  Are the prop blowing down?  Check by holding your hand underneath.
-5.  Are your motors+props able to move your quad in either direction easily?  
-6.  Check your raw IMU measurements -- are they reasonable?
-7.  Is the sign of your pitch and roll rates correct (i.e., when the pitch rate is positive, is pitch increasing)?
-8.  Check your filtered IMU measurements -- are they not-so-noisy when the motors are on?
-9.  Is your IMU calibrated correctly?  When it's sitting does it show 0-degrees pitch and roll and 0 yaw rate?
+5.  Check your raw IMU measurements -- are they reasonable?
+6.  Is the sign of your pitch and roll rates correct (i.e., when the pitch rate is positive, is pitch increasing)?
+7.  Check your filtered IMU measurements -- are they not-so-noisy when the motors are on?
+8.  Is your IMU calibrated correctly?  When it's sitting on a flat surface or "docked" on the test stand, does it show 0-degrees pitch and roll and 0 yaw rate?
 9.  Check your error calculation -- Does it change correctly when you tilt the FCB?  Does it change correctly when you move the pitch stick?
 10.  Do the motor outputs change as you expect as you move the platform (i.e., do the motors on the lower side get stronger)?  Do they get stronger more aggressively when you turn up kP?
 11.  Does it behave sensibly with just P?  Can I feel it trying to correct in the right direction?
-12.  Check your derivative calculation -- Does it match up with your error calculation?  Is dT in the right units (i.e., compute using the right time scale)?  Does dErr have the correct sign (i.e., when error is positive and decreasing is dErr/dT negative?  When error is negative and increasing, is dErr/dT positive?)
-13.  Does it behave sensibly with P and D?  ARe your kD and KP reasonable values?
-14.  Check your integral calculation -- Do you handle wind up correctly?  Is dT in the right units?
-15.  Does it behave sensibly with PID? Is kI a reasonable value?
+12.  Check your derivative calculation -- Does it match up with your error calculation?  Is `dT` in the right units (i.e., compute using the right time scale)?  Does `dErr` have the correct sign (i.e., when error is positive and decreasing is `dErr/dT` negative?  When error is negative and increasing, is `dErr/dT` positive?)
+13.  Does it behave sensibly with P and D?  Are your kD and KP reasonable values?
+14.  Check your integral calculation -- Do you handle wind up correctly?  Is `dT` in the right units?
+15.  Does it behave sensibly with PID? Is `kI` a reasonable value?
 
 Almost always, overall PID problems are caused by something pretty early in this list.  It would be not be a bad idea to provide the means to run these tests quickly using the remote.  Then, if you have an error, you can quickly check whether all the underlying parts are working properly.
 
-Be assured that the first time you ask me or the TA for help, I will go through this list with you.  You can save us both time by checking these items yourself first.
+Be assured that the first time you ask me or the TA for help, we will go through this list with you.  You can save us both time by checking these items yourself first.
 
 Here are some implementation notes suggested by the above:
 
@@ -168,47 +174,61 @@ As you tune and debug, you should think about what the value of each of your PID
 
 To make your PID coefficients easier to interpret, it is critical that you be calculating the derivitive and integral terms properly.  In particular, you need to calculate the derivitive by dividing the change in error by the change in time _in seconds_.  Likewise, you need compute the integral by summing the error times the change in time _in seconds_.  Remember, `millis()` gives you milliseconds, not seconds.
 
-I'll also assume that your mixer takes the sum of the three PID terms and the sum to adjust the output of the motors over their range of power settings from 0 to 255.
-
-The P term controls how your quadcopter responds to error (measured in degrees).  Practically, this means that if P = 1 and error = 1 degree, than you are going to be changing your motor output by about 0.39% (1 * 1/255).  You can use this observation in several ways: 
+The P term controls how your quadcopter responds to error (measured in degrees).  Practically, this means that if P = 1 and error = 1 degree, than you are going to be changing your motor output by about 0.39%  = 1 * 1/255.  You can use this observation in several ways: 
 
 1.  Check whether your motor outputs actually change by that amount when the error = 1 degree (or some other known quantity).
 2.  You can experiment to see how big a change in motor output is required to change the orientation of the quadcopter on the test stand.
-3.  If you need very large P values (e.g., P = 100) to get significant movement, something is wrong.  That means that a 1 degree change 
- gr84sex
- in orientation would result in 1*100/255 a 50% change in motor output.  
+3.  If you need very large P values (e.g., P = 100) to get significant movement, something is wrong.  That means that a 1 degree change in orientation would result in 1*100/255 a 50% change in motor output.  
 
 You can apply similar to reasoning to the D term.  The error derivitive is measured in degrees/second, and if you aren't moving your gimbals, it's just a measure of how quickly your quadcopter is rotating.  If error is change by 45 degrees/second and D = 1, then it will cause a 45/255=17% change in your motor output.  Experiment with your test stand to see how fast or slow 45 degrees per second is.  Does a 17% change in thrust seems like a reasonable response to rotating at that rate?
 
+### Utilize the Bottom-Entry Programming Header
 
-### Using the Alternate FTDI Headers
+The programming header on the FCB can accept the programming cable from the top
+or the bottom (fancy, no?).  Attaching the underside can be helpful to get the
+programming cable out of the way.
 
-There are two 2-pin headers on the underside of your FCB.  They carry the four
-key signals for FTDI: `DTR`, `TX`, `RX`, `GND`.  **Note:** `GND` is mislabled
-as `CTS`.  You do not need to connect `CTS`.  You must connect `GND`.  The purpose of these connections is two allow a less physically
-restrictive FTDI connection.  This will prevent your FTDI cable for unbalancing your quadcopter.
+### The Yaw Axis
 
-To you use it you'll need two 2-wire harnesses I'll distribute in class.  They
-are made of special silicone-coated wire that is very bendy.  I made them myself.  
-Don't lose or damage them them!
+The yaw axis is the easiest of the three, so you should start there.  It's easy
+becuase it doesn't move very fast and changes in the yaw angle don't cause the
+quadcopter to move like pitch and roll do.
 
-The photo below illustrates the basic idea: Zip tie your FTDI cable to the test
-stand using the holes provided, and then connect the FTDI cable to the 2-pin
-headers with the floppy wiring harnesses.
+The first challenge is how to let the quad spin freely.  I've found the best
+way to do this is to use monofilament to hang the quadcopter from the four
+dowels we povided.  The real trick, though is to hang it upside down:
 
-![flexible FTDI](images/floppy-ftdi.jpg)
+If you mount it right side up, it'll try to take off and start flopping around.
+Flying it upside down means the harder you drive the motors, the more stable it
+gets in the pitch/roll directions.  Just keep in mind that it'll look like it's
+spinning backwards relative to what you do with the yaw stick.
 
-Here's the pinout for the FTDI cable:
+We've also included as "spinner".  If you put it between your quadcopter and
+whatever it's hanging from, it'll let the quad spin freely without twisting the
+monofilament.
 
-| Green | Yellow | Orange | Red | Brown | Black |
-|-------|--------|--------|-----|-------|-------|
-|`DTR`  | `RX`   | `TX`   |`VCC`| `CTS` | `GND` |
+The PID loop is different for yaw than it is for roll and pitch: Rather than
+controlling the yaw angle, you are controlling the yaw rate.  This means can
+just use the gyroscope output directly.  Neutral on the yaw stick should
+correspond to a yaw rate of zero.
 
-**Note** the labels on the FCB are such that you need to connect the FTDI `RX` pin to the `TX` header and vice versa.
+The behavior you are looking for is crisp start and stop of the rotation when
+you move the stick and return it to neutral.  You should also be able to feel
+it fight you if you try to rotate it by hand.
 
-### The Other Axes
+You want the lowest PID coefficients that give good results.  If they are too
+high, I find the quadcopter will overreactive to small yaw distrurbances while
+flying.
 
-Once you have the pitch PID working pretty well and have this lab checked off, you should move immediately to the flight lab, even if you quadcopter is not assembled/working yet.  It'll take quite a bit of work to get flight working.  If you wait for your quadcopter board to be up and running, you may not have time to finish the flight lab.
+### The Pitch Axis
+
+Tackle the pitch axis next with the quadcopter on the test stand.  This is
+where you will probably spend most of your time.
+
+The behavior your are looking for is stable, level "flight" when the pitch
+stick is at neutral.  Ideally, you'll you see crisp responsive movement as you
+move the pitch stick.  It should also me symmetric -- moving the stick forward
+should have the opposite effect as moving it backwards.
 
 ### Tuning Resources
 
@@ -222,24 +242,46 @@ Much has been written about how to tune PID controllers. I have used these two t
 #### Resources:
 
 1. https://en.wikipedia.org/wiki/PID_controller
-2. https://www.youtube.com/watch?v=UR0hOmjaHp0
-4. Interactive demo: https://sites.google.com/site/fpgaandco/pid
-
-#### Cool examples:
-
-1. https://www.youtube.com/watch?v=j4OmVLc_oDw
-2. https://www.youtube.com/watch?v=R2QOougRFww (Long but pretty thorough)
-3. https://www.youtube.com/watch?v=7qw7vnTGNsA
+2. Interactive demo: https://sites.google.com/site/fpgaandco/pid
+3. Cool example: https://www.youtube.com/watch?v=j4OmVLc_oDw
 
 ### Turn in Your Work
 
 #### Commit your results:
 
-1. `Commit an updated version of quad_firmware.ino` and `remote_firmware.ino` for the remote.
-2. An updated version of `noise.txt`, if applicable.
+1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
+2. Updated version of `noise.txt` with updates filter configuration parameters
+   (if you changed them), and the your PID and values for each axis.
 
 Once you’ve committed everything, create a tag called “PID-test-stand-2” Be sure to make it an “annotated” tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 
 #### Demo your work:
 
-1. Demo you working, stabilized test stand for me or the TA.
+1. Demo your clean orientation measurements for the TA.
+2. Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLSfB8XsDV8FtTZYO1mv3FZrd9mUs1hDlFvQxnfAK0K2zptTjxQ/viewform
+
+### Rubric
+
+Possible points: 12
+
+Check list (for each axis):
+
+Yaw:
+
+1. Non-spin with yaw neutral.
+2. Resists manual yaw (i.e., pushes back)
+3. No visible oscillation
+4. No overshoot.
+5. Crisp, sharp start and stop.
+
+Pitch:
+
+1. Level "flight" with pitch at neutral.
+2. Only moderate oscillation
+3. Almost no oscillation
+4. Symmetrical, accurate movement pitching forward and back (pitch stick at 10degree position gives 10 degree tilt)
+5. Same amount of oscilation when pitched as when level
+6. Moderate overshoot
+7. Almost on overshoot.
+
+You will lose one point for each day late your solution is. 

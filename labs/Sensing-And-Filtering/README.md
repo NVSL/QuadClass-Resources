@@ -173,21 +173,27 @@ Commit your results:
 1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
 3. Include a file called `noise.txt` that lists these values:
     1.  How quickly you are reading data from the IMU
-    2.  Your ODR
-    3.  Your ODR Ratio
-    4.  The cutoff frequencies for the accelerometer and gyro filters.
-    5.  The configuration values you used for the registers you medified (written using the macros.)
+    2.  The register name for each IMU configuration register you modified and the value you set it to (expressed using `|` and human-readable macros, not in binary or hex.)
+	3.  Your ODR and ODR ratio.
+    3.  The cutoff frequencies for the accelerometer and gyro filters.
 
 Once you've committed everything, create a tag called "sensing-and-filtering" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 
 #### Demo your work:
 
-Demo your clean orientation measurements for me or the TA.
+1. Demo your clean orientation measurements for the TA.
+2. Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLSfB8XsDV8FtTZYO1mv3FZrd9mUs1hDlFvQxnfAK0K2zptTjxQ/viewform
 
-Here are the criteria:
+### Rubric
 
-1.  Motors off, Quadcopter horizontal, your filter outputs should be zeros.
-2.  Good phase alignment (Gyro zeros aligned with angle maxima)
-3.  Minimal noise at high motor speeds.
+Possible points: 10
 
+Check list
 
+1.  Motors off, Quadcopter horizontal, your filter outputs should be zeros (1 point)
+2.  Moving the motors manually should show smooth output of the filter (1 point)
+3.  Quick movement of the FCB should show quick response from filter output (1 point)
+4.  Phase alignment should be good (gyro zero matches angle maxima/minima) (2 points)
+5.  All of the above must hold at with motors at 75% throttle (5 points)
+
+You will lose one point for each day late your solution is. 
