@@ -207,6 +207,8 @@ We've also included as "spinner".  If you put it between your quadcopter and
 whatever it's hanging from, it'll let the quad spin freely without twisting the
 monofilament.
 
+I recommend the Kreh Loop (https://www.netknots.com/fishing_knots/non-slip-loop-knot) to tie your monofilament to the wooden dowels.  It will create a small loop that will not close when you remove the monofilament from the dowel, so you can slip it back on again later.  The improved clinch know (https://www.netknots.com/fishing_knots/improved-clinch-knot) is a good choice for tying monofilament to the 'eye' of the spinner.
+
 The PID loop is different for yaw than it is for roll and pitch: Rather than
 controlling the yaw angle, you are controlling the yaw rate.  This means can
 just use the gyroscope output directly.  Neutral on the yaw stick should
