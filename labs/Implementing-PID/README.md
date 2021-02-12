@@ -185,8 +185,12 @@ You can apply similar to reasoning to the D term.  The error derivitive is measu
 ### Utilize the Bottom-Entry Programming Header
 
 The programming header on the FCB can accept the programming cable from the top
-or the bottom (fancy, no?).  Attaching the underside can be helpful to get the
+or the bottom (fancy, no?  Well, maybe not. It can be a little flaky.).  Attaching the underside can be helpful to get the
 programming cable out of the way.
+
+### Trim
+
+The calibration of your IMU is never perfect, and you will probably find that your quadcopter tends to drift/flop to one side.  Adding a trimming mechanism can help with this.  "Trimming" means adding a small, fixed offset to the controls (or the sensor readings) that can be adjusted in real time from the remote.  The D-pad of buttons is great for this.  It needs to be very easy to use -- it's not unusual to adjust trim while the quadcopter is airborne.  You probably only need to trim pitch and roll, and the D-pad is very intuitive for them.  If you want to be able to trim yaw as well, use the knob.
 
 ### The Yaw Axis
 
@@ -198,6 +202,8 @@ The first challenge is how to let the quad spin freely.  I've found the best
 way to do this is to use monofilament to hang the quadcopter from the four
 dowels we povided.  The real trick, though is to hang it upside down:
 
+![Hanging Quad for Yaw](images/hanging-quad.jpg)
+
 If you mount it right side up, it'll try to take off and start flopping around.
 Flying it upside down means the harder you drive the motors, the more stable it
 gets in the pitch/roll directions.  Just keep in mind that it'll look like it's
@@ -207,7 +213,7 @@ We've also included as "spinner".  If you put it between your quadcopter and
 whatever it's hanging from, it'll let the quad spin freely without twisting the
 monofilament.
 
-I recommend the Kreh Loop (https://www.netknots.com/fishing_knots/non-slip-loop-knot) to tie your monofilament to the wooden dowels.  It will create a small loop that will not close when you remove the monofilament from the dowel, so you can slip it back on again later.  The improved clinch know (https://www.netknots.com/fishing_knots/improved-clinch-knot) is a good choice for tying monofilament to the 'eye' of the spinner.
+I recommend the Kreh Loop (https://www.netknots.com/fishing_knots/non-slip-loop-knot) to tie your monofilament to the wooden dowels.  It will create a small loop that will not close when you remove the monofilament from the dowel, so you can slip it back on again later.  The improved clinch knot (https://www.netknots.com/fishing_knots/improved-clinch-knot) will work also.  It is a good choice for tying monofilament to the 'eye' of the spinner.
 
 The PID loop is different for yaw than it is for roll and pitch: Rather than
 controlling the yaw angle, you are controlling the yaw rate.  This means can
@@ -222,6 +228,13 @@ You want the lowest PID coefficients that give good results.  If they are too
 high, I find the quadcopter will overreactive to small yaw distrurbances while
 flying.
 
+A few things to watch out for:
+
+1.  You may notice some wobbling on the pitch and roll axes.  This is fine and seems to be a product of it being constrained and upside down.
+2.  Make sure your gimbals are calibrated so that the neutral position on the yaw stick corresponds to a yaw rate of zero.
+3.  Make sure your IMU is calibrated correctly.  It's easy to accidently calibrate the IMU while the quad is spinning slowly in the air.  This will make it impossible for you to achieve zero yaw and a neutral yaw stick position.
+4.  The trim mechanism is useful for testing.  It will let you set the yaw rate so you can vary the throttle while maintaining a constant yaw rate, which is a good way to verify that your PID works across throttle values.
+
 ### The Pitch Axis
 
 Tackle the pitch axis next with the quadcopter on the test stand.  This is
@@ -231,6 +244,8 @@ The behavior your are looking for is stable, level "flight" when the pitch
 stick is at neutral.  Ideally, you'll you see crisp responsive movement as you
 move the pitch stick.  It should also me symmetric -- moving the stick forward
 should have the opposite effect as moving it backwards.
+
+Again, you can use the trimming mechanism to demonstrate stable operation across throttle values.
 
 ### Tuning Resources
 
@@ -264,7 +279,7 @@ Once you’ve committed everything, create a tag called “PID-test-stand-2” B
 
 ### Rubric
 
-Possible points: 12
+Possible points: 13
 
 Check list (for each axis):
 
@@ -272,18 +287,19 @@ Yaw:
 
 1. Non-spin with yaw neutral.
 3. No visible oscillation
-4. Very little overshoot.
+4. Trim functional.
 5. Crisp, sharp start and stop.
 6. Constant yaw rate with increasing throttle.
 
 Pitch:
 
 1. Level "flight" with pitch at neutral.
-2. Only moderate oscillation
-3. Almost no oscillation
-4. Symmetrical, accurate movement pitching forward and back (pitch stick at 10degree position gives 10 degree tilt)
-5. Same amount of oscilation when pitched as when level
-6. Moderate overshoot
-7. Almost on overshoot.
+2. Only moderate oscillation at neutral.
+3. Almost no oscillation at neutral.
+4. Trim functional.
+5. Symmetric movement pitching forward and back (pitch stick at 10degree position gives 10 degree tilt)
+6. Same amount of oscilation when pitched as when level.
+7. Moderate overshoot
+8. Almost on overshoot.
 
 You will lose one point for each day late your solution is. 
