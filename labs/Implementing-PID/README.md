@@ -271,10 +271,10 @@ Check list (for each axis):
 Yaw:
 
 1. Non-spin with yaw neutral.
-2. Resists manual yaw (i.e., pushes back)
 3. No visible oscillation
-4. No overshoot.
+4. Very little overshoot.
 5. Crisp, sharp start and stop.
+6. Constant yaw rate with increasing throttle.
 
 Pitch:
 
