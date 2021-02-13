@@ -1,6 +1,6 @@
 # Flight
 
-To be completed in groups.  Check schedule for due date.
+To be completed in your groups.  This lab has several stages with different due dates.
 
 ## Tasks to Perform
 
@@ -82,4 +82,46 @@ You may also find that you have trouble getting your qudacopter off the ground c
 The bottom of the quadcopter may catch on the ground, causing it to tend to flip over.
 
 A (sometimes) solution to both of these problems is to give it a quick boost to get it off (and away from) the ground.  You can also try launching from your hand.  The downside is that both of these techniques will increase the severity of crashes.
+
+### Turn in Your Work
+
+This lab has 5 stages -- one per class meeting for the last few weeks of the quarter.  The goal is to force you to make progress toward flight and prevent you from waiting till the last minute.
+
+#### Commit your results:
+
+1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
+2. Updated version of `noise.txt` with updates filter configuration parameters
+   (if you changed them), and the your PID and values for each axis.
+
+Once you’ve committed everything, create a tag called “flight-1” Be sure to make it an “annotated” tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
+
+#### Demo your work:
+
+1. Demo your clean orientation measurements for the TA.
+2. Complete the reflection for this lab: https://docs.google.com/forms/d/e/1FAIpQLSfB8XsDV8FtTZYO1mv3FZrd9mUs1hDlFvQxnfAK0K2zptTjxQ/viewform
+
+### Rubric
+
+
+#### Stage 1
+
+Possible points: 10
+
+1. Roll works just as well as pitch on the test stand.
+
+#### Stage 2
+
+Possible points: 10
+
+#### Stage 3
+
+Possible points: 10
+
+#### Stage 4
+
+Possible points: 10
+
+#### Stage 5
+
+Possible points: 10
 
