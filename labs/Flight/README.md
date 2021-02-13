@@ -102,6 +102,14 @@ Once you’ve committed everything, create a tag called “flight-1” Be sure t
 
 ### Rubric
 
+The stage are based on the following levels that build to stable, sustained flight.
+
+1. "Roombaing" -- moving around the the floor with dowels installed with direction control and minimal yaw
+2. Repeated, vertical hopping (>6 inches, > 0.5 second)
+3. Repeated, vertical hopping (>12 inches, > 2 seconds)
+4.   
+
+
 
 #### Stage 1
 
@@ -111,7 +119,6 @@ Possible points: 10
 
 #### Stage 2
 
-Possible points: 10
 
 #### Stage 3
 
