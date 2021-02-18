@@ -5,7 +5,7 @@
 	<key>ApplicationVersion</key>
 	<array>
 		<string>com.omnigroup.OmniGraffle7</string>
-		<string>192.21.0.323236</string>
+		<string>196.7.0.336351</string>
 	</array>
 	<key>ColorProfiles</key>
 	<array>
@@ -117,7 +117,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2019-02-28 22:05:41 +0000</string>
+	<string>2021-02-16 18:29:35 +0000</string>
 	<key>Modifier</key>
 	<string>Steven Swanson</string>
 	<key>MovementHandleVisible</key>
@@ -148,7 +148,7 @@
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{612, 792}</string>
+			<string>{611.99997234344482, 792}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
@@ -212,6 +212,11 @@
 						<string>NO</string>
 					</dict>
 				</dict>
+				<key>Text</key>
+				<dict>
+					<key>TextAlongPathGlyphAnchor</key>
+					<string>center</string>
+				</dict>
 			</dict>
 			<key>BaseZoom</key>
 			<integer>0</integer>
@@ -229,6 +234,432 @@
 			<string>1 in = 1 in</string>
 			<key>GraphicsList</key>
 			<array>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>Helvetica</string>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>665</integer>
+						<key>Info</key>
+						<integer>12</integer>
+					</dict>
+					<key>ID</key>
+					<integer>670</integer>
+					<key>LogicalPath</key>
+					<dict>
+						<key>elements</key>
+						<array>
+							<dict>
+								<key>element</key>
+								<string>MOVETO</string>
+								<key>point</key>
+								<string>{262.125, 572.625}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{263.09207303235092, 572.625}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{263.09207303235092, 580.58024329224395}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{264.05914606470185, 580.58024329224395}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{264.05914606470185, 588.53548658448778}</string>
+							</dict>
+						</array>
+					</dict>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPoint</key>
+					<string>{263.09207303235092, 580.58024329224395}</string>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{262.125, 572.625}</string>
+						<string>{264.05914606470185, 588.53548658448778}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>Legacy</key>
+							<false/>
+							<key>LineType</key>
+							<integer>2</integer>
+						</dict>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>Helvetica</string>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>ID</key>
+					<integer>669</integer>
+					<key>LogicalPath</key>
+					<dict>
+						<key>elements</key>
+						<array>
+							<dict>
+								<key>element</key>
+								<string>MOVETO</string>
+								<key>point</key>
+								<string>{244.63439444414195, 570.76588929532136}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{244.63439444414195, 579.50059170648433}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{242.3808928908737, 579.50059170648433}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{242.3808928908737, 588.23529411764719}</string>
+							</dict>
+						</array>
+					</dict>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPoint</key>
+					<string>{243.50764366750781, 579.50059170648433}</string>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{244.63439444414195, 570.76588929532136}</string>
+						<string>{242.3808928908737, 588.23529411764719}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>Legacy</key>
+							<false/>
+							<key>LineType</key>
+							<integer>2</integer>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>314</integer>
+						<key>Info</key>
+						<integer>1</integer>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>LineGraphic</string>
+					<key>FontInfo</key>
+					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
+						<key>Font</key>
+						<string>Helvetica</string>
+						<key>Size</key>
+						<real>12</real>
+					</dict>
+					<key>Head</key>
+					<dict>
+						<key>ID</key>
+						<integer>665</integer>
+						<key>Info</key>
+						<integer>2</integer>
+					</dict>
+					<key>ID</key>
+					<integer>668</integer>
+					<key>LogicalPath</key>
+					<dict>
+						<key>elements</key>
+						<array>
+							<dict>
+								<key>element</key>
+								<string>MOVETO</string>
+								<key>point</key>
+								<string>{300.86964554894286, 598.5}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{292.74410466912707, 598.5}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{292.74410466912707, 598.53548698185205}</string>
+							</dict>
+							<dict>
+								<key>element</key>
+								<string>LINETO</string>
+								<key>point</key>
+								<string>{284.61856378931122, 598.53548698185205}</string>
+							</dict>
+						</array>
+					</dict>
+					<key>OrthogonalBarAutomatic</key>
+					<true/>
+					<key>OrthogonalBarPoint</key>
+					<string>{292.74410466912707, 598.51774349092602}</string>
+					<key>OrthogonalBarPosition</key>
+					<real>-1</real>
+					<key>Points</key>
+					<array>
+						<string>{300.86964554894286, 598.5}</string>
+						<string>{284.61856378931122, 598.53548698185205}</string>
+					</array>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>HeadArrow</key>
+							<string>FilledArrow</string>
+							<key>Legacy</key>
+							<false/>
+							<key>LineType</key>
+							<integer>2</integer>
+						</dict>
+					</dict>
+					<key>Tail</key>
+					<dict>
+						<key>ID</key>
+						<integer>377</integer>
+						<key>Info</key>
+						<integer>-1</integer>
+						<key>Position</key>
+						<real>0.53486676942020339</real>
+					</dict>
+				</dict>
+				<dict>
+					<key>Class</key>
+					<string>Group</string>
+					<key>Graphics</key>
+					<array>
+						<dict>
+							<key>Bounds</key>
+							<string>{{229.05565558758903, 588.53548658448778}, {28.88818359375, 16}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>FitText</key>
+							<string>YES</string>
+							<key>Flow</key>
+							<string>Resize</string>
+							<key>FontInfo</key>
+							<dict>
+								<key>Color</key>
+								<dict>
+									<key>space</key>
+									<string>gg22</string>
+									<key>w</key>
+									<string>0</string>
+								</dict>
+								<key>Font</key>
+								<string>Helvetica</string>
+								<key>Size</key>
+								<real>13</real>
+							</dict>
+							<key>ID</key>
+							<integer>666</integer>
+							<key>Magnets</key>
+							<array>
+								<string>{-8.8817841970012523e-16, -0.49999999999999645}</string>
+							</array>
+							<key>Rotation</key>
+							<real>180</real>
+							<key>Style</key>
+							<dict>
+								<key>fill</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>Pad</key>
+								<real>0.0</real>
+								<key>Text</key>
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
+
+\f0\fs26 \cf0 Filter}</string>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+								<key>VerticalPad</key>
+								<real>0.0</real>
+							</dict>
+							<key>TextRotation</key>
+							<real>180</real>
+							<key>Wrap</key>
+							<string>NO</string>
+						</dict>
+						<dict>
+							<key>Bounds</key>
+							<string>{{233.49972834009245, 557.41665113526903}, {20, 82.2376708984375}}</string>
+							<key>Class</key>
+							<string>ShapedGraphic</string>
+							<key>ID</key>
+							<integer>665</integer>
+							<key>Magnets</key>
+							<array>
+								<string>{-0.59628479784302701, -1.1925696134567261}</string>
+								<string>{1.9868215517249155e-08, -1.3333333730697632}</string>
+								<string>{0.59628487781105122, -1.1925696134567261}</string>
+								<string>{1.1925696134567261, -0.59628480672836304}</string>
+								<string>{0.5, -0.15973257231506111}</string>
+								<string>{0.5, -0.050062958839463434}</string>
+								<string>{0.59628465308492196, 1.1925697326660156}</string>
+								<string>{0, 1.3333333730697632}</string>
+								<string>{-0.5962849488937394, 1.1925696134567261}</string>
+								<string>{-1.1925697326660156, 0.5962844398368361}</string>
+								<string>{-1.3333333730697632, -6.3578289655197295e-07}</string>
+								<string>{-1.1925696134567261, -0.59628480672836304}</string>
+							</array>
+							<key>Rotation</key>
+							<real>90</real>
+							<key>Style</key>
+							<dict>
+								<key>shadow</key>
+								<dict>
+									<key>Draws</key>
+									<string>NO</string>
+								</dict>
+								<key>stroke</key>
+								<dict>
+									<key>Width</key>
+									<real>0.5</real>
+								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
+						</dict>
+					</array>
+					<key>ID</key>
+					<integer>667</integer>
+					<key>Style</key>
+					<dict>
+						<key>fill</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>shadow</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+						<key>stroke</key>
+						<dict>
+							<key>Draws</key>
+							<string>NO</string>
+						</dict>
+					</dict>
+				</dict>
 				<dict>
 					<key>Bounds</key>
 					<string>{{1017.1253064217876, 737.11584024673766}, {63, 24}}</string>
@@ -257,7 +688,7 @@
 						<key>ID</key>
 						<integer>663</integer>
 						<key>Position</key>
-						<real>0.35667670127355483</real>
+						<real>0.35667669773101807</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -276,33 +707,16 @@
 					</dict>
 					<key>Text</key>
 					<dict>
-						<key>RTFD</key>
-						<data>
-						BAtzdHJlYW10eXBlZIHoA4QBQISE
-						hBJOU0F0dHJpYnV0ZWRTdHJpbmcA
-						hIQITlNPYmplY3QAhZKEhIQITlNT
-						dHJpbmcBlIQBKw1maWx0ZXJlZCBw
-						LCByhoQCaUkBDZKEhIQMTlNEaWN0
-						aW9uYXJ5AJSEAWkDkoSWlgdOU0Nv
-						bG9yhpKEhIQHTlNDb2xvcgCUhAFj
-						A4QCZmYAAYaShJaWEE5TUGFyYWdy
-						YXBoU3R5bGWGkoSEhBdOU011dGFi
-						bGVQYXJhZ3JhcGhTdHlsZQCEhBBO
-						U1BhcmFncmFwaFN0eWxlAJSEBEND
-						QFMCAIUAhpKElpYGTlNGb250hpKE
-						hIQGTlNGb250HpSZJIQFWzM2Y10G
-						AAAAHAAAAP/+SABlAGwAdgBlAHQA
-						aQBjAGEATgBlAHUAZQCEAWYLmwCb
-						AZsAmwCGhoY=
-						</data>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\csgray\c0;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
-\f0\fs22 \cf2 filtered p, r}</string>
+\f0\fs22 \cf0 filtered p, r}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -365,17 +779,6 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<real>0.0</real>
-								<key>g</key>
-								<real>0.0</real>
-								<key>r</key>
-								<real>0.0</real>
-								<key>space</key>
-								<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
-							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
@@ -418,7 +821,7 @@
 						<key>ID</key>
 						<integer>658</integer>
 						<key>Position</key>
-						<real>0.43205688985954066</real>
+						<real>0.43205690383911133</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -437,33 +840,16 @@
 					</dict>
 					<key>Text</key>
 					<dict>
-						<key>RTFD</key>
-						<data>
-						BAtzdHJlYW10eXBlZIHoA4QBQISE
-						hBJOU0F0dHJpYnV0ZWRTdHJpbmcA
-						hIQITlNPYmplY3QAhZKEhIQITlNT
-						dHJpbmcBlIQBKwtDLWdhaW4gcCwg
-						coaEAmlJAQuShISEDE5TRGljdGlv
-						bmFyeQCUhAFpA5KElpYHTlNDb2xv
-						coaShISEB05TQ29sb3IAlIQBYwOE
-						AmZmAAGGkoSWlhBOU1BhcmFncmFw
-						aFN0eWxlhpKEhIQXTlNNdXRhYmxl
-						UGFyYWdyYXBoU3R5bGUAhIQQTlNQ
-						YXJhZ3JhcGhTdHlsZQCUhARDQ0BT
-						AgCFAIaShJaWBk5TRm9udIaShISE
-						Bk5TRm9udB6UmSSEBVszNmNdBgAA
-						ABwAAAD//kgAZQBsAHYAZQB0AGkA
-						YwBhAE4AZQB1AGUAhAFmC5sAmwGb
-						AJsAhoaG
-						</data>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\csgray\c0;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
-\f0\fs22 \cf2 C-gain p, r}</string>
+\f0\fs22 \cf0 C-gain p, r}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -496,7 +882,7 @@
 						<key>ID</key>
 						<integer>655</integer>
 						<key>Position</key>
-						<real>0.44880413665186158</real>
+						<real>0.44880414009094238</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -515,33 +901,16 @@
 					</dict>
 					<key>Text</key>
 					<dict>
-						<key>RTFD</key>
-						<data>
-						BAtzdHJlYW10eXBlZIHoA4QBQISE
-						hBJOU0F0dHJpYnV0ZWRTdHJpbmcA
-						hIQITlNPYmplY3QAhZKEhIQITlNT
-						dHJpbmcBlIQBKwphY2NlbCBwLCBy
-						hoQCaUkBCpKEhIQMTlNEaWN0aW9u
-						YXJ5AJSEAWkDkoSWlgdOU0NvbG9y
-						hpKEhIQHTlNDb2xvcgCUhAFjA4QC
-						ZmYAAYaShJaWEE5TUGFyYWdyYXBo
-						U3R5bGWGkoSEhBdOU011dGFibGVQ
-						YXJhZ3JhcGhTdHlsZQCEhBBOU1Bh
-						cmFncmFwaFN0eWxlAJSEBENDQFMC
-						AIUAhpKElpYGTlNGb250hpKEhIQG
-						TlNGb250HpSZJIQFWzM2Y10GAAAA
-						HAAAAP/+SABlAGwAdgBlAHQAaQBj
-						AGEATgBlAHUAZQCEAWYJmwCbAZsA
-						mwCGhoY=
-						</data>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\csgray\c0;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
-\f0\fs18 \cf2 accel p, r}</string>
+\f0\fs18 \cf0 accel p, r}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -609,17 +978,6 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<real>0.0</real>
-								<key>g</key>
-								<real>0.0</real>
-								<key>r</key>
-								<real>0.0</real>
-								<key>space</key>
-								<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
-							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
@@ -692,17 +1050,6 @@
 						</dict>
 						<key>stroke</key>
 						<dict>
-							<key>Color</key>
-							<dict>
-								<key>b</key>
-								<real>0.0</real>
-								<key>g</key>
-								<real>0.0</real>
-								<key>r</key>
-								<real>0.0</real>
-								<key>space</key>
-								<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
-							</dict>
 							<key>HeadArrow</key>
 							<string>FilledArrow</string>
 							<key>Legacy</key>
@@ -719,7 +1066,7 @@
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{944.53712829331891, 614.58193174691576}, {61, 16}}</string>
+					<string>{{944.53712830514291, 614.58193199232187}, {61, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -747,7 +1094,7 @@
 						<key>ID</key>
 						<integer>651</integer>
 						<key>Position</key>
-						<real>0.42062833753880091</real>
+						<real>0.42062833905220032</real>
 						<key>RotationType</key>
 						<integer>1</integer>
 					</dict>
@@ -773,13 +1120,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 gyro p, y, r}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -895,13 +1244,15 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs22 \cf0 comp filter}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -954,13 +1305,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 Fast}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1017,13 +1370,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 Slow}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1250,13 +1605,15 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Radio}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -1318,13 +1675,15 @@
 								<key>Pad</key>
 								<real>0.0</real>
 								<key>Text</key>
-								<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+								<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 GetAngles()}</string>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>left</string>
 								<key>VerticalPad</key>
 								<real>0.0</real>
 							</dict>
@@ -1369,6 +1728,11 @@
 									<key>Width</key>
 									<real>0.5</real>
 								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
 							</dict>
 						</dict>
 					</array>
@@ -1447,13 +1811,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1514,13 +1880,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1581,13 +1949,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1648,13 +2018,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -1828,6 +2200,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -1876,7 +2253,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -1889,6 +2266,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -1933,7 +2315,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -1946,6 +2328,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -2025,6 +2412,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -2091,6 +2483,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -2139,7 +2536,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -2152,6 +2549,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -2196,7 +2598,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -2209,6 +2611,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -2288,6 +2695,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -2354,6 +2766,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -2402,7 +2819,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -2415,6 +2832,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -2459,7 +2881,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -2472,6 +2894,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -2551,6 +2978,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -2617,6 +3049,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -2665,7 +3102,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -2678,6 +3115,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -2722,7 +3164,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -2735,6 +3177,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -2814,6 +3261,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -2882,13 +3334,15 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Mixer}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -2947,13 +3401,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 accel x,y,z}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -3044,13 +3500,15 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 IMU}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -3105,13 +3563,15 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -3206,6 +3666,11 @@
 							<key>Width</key>
 							<real>0.5</real>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -3458,18 +3923,20 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Radio}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{328.94201095834228, 976.7067787733115}, {28, 16}}</string>
+					<string>{{328.94201171852222, 976.70677876859679}, {28, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -3497,7 +3964,7 @@
 						<key>ID</key>
 						<integer>477</integer>
 						<key>Position</key>
-						<real>0.32354699560617634</real>
+						<real>0.32354700565338135</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -3521,13 +3988,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -3588,13 +4057,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -3655,13 +4126,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -3722,13 +4195,15 @@
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -3755,20 +4230,20 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{318.46217434074509, 1111.1844200633222}</string>
+								<string>{318.46217434074515, 1111.1844200633222}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{394.12301549807302, 1110.5524519028033}</string>
+								<string>{394.12301549807307, 1110.5524519028033}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{318.46217434074509, 1111.1844200633222}</string>
-						<string>{394.12301549807302, 1110.5524519028033}</string>
+						<string>{318.46217434074515, 1111.1844200633222}</string>
+						<string>{394.12301549807307, 1110.5524519028033}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3816,20 +4291,20 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{318.46217434074509, 984.85860501583056}</string>
+								<string>{318.46217434074515, 984.85860501583056}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{394.12301549807313, 984.38934938319744}</string>
+								<string>{394.12301549807319, 984.38934938319744}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{318.46217434074509, 984.85860501583056}</string>
-						<string>{394.12301549807313, 984.38934938319744}</string>
+						<string>{318.46217434074515, 984.85860501583056}</string>
+						<string>{394.12301549807319, 984.38934938319744}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -3902,6 +4377,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -3950,7 +4430,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -3963,6 +4443,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -4007,7 +4492,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4020,6 +4505,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -4099,6 +4589,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -4165,6 +4660,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -4213,7 +4713,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4226,6 +4726,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -4270,7 +4775,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4283,6 +4788,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -4362,6 +4872,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -4428,6 +4943,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -4476,7 +4996,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4489,6 +5009,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -4533,7 +5058,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4546,6 +5071,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -4625,6 +5155,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -4691,6 +5226,11 @@
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -4739,7 +5279,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4752,6 +5292,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -4796,7 +5341,7 @@
 														<key>r</key>
 														<real>1.0012412070000001</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -4809,6 +5354,11 @@
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -4888,6 +5438,11 @@
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -4956,18 +5511,20 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Mixer}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{183.88683676500793, 946.74012813738409}, {18, 26}}</string>
+					<string>{{183.88683477629962, 946.74012812919602}, {18, 26}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -4995,7 +5552,7 @@
 						<key>ID</key>
 						<integer>546</integer>
 						<key>Position</key>
-						<real>0.77196083659052883</real>
+						<real>0.77196085453033447</real>
 						<key>RotationType</key>
 						<integer>4</integer>
 					</dict>
@@ -5015,13 +5572,15 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -5039,7 +5598,7 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{278.46217434074509, 960.09246826171875}</string>
+								<string>{278.46217434074515, 960.09246826171875}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -5051,7 +5610,7 @@
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{278.46217434074509, 960.09246826171875}</string>
+						<string>{278.46217434074515, 960.09246826171875}</string>
 						<string>{167.6076641522788, 959.63604596752339}</string>
 					</array>
 					<key>Style</key>
@@ -5116,6 +5675,11 @@
 							<key>Width</key>
 							<real>0.5</real>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5206,20 +5770,20 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{318.46217434074509, 1069.0758228908308}</string>
+								<string>{318.46217434074515, 1069.0758228908308}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{394.12301549807302, 1069.4804614600728}</string>
+								<string>{394.12301549807307, 1069.4804614600728}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{318.46217434074509, 1069.0758228908308}</string>
-						<string>{394.12301549807302, 1069.4804614600728}</string>
+						<string>{318.46217434074515, 1069.0758228908308}</string>
+						<string>{394.12301549807307, 1069.4804614600728}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5267,20 +5831,20 @@
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{318.46217434074509, 1026.9672100316611}</string>
+								<string>{318.46217434074515, 1026.9672100316611}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{394.12301549807336, 1025.2257499893474}</string>
+								<string>{394.12301549807341, 1025.2257499893474}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{318.46217434074509, 1026.9672100316611}</string>
-						<string>{394.12301549807336, 1025.2257499893474}</string>
+						<string>{318.46217434074515, 1026.9672100316611}</string>
+						<string>{394.12301549807341, 1025.2257499893474}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5340,7 +5904,7 @@
 						<key>ID</key>
 						<integer>456</integer>
 						<key>Position</key>
-						<real>0.47058823553379608</real>
+						<real>0.47058823704719543</real>
 						<key>RotationType</key>
 						<integer>0</integer>
 					</dict>
@@ -5360,8 +5924,8 @@
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \deftab720
@@ -5369,6 +5933,8 @@
 
 \f0\fs22 \cf0 Tuning\
 Parameters}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -5472,13 +6038,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 Gimbals}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -5518,6 +6086,11 @@ Parameters}</string>
 							<real>0.5</real>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -5551,13 +6124,13 @@ Parameters}</string>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{348.03283261096374, 59.706898936776454}</string>
+								<string>{348.03283261096368, 59.706898936776454}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{348.03283261096374, 46.48113194424667}</string>
+								<string>{348.03283261096368, 46.48113194424667}</string>
 							</dict>
 						</array>
 					</dict>
@@ -5570,7 +6143,7 @@ Parameters}</string>
 					<key>Points</key>
 					<array>
 						<string>{331.29851557451923, 66.706898936776454}</string>
-						<string>{348.03283261096374, 46.48113194424667}</string>
+						<string>{348.03283261096368, 46.48113194424667}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -5638,13 +6211,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Radio}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -5701,13 +6276,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 -512-511}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -5768,13 +6345,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 -512-511}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -5835,13 +6414,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 -512-511}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -5902,13 +6483,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 0-1023}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -5965,13 +6548,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6075,13 +6660,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6185,13 +6772,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6295,13 +6884,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6391,13 +6982,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Scale}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -6450,13 +7043,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6560,13 +7155,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6670,13 +7267,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6780,13 +7379,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -6986,6 +7587,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -7157,6 +7763,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -7219,6 +7830,11 @@ Parameters}</string>
 							<real>0.5</real>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -7267,6 +7883,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 						<dict>
 							<key>Bounds</key>
@@ -7309,6 +7930,11 @@ Parameters}</string>
 									<key>Width</key>
 									<real>0.5</real>
 								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
 							</dict>
 						</dict>
 						<dict>
@@ -7353,6 +7979,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 						<dict>
 							<key>Bounds</key>
@@ -7395,6 +8026,11 @@ Parameters}</string>
 									<key>Width</key>
 									<real>0.5</real>
 								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
 							</dict>
 						</dict>
 					</array>
@@ -7471,13 +8107,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 Fast}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -7534,13 +8172,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 Slow}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -7759,13 +8399,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 Gimbals}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -7830,13 +8472,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Radio}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -7893,13 +8537,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 err\sub y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -7960,13 +8606,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 err\sub p}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8027,13 +8675,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 err\sub r}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8094,13 +8744,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 SP-\uc0\u952 \sub y\nosupersub /s}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8161,13 +8813,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 SP-\uc0\u952 \sub r }</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8228,13 +8882,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 SP-\uc0\u952 \sub p}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8243,7 +8899,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{210.10991403373646, 585.23851538372628}, {70, 16}}</string>
+					<string>{{210.67125967851689, 554.76588929532147}, {67.92626953125, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -8295,13 +8951,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
-\f0\fs26 \cf0 GetAngles()}</string>
+\f0\fs26 \cf0 Compute \uc0\u952  }</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8364,13 +9022,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 offset}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8431,13 +9091,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 offset}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8498,13 +9160,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 offset}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8565,13 +9229,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8632,13 +9298,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8699,13 +9367,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8766,13 +9436,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 pwm}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -8946,6 +9618,11 @@ Parameters}</string>
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -8994,7 +9671,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9007,6 +9684,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -9051,7 +9733,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9064,6 +9746,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -9143,6 +9830,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -9209,6 +9901,11 @@ Parameters}</string>
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -9257,7 +9954,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9270,6 +9967,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -9314,7 +10016,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9327,6 +10029,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -9406,6 +10113,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -9472,6 +10184,11 @@ Parameters}</string>
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -9520,7 +10237,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9533,6 +10250,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -9577,7 +10299,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9590,6 +10312,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -9669,6 +10396,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -9735,6 +10467,11 @@ Parameters}</string>
 											<real>0.5</real>
 										</dict>
 									</dict>
+									<key>Text</key>
+									<dict>
+										<key>TextAlongPathGlyphAnchor</key>
+										<string>center</string>
+									</dict>
 								</dict>
 								<dict>
 									<key>Class</key>
@@ -9783,7 +10520,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9796,6 +10533,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 										<dict>
@@ -9840,7 +10582,7 @@ Parameters}</string>
 														<key>r</key>
 														<real>1.0012412071228027</real>
 														<key>space</key>
-														<string>9eaea0911d89d63e39e95f2e2116eaec7e0bb91e</string>
+														<string>srgb</string>
 													</dict>
 												</dict>
 												<key>shadow</key>
@@ -9853,6 +10595,11 @@ Parameters}</string>
 													<key>Width</key>
 													<real>0.5</real>
 												</dict>
+											</dict>
+											<key>Text</key>
+											<dict>
+												<key>TextAlongPathGlyphAnchor</key>
+												<string>center</string>
 											</dict>
 										</dict>
 									</array>
@@ -9931,6 +10678,11 @@ Parameters}</string>
 									<key>Width</key>
 									<real>0.5</real>
 								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
 							</dict>
 						</dict>
 					</array>
@@ -10187,13 +10939,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Mixer}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -10485,13 +11239,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 PID R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -10540,13 +11296,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 PID P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -10596,13 +11354,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 PID Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -10858,7 +11618,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{312.58670278872, 766.04789010740024}, {13, 22}}</string>
+					<string>{{312.89967392282625, 766.04789010740024}, {13, 22}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -10910,13 +11670,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 \uc0\u952 \sub r}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -10925,7 +11687,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{313.40414895318645, 709.31913034177535}, {16, 22}}</string>
+					<string>{{313.28151349580878, 709.31913034177535}, {16, 22}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -10977,13 +11739,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 \uc0\u952 \sub p}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11020,13 +11784,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 conv}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -11061,13 +11827,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 conv}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -11102,20 +11870,22 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 conv}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{291.84516513853742, 651.41235151198509}, {19, 16}}</string>
+					<string>{{291.36964554894286, 644.52632545237861}, {18.0654296875, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11167,13 +11937,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 \uc0\u952 /s}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11182,7 +11954,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{204.34334105154167, 534.96297424099771}, {41, 16}}</string>
+					<string>{{203.86782146400827, 504.49034786908089}, {41, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11236,13 +12008,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 accel z}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11251,7 +12025,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{224.36944909253759, 534.96297424099771}, {41, 16}}</string>
+					<string>{{223.89392949461421, 504.49034675782036}, {41, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11305,13 +12079,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 accel y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11320,7 +12096,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{243.96636960716489, 534.96297424099771}, {41, 16}}</string>
+					<string>{{243.49084998248168, 504.49034697783361}, {41, 16}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>FitText</key>
@@ -11374,13 +12150,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 accel x}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -11437,13 +12215,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs22 \cf0 cmp}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -11468,19 +12248,19 @@ Parameters}</string>
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{289.44516513853745, 513.72262608840481}</string>
+								<string>{288.96964554894288, 483.25}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{301.34516513853742, 513.72262608840481}</string>
+								<string>{300.86964554894286, 483.25}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{301.34516513853742, 668.1714862988066}</string>
+								<string>{300.86964554894286, 668.1714862988066}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -11498,7 +12278,7 @@ Parameters}</string>
 					<real>0.0</real>
 					<key>Points</key>
 					<array>
-						<string>{289.44516513853745, 513.72262608840481}</string>
+						<string>{288.96964554894288, 483.25}</string>
 						<string>{341.77091825287312, 668.1714862988066}</string>
 					</array>
 					<key>Style</key>
@@ -11551,13 +12331,13 @@ Parameters}</string>
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{252.12725606374102, 610.21897597828399}</string>
+								<string>{251.73178233810756, 609.41176470588243}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{252.12725606374102, 720.31913034177535}</string>
+								<string>{251.73178233810756, 720.31913034177535}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -11575,7 +12355,7 @@ Parameters}</string>
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{252.12725606374102, 610.21897597828399}</string>
+						<string>{251.73178233810756, 609.41176470588243}</string>
 						<string>{341.77091825287312, 720.31913034177535}</string>
 					</array>
 					<key>Style</key>
@@ -11635,13 +12415,13 @@ Parameters}</string>
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{260.12066317561181, 607.29926795924916}</string>
+								<string>{262.35294117647055, 608.53548658448778}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{260.12066317561181, 777.04789010740024}</string>
+								<string>{262.35294117647055, 777.04789010740024}</string>
 							</dict>
 							<dict>
 								<key>element</key>
@@ -11659,7 +12439,7 @@ Parameters}</string>
 					<real>-1</real>
 					<key>Points</key>
 					<array>
-						<string>{260.12066317561181, 607.29926795924916}</string>
+						<string>{262.35294117647055, 608.53548658448778}</string>
 						<string>{341.77091825287312, 777.04789010740024}</string>
 					</array>
 					<key>Style</key>
@@ -11735,13 +12515,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs22 \cf0 cmp}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -11796,13 +12578,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs22 \cf0 cmp}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -11827,20 +12611,20 @@ Parameters}</string>
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{225.05592411326208, 513.72262608840481}</string>
+								<string>{224.58040452366751, 483.25}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{224.55053005874015, 583.23850373583105}</string>
+								<string>{224.07501046914558, 552.76587764742624}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{225.05592411326208, 513.72262608840481}</string>
-						<string>{224.55053005874015, 583.23850373583105}</string>
+						<string>{224.58040452366751, 483.25}</string>
+						<string>{224.07501046914558, 552.76587764742624}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11890,20 +12674,20 @@ Parameters}</string>
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{244.6948416108587, 513.72262608840481}</string>
+								<string>{244.21932202126413, 483.25}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{245.10995268509669, 583.23850373583105}</string>
+								<string>{244.63443309550212, 552.76587764742624}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{244.6948416108587, 513.72262608840481}</string>
-						<string>{245.10995268509669, 583.23850373583105}</string>
+						<string>{244.21932202126413, 483.25}</string>
+						<string>{244.63443309550212, 552.76587764742624}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11953,20 +12737,20 @@ Parameters}</string>
 								<key>element</key>
 								<string>MOVETO</string>
 								<key>point</key>
-								<string>{263.59299588818027, 513.72262608840481}</string>
+								<string>{263.1174762985857, 483.25}</string>
 							</dict>
 							<dict>
 								<key>element</key>
 								<string>LINETO</string>
 								<key>point</key>
-								<string>{265.66935080271742, 583.23850373583105}</string>
+								<string>{265.19383121312285, 552.76587764742624}</string>
 							</dict>
 						</array>
 					</dict>
 					<key>Points</key>
 					<array>
-						<string>{263.59299588818027, 513.72262608840481}</string>
-						<string>{265.66935080271742, 583.23850373583105}</string>
+						<string>{263.1174762985857, 483.25}</string>
+						<string>{265.19383121312285, 552.76587764742624}</string>
 					</array>
 					<key>Style</key>
 					<dict>
@@ -11998,7 +12782,7 @@ Parameters}</string>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{235.10993307810804, 552.1196682866123}, {20, 82.2376708984375}}</string>
+					<string>{{234.63441348851347, 521.64704219820749}, {20, 82.2376708984375}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -12033,10 +12817,15 @@ Parameters}</string>
 							<real>0.5</real>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Bounds</key>
-					<string>{{234.87077333543016, 442.84294926955715}, {40, 101.75935363769531}}</string>
+					<string>{{234.39525374583559, 412.37032318115234}, {40, 101.75935363769531}}</string>
 					<key>Class</key>
 					<string>ShapedGraphic</string>
 					<key>ID</key>
@@ -12078,13 +12867,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 IMU}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 					<key>TextRotation</key>
 					<real>270</real>
@@ -12100,6 +12891,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -12132,13 +12930,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -12224,6 +13024,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -12256,13 +13063,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -12362,6 +13171,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -12394,13 +13210,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -12500,6 +13318,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -12532,13 +13357,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -12633,6 +13460,11 @@ Parameters}</string>
 							<key>Width</key>
 							<real>0.5</real>
 						</dict>
+					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
 					</dict>
 				</dict>
 				<dict>
@@ -12860,6 +13692,11 @@ Parameters}</string>
 							<real>0.5</real>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -12980,13 +13817,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Radio}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -13000,6 +13839,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13032,13 +13878,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -13103,6 +13951,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13135,13 +13990,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -13206,6 +14063,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13238,13 +14102,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -13309,6 +14175,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13341,13 +14214,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -13437,13 +14312,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Deadband}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -13500,13 +14377,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 -512-511}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13567,13 +14446,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 -512-511}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13634,13 +14515,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 -512-511}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13701,13 +14584,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs20 \cf0 0-1023}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -13725,6 +14610,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13757,13 +14649,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -13828,6 +14722,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13860,13 +14761,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -13931,6 +14834,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -13963,13 +14873,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -14034,6 +14946,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -14066,13 +14985,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -14176,13 +15097,15 @@ Parameters}</string>
 						<key>Pad</key>
 						<real>0.0</real>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\partightenfactor0
 
 \f0\fs26 \cf0 ~180 - ~900}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 						<key>VerticalPad</key>
 						<real>0.0</real>
 					</dict>
@@ -14225,13 +15148,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Scale}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 				</dict>
 				<dict>
@@ -14245,6 +15170,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -14277,13 +15209,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 R}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -14348,6 +15282,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -14380,13 +15321,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 P}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -14451,6 +15394,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -14483,13 +15433,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 Y}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -14554,6 +15506,13 @@ Parameters}</string>
 					<string>Resize</string>
 					<key>FontInfo</key>
 					<dict>
+						<key>Color</key>
+						<dict>
+							<key>space</key>
+							<string>gg22</string>
+							<key>w</key>
+							<string>0</string>
+						</dict>
 						<key>Font</key>
 						<string>Helvetica</string>
 						<key>Size</key>
@@ -14586,13 +15545,15 @@ Parameters}</string>
 					<key>Text</key>
 					<dict>
 						<key>Text</key>
-						<string>{\rtf1\ansi\ansicpg1252\cocoartf1671
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+						<string>{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\qc\partightenfactor0
 
 \f0\fs26 \cf0 T}</string>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>left</string>
 					</dict>
 					<key>Wrap</key>
 					<string>NO</string>
@@ -14792,6 +15753,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -14963,6 +15929,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 					</array>
 					<key>ID</key>
@@ -15025,6 +15996,11 @@ Parameters}</string>
 							<real>0.5</real>
 						</dict>
 					</dict>
+					<key>Text</key>
+					<dict>
+						<key>TextAlongPathGlyphAnchor</key>
+						<string>center</string>
+					</dict>
 				</dict>
 				<dict>
 					<key>Class</key>
@@ -15073,6 +16049,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 						<dict>
 							<key>Bounds</key>
@@ -15115,6 +16096,11 @@ Parameters}</string>
 									<key>Width</key>
 									<real>0.5</real>
 								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
 							</dict>
 						</dict>
 						<dict>
@@ -15159,6 +16145,11 @@ Parameters}</string>
 									<real>0.5</real>
 								</dict>
 							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
+							</dict>
 						</dict>
 						<dict>
 							<key>Bounds</key>
@@ -15201,6 +16192,11 @@ Parameters}</string>
 									<key>Width</key>
 									<real>0.5</real>
 								</dict>
+							</dict>
+							<key>Text</key>
+							<dict>
+								<key>TextAlongPathGlyphAnchor</key>
+								<string>center</string>
 							</dict>
 						</dict>
 					</array>
@@ -15249,23 +16245,6 @@ Parameters}</string>
 					<true/>
 				</dict>
 			</array>
-			<key>LayoutInfo</key>
-			<dict>
-				<key>Animate</key>
-				<string>NO</string>
-				<key>circoMinDist</key>
-				<real>18</real>
-				<key>circoSeparation</key>
-				<real>0.0</real>
-				<key>layoutEngine</key>
-				<string>dot</string>
-				<key>neatoLineLength</key>
-				<real>0.20000000298023224</real>
-				<key>neatoSeparation</key>
-				<real>0.0</real>
-				<key>twopiSeparation</key>
-				<real>0.0</real>
-			</dict>
 			<key>Orientation</key>
 			<integer>2</integer>
 			<key>PrintOnePage</key>
@@ -15295,7 +16274,7 @@ Parameters}</string>
 		<key>CurrentSheet</key>
 		<integer>0</integer>
 		<key>Frame</key>
-		<string>{{-1, 0}, {1680, 1027}}</string>
+		<string>{{0, 68}, {1680, 1027}}</string>
 		<key>ShowInfo</key>
 		<true/>
 		<key>ShowRuler</key>
@@ -15307,7 +16286,7 @@ Parameters}</string>
 		<key>Sidebar_Tab</key>
 		<integer>0</integer>
 		<key>VisibleRegion</key>
-		<string>{{699.71751412429421, 422.31638418079098}, {632.20338983050851, 509.60451977401129}}</string>
+		<string>{{52.352941176470502, 390.00000000000011}, {667.05882352941194, 539.41176470588232}}</string>
 		<key>WindowInfo_InspectorTab</key>
 		<array>
 			<string>com.omnigroup.OmniGraffle.inspectorGroup.object</string>
@@ -15316,7 +16295,7 @@ Parameters}</string>
 		<array>
 			<array>
 				<string>Canvas 1</string>
-				<real>1.77</real>
+				<real>1.7</real>
 				<real>2.7400000095367432</real>
 			</array>
 		</array>
