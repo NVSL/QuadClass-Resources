@@ -32,8 +32,9 @@ Commit your final design to your github repo. This should include
 * Your final `hardware/quadcopter.cam.zip`. Please be _certain_ that this the right cam files. I suggest deleting all cam files in your repo, regenerating them and zipping them up. Be sure to commit.
 * A file called `hardware/metadata.txt` that has the following:
 
-    1. Color you want your quadcopter to be. Choices are: Green, red, white, yellow, blue, or black.
-    2. The dimensions of your board in mm.
+    1. Color you want your quadcopter to be. Choices are: Green, White, Blue, Black, Red, or Yellow.
+    2. Silkscreen colors: White, Blue, Black, Red, Yellow (different than your board color).
+    3. The dimensions of your board in mm.
 
 Submit it via Eaglint. You can expect the reviews to be quite stringent.
 
@@ -43,7 +44,7 @@ Submit it via Eaglint. You can expect the reviews to be quite stringent.
 
 This is just here for your information.
 
-Some of you have asked about the ordering process.  We are using https://jlcpcb.com/. To build the boards, you need to create an account, and then go to cart and “add item” to place an order.
+Some of you have asked about the ordering process.  We are using https://www.pcbcart.com/. To build the boards, you need to create an account, and then go to cart and “add item” to place an order.
 
 Basically, you just upload the zip file of your cam files, and select some options, and pay with a credit card. Here are the options we will be using:
 
@@ -56,6 +57,8 @@ Basically, you just upload the zip file of your cam files, and select some optio
 * Gold fingers: no
 * Material: FR4
 
-A list of their capabilities is here: https://jlcpcb.com/capabilities/Capabilities. This is what get transcribed into the DRU file.
+A list of their capabilities is here: https://www.pcbcart.com/pcb-fab/standard-pcb.html. This is what get transcribed into the DRU file.
 
-Ordering the stencils is the same process, and you con order the board and stencil together at the same time.  However, if you do this, then JLCPCB will tweak your stencil based on the rest of your design, which is very annoying.  In particular, they insist on adding solder paste under our IMU.  This is an abomination.  This is why you have to generate two different zip files.
+You can order a stencil as well (based on your `.crm` gerber).  However, I usually order stencils from https://www.oshstencils.com/.  They are smaller and a little easier to work with.
+
+We have also had good results with https://jlcpcb.com/.
