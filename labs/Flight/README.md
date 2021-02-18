@@ -102,33 +102,51 @@ Once you’ve committed everything, create a tag called “flight-1” Be sure t
 
 ### Rubric
 
-The stage are based on the following levels that build to stable, sustained flight.
+The "flight levels" (FL) are based on the following levels that build to stable, sustained flight.
 
 1. "Roombaing" -- moving around the the floor with dowels installed with direction control and minimal yaw
-2. Repeated, vertical hopping (>6 inches, > 0.5 second)
-3. Repeated, vertical hopping (>12 inches, > 2 seconds)
-4.   
+2. Repeated, vertical hopping (>1 inches, > 0.25 second)
+3. Repeated, vertical hopping (>6 inches, > 1 second)
+4. Repeated, vertical hopping (>12 inches, > 3 seconds)
+5. Short flight (>12 inches, > 6 seconds)
+6. Sustained flight (> 12 inches, > 10 seconds, demostrate yaw control)
+7. Sustained flight (Fly long enough to consume an entire battery)
 
-
+You should be making constant progress.  `FL++` means one level better than you did the last time.  You can't make up points you miss (this is to disuade you from procrastinating).
 
 #### Stage 1
 
-Possible points: 10
+Possible points: 2
 
 1. Roll works just as well as pitch on the test stand.
+2. Achieve FL1
 
 #### Stage 2
 
+Possible points: 2
+
+3. Achieve FL++ (Nominally FL2).
 
 #### Stage 3
 
-Possible points: 10
+Possible points: 2
+
+4. Achieve FL++ (Nominally FL3).
 
 #### Stage 4
 
-Possible points: 10
+Possible points: 2
+
+5. Achieve FL++ (Nominally FL4).
 
 #### Stage 5
 
-Possible points: 10
+Possible points: 2
 
+6. Achieve FL++ (Nominally FL5)
+
+#### Bonuses
+
+1.  Achieve FL5: 2 points
+2.  Achieve FL6: 5 points
+3.  Achieve FL7: 10 points
