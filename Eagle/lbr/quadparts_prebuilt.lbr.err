@@ -14,4 +14,5 @@ Error: lbr/quadparts_prebuilt.lbr:QUADCLASS_LOGO -- Nothing in tKeepout.  All pa
 Error: lbr/quadparts_prebuilt.lbr:QUADCLASS_LOGO -- Wires found in Top layer.  You probably want an SMD instead. (LibraryStyle.py:199:52DC83BC)
 Warning: lbr/quadparts_prebuilt.lbr:CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:4A88F88F)
 Error: lbr/quadparts_prebuilt.lbr:CLOCKWISE -- Nothing in tKeepout.  All packages should include a keepout area to prevent parts from overlapping. (LibraryStyle.py:192:5298591D)
-Warning: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:7CC549E
+Warning: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:7CC549EWarning: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:7CC549E4)
+Error: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Nothing in tKeepout.  All packages should include a keepout area to prevent parts from overlapping. (LibraryStyle.py:192:2186666B)
