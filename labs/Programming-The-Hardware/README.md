@@ -482,7 +482,9 @@ get some garbage too, don't worry about it.
 Look at the `RFChat` code to understand how it works: It checks if
 data is available from the radio and writes it to the serial
 port. Then, it reads data from the serial port and writes it to the
-radio.  Note that it sends and recevies multi-byte packets.
+radio.  Note that it sends and recevies multi-byte packets. 
+
+You'll notice that the radio library blinks one of the LEDs when data is sent or received.
 
 ## Sending Useful Data
 
