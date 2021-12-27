@@ -36,7 +36,7 @@ Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instru
 Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSeZYMLvERBZXjFBk37r7zPQzxHMs6EL5wyJXrrprGN1FkCuJQ/viewform).  You will receive
 a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
-### Get set up Github
+### Get set up on Github
 
 We are going to use Github classroom for this course. You'll need to [create a Github account](https://github.com/), if you don't already have one. For each part of the project, there will be an assignment setup on Github. You and your teammates will commit your work to the repo in order to turn it in.
 
