@@ -25,13 +25,22 @@ The editors for creating devices, symbols, footprints and packages can be found 
 
 ![](images/adafruit1.png)
 
-Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. I recommend using the package generator in order to create your model, inputting values from the datasheet to create it. [This video](https://www.youtube.com/watch?v=LlhIeRFX-N4&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY&index=4) devles into this process in more detail.
+Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. **You do not need to create a package for this lab**, however if you want to see how it works you can use the package generator in order to create your model, inputting values from the datasheet to create it. [This video](https://www.youtube.com/watch?v=LlhIeRFX-N4&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY&index=4) devles into this process in more detail.
 
-The package generator will also create a footprint for you, so double check the correctness of this auto-generated model.
+The package generator will also create a footprint for you, but you will still be expected ensure it adheres to style guidelines and additional requirements detailed below.
+
+#### Creating a Footprint
+
+Footprint editing in Fusion360 is similar to what is detailed in the Package section of the Adafruit tutorial. The important tools you need have all been added to the toolbar at the top of the screen, and should you be unable to find a particular tool you can always use the command line. For more information on editing a footprint in Fusion360 check out [this video](https://www.youtube.com/watch?v=8-tJZHFzWXo&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY&index=3).
+
+To add a footprint to a device, click on the device in the library editor, select `New->Local Package` and locate your footprint in the list.
+
+![](images/adafruit3.png)
+
 
 #### Creating a Symbol
 
-Symbol creation is mostly the same as in Eagle, but once you have finished creating it, connecting it to the device is a little different. If you go back to the library editor and examine the device, you should find that you can add a part to the symbol layer on the left. 
+Symbol editing in Fusion360 is mostly the same as what is detailed in the Adafruit tutorial, and just like the footprint, the crucial tools are in the header. However, once you have finished creating your symbol, connecting it to the device is a little different. If you go back to the library editor and examine the device, you should find that you can add a part to the symbol layer on the left. Locate the symbol you just created to add it to the device!
 
 ![](images/adafruit2.png)
 
