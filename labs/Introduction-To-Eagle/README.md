@@ -91,25 +91,27 @@ Most board designers include a logo or other artwork on the board, and you will 
 
 Here are the steps:
 
-1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos.lbr`. Put it in the `lbr` directory in your git repo for this lab.
+1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos.lbr`.
 
-![](images/artwork1_new.png)
+![](images/artwork1_f360.png)
 
-2. Go to `Library -> Manage Package` and name this new package UCSD_LOGO, then press OK.
+2. Create a new footprint with the `Create Footprint` button and name this new package UCSD_LOGO and click OK.
 
-![](images/artwork2_new.png)
+![](images/artwork2_f360.png)
 
-3. A new blank page will appear. Go then to `File->Run UPL...` and open the script named `import-bmp.upl`.
+3. A new blank page will appear. Go then to `Automate->Run UPL...` and open the script named `import-bmp.upl`.
 
-![](images/artwork3_new.png)
+![](images/artwork3_f360.png)
+
+![](images/artwork3.5_f360.png)
 
 4. After this, a new message will appear. Press OK. Then search for the bmp image you want to transfer, in this case, we will transfer the UCSD logo. It is recommended that you change the image format to "Monochrome bmp" this means that the image will only have two colors, black and white. You can find the UCSD logo in your GitHub eagle-intro repository with the filename of `UCSD-logos-horizontal.bmp`.
 
-![](images/artwork4_new.png)
+![](images/artwork4_f360.png)
 
 5. After selecting the UCSD Logo you will need to choose which color pixels to transfer. For this case select only Black.
 
-![](images/artwork5_new.png)
+![](images/artwork5_f360.png)
 
 6. Then select the scale and layer of the image to transfer. For this image use the following parameters.
 
@@ -121,34 +123,37 @@ Scale: 0.5
 
 Layer: 21
 
-![](images/artwork6_new.png)
+![](images/artwork6_f360.png)
 
 7. Select OK, after this a new window will appear, for that windows select `Run script`.
 
-![](images/artwork7_new.png)
-![image:https://lh3.googleusercontent.com/YcdkkNKLKyJf67RqU08ilv-10IL8KpCXNO1J4E0Z_Hy3fwpQgy9Nw7ImLgUAhKLY]
+![](images/artwork7_f360.png)
 
 8. Now the image should be transferred. 
 
 You will notice some text below the image, this is the path of the image. Zoom to it and delete it.
 
-![](images/artwork8_new.png)
+![](images/artwork8_f360.png)
 
-9. Save the library as Logos.lbr (if you are using an existing library just click save).
+9. Create a new device called `UCSD_LOGO` and click OK.
 
-![](images/artwork9_new.png)
+![](images/artwork9_f360.png)
 
-10. Click on the ``Add Part`` on the left and select ``Logos.lbr``.
+10. Add your footprint to this new device by selecting `New->Local Package` in the bottom right dialog. A window should pop up with your footprint, select it and click OK.
+
+![](images/artwork10_f360.png)
+
+11. Return to your Button-and-Light schematic. Click on the ``Add Part`` on the left and select ``Logos.lbr``. Select the logo and add it to the schematic.
 <!--
 Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
 -->
-![](images/artwork10_new.png)
+![](images/artwork11_f360.png)
 
 <!--
 11. Select “Add” for adding an element and search for the UCSD_LOGO.
 -->
-11. Select OK and finally, you should see the UCSD logo on the board
-![](images/artwork11_new.png)
+12. Open up your board, you should now see the UCSD logo ready to be placed! Go ahead and move it near your other parts.
+![](images/artwork12_f360.png)
 
 <!--
 12. Select OK and finally, you should see the UCSD logo on the board.
@@ -156,11 +161,11 @@ Now open the Button-and-Light schematic and select `Library-> use`. After this s
 -->
 
 ### Exporting Files
-Once you've finished creating your boards and schematics, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
+Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
 
 ![](images/export1.png)
 
-This will open a file dialog for saving your schematic as either a `*.fsch` or `*.sch`, or your board as either a `*.fbrd` or `*.brd`. For both files, save them using the "Eagle 9.X Compatible" format as shown below:
+This will open a file dialog for saving your files in 3 different formats. For all files, save them using the "Eagle 9.X Compatible" format as shown below:
 
 ![](images/export2.png)
 

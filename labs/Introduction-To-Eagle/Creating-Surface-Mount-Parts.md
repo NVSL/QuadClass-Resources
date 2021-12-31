@@ -4,7 +4,7 @@ The design we have so far for the flashlight uses "through hole" parts. This mea
 
 Most modern PCBs use "surface mount" (also called SMD) parts that more compact and only require connections to one side of the board. They are also harder to solder. Many of the components we will use are only available as surface mount, and many components are available as both surface mount and through hole.
 
-The course style guidelines for libraries are in the "Guidelines for Building..." section of section of https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-Parts-In-Eagle/README.md.  Read and follow them.  Eaglint will complain if you don't.
+The course style guidelines for libraries are in the "Guidelines for Building..." section of section of [this lab](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-Parts-In-Eagle/README.md).  Read and follow them.  Eaglint will complain if you don't.
 
 ## Creating a Surface Mount Device
 
@@ -15,9 +15,25 @@ We will replace the through hole button with a surface mount version. We will us
 Adafruit has a very nice [tutorial about building new schematic symbols, packages, and devices in Eagle](https://www.google.com/url?q=https%3A%2F%2Flearn.adafruit.com%2Fktowns-ultimate-creating-parts-in-eagle-tutorial%2Fintroduction&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGsUFLtnS_nmz4ra63XcImFHoVf9A). However, since this tutorial's release, Eagle has been ported over to Fusion360. Autodesk has released several tutorials on how to design custom parts, which can be found [here (~15 min)](https://www.youtube.com/watch?v=zqar0XWtFaY) and [here (~45 min)](https://www.youtube.com/watch?v=xNIEXCimRSg&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY).
 
 
-Go through either tutorial using our desired tactile button. The datasheet required is present in your Lab 01 repository. Make a copy of `Lab01.lbr` called `Lab01_smd.lbr` and create the package there. Create a new package, device, and symbol for the button by following the ADAFRUIT tutorial. 
+Go through any tutorial using our desired tactile button. We recommend the more recent ones from Autodesk, but should you choose the written tutorial, some Fusion360 notes can be found below. The datasheet required is present in your Lab 01 repository. Make a copy of `Lab01.lbr` called `Lab01_smd.lbr` and create the package there. Create a new package, device, and symbol for the button.
 
-### 
+### Adafruit Tutorial Fusion360 Updates
+
+#### Creating a New Package
+
+The editors for creating devices, symbols, footprints and packages can be found in the `Create` tab of the library editor. Once you open `Lab01_smd.lbr` in Fusion360, you should be able to see these options:
+
+![](images/adafruit1.png)
+
+Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. I recommend using the package generator in order to create your model, inputting values from the datasheet to create it. [This video](https://www.youtube.com/watch?v=LlhIeRFX-N4&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY&index=4) devles into this process in more detail.
+
+The package generator will also create a footprint for you, so double check the correctness of this auto-generated model.
+
+#### Creating a Symbol
+
+Symbol creation is mostly the same as in Eagle, but once you have finished creating it, connecting it to the device is a little different. If you go back to the library editor and examine the device, you should find that you can add a part to the symbol layer on the left. 
+
+![](images/adafruit2.png)
 
 ### Reading Datasheets
 Interpreting datasheets takes some practice. Here are some tips:
@@ -41,19 +57,21 @@ Your symbol should have just two pins (whereas the symbol you used in your throu
 
 Note that your package has four SMDs. You'll need to connect two SMDs from the package to a single pin in symbol. You do this in the "Connect" dialog. Just select one pin and two pads, and click connect.
 
+![](images/symbol.png)
+
 ### 
 
 ### Additional Requirements for Your Device
 There are a few other things you'll need to be sure of in the package you build:
 
-* You need two add three "attributes" to the new variant you created
+* You need two add three "attributes" to the new variant you created, which can be edited using the `Attribute` button on the device screen (see below screenshot):
 
 	* "DIST" for distributer. This is where we buy the part from. You can put "NA"
 	* "DISTPN" for distributor part number. You can put "NA"
 	* "CREATOR" This should be your name, since you created the variant.
 	* You can add attributes by clicking on "attributes" in the device editor window:
 
-![](images/smd2.png)
+![](images/smd2_f360.png)
 
 * You also need to be sure to draw a box around your package in layer ‘tKeepout’.
 * You need to add a text item in layer “tName” that contains “>NAME”. This will be replaced with the parts name. To render clearly, the next needs to be at least 1.27 mm high, have a weight of 8% and be in the “vector” font. You can set these parameters in the tool bar at the top of the window or by using the “info” tool to change the attributes of the text after you create it.
@@ -67,19 +85,25 @@ You can use your new SMD button just like our own through-hole button. Just dele
 ## Fixing up the Board
 Since you just changed the package for the button, the board will need to be updated. Traces will probably be crossed, etc.:
 
-![](images/sm3_new.png)
+![](images/sm3_f360.png)
 
 To fix this, we’ll rip up all the old traces and reroute the board. Use the “group” tool: To select everything on the board.
 
-![](images/sm4_new.png)
+![](images/sm4_f360.png)
 
-Next, select the “ripup” tool. Everything will appear to be deselected, that’s ok. Now, right-click on the board, and select “Ripup: Group”. All of the routed traces will disappear:
+Next, select the `Ripup` tool. Everything will appear to be deselected, that’s ok. Now, right-click on the board, and select “Ripup: Group”. All of the routed traces will disappear:
 
-![](images/sm5_new.png)
+![](images/sm5_f360.png)
 
-Now, you need to re-route the board using the “route” tool:
+Now, you need to re-route the board using the `Autorouter` tool:
 
-![](images/sm6_new.png)
+![](images/sm6_f360.png)
+
+which will result in a nice, fully-routed board!
+
+![](images/sm7_f360.png)
 
 ## Re-running the CAM Processor
 Follow the instructions for running the CAM processor given above. In the Gerber viewer, you can find the pads for the SMD button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not.    
+
+Once you've done everything, you're ready for the [final steps](Readme.md#getting-art-onto-the-board): adding artwork and exporting!
