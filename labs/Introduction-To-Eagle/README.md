@@ -1,4 +1,4 @@
-# Introduction to Eagle
+# Introduction to Fusion360
 
 To be completed on your own. Time is especially short for this lab, please try to work through it before the first day of class.
 
@@ -36,7 +36,7 @@ Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instru
 Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSeZYMLvERBZXjFBk37r7zPQzxHMs6EL5wyJXrrprGN1FkCuJQ/viewform).  You will receive
 a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
-### Get set up GitHub
+### Get set up on GitHub
 
 We are going to use GitHub classroom for this course. You'll need to [create a GitHub account](https://github.com/), if you don't already have one. For each part of the project, there will be an assignment setup on GitHub. You and your teammates will commit your work to the repo in order to turn it in.
 
