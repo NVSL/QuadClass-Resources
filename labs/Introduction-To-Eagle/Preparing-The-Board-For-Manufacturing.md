@@ -3,11 +3,11 @@
 Once the design is finished, we need to translate it a format that the manufacturer can understand.
 
 ## Generating the CAM files
-In order to have a board manufactured an Eagle file is not sufficient. Instead, you need to produce a set of computer aided manufacturing (CAM) files for the design. Eagle provides a tool called the "CAM processor" to generate these files for your design. CAM files are also called "Gerber files."
+In order to have a board manufactured an Eagle or Fusion360 file is not sufficient. Instead, you need to produce a set of computer aided manufacturing (CAM) files for the design. Fusion360 provides a tool called the "CAM processor" to generate these files for your design. CAM files are also called "Gerber files."
 
-Different board manufacturers (i.e., "board houses") require different types of CAM files and some require different CAM setups for different levels of board complexity. We will be using https://www.pcbcart.com/, a Chinese manufacturer that is pretty reliable and fast. Each board house and service level has different sets of restrictions the design must meet and, potentially, a different set of design files they require. Two files define how Eagle interacts with the board manufacturing process.
+Different board manufacturers (i.e., "board houses") require different types of CAM files and some require different CAM setups for different levels of board complexity. We will be using https://www.pcbcart.com/, a Chinese manufacturer that is pretty reliable and fast. Each board house and service level has different sets of restrictions the design must meet and, potentially, a different set of design files they require. Two files define how Fusion360 interacts with the board manufacturing process.
 
-The first is the .cam file. This defines the set of gerber files we will send to the manufacturer. The second in the .dru file that defines the design rules for the board house. The specs for JLCPCB's PCBs are here: https://www.pcbcart.com/pcb-fab/standard-pcb.html. Eagle uses the design file to, for instance, guide the autorouter and perform sanity checks on our design.
+The first is the .cam file. This defines the set of gerber files we will send to the manufacturer. The second in the .dru file that defines the design rules for the board house. The specs for JLCPCB's PCBs are here: https://www.pcbcart.com/pcb-fab/standard-pcb.html. Fusion360 uses the design file to, for instance, guide the autorouter and perform sanity checks on our design.
 
 The DRU and CAM files you need for this lab are in `Eagle/CAM/pcbcart-4layer.cam` and `Eagle/CAM/pcbcart-4layer.cam`.
 
@@ -17,21 +17,25 @@ You should see a window like this:
 ![](images/cam1.png)
 Leave this window open and return to the board editor window. 
 -->
-To select the CAM file, return to the board editor window, select "File->CAM Processor..." a window will appear like this:
+To select the CAM file, return to the board editor window, navigate to the `Manufacturing` tab and select the `CAM Processor`:
+
+![](images/cam1_f360.png)
+
+A window will appear like this:
 <!--
 the same window will reappear but with some additional information filled in:
 -->
-![](images/cam1_new.png)
+![](images/cam2_f360.png)
 
 Then click on the "load job -> Open Cam File". This will allow you to select the required CAM file. 
-![](images/cam2_new.png)
+![](images/cam3_f360.png)
 
 The tabs on the left correspond to the CAM files that the CAM processor will generate for this design. The body of the window contains configuration parameters for each of the CAM files. Don't touch any of these settings.
 
-Click "Process Job". A progress bar will appear briefly and then vanish. The CAM files have been generated, and are now in the same directory as your schematic and board files.
+Click "Process Job". A progress bar will appear briefly and then vanish. The CAM files have been generated, and are saved wherever you specified.
 
 ## Viewing the CAM files
-Eagle cannot open or view CAM/Gerber files. For that you need a Gerber viewer:
+Fusion360 cannot open or view CAM/Gerber files. For that you need a Gerber viewer:
 
 * Mac: I like Cuprum: http://www.wortum.com/cuprum/.
 * Windows: http://www.viewplot.com/ or https://www.pentalogix.com/t/software-products/viewmate.
@@ -54,3 +58,5 @@ Load them, and then examine each by toggling its visibility in the viewer:
 ![](images/cam3.png)
 
 3. Make sure the File name matches the File Content. You will probably need to change the File Content for the *.drd to *NC Drill.*
+
+After you've verified that the CAM files look good, you're ready for [part 4](Creating-Surface-Mount-Parts.md)!

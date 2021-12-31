@@ -7,21 +7,21 @@ Check the course schedule for due date(s).
 Skills to Learn
 
 1. How to complete the Envision Maker Studio Responsibility Contract.
-2. Github basics.
-3. Installing Eagle.
-4. Creating a schematic in Eagle.
+2. GitHub basics.
+3. Installing Fusion360.
+4. Creating a schematic in Fusion360.
 5. Generating a board from a schematic.
-6. Designing eagle packages.
-7. Designing eagle symbols.
+6. Designing packages in Fusion360.
+7. Designing symbols in Fusion360.
 8. Connecting packages and symbols using devices.
 9. Modifying an existing schematic.
 10. Incorporating new devices into a design.
-11. Defining new eagle layers.
+11. Defining new layers.
 12. Adding graphics to a PCB design.
 
-## Equipment, Supplies, and Software You Will Need
+## Equipment, Supplies, and Software You Will Need 
 
-1. A computer with Eagle installed (either in the Maker Studio, the basement CSE labs, or your own laptop).
+1. A computer with Fusion360 installed (either in the Maker Studio, the basement CSE labs, or your own laptop). Fusion360 is available on all platforms!
 2. The [starter repo](https://classroom.github.com/a/l4ET6aPa) for this lab (Don't clone it until the start of class, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
@@ -29,44 +29,52 @@ Skills to Learn
 
 ### Complete the Responsibility Contract
 
-Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo. **In wi21, you can skip this part, but put something in your repo named `responsibility.pdf`**
+Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo. 
 
 ### Fill Out The Self Evaluation
 
 Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSeZYMLvERBZXjFBk37r7zPQzxHMs6EL5wyJXrrprGN1FkCuJQ/viewform).  You will receive
 a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
-### Get set up Github
+### Get set up GitHub
 
-We are going to use Github classroom for this course. You'll need to [create a Github account](https://github.com/), if you don't already have one. For each part of the project, there will be an assignment setup on Github. You and your teammates will commit your work to the repo in order to turn it in.
+We are going to use GitHub classroom for this course. You'll need to [create a GitHub account](https://github.com/), if you don't already have one. For each part of the project, there will be an assignment setup on GitHub. You and your teammates will commit your work to the repo in order to turn it in.
 
-First, you'll need to authorize github classroom to access your github account. To do that, visit https://classroom.github.com and sign in with your github account.
+First, you'll need to authorize GitHub Classroom to access your GitHub account. To do that, visit https://classroom.github.com and sign in with your GitHub account.
 
-Then click on the link for the starter repo listed in the "Equipment, Supplies, ..." section above. (Not able to verify this!)
+Then click on the link for the starter repo listed in the [Equipment, Supplies & Software](#equipment-supplies-and-software-you-will-need) section above.
 
-We will be using Github a lot in class. If you aren't familiar with it, there are a bunch of good introductory tutorials. For example, [this one](http://try.github.io/).
+We will be using GitHub a lot in class. If you aren't familiar with it, there are a bunch of good introductory tutorials. For example, [this one](http://try.github.io/). Signing up for the [GitHub Student Development Pack](https://education.github.com/pack) is also recommended so that you can get GitHub Pro features.
 
-### Install Eagle
+### Install Autodesk Fusion360
 
-Sign up here to get an Autodesk Student account: http://www.autodesk.com/education/free-software/eagle
+Install Fusion360 by following [this link](https://www.autodesk.com/education/edu-software/overview) to find the list of Autodesk software available to students. Click the "Get Started" button on the Fusion360 card and follow the prompts in order to verify your education status. If you are creating a new account, be sure to use your __@ucsd__ email to make verification quick.
 
-Download and install Eagle Premium. You may need to purchase a one month subscription.  You can get by without "premium" until you need to layout your board.
+Once you have verified your education status, return to the software list and find the Fusion360 card to download and install the program.
 
-### Make Eagle Easier to Use
+### Fusion360 Teams
 
-By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting `Window->Control Panel` and the selecting `Options->Directories`. I suggest the following settings:
+When first starting up Fusion360, you may be greeted with a window about forming teams. Fusion360 is able to manage shared versions of designs in the cloud, and the way that multiple people access a particular design is through a team. However, in this lab we will not be using teams, and in general we will not have a team for the entire class, so go ahead and create a new team with whatever name you prefer. In future labs, you and your partner are welcome to take advantage of this feature to manage shared copies of your board design!
 
-* Libraries: `<path to>/eagle-intro-sp19-<gitusername>/lbr`
+### Make Fusion360 Easier to Use
+
+By default, Fusion360 comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Fusion360 is setup to look in for library and other files. You can change the directories by selecting `User->Preferences` and the selecting `General->Electronics->Directory`. The window should look something like this:
+
+![](images/paths.png)
+
+You can update these paths by simply clicking the `.` button to the right of the paths. I suggest the following settings:
+
+* Libraries: `<path to>/eagle-intro-wi22-<gitusername>/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
 
 For instance, for me, the values might be:
 
-* Libraries: `/Users/swanson/cse176/eagle-intro-sp19-stevenjswanson/lbr`
+* Libraries: `/Users/swanson/cse176/eagle-intro-wi22-stevenjswanson/lbr`
 * Design Rules: `/Users/swanson/cse176/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `/Users/swanson/cse176/QuadClass-Resources/Eagle/CAM`
 
-You should restart Eagle after maring these changes.
+You should restart Fusion360 after making these changes.
 
 ### Do the Button and Light Tutorial
 
@@ -146,6 +154,17 @@ Now open the Button-and-Light schematic and select `Library-> use`. After this s
 12. Select OK and finally, you should see the UCSD logo on the board.
 ![](images/artwork12.png)
 -->
+
+### Exporting Files
+Once you've finished creating your boards and schematics, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
+
+![](images/export1.png)
+
+This will open a file dialog for saving your schematic as either a `*.fsch` or `*.sch`, or your board as either a `*.fbrd` or `*.brd`. For both files, save them using the "Eagle 9.X Compatible" format as shown below:
+
+![](images/export2.png)
+
+Now you're ready to submit!
 
 ## Turn in Your Work
 
