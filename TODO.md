@@ -1,3 +1,8 @@
+## Future Updates for Fusion360
+
+1.  Update Lib01.lbr and associated parts to have 3D models.
+
+
 ## Preclass Tasks
 
 

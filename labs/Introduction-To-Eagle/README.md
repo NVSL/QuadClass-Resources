@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need 
 
 1. A computer with Fusion360 installed (either in the Maker Studio, the basement CSE labs, or your own laptop). Fusion360 is available on all platforms!
-2. The [starter repo](https://classroom.github.com/a/l4ET6aPa) for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/8NsKPNlT) for this lab (Don't clone it until the start of class, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
@@ -33,7 +33,7 @@ Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instru
 
 ### Fill Out The Self Evaluation
 
-Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://docs.google.com/forms/d/e/1FAIpQLSeZYMLvERBZXjFBk37r7zPQzxHMs6EL5wyJXrrprGN1FkCuJQ/viewform).  You will receive
+Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://forms.gle/a6yFoNri79w6TF796).  You will receive
 a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
 
 ### Get set up on GitHub

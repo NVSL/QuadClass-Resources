@@ -28,7 +28,7 @@ Click the `Open Library Manager` button and navigate to the `Available` tab:
 
 ![](images/library2.png)
 
-Use the `Browse` tool to locate your `Lab01.lbr` file. Once you have loaded it into Fusion 360, find it in the list of available libraries and press the `Use` button to enable it.
+Use the `Browse` tool to locate your `Lab01.lbr` file. Once you have loaded it into Fusion 360, it'll be in the list, but it might be hard to find.  Type "lab" into the search box.  It should show up.   Press the `Use` button to enable it.  Clese the Library Mananger.
 
 ![](images/library3.png)
 
@@ -38,7 +38,7 @@ Now you are ready to build your schematic. Go back to the `Design` tab and selec
 
 ![](images/schematic2_f360.png)
 
-This will open up the library browser. Click on the triangle next to `Lab01` to expand it. You’ll see four “devices” inside it. Go read [this page](http://goo.gl/HJtIzp) of the [Adafruit Eagle Parts Tutorial](http://goo.gl/GcM04V) to understand the difference between a schematic “symbol”, a “package”, and a “device.”
+This will open up the library browser. Click on the triangle next to `Lab01` to expand it (if you don't see `Lab01`, select another library and type 'lab'). You’ll see four “devices” inside it. Go read [this page](http://goo.gl/HJtIzp) of the [Adafruit Eagle Parts Tutorial](http://goo.gl/GcM04V) to understand the difference between a schematic “symbol”, a “package”, and a “device.”
 
 ![](images/schematic3_f360.png)
 
