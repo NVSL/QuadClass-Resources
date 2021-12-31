@@ -16,3 +16,7 @@ Warning: lbr/quadparts_prebuilt.lbr:CLOCKWISE -- Package is missing '>NAME'.  Ev
 Error: lbr/quadparts_prebuilt.lbr:CLOCKWISE -- Nothing in tKeepout.  All packages should include a keepout area to prevent parts from overlapping. (LibraryStyle.py:192:5298591D)
 Warning: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:7CC549EWarning: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:7CC549E4)
 Error: lbr/quadparts_prebuilt.lbr:COUNTER-CLOCKWISE -- Nothing in tKeepout.  All packages should include a keepout area to prevent parts from overlapping. (LibraryStyle.py:192:2186666B)
+Warning: quadparts_prebuilt:COUNTER-CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:1F2D67BA)
+Error: quadparts_prebuilt:COUNTER-CLOCKWISE -- Nothing in tKeepout.  All packages should include a keepout area to prevent parts from overlapping. (LibraryStyle.py:192:2BAD13F5)
+Warning: quadparts_prebuilt:CLOCKWISE -- Package is missing '>NAME'.  Every package needs to a '>NAME' so the part's name will be visible on the board. (LibraryStyle.py:143:227A8588)
+Error: quadparts_prebuilt:CLOCKWISE -- Nothing in tKeepout.  All packages should include a keepout area to prevent parts from overlapping. (LibraryStyle.py:192:2C65D80A)

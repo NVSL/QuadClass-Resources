@@ -1,12 +1,13 @@
 # -*- Makefile -*-
 BRD=$(DESIGN).brd
 SCH=$(DESIGN).sch
-EAGLINT=eaglelint  --strict $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
+STRICT?=--strict
+EAGLINT=eaglelint  $(STRICT) $(CHECKS) #python $(abspath $(EAGLINT_HOME))/server/EagleLint/swoop_lint.py
 EAGLE_BOM=python $(abspath $(EAGLINT_HOME))/eaglint/BOM.py
 ifeq ($(ASSEMBLY),no)
 BOMS=$(patsubst %.sch,%.digikey-bom.csv,$(SCH))
 else
-BOMS=$(patsubst %.sch,%.digikey-bom.csv,$(SCH)) $(patsubst %.sch,%.assembly-bom.csv,$(SCH)) 
+BOMS=$(patsubst %.sch,%.digikey-bom.csv,$(SCH)) $(patsubst %.sch,%.assembly-bom.csv,$(SCH)) $(patsubst %.sch,%.extras-bom.csv,$(SCH)) 
 endif
 CAMS=$(DESIGN).cam $(DESIGN).cam.zip $(DESIGN).stencil  $(DESIGN).stencil.zip
 VERSION?=$(cat VERSION.txt)
@@ -24,8 +25,13 @@ hooks:
 
 
 .PHONY: %.test
-%.test: %.brd %.sch $(LBRS)
+ifeq ($(ASSEMBLY),no)
+%.test: %.brd %.sch $(LBRS) %.digikey-bom.csv
 	$(EAGLINT) --files $*.brd $*.sch $(LBRS)
+else
+%.test: %.brd %.sch $(LBRS) %.digikey-bom.csv %.assembly-bom.csv %.extras-bom.csv
+	$(EAGLINT) --files $*.brd $*.sch $(LBRS)
+endif
 
 CAM_FILE?=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-4layer-values-eagle9.cam
 STENCIL_CAM_FILE?=$(RESOURCES_ROOT)/Eagle/CAM/jlcpcb-stencil.cam
@@ -47,6 +53,9 @@ cam: $(DESIGN).cam $(DESIGN).stencil
 
 %.assembly-bom.csv: %.sch
 	$(EAGLE_BOM) --sch $^ --mode assembly --format csv --header  --out $@
+
+%.extras-bom.csv: %.sch
+	$(EAGLE_BOM) --sch $^ --mode extras --format csv --header  --out $@
 
 .PHONY: bom
 bom: $(DESIGN).digikey-bom.csv
@@ -73,6 +82,7 @@ release: $(BRD) $(SCH) $(LBRS)
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).digikey-bom.csv
 ifneq ($(ASSEMBLY),no)
 	$(MAKE) $(RELEASE_DIR)/$(DESIGN).assembly-bom.csv
+	$(MAKE) $(RELEASE_DIR)/$(DESIGN).extras-bom.csv
 endif
 	#false
 	git add $(RELEASE_DIR)	
