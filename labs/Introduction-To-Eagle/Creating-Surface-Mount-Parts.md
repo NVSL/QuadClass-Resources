@@ -106,4 +106,4 @@ which will result in a nice, fully-routed board!
 ## Re-running the CAM Processor
 Follow the instructions for running the CAM processor given above. In the Gerber viewer, you can find the pads for the SMD button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not.    
 
-Once you've done everything, you're ready for the [final steps](Readme.md#getting-art-onto-the-board): adding artwork and exporting!
+Once you've done everything, you're ready for the [final steps](README.md#getting-art-onto-the-board): adding artwork and exporting!
