@@ -25,9 +25,7 @@ The editors for creating devices, symbols, footprints and packages can be found 
 
 ![](images/adafruit1.png)
 
-Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. **You do not need to create a package for this lab**, however if you want to see how it works you can use the package generator in order to create your model, inputting values from the datasheet to create it. [This video](https://www.youtube.com/watch?v=LlhIeRFX-N4&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY&index=4) devles into this process in more detail.
-
-The package generator will also create a footprint for you, but you will still be expected ensure it adheres to style guidelines and additional requirements detailed below.
+Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. **You should not create a package for this lab**, instead create a footprint by hand using the help of one of the tutorials.
 
 #### Creating a Footprint
 
