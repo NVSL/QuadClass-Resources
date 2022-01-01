@@ -4,7 +4,7 @@ This tutorial will take you through the steps of creating a schematic, creating 
 
 We are going to design a PCB with a light controlled by a button.
 
-The course style guidelines for schematics can be found [here](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-The-Quadcopter-Schematic/README.md#general-schematic-style-guidelines). Read and follow them.  EagleLint will complain if you don't.
+**The course style guidelines for schematics can be found [here](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-The-Quadcopter-Schematic/README.md#general-schematic-style-guidelines). Read and follow them.  EagleLint will complain if you don't.**
 
 You will need the `Lab01.lbr` file available in the lab starter repo.
 
@@ -94,7 +94,7 @@ Finally, rename and label the power and ground nets by typing `name GND` into th
 Now, think through how the schematic will operate and convince yourself that this matches what we build on the breadboard.
 
 ## Running Electrical Rules Check (ERC)
-Fusion360 provides a mechanism to do a sanity check on your schematic. It’s called Electrical Rules Check (ERC). Select it from `Validate->ERC`. 
+Fusion360 provides a mechanism to do a sanity check on your schematic. It’s called Electrical Rules Check (ERC). Select it from `Validate->ERC`. I recommend running a library update before executing it, which can be found in the `Library` tab next to the library manager.
 
 ![](images/schematic14_f360.png)
 
