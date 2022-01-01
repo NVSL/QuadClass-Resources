@@ -12,7 +12,7 @@ Check the course schedule for due date(s).
 
 1. Eagle
 2. The starter repo: for this lab: https://classroom.github.com/a/LVBobRH0. (Don’t clone it until the start of class, last minute changes are likely)
-3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
+3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md). 
 
 ## Preliminaries
 

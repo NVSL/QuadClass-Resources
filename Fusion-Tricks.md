@@ -1,6 +1,8 @@
 # Eagle Tips and Tricks and Recipes
 
-Here are some useful commands for working in Eagle.  For the commands that go in the command line window, pay attention to "@" and ";" -- change the meaning of some commands significantly.
+Here are some useful commands for working in Fusion 360.  For the commands that go in the command line window, pay attention to "@" and ";" -- change the meaning of some commands significantly.
+
+In all cases, you'll either need to click in the command line panel (Above the main part of the window) or (much faster) type `/`.
 
 ## Get Help
 

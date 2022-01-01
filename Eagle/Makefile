@@ -1,5 +1,5 @@
 LBRS=$(wildcard lbr/*.lbr) 
-EAGLINT_HOME=../../Eagle-Lint/
+EAGLINT_HOME=../../QuadClass-QuadCMS/
 RESOURCES_ROOT=../
 TESTS=empty.test
 CHECKS=--check LibraryLint

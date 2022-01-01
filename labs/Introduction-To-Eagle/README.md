@@ -58,7 +58,7 @@ When first starting up Fusion360, you may be greeted with a window about forming
 
 ### Make Fusion360 Easier to Use
 
-By default, Fusion360 comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Fusion360 is setup to look in for library and other files. You can change the directories by selecting `User->Preferences` and the selecting `General->Electronics->Directory`. The window should look something like this:
+By default, Fusion360 comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled the directories Fusion360 is setup to look in for library and other files. You can change the directories by selecting `User->Preferences` (upper-right corner) and the selecting `General->Electronics->Directory`. The window should look something like this:
 
 ![](images/paths.png)
 
@@ -164,10 +164,12 @@ This will open a file dialog for saving your schematic as either a `*.fsch` or `
 
 ![](images/export2.png)
 
+Fusion wants to name your files with a version number (e.g, `v1`) on the end.  Please delete this.  The Eaglint autograder won't recognize them.
+
 Now you're ready to submit!
 
 ## Turn in Your Work
-
+	
 Submit your work via eaglint ( [http://eaglint.nvsl.io](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHn3w8dj3XknIOpuPo6FRKP_dkpng) ) and commit all the files list below files to GitHub. Make sure everything is committed to github and visible online. 
 
 Also, create a GitHub Tag for your repository once you’ve done the final commits. Enter this detail in the eaglint submission under “Tag”.
