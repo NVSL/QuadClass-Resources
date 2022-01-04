@@ -98,6 +98,8 @@ Eagle use `tKeepout` to describe the courtyard.  The rule is that if `tKeepout` 
 
 The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are very tidy.
 
+The width of your `tKeepout` lines should be 0.05mm.
+
 Note that the courtyard should not surround the `>NAME` and `>VALUE`.  Two reasons:
 
 1.  You'll probably end up moving the reference designators around (which you can do freely on the board layout)
@@ -175,7 +177,9 @@ Your package should include some kind of marking that marks the SMD that should 
 The IMU has caused us signficant problems in the past.  Be careful with it.  You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 
 * Include “IMU” in the name of the device you create.
-* Build the package for the IMU so it has the same orientation as the mechanical drawing in the datasheet.
+* If you build the package by hand, build it so it has the same orientation as the mechanical drawing in the datasheet.
+* You can use the QFN package generator, but it'll take a lot of tweaking to get it to the pass Eaglint.  it also numbers the pins in an unhelpful way.  I'm not convinced it's a time saver.
+* You could however create the 3D package in the generator and the delete everything on footprint.
 * Check the orientation. Your view of the package in Eagle is looking “down” on the board.
 * Draw your package so it is wider than it is tall (rather than the other way around).  Otherwise Eaglint will get confused.
 * Make sure the SMDs should be at least 0.85mm long.  They will extend slightly out from under the package.
