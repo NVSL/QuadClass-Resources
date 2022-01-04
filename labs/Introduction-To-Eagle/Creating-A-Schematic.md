@@ -28,7 +28,7 @@ Click the `Open Library Manager` button and navigate to the `Available` tab:
 
 ![](images/library2.png)
 
-Use the `Browse` tool to locate your `Lab01.lbr` file. Once you have loaded it into Fusion 360, it'll be in the list, but it might be hard to find.  Type "lab" into the search box.  It should show up.   Press the `Use` button to enable it.  Clese the Library Mananger.
+Use the `Browse` tool to locate your `Lab01.lbr` file. Once you have loaded it into Fusion 360, it'll be in the list, but it might be hard to find.  Type "lab" into the search box.  It should show up.   Press the `Use` button to enable it.  Close the Library Mananger.
 
 ![](images/library3.png)
 
