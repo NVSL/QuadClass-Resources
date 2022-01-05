@@ -15,7 +15,7 @@ We will replace the through hole button with a surface mount version. We will us
 Adafruit has a very nice [tutorial about building new schematic symbols, packages, and devices in Eagle](https://www.google.com/url?q=https%3A%2F%2Flearn.adafruit.com%2Fktowns-ultimate-creating-parts-in-eagle-tutorial%2Fintroduction&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNGsUFLtnS_nmz4ra63XcImFHoVf9A). However, since this tutorial's release, Eagle has been ported over to Fusion360. Autodesk has released several tutorials on how to design custom parts, which can be found [here (~15 min)](https://www.youtube.com/watch?v=zqar0XWtFaY) and [here (~45 min)](https://www.youtube.com/watch?v=xNIEXCimRSg&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY).
 
 
-Go through any tutorial using our desired tactile button. We recommend the more recent ones from Autodesk, but should you choose the written tutorial, some Fusion360 notes can be found below. The datasheet required is present in your Lab 01 repository. Make a copy of `Lab01.lbr` called `Lab01_smd.lbr` and create the package there. Create a new package, device, and symbol for the button.
+Go through any tutorial using our desired tactile button. We recommend the more recent ones from Autodesk, but should you choose the written tutorial, some Fusion360 notes can be found below. The datasheet required is present in your Lab 01 repository. Make a copy of `Lab01.lbr` called `Lab01_smd.lbr` and create the button there. Create a new footprint, device, and symbol for the button.
 
 ### Adafruit Tutorial Fusion360 Updates
 
@@ -25,7 +25,7 @@ The editors for creating devices, symbols, footprints and packages can be found 
 
 ![](images/adafruit1.png)
 
-Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. **You should not create a package for this lab**, instead create a footprint by hand using the help of one of the tutorials.
+Creating packages in Fusion360 is completely different from Eagle; because Fusion360 is a 3D modeling software, packages have now been upgraded to utilize this. **You should not create a package for this lab**, instead create a footprint by hand using the help of one of the tutorials (see below for Adafruit updates).
 
 #### Creating a Footprint
 
@@ -42,18 +42,22 @@ Symbol editing in Fusion360 is mostly the same as what is detailed in the Adafru
 
 ![](images/adafruit2.png)
 
+#### Creating a Device
+
+The device editor, just like the other steps have mostly gotten a cosmetic refresh. Important buttons are outlined above and below, and otherwise the Adafruit tutorial is good to go through for final steps!
+
 ### Reading Datasheets
 Interpreting datasheets takes some practice. Here are some tips:
 
 * The datasheet includes data on many switches. Make sure you are looking at the correct part of the sheet.
-* There are several mechanical drawings. For creating a package, you are interested in solder pad layout (in the "Drilling diagrams" section, since most of the drawings are for throughhole parts).
+* There are several mechanical drawings. For creating a footprint, you are interested in solder pad layout (in the "Drilling diagrams" section, since most of the drawings are for throughhole parts).
 * Don't assume drawings are for scale. Instead, use the numerical values given.
 ### 
 
-### Additional Requirements for Your Package
-The package should be called `SCHURTER-1301.9315`, the symbol should be called `TACTILE-BUTTON`, and the device should be called `TACTILE-BUTTON`, and the variant should be called `SHURTER-1301.9315`.
+### Additional Requirements for Your Footprint
+The footprint should be called `SCHURTER-1301.9315`, the symbol should be called `TACTILE-BUTTON`, and the device should be called `TACTILE-BUTTON`, and the variant should be called `SHURTER-1301.9315`.
 
-Name the pins to match the PCB layout drawing in the data sheet, and orient your package to match the drawing as well. This is a good practice because it makes it easy to see that your package matches the drawing.
+Name the pins to match the PCB layout drawing in the data sheet, and orient your footprint to match the drawing as well. This is a good practice because it makes it easy to see that your footprint matches the drawing.
 
 Make sure that the length of your smds in the long dimension, and the width is the shorter dimension.
 
@@ -62,14 +66,14 @@ Make sure that the length of your smds in the long dimension, and the width is t
 ### Additional Requirements for Your Symbol
 Your symbol should have just two pins (whereas the symbol you used in your throughhole schematic had 4). They should be called `A` and `B`, and pressing the button should connect them electrically.
 
-Note that your package has four SMDs. You'll need to connect two SMDs from the package to a single pin in symbol. You do this in the "Connect" dialog. Just select one pin and two pads, and click connect.
+Note that your footprint has four SMDs. You'll need to connect two SMDs from the footprint to a single pin in symbol. You do this in the "Connect" dialog. Just select one pin and two pads, and click connect.
 
 ![](images/symbol.png)
 
 ### 
 
 ### Additional Requirements for Your Device
-There are a few other things you'll need to be sure of in the package you build:
+There are a few other things you'll need to be sure of in the footprint you build:
 
 * You need two add three "attributes" to the new variant you created, which can be edited using the `Attribute` button on the device screen (see below screenshot):
 
@@ -90,7 +94,7 @@ You can use your new SMD button just like our own through-hole button. Just dele
 ## 
 
 ## Fixing up the Board
-Since you just changed the package for the button, the board will need to be updated. Traces will probably be crossed, etc.:
+Since you just changed the footprint for the button, the board will need to be updated. Traces will probably be crossed, etc.:
 
 ![](images/sm3_f360.png)
 
