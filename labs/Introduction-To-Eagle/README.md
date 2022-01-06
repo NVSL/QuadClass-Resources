@@ -91,7 +91,7 @@ Most board designers include a logo or other artwork on the board, and you will 
 
 Here are the steps:
 
-1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos.lbr`.
+1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos`.
 
 ![](images/artwork1_f360.png)
 
@@ -135,25 +135,21 @@ You will notice some text below the image, this is the path of the image. Zoom t
 
 ![](images/artwork8_f360.png)
 
-9. Create a new device called `UCSD_LOGO` and click OK.
+9. Export your library with your new footprint.
 
 ![](images/artwork9_f360.png)
 
-10. Add your footprint to this new device by selecting `New->Local Package` in the bottom right dialog. A window should pop up with your footprint, select it and click OK.
-
-![](images/artwork10_f360.png)
-
-11. Return to your Button-and-Light schematic. Click on the ``Add Part`` on the left and select ``Logos.lbr``. Select the logo and add it to the schematic.
+10. Return to your Button-and-Light PCB diagram. Click on the ``Add Part`` in the `Place` menu and select ``Logos.lbr``. Select the logo and add it to the PCB diagram.
 <!--
 Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
 -->
-![](images/artwork11_f360.png)
+![](images/artwork10_f360.png)
 
 <!--
 11. Select “Add” for adding an element and search for the UCSD_LOGO.
 -->
-12. Open up your board, you should now see the UCSD logo ready to be placed! Go ahead and move it near your other parts.
-![](images/artwork12_f360.png)
+
+![](images/artwork11_f360.png)
 
 <!--
 12. Select OK and finally, you should see the UCSD logo on the board.
