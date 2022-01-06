@@ -4,7 +4,7 @@ The design we have so far for the flashlight uses "through hole" parts. This mea
 
 Most modern PCBs use "surface mount" (also called SMD) parts that more compact and only require connections to one side of the board. They are also harder to solder. Many of the components we will use are only available as surface mount, and many components are available as both surface mount and through hole.
 
-The course style guidelines for libraries are in the "Guidelines for Building..." section of section of [this lab](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-Parts-In-Eagle/README.md).  Read and follow them.  Eaglint will complain if you don't.
+The course style guidelines for libraries are in the "Guidelines for Building..." section of [this lab](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-Parts-In-Eagle/README.md).  Read and follow them.  Eaglint will complain if you don't.
 
 ## Creating a Surface Mount Device
 

@@ -5,7 +5,7 @@ Check the course schedule for due date(s).
 
 ## Skills to Learn
 
-1. Learn to use the package generator in Fusion360
+1. Learn to use the package generator in Fusion360.
 2. Learn to create more complex, footprints, devices, and schematic symbols in Fusion360.
 3. Learn to interpret device datasheets to ensure that the footprints you design meet the requirements of the devices they are for.
 
