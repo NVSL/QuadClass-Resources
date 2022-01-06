@@ -31,7 +31,7 @@ Creating packages in Fusion360 is completely different from Eagle; because Fusio
 
 Footprint editing in Fusion360 is similar to what is detailed in the Package section of the Adafruit tutorial. The important tools you need have all been added to the toolbar at the top of the screen, and should you be unable to find a particular tool you can always use the command line. For more information on editing a footprint in Fusion360 check out [this video](https://www.youtube.com/watch?v=8-tJZHFzWXo&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY&index=3).
 
-To add a footprint to a device, click on the device in the library editor, select `New->Local Package` and locate your footprint in the list.
+To add a footprint to a device, click on the device in the library editor, select `New->Local Package` and locate your footprint in the list. (The footprint in this screenshot has several style errors, your footprint will look different)
 
 ![](images/adafruit3.png)
 
