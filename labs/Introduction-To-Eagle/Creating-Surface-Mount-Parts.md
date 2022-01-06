@@ -85,7 +85,7 @@ There are a few other things you'll need to be sure of in the footprint you buil
 ![](images/smd2_f360.png)
 
 * You also need to be sure to draw a box around your footprint in layer ‘tKeepout’.
-* You need to add a text item in layer “tName” that contains “>NAME”. This will be replaced with the parts name. To render clearly, the next needs to be at least 1.27 mm high, have a weight of 8% and be in the “vector” font. You can set these parameters in the tool bar at the top of the window or by using the “info” tool to change the attributes of the text after you create it.
+* You need to add a text item in layer “tName” that contains “>NAME”. This will be replaced with the parts name. To render clearly, the next needs to be at least 0.9 mm high, have a weight of 8% and be in the “vector” font. You can set these parameters in the tool bar at the top of the window or by using the “info” tool to change the attributes of the text after you create it.
 ## 
 
 ## Replacing the Through-hole Component
