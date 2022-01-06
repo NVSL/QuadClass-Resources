@@ -12,7 +12,7 @@ course.
 * `Eagle` has the pre-built parts library, CAM files, and design rule files to use with Eagle.
 * `Lecture Slides` has slides that aren't part of any particular lab.
 
-Please see the course home page (https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) for schedule, due dates, and other logistical issues.
+Please see the [course home page](https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) or the [class calendar](https://docs.google.com/spreadsheets/d/1cgSJm-5A6JrrA-iNKX8d2A0SE1PBk1CwzLvdhLKHuWY/edit#gid=1449995990) for schedule, due dates, and other logistical issues.
 
 
 ## Overview
