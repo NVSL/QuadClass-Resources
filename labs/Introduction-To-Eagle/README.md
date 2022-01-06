@@ -91,7 +91,7 @@ Most board designers include a logo or other artwork on the board, and you will 
 
 Here are the steps:
 
-1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos`.
+1. For this, we will first begin creating a new library (You can also use the library where you are placing all your new components). Call the library `Logos`. Make sure to save it now, or the import script won't work!
 
 ![](images/artwork1_f360.png)
 
