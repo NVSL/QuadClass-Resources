@@ -16,23 +16,21 @@ Check course schedule for the due dates.
 1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONLY --> <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
 <!-- 1. The repo you started in "Programming the Hardware Lab" -->
 2. The `custom.lbr` library you built in previous lab. 
-3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
+3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-SCHEMATIC) that go over the design tools you will use this lab. 
 
 ## Preliminaries
 
-### Install Eagle Premium Edition
-
-Sign up here to get an Autodesk Student account: http://www.autodesk.com/education/free-software/eagle.
-
-Download and install Eagle Premium, if you don't have it already.
-
 ### Setting up Eagle
+
+#### PATRICX revise according to slack message about library directories
 
 The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
 
 Copy your `custom.lbr` into `lbr` and rename it as `custom_<name>.lbr` the versions from both team members can co-exist.
 
 ### Make Eagle Easier to Use
+
+#### PATRICX revise according to slack message about library directories
 
 By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class.  This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting “Window->Control Panel” and the selecting “Options->Directories”. I suggest the following settings:
 
@@ -44,7 +42,11 @@ Sometimes this does not cause the default set of libraries to disappear from the
 
 ## Assembling the Schematic
 
+#### PATRICX add notes about creating schematic in the cloud and the downloading to submit.
+
 You’ll build the schematic for your quadcopter starting from an empty Eagle schematic called `hardware/quadcopter.sch`.  You'll assemble the design by studying reference designs and the datasheets for the components you will use.
+
+#### PATRICX add notes about creating schematic in the cloud and the downloading to submit.  Ideally we would share quadparts_pretbuilt with them via the cloud.  They should be able to use their custom.lbr and LED.lbr from the cloud. 
 
 The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr` (which you'll build).  Eagle comes with a bunch of built in libraries.  They are off limits.
 
@@ -75,7 +77,7 @@ Why did I give a picture of what you need to build?  Because reference designs a
 
 You should use the schematic as a guide for constructing the microcontroller portion of your schematic.  Build it from parts from `quadparts_prebuilt.lbr`:
 
-1.  Use one of the `ANT_PCB...` variants for the antenna.  There's a left and right-handed version.  Depending on your ultimate board design, you might one or the other.
+1.  Use one of the `ANT_PCB...` variants for the antenna.  There's a left and right-handed version.  Depending on your ultimate board design, you might want one or the other.
 2. `B1` is a 'balun'.  Pay attention to the pin numbers.
 3. Use the `0.45x0.45` button.
 4. Replace one of the green LEDs with your red LED.
@@ -108,9 +110,9 @@ The IMU datasheet contains all the information you will need to use connect the 
 3. Both devices will operate in I2C mode only and connect to microcontroller via I2C, so you can ignore the stuff in the data sheet that refers to SPI.
 4. You must follow all the recommendations regarding external capacitors attached the IMU.
 5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`.  You should read the datasheet to learn how to do this.  Note that there is an inconsistency between Table 2 and Tables 19 and 20.  Tables 18 and 19 are correct.
-6. Power supply voltage and IO voltage will be 3.3V in our design, so connect them to `3V3`.
+6. Power supply voltage and IO voltage will be 2.5V in our design, so connect them to `2V5`.
 7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
-8. `DEN_A/G` should be connected to `3V3`.
+8. `DEN_A/G` should be connected to `2V5`.
 
 Most of the information you will need is Section 5 of the datasheet. 
 
@@ -118,7 +120,7 @@ A thing to know about datasheets: They almost always (although, frustratingly, n
 
 ### The I2C Bus
 
-Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  You should "pull up" these lines to `3V3` by connecting them to `3V3` using 10kOhm resistors.
+Your MCU will communicate with the IMU via I2C.  This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines.  You should "pull up" these lines to `2V5` by connecting them to `2V5` using 10kOhm resistors.
 
 ### The Motor Driver 
 
@@ -140,22 +142,24 @@ You need to include one 47uF decoupling capacitor between `VBAT` and `BAT_GND` (
 
 ### The Power Supply
 
-The quadcopter draws power from from a LiPo battery that nominally provides between 3.7 and 4.2V. This voltage is too high for the IMU and the microcontroller and the motors (which we will power directly from the battery) will create all kinds of noise on both the battery supply and ground rails.  To solve both of these problems, we will use a low-dropout (LDO) voltage regulator to provide a stable 3.3V power supply to the IMU and the microcontroller.
+The quadcopter draws power from from a LiPo battery that nominally provides between 3.7 and 4.2V. This voltage is too high for the IMU and the microcontroller.  Also, the motors (which we will power directly from the battery) will create all kinds of noise on both the battery supply and ground rails.  To solve both of these problems, we will use a low-dropout (LDO) voltage regulator to provide a stable 2.5V power supply to the IMU and the microcontroller.
 
-As a result, your quadcopter will have two power rails: An unregulated power rail (called `VBAT`) that provides power to the motors and input of the voltage regulator and is driven directly by the battery, and a regulated supply driven by the voltage regulator (called `3V3`).
+As a result, your quadcopter will have two power rails: An unregulated power rail (called `VBAT`) that provides power to the motors and input of the voltage regulator and is driven directly by the battery, and a regulated supply driven by the voltage regulator (called `2V5`).
 
 The power supply for quadcopter needs to contain the following parts:
 
 1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SMD` variant.
-3. A LP3985-series 3.3V regulator (see device `TPS73633-DBVT`.  _Don't_ use the 3V version).
+3. A LP3985-series 2.5V regulator (see device `TPS73633-DBVT`.  Don't use th 3.3V or 3V versions.).
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
 
-You'll note that the output of the voltage regulator has decoupling capacitors on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  Add a 47uF decoupling cap (the same one we use for motors) to the output of the voltage regulator between `3V3` and `GND` to prevent this.  Note that this capacitor is polarized.  The flat plate should connect to the positive voltage, and the curved plate to ground.
+You will also incorporate a power switch for the quadcopter.  The switch will connect the `EN` pin of the voltage regulator to `VBAT` when it's turned 'on' and connect `EN` to `GND` when its turned 'off''.  Use the `-SMD-EDGE` variant of `POWER-SWITCH-MFS201N-9-Z` for the switch.
+
+You'll note that the output of the voltage regulator has decoupling capacitors on.  This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU.  Add an additional 47uF decoupling cap (the same one we use for motors) to the output of the voltage regulator between `2V5` and `GND` to prevent this.  Note that the 47uF capacitor is polarized.  The flat plate should connect to the positive voltage, and the curved plate to ground.
 
 To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines.  The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines.  For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
-For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopter we built in this class the first year it was offered). 
+For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ).  Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopters we built in this class the first year it was offered). 
 
 A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.  You don't need `tKeepout` anything in `tPlace` for the net bridge.  If eaglint complains, just explain that it's not necessary since it's the net bridge.
 
@@ -163,14 +167,13 @@ Use bridge to connect `BAT_GND` and `GND`.
 
 #### Basic Principle: Decoupling
 
-Your quadcopter is full of transistors (small ones in your microcontroller and big ones in your motor drivers), and as they switch they cause noise on the power and ground planes. Noise on the power line can cause digital circuits to stop working (because 1’s start looking like 0’s) and noise on GND can cause all kinds problems between all voltages are relative to GND.
+Your quadcopter is full of transistors (small ones in your microcontroller and big ones in your motor drivers), and as they switch they cause noise on the power and ground planes. Noise on the power line can cause digital circuits to stop working (because 1’s start looking like 0’s) and noise on GND can cause all kinds problems because all voltages are measured relative to GND.
 
 The minimize this noise, we want to increase the capacitance of the power and ground planes. One way to think of capacitance is as a resistance to changes in voltage, so adding more will reduce noise (which is an unwanted change in voltage).  Small capacitors can filter out high-frequency noise, while larger capacitors filter out lower-frequency noise.
 
-There are two ways to add capacitance.  The first is to add capacitors. The IMU and the microcontroller both describe the number and kind of decoupling capacitors you should incorporate and they tell you to place them as close as possible to the power and ground pins on the device.  This is because, to be most effective, the extra capacitance we add needs to be as close to the source of the noise as possible (to minimize resistance and inductance between the cap and the device).
+There are two ways to add capacitance.  The first is to add capacitors.  The IMU and the microcontroller both describe the number and kind of decoupling capacitors you should incorporate and they tell you to place them as close as possible to the power and ground pins on the device.  This is because, to be most effective, the extra capacitance we add needs to be as close to the source of the noise as possible (to minimize resistance and inductance between the cap and the device).
 
 The second way to add capacitance is to build a capacitor into the board. A capacitor is just two layers of metal separated by an insulator.  We can easily construct this in a PCB by laying down metal in two layers on top of eachother, and connecting one to power and one to ground. The result is a very small capacitor but one that we can put nearly everywhere on the PCB (so it will be a close as physically possible to the devices).  In our design this capacitance is not critical, but in higher-speed design, it is critical to filtering out the higher-frequency switching noise.
-
 
 ### Breakout Headers
 
@@ -185,14 +188,14 @@ A debugging header is a set of pins that connects key signals to pins that you c
 * `GND`
 * `BAT_GND`
 * `VBAT`
-* `3V3`
+* `2V5`
 * The control lines to the four motors
 * `SDA`
 * `SCL`
 
 There's a 10-pin header in the library you can use for this.  You can also break up the debug header into smaller headers. For instance, you could put a 3 pin header next to each motor with `VBAT`, `BAT_GND`, and the control line. It's always a good idea to include a ground on each debug header.
 
-Debugging headers can be a little dangerous, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging.  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines, so that no power pin is next to ground pin.
+Debugging headers can be a little dangerous to use, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging (e.g., by touch both pins with a probe).  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines, so that no power pin is next to ground pin.
 
 #### IMU Rescue Header
 
@@ -200,7 +203,7 @@ Soldering the IMU is hard enough that it causes a fair number of
 quadcopters to fail.  To guard against this, add a header that will
 allow you to connect this breakout board
 (https://www.adafruit.com/product/3387) to your quadcopter.  You need
-four pins: `3V3`, `GND`, `SCL`, and `SCA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
+four pins: `2V5`,  `SCL`, `GND`, and `SCA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt.lbr`.
 
@@ -217,10 +220,10 @@ You should also add some LEDs to your design. There are several reasons to add L
 There are several options for powering and/or controlling LEDs:
 
 1. You can connect them directly to battery power and battery ground. In this case, you can't turn them off, but they can be very bright.
-2. You can connect them to pins on the micro controller. If you use a digital pin, you can turn them on and off. If you use a PWM pin, you can control their brightness. In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
-3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin.  Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine. If you do this, you can drive multiple LEDs with the same transistor and pin.
+2. You can connect them to pins on the micro controller.  If you use a digital pin, you can turn them on and off.  If you use a PWM pin, you can control their brightness.  In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
+3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin.  Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine.  If you do this, you can drive multiple LEDs with the same transistor and pin.
 
-Regardless of which approach you take, you will need to pick out your LED. To do this, go to http://digikey.com. And enter LED into the search field. You'll see a bunch of results. Likely candidates for smaller LEDs are to be found under "LED Indication - Discrete," while brighter LEDs can be found under "LED Lighting - White", "LED Lighting - Color".
+Regardless of which approach you take, you will need to pick out your LED.  To do this, go to http://digikey.com.  And enter LED into the search field.  You'll see a bunch of results.  Likely candidates for smaller LEDs are to be found under "LED Indication - Discrete," while brighter LEDs can be found under "LED Lighting - White", "LED Lighting - Color".
 
 You'll note there are a dizzying array of options (at this moment there are over 20,000 different indicator LEDs available). Digikey presents you with a decent searching interface. Go exploring! Things to keep in mind:
 
@@ -228,7 +231,7 @@ You'll note there are a dizzying array of options (at this moment there are over
 2. The need to be at least 0805 (1.25mm x 2mm).
 3. They need to be reasonably cheap: no more than $1 per LED.
 5. If you are going to drive the LEDs directly with a microcontroller pin, you must limit current to 8mA and you should make sure that the LED will actually light up with 8mA (many bright LEDs will not).
-6. They need to be compatible with the power supply you are going to use: 3.7-4.2V if you use the battery. 3.3V if you are going to drive them from the microcontroller.
+6. They need to be compatible with the power supply you are going to use: 3.7-4.2V if you use the battery. 2.5V if you are going to drive them from the microcontroller.
 7. Their current draw needs to be within the limits of how you are powering them.
 	1. The microcontroller limits how much current each pin will supply.
 	2. The microcontroller consumes some current, as does the IMU (check the datasheets).
@@ -246,18 +249,10 @@ You'll need to build the library entries for the LED you want to use and then in
 
 One thing to keep in mind is that most LEDs are extremely bright when driven at full current. Indicator LEDs can be driven very gently and still be visible.  LEDs added for visual effect can be driven harder, but they can easily become so bright that you can't even look at your quadcopter without being blinded.  For this reason, any LEDs that you want to be bright need to be attached to PWM pins, so you can moderate their brightness.
 
-**Preferred** Once you have picked your LEDs, document your LED design using text in the `Info` layer in your schematic.  For each type of LED, you should note its forward voltage, the resistance of the current limiting resistor,
+Once you have picked your LEDs, document your LED design using text in the `Info` layer in your schematic.  For each type of LED, you should note its forward voltage, the resistance of the current limiting resistor,
 and the current you expect to flow through the LED. 
 
-**Deprecated but acceptable:** Once you have picked your LEDs, write up a brief description of why
-your design will work.  For each LED (identified by it's reference
-designator), you should give it's forward voltage, supply voltage
-(e.g., 3.3V or 4.2V), the resistance of the current limiting resistor,
-and the current you expect to flow through the LED.  You should also
-specify whether it's driven directly with a pin or with a MOSFET.
-Put this in a file called `hardware/led_notes.txt`.
-
-Feel free to get creative with the LEDs!
+Feel free to get creative with the LEDs!  Smilely faces.  Simulated space ship engines.  Aircaft "running lights".  Dance party.  Ground effects.
 
 Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from `quadparts_prebulit.lbr` or your `custom.lbr`.
 
