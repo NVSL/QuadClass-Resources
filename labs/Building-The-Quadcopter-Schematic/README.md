@@ -20,19 +20,19 @@ Check course schedule for the due dates.
 
 ## Preliminaries
 
-### Setting up Eagle
+### Setting up Fusion360
 
 #### PATRICX revise according to slack message about library directories
 
-The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Eagle happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
+The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Fusion360 happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
 
 Copy your `custom.lbr` into `lbr` and rename it as `custom_<name>.lbr` the versions from both team members can co-exist.
 
-### Make Eagle Easier to Use
+### Make Fusion360 Easier to Use
 
 #### PATRICX revise according to slack message about library directories
 
-By default, Eagle comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class.  This is controlled the directories Eagle is setup to look in for library and other files. You can change the directories by selecting “Window->Control Panel” and the selecting “Options->Directories”. I suggest the following settings:
+By default, Fusion360 comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class.  This is controlled the directories Fusion360 is setup to look in for library and other files. You can change the directories by selecting “Window->Control Panel” and the selecting “Options->Directories”. I suggest the following settings:
 
 * Libraries: `<path to>/<your-repo>/hardware/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
@@ -44,21 +44,21 @@ Sometimes this does not cause the default set of libraries to disappear from the
 
 #### PATRICX add notes about creating schematic in the cloud and the downloading to submit.
 
-You’ll build the schematic for your quadcopter starting from an empty Eagle schematic called `hardware/quadcopter.sch`.  You'll assemble the design by studying reference designs and the datasheets for the components you will use.
+You’ll build the schematic for your quadcopter starting from an empty Fusion360 schematic called `hardware/quadcopter.sch`.  You'll assemble the design by studying reference designs and the datasheets for the components you will use.
 
 #### PATRICX add notes about creating schematic in the cloud and the downloading to submit.  Ideally we would share quadparts_pretbuilt with them via the cloud.  They should be able to use their custom.lbr and LED.lbr from the cloud. 
 
-The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr` (which you'll build).  Eagle comes with a bunch of built in libraries.  They are off limits.
+The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr` (which you'll build).  Fusion360 comes with a bunch of built in libraries.  They are off limits.
 
 ### General Schematic Style Guidelines
 
 Here are the course style guidelines for schematics. Your schematics must adhere to these guidelines.  If you don't, Eaglint will give warnings and we won’t accept the design.
 
-1. All visible net and component names must not have “$” in them. When Eagle automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like `CTRL` or `SCL`.
+1. All visible net and component names must not have “$” in them. When Fusion360 automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like `CTRL` or `SCL`.
 2. By convention power supply symbols point up, and ground symbols point down.  Neither should ever point to the side.
 3. Nets should not cross each other unless they are electrically connected.
 4. Nets should only be drawn at right angles.
-5. Eagle embeds libraries in the `.sch` and `.brd` files. To keep them up-to-date, use `Library->Update...` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
+5. Fusion360 embeds libraries in the `.sch` and `.brd` files. To keep them up-to-date, use `Library->Update...` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
 6. Include a frame around our schematic.  Use device `FRAME_B_L`.
 7. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
 8. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
@@ -66,6 +66,10 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 10. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
 11. Schematic symbols and wires should all be aligned to 0.05in grid (or, if you like, a 0.1in grid).
 12. Labels for nets (created using the 'label' tool) should need to placed on the net they label.  This means the label's location (which is marked with a gray '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
+
+### Selecting Parts
+
+The `quadparts_prebuilt` library has lots of parts in it, many of which you won't use.  I've provided specific guidance about which options to select below.  For resistors and capacitors, you need to use 0805 parts not the smaller and harder-to-place 0603 parts.  If the resistor you need is not available in 0805, you'll need to create it.
 
 ### The Microcontroller
 
@@ -223,6 +227,8 @@ There are several options for powering and/or controlling LEDs:
 2. You can connect them to pins on the micro controller.  If you use a digital pin, you can turn them on and off.  If you use a PWM pin, you can control their brightness.  In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
 3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin.  Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine.  If you do this, you can drive multiple LEDs with the same transistor and pin.
 
+If you drive LEDs with a MOSFET, you should include a 10kOhm pull-down resistor to `GND` on the gate of the MOSFET.
+
 Regardless of which approach you take, you will need to pick out your LED.  To do this, go to http://digikey.com.  And enter LED into the search field.  You'll see a bunch of results.  Likely candidates for smaller LEDs are to be found under "LED Indication - Discrete," while brighter LEDs can be found under "LED Lighting - White", "LED Lighting - Color".
 
 You'll note there are a dizzying array of options (at this moment there are over 20,000 different indicator LEDs available). Digikey presents you with a decent searching interface. Go exploring! Things to keep in mind:
@@ -256,7 +262,7 @@ Feel free to get creative with the LEDs!  Smilely faces.  Simulated space ship e
 
 Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from `quadparts_prebulit.lbr` or your `custom.lbr`.
 
-The packages/devices you build need to meet all the standards described in `Building Parts in Eagle Lab`.
+The packages/devices you build need to meet all the standards described in `Building Parts in Fusion360 Lab`.
 
 Add an attribute called `CUSTOM` to the variants you create.  It should be constant but without a value.  This will ensure they get ordered.
 
