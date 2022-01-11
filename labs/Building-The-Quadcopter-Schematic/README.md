@@ -61,7 +61,7 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 2. By convention power supply symbols point up, and ground symbols point down.  Neither should ever point to the side.
 3. Nets should not cross each other unless they are electrically connected.
 4. Nets should only be drawn at right angles.
-5. Make sure that you are keeping our libraries up-to-date with  `Library->Update...` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
+5. Fusion360 embeds libraries in the `.sch` and `.brd` files. Make sure that you are keeping libraries up-to-date with  `Library->Update...` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
 6. Include a frame around our schematic.  Use device `FRAME_B_L`.
 7. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
 8. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
@@ -69,6 +69,10 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 10. You should not use any libraries other than `quadparts_prebuilt`, your `custom_*`, and your `LEDs` libraries.
 11. Schematic symbols and wires should all be aligned to 0.05in grid (or, if you like, a 0.1in grid).
 12. Labels for nets (created using the 'label' tool) should need to placed on the net they label.  This means the label's location (which is marked with a gray '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
+
+### Selecting Parts
+
+The `quadparts_prebuilt` library has lots of parts in it, many of which you won't use.  I've provided specific guidance about which options to select below.  For resistors and capacitors, you need to use 0805 parts not the smaller and harder-to-place 0603 parts.  If the resistor you need is not available in 0805, you'll need to create it.
 
 ### The Microcontroller
 
@@ -225,6 +229,8 @@ There are several options for powering and/or controlling LEDs:
 1. You can connect them directly to battery power and battery ground. In this case, you can't turn them off, but they can be very bright.
 2. You can connect them to pins on the micro controller.  If you use a digital pin, you can turn them on and off.  If you use a PWM pin, you can control their brightness.  In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
 3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin.  Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine.  If you do this, you can drive multiple LEDs with the same transistor and pin.
+
+If you drive LEDs with a MOSFET, you should include a 10kOhm pull-down resistor to `GND` on the gate of the MOSFET.
 
 Regardless of which approach you take, you will need to pick out your LED.  To do this, go to http://digikey.com.  And enter LED into the search field.  You'll see a bunch of results.  Likely candidates for smaller LEDs are to be found under "LED Indication - Discrete," while brighter LEDs can be found under "LED Lighting - White", "LED Lighting - Color".
 
