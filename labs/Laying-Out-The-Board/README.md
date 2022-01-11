@@ -12,16 +12,16 @@ Check the course schedule for due date(s).
 4. Size traces correctly.
 4. Use the autorouter.
 5. Protecting analog components from interference.
-6. Drawing a logo in Eagle.
+6. Drawing a logo in Fusion360.
 7. Perform a design review on the above.
 
 ## Equipment, Supplies, Virtues, and Software You will Need
 
-1. Eagle
-2. The contents of QuadClass-Resources repo.
+1. Fusion360
+2. The contents of QuadClass-Resources repo, as well as `quadparts_prebuilt`.
 3. Patience.
 4. Attention to detail.
-3. Read through the [Eagle Tricks Page](../../Eagle/Eagle-Tricks.md). 
+3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-SCHEMATIC) that go over the design tools you will use this lab. 
 
 ## Tasks To Perform (Part A)
 
@@ -33,7 +33,7 @@ The first step is to define the size, shape, and orientation of your quadcopter.
 2. You should ensure that most of the area the propellers will sweep out as they spin will not be over the board. For instance, putting the motor at the end of an arm will accomplish this. The arm must be long enough, however. The diameter of the propellers is either 40mm or 55mm.  Design for 55mm.
 3. Your design must fit with a rectangle whose area is less than 19,354 sq mm.
 4. The layout of the motors should be symmetric along the the x and y axes (i.e., the four motors should make a rectangle).
-5. I recommend centering your board shape on Eagle’s origin. It will make it easier to place parts symmetrically.
+5. I recommend centering your board shape on Fusion360's origin. It will make it easier to place parts symmetrically.
 6. The cutting tool the board uses is a 2mm in diameter.  This means if you should corners that are less than 180 degrees (i.e., the corners point into the body of your quadcopter), they will be rounded.
 7. The cutting tool diameter also limits the smallest gap between two the board and itself.  Openings must be at least 2mm wide.  You can get a feel for this by doing `hole 2mm` which will give you 2mm circle that you can slide use to guage how the cutting tool will behave.
 8. The board house will not build boards with "bridges" narrower than 2mm.  The guidance they give is not totally clear, but protrusions seems to be OK, while "necks" between larger parts are not.  If you want something unusual, we can always send it in and see what they say.  
@@ -46,11 +46,11 @@ To verify that you have the dimensions correct, please add dimension elements to
 4. The thickness of ring surrounding your motors.
 
 
-### Configure Eagle
+### Configure Fusion360
 
-We will be building 4-layer boards. You’ll need to set up Eagle for this. Here are the steps:
+We will be building 4-layer boards. You’ll need to set up Fusion360 for this. Here are the steps:
 
-1. Select `Edit->Design Rules`
+1. Select `Rules DRC/ERC->DRC`
 2. Load `pcbcart-4layer-5mil-small-cream.dru`.  Use this DRU file for the rest of the project.
 
 
@@ -84,7 +84,9 @@ Boards don't typically include the values of each component, but we do because i
 
 ### Logo
 
-Your team should have a logo! Design it and then create a package in Eagle that contains it.  Use the techniques you learned in Lab 1.  You may need to generate different versions with different sizes (there’s no way to scale anything in Eagle).  If you want to get creative, you can integrate solder mask, silkscreen, and metal into your logo design.  Checkout the quadcopter logo on the FCB, remote, and battery charger boards:  It uses exposed metal, metal-under-mask, and silksceen.
+Your team should have a logo! Design it in the footprint editor and then create a device called `DECORATIONS` in the `custom` library that contains it.  You'll need to create a symbol to go along with your new logo, which can just be a box with a `>name` and `>value`.  The name of the variant should be descriptive of what the decoration is, and feel free to add as many decorations as you like!  You can see an example of the `DECORATION` device in the `quadparts_prebuilt` library.
+
+You may need to generate different versions with different sizes (there’s no way to scale anything in Fusion360).  If you want to get creative, you can integrate solder mask, silkscreen, and metal into your logo design.  Checkout the quadcopter logo on the FCB, remote, and battery charger boards:  It uses exposed metal, metal-under-mask, and silksceen.
 
 ### The Power Supply
 
@@ -142,13 +144,13 @@ We will build the power and ground planes out of “pours”.  To create a pour,
 2. Select the area you would like the pour to include. There is a “width” option you can set while drawing the outline. This corresponds to the width of the outline. I recommend using a small value (e.g., 0.5mm).
 3. Select the Name tool (Or type name in the command line) and click on an edge of the polygon. Type (e.g., “GND” if the metal should be connected to GND). It may ask if you want to merge nets (yes), what the resulting name should be (e.g., “GND”), and/or whether you want to rename the whole net or just this polygon (just the polygon).
 
-Once the pour is created, you can click the “Ratsnest” tool and Eagle will fill in the pour. Eagle is intelligent about how it fills in the pour. It will carve out areas around pads, SMDs, and traces that are part of the signal assigned to the pour.  For pads, SMDs, and traces that are part of the same signal, Eagle will attach the pour to those components.
+Once the pour is created, you can click the “Ratsnest” tool and Fusion360 will fill in the pour. Fusion360 is intelligent about how it fills in the pour. It will carve out areas around pads, SMDs, and traces that are part of the signal assigned to the pour.  For pads, SMDs, and traces that are part of the same signal, Fusion360 will attach the pour to those components.
 
-You can also extend the pours past the edge of your design.  Eagle will trim them to match your board shape. 
+You can also extend the pours past the edge of your design.  Fusion360 will trim them to match your board shape. 
 
-The gaps and holes Eagle can divide the pour into multiple pieces that are not directly connected to each other. By default, Eagle will not fill in a pour fragment if there is no connection to the pour’s signal. The unconnected pieces are called “orphans”.
+The gaps and holes Fusion360 can divide the pour into multiple pieces that are not directly connected to each other. By default, Fusion360 will not fill in a pour fragment if there is no connection to the pour’s signal. The unconnected pieces are called “orphans”.
 
-To see the gaps Eagle will create in the pour, the connections it will make to pads and signals, and which portions of the pour are orphans, you can type `ratsnest` in the command line.  If nothing happens, that usually means that no part of the pour is connected to the signal, so the entire thing is an orphan.
+To see the gaps Fusion360 will create in the pour, the connections it will make to pads and signals, and which portions of the pour are orphans, you can type `ratsnest` in the command line.  If nothing happens, that usually means that no part of the pour is connected to the signal, so the entire thing is an orphan.
 
 The easiest way to ensure that the pour is connected to its signal is to add insert a via in the pour.  You can do this with `Via` tool.  Select it, make sure it’s set to insert a round via and add one to the pour near the edge. Use the `Name` tool to set the signal for the via to the pour’s signal name. Alternately, you can type `via '<pour signal name>'` in the command line and then insert a vias by clicking.  Run Ratsnest again, and the pour should fill in. 
 
@@ -222,7 +224,7 @@ The radio is one of the delicate parts of the board because it require special a
 
 Enforcing all of these requirements will require applying multiple techniques. Begin by laying out the parts to match the layout on the red board. Then read on for tips on how to implement the rest of the requirements.
 
-Just to drive home how delicate this part of the design is:  I have here on my desk a packages containing 25 remote control boards that have a range of about 4 inches because I got overconfident about how much I could mess around with the antenna layout.  Don't do that :-(
+Just to drive home how delicate this part of the design is:  I have here on my desk a package containing 25 remote control boards that have a range of about 4 inches because I got overconfident about how much I could mess around with the antenna layout.  Don't do that :-(
 
 #### The Antenna
 
@@ -236,11 +238,11 @@ The antenna also needs a ground plane (https://www.electronics-notes.com/article
 
 ### Setting Trace Widths
 
-By default, Eagle uses the narrowest wires allowed by the DRU file. For us, that’s 5mil (0.127mm).  Narrower wires have higher resistance, and if a trace needs to carry a sensitive signal (e.g., to drive our antenna) or lots of current (e.g., to or from our motors), the trace will need to be wider.
+By default, Fusion360 uses the narrowest wires allowed by the DRU file. For us, that’s 5mil (0.127mm).  Narrower wires have higher resistance, and if a trace needs to carry a sensitive signal (e.g., to drive our antenna) or lots of current (e.g., to or from our motors), the trace will need to be wider.
 
-Eagle provides the notion of ‘net classes’ to specify different characteristics for different signals in your design.  We will define two new net classes, one for the trace between the balun and the antenna and another for signals within the motor driver (We will deal with `VBAT` and `BAT_GND` separately).
+Fusion360 provides the notion of ‘net classes’ to specify different characteristics for different signals in your design.  We will define two new net classes, one for the trace between the balun and the antenna and another for signals within the motor driver (We will deal with `VBAT` and `BAT_GND` separately).
 
-To create or edit a net class, select `Edit->Net Classes`. The dialog box that appears will let you set width of nets in the class as well as the size of vias the class should use and the distance (“clearance”) between nets of different classes.
+To create or edit a net class, select `Rules ERC/DRC->Class`. The dialog box that appears will let you set width of nets in the class as well as the size of vias the class should use and the distance (“clearance”) between nets of different classes.
 
 First, enter “RFSIG” into box next to ‘1’ and enter ‘50mil’ (to match the width of the antenna) for the width. Leave the “drill” and clearance fields at ‘0’ (which mean use the defaults).
 
@@ -260,7 +262,7 @@ Finally, use the Change tool to put the signal between the balun and the antenna
 
 ### Laying out the IMU
 
-You need to add some additional bits to the IMU package.  You built your IMU package with rectangle in `tRestrict`, `bRestrict`, and `vRestrict` to prevent metal in the top and bottom layers, but there is no restrict layer for the internal layers.   You will need to add a "cutout" to make sure there are the appropriate holes in in your `3V3` and `GND` planes.
+You need to add some additional bits to the IMU footprint.  You built your IMU footprint with rectangle in `tRestrict`, `bRestrict`, and `vRestrict` to prevent metal in the top and bottom layers, but there is no restrict layer for the internal layers.   You will need to add a "cutout" to make sure there are the appropriate holes in in your `3V3` and `GND` planes.
 
 To create a cutout, use the polygon tool, and check the 'cutout' box in the properties dialog.
 
@@ -331,12 +333,12 @@ The autorouter is a useful tool, but it is not a substitute for your judgement. 
 
 You'll probably end up needing to reroute your board several times due to changes you make or bugs you (or Eaglint or the course staff) find.  Starting from scratch can be a pain because you have redo the manual routing too.  There's a way around this: A routing script.
 
-The idea is to write a sequence of Eagle commands that does all the rerouting for you.  For instance here's part of my routing script (Eagle doesn't support comments, so don't include those):
+The idea is to write a sequence of Fusion360 commands that does all the rerouting for you.  For instance here's part of my routing script (Fusion360 doesn't support comments, so don't include those):
 
 ```
 ripup ! *_N *_P ANTENNA BCAP N$12;  # Ripup everything except the nets I hand routed.
 change drill 0.1mm;                 # set the via diameter
-change width 0mil;                  # set trace width to 0 (eagle will use the minimum allowed by your DRU file)
+change width 0mil;                  # set trace width to 0 (Fusion will use the minimum allowed by your DRU file)
 grid 0.1;                           # set the routing grid
 fanout signal BAT_GND out;          # fan out some power signals
 fanout signal VBAT out;
@@ -345,11 +347,11 @@ drc;                                # run DRC
 grid 0.5                            # restore the grid
 ```
 
-You can either save this as an `.scr` file and run it the `script` command, but I find it easier to just copy and paste it into the command area in Eagle.
+You can either save this as an `.scr` file and run it using the `script` command, but I find it easier to just copy and paste it into the command area in Fusion360.
 
 ### Layer Labels
 
-To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt.lbr` for this purpose: `LAYER_LABELS`.  Use the `add` tool to add a copy to the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
+To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt` for this purpose: `LAYER_LABELS`.  Use the `add` tool to add a copy to the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
 
 ### Optional Features
 
@@ -535,7 +537,7 @@ Submit the following to your github repo (you can leave other files in there. Th
 1. Your `quadcopter.sch.`
 2. Your fully-routed quadcopter.brd.
 3. Your `lbr/LED.lbr`.
-4. Your `lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
+4. Your `lbr/custom.lbr` (maybe renamed to `custom_<name>.lbr` and maybe two of them)
 5. `lbr/quadparts_prebuilt.lbr`.
 6. A files called quadcopter.cam.zip that contains the CAM files for the design.
 Submit it to [Eaglint](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io%2F&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFrH7bQMLjAUWzVGFESRxTQu6D-EQ). The tool will not look at any other libraries, so if you use any other libraries the consistency checks will fail.
