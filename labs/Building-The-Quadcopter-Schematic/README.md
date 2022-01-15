@@ -57,7 +57,7 @@ We will be sharing a library with you via the cloud called `quadparts_prebuilt`.
 
 Here are the course style guidelines for schematics. Your schematics must adhere to these guidelines.  If you don't, Eaglint will give warnings and we won’t accept the design.
 
-1. All visible net and component names must not have “\$” in them. When Fusion360 automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like `CTRL` or `SCL`.
+1. All visible net and component names must not have “\$” in them. When Fusion360 automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if it shows up on your schematic, you should give it a nice name like `CTRL` or `SCL`.
 2. By convention power supply symbols point up, and ground symbols point down.  Neither should ever point to the side.
 3. Nets should not cross each other unless they are electrically connected.
 4. Nets should only be drawn at right angles.
@@ -68,7 +68,7 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 9. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
 10. You should not use any libraries other than `quadparts_prebuilt`, your `custom_*`, and your `LEDs` libraries.
 11. Schematic symbols and wires should all be aligned to 0.05in grid (or, if you like, a 0.1in grid).
-12. Labels for nets (created using the 'label' tool) should need to placed on the net they label.  This means the label's location (which is marked with a gray '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
+12. Labels for nets (created using the 'label' tool) need to be placed on the net they label.  This means the label's location (which is marked with a gray '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
 
 ### Selecting Parts
 
@@ -76,21 +76,21 @@ The `quadparts_prebuilt` library has lots of parts in it, many of which you won'
 
 ### The Microcontroller
 
-Here's the schematic for a board called the Basic Breakout Board (BBB).  It uses the same microcontroller as your quadocpter, but it does not include the voltage regulator.  It's the reference design for your microcontroller and the radio.  The design also includes the 1x6-pin programming header you can see on the bottom of the FCB.  YOu don't need to include that header in your design. 
+Here's the schematic for a board called the Basic Breakout Board (BBB).  It uses the same microcontroller as your quadcopter, but it does not include the voltage regulator.  It's the reference design for your microcontroller and the radio.  The design also includes the 1x6-pin programming header you can see on the bottom of the FCB.  You don't need to include that header in your design. 
 
 Why did I give a picture of what you need to build?  Because reference designs are a very common practice in real PCB designs.  The most reliable way to convey design requirements is to provide a working design.  Why reinvent the wheel?
 
 ![Microcontroller schematic](images/microcontroller.png)
 
-You should use the schematic as a guide for constructing the microcontroller portion of your schematic.  Build it from parts from `quadparts_prebuilt` libbrary:
+You should use the schematic as a guide for constructing the microcontroller portion of your schematic.  Build it from parts from `quadparts_prebuilt` library:
 
 1.  Use one of the `ANT_PCB...` variants for the antenna.  There's a left and right-handed version.  Depending on your ultimate board design, you might want one or the other.
 2. `B1` is a 'balun'.  Pay attention to the pin numbers.
 3. Use the `0.45x0.45` button.
 4. Replace one of the green LEDs with your red LED.
-5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact.
+5. You can use either variant for the `AVR_SPI...` header.  The surface mount one takes up more space (see it on your remote, under the LCD).  The through-hole one is more compact.
 
-You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or your can mirror parts by editing their properties with the `info` tool.
+You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or you can mirror parts by editing their properties with the `info` tool.
 
 There are some changes you will need to make to this schematic based on what's required by the other components.  This is just a starting point for your circuit.
 
@@ -105,7 +105,7 @@ Your quad will use a 4-pin programming header to load code into the IMU.  It's a
 3.  GND
 4.  Reset
 
-These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
+These are a subset of the signals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
 
 
 ### The IMU
@@ -121,7 +121,7 @@ The IMU datasheet contains all the information you will need to use connect the 
 7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
 8. `DEN_A/G` should be connected to `2V5`.
 
-Most of the information you will need is Section 5 of the datasheet. 
+Most of the information you will need is in Section 5 of the datasheet. 
 
 A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know.  They don't, however, make it easy.  You need to read carefully and thoroughly.  You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly.  You actually need to read through the tables and the text, there are specific answers to most questions you might have in there.  Most facts appear exactly once in the datasheet -- it will be written in text or a table, but not both.
 
@@ -158,7 +158,7 @@ The power supply for quadcopter needs to contain the following parts:
 1. The battery. This is the `BATTERY` device in `quadparts_prebuilt`.  You need to use the `-SMD` variant.
 3. A LP3985-series 2.5V regulator (see device `TPS73633-DBVT`.  Don't use th 3.3V or 3V versions).
 
-Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
+Check the voltage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
 
 You will also incorporate a power switch for the quadcopter.  The switch will connect the `EN` pin of the voltage regulator to `VBAT` when it's turned 'on' and connect `EN` to `GND` when its turned 'off''.  Use the `-SMD-EDGE` variant of `POWER-SWITCH-MFS201N-9-Z` for the switch.
 
@@ -168,9 +168,9 @@ To the extent possible, we need to isolate the the IMU and the microcontroller f
 
 For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt` ).  Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopters we built in this class the first year it was offered). 
 
-A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a footprint that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in your `custom` library.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.  You don't need `tKeepout` anything in `tPlace` for the net bridge.  If eaglint complains, just explain that it's not necessary since it's the net bridge.
+A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in the schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a footprint that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in your `custom` library.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.  You don't need anything in `tKeepout` nor in `tPlace` for the net bridge.  If eaglint complains, just explain that it's not necessary since it's the net bridge.
 
-Use bridge to connect `BAT_GND` and `GND`.
+Use the bridge to connect `BAT_GND` and `GND`.
 
 #### Basic Principle: Decoupling
 
@@ -180,7 +180,7 @@ The minimize this noise, we want to increase the capacitance of the power and gr
 
 There are two ways to add capacitance.  The first is to add capacitors.  The IMU and the microcontroller both describe the number and kind of decoupling capacitors you should incorporate and they tell you to place them as close as possible to the power and ground pins on the device.  This is because, to be most effective, the extra capacitance we add needs to be as close to the source of the noise as possible (to minimize resistance and inductance between the cap and the device).
 
-The second way to add capacitance is to build a capacitor into the board. A capacitor is just two layers of metal separated by an insulator.  We can easily construct this in a PCB by laying down metal in two layers on top of eachother, and connecting one to power and one to ground. The result is a very small capacitor but one that we can put nearly everywhere on the PCB (so it will be a close as physically possible to the devices).  In our design this capacitance is not critical, but in higher-speed design, it is critical to filtering out the higher-frequency switching noise.
+The second way to add capacitance is to build a capacitor into the board. A capacitor is just two layers of metal separated by an insulator.  We can easily construct this in a PCB by laying down metal in two layers on top of each other, and connecting one to power and one to ground. The result is a very small capacitor but one that we can put nearly everywhere on the PCB (so it will be a close as physically possible to the devices).  In our design this capacitance is not critical, but in higher-speed design, it is critical to filtering out the higher-frequency switching noise.
 
 ### Breakout Headers
 
@@ -202,7 +202,7 @@ A debugging header is a set of pins that connects key signals to pins that you c
 
 There's a 10-pin header in the library you can use for this.  You can also break up the debug header into smaller headers. For instance, you could put a 3 pin header next to each motor with `VBAT`, `BAT_GND`, and the control line. It's always a good idea to include a ground on each debug header.
 
-Debugging headers can be a little dangerous to use, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging (e.g., by touch both pins with a probe).  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines, so that no power pin is next to ground pin.
+Debugging headers can be a little dangerous to use, because it can be easy to accidentally create a short circuit between two of the pins when you are debugging (e.g., by touching both pins with a probe).  This is especially dangerous if you connect a power net and a ground net.  To avoid this, intermingle the PWM, SDA, and SCL lines with the power and ground lines, so that no power pin is next to ground pin.
 
 #### IMU Rescue Header
 
@@ -261,9 +261,9 @@ One thing to keep in mind is that most LEDs are extremely bright when driven at 
 Once you have picked your LEDs, document your LED design using text in the `Info` layer in your schematic.  For each type of LED, you should note its forward voltage, the resistance of the current limiting resistor,
 and the current you expect to flow through the LED. 
 
-Feel free to get creative with the LEDs!  Smilely faces.  Simulated space ship engines.  Aircaft "running lights".  Dance party.  Ground effects.
+Feel free to get creative with the LEDs!  Smiley faces.  Simulated space ship engines.  Aircraft "running lights".  Dance party.  Ground effects.
 
-Put the LEDs devices/footprints you create in a new cloud library called `LEDs`. Reuse the LED symbol from `quadparts_prebulit` or your `custom` libraries. 
+Put the LEDs devices/footprints you create in a new cloud library called `LEDs`. Reuse the LED symbol from `quadparts_prebuilt` or your `custom` libraries. 
 
 The footprints/devices you build need to meet all the standards described in `Building Parts in Fusion360 Lab`.
 
