@@ -224,11 +224,11 @@ You should also add some LEDs to your design. There are several reasons to add L
 2. They look cool.
 3. They can provide information about what's going on in your flight control software.
 
-There are several options for powering and/or controlling LEDs:
+There are a couple options for powering and/or controlling LEDs:
 
-1. You can connect them directly to battery power and battery ground. In this case, you can't turn them off, but they can be very bright.
-2. You can connect them to pins on the micro controller.  If you use a digital pin, you can turn them on and off.  If you use a PWM pin, you can control their brightness.  In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
-3. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin.  Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine.  If you do this, you can drive multiple LEDs with the same transistor and pin.
+
+1. You can connect them to pins on the micro controller.  If you use a digital pin, you can turn them on and off.  If you use a PWM pin, you can control their brightness.  In either case, you must size the resistor properly to limit the current through the LED to 8mA (the limit on the per-pin current on your microcontroller).
+2. You connect them to battery power and turn them on and off using a transistor connected to a microcontroller pin.  Depending on the pin you use, you can turn them on and off or vary their brightness. The transistor we use in the motor controller should work fine.  If you do this, you can drive multiple LEDs with the same transistor and pin.
 
 If you drive LEDs with a MOSFET, you should include a 10kOhm pull-down resistor to `GND` on the gate of the MOSFET.
 
