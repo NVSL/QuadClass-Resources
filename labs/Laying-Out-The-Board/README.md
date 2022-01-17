@@ -18,7 +18,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, Virtues, and Software You will Need
 
 1. Fusion360
-2. The contents of QuadClass-Resources repo.
+2. The contents of QuadClass-Resources repo, as well as `quadparts_prebuilt`.
 3. Patience.
 4. Attention to detail.
 3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-PREPARE-LAYOUT) that go over the design tools you will use this lab. 
@@ -33,7 +33,7 @@ The first step is to define the size, shape, and orientation of your quadcopter.
 2. You should ensure that most of the area the propellers will sweep out as they spin will not be over the board. For instance, putting the motor at the end of an arm will accomplish this. The arm must be long enough, however. The diameter of the propellers is either 40mm or 55mm.  Design for 55mm.  You can add four `PROPELLER` devices to your schematic/board to see this in your design.
 3. Your design must fit with a rectangle whose area is less than 19,354 sq mm. -- about 13.9cm square.
 4. The layout of the motors should be symmetric along the the x and y axes (i.e., the four motors should make a rectangle).
-5. I recommend centering your board shape on Fusion360’s origin. It will make it easier to place parts symmetrically.
+5. I recommend centering your board shape on Fusion360's origin. It will make it easier to place parts symmetrically.
 6. The cutting tool the board uses is a 2mm in diameter.  This means if you should corners that are less than 180 degrees (i.e., the corners point into the body of your quadcopter), they will be rounded.
 7. The cutting tool diameter also limits the smallest gap between two the board and itself.  Openings must be at least 2mm wide.  You can get a feel for this by doing `hole 2mm` which will give you 2mm circle that you can slide use to guage how the cutting tool will behave.
 8. The board manufacturer will not build boards with "ismuths" (i.e., narrow strips of PCB) narrower than 2mm.  The guidance they give is not totally clear, but protrusions (i.e., pennisulas) seems to be OK, while narrow strisp between larger parts are not.  If you want something unusual, we can always send it in and see what they say.  
@@ -48,11 +48,9 @@ To verify that you have the dimensions correct, please add dimension elements to
 
 ### Configure Fusion360
 
-#### PATRICX verify this
-
 We will be building 4-layer boards. You’ll need to set up Fusion360 for this. Here are the steps:
 
-1. Select `Edit->Design Rules`
+1. Select `Rules DRC/ERC->DRC`
 2. Load `pcbcart-4layer-5mil-small-cream.dru`.  Use this DRU file for the rest of the project.
 
 
@@ -88,7 +86,9 @@ Boards don't typically include the values of each component, but we do because i
 
 ### Logo and Decorations
 
-Your team should have a logo and/or decorations!  Design it and then create a package in Fusion360 that contains it.  Use the techniques you learned in Lab 1.  You may need to generate different versions with different sizes (there’s no way to scale anything in Fusion360).  If you want to get creative, you can integrate solder mask, silkscreen, and metal into your logo design.  Checkout the quadcopter logo on the FCB, remote, and battery charger boards:  It uses exposed metal, metal-under-mask, and silksceen.
+Your team should have a logo! Design it in the footprint editor and then create a device called `DECORATIONS` in the `custom` library that contains it.  You'll need to create a symbol to go along with your new logo, which can just be a box with a `>name` and `>value`.  The name of the variant should be descriptive of what the decoration is, and feel free to add as many decorations as you like!  You can see an example of the `DECORATION` device in the `quadparts_prebuilt` library.
+
+You may need to generate different versions with different sizes (there’s no way to scale anything in Fusion360).  If you want to get creative, you can integrate solder mask, silkscreen, and metal into your logo design.  Checkout the quadcopter logo on the FCB, remote, and battery charger boards:  It uses exposed metal, metal-under-mask, and silksceen.
 
 ### The Power Supply
 
@@ -245,7 +245,7 @@ By default, Fusion360 uses the narrowest wires allowed by the DRU file. For us, 
 
 Fusion360 provides the notion of ‘net classes’ to specify different characteristics for different signals in your design.  We will define two new net classes, one for the trace between the balun and the antenna and another for signals within the motor driver (We will deal with `VBAT` and `BAT_GND` separately).
 
-To create or edit a net class, select `Edit->Net Classes`. The dialog box that appears will let you set width of nets in the class as well as the size of vias the class should use and the distance (“clearance”) between nets of different classes.
+To create or edit a net class, select `Rules ERC/DRC->Class`. The dialog box that appears will let you set width of nets in the class as well as the size of vias the class should use and the distance (“clearance”) between nets of different classes.
 
 First, enter “RFSIG” into box next to ‘1’ and enter ‘50mil’ (to match the width of the antenna) for the width. Leave the “drill” and clearance fields at ‘0’ (which mean use the defaults).
 
@@ -538,7 +538,7 @@ Submit the following to your github repo (you can leave other files in there. Th
 1. Your `quadcopter.sch.`
 2. Your fully-routed quadcopter.brd.
 3. Your `lbr/LED.lbr`.
-4. Your `lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
+4. Your `lbr/custom.lbr` (maybe renamed to `custom_<name>.lbr` and maybe two of them)
 5. `lbr/quadparts_prebuilt.lbr`.
 6. A files called quadcopter.cam.zip that contains the CAM files for the design.
 Submit it to Eaglint.  The tool will not look at any other libraries, so if you use any other libraries the consistency checks will fail.

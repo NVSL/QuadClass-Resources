@@ -13,57 +13,60 @@ Check course schedule for the due dates.
 ## Equipment, Supplies, and Software You Will Need
 
 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below. <!-- Covid ONly -->
-1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. <!-- Covid ONLY --> <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
+1. The starter repo for this lab: https://classroom.github.com/a/XtjNtfPa. <!-- Covid ONLY --> <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
 <!-- 1. The repo you started in "Programming the Hardware Lab" -->
-2. The `custom.lbr` library you built in previous lab. 
+2. The `custom.lbr` library you built in previous lab, OR your cloud save for the custom library. From here on out, maintain copies of your libraries on the cloud.
 3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-SCHEMATIC) that go over the design tools you will use this lab. 
 
 ## Preliminaries
 
 ### Setting up Fusion360
 
-#### PATRICX revise according to slack message about library directories
+The repo for this lab will evolve to hold all the hardware and software for your quadcopter for the remainder of the quarter.
 
-The repo for this lab will evolve to hold all the hardware and software for your quadcopter. To keep Fusion360 happy and make it easier to access and update libraries, remove all the other directories from the list of library directories and replace it with the `lbr` directory in this lab’s repo.
+Now would be a good time to start utilizing Fusion Teams. To get started, decide between you and your partner on whose `custom` library should be used. That person should locate the Team online manager in the Data panel on the left:
 
-Copy your `custom.lbr` into `lbr` and rename it as `custom_<name>.lbr` the versions from both team members can co-exist.
+![](images/team_1.png)
+
+This will open up a web browser to manage your team. You can edit the name, invite your partner using their email, and have shared access to a cloud version of your library! Rename it as `custom_<name>` so that the versions from both team members can co-exist. If you run into issues with one partner's library, you can always import your other library into Fusion360, just be sure to maintain them using the cloud! You should not reference local versions of `.lbr` files, and you should only export them when you are ready to submit.
+
+To clean up local copies of previously-used `.lbr` files, and to remove unnecessary third-party libraries, you can remove them using the library manager (make sure to keep your team's library in use):
+
+![](images/library_1.png)
+
+Feel free to remove all libraries except for your `custom` team library from last lab.
 
 ### Make Fusion360 Easier to Use
 
-#### PATRICX revise according to slack message about library directories
+By default, Fusion360 comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class. This is controlled by the directories Fusion360 is setup to look in for library and other files. You can change the directories by selecting `User->Preferences` (upper-right corner) and then selecting `General->Electronics->Directory`.
 
-By default, Fusion360 comes configured with a bunch of libraries that can make it hard to find the libraries we are using for this class.  This is controlled the directories Fusion360 is setup to look in for library and other files. You can change the directories by selecting “Window->Control Panel” and the selecting “Options->Directories”. I suggest the following settings:
+To keep Fusion happy and make it easier to access and update libraries in the cloud, remove all the local folders Fusion is configured to look in for libraries. For Design rules and CAM files, I suggest the following settings:
 
-* Libraries: `<path to>/<your-repo>/hardware/lbr`
 * Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
 * CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
 
-Sometimes this does not cause the default set of libraries to disappear from the “add part” dialogs. To make them go away, select `Options->Library Manager`, then select all the libraries you don’t want to use and click ‘remove’. There should just be handful left (e.g., Lab01.lbr, Lab01_smd.lbr, custom.lbr,…).
-
 ## Assembling the Schematic
 
-#### PATRICX add notes about creating schematic in the cloud and the downloading to submit.
+You’ll build quadcopter in the cloud starting from a new Fusion360 electronics design called `quadcopter`. When creating this design, make sure to save it to the right team. 
 
-You’ll build the schematic for your quadcopter starting from an empty Fusion360 schematic called `hardware/quadcopter.sch`.  You'll assemble the design by studying reference designs and the datasheets for the components you will use.
+In this lab, you will create a schematic associated with this design, to be exported to the folder `hardware/quadcopter.sch`. Feel free to review [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle#exporting-files) for a refresher on exporting. You'll assemble the design by studying reference designs and the datasheets for the components you will use.
 
-#### PATRICX add notes about creating schematic in the cloud and the downloading to submit.  Ideally we would share quadparts_pretbuilt with them via the cloud.  They should be able to use their custom.lbr and LED.lbr from the cloud. 
-
-The only libraries you should use in assembling your schematic are `quadparts_prebuilt.lbr`, your `custom.lbr`, and `LED.lbr` (which you'll build).  Fusion360 comes with a bunch of built in libraries.  They are off limits.
+We will be sharing a library with you via the cloud called `quadparts_prebuilt`. You will be reusing your `custom` library from last lab, and in this lab you will also create a new library called `LEDs`. These should be the only 3 libraries you use to assemble your schematic,  Fusion360 comes with a bunch of built in libraries but they are off limits.
 
 ### General Schematic Style Guidelines
 
 Here are the course style guidelines for schematics. Your schematics must adhere to these guidelines.  If you don't, Eaglint will give warnings and we won’t accept the design.
 
-1. All visible net and component names must not have “$” in them. When Fusion360 automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like `CTRL` or `SCL`.
+1. All visible net and component names must not have “\$” in them. When Fusion360 automatically generates names for nets and components it includes “$”. This is fine if the name is not visible (e.g., on an anonymous wire between two components), but if you it shows up on your schematic, you should give it a nice name like `CTRL` or `SCL`.
 2. By convention power supply symbols point up, and ground symbols point down.  Neither should ever point to the side.
 3. Nets should not cross each other unless they are electrically connected.
 4. Nets should only be drawn at right angles.
-5. Fusion360 embeds libraries in the `.sch` and `.brd` files. To keep them up-to-date, use `Library->Update...` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
+5. Fusion360 embeds libraries in the `.sch` and `.brd` files. Make sure that you are keeping libraries up-to-date with  `Library->Update...` or `Library->Update All`. We won’t accept designs with inconsistent libraries.
 6. Include a frame around our schematic.  Use device `FRAME_B_L`.
 7. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
 8. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
 9. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
-10. You should not use any libraries other than `quadparts_prebuilt.lbr`, your `custom_*.lbr`, and your `LEDs.lbr`.
+10. You should not use any libraries other than `quadparts_prebuilt`, your `custom_*`, and your `LEDs` libraries.
 11. Schematic symbols and wires should all be aligned to 0.05in grid (or, if you like, a 0.1in grid).
 12. Labels for nets (created using the 'label' tool) should need to placed on the net they label.  This means the label's location (which is marked with a gray '+') needs to be on top of a corner or end of the net.  This guards against "drifting labels" that seem to be attached to another net.
 
@@ -79,7 +82,7 @@ Why did I give a picture of what you need to build?  Because reference designs a
 
 ![Microcontroller schematic](images/microcontroller.png)
 
-You should use the schematic as a guide for constructing the microcontroller portion of your schematic.  Build it from parts from `quadparts_prebuilt.lbr`:
+You should use the schematic as a guide for constructing the microcontroller portion of your schematic.  Build it from parts from `quadparts_prebuilt` libbrary:
 
 1.  Use one of the `ANT_PCB...` variants for the antenna.  There's a left and right-handed version.  Depending on your ultimate board design, you might want one or the other.
 2. `B1` is a 'balun'.  Pay attention to the pin numbers.
@@ -95,7 +98,7 @@ If you have questions about the parts attached directly to the microcontroller (
 
 ### Programming Header
 
-Your quad will use a 4-pin programming header to load code into the IMU.  It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom.  To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt.lbr`.  The four signals must appear in this order:
+Your quad will use a 4-pin programming header to load code into the IMU.  It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom.  To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt`.  The four signals must appear in this order:
 
 1.  Serial TX
 2.  Serial RX
@@ -132,7 +135,7 @@ Here's a picture of the motor driver circuit:
 
 ![Motor Driver](images/motor_driver.png)
 
-Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt.lbr` or your `custom.lbr`.
+Build four copies to drive the four motors you'll need.  All the parts you need are in `quadparts_prebuilt` or your `custom` libraries.
 
 1. Use the `-SMD-SOD123` diode in the library.
 2. Use the `-MOLEX-SMD` variant of the `MOTOR_PADS_GND` device of the motor connector.
@@ -152,8 +155,8 @@ As a result, your quadcopter will have two power rails: An unregulated power rai
 
 The power supply for quadcopter needs to contain the following parts:
 
-1. The battery. This is the `BATTERY` device in `quadparts_prebuilt.lbr`.  You need to use the `-SMD-TH` variant.
-3. A LP3985-series 2.5V regulator (see device `TPS73633-DBVT`.  Don't use th 3.3V or 3V versions.).
+1. The battery. This is the `BATTERY` device in `quadparts_prebuilt`.  You need to use the `-SMD` variant.
+3. A LP3985-series 2.5V regulator (see device `TPS73633-DBVT`.  Don't use th 3.3V or 3V versions).
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
 
@@ -163,9 +166,9 @@ You'll note that the output of the voltage regulator has decoupling capacitors o
 
 To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines.  The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines.  For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
-For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt.lbr` ).  Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopters we built in this class the first year it was offered). 
+For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB.  To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt` ).  Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopters we built in this class the first year it was offered). 
 
-A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a package that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in `custom.lbr`.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.  You don't need `tKeepout` anything in `tPlace` for the net bridge.  If eaglint complains, just explain that it's not necessary since it's the net bridge.
+A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a footprint that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire.  Put it in your `custom` library.  The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them.  You don't need `tKeepout` anything in `tPlace` for the net bridge.  If eaglint complains, just explain that it's not necessary since it's the net bridge.
 
 Use bridge to connect `BAT_GND` and `GND`.
 
@@ -209,7 +212,7 @@ allow you to connect this breakout board
 (https://www.adafruit.com/product/3387) to your quadcopter.  You need
 four pins: `2V5`,  `SCL`, `GND`, and `SCA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
 located together on the breakout board.  Use the 4-pin female header
-in `quadparts_prebuilt.lbr`.
+in `quadparts_prebuilt`.
 
 If you feel like being efficient, you can leave `SDA` and `SCL` off the signal breakout header, since they are on the rescue header.
 
@@ -251,7 +254,7 @@ You'll note there are a dizzying array of options (at this moment there are over
 12. If the forward voltage of the LED is much lower than the supply voltage, you'll need a large resistor to limit the current. Alternately, you could put two (or more) LEDs in series. The total voltage drop across the LED(s) and resistor needs to be greater than or equal to the supply voltage.
 13. You can use RGB LEDs, too. Checkout the datasheets for details.
 
-You'll need to build the library entries for the LED you want to use and then integrate them into your schematic.  You'll also need to include a current-limiting resistor.  You'll need to use Ohm's law to calculate the correct resistor value (here's a tutorial: http://www.ohmslawcalculator.com/led-resistor-calculator).  You will also need to be sure that resistor can handle the amount of power it will need to dissipate (see the datasheet). If our libraries doesn't include an appropriate resistor, you'll need to add one from the same family of resistors we are already using (check the datasheet for the resistors in `quadparts_prebuilt.lbr`).  Make sure it's available in small quantities on Digikey.  Put the new resistors in `custom.lbr`.
+You'll need to build the library entries for the LED you want to use and then integrate them into your schematic.  You'll also need to include a current-limiting resistor.  You'll need to use Ohm's law to calculate the correct resistor value (here's a tutorial: http://www.ohmslawcalculator.com/led-resistor-calculator).  You will also need to be sure that resistor can handle the amount of power it will need to dissipate (see the datasheet). If our libraries doesn't include an appropriate resistor, you'll need to add one from the same family of resistors we are already using (check the datasheet for the resistors in `quadparts_prebuilt`).  Make sure it's available in small quantities on Digikey.  Put the new resistors in `custom`.
 
 One thing to keep in mind is that most LEDs are extremely bright when driven at full current. Indicator LEDs can be driven very gently and still be visible.  LEDs added for visual effect can be driven harder, but they can easily become so bright that you can't even look at your quadcopter without being blinded.  For this reason, any LEDs that you want to be bright need to be attached to PWM pins, so you can moderate their brightness.
 
@@ -260,9 +263,9 @@ and the current you expect to flow through the LED.
 
 Feel free to get creative with the LEDs!  Smilely faces.  Simulated space ship engines.  Aircaft "running lights".  Dance party.  Ground effects.
 
-Put the LEDs devices/packages you create in `lbr/LEDs.lbr`. Reuse the LED symbol from `quadparts_prebulit.lbr` or your `custom.lbr`.
+Put the LEDs devices/footprints you create in a new cloud library called `LEDs`. Reuse the LED symbol from `quadparts_prebulit` or your `custom` libraries. 
 
-The packages/devices you build need to meet all the standards described in `Building Parts in Fusion360 Lab`.
+The footprints/devices you build need to meet all the standards described in `Building Parts in Fusion360 Lab`.
 
 Add an attribute called `CUSTOM` to the variants you create.  It should be constant but without a value.  This will ensure they get ordered.
 
@@ -273,9 +276,6 @@ Your design needs to pass http://eaglint.nvsl.io, so commit your design, submit 
 ### Things to remember
 
 1. Remember to sync your libraries with your schematic: `Library->Update All`.
-2. Eaglint automatically uses the latest `quadparts_prebuilt.lbr` when
-   processing your design, even if your local version is out of date.  If you
-   haven't pulled the latest version, eaglint will give you a lot of errors.
 
 ### Things to Submit
 
@@ -283,9 +283,11 @@ Include these in your github repo:
 
 1. Your `hardware/quadcopter.sch`.
 2. Your `hardware/lbr/LED.lbr`.
-3. Your `hardware/lbr/custom.lbr` (maybe renamed to custom_<name>.lbr and maybe two of them)
+3. Your `hardware/lbr/custom.lbr` (maybe renamed to `custom_<name>.lbr` and maybe two of them)
 5. Datasheets for your LEDs in `hardware/datasheets/`.
 6. Your `hardware/led_notes.txt`.
+
+Feel free to consult [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle#exporting-files) for export guidelines.
 
 Submit it to Eaglint: http://eaglint.nvsl.io.
 
