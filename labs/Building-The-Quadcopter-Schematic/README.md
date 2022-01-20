@@ -211,7 +211,7 @@ Soldering the IMU is hard enough that it causes a fair number of
 quadcopters to fail.  To guard against this, add a header that will
 allow you to connect this breakout board
 (https://www.adafruit.com/product/3387) to your quadcopter.  You need
-four pins: `2V5`,  `SCL`, `GND`, and `SCA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
+four pins: `2V5`,  `SCL`, `GND`, and `SDA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt`.
 
