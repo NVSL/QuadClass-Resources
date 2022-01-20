@@ -286,7 +286,6 @@ Include these in your github repo:
 2. Your `hardware/lbr/LED.lbr`.
 3. Your `hardware/lbr/custom.lbr` (maybe renamed to `custom_<name>.lbr` and maybe two of them)
 5. Datasheets for your LEDs in `hardware/datasheets/`.
-6. Your `hardware/led_notes.txt`.
 
 Feel free to consult [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle#exporting-files) for export guidelines.
 
