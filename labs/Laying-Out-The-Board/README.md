@@ -293,7 +293,28 @@ The crystal provides the clock to the MCU, and it's important that it be stable,
 ### Laying out the MCU
 
 The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible.  For decoupling caps, the length of the `2V5` trace is most important.  Eaglint requires all these caps to be with in 11mm of the MCU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
+
+### Layer Labels
+
+To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt.lbr` for this purpose: `LAYER_LABELS`.  It's attached to the `DECORATION` device.  Use the `add` tool to add a copy to the schematic and it'll appear on the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
+
+### Mouting holes for the test stand
+
+You'll need to mount your quadcopter to the test stand.  The easiest way
+to do this is to replicate the whole pattern on the FCB, and then mount your
+quadcopter to the same plywood piece we attach to the FCB.
+
+The `MOUNTING_HOLE` device in `quadparts_prebuilt` has a `2-56` variant that you should use for this.  There are four of them and they are centered on the board center of gravity (which should also be your IMU).  They are located at +/-20mm and +/-11.5mm.
+
+You can put them in different spots, but you'll need to build your own adapter plate to attach it to the test stand (or drill holes in plywood for the FCB).  Depending on the size of your quad, drilling holes in the arms should work fine.
+
+### Battery Voltage Meter
+
+You can monitor the batteries voltage using a voltage divider and one of the MCU's analog pins (https://learn.sparkfun.com/tutorials/voltage-dividers/all).  The basic idea is to divide the battery voltage (4.2V max) so that the maximum output of the divider is less than 1.8V.  Then you can measure the that voltage with one of the MCU's analog inputs. 
+
+You should use large resistances in your divider (e.g., in the kOhms range) so that not much current flows through it.
   
+
 ### Routing the Board
 
 The final step is routing the board. The steps above have given the autorouter most of the information it needs to route your design.  It will set the trace widths correctly and respect all the `t/bRestrict` information that you added.
@@ -321,7 +342,6 @@ Next, you can use `fanout` tool.  It has two good uses: 1) to draw short wires t
 The fanout tool has it's troubles.  For instance, it will happily place vias for different nets on top of eachother.  You can get around this by fiddling with the various options (`help fanout`).  Once you have a sequence of `fanout` commands that seems to give good results, add it to your routing script (see below).
 
 You can use the change `change` command to adjust the trace width and via size `fanout` uses.
-
 
 #### Running the Autorouter
 
@@ -354,26 +374,6 @@ grid 0.5                            # restore the grid
 
 You can either save this as an `.scr` file and run it the `script` command, but I find it easier to just copy and paste it into the command area in Fusion360.
 
-### Layer Labels
-
-To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt` for this purpose: `LAYER_LABELS`.  It's attached to the `DECORATION` device.  Use the `add` tool to add a copy to the schematic and it'll appear on the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
-
-### Mouting holes for the test stand
-
-You'll need to mount your quadcopter to the test stand.  The easiest way
-to do this is to replicate the whole pattern on the FCB, and then mount your
-quadcopter to the same plywood piece we attach to the FCB.
-
-The `MOUNTING_HOLE` device in `quadparts_prebuilt` has a `2-56` variant that you should use for this.  There are four of them and they are centered on the board center of gravity (which should also be your IMU).  They are located at +/-20mm and +/-11.5mm.
-
-You can put them in different spots, but you'll need to build your own adapter plate to attach it to the test stand (or drill holes in plywood for the FCB).  Depending on the size of your quad, drilling holes in the arms should work fine.
-
-### Battery Voltage Meter
-
-You can monitor the batteries voltage using a voltage divider and one of the MCU's analog pins (https://learn.sparkfun.com/tutorials/voltage-dividers/all).  The basic idea is to divide the battery voltage (4.2V max) so that the maximum output of the divider is less than 1.8V.  Then you can measure the that voltage with one of the MCU's analog inputs. 
-
-You should use large resistances in your divider (e.g., in the kOhms range) so that not much current flows through it.
-  
 ### Performing Design Rule Check
 
 You must run Fusion360's design rule checker (DRC).  It checks for a bunch of common problems.  Look through the list of errors it generates.  Do you best to understand what they mean (they are somewhat cryptic).  Here's a cheat sheet:

@@ -89,6 +89,7 @@ You should use the schematic as a guide for constructing the microcontroller por
 3. Use the `0.45x0.45` button.
 4. Replace one of the green LEDs with your red LED.
 5. You can use either variant for the `AVR_SPI...` header.  The surface mount one takes up more space (see it on your remote, under the LCD).  The through-hole one is more compact.
+6. Do not connect the power pin on the ISP programmer/Bootloader header.
 
 You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or you can mirror parts by editing their properties with the `info` tool.
 
@@ -105,7 +106,7 @@ Your quad will use a 4-pin programming header to load code into the IMU.  It's a
 3.  GND
 4.  Reset
 
-These are a subset of the signals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
+These are a subset of the signals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.  Note that you do need the 0.1uF capacitor between the reset line and the reset pin on the programming header.
 
 
 ### The IMU
