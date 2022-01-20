@@ -105,7 +105,7 @@ Your quad will use a 4-pin programming header to load code into the IMU.  It's a
 3.  GND
 4.  Reset
 
-These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
+These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.  Note that you do need the 0.1uF capacitor between the reset line and the reset pin on the programming header.
 
 
 ### The IMU
