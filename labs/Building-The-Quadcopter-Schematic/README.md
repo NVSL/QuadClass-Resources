@@ -89,6 +89,7 @@ You should use the schematic as a guide for constructing the microcontroller por
 3. Use the `0.45x0.45` button.
 4. Replace one of the green LEDs with your red LED.
 5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact.
+6. Do not connect the power pin on the ISP programmer/Bootloader header.
 
 You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or your can mirror parts by editing their properties with the `info` tool.
 
