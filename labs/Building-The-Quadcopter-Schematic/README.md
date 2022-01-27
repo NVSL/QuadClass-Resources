@@ -90,6 +90,7 @@ You should use the schematic as a guide for constructing the microcontroller por
 4. Replace one of the green LEDs with your red LED.
 5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact.
 6. You won't need the FTDI portion of the design.
+6. Do not connect the power pin on the ISP programmer/Bootloader header.
 
 You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or your can mirror parts by editing their properties with the `info` tool.
 
@@ -106,7 +107,7 @@ Your quad will use a 4-pin programming header to load code into the MCU.  You wo
 3.  GND
 4.  Reset
 
-These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.
+These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design.  You don't need the FTDI header.  Note that you do need the 0.1uF capacitor between the reset line and the reset pin on the programming header.
 
 
 ### The IMU
@@ -156,7 +157,7 @@ As a result, your quadcopter will have two power rails: An unregulated power rai
 
 The power supply for quadcopter needs to contain the following parts:
 
-1. The battery. This is the `BATTERY` device in `quadparts_prebuilt`.  You need to use the `-SMD` variant.
+1. The battery. This is the `BATTERY` device in `quadparts_prebuilt`.  You need to use the `-SMD-TH` variant.
 3. A LP3985-series 2.5V regulator (see device `TPS73633-DBVT`.  Don't use th 3.3V or 3V versions).
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how.  Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
@@ -211,7 +212,7 @@ Soldering the IMU is hard enough that it causes a fair number of
 quadcopters to fail.  To guard against this, add a header that will
 allow you to connect this breakout board
 (https://www.adafruit.com/product/3387) to your quadcopter.  You need
-four pins: `2V5`,  `SCL`, `GND`, and `SCA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
+four pins: `2V5`,  `SCL`, `GND`, and `SDA` (not necessarily in that order.  Look at the board it must connect to.), which are conveniently
 located together on the breakout board.  Use the 4-pin female header
 in `quadparts_prebuilt`.
 
@@ -286,7 +287,6 @@ Include these in your github repo:
 2. Your `hardware/lbr/LED.lbr`.
 3. Your `hardware/lbr/custom.lbr` (maybe renamed to `custom_<name>.lbr` and maybe two of them)
 5. Datasheets for your LEDs in `hardware/datasheets/`.
-6. Your `hardware/led_notes.txt`.
 
 Feel free to consult [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle#exporting-files) for export guidelines.
 
