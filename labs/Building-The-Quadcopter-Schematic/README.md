@@ -89,6 +89,7 @@ You should use the schematic as a guide for constructing the microcontroller por
 3. Use the `0.45x0.45` button.
 4. Replace one of the green LEDs with your red LED.
 5. You can use either variant for the `AVR_SPI...` header.  The surfacemount one takes up more space (see it on your remote, under the LCD).  The throughole one is more compact.
+6. You won't need the FTDI portion of the design.
 
 You might notice that some of the symbols for the parts seem backwards.  This is because they are 'mirrored'.  There's a mirror tool or your can mirror parts by editing their properties with the `info` tool.
 
@@ -98,7 +99,7 @@ If you have questions about the parts attached directly to the microcontroller (
 
 ### Programming Header
 
-Your quad will use a 4-pin programming header to load code into the IMU.  It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom.  To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt`.  The four signals must appear in this order:
+Your quad will use a 4-pin programming header to load code into the MCU.  You won't need the FTDI portion of the reference design.  It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom.  To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt`.  The four signals must appear in this order:
 
 1.  Serial TX
 2.  Serial RX
