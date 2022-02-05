@@ -39,7 +39,7 @@ Verify that your your FCB is working properly and that you can program it and th
 
 The the IMU provide a 3-axis accelerometer and a 3-axis gyroscope. You won't use the accelerometer data directly. Instead, your code will use them to compute the pitch and roll angles.   You installed the library for this in the previous lab (https://github.com/NVSL/QuadClass_AHRS).
 
-The key function in this library is: `Adafruit_Simple_AHRS::getQuad()` that fills in a new struct: `quad_data_t` with all the information you'll need: pitch and roll angles and the three axes of the gyro. There is also an new example: `File->Examples->QuadClass AHRS->ahrs_quad.ino` that will print out these values.
+The key function in this library is: `Adafruit_Simple_AHRS::getQuad()` that fills in a new struct: `quad_data_t` with all the information you'll need: pitch and roll angles and the three axes of the gyro. There is also an example: `File->Examples->QuadClass AHRS->ahrs_quad.ino` that will print out these values.
 
 I believe that you should not need to modify any of these libraries. If you find that you do, go ahead, but please let me know (or submit a pull request!).
 
@@ -67,7 +67,7 @@ We will address this problem in two ways: Apply filtering in software and use th
 
 You can filter out some of the noise in software by combining the readings from the accelerometer and the gyroscope. The AHRS library gives you Euler angles (i.e., degrees) for your quadcopter's orientation. These do not drift over time, but they are quite noisy when your motors are running.
 
-The gyroscope gives you angular acceleration (i.e., the derivative of the Euler angles). The gyroscopes are less noisy than than the accelerometers. You could recover the Euler angles by integrating the gyroscope outputs, but the resulting measurement will drift over time.
+The gyroscope gives you angular acceleration (i.e., the derivative of the Euler angles). The gyroscopes are less noisy than than the accelerometers. You could recover the Euler angles by integrating the gyroscope outputs, but the resulting measurement will drift over time due to accumulated error.
 
 Our goal is to combine these two to use the accelerometer to avoid drift while using the gyroscope to avoid noise. The easiest way to do this is with a [complementary filter](http://www.pieter-jan.com/node/11). The math is simple and it's pretty intuitive.
 
@@ -76,7 +76,7 @@ The filter is weighted average of two terms:
 1. The previously measured Euler angle + the integral of the gyroscope measurement since that measurement.
 2. The current Euler angles measured from the IMU.
 
-The filter's single parameter (called the complementary gain) ranges from 0 to 1 and controls how each of these terms contributes to the output. The higher the gain, the more influence the gyroscope has over the output.
+The filter's single parameter (called the _complementary gain_) ranges from 0 to 1 and controls how each of these terms contributes to the output. The higher the gain, the more influence the gyroscope has over the output.
 
 ### Configuring the IMU
 
@@ -91,12 +91,12 @@ Generally, we would like the low-frequency information from the accelerometers a
 
 #### Read Key Sections of the IMU Datasheet
 
-1. 3.1
-2. 3.4
-3. 7.12
-4. 7.13
-5. 7.24
-6. 7.25
+* 3.1
+* 3.4
+* 7.12
+* 7.13
+* 7.24
+* 7.25
 
 #### Configure the Gyroscope to Prevent Clipping
 
@@ -109,25 +109,24 @@ Use `lsm.setupGyro()` to adjust range of values the gyros measure to eliminate t
  
 Adjust the output data rate (ODR) so it's compatible with the rate at which you are sampling the data from the IMU. The ODR should be as closes as possible to how quickly you can sample (i.e., how frequently your `loop()` runs.)
 
-The AHRS example prints the latency for each trip through the loop at the beginning of each line (usually ~4ms). Your sampling rate is 1/latency (e.g., 500Hz). You set the ODR for both the gyro and the accelerometer using `CTRL_REG1_G` (Section 7.12 of the IMU datasheet).
+The AHRS example prints the latency for each trip through the loop at the beginning of each line (usually ~4ms). Your sampling rate is 1/latency (e.g., 250Hz). You set the ODR for both the gyro and the accelerometer using `CTRL_REG1_G` (Section 7.12 of the IMU datasheet).
 
-As your software evolves and gets slower, you may need to adjust your ODR.
 
 #### Setup the Low-Pass Filter on the Accelerometer
 
-The low-pass filter for the accelerometer is shown in Figure 8 of the IMU datasheet.  The low-pass filter is labeled "LPF2 XL".  You need to route the output of that filter to the "Data Reg Fifo".  You'll need to configure the `CTRL_REG7_XL` to set the HR and FDS bits to select the output of LPF2.
+The low-pass filter for the accelerometer is shown in Figure 8 of the IMU datasheet.  The low-pass filter is labeled "LPF2 XL".  You need to route the output of that filter to the "Data Reg Fifo".  You'll need to configure the `CTRL_REG7_XL` to set the `HR` and `FDS` bits to select the output of LPF2.
 
-You also need to set the cutoff for LPF2 by setting the ORD Ratio.  The cutoff is set by dividing the ODR by the ODR ratio. For the default ORD (952Hz) and the default ratio (9), the low-pass cutoff is 105.7Hz.
+You also need to set the cutoff for `LPF2` by setting the ORD Ratio.  The cutoff is set by dividing the ODR by the ODR ratio. For the default ORD (952Hz) and the default ratio (9), the low-pass cutoff is 105.7Hz.
 
 **Note:** There's an inconsistency in the datasheet between Figure 8 and Section 25.  Can you find it?  You'll need to experiment to see which part of the datasheet is correct.
 
 #### Setup Filters On the Gyroscope
 
- `CTRL_REG1_G` (Section 7.12), `CTRL_REG2_G` (Section 7.13), and `CTRL_REG3_G` (Section 7.14).  Control the filters on the gyroscope.  you want to let as much of the high-frequency signal from the gyroscope through as possible.  Figure 28 shows the data path for the gyroscope measurements.  
+ `CTRL_REG1_G` (Section 7.12), `CTRL_REG2_G` (Section 7.13), and `CTRL_REG3_G` (Section 7.14).  Control the filters on the gyroscope.  you want to let as much of the high-frequency signal from the gyroscope through as possible.  Figure 28 shows the data path for the gyroscope measurements.
 
 #### Adjust for Offsets
 
-When your FCB is still and level, it will probably not return zero pitch and zero pitch rate.  When your FCB starts up (or maybe when you arm it) it should check the values coming from the IMU to see what offsets you are measuring.  You should correct for these offsets so that the measured values are correct.
+When your FCB is still and level, it will probably not return zero pitch and zero pitch rate.  When your FCB starts up (or maybe when you arm it) it should check the values coming from the IMU to see what offsets you are measuring.  You should correct for these offsets so that the measured values are correct by substracting the value measured at calibration.
 
 #### Coding Conventions
 
@@ -139,7 +138,7 @@ In your code, you *must* use the macros and constants defined in [Adafruit_LSM9D
 
 For the completion of this lab, your demo will be you wiggling the airframe on your test stand with your motors going full blast and the plotting curves moving responsively but smoothly in response.
 
-The output of your complimentary filter will be an estimate of your current pitch angle. When you have your IMU filters set properly and your complimentary filter set correctly, you should observe the following:
+The output of your complimentary filter will be an estimate of your current pitch angle.  When you have your IMU filters set properly and your complimentary filter set correctly, you should observe the following:
 
 1. No clipping.
 2. With the motors off and the platform still, your estimated pitch angle should not change, even over long periods.
@@ -164,7 +163,7 @@ Neither the complimentary filter nor the IMU's filters are sufficient on their o
 2. The accelerometer has no drift, but is extremely susceptible to vibrations. This argues for a low cut off frequency for the accelerometer. This is ok especially because the gyroscope will provide good high-frequency data.
 3. If your complimentary gain is too high, your measurements will drift. The drift can be very, very slow, but so take time to make sure it's not there.
 
-You'll need to experiment quite a bit to get good measurement.  The more tuning you can do without recompiling, the better.
+You'll need to experiment quite a bit to get good measurement.  The more tuning you can do without recompiling, the better, so spend some time refining your remote control code so you can tune things with the knob.
 
 ### Turn in Your Work
 
