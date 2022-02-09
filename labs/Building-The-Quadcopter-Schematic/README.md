@@ -218,6 +218,12 @@ in `quadparts_prebuilt`.
 
 If you feel like being efficient, you can leave `SDA` and `SCL` off the signal breakout header, since they are on the rescue header.
 
+### Battery Voltage Meter
+
+You can monitor the batteries voltage using a voltage divider and one of the MCU's analog pins (https://learn.sparkfun.com/tutorials/voltage-dividers/all).  The basic idea is to divide the battery voltage (4.2V max) so that the maximum output of the divider is less than 1.8V.  Then you can measure the that voltage with one of the MCU's analog inputs. 
+
+You should use large resistances in your divider (e.g., in the kOhms range) so that not much current flows through it.
+
 ### Some LEDs
 
 You should also add some LEDs to your design. There are several reasons to add LEDs to your design:
