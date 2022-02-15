@@ -186,7 +186,7 @@ The second way to add capacitance is to build a capacitor into the board. A capa
 
 ### Breakout Headers
 
-You will face a couple challenges in bringing up your board and it's good to plan for them now.  Do this by adding two debugging headers to your design.  "Headers" are exposed connections to signals on your board.  You can attach pins or sockets to them as needed to help in debugging.
+You will face a couple challenges in bringing up your board and it's good to plan for them now.  Do this by adding a debugging header to your design.  "Headers" are exposed connections to signals on your board.  You can attach pins or sockets to them as needed to help in debugging.
 
 #### Signal Breakouts
 
