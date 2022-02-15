@@ -33,7 +33,7 @@ Commit your final design to your github repo. This should include
 * A file called `hardware/metadata.txt` that has the following:
 
     1. Color you want your quadcopter to be. Choices are: Green, White, Blue, Black, Red, or Yellow.
-    2. Silkscreen colors: White, Blue, Black, Red, Yellow (different than your board color).
+    2. Silkscreen colors: White (if your board color is not white) or black (if your board color is white).
     3. The dimensions of your board in mm.
 
 Submit it via Eaglint. You can expect the reviews to be quite stringent.

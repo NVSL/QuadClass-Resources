@@ -436,7 +436,7 @@ The FCB can be programmed via the remote control's USB-to-serial converter.  The
 
 Load, compile, and run `Open->Examples->QuadClass Adafruit LSM9DS1 Library->lsm9ds1` on the FCB.  Open the serial monitor (You will probably need to adjust the BAUD rate to 115200 using the menu in the lower right), and you should see something like this:
 
-![IMU Output](images/IMU_Output.png)
+![IMU Output](images/IMU_output.png)
 
 Shows the raw sensor readings from your IMU.  As you move the FCB, they should respond accordingly.  See if you can find gravity.  It's 9.8 m/s^2.
 
