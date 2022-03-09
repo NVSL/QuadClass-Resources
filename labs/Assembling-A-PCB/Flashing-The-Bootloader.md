@@ -53,7 +53,7 @@ When it's finally successful, you'll see a message like in the following image s
 
 ![AVRDude Success](images/avrdude_success.jpg)
 
-If the command displays an error (see images below) it means that the computer is not able to communicate to your board or that your computer couldn’t find the AVR ISP Programmer.
+If the command displays an error (see images below) it means that the computer is not able to communicate to your board or that your computer couldn’t find the AVR ISP Programmer. Double check that your quadcopter switch is turned on if you see an "initialization failed" error.
 
 ![AVRDude Error](images/avrdude_error.jpg)
 
