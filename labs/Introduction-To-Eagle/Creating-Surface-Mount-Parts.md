@@ -55,7 +55,7 @@ Interpreting datasheets takes some practice. Here are some tips:
 ### 
 
 ### Additional Requirements for Your Footprint
-The footprint should be called `SCHURTER-1301.9315`, the symbol should be called `TACTILE-BUTTON`, and the device should be called `TACTILE-BUTTON`, and the variant should be called `SHURTER-1301.9315`.
+The footprint should be called `SCHURTER-1301.9315`, the symbol should be called `TACTILE-BUTTON`, and the device should be called `TACTILE-BUTTON`, and the variant should be called `SCHURTER-1301.9315`.
 
 Name the pins to match the PCB layout drawing in the data sheet, and orient your footprint to match the drawing as well. This is a good practice because it makes it easy to see that your footprint matches the drawing.
 
