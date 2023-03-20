@@ -2,8 +2,6 @@
 
 Welcome to CSE176e Robotic System Design and Implementation (AKA, the Quadcopter Class).
 
-*Note:* This page written for the non-COVID-constrained, in-person version of the course.  We will discuss the COVID-induced differences in class.  The most important is that it is very unlikely that we will actually be able to build and assemble your custom-desingend quadcopter.  This is a huge bummer, but there's not much we can do about it.
-
 This repo serves an the homepage for the course labs.  It contains all
 the lab write ups and several resources you will use throughout the
 course.
