@@ -1,6 +1,6 @@
 #-*- Makefile -*-
 
-QUARTER?=wi22
+QUARTER?=sp23
 LAB_NAME=$(patsubst %-Solution,%,$(notdir $(PWD)))
 STARTER_REPO_NAME=$(LAB_NAME)-Starter-$(QUARTER)
 GITHUB_ORG?=UCSD-Quadcopter-Class

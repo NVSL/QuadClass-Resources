@@ -1,6 +1,7 @@
 # Building Parts in Fusion360
 
 To be completed on your own.
+
 Check the course schedule for due date(s).
 
 ## Skills to Learn
@@ -46,6 +47,8 @@ Create footprints, symbols, and devices for the following electrical components.
 | Red Light emitting diode	 | 160-1178-1-ND        |  Orientation is key <br/> Use the package generator for the LED                       |
 | N-Channel MOSFET               | SI2302CDS-T1-E3CT-ND |  Pay close attention to the pads <br/> Use the package generator with a custom footprint for the MOSFET (or build by hand)         | 
 | LSM9DS1TR 9-Axis IMU           | 497-14946-1-ND       |  Read the datasheet _and_ tech note <br/> You are welcome to try using the package generator or do it by hand     |
+
+**JGARZA:  There are a couple tech notes about soldering and PCB layout for the IMU.  I assume there are either new ones or the old ones still apply.  I think they are referenced in the datasheet.  The pdfs go in https://github.com/NVSL/QuadClass-Resources/tree/master/Datasheets.  Remove the out-of-date Pdfs and add the new ones.  Make sure their names are descriptive.
 
 You can find information about the part by typing the Digikey part number into google.  There will be a link to the datasheet.
 
@@ -125,7 +128,7 @@ One of the goals of a good library is to make it easy to make sure your board lo
 
 Fusion360 use `tKeepout` to describe the courtyard.  The rule is that if `tKeepout` for different parts overlap, it is an error that will be flagged during DRC.  Unfortunately, this means that if you draw your courtyard on a consistent grid (which you should), then when two parts are perfectly placed next to eachother, the `tKeepout` defining their courtyards will overlap.  There are two bad options: move the parts farther apart (which takes up space) or tolerate the DRC error (which will increase the possibility that you ignore real errors).
 
-The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place pack parts close together without generating suprious DRC errors.  The resulting board layouts are very tidy.
+The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm.  This will let you place parts close together without generating suprious DRC errors.  The resulting board layouts are very tidy.
 
 The width of your `tKeepout` lines should be 0.05mm.
 
@@ -204,6 +207,8 @@ Your footprint should include some kind of marking that marks the SMD that shoul
     * You will need to draw in rectangle on `tCream` as well (and disable the "Cream" check box in properties dialog).  Your `tCream` can (and should) be identical to your `tStop`.  `tCream` specifies where solder paste will be applied during assembly.
 
 #### IMU
+
+**JGARZA You'll need to go through this section very carefully to fix it up for the new IMU.
 
 The IMU has caused us signficant problems in the past.  Be careful with it.  You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 

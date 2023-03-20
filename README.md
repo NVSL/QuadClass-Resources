@@ -7,11 +7,14 @@ the lab write ups and several resources you will use throughout the
 course.
 
 * `labs` has all the labs.  The write ups reference the starter repos they use.
-* `Eagle` has the pre-built parts library, CAM files, and design rule files to use with Eagle.
+* `Fusion 360` has the pre-built parts library, CAM files, and design rule files to use with Fusion 360.
 * `Lecture Slides` has slides that aren't part of any particular lab.
 
 Please see the [course home page](https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) or the [class calendar](https://docs.google.com/spreadsheets/d/1cgSJm-5A6JrrA-iNKX8d2A0SE1PBk1CwzLvdhLKHuWY/edit#gid=1449995990) for schedule, due dates, and other logistical issues.
 
+## A Note About Software Tool Names
+
+The PCB design software we use is called Fusion 360.  It used to be known as "Eagle".  I'm slowly updating the course materials to reflect this change.  In the meantime when you see "Eagle" you should think "Fusion 360".
 
 ## Overview
 
@@ -45,8 +48,8 @@ The slides for each lab are in the directory with the lab description.
 
 ### PCB Design
 
-1. [Introduction To Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle)
-2. [Building Parts In Eagle](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-Parts-In-Eagle)
+1. [Introduction To Fusion 360](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle)
+2. [Building Parts In Fusion 360](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-Parts-In-Eagle)
 3. [Building The Quadcopter Schematic](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Building-The-Quadcopter-Schematic)
 4. [Laying Out The Board](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Laying-Out-The-Board)
 5. [Manufacturing The Board](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Manufacturing-The-Board)
@@ -77,11 +80,11 @@ The course requires several pieces of equipment:
 
 You will also build a quadcopter, which you can also keep.
 
-### ~~Keeping the Remote~~
+### Keeping the Remote
 
-~~The remote control, however, you cannot keep by default, because providing them for each student is too expensive.  However, if you would like a remote control of your own, you can build one instead of the building the breakout board.  If you wish to do this, talk to the instructor to get a parts list.  You can order the parts, and assemble your robot during [the PCB assembly lab(Assembling-A-PCB/README.md).~~
+You cannot keep the remote you used in class.  However, I a limited number of older remote boards that you can have if you really want one.  Please talk to me near the end of the course, if you are interested.
 
 ### Returning the Equipment
 
-The PID test stand, flight control board, remote, and other miscelleneous equipment you borrow for the labs must be returned or replaced before I will assign you a grade in the course.
+The PID test stand, flight control board, remote, and other miscelleneous equipment you borrow for the labs must be returned or replaced (modulo normal wear and tear) before I will assign you a grade in the course.
 
