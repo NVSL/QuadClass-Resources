@@ -2,7 +2,7 @@
 
 The next step is to generate the board, place the parts on it, and to connect them with wires.
 
-**The course style guidelines for board layout can be found [here](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Laying-Out-The-Board/README.md#board-layout-style-guide). Read and follow them.  EagleLint will complain if you don't.**
+**The course style guidelines for board layout can be found [here](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Laying-Out-The-Board/README.md#board-layout-style-guide). Read and follow them. EagleLint will complain if you don't.**
 
 ## Auto-generate the board
 
@@ -15,6 +15,12 @@ And click "OK" if a dialog box appears. You should now see the Fusion360 board e
 ![](images/board2_f360.png)
 
 In my window, the resistor and LED are on top, followed by the power jack then the button.
+
+The grid of the board usually starts in "mils", change it to metric system "mm" with a grid size of "1 mm", `Size: 1 | mm | Finest`.
+
+![](images/board2.5_f360.png)
+
+Note: By selecting `Display->On` you can turn the display of the grid on.
 
 ## Placing the devices
 
