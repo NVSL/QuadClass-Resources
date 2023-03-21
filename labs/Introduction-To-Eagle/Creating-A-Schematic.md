@@ -4,7 +4,7 @@ This tutorial will take you through the steps of creating a schematic, creating 
 
 We are going to design a PCB with a light controlled by a button.
 
-**The course style guidelines for schematics can be found [here](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-The-Quadcopter-Schematic/README.md#general-schematic-style-guidelines). Read and follow them.  EagleLint will complain if you don't.**
+**The course style guidelines for schematics can be found [here](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-The-Quadcopter-Schematic/README.md#general-schematic-style-guidelines). Read and follow them. EagleLint will complain if you don't.**
 
 You will need the `Lab01.lbr` file available in the lab starter repo.
 
@@ -24,38 +24,38 @@ We need to load the Fusion360 Library that describes the components we are going
 
 ![](images/library1.png)
 
-Click the `Open Library Manager` button and navigate to the `Available` tab:
+Click the `Open Library Manager` button, a window similar to the one below should be shown:
 
 ![](images/library2.png)
 
-Use the `Browse` tool to locate your `Lab01.lbr` file. Once you have loaded it into Fusion 360, it'll be in the list, but it might be hard to find.  Type "lab" into the search box.  It should show up.   Press the `Use` button to enable it.  Close the Library Mananger.
+Use the `Filter results..` search bar to locate your `Lab01.lbr` file. Because you configured the library path to be the one of your starter repo + lbr path at the very beginning, `Lab01.lbr` should be displayed and in use. Otherwise, if you are importing a library that doesn't exist in your library path folder, then click `Import Libraries->Import from local disk` (icon in top rigth corner) and verify that the library is `In Use`. Close the Library Mananger.
 
 ![](images/library3.png)
 
 ## Adding the Parts
 
-Now you are ready to build your schematic. Go back to the `Design` tab and select the `Add Part` tool from the tool palette (or press `a` on your keyboard):
+Now you are ready to build your schematic. Go back to the `Design` tab and select the `Place Component` tool from the tool palette (or press `a` on your keyboard):
 
 ![](images/schematic2_f360.png)
 
-This will open up the library browser. Click on the triangle next to `Lab01` to expand it (if you don't see `Lab01`, select another library and type 'lab'). You’ll see four “devices” inside it. Go read [this page](http://goo.gl/HJtIzp) of the [Adafruit Eagle Parts Tutorial](http://goo.gl/GcM04V) to understand the difference between a schematic “symbol”, a “package”, and a “device.”
+This will open up the library browser in the left sidebar. Under `Place Components`, Select the drop-down menu and replace `All Libraries` to `Lab01`. You’ll see four “devices” now renamed as "components" inside it. (Note: Eagle Legacy documentation) Go read [this page](http://goo.gl/HJtIzp) of the [Adafruit Eagle Parts Tutorial](http://goo.gl/GcM04V) to understand the difference between a schematic “symbol”, a “package”, and a “device.”
 
 ![](images/schematic3_f360.png)
 
-A schematic should have a “frame” around it to contain the size. The frame also include space for documentation about the version and author. To add the frame select `FRAME_B_L` and click “OK”. You can then place your frame
+A schematic should have a “frame” around it to contain the size. The frame also include space for documentation about the version and author. To add the frame double click `FRAME_B_L`. You can then place your frame. Click "ESC" to stop the action.
 
 ![](images/schematic4_f360.png)
 
-Select `2.1MMJACKTHM` from the Add Part menu and press “OK.” You’ll return to the schematic editor with the schematic symbol for the power jack attached to your mouse. Click to put it down somewhere:
+Select `2.1MMJACKTHM` from the menu and double click to add the part. You’ll return to the schematic editor with the schematic symbol for the power jack attached to your mouse. Click to put it down somewhere:
 
 ![](images/schematic5_f360.png)
 
-Save your schematic, so you don’t lose your work. Call the file “throughhole”.
+Save your schematic, so you don’t lose your work (Ctr + S). Call the file “throughhole”. Fusion 360 projects are saved in the cloud, later we will see how to export them locally.
 
-Select the Add Part tool again, and choose the `BUTTON-TACTILE-SQUARE` device. Place it to the right of the power jack.
+Select the `BUTTON-TACTILE-SQUARE` component from the list. Place it to the right of the power jack.
 
-Next, we’ll add the LED. Choose the `LED5MM` device. Place the LED to the left of the power jack.
-Finally, add the resistor. Use the device `RESISTORTH-1/4W-CARBON`.
+Next, we’ll add the LED. Choose the `LED5MM` component. Place the LED to the left of the power jack.
+Finally, add the resistor. Use the component `RESISTORTH-1/4W-CARBON`.
 
 ![](images/schematic6_f360.png)
 
@@ -67,8 +67,10 @@ And click the symbol for the switch a few times. You can do the same for the LED
 
 ![](images/schematic8_f360.png)
 
+Note: You can also rotate the component by selecting the component and then doing a mouse right click.
 
 ## Connecting the Parts
+
 Next, we need to wire up the components. Let’s start by connecting the resistor to the switch. Notice that the switch’s symbol gives a clear picture of how it operates: There is a pair of connected terminals on each side (“P” and “P2” on the left and “S” and “S2” on the right), and when we press the button the two pairs will be connected. We need to connect the resistor to one of the pairs. Select the `Net` tool:
 
 ![](images/schematic9_f360.png)
@@ -83,7 +85,7 @@ Next, connect the other end of the resistor to the cathode of the led (the catho
 
 Finally, we need to connect everything to the power supply. The symbol for the power jack has three connection pins. The top pin will be connected to the tip of the power plug. The other two will be connected to the barrel. So, if the power supply is tip-positive, the top connector will be 5V and the bottom two will be ground (0V).
 
-Connect the anode on the LED to the 5V pin and then connect the pin on the other side of the switch to the ground pin. Just be sure to wire both of the ground pins together (see below). 
+Connect the anode on the LED to the 5V pin and then connect the pin on the other side of the switch to the ground pin. Just be sure to wire both of the ground pins together (see below).
 
 ![](images/schematic12_f360.png)
 
@@ -94,10 +96,10 @@ Finally, rename and label the power and ground nets by typing `name GND` into th
 Now, think through how the schematic will operate and convince yourself that this matches what we build on the breadboard.
 
 ## Running Electrical Rules Check (ERC)
+
 Fusion360 provides a mechanism to do a sanity check on your schematic. It’s called Electrical Rules Check (ERC). Select it from `Validate->ERC`. I recommend running a library update before executing it, which can be found in the `Library` tab next to the library manager.
 
 ![](images/schematic14_f360.png)
-
 
 A window will appear with a list of errors and warnings broken into three categories (note that your window may appear different):
 
@@ -106,6 +108,6 @@ A window will appear with a list of errors and warnings broken into three catego
 1. Errors: Potentially serious errors
 2. Warnings: Potential problems
 3. Approved: These are errors and warnings that you have marked as “ok” using the “Approve” button.
-The warning and error names are a little cryptic, but you can usually figure out what they are getting at. Look at each error and warning and determine if it’s actually a problem. For instance, it may tell that a pin is not connected. If you did not intend to connect the pin, then it’s not an issue. For errors and warnings that are not a problem, click “Approve.” Fusion360 will remember this when you re-run ERC. Fix the errors and warnings that represent real issues.
+   The warning and error names are a little cryptic, but you can usually figure out what they are getting at. Look at each error and warning and determine if it’s actually a problem. For instance, it may tell that a pin is not connected. If you did not intend to connect the pin, then it’s not an issue. For errors and warnings that are not a problem, click “Approve.” Fusion360 will remember this when you re-run ERC. Fix the errors and warnings that represent real issues.
 
 Once you've verified that your design has no errors, you can move on to [Part 2](Creating-A-Board.md)!
