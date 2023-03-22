@@ -192,3 +192,9 @@ Checklist:
 6. Pour `survey.pdf`
 
 You will lose one point for each day late your solution is and one point for each rejected submission to eaglint. Note that the maximum possible points in 10, but you get start out with 15. This lets you submit a few full checks to get used to what eaglint is expecting.
+
+TODO:
+
+- CAM file to be used is not specified
+- It's never indicated when does the smd.sch and board should be created.
+- Part 4 is lacking, very confusing

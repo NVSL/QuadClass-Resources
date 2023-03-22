@@ -6,29 +6,63 @@ Most modern PCBs use "surface mount" (also called SMD) parts that more compact a
 
 The course style guidelines for libraries are in the "Guidelines for Building..." section of [this lab](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Building-Parts-In-Eagle/README.md). Read and follow them. Eaglint will complain if you don't.
 
-## Creating a Surface Mount Component
+## Preparation
 
-We will replace the through hole button with a surface mount version. We will use part number 1301.9315 from this [datasheet](https://www.schurter.com/en/datasheet/typ_6x6_mm_tact_switches.pdf). It's the one that looks like this:
+Create a new schematic and board files named `smd.sch` and `smd.brd` and load the DRU file for error checking. Remember for creating a new design `File->New Electronics Design` and save the design as `smd`. Then in the design tab `Create->New Schematic` and save the schematic as `smd`. Then in the design tab `Create->New Board` or in the schematic tab `Switch to PCB document`. Add the same components, with the exception of the through-hole button. You can add the components into the schematic manually. However, if you are a desperate person as me, instead of adding the components again manually you can copy the entire schematic by going to the throughhole schematic tab, then clicking `Group Select` and selecting all components including the FRAME, then Ctr+C, then switch to the smd.sch tab and Ctr+V. Finally, delete the through hole button. The tabs and smd schematic should look as follows:
+
+![](images/smdtutpoorial1.jpg)
+
+This time instead of adding the button component from a library we will create our own surface mount component inside a library. We will create part number [1301.9315](https://www.digikey.com/en/products/detail/schurter-inc/1301-9315/2643952) which has the following [datasheet](https://www.schurter.com/en/datasheet/typ_6x6_mm_tact_switches.pdf). It's the one that looks like this:
 
 ![](images/smd1.jpg)
 
-Tactile switch dimensions in datasheet (search for LSH Gullwing lead):
+In datasheets is common that manufacturers show many dimensions for different versions for the same family of components. Also they show two types of dimensions, the physical component dimensions and the PCB pads recomended dimensions. We will use the dimensions **of the recommended PCB pads** which in the datasheet corresponding to the `LSH Gullwing lead` version:
 
 ![](./images/smd7.png)
 
-Adafruit has a very nice [tutorial about building new schematic symbols, packages, and devices in Eagle](https://www.google.com/url?q=https%3A%2F%2Flearn.adafruit.com%2Fktowns-ultimate-creating-parts-in-eagle-tutorial%2Fintroduction&sa=D&sntz=1&usg=AFQjCNGsUFLtnS_nmz4ra63XcImFHoVf9A). However, since this tutorial's release, Eagle has been ported over to Fusion360. Autodesk has released several tutorials on how to design custom parts, which can be found [here (~15 min)](https://www.youtube.com/watch?v=zqar0XWtFaY) and [here (~45 min)](https://www.youtube.com/watch?v=xNIEXCimRSg&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY).
+If you can't access the datasheet for the SMD button please ask the TA.
 
-Go through any tutorial using our desired tactile button. We recommend the more recent ones from Autodesk, but should you choose the written tutorial, some Fusion360 notes can be found below. The datasheet required is present in your Lab 01 repository. Make a copy of `Lab01.lbr` called `Lab01_smd.lbr` and create the button there. Create a new footprint, device, and symbol for the button.
+## Creating a Surface Mount Component
 
-### Adafruit Tutorial Fusion360 Updates
+All electronic components are stored inside libraries (\*.lbr files), and include schematic symbols, PCB footprints, and 3D packages. Now, Adafruit has a very nice [tutorial about building new schematic symbols, packages, and devices in Eagle](https://www.google.com/url?q=https%3A%2F%2Flearn.adafruit.com%2Fktowns-ultimate-creating-parts-in-eagle-tutorial%2Fintroduction&sa=D&sntz=1&usg=AFQjCNGsUFLtnS_nmz4ra63XcImFHoVf9A). However, since this tutorial's release, Eagle has been ported over to Fusion360. Autodesk has released several tutorials on how to design custom parts, which can be found [here (~15 min)](https://www.youtube.com/watch?v=zqar0XWtFaY) and [here (~45 min)](https://www.youtube.com/watch?v=xNIEXCimRSg&list=PLmA_xUT-8UlKE-U-eEqrkNEI7rd1fUnLY).
 
-#### Creating a New Package
+We will go step by step creating the SMD button component. However, it's recommended that you go through any of the above tutorials for further reference. We recommend the more recent ones from Autodesk.
 
-The editors for creating devices, symbols, footprints and packages can be found in the `Create` tab of the library editor. Once you open `Lab01_smd.lbr` in Fusion360, you should be able to see these options:
+Go to your Github repo and make a copy of `Lab01.lbr` called `Lab01_smd.lbr`, we will create the SMD button there.
 
-![](images/adafruit1.png)
+Open `Lab01_smd.lbr` in Fusion360. `File->Open...->Open from my computer->Lab01_smd.lbr`, you should be able to see a screen as the following:
 
-Creating footprints in Fusion360 can be achieved differently from Eagle; using Fusion360 3D modeling software and package generator. **You should not create a package for this lab**, instead create a footprint by hand using the help of one of the tutorials (see below for Adafruit updates).
+![](images/smdtutorial2.png)
+
+## Create a new Footprint
+
+The footprint refers to the PCB pads (exposed cooper) where the SMD button legs will be soldered into the PCB. Click `Create New Footprint` and give it the name of `SCHURTER-1301.9315`.
+
+![](images/smdtutorial3.png)
+
+Change the Grid to `0.25 mm`. For footprints it's recommended to use the grid that makes sense to crate the dimensions for the SMD button pads shown in the datasheet.
+
+![](images/smdtutorial4.png)
+
+Now it's time to add the SMD button pads. Click `SMD pad` and place the pad in X,Y position `[-5.00 -2.25]`. On the top center you can see the position of your cursor with the pad. By default, for placing pads the center of the pad is taken as reference.
+
+![](images/smdtutorial5.png)
+
+Why that position? Remember, we are trying to recreate the same pads with the same dimensions shown in the SMD button datasheet. So if the pads require a Y spacing of 10.00 mm, 10.00/2 is 5.00 mm. Same for X spacing, 4.5/2 equals 2.25 mm. **Taking as reference the center**, the first pad (down left) should be placed at -5.00 mm, 2.25 mm. That's also why we set the grid to be 0.25 mm, so we can have a precision of 0.25 mm.
+
+Add 3 more pads in the X,Y positions: `[5.00, -2.25]`, `[-5.00, 2.25]`, `[5.00, 2.25]`. The final result should look like this:
+
+![](images/smdtutorial6.png)
+
+We are missing the pads dimensions which, taking as reference the datasheet, are `2.10 mm X 1.40 mm` for each pad. Use the Info button to correct the size for each pad.
+
+![](images/smdtutorial7.png)
+
+All pads need to have a name, which is used to know the orientation of the component and to make the right connections within the component. Use the reference below pads dimensions in the datasheet to number the pads.
+
+⚠️ I'm serious! Pay attention to the naming, naming the pads wrong can make you, for example, connect pads 1 with 3 and 2 with 4, which is a short (button always pressed). This error has happened to me before for not paying attention, and you can only figure the error out after the board has been assembled.
+
+![](images/smdtutorial8.png)
 
 #### Creating a Footprint
 
