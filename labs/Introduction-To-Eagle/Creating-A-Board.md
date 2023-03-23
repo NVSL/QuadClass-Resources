@@ -82,7 +82,7 @@ To start DRC, select it from the `Rules DRC/ERC` tab:
 
 ![](images/board10_f360.png)
 
-Once the window pops up, click on `Load` to load in our custom design rules. Navigate to select `EAGLE/DRU/4pcb-33board.dru` in your copy of the git `QuadClass-Resources-master` repository. Then click “Check.”
+Once the window pops up, click on `Load` to load in our custom design rules. Navigate to select `Eagle/CAM/jlcpcb-2layer.dru` in your copy of the git `QuadClass-Resources-master` repository. Then click “Check.”
 
 A window should open showing a list of errors.
 
