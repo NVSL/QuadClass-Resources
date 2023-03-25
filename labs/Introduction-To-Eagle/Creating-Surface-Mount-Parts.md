@@ -180,10 +180,9 @@ Add the `"S" prefix` by clicking the prefix button.
 
 ![](./images/smdtutorial33.png)
 
-Make the footprint a variant and name it `-SCHURTER-1301.9315`. Variants are helpful so that you don't need to redraw the symbol. You can make a different footprint, maybe bigger push button and add to it the same schematic symbol using a variant. Right-click on the footprint text and select "Rename", you should now be able to rename to pad-to-footprint connection.
+Make the footprint a variant and name it `SCHURTER-1301.9315`. Variants are helpful so that you don't need to redraw the symbol. You can make a different footprint, maybe bigger push button and add to it the same schematic symbol using a variant. Right-click on the footprint text and select "Rename", you should now be able to rename to pad-to-footprint connection.
 
 ![](./images/smdtutorial35.png)
-Note: on the image I'm missing the dash "-".
 
 We now have a working component, however there's one last step, and that is of giving the component additional information. Like whom created it, who's the distributor, what's the manufacturer part number for this component, etc. You can find most of the useful information from the distributor, in this case [Digikey](https://www.digikey.com/en/products/detail/schurter-inc/1301-9315/2643952). Note that there are many other components distributors (e.g. [Mouser](https://www.mouser.com/), [Arrow](https://www.arrow.com/), etc).
 
@@ -196,6 +195,10 @@ Add three "attributes" to the new variant you created, which can be added using 
 - "DISTPN" for distributor part number. Put "1301.9315".
 
 ![](./images/smdtutorial36.png)
+
+These attributes should be of type `constant` instead of variable.
+
+![](./images/smdtutorial35.5.png)
 
 Congratulations! 🎉 You have a working SMD push button component.
 
@@ -233,11 +236,11 @@ Bonus: If you want to give your component a fixed value, add the attribute "VALU
 
 ## Completing the Board
 
-Change the grid to `1 mm`. Add the DRU file `jlcpcb-2layer.dru`, "RULES DRC/EC -> DRC -> Load ...". Move the components into the board and adjust the board outline.
+Change the board grid to `0.5 mm`. Add the DRU file `jlcpcb-2layer.dru` going to "RULES DRC/EC -> DRC -> Load ...". Move the components into the board, adjust the board outline and finally set the outlines' width to `0.01mm`.
 
 ![](./images/addingsmd6.png)
 
-Now, re-route the board, but now using the `Autorouter` tool. The autorouter tool will trace everything for you. Keep in mind that the autorouter tool is very inefficient, you will sometimes need to add more layers or more board area for the autorouter for it to completly trace your design. For the most efficient design do it manually.
+Now, re-route the board, but now using the `Autorouter` tool. The autorouter tool will trace everything for you. Keep in mind that the autorouter tool is very inefficient, you will sometimes need to add more layers or more board area for the autorouter to completely trace your design. For the most efficient design route your board manually.
 
 ![](images/sm6_f360.png)
 
@@ -249,7 +252,7 @@ Click start
 
 ![](./images/addingsmd8.png)
 
-The process will create multiple threads that will execute with path finding algorithms. When it's finish click End Job.
+The process will create multiple threads that will execute path finding algorithms. When it's finish click End Job.
 
 ![](./images/addingsmd9.png)
 
@@ -259,9 +262,11 @@ This will result in a nice, fully-routed board!
 
 You can select “Unroute -> Unroute all” to remove all traces and try again.
 
+Check for any DRC errors: "RULES DRC/ERC (tab) -> DRC -> Check". If no window pop-ups with errors, it means your board doesn't have any errors.
+
 ## Re-running the CAM Processor
 
-Follow the instructions for running the CAM processor given in the previous part. Make sure tu use CAM file `jlcpcb-2layer-eagle9.cam`. In the Gerber viewer, you can find the pads for the SMD push button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not. This gives more space to place more components and add more routing.
+Follow the instructions for running the CAM processor given in the previous part. Make sure to use CAM file `jlcpcb-2layer-eagle9.cam`. In the Gerber viewer, you can find the pads for the SMD push button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not. This gives more space to place more components and add more routing.
 
 Save the gerber file as `smd.cam.zip`.
 

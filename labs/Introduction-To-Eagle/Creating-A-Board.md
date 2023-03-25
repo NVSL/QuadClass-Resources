@@ -16,7 +16,7 @@ And click "OK" if a dialog box appears. You should now see the Fusion360 board e
 
 In my window, the resistor and LED are on top, followed by the power jack then the button.
 
-The grid of the board usually starts in "mils", change it to metric system "mm" with a grid size of "1 mm", `Size: 1 | mm | Finest`.
+The grid of the board usually starts in "mils", change it to metric system "mm" with a grid size of "0.5 mm", `Size: 0.5 | mm | Finest`.
 
 ![](images/board2.5_f360.png)
 

@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Fusion360 installed (either in the Maker Studio, the basement CSE labs, or your own laptop). Fusion360 is available on all platforms!
-2. The [starter repo](https://classroom.github.com/a/8NsKPNlT) for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/K4L-LoDo) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
@@ -158,7 +158,7 @@ You will notice some text below the image, this is the path of the image. Zoom t
 
 ### Exporting Files
 
-Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
+Your files and changes are stored in the cloud, we need the files locally to push your files to Github. Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
 
 ![](images/export1.png)
 
@@ -167,6 +167,14 @@ This will open a file dialog for saving your files in 3 different formats. For a
 ![](images/export2.png)
 
 Fusion wants to name your files with a version number (e.g, `v1`) on the end. Please delete this. The Eaglint autograder won't recognize them.
+
+Export following files:
+
+- `throughhole.sch`
+- `throughhole.brd`
+- `smd.sch`
+- `smd.brd`
+- `Lab01_smd.lbr` (replace your local copy)
 
 Now you're ready to submit!
 
@@ -185,7 +193,7 @@ Initial points: 15
 Checklist:
 
 1. The schematic, board, and CAM files for your through-hole design ( `throughhole.sch, throughhole.brd, throughhole.cam.zip` ). With the artwork.
-2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip` ).
+2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip`). No artwork needed.
 3. Your modified version of `Lab01.lbr, i.e, Lab01_smd.lbr.`
 4. Your `lbr/Logos.lbr`.
 5. Your `responsibility.pdf`.
@@ -193,8 +201,6 @@ Checklist:
 
 You will lose one point for each day late your solution is and one point for each rejected submission to eaglint. Note that the maximum possible points in 10, but you get start out with 15. This lets you submit a few full checks to get used to what eaglint is expecting.
 
-TODO:
-
-- CAM file to be used is not specified
-- It's never indicated when does the smd.sch and board should be created.
-- Part 4 is lacking, very confusing
+TODO:  
+.gitignore remoes _.cam and _.zip, but eaglelint needs the cam files
+eaglelint complines with the jlcpcb cam but not with the pcbcart cam
