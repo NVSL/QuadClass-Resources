@@ -200,7 +200,3 @@ Checklist:
 6. Pour `survey.pdf`
 
 You will lose one point for each day late your solution is and one point for each rejected submission to eaglint. Note that the maximum possible points in 10, but you get start out with 15. This lets you submit a few full checks to get used to what eaglint is expecting.
-
-TODO:  
-.gitignore remoes _.cam and _.zip, but eaglelint needs the cam files
-eaglelint complines with the jlcpcb cam but not with the pcbcart cam
