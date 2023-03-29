@@ -1,6 +1,6 @@
 # Eagle Tips and Tricks and Recipes
 
-Here are some useful commands for working in Fusion 360.  For the commands that go in the command line window, pay attention to "@" and ";" -- change the meaning of some commands significantly.
+Here are some useful commands for working in Fusion 360. For the commands that go in the command line window, pay attention to "@" and ";" -- change the meaning of some commands significantly.
 
 In all cases, you'll either need to click in the command line panel (Above the main part of the window) or (much faster) type `/`.
 
@@ -8,7 +8,7 @@ In all cases, you'll either need to click in the command line panel (Above the m
 
 1. `help info` -- get documentation about `info`
 2. `help move` -- get documentation about `move`
-3.  etc.
+3. etc.
 
 ## Finding Parts
 
@@ -28,8 +28,8 @@ In all cases, you'll either need to click in the command line panel (Above the m
 2.  ctrl-click to rotate the part.
 3.  `grid mm; grid 1` -- set grid for part placement.
 4.  `grid mm; grid 0.5` -- set grid for reference designator and value placement.
-5.  `move;`  -- then select parts with `group` tool.  Ctrl-click and select `move: group` to move the group.
-6.  command-click (on my mac; not sure on windows) -- snap to grid.
+5.  `move;` -- then select parts with `group` tool. Ctrl-click and select `move: group` to move the group.
+6.  command-click (Mac), Ctr-click (Windows) -- snap to grid.
 7.  `move` then shift-click -- move a whole polygon.
 8.  `grid mm; grid 0.85` -- move items by 0.85mm
 
@@ -41,7 +41,7 @@ In all cases, you'll either need to click in the command line panel (Above the m
 
 ## Quickly Laying Out SMDs and Pads
 
-Example:  Create a row of 6 SMDs at 0.7mm pitch at 0.8mm above the origin. 
+Example: Create a row of 6 SMDs at 0.7mm pitch at 0.8mm above the origin.
 
 1.  `grid mm`
 2.  `grid 0.7`
@@ -51,11 +51,11 @@ Example:  Create a row of 6 SMDs at 0.7mm pitch at 0.8mm above the origin.
 6.  Group move them up one grid square (0.8mm)
 7.  `grid 0.21`
 8.  Select all SMDs
-9.  Group move them to the lift one grid square (6 * 0.7/2 = 0.21mm).
+9.  Group move them to the lift one grid square (6 \* 0.7/2 = 0.21mm).
 
-## Routing 
+## Routing
 
-1.  `route` -- start routing.  Select particular router from tool bar. "walkaround obstacles" is a good default.
+1.  `route` -- start routing. Select particular router from tool bar. "walkaround obstacles" is a good default.
 2.  `route gnd` -- start routing `GND`
 3.  `fanout device U1` -- fanout `U1` by adding stubby wires and vias to the pins on `U1`
 4.  `fanout signal GND` -- fanout `GND` by adding stubby wires and vias to all the pins on `GND`
@@ -75,7 +75,7 @@ Example:  Create a row of 6 SMDs at 0.7mm pitch at 0.8mm above the origin.
 
 ## Create a Cutout in a Pour
 
-1.  Draw a polygon in the metal laye you want the cutout in.  Use `info` to set the 'Polygon pour' property to `cutout`.
+1.  Draw a polygon in the metal laye you want the cutout in. Use `info` to set the 'Polygon pour' property to `cutout`.
 
 ## Checking and Fixing Designs
 
