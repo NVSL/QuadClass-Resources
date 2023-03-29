@@ -10,7 +10,7 @@ Different board manufacturers (i.e., "board houses") require different types of 
 
 The first is the .cam file. This defines the set of gerber files we will send to the manufacturer. The second in the .dru file that defines the design rules for the board house. The specs for JLCPCB's PCBs are here: https://www.pcbcart.com/pcb-fab/standard-pcb.html. Fusion360 uses the design file to, for instance, guide the autorouter and perform sanity checks on our design.
 
-The CAM file you need for this lab are in `Eagle/CAM/jlcpcb-2layer-eagle9.cam`.
+The CAM file you need for this lab is in `Eagle/CAM/pcbcart-4layer.cam`.
 
 <!--
 To select the CAM file you will use, select "Window->Control Panel" Then select "File->Open->Cam Job..." and navigate to Eagle/CAM/jlcpcb-2layer-eagle9.cam.
@@ -31,7 +31,7 @@ the same window will reappear but with some additional information filled in:
 
 ![](images/cam2_f360.png)
 
-Then click on the "load job -> Open Cam File". This will allow you to select the required the CAM `Eagle/CAM/jlcpcb-2layer-eagle9.cam`. Keep in mind that this CAM is for 2 layer PCB, for a 4 layer PCB for the quadcopter we will use a different CAM file.
+Then click on the "load job -> Open Cam File". This will allow you to select the required the CAM `Eagle/CAM/pcbcart-4layer.cam`. Keep in mind that this CAM is for a 4 layer PCB, while we are working on a 2 layer PCB, so you will see some warnings. However, this CAM file is needed for eaglelint which will automatically check your schematic and board files.
 
 ![](images/cam3_f360.png)
 
@@ -39,7 +39,7 @@ The tabs on the left correspond to the CAM files that the CAM processor will gen
 
 Click "Process Job". A progress bar will appear briefly and then vanish. The CAM files have been generated, and are saved wherever you specified.
 
-Save the Geber file as `throughhole.cam.zip`
+Save the Gerber file as `throughhole.cam.zip`
 
 ## Viewing the CAM files
 

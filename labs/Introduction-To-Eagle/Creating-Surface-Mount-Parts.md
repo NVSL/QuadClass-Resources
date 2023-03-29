@@ -266,8 +266,8 @@ Check for any DRC errors: "RULES DRC/ERC (tab) -> DRC -> Check". If no window po
 
 ## Re-running the CAM Processor
 
-Follow the instructions for running the CAM processor given in the previous part. Make sure to use CAM file `jlcpcb-2layer-eagle9.cam`. In the Gerber viewer, you can find the pads for the SMD push button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not. This gives more space to place more components and add more routing.
+Follow the instructions for running the CAM processor given in the previous part. Make sure to use CAM file `Eagle/CAM/pcbcart-4layer.cam`. In the Gerber viewer, you can find the pads for the SMD push button the in the GTL layer. If you check the GBL layer, you’ll notice that while the pins for all the through hole parts appear on the bottom of the board, the pads for the surface mounted component does not. This gives more space to place more components and add more routing.
 
-Save the gerber file as `smd.cam.zip`.
+Save the Gerber file as `smd.cam.zip`.
 
 Once you've done everything, you're ready for the [final steps](README.md#getting-art-onto-the-board): adding artwork and exporting!
