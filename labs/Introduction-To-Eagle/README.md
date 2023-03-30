@@ -19,22 +19,22 @@ Skills to Learn
 11. Defining new layers.
 12. Adding graphics to a PCB design.
 
-## Equipment, Supplies, and Software You Will Need 
+## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Fusion360 installed (either in the Maker Studio, the basement CSE labs, or your own laptop). Fusion360 is available on all platforms!
-2. The [starter repo](https://classroom.github.com/a/8NsKPNlT) for this lab (Don't clone it until the start of class, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/K4L-LoDo) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
 
 ### Complete the Responsibility Contract
 
-Go to http://makerspace.ucsd.edu/access/responsibility.php and follow the instructions. Print the completion page (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo. 
+Go to https://envision-maker.ucsd.edu/access/responsibility.php, follow the instructions and complete the quiz. After completing the quiz **don't exit**, print page with the completion message box (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo.
 
 ### Fill Out The Self Evaluation
 
-Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://forms.gle/a6yFoNri79w6TF796).  You will receive
-a copy of your responses via email.  Print it to a pdf and include it in your repo as `survey.pdf`.
+Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://forms.gle/a6yFoNri79w6TF796). You will receive
+a copy of your responses via email. Print it to a pdf and include it in your repo as `survey.pdf`.
 
 ### Get set up on GitHub
 
@@ -48,7 +48,7 @@ We will be using GitHub a lot in class. If you aren't familiar with it, there ar
 
 ### Install Autodesk Fusion360
 
-Install Fusion360 by following [this link](https://www.autodesk.com/education/edu-software/overview) to find the list of Autodesk software available to students. Click the "Get Started" button on the Fusion360 card and follow the prompts in order to verify your education status. If you are creating a new account, be sure to use your __@ucsd__ email to make verification quick.
+Install Fusion360 by following [this link](https://www.autodesk.com/education/edu-software/overview) to find the list of Autodesk software available to students. Click the "Get Started" button on the Fusion360 card and follow the prompts in order to verify your education status. If you are creating a new account, be sure to use your **@ucsd** email to make verification quick.
 
 Once you have verified your education status, return to the software list and find the Fusion360 card to download and install the program.
 
@@ -64,15 +64,15 @@ By default, Fusion360 comes configured with a bunch of libraries that can make i
 
 You can update these paths by simply clicking the `.` button to the right of the paths. I suggest the following settings:
 
-* Libraries: `<path to>/eagle-intro-wi22-<gitusername>/lbr`
-* Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
-* CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
+- Libraries: `<path to>/eagle-intro-wi22-<gitusername>/lbr` <- "starter repo path + lbr"
+- Design Rules: `<path to>/QuadClass-Resources/Eagle/DRU`
+- CAM Jobs: `<path to>/QuadClass-Resources/Eagle/CAM`
 
 For instance, for me, the values might be:
 
-* Libraries: `/Users/swanson/cse176/eagle-intro-wi22-stevenjswanson/lbr`
-* Design Rules: `/Users/swanson/cse176/QuadClass-Resources/Eagle/DRU`
-* CAM Jobs: `/Users/swanson/cse176/QuadClass-Resources/Eagle/CAM`
+- Libraries: `/Users/swanson/cse176/eagle-intro-stevenjswanson/lbr`
+- Design Rules: `/Users/swanson/cse176/QuadClass-Resources/Eagle/DRU`
+- CAM Jobs: `/Users/swanson/cse176/QuadClass-Resources/Eagle/CAM`
 
 You should restart Fusion360 after making these changes.
 
@@ -80,10 +80,10 @@ You should restart Fusion360 after making these changes.
 
 Work through these four tutorials on designing and building schematic, boards, and parts in Eagle:
 
-* [Part 1: Creating a Schematic](Creating-A-Schematic.md)
-* [Part 2: Creating a board ](Creating-A-Board.md)
-* [Part 3: Preparing a board for manufacturing](Preparing-The-Board-For-Manufacturing.md)
-* [Part 4: Creating surface-mount parts](Creating-Surface-Mount-Parts.md)
+- [Part 1: Creating a Schematic](Creating-A-Schematic.md)
+- [Part 2: Creating a board ](Creating-A-Board.md)
+- [Part 3: Preparing a board for manufacturing](Preparing-The-Board-For-Manufacturing.md)
+- [Part 4: Creating surface-mount parts](Creating-Surface-Mount-Parts.md)
 
 ### Getting Art onto the Board
 
@@ -129,7 +129,7 @@ Layer: 21
 
 ![](images/artwork7_f360.png)
 
-8. Now the image should be transferred. 
+8. Now the image should be transferred.
 
 You will notice some text below the image, this is the path of the image. Zoom to it and delete it.
 
@@ -139,11 +139,11 @@ You will notice some text below the image, this is the path of the image. Zoom t
 
 ![](images/artwork9_f360.png)
 
-10. Return to your Button-and-Light PCB diagram. Click on the ``Add Part`` in the `Place` menu and select ``Logos.lbr``. Select the logo and add it to the PCB diagram.
-<!--
-Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
--->
-![](images/artwork10_f360.png)
+10. Return to your Button-and-Light PCB diagram. Click on the `Add Part` in the `Place` menu and select `Logos.lbr`. Select the logo and add it to the PCB diagram.
+    <!--
+    Now open the Button-and-Light schematic and select `Library-> use`. After this search and open the library Logos.lbr or the library where you saved the logo.
+    -->
+    ![](images/artwork10_f360.png)
 
 <!--
 11. Select “Add” for adding an element and search for the UCSD_LOGO.
@@ -157,7 +157,8 @@ Now open the Button-and-Light schematic and select `Library-> use`. After this s
 -->
 
 ### Exporting Files
-Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
+
+Your files and changes are stored in the cloud, we need the files locally to push your files to Github. Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
 
 ![](images/export1.png)
 
@@ -165,13 +166,21 @@ This will open a file dialog for saving your files in 3 different formats. For a
 
 ![](images/export2.png)
 
-Fusion wants to name your files with a version number (e.g, `v1`) on the end.  Please delete this.  The Eaglint autograder won't recognize them.
+Fusion wants to name your files with a version number (e.g, `v1`) on the end. Please delete this. The Eaglint autograder won't recognize them.
+
+Export following files:
+
+- `throughhole.sch`
+- `throughhole.brd`
+- `smd.sch`
+- `smd.brd`
+- `Lab01_smd.lbr` (replace your local copy)
 
 Now you're ready to submit!
 
 ## Turn in Your Work
-	
-Submit your work via eaglint ( [http://eaglint.nvsl.io](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNHn3w8dj3XknIOpuPo6FRKP_dkpng) ) and commit all the files list below files to GitHub. Make sure everything is committed to github and visible online. 
+
+Submit your work via eaglint ( [http://eaglint.nvsl.io](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io&sa=D&sntz=1&usg=AFQjCNHn3w8dj3XknIOpuPo6FRKP_dkpng) ) and commit all the files list below files to GitHub. Make sure everything is committed to github and visible online.
 
 Also, create a GitHub Tag for your repository once you’ve done the final commits. Enter this detail in the eaglint submission under “Tag”.
 
@@ -184,11 +193,10 @@ Initial points: 15
 Checklist:
 
 1. The schematic, board, and CAM files for your through-hole design ( `throughhole.sch, throughhole.brd, throughhole.cam.zip` ). With the artwork.
-2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip` ).
+2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip`). No artwork needed.
 3. Your modified version of `Lab01.lbr, i.e, Lab01_smd.lbr.`
 4. Your `lbr/Logos.lbr`.
 5. Your `responsibility.pdf`.
 6. Pour `survey.pdf`
 
-You will lose one point for each day late your solution is and one point for each rejected submission to eaglint.  Note that the maximum possible points in 10, but you get start out with 15.  This lets you submit a few full checks to get used to what eaglint is expecting.
-
+You will lose one point for each day late your solution is and one point for each rejected submission to eaglint. Note that the maximum possible points in 10, but you get start out with 15. This lets you submit a few full checks to get used to what eaglint is expecting.
