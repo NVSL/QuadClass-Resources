@@ -19,16 +19,16 @@ You will work on this lab and all future labs in teams of two.  You will need to
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. The repo you started in "Programming the Hardware Lab" <!-- COVID only -->
-<!-- NOT FOR COVID 1. Create a team in eaglint.  You _must_ do this before clicking the starter link below.
-1. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir. --><!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
-2. Test stand and remote control part kit.  
-3. Laser-cut parts for a test stand and airframe.
-4. 1 micro USB cable.
-5. 1 flight control board (FCB).
-6. Three LiPo batteries.
-7. 1 set of motors.
-8. 1 set of matched propellers (2xCW, 2xCCW)
+
+1. Create a team in eaglint.  You _must_ do this before clicking the starter link below.
+2. The starter repo for this lab: https://classroom.github.com/g/_CVJzOir.
+3. Test stand and remote control part kit.  
+4. Laser-cut parts for a test stand and airframe.
+5. 1 micro USB cable.
+6. 1 flight control board (FCB).
+7. Three LiPo batteries.
+8. 1 set of motors.
+9. 1 set of matched propellers (2xCW, 2xCCW)
 
 ### Your Remote Control
 
@@ -50,7 +50,10 @@ The FCBs are provided for your use during the class.
 
 ### Install Arduino
 
-Install Arduino 1.8.12 or later.  This is the only version we will be supporting in class.
+Install Arduino 2.0.4 or later.  This is the only version we will be supporting in class.
+
+##JGARZA:  Go through and make sure all this works with arduino 2.0.  Also, we'll need to update some of the repos below for the IMU.
+
 
 ### Setup Your Firmware Development Environment
 
@@ -114,13 +117,9 @@ Restart Arduino and the bottom of your `Sketch->Include Library`  menu should lo
 
 #### Getting Updates For the Starter Repo
 
-Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do **FIXME URLS**:
+Occasionally, I find bugs in the starter repo and push updates to it.  To get them you need to 'fetch from upstream' using git.  The first time you do this you need to do:
 
-```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-wi21.git```
-
-or (if you don't have public key set up on github):
-
-```git remote add upstream https://github.com/UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-w21.git```
+```git remote add upstream git@github.com:UCSD-Quadcopter-Class/QuadClass-Quadcopter-Starter-sp23.git```
 
 Then, each time I push a new update you should do this:
 
@@ -156,7 +155,7 @@ void loop() {
 
 ### Arduino Troubleshooting
 
-Programming Arduino microcontrollers (i.e., transfering the compiled to the device) can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of which seem like black magic):
+Programming Arduino microcontrollers (i.e., transfering the compiled to the device) can be a temperamental process. If you get an error while programming the board, there are many different things you can try to make it work (some of which seem like magic):
 
 * Make sure you have the right board and programmer selected.
   * On a Mac, this will be something like `/dev/cu.usbserial-AG0JL8H4`.  It is definitely not anything like `tty.usbserial-AG0JL8H4` or `cu.Bluetooth-Incoming-Port` or `cu.iPhone-WirelessiAPv2`.
@@ -173,6 +172,8 @@ In rare cases, you may need to install drivers for the FTDI programming board. R
 Your first task to "bring up" your remote.  This means verifying that all of it's components work and that you can successfully access them via software.
 
 ### Assembling the Remote 
+
+Many of you will receive a partially assembled remote.  Follow along in here to add the parts that are missing.
 
 **The pictures below are for an older model of the remote.  The steps are very similar.  Differences are noted.**
 
@@ -211,9 +212,9 @@ The vertical axis of the left gimbal should not return to the center position au
 
 ![Add gimbals](images/add-gimbals-pcb.jpg)
 
-**Add Gimbal Nuts**
+**Screw in the Gimbals**
 
-![Add gimbal nuts](images/add-gimbal-nuts.jpg)
+THe pictures shows nuts on the screws attaching the gimbals, but we don't use those any more.  Instead, the screws should thread directly into the black plastic of gimbal.  If they don't go easily, come see the TA or teacher, we may need to add threads to holes.  Also, do not over-tighten the screws -- the plastic is quite soft.
 
 **Plug in Gimbals**
 
@@ -234,13 +235,20 @@ The pictures show the nuts going *over* the LCD, but they should actually go und
 
 ### Installing a Battery
 
+
 The remote can be powered either via USB or via a LiPo battery.  It also has a builtin LiPo charger that will charge the battery when it's attached to USB.  You'll have three batteries.  Keep one charging on the remote and the other hooked to the FCB.
 
-Plug the battery in by inserting the plug into the white connector.
+There two typese of connectors for the battery:  white and green.
+
+For the white connector, you can plug the battery directly into the connector.
+
+For the green connector, you'll need connecta a "pig tail" to the green terminal block on the PCB.
+
+Once that's done, you can plug the battery in by inserting the plug into the white connector.
 
 ![Connect Battery](images/connect-battery.jpg)
 
-The wooden base of the remote has cutout to accomodate a battery. Apply a piece of _fuzzy_ velcro to the to the PCB under that gap.
+The wooden base of the remote has cutout to accomodate a battery. Apply a piece of _fuzzy_ velcro to the to the PCB under that gap (if there's not one already)
 
 ![Remote battery hold](images/remote-battery-hole.jpg)
 
@@ -248,7 +256,7 @@ and attach the battery:
 
 ![Install Battery](images/install-battery.jpg)
 
-You may need to put velcro on the battery as well. If so, make sure the velcro is oriented like this (note the position of the wire coming off the upper-right corner):
+You may need to put velcro on the battery as well. If so, make sure to use the rough velco and make sure the velcro is oriented like this (note the position of the wire coming off the upper-right corner):
 
 ![Battery Velcro](images/battery-velcro.jpg)
 
@@ -284,7 +292,7 @@ The `QuadClass Remote Library` library provides access to the basic hardware fea
 The library provides a call-back-based mechanism for detecting when the user presses the buttons.  Function pointers (e.g, `btn1_cb`) hold functions that will be called when a button (e.g., button 1) is pressed or released.  The callbacks you set need to run quickly (e.g., ideally, they should not print anything to the serial port). 
  
 To see how it works open `Open->Examples->QuadClass Remote Control Library->knob_and_buttons.ino`.  Run it,
-pen the serial monitor, push some buttons, and see what happens.
+open the serial monitor, push some buttons, and see what happens.
 
 There is also a simple 'is_pressed()' function that you can use to tell if a given button is currently pressed.  You should pass the `*_PIN` constant for the button you want to test.  The `*_PIN` macros are in `quad-remote.h`.
 
@@ -304,7 +312,7 @@ The remote has a fancy LCD screen with an RGB LED backlight (it's this: https://
 
 The `Remote` library sets up the lcd for you as an object called `lcd`.
 
-THe `knobs_and_buttons.ino` example shows how to use it:  It displays the value of the knob and lets you move it's location around on the display.  It's pretty faint because it's redrawing so quickly but it should be visible.
+The `knobs_and_buttons.ino` example shows how to use it:  It displays the value of the knob and lets you move it's location around on the display.  It's pretty faint because it's redrawing so quickly but it should be visible.
 
 Here are the basic commands.
 
@@ -318,9 +326,9 @@ There's some other fancy stuff you can do, too, like scrolling, changing the con
 ### Reading the Gimbals
 
 1. Write a function that reads values from the gimbals and use it to writes them to the serial port.
-  * Check out [analog_read()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
-  * The [Arduino Serial monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) will tell you how to get output to the serial port.
-  * The function should go in your  `firmware/remote_firmware/remote_firmware.ino`, which will slowly grow into your remote’s firmware.
+   * Check out [analog_read()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
+   * The [Arduino Serial monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) will tell you how to get output to the serial port.
+   * The function should go in your  `firmware/remote_firmware/remote_firmware.ino`, which will slowly grow into your remote’s firmware.
 2. Does the value you read from the gimbals vary across the gimbals’ full range of motion?  If not, let us know.
 3. Have your code scale the values you get from the gimbals so the full range of motion corresponds to the range 0-255. Arduino's `map()` and `constrain()` functions are useful here.
 
