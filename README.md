@@ -2,47 +2,47 @@
 
 Welcome to CSE176e Robotic System Design and Implementation (AKA, the Quadcopter Class).
 
-This repo serves an the homepage for the course labs.  It contains all
+This repo serves an the homepage for the course labs. It contains all
 the lab write ups and several resources you will use throughout the
 course.
 
-* `labs` has all the labs.  The write ups reference the starter repos they use.
-* `Fusion 360` has the pre-built parts library, CAM files, and design rule files to use with Fusion 360.
-* `Lecture Slides` has slides that aren't part of any particular lab.
+- `labs` has all the labs. The write ups reference the starter repos they use.
+- `Fusion 360` has the pre-built parts library, CAM files, and design rule files to use with Fusion 360.
+- `Lecture Slides` has slides that aren't part of any particular lab.
 
-Please see the [course home page](https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) or the [class calendar](https://docs.google.com/spreadsheets/d/1cgSJm-5A6JrrA-iNKX8d2A0SE1PBk1CwzLvdhLKHuWY/edit#gid=1449995990) for schedule, due dates, and other logistical issues.
+Please see the [course home page](https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) or the [class calendar](https://docs.google.com/spreadsheets/d/1cgSJm-5A6JrrA-iNKX8d2A0SE1PBk1CwzLvdhLKHuWY/) for schedule, due dates, and other logistical issues.
 
 ## A Note About Software Tool Names
 
-The PCB design software we use is called Fusion 360.  It used to be known as "Eagle".  I'm slowly updating the course materials to reflect this change.  In the meantime when you see "Eagle" you should think "Fusion 360".
+The PCB design software we use is called Fusion 360. It used to be known as "Eagle". I'm slowly updating the course materials to reflect this change. In the meantime when you see "Eagle" you should think "Fusion 360".
 
 ## Overview
 
-We are going to build remote-controlled quadcopters from scratch in 10 weeks.  
+We are going to build remote-controlled quadcopters from scratch in 10 weeks.
 
-The goals for the course are for you to learn how to design, assemble, and program a moderately complex electronic device.  The device you will build is a small, remote-controlled quadcopter similar to this: 
+The goals for the course are for you to learn how to design, assemble, and program a moderately complex electronic device. The device you will build is a small, remote-controlled quadcopter similar to this:
 
 ![Example Quadcopter](images/quad.jpg)
 
 In particular, you'll learn and/or practice these skills/topics:
 
-* Printed circuit board design
-  * Implementing a spec
-  * Leveraging reference designs
-  * Interpreting data sheets 
-  * Selecting parts
-* PCB Assembly
-  * Concepts
-  * Moderately advanced soldering
-* Embedded Systems Programming
-  * Real-time
-  * Resource constrained
-* Basic Sensor fusion
-* Basic Control Theory
+- Printed circuit board design
+  - Implementing a spec
+  - Leveraging reference designs
+  - Interpreting data sheets
+  - Selecting parts
+- PCB Assembly
+  - Concepts
+  - Moderately advanced soldering
+- Embedded Systems Programming
+  - Real-time
+  - Resource constrained
+- Basic Sensor fusion
+- Basic Control Theory
 
-## Labs 
+## Labs
 
-There are 11 labs divided into four sections.  Deadlines are on the course homepage.
+There are 11 labs divided into four sections. Deadlines are on the course homepage.
 
 The slides for each lab are in the directory with the lab description.
 
@@ -82,9 +82,8 @@ You will also build a quadcopter, which you can also keep.
 
 ### Keeping the Remote
 
-You cannot keep the remote you used in class.  However, I a limited number of older remote boards that you can have if you really want one.  Please talk to me near the end of the course, if you are interested.
+You cannot keep the remote you used in class. However, I a limited number of older remote boards that you can have if you really want one. Please talk to me near the end of the course, if you are interested.
 
 ### Returning the Equipment
 
 The PID test stand, flight control board, remote, and other miscelleneous equipment you borrow for the labs must be returned or replaced (modulo normal wear and tear) before I will assign you a grade in the course.
-

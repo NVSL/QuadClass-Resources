@@ -13,7 +13,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, and Software You will Need
 
 1. Fusion360
-2. The starter repo: for this lab: https://classroom.github.com/a/l0RtuinY. (Don’t clone it until the start of class, last minute changes are likely)
+2. The starter repo: for this lab: https://classroom.github.com/a/uhf-yoXA. (Don’t clone it until the start of class, last minute changes are likely)
 3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-LIBRARY-DESIGN) that go over the design tools you will use this lab.
 
 ## Preliminaries
