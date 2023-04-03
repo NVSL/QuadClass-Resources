@@ -10,7 +10,7 @@ course.
 - `Fusion 360` has the pre-built parts library, CAM files, and design rule files to use with Fusion 360.
 - `Lecture Slides` has slides that aren't part of any particular lab.
 
-Please see the [course home page](https://sites.google.com/a/eng.ucsd.edu/quadcopterclass/) or the [class calendar](https://docs.google.com/spreadsheets/d/1cgSJm-5A6JrrA-iNKX8d2A0SE1PBk1CwzLvdhLKHuWY/) for schedule, due dates, and other logistical issues.
+Please see the [course home page](https://sites.google.com/ucsd.edu/the-quadcopter-class/home) or the [class calendar](https://docs.google.com/spreadsheets/d/1cgSJm-5A6JrrA-iNKX8d2A0SE1PBk1CwzLvdhLKHuWY/) for schedule, due dates, and other logistical issues.
 
 ## A Note About Software Tool Names
 
