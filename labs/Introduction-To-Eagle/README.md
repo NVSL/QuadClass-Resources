@@ -156,6 +156,10 @@ You will notice some text below the image, this is the path of the image. Zoom t
 ![](images/artwork12.png)
 -->
 
+Add the artwork (UCSD_LOGO) to:   
+- `throughhole.brd`
+- `smd.brd`
+
 ### Exporting Files
 
 Your files and changes are stored in the cloud, we need the files locally to push your files to Github. Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
@@ -192,8 +196,8 @@ Initial points: 15
 
 Checklist:
 
-1. The schematic, board, and CAM files for your through-hole design ( `throughhole.sch, throughhole.brd, throughhole.cam.zip` ). With the artwork.
-2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip`). No artwork needed.
+1. The schematic, board, and CAM files for your through-hole design ( `throughhole.sch, throughhole.brd, throughhole.cam.zip` ). With the artwork (UCSD_LOGO).
+2. The schematic, board, and CAM files for your surface mount design ( `smd.sch, smd.brd, smd.cam.zip`). With the artwork (UCSD_LOGO).
 3. Your modified version of `Lab01.lbr, i.e, Lab01_smd.lbr.`
 4. Your `lbr/Logos.lbr`.
 5. Your `responsibility.pdf`.
