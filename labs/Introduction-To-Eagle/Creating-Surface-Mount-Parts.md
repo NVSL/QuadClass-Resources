@@ -144,6 +144,7 @@ Click on `add symbol` to add the symbol you just created.
 
 ![](./images/smdtutorial25.png)
 
+⚠️ It is important that you align the origin/center of the symbol with the origin/center of the workspace area.  
 You should end with the following:
 
 ![](./images/smdtutorial26.png)
@@ -180,7 +181,9 @@ Add the `"S" prefix` by clicking the prefix button.
 
 ![](./images/smdtutorial33.png)
 
-Make the footprint a variant and name it `SCHURTER-1301.9315`. Variants are helpful so that you don't need to redraw the symbol. You can make a different footprint, maybe bigger push button and add to it the same schematic symbol using a variant. Right-click on the footprint text and select "Rename", you should now be able to rename to pad-to-footprint connection.
+Make the footprint a variant and name it `-SCHURTER-1301.9315`. Variants are helpful so that you don't need to redraw the symbol. You can make a different footprint, maybe bigger push button and add to it the same schematic symbol using a variant. Right-click on the footprint text and select "Rename", you should now be able to rename to pad-to-footprint connection.
+
+⚠️ All variant names should start with a dash, for example -\<varian name\>.
 
 ![](./images/smdtutorial35.png)
 

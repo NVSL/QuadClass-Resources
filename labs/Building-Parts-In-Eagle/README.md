@@ -13,7 +13,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, and Software You will Need
 
 1. Fusion360
-2. The starter repo: for this lab: https://classroom.github.com/a/l0RtuinY. (Don’t clone it until the start of class, last minute changes are likely)
+2. The starter repo: for this lab: https://classroom.github.com/a/uhf-yoXA. (Don’t clone it until the start of class, last minute changes are likely)
 3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-LIBRARY-DESIGN) that go over the design tools you will use this lab.
 
 ## Preliminaries
@@ -45,9 +45,7 @@ Create footprints, symbols, and devices for the following electrical components.
 | 0805 0Ohm resistor       | 311-0.0ARCT-ND       | Build resistors by hand                                                                                                   |
 | Red Light emitting diode | 160-1178-1-ND        | Orientation is key <br/> Use the package generator for the LED                                                            |
 | N-Channel MOSFET         | SI2302CDS-T1-E3CT-ND | Pay close attention to the pads <br/> Use the package generator with a custom footprint for the MOSFET (or build by hand) |
-| LSM9DS1TR 9-Axis IMU     | 497-14946-1-ND       | Read the datasheet _and_ tech note <br/> You are welcome to try using the package generator or do it by hand              |
-
-\*\*JGARZA: There are a couple tech notes about soldering and PCB layout for the IMU. I assume there are either new ones or the old ones still apply. I think they are referenced in the datasheet. The pdfs go in https://github.com/NVSL/QuadClass-Resources/tree/master/Datasheets. Remove the out-of-date Pdfs and add the new ones. Make sure their names are descriptive.
+| LSM6DSOXTR 9-Axis IMU    | 497-18367-1-ND       | The package generator doesn't support this IMU, build the footprint by hand                                               |
 
 You can find information about the part by typing the Digikey part number into google. There will be a link to the datasheet.
 
@@ -89,7 +87,7 @@ When you design symbols follow these guidelines:
 4. For an IC (on anything with simple, rectangular symbol) Almost all your pins should go on the sides. The only exceptions are power pins (which can go on top), and ground pins (which can go on the bottom). Generally, inputs should go on the left and outputs on the right (this is not always easy to follow, but try).
 5. Use standard symbols for components like resistors, capacitors, etc. Here are some examples: https://goo.gl/enZ0v0. You can also just google for “resistor schematic symbol” etc.
 6. For two terminal, polarized devices, draw the positive terminal on the left (so it matches the footprints, see below).
-7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top (although they can go on the sides as well, probably near eachother and probably with power above ground), and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device: The physical arrangement of the pins based on engineering decisions. Your schematic symbol is about creating an easy-to-read schematic. I’ll reject designs for the IMU schematic symbol that just mimic the layout of the IMU pins.
+7. For parts with many pins (e.g., the IMU and the microcontroller) arrange the pins on the schematic symbol thoughtfully. For instance, power and ground on the bottom or top (although they can go on the sides as well, probably near each other and probably with power above ground), and logically related pins near one another. In general it is not a good idea to mimic the physical arrangement of pins on the physical device: The physical arrangement of the pins based on engineering decisions. Your schematic symbol is about creating an easy-to-read schematic. I’ll reject designs for the IMU schematic symbol that just mimic the layout of the IMU pins.
 8. Use sensible pin names that will help you connect the symbol pins and footprint pins correctly. For example, ‘1’ and ‘2’ makes sense for a resistor symbol, but “C” and “A” makes more sense for a diode. For parts with many pins (like the IMU) use names from the datasheet. The goal is to make it as easy as possible to check that you have connected things properly.
 9. Sizes the symbols sensibly. Discrete components (e.g., resistors and capacitors) should be small, so they don’t take up too much space. Complex parts should be bigger to make them easy to wire up. For instance, the standard resistor symbol is 0.4x0.2 inches.
 10. Include text elements with “>NAME” and “>VALUE” in layers “Names” and “Values” respectively, to show details about the parts. Only include “>VALUE” if the symbol will be used in devices that need a value (see notes below).
@@ -117,9 +115,9 @@ Each of your footprints should contain the following elements:
 11. Make sure that the “>NAME” doesn’t overlap with the elements that show the orientation, placement, and alignment of the parts.
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the footprint.
-14. (\*\*TODO: This is dangerous for the IMU) We may be soldering by hand, so you need to make sure the SMDs extend out from under the part. This especially important for the IMU. The SMDs should extend 0.5mm away from the edge of the footprint.
+14. We may be soldering by hand, so you need to make sure the SMDs extend out from under the part. The SMDs should extend 0.5mm away from the edge of the footprint, except for the IMU.
 15. Include lines or symbols in `tPlace` to guide placement of the part. For parts like the IMU and MCU, this should make easy to precisely place the part by showing the correct, precise location of all four corners. For other parts an outine (or partial outline is sufficient).
-16. Fusion360 includes a package generator (access it via the "new " button in the device window and select "Create with package generator"). You are welcome to use it, but the footprint it generates do not meet all of our requirements. You'll need to edit them a bit.
+16. Fusion360 includes a package generator (access it via the "new" button in the device window and select "Create with package generator"). You are welcome to use it, but the footprint it generates do not meet all of our requirements. You'll need to edit them a bit.
 
 #### The Courtyard and tKeepout
 
@@ -134,7 +132,7 @@ The width of your `tKeepout` lines should be 0.05mm.
 Note that the courtyard should not surround the `>NAME` and `>VALUE`. Two reasons:
 
 1.  You'll probably end up moving the reference designators around (which you can do freely on the board layout)
-2.  You'll have to pack parts together more closely than such a large courtyard will allow. The result will be that you'll ignore a bunch of DRC errors and endup having to manually enforce reasonable spacing between parts.
+2.  You'll have to pack parts together more closely than such a large courtyard will allow. The result will be that you'll ignore a bunch of DRC errors and end up having to manually enforce reasonable spacing between parts.
 
 ### Guidelines for Building Devices
 
@@ -206,34 +204,21 @@ Your footprint should include some kind of marking that marks the SMD that shoul
 
 #### IMU
 
-\*\*JGARZA You'll need to go through this section very carefully to fix it up for the new IMU.
+The IMU has caused us significant problems in the past. Be careful with it. You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 
-The IMU has caused us signficant problems in the past. Be careful with it. You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
-
-- You can use the "QFN" model from the package generator, but it'll take a lot of tweaking to get it to the pass Eaglint. it also numbers the pins in an unhelpful way. I'm not convinced it's a time saver.
-- You could however create the 3D package in the generator and the delete everything on footprint.
-- Include “IMU” in the name of the device you create.
-- If you build the footprint by hand, build it so it has the same orientation as the mechanical drawing in the datasheet.
-- Check the orientation. Your view of the footprint in Fusion360 is looking “down” on the board.
-- Draw your footprint so it is wider than it is tall (rather than the other way around). Otherwise Eaglint will get confused.
-- Make sure the SMDs should be at least 0.85mm long. They will extend slightly out from under the footprint.
-- You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents. You will need to read them quite carefully. Use the "max" width for the SMDs from the datasheet.
-- Setting the width of the SMDs requires balancing several constraints.
-  1. First, the datasheet suggests a range of sizes the pads on the footprint might be (due to manufacturing variation), and the board layout documents give some guidance for large to make the SMDs -- this is just guidance so there is some 'wiggle' room.
-  2. Our board house sets the minimum space between two pieces of copper to 5mils (pay attention to your units). They will refuse to manufacture boards that don't meet this constraint, so your footprint must satisfy it.
-- Use 0.1" spacing within logically-related groups of pins for the pins on the symbol for the IMU. You should have larger gaps separating groups of pins.
-- The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
-- Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “VCC1”, “VCC2”, etc. to distinguish them.
-- The symbol for the IMU should have one `VCC` pin, one `VCCIO` pin, and one `GND` pin. It should not have a `RES` pin. In the device for for the IMU, you should connect all of the VCC SMDs to the single `VCC` pin in the symbol. Connect the `RES` SMDs to the `GND` pin.
+- Use the footprint reference we created for the IMU `QuadClass-Resources/Datasheets/IMU_LSM6DSOX_Dimensions.pdf` to create the footprint. Use same orientation.
 - There should be no metal under the IMU. To enforce this, you should do the following
   1.  Draw a rectangle in `tRestrict` that fills most of the space in under the footprint, but does not overlap any of the pins.
   2.  Draw a rectangle in `bRestrict` that covers the entire footprint.
   3.  Draw a rectangle in `vRestrict` that covers the entire footprint.
-- There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop` that covers the area under the footprint, but does not overlap the pins.
-- You need to draw lines of `tRestrict` between the pads (including between the pads at the cornerns of the footprint). They should be the same length as the pads and not overlap them.
+- ~~There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop` that covers the area under the footprint, but does not overlap the pins.~~
+- Include “IMU” in the name of the device you create.
+- You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents. You will need to read them quite carefully.
+- The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
+- Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “GND1”, “GND2”, etc. to distinguish them.
 - Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
 - There are a bunch notes in the technical notes about soldering guidance that say to not solder the pin-1 indicator. Our IMU does not have the kind of pin-1 indicator they are referring to, so that guidance does not apply.
-- You will note that it appears that there will be no solder mask between the pads because the `tStop` for the pads overlap. The width of the automatically added `tStop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains. However, the DRU file doesn't affect how the `tStop` appears in the footprint editor.
+- ~~You will note that it appears that there will be no solder mask between the pads because the `tStop` for the pads overlap. The width of the automatically added `tStop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains. However, the DRU file doesn't affect how the `tStop` appears in the footprint editor.~~
 
 ## Turn in Your Work
 
@@ -249,7 +234,3 @@ The IMU has caused us signficant problems in the past. Be careful with it. You s
 Initial points: 12
 
 You will lose 0.5 points for failed full design check or human review and 1 point for each day late.
-
----
-
-TODO: Extending the IMU pads 0.5 mm can be dangerous.

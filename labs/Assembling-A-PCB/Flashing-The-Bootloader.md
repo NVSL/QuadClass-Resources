@@ -65,12 +65,12 @@ For more information about how to use avrdude check this website: https://learn.
 
 You are now ready to "flash" the bootloader.  This means we are going to write the bootloader into the non-volatile memory of the microcontroller.  The bootloader is a small program that allows us to reprogram the microcontroller over the serial port instead of the ISP header.
   
-You’ll need the hex file that contains the bootloader.  It’s part of the `QuadClass_Atmega128RFA_Arduino_Addon` repo you intalled in Arduino during the first Arduino lab.  The file you need is `QuadClass_Atmega128RFA_Arduino_Addon/avr/bootloaders/ATmegaBOOT_atmega128rfa1.hex`
+You’ll need the hex file that contains the bootloader.  It’s part of the `QuadClass-Atmega128RFA-Arduino-Addon` repo you intalled in Arduino during the first Arduino lab.  The file you need is `QuadClass_Atmega128RFA_Arduino_Addon/avr/bootloaders/ATmegaBOOT_atmega128rfa1.hex`
 
 To flash the bootloader, run the following commands. The last one will fail, see below.
 
 ```
- cd <your quacopter repo>/firmware/hardware/QuadClass_Atmega128RFA_Arduino_Addon/avr/bootloaders/
+ cd <your quacopter repo>/firmware/hardware/QuadClass-Atmega128RFA-Arduino-Addon/avr/bootloaders/
  avrdude -p atmega128rfa1 -c usbtiny -e -u -U lfuse:w:0xff:m -U hfuse:w:0xda:m -Uefuse:w:0xf5:m lock:w:0x3F:m
  avrdude -p atmega128rfa1 -c usbtiny -B 1 -U flash:w:ATmegaBOOT_atmega128rfa1.hex -U lock:w:0x0f:m
 ```
