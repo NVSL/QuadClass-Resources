@@ -144,6 +144,7 @@ Click on `add symbol` to add the symbol you just created.
 
 ![](./images/smdtutorial25.png)
 
+⚠️ It is important that you align the origin/center of the symbol with the origin/center of the workspace area.  
 You should end with the following:
 
 ![](./images/smdtutorial26.png)
@@ -182,10 +183,9 @@ Add the `"S" prefix` by clicking the prefix button.
 
 Make the footprint a variant and name it `-SCHURTER-1301.9315`. Variants are helpful so that you don't need to redraw the symbol. You can make a different footprint, maybe bigger push button and add to it the same schematic symbol using a variant. Right-click on the footprint text and select "Rename", you should now be able to rename to pad-to-footprint connection.
 
-⚠️ All variant names should start with a dash, for example -\<varian name\>. 
+⚠️ All variant names should start with a dash, for example -\<varian name\>.
 
 ![](./images/smdtutorial35.png)
-
 
 We now have a working component, however there's one last step, and that is of giving the component additional information. Like whom created it, who's the distributor, what's the manufacturer part number for this component, etc. You can find most of the useful information from the distributor, in this case [Digikey](https://www.digikey.com/en/products/detail/schurter-inc/1301-9315/2643952). Note that there are many other components distributors (e.g. [Mouser](https://www.mouser.com/), [Arrow](https://www.arrow.com/), etc).
 
