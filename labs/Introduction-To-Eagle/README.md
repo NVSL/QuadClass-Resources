@@ -21,7 +21,7 @@ Skills to Learn
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. A computer with Fusion360 installed (either in the Maker Studio, the basement CSE labs, or your own laptop). Fusion360 is available on all platforms!
+1. A computer with Fusion360 installed. Fusion360 is available on Windows and Mac!
 2. The [starter repo](https://classroom.github.com/a/K4L-LoDo) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
@@ -54,7 +54,7 @@ Once you have verified your education status, return to the software list and fi
 
 ### Fusion360 Teams
 
-When first starting up Fusion360, you may be greeted with a window about forming teams. Fusion360 is able to manage shared versions of designs in the cloud, and the way that multiple people access a particular design is through a team. However, in this lab we will not be using teams, and in general we will not have a team for the entire class, so go ahead and create a new team with whatever name you prefer. In future labs, you and your partner are welcome to take advantage of this feature to manage shared copies of your board design!
+When first starting up Fusion360, you may be greeted with a window about forming teams. Fusion360 is able to manage shared versions of designs in the cloud, and the way that multiple people access a particular design is through a team. In this lab and the next we will not be using teams, so for now, you can create a new team with whatever name you prefer. In future labs, you and your partner will take advantage of this feature to manage shared copies of your board design!
 
 ### Make Fusion360 Easier to Use
 
@@ -158,7 +158,7 @@ You will notice some text below the image, this is the path of the image. Zoom t
 
 ### Exporting Files
 
-Your files and changes are stored in the cloud, we need the files locally to push your files to Github. Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
+Your files and changes are stored in the cloud, we need the files locally to push your files to Github.  Once you've finished creating your boards, schematics and libraries, the last step is to export these files locally to commit to GitHub or send to others for review. Start by opening your schematic or board, then navigate to `File->Export`:
 
 ![](images/export1.png)
 
@@ -180,7 +180,8 @@ Now you're ready to submit!
 
 ## Turn in Your Work
 
-Submit your work via eaglint ( [http://eaglint.nvsl.io](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io&sa=D&sntz=1&usg=AFQjCNHn3w8dj3XknIOpuPo6FRKP_dkpng) ) and commit all the files list below files to GitHub. Make sure everything is committed to github and visible online.
+Commit your files to github, making sure everything is committed to github and visible online.
+Then, submit your work via eaglint ( [http://eaglint.nvsl.io](http://www.google.com/url?q=http%3A%2F%2Feaglint.nvsl.io&sa=D&sntz=1&usg=AFQjCNHn3w8dj3XknIOpuPo6FRKP_dkpng) ). 
 
 Also, create a GitHub Tag for your repository once you’ve done the final commits. Enter this detail in the eaglint submission under “Tag”.
 

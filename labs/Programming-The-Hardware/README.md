@@ -332,6 +332,11 @@ There's some other fancy stuff you can do, too, like scrolling, changing the con
 2. Does the value you read from the gimbals vary across the gimbals’ full range of motion?  If not, let us know.
 3. Have your code scale the values you get from the gimbals so the full range of motion corresponds to the range 0-255. Arduino's `map()` and `constrain()` functions are useful here.
 
+
+### Reading the Battery Voltage
+
+##JGARZA can you write a little section about how to read the battery voltage
+
 ## Assemble your Test Stand
 
 Parts:
@@ -420,13 +425,16 @@ Getting the props off can be hard.  You have a little lever tool in your kit to 
 
 The FCB has three key hardware components you'll need to test:  The microcontroller, the accelerometer, and the motors.
 
+### Turning on the FCB
+
+##JGARZA 1 sentence about how to turn on the FCB
+
 ### Flashing the Bootloader 
 
-**We are skipping this for wi21**
 
 Flashing the bootloader is a step you typically performance once after a board is manufactured.  It installs a small piece of software that makes the board compatible with Arduino.  You'll need to do this with your quadcopters when they are manufactured.  We are doing it here for practice.
 
-**FIXME Link to or copy instructions for this**
+**JGARZA Link to the instructions for this**
 
 ### Run a Test Program on the FCB
 
@@ -531,6 +539,14 @@ Or you can look at the librarise in your repo for guidance (`firmware/libraries`
 To test it, program the test stand board to receive the data from your
 remote and print it out. Verify that the values change as you move the
 gimbals, etc.
+
+### Reading the Battery Voltage
+
+##JGARZA We should be able to read the battery level here too.  It should be roughly the same except the scale is different.  IT doesn't need to be super-detailed-- just make them use analog_read to get the value.  They can deal with calibration.
+
+### Blinking the LEDS
+
+##JGARZA Can you write up instructions on making the LEDs turn on and off.  It can be very short. 
 
 ## Putting it All Together: Remote Controlled Motors and LEDs
 

@@ -12,8 +12,8 @@ Check course schedule for the due dates.
 
 ## Equipment, Supplies, and Software You Will Need
 
-1. Create a team in eaglint.  You _must_ do this before clicking the starter link below. <!-- Covid ONly -->
-1. The starter repo for this lab: https://classroom.github.com/a/XtjNtfPa. <!-- Covid ONLY --> <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
+1. Create a team in eaglint.  You _must_ do this before clicking the starter link below. 
+1. The starter repo for this lab: https://classroom.github.com/a/XtjNtfPa.  <!-- Next time reveal this link in eaglint after they have formed the group, so they know what name to use -->
 <!-- 1. The repo you started in "Programming the Hardware Lab" -->
 2. The `custom.lbr` library you built in previous lab, OR your cloud save for the custom library. From here on out, maintain copies of your libraries on the cloud.
 3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-SCHEMATIC) that go over the design tools you will use this lab. 
@@ -35,6 +35,23 @@ To clean up local copies of previously-used `.lbr` files, and to remove unnecess
 ![](images/library_1.png)
 
 Feel free to remove all libraries except for your `custom` team library from last lab.
+
+### Dealing with GitHub and Fusion360
+
+Both GitHub and Fusion360 provide a mechanism for you to collaborate with your partner on the design:
+
+* Fusion360 requires you to keep all your design files in the cloud and it allows you to share your design with other members of your team.  This means that you and you're partner will be working on the same files.  This is reasonably convenient and deeply integrated into Fusion360.
+
+* GitHub uses the clone/commit/push process you are familiar with.
+
+These two mechanisms don't work especially well together, unfortunately.  The main problem is that getting files in and out of Fusion360 so you can work with them in GitHub is a hassle during collaboration.
+
+Here is what has worked reasonably well in the past:
+
+1. Use Fusion360s collaboration mechanisms while working on your project.  It saves intermediate versions, so you can always roll back.
+2. Only export your work from Fusion360 and commit it to GitHub to run it through Eaglint and turn it in.
+
+The last step is a still a bit of a pain, but Eaglint doesn't know how to communicate with Fusion360 (yet), so there's no other option.
 
 ### Make Fusion360 Easier to Use
 
