@@ -52,31 +52,37 @@ The FCBs are provided for your use during the class.
 
 Install Arduino 2.0.4 or later.  This is the only version we will be supporting in class.
 
-##JGARZA:  Go through and make sure all this works with arduino 2.0.  Also, we'll need to update some of the repos below for the IMU.
-
 
 ### Setup Your Firmware Development Environment
 
-The repo you create and use for this lab will be the repository you use for your software development during the rest of the class. The `firmware` directory is organized as an Arduino Sketchbook, which means the Arduino toolchain and IDE know where to look for things.  To use it, you’ll need to set that directory as your sketch book directory in Arduino (`Preferences->Sketchbook location`).
+The repo you create and use for this lab will be the repository you use for your software development during the rest of the class. The `firmware` directory is organized as an Arduino Sketchbook, which means the Arduino toolchain and IDE know where to look for things.  To use it, you’ll need to set that directory as your sketch book directory in Arduino.
+(`File->Preferences->Sketchbook location`).   
+Then, enter your github repo firmware folder path, example: `../<github_repo>/firmware`
+
+
+(TODO: Image)
 
 #### Add Board Definition Files
 
-This will let Arduino talk to all the boards we will be using in this class, including your quadcopter.
+This will let Arduino talk to all the [Atmega128RFA](https://www.digikey.com/en/products/detail/microchip-technology/ATMEGA128RFA1-ZU/2208800) boards we will be using in this class, including your quadcopter.
 
 * Clone the Arduino addon (https://github.com/NVSL/QuadClass_Atmega128RFA_Arduino_Addon) into `firmware/hardware`.  You should end up with this directory `firmware/hardware/QuadClass_Atmega128RFA_Arduino_Addon/avr`.
 * Restart Arduino.  Then, under `Tool->Board` you should see `Quad Class ATmega128RFA1 Boards`.  Select that board.
+(TODO: Image)
 * Select `Tools->Programmer->USBTinyISP`
 
 #### Install the Libraries
 
 You’ll need a few libraries, so you might as well install them now, but you won’t use all of them in this lab:
 
+Clone them into `firmware/libraries`.
+
 1. Attitude, Heading, and Reference System (AHRS): https://github.com/NVSL/QuadClass_AHRS.git 
-2. Adafruit LSM96S1 library: https://github.com/NVSL/QuadClass_LSM9DS1.git
+2. LSM6DSOX library: https://github.com/NVSL/QuadClass-LSM6DSOX.git
 3. Adafruit unified sensor library: https://github.com/NVSL/QuadClass_Sensor.git
 4. Sparkfun SerLCD library: https://github.com/sparkfun/SparkFun_SerLCD_Arduino_Library.git
 
-Clone them into `firmware/libraries`.
+
 
 Here's the command sequence on my machine: 
 
@@ -89,6 +95,8 @@ Here's the command sequence on my machine:
 ```
 
 When you're done, the top few levels of your repo should look like this:
+
+(TODO: Missing: Radio, RotaryEncoder, Remote, SoftwareSerial2)
 
 ```
 ./firmware
@@ -106,6 +114,7 @@ When you're done, the top few levels of your repo should look like this:
 ./firmware/libraries/QuadClass-AHRS
 ./firmware/libraries/QuadClass-LSM9DS1
 ./firmware/libraries/Remote
+./firmware/libraries/SoftwareSerial2
 ./firmware/RFCount
 ./firmware/RFCount/RFCount.ino
 ./hardware
@@ -271,7 +280,7 @@ Plug your USB cable into your laptop and the remote, and make sure you're Board,
 
 Then...
 
-* Set the the RC/Quad switch to 'RC'
+* Set the "RC/Quad switch" located on the Remote Control board to 'RC'
 
 * Open up `File->Examples->01.Basics->Blink`. 
 
