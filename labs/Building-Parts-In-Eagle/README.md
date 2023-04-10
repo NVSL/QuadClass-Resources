@@ -206,7 +206,7 @@ Your footprint should include some kind of marking that marks the SMD that shoul
 
 The IMU has caused us significant problems in the past. Be careful with it. You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 
-- Use the footprint reference we created for the IMU `QuadClass-Resources/Datasheets/IMU_LSM6DSOX_Dimensions.pdf` to create the footprint. Use same orientation.
+- The main datasheet for the IMU is missing a value for the footprint. Use the footprint reference we created for the IMU `QuadClass-Resources/Datasheets/IMU_LSM6DSOX_Dimensions.pdf` to create the footprint. Use same orientation.
 - There should be no metal under the IMU. To enforce this, you should do the following
   1.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `tRestrict` that fills most of the space in under the footprint, but does not overlap any of the pins.
   2.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `bRestrict` that covers the entire footprint.
