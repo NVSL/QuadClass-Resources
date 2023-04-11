@@ -92,7 +92,6 @@ Here's the command sequence on my machine:
 
 When you're done, the top few levels of your repo should look like this:
 
-(TODO: Missing: Radio, RotaryEncoder, Remote, SoftwareSerial2)
 
 ```
 ./firmware
