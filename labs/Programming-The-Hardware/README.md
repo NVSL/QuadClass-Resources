@@ -84,7 +84,7 @@ Here's the command sequence on my machine:
 
 ```
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-AHRS.git)
-(cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-LSM9DS1.git)
+(cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-LSM6DSOX.git)
 (cd ./firmware/libraries/; git clone git@github.com:NVSL/QuadClass-Sensor.git)
 (cd ./firmware/libraries/; git clone git@github.com:sparkfun/SparkFun_SerLCD_Arduino_Library.git)
 (cd ./firmware/hardware/;  git clone git@github.com:NVSL/QuadClass-Atmega128RFA-Arduino-Addon.git)
