@@ -68,7 +68,7 @@ You’ll build quadcopter in the cloud starting from a new Fusion360 electronics
 
 In this lab, you will create a schematic associated with this design, to be exported to the folder `hardware/quadcopter.sch`. Feel free to review [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle#exporting-files) for a refresher on exporting. You'll assemble the design by studying reference designs and the datasheets for the components you will use.
 
-We will be sharing a library with you via the cloud called `quadparts_prebuilt`. You will be reusing your `custom` library from last lab, and in this lab you will also create a new library called `LEDs`. These should be the only 3 libraries you use to assemble your schematic, Fusion360 comes with a bunch of built in libraries but they are off limits.
+We will be sharing a library with you via the cloud called `quadparts_prebuilt_2022`. You will be reusing your `custom` library from last lab, and in this lab you will also create a new library called `LEDs`. These should be the only 3 libraries you use to assemble your schematic, Fusion360 comes with a bunch of built in libraries but they are off limits.
 
 ### General Schematic Style Guidelines
 
@@ -83,13 +83,13 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 7. Use lines in `Info` layer to divide the frame into logically related regions (e.g., the IMU, the power supply, and the microcontroller). See the BBB schematic below for an example. Drawn nets shouldn’t cross these boundaries.
 8. Use drawn nets connect components that are closely related (e.g., between the caps and the microcontroller in the BBB schematic)
 9. Use named nets to connect separate “sub units” of your schematic. For instance, use drawn nets to connect all the capacitors to your IMU, but use named nets to connect your IMU to the microcontroller.
-10. You should not use any libraries other than `quadparts_prebuilt`, your `custom_*`, and your `LEDs` libraries.
+10. You should not use any libraries other than `quadparts_prebuilt_2022`, your `custom_*`, and your `LEDs` libraries.
 11. Schematic symbols and wires should all be aligned to 0.05in grid (or, if you like, a 0.1in grid).
 12. Labels for nets (created using the 'label' tool) should need to placed on the net they label. This means the label's location (which is marked with a gray '+') needs to be on top of a corner or end of the net. This guards against "drifting labels" that seem to be attached to another net.
 
 ### Selecting Parts
 
-The `quadparts_prebuilt` library has lots of parts in it, many of which you won't use. I've provided specific guidance about which options to select below. For resistors and capacitors, you need to use 0805 parts not the smaller and harder-to-place 0603 parts. If the resistor you need is not available in 0805, you'll need to create it.
+The `quadparts_prebuilt_2022` library has lots of parts in it, many of which you won't use. I've provided specific guidance about which options to select below. For resistors and capacitors, you need to use 0805 parts not the smaller and harder-to-place 0603 parts. If the resistor you need is not available in 0805, you'll need to create it.
 
 ### The Microcontroller
 
@@ -99,7 +99,7 @@ Why did I give a picture of what you need to build? Because reference designs ar
 
 ![Microcontroller schematic](images/microcontroller.png)
 
-You should use the schematic as a guide for constructing the microcontroller portion of your schematic. Build it from parts from `quadparts_prebuilt` libbrary:
+You should use the schematic as a guide for constructing the microcontroller portion of your schematic. Build it from parts from `quadparts_prebuilt_2022` libbrary:
 
 1.  Use one of the `ANT_PCB...` variants for the antenna. There's a left and right-handed version. Depending on your ultimate board design, you might want one or the other.
 2.  `B1` is a 'balun'. Pay attention to the pin numbers.
@@ -117,35 +117,35 @@ If you have questions about the parts attached directly to the microcontroller (
 
 ### Programming Header
 
-Your quad will use a 4-pin programming header to load code into the MCU. You won't need the FTDI portion of the reference design. It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom. To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt`. The four signals must appear in this order:
+Your quad will use a 4-pin programming header to load code into the MCU. You won't need the FTDI portion of the reference design. It's a little fancy since it allows you to insert the cable from either top of the board _or_ the bottom. To this end, use the `-FEMALE-SMD-BOTTOM-ENTRY` part from `quadparts_prebuilt_2022`. The four signals must appear in this order:
 
 1.  Serial TX
 2.  Serial RX
 3.  GND
 4.  Reset
 
-These are a subset of thesignals that connect to the FTDI header in the microcontroller reference design. You don't need the FTDI header. Note that you do need the 0.1uF capacitor between the reset line and the reset pin on the programming header.
+These are a subset of the signals that connect to the FTDI header in the microcontroller reference design. You don't need the FTDI header. Note that you do need the 0.1uF capacitor between the reset line and the reset pin on the programming header.
 
 ### The IMU
 
 The IMU datasheet contains all the information you will need to use connect the IMU to the microcontroller. A few things to keep in mind:
 
 1. The IMU datasheet is not the best. If something doesn't make sense search the pdf.
-2. There are actually two logical devices in this package: the accelerometer/gyroscope (referred to as 'A/G' in the datasheet ) and the magnetometer ('M').
+2. There are actually two logical devices in this package: the accelerometer/gyroscope (referred to as 'A/G' in the datasheet ).
 3. Both devices will operate in I2C mode only and connect to microcontroller via I2C, so you can ignore the stuff in the data sheet that refers to SPI.
-4. You must follow all the recommendations regarding external capacitors attached the IMU.
-5. You will need to take care to configure the IMU's I2C addresses. It has two: One for the gyroscope and accelerometer and another for the magnetometer. The address for the gyro and accelerometer should be set to `1101011`. For the magnetometer it should be `0011110`. You should read the datasheet to learn how to do this. Note that there is an inconsistency between Table 2 and Tables 19 and 20. Tables 18 and 19 are correct.
-6. Power supply voltage and IO voltage will be 3.0V in our design, so connect them to `3V`.
-7. We aren't using the interrupt features, so you can leave `INT_M`, `INT2_A/G`, `INT1_A/G`, and `DRDY_M` disconnected.
-8. `DEN_A/G` should be connected to `3V`.
-
-Most of the information you will need is Section 5 of the datasheet.
+4. The IMU has different connection modes. Follow connection mode 1 for your design, which is referred in `7.1 LSM6DSO electrical connections in Mode 1`, page 35.
+5. You must follow all the recommendations regarding external capacitors attached the IMU, also known as decoupling capacitors.
+6. You will need to take care of configuring the IMU's I2C addresses. Read section `5.1.1 I2C Serial interface`, pages 17 and 18, to determine which I2C address you can use. Use `Table 19. Internal pin status`, page 38 column Mode 1, to figure out which pin is dedicated for selecting the I2C address. You choose which address you want to use, but the address you choose needs to be reflected in your, otherwise your software won't be able to communicate with the IMU.
+7. We aren't using the interrupt features, so you can leave `INT1` and `INT2` disconnected.
+8. Power supply voltage (`Vdd`) and IO voltage (`Vdd_IO`) will be 3.0V in our design, so connect both to `3V`.
+9. Connect `SDX` and `SCX` to GND.
+10. We want the I2C always active. Determine if `CS` (Chip Select) should be connected to 3V or GND by reading external documentation (e.g., Google Search).
 
 A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly. You actually need to read through the tables and the text, there are specific answers to most questions you might have in there. Most facts appear exactly once in the datasheet -- it will be written in text or a table, but not both.
 
 ### The I2C Bus
 
-Your MCU will communicate with the IMU via I2C. This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines. You should "pull up" these lines to `3V` by connecting them to `3V` using 10kOhm resistors.
+Your MCU will communicate with the IMU via I2C. This means you must connect the IMU to the MCU via the `SDA` and `SCL` lines. You should "pull up" these lines to `3V` by connecting them to `3V` using 10kOhm resistors. Read section `7.1 LSM6DSO electrical connections in Mode 1`, page 35, to know how the pull-up resistos must be connected.
 
 ### The Motor Driver
 
@@ -153,7 +153,7 @@ Here's a picture of the motor driver circuit:
 
 ![Motor Driver](images/motor_driver.png)
 
-Build four copies to drive the four motors you'll need. All the parts you need are in `quadparts_prebuilt` or your `custom` libraries.
+Build four copies to drive the four motors you'll need. All the parts you need are in `quadparts_prebuilt_2022` or your `custom` libraries.
 
 1. Use the `-SMD-SOD123` diode in the library.
 2. Use the `-MOLEX-SMD` variant of the `MOTOR_PADS_GND` device of the motor connector.
@@ -173,7 +173,7 @@ As a result, your quadcopter will have two power rails: An unregulated power rai
 
 The power supply for quadcopter needs to contain the following parts:
 
-1. The battery. This is the `BATTERY` device in `quadparts_prebuilt`. You need to use the `-SMD-TH` variant.
+1. The battery. This is the `BATTERY` device in `quadparts_prebuilt_2022`. You need to use the `-SMD-TH` variant.
 2. A LP3985-series 3.0V regulator (see device `TPS73633-DBVT`. Don't use the 3.3V or 2.5V variants, use the 3.0V variant).
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how. Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
@@ -184,7 +184,7 @@ You'll note that the output of the voltage regulator has decoupling capacitors o
 
 To the extent possible, we need to isolate the the IMU and the microcontroller from the noise that the motors will create on the power supply lines. The motors will cause noise on both their power supply ( `VBAT` ) and ground return lines, so we will provide them with separate power and ground lines. For the power line, this is easy: Just connect the power supply for the motor drivers directly to the battery's positive terminal.
 
-For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopters we built in this class the first year it was offered).
+For the ground line, it is more challenging, since all the devices on the quadcopter must share a common ground reference. The best we can do is to structure our schematic so that we can exercise tight control over how the ground line is laid out on our PCB. To do this, create a separate ground net that connects the ground terminals of motor controllers to each other and the negative terminal of the battery (call it `BAT_GND` and use the `BAT_GND` device in the `quadparts_prebuilt_2022` ). Then connect the digital ground (i.e., the ground that connects to other components, aka `GND` ) to the battery ground using a schematic component called a "net bridge" (see below). We will see in the next lab how we can use this structure to isolate the digital components. (This is a very important step, and we added it to fix problems that occurred in all but one of the quadcopters we built in this class the first year it was offered).
 
 A "net bridge" is a PCB part whose only purpose is to electrically connect two nets in a schematic while keeping the nets separate in schematic (i.e., the two nets keep their own names). To create a net bridge, create a device with a footprint that consists of two SMDs that touch one another and a sensible schematic symbol for what is, in essence, a wire. Put it in your `custom` library. The SMDs can be very small (e.g. 0.5mmx0.5mm). Remove the `tStop` and `tCream` on the pads, since we won't be soldering anything to them. You don't need `tKeepout` anything in `tPlace` for the net bridge. If eaglint complains, just explain that it's not necessary since it's the net bridge.
 
@@ -227,10 +227,9 @@ Debugging headers can be a little dangerous to use, because it can be easy to ac
 Soldering the IMU is hard enough that it causes a fair number of
 quadcopters to fail. To guard against this, add a header that will
 allow you to connect this breakout board
-(https://www.adafruit.com/product/3387) to your quadcopter. You need
-four pins: `3V`, `SCL`, `GND`, and `SDA` (not necessarily in that order. Look at the board it must connect to.), which are conveniently
-located together on the breakout board. Use the 4-pin female header
-in `quadparts_prebuilt`.
+(https://www.adafruit.com/product/4438) to your quadcopter. You are only required to
+four pins: `3V`, `SCL`, `GND`, and `SDA` (not necessarily in that order. Look at the breakout board it must connect to to figure out the order.). These pins are conveniently
+located next to each other on the breakout board. Use the 4-pin female header in `quadparts_prebuilt_2022`.
 
 If you feel like being efficient, you can leave `SDA` and `SCL` off the signal breakout header, since they are on the rescue header.
 
@@ -278,7 +277,7 @@ You'll note there are a dizzying array of options (at this moment there are over
 11. If the forward voltage of the LED is much lower than the supply voltage, you'll need a large resistor to limit the current. Alternately, you could put two (or more) LEDs in series. The total voltage drop across the LED(s) and resistor needs to be greater than or equal to the supply voltage.
 12. You can use RGB LEDs, too. Checkout the datasheets for details.
 
-You'll need to build the library entries for the LED you want to use and then integrate them into your schematic. You'll also need to include a current-limiting resistor. You'll need to use Ohm's law to calculate the correct resistor value (here's a tutorial: http://www.ohmslawcalculator.com/led-resistor-calculator). You will also need to be sure that resistor can handle the amount of power it will need to dissipate (see the datasheet). If our libraries doesn't include an appropriate resistor, you'll need to add one from the same family of resistors we are already using (check the datasheet for the resistors in `quadparts_prebuilt`). Make sure it's available in small quantities on Digikey. Put the new resistors in `custom`.
+You'll need to build the library entries for the LED you want to use and then integrate them into your schematic. You'll also need to include a current-limiting resistor. You'll need to use Ohm's law to calculate the correct resistor value (here's a tutorial: http://www.ohmslawcalculator.com/led-resistor-calculator). You will also need to be sure that resistor can handle the amount of power it will need to dissipate (see the datasheet). If our libraries doesn't include an appropriate resistor, you'll need to add one from the same family of resistors we are already using (check the datasheet for the resistors in `quadparts_prebuilt_2022`). Make sure it's available in small quantities on Digikey. Put the new resistors in `custom`.
 
 One thing to keep in mind is that most LEDs are extremely bright when driven at full current. Indicator LEDs can be driven very gently and still be visible. LEDs added for visual effect can be driven harder, but they can easily become so bright that you can't even look at your quadcopter without being blinded. For this reason, any LEDs that you want to be bright need to be attached to PWM pins, so you can moderate their brightness.
 
