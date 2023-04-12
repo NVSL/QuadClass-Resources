@@ -90,6 +90,10 @@ Here's the command sequence on my machine:
 (cd ./firmware/hardware/;  git clone git@github.com:NVSL/QuadClass-Atmega128RFA-Arduino-Addon.git)
 ```
 
+Go to Library Manager and install "Adafruit LSM6DS". A pop-up window will show up, click "Inatall ALL".  
+![Install Adafruit LSM6DS](./images/introprog3.jpg)
+
+
 When you're done, the top few levels of your repo should look like this:
 
 
@@ -107,7 +111,10 @@ When you're done, the top few levels of your repo should look like this:
 ./firmware/libraries/RotaryEncoder
 ./firmware/libraries/QuadClass-Sensor
 ./firmware/libraries/QuadClass-AHRS
-./firmware/libraries/QuadClass-LSM9DS1
+./firmware/libraries/QuadClass-LSM6DSOX
+./firmware/libraries/Adafruit_BusIO
+./firmware/libraries/Adafruit_LSM6DS
+./firmware/libraries/Adafruit_Unified_Sensor
 ./firmware/libraries/Remote
 ./firmware/libraries/SoftwareSerial2
 ./firmware/RFCount
