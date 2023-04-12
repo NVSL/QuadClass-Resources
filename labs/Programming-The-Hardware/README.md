@@ -90,7 +90,7 @@ Here's the command sequence on my machine:
 (cd ./firmware/hardware/;  git clone git@github.com:NVSL/QuadClass-Atmega128RFA-Arduino-Addon.git)
 ```
 
-Go to Library Manager and install "Adafruit LSM6DS". A pop-up window will show up, click "Inatall ALL".  
+Go to Library Manager and install "Adafruit LSM6DS". A pop-up window will show up, click "Install ALL".  
 ![Install Adafruit LSM6DS](./images/introprog3.jpg)
 
 
