@@ -20,7 +20,7 @@ You will work on this lab and all future labs in teams of two. You will need to 
 ## Equipment, Supplies, and Software You Will Need
 
 1. Create a team in eaglint. You _must_ do this before clicking the starter link below.
-2. The starter repo for this lab: https://classroom.github.com/a/VCbV_O1Y.
+2. The starter repo for this lab: https://classroom.github.com/a/ac_WPxpT.
 3. Test stand and remote control part kit.
 4. Laser-cut parts for a test stand and airframe.
 5. 1 micro USB cable.
@@ -92,7 +92,6 @@ Here's the command sequence on my machine:
 
 When you're done, the top few levels of your repo should look like this:
 
-(TODO: Missing: Radio, RotaryEncoder, Remote, SoftwareSerial2)
 
 ```
 ./firmware
