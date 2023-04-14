@@ -190,7 +190,7 @@ Your footprint should include some kind of marking that marks the SMD that shoul
 
 #### MOSFET
 
-- When generating the 3D package, choose "SOTFL" as your model.
+- When generating the 3D package, choose "SOTFL" or "SOT23" as the model.
 - Include “FET” in the name of the device you create.
 - The prefix for your MOSFET device should be “Q” (that’s the conventional prefix for transistors).
 - Since we are using an NMOSFET (as opposed to a PMOSFET), current flows from the drain to source, so put the drain on top in the symbol.
