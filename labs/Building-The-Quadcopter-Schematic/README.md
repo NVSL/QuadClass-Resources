@@ -67,7 +67,7 @@ You’ll build quadcopter in the cloud starting from a new Fusion360 electronics
 
 In this lab, you will create a schematic associated with this design, to be exported to the folder `hardware/quadcopter.sch`. Feel free to review [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Introduction-To-Eagle#exporting-files) for a refresher on exporting. You'll assemble the design by studying reference designs and the datasheets for the components you will use.
 
-We will be sharing a library with you via the cloud called `quadparts_prebuilt_2022`. You will be reusing your `custom` library from last lab, and in this lab you will also create a new library called `LEDs`. These should be the only 3 libraries you use to assemble your schematic, Fusion360 comes with a bunch of built in libraries but they are off limits.
+We will be sharing a library with you via the cloud called `quadparts_prebuilt_2022` located in `QuadClass-Resources\Eagle\lbr`. You will be reusing your `custom` library from last lab, and in this lab you will also create a new library called `LEDs`. These should be the only 3 libraries you use to assemble your schematic, Fusion360 comes with a bunch of built in libraries but they are off limits.
 
 ### General Schematic Style Guidelines
 
