@@ -98,7 +98,7 @@ For the IMU, take a look at the microcontroller symbol for inspiration. It's in 
 
 Each of your footprints should contain the following elements:
 
-1. Choose a meaningful name: e.g, “0805*RESISTOR” or “0805_LED”. Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts (with different colors, resistances, etc.) that are the same size and you can reuse the footprint. Therefore, a name that reflects the type of \_footprint* the part uses is appropriate (e.g., `0805_RESISTOR` is descriptive in this way).
+1. Choose a meaningful name: e.g, "0805_RESISTOR" or "0805_LED". Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts (with different colors, resistances, etc.) that are the same size and you can reuse the footprint. Therefore, a name that reflects the type of footprint the part uses is appropriate (e.g., `0805_RESISTOR` is descriptive in this way).
 2. Draw a box in tDocu that matches the nominal dimensions of the part. For parts with leads that extend from the part’s footprint (e.g., the MOSFET), you can draw in the leads too, if you want. tDocu doesn’t show up on the board.
 3. Include a text item that displays the reference designator for the part. It should be on layer `tName` and the magic string “>NAME” is replaced with the reference designator.
 4. Include a text item that displays the value of the part. It should be on layer tValues. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
@@ -206,11 +206,12 @@ Your footprint should include some kind of marking that marks the SMD that shoul
 
 The IMU has caused us significant problems in the past. Be careful with it. You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 
-- Use the footprint reference we created for the IMU `QuadClass-Resources/Datasheets/IMU_LSM6DSOX_Dimensions.pdf` to create the footprint. Use same orientation.
+- The main datasheet for the IMU is missing a value for the footprint. Use the footprint reference we created for the IMU `QuadClass-Resources/Datasheets/IMU_LSM6DSOX_Dimensions.pdf` to create the footprint. Use same orientation.
 - There should be no metal under the IMU. To enforce this, you should do the following
-  1.  Draw a rectangle in `tRestrict` that fills most of the space in under the footprint, but does not overlap any of the pins.
-  2.  Draw a rectangle in `bRestrict` that covers the entire footprint.
-  3.  Draw a rectangle in `vRestrict` that covers the entire footprint.
+  1.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `tRestrict` that fills most of the space in under the footprint, but does not overlap any of the pins.
+  2.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `bRestrict` that covers the entire footprint.
+  3.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `vRestrict` that covers the entire footprint.
+  4.  You have to use the rectangle tool, because lines will only eliminate the line, not the interior.
 - ~~There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop` that covers the area under the footprint, but does not overlap the pins.~~
 - Include “IMU” in the name of the device you create.
 - You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents. You will need to read them quite carefully.
