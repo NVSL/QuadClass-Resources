@@ -441,7 +441,7 @@ To turn the FCB on you need to first connect the battery to the FCB and the then
 
 ### Flashing the Bootloader
 
-Flashing the bootloader is a step you typically performance once after a board is manufactured. It installs a small piece of software that makes the board compatible with Arduino. You'll need to do this with your quadcopters when they are manufactured. We are doing it here for practice.
+Flashing the bootloader is a step you typically performance once after a board is manufactured. It installs a small piece of software that makes the board compatible with Arduino.  You'll need to do this with your quadcopters when they are manufactured. We are doing it here for practice.
 
 [Flashing the bootloader and bringing your board up](https://github.com/NVSL/QuadClass-Resources/blob/master/labs/Assembling-A-PCB/Flashing-The-Bootloader.md)
 
@@ -549,16 +549,31 @@ To test it, program the test stand board to receive the data from your
 remote and print it out. Verify that the values change as you move the
 gimbals, etc.
 
-### Reading the Battery Voltage
+### Reading the Battery Voltage on The FCB
 
 Write a small function that uses `analogRead(BAT_SENSE_PIN)` to read the battery voltage, where `BAT_SENSE_PIN = A7`. Inside that function also print the battery voltage using `Serial.print()`.
 
-In the setup function set the voltage reference as INTERNAL, `analogReference(INTERNAL);`, and the pin mode of `BAT_SENSE_PIN` as input. Remember also to properly configure the Serial.
+In the setup function set the voltage reference as `INTERNAL` with `analogReference(INTERNAL);`, and the pin mode of `BAT_SENSE_PIN` as `INPUT`.
 
-Call the function inside the main loop with a reasonable delay. Check that the integer number (battery voltage) drops over time.
+The range of potential values returned from `analogRead()` is 0-1023.  0 corresponds to 0 volts.  1023 corresponds to 1.8V.
+
+A charged battery is about 4.2V an empty battery is about 3.7V.  Both of these values are above 1.8V, so we run the battery voltage through a [voltage divider](https://en.wikipedia.org/wiki/Voltage_divider).  Here's the relevant portion of the remote schematic:
+
+![Battery sense schematic](images/battery_sense.png)
+￼
+The total resistance between `VBAT` and `GND` is 30K. 10K/30K = 0.33 of the resulting voltage drop `BAT_GND` and `BAT_SENSE`.  This has the effect of placing 0.33*`VBAT` on `BAT_SENSE`, so `BAT_SENSE` should vary between 0.33 * 3.7 - 0.33 * 4.2 = 1.2V - 1.38V.
+
+The resulting values from `analogRead()` should be between 1.2/1.8 * 1023 = 682 and 1.38/1.8 * 1023 = 784.  You can than convert that number back to battery voltage and print it out on the serial port.
 
 Optional:  
 If you turn the motors on at 30% can you see numbers decreasing faster? Can you find the min and max values and map these values to a percentage between 0% and 100%?
+
+Here's the schematic for the battery voltage circuit on the remote:
+
+![Battery sense schematic](images/battery_sense_remote.png)
+
+Note that the resistors have different values.  Repeat the calculation above and display the voltage of the remote battery on the display.
+
 
 ### Blinking the LEDS
 
@@ -673,5 +688,7 @@ Check list (-1 point for each missing item):
 12. Zero motor activity at 0 throttle.
 13. Throttle smoothly controls motor output across full gimbal range.
 14. Turning off remote disarms quad.
+15. Battery measurement on the remote.
+16. Battery measurement on the FCB.
 
 You will lose one point for each day late your solution is.
