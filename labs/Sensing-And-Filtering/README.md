@@ -169,7 +169,7 @@ When your FCB is still and level, it will probably not return zero pitch and zer
 
 You can do all this tuning in a function similar to `setupSensor()` from the IMU example program. The example configures the IMU for all the values described above. Make sure you understand how it is working before you proceed.
 
-In your code, you _must_ use the macros and constants defined in [QuadClass_LSM6DSOX.h](https://github.com/NVSL/QuadClass-LSM6DSOX/blob/main/QuadClass_LSM6DSOX.h). If you show me code with magical hexadecimal values in it, I will tell you to go make your code readable first by using the macros and constants.
+In your code, you _must_ use the macros and constants defined in [QuadClass_LSM6DSOX.h](https://github.com/NVSL/QuadClass-LSM6DSOX/blob/main/QuadClass_LSM6DSOX.h) and [Adafruit_LSM6DS.h](https://github.com/adafruit/Adafruit_LSM6DS/blob/master/Adafruit_LSM6DS.h). If you show me code with magical hexadecimal values in it, I will tell you to go make your code readable first by using the macros and constants.
 
 ### What Your Output Should Look Like
 
