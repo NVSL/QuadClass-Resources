@@ -172,7 +172,7 @@ As a result, your quadcopter will have two power rails: An unregulated power rai
 
 The power supply for quadcopter needs to contain the following parts:
 
-1. The battery. This is the `BATTERY` device in `quadparts_prebuilt_2022`. You need to use the `-SMD-TH` variant.
+1. The battery. This is the `BATTERY` device in `quadparts_prebuilt_2022`. You need to use the `-SCREW-TERMINAL` variant.
 2. A LP3985-series 3.0V regulator (see device `TPS73633-DBVT`. Don't use the 3.3V or 2.5V variants, use the 3.0V variant).
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how. Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
