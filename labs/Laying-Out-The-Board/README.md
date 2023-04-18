@@ -18,7 +18,7 @@ Check the course schedule for due date(s).
 ## Equipment, Supplies, Virtues, and Software You will Need
 
 1. Fusion360
-2. The contents of QuadClass-Resources repo, as well as `quadparts_prebuilt`.
+2. The contents of QuadClass-Resources repo, as well as `quadparts_prebuilt_2022`.
 3. Patience.
 4. Attention to detail.
 3. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-PREPARE-LAYOUT) that go over the design tools you will use this lab. 
@@ -31,7 +31,7 @@ The first step is to define the size, shape, and orientation of your quadcopter.
 
 1. You need places to attach four motors.  We will use rubber grommets to attach the motors to your PCB just like we use them to attach the motors to the FCB's airframe.  However, the grommets that fit on the PCB are much smaller.  You will need a hole that is 12.2mm in diameter for each grommet, and the ring of PCB around the grommet must be at least 1.7mm wide.
 2. You should ensure that most of the area the propellers will sweep out as they spin will not be over the board. For instance, putting the motor at the end of an arm will accomplish this. The arm must be long enough, however. The diameter of the propellers is either 40mm or 55mm.  Design for 55mm.  You can add four `PROPELLER` devices to your schematic/board to see this in your design.
-3. Your design must fit with a rectangle whose area is less than 19,354 sq mm. -- about 13.9cm square.
+3. Your design must fit with a rectangle whose area is less than 19,354 sq mm. -- about 13.9cm square.  This is pretty big.  Don't feel the need to fill it.  Heavier quadcopters are harder to get off the ground.
 4. The layout of the motors should be symmetric along the the x and y axes (i.e., the four motors should make a rectangle).
 5. I recommend centering your board shape on Fusion360's origin. It will make it easier to place parts symmetrically.
 6. The cutting tool the board uses is a 2mm in diameter.  This means if you should corners that are less than 180 degrees (i.e., the corners point into the body of your quadcopter), they will be rounded.
@@ -70,6 +70,7 @@ The next stage is to place all the parts on board.  Placing most of the parts is
 2. You should mimic the layout of the FCB in places where signal integrity is important. This includes antenna (see below) and the crystal.
 3. Make your board look good! Align components that are next to each other, make the spacing between components consistent, etc. Board designers appreciate a good-looking board.
 
+
 ![Power switch](images/power_switch.jpg)
 
 ### Board Layout Style Guide
@@ -92,7 +93,7 @@ You may need to generate different versions with different sizes (there’s no w
 
 ### The Power Supply
 
-To power your quadcopter, you need provide ample current to the motors and clean 2.5V power to the microcontroller and IMU. The vast, vast majority of bugs I encounter in PCBs like you quadcopter have to do with the power supply.
+To power your quadcopter, you need provide ample current to the motors and clean 3V power to the microcontroller and IMU. The vast, vast majority of bugs I encounter in PCBs like you quadcopter have to do with the power supply.
 
 The power supply for the quadcopter is complicated because we have two different power systems that have different requirements: The motors need maximum power — high current and high voltage — while the IMU and microcontroller, need a clean, regulated, consistent voltage and don’t require much current.
 
@@ -100,13 +101,13 @@ To do this you will need to carefully layout the battery, the voltage regulator,
 
 You have already built your schematic to provide separate power and ground nets to these two sets of components.  Now we are going to exploit that separation to physically realize two, mostly separate power distribution systems that will meet these needs.
 
-You have four signal layers (Top, Bottom, and two internal layers). The two internal layers will be a power and ground plane — i.e., dedicated to delivering the power and GND signals across the board. These layers are, for the most part, filled with metal. To create these metal areas, you will create pours.
+You have four signal layers (Top, Bottom, and two internal layers). The two internal layers will be a power and ground plane — i.e., dedicated to delivering the power and `GND` signals across the board. These layers are, for the most part, filled with metal. To create these metal areas, you will create pours.
 
-For the 2.5V power supply (`2V5` and `GND`) here are the key considerations:
+For the 3V power supply (`3V` and `GND`) here are the key considerations:
 
 1. We need to isolate them from the high-voltage supply, both physically and electrically.
 2. We need to provide adequate “decoupling capacitance” to minimize noise due to digital switching.
-3. We need to provide low-resistance path between the component and `2V5` and the components and `GND`.
+3. We need to provide low-resistance path between the component and `3V` and the components and `GND`.
 4. Correctly layout the voltage regulator according to the guidance in the datasheet.
 
 For the high-current supply (`VBAT` and `BAT_GND`), here are the key considerations:
@@ -116,7 +117,7 @@ For the high-current supply (`VBAT` and `BAT_GND`), here are the key considerati
 
 #### Basic Principles: Resistance
 
-The resistance of your power and ground connections is important because resistance causes voltage drop.  The voltage drop, `V`, for a current, `I`, flowing through a given resistance, R, is given by [Ohm’s law:](https://www.electronics-tutorials.ws/dccircuits/dcp_2.html) `V = IR`.  Power distribution systems carry non-trivial amounts of current so, the voltage drop can be significant.
+The resistance of your power and ground connections is important because resistance causes voltage drop.  The voltage drop, `V`, for a current, `I`, flowing through a given resistance, `R`, is given by [Ohm’s law:](https://www.electronics-tutorials.ws/dccircuits/dcp_2.html) `V = IR`.  Power distribution systems carry non-trivial amounts of current so, the voltage drop can be significant.
 
 Our power distribution networks are made of the copper foil that makes up the traces on our PCBs.  Resistance for a sheet of copper (or any conductor) is proportional to sheet’s aspect ratio.  Long, thin wires have higher resistance than short, fat wires.  For this reason, sheet resistance is measured in Ohms/square: A square sheet of copper has the same resistance, regardless of its size.
 
@@ -128,9 +129,9 @@ The way to minimize resistance is to make wires wider: Increasing the width to 2
 
 The second principle you need to consider is inductance.  Inductance is a resistance to change in current. The mathematics are more complicated than they are for resistance, but intuitively, if you suddenly turn on a transistor (i.e., the mosfet in your motor driver or the millions of transistors in your microcontroller), it takes a little while for the current to start flowing.  Likewise, if you turn off a transistor, it take a little while for the current to stop flowing (this is what caused flyback in our motor driver).
 
-There’s a calculator for PCB trace inductance [here](http://chemandy.com/calculators/flat-wire-inductor-calculator.htm). The equation is more complex than Ohm’s law, but the trend is similar: Longer, thinner wires have higher inductance. This resistance to the change in current, can also cause a voltage drop along a wire — the higher the inductance, the larger the drop.  Calculating the actual voltage drop is a little complicated because you need to to know the rate of change of the current (dI/dt).  You could use one of the oscilloscopes in the maker space to do this for your motor drivers, if you wanted.  The important thing, though, is that dI/dt is high, so inductance is a problem.
+There’s a calculator for PCB trace inductance [here](http://chemandy.com/calculators/flat-wire-inductor-calculator.htm). The equation is more complex than Ohm’s law, but the trend is similar: Longer, thinner wires have higher inductance. This resistance to the change in current, can also cause a voltage drop along a wire — the higher the inductance, the larger the drop.  Calculating the actual voltage drop is a little complicated because you need to to know the rate of change of the current (dI/dt).  You could use one of the oscilloscopes in the maker space to do this for your motor drivers, if you wanted.  The important thing, though, is that `dI/dt` is high in our boards, so inductance is a problem.
 
-Fortunately, minimizing inductance and resistance both push us toward making the wires in our power supply networks as short as possible and as wide as possible.
+Conveniently, minimizing inductance and resistance both push us toward making the wires in our power supply networks as short as possible and as wide as possible.
 
 ### Building Power and Ground Planes out of Pours
 
@@ -143,7 +144,7 @@ We will build the power and ground planes out of "pours".  To create a pour, use
 
 1. Select the tool and the select the layer you would like the pour to be in. In your case one of the internal layers.
 2. Select the area you would like the pour to include. There is a "width" option you can set while drawing the outline. This corresponds to the width of the outline. I recommend using a small value (e.g., 0.5mm).
-3. Select the Name tool (Or type name in the command line) and click on an edge of the polygon. Type (e.g., “GND” if the metal should be connected to GND). It may ask if you want to merge nets (yes), what the resulting name should be (e.g., “GND”), and/or whether you want to rename the whole net or just this polygon (just the polygon).
+3. Select the `Name` tool (Or type "name" in the command line) and click on an edge of the polygon. Type (e.g., “GND” if the metal should be connected to GND). It may ask if you want to merge nets (yes), what the resulting name should be (e.g., “GND”), and/or whether you want to rename the whole net or just this polygon (just the polygon).
 
 Once the pour is created, you can click the "Show all polygon pour fills" tool and Fusion360 will fill in the pour.  Fusion360 is intelligent about how it fills in the pour. It will carve out areas around pads, SMDs, and traces that are part of the signal assigned to the pour.  For pads, SMDs, and traces that are part of the same signal, Fusion360 will attach the pour to those components.
 
@@ -159,11 +160,11 @@ To unfill the pours (they can make it hard to see things in your design), you ca
 
 #### Design Your Power and Ground Planes
 
-In our design, we have two power supply signals ( `VBAT` and `2V5` ), so we will use two power planes in layer 15.  How exactly they should be configured will depend on your design, but one reasonable way to start is to draw a polygon around the perimeter of the board (shaped like a “C” if your board is round). It should be no narrower than 4-5 mm at any point.  It should pass under all four of your motor drivers and it should also extend to area where your battery connector and voltage regulator are located.  This will let all these components connect directly to the pours, avoiding long, thin, high-current wires.
+In our design, we have two power supply signals ( `VBAT` and `3V` ), so we will use two power planes in layer 15.  How exactly they should be configured will depend on your design, but one reasonable way to start is to draw a polygon around the perimeter of the board (shaped like a “C” if your board is round). It should be no narrower than 4-5 mm at any point.  It should pass under all four of your motor drivers and it should also extend to any area where your battery connector and voltage regulator are located.  This will let all these components connect directly to the pours, avoiding long, thin, high-current wires.
 
-The `2V5` pour should cover the rest of the board (except around the antenna. See below). Set the net for that pour to `2V5`.
+The `3V` pour should cover the rest of the board (except around the antenna. See below). Set the net for that pour to `3V`.
 
-There should should be a corresponding ground pour above these two pours (on layer 2). The `GND` pour should be same shape as the `2V5` pour, and the `BAT_GND` pour should be the same shape as the `VBAT` pour.
+There should should be a corresponding ground pour above these two pours (on layer 2). The `GND` pour should be same shape as the `3V` pour, and the `BAT_GND` pour should be the same shape as the `VBAT` pour.
 
 Note that none of these pours should not form a complete ring or "donut". 
 
@@ -181,7 +182,7 @@ You should also pay attention to the narrowest point on your `VBAT` and `BAT_GND
 
 The goal of the pours is to provide a low-resistance path for current to and from the battery, but they can only do this if your design uses them.
 
-This means that, wherever possible, you should route your board to use the power and ground planes rather than traces. So, you want the traces that carry `GND`, `BAT_GND`, `2V5`, and `VBAT` to be as short and as few as possible.
+This means that, wherever possible, you should route your board to use the power and ground planes rather than traces. So, you want the traces that carry `GND`, `BAT_GND`, `3V`, and `VBAT` to be as short and as few as possible.
 
 The easy way to do this is with the `fanout` command.  It'll draw a short wire attached to each pad and put a via at the end.  `fanout SIGNAL GND` will do this for all your ground pins.  The `fanout` command is imperfect, so may have to fix up its work.
 
@@ -196,11 +197,10 @@ There are three reasons that these components need to be close together:
 1. The battery connector needs to be close to the voltage regulator to minimize the length the high-current trace between them. Just a few mm’s away.
 3. The wire bridge needs to be close to the battery’s negative terminal to minimize the length of the trace connecting them. Again, a few mm’s.
 4. The capacitors for the voltage regulator need to be as close as possible to the regulator because the datasheet says so.
-5. The battery connector needs to be set back a little bit from the edge of the board.  There's a white box in the frontprint that represents a plugged-in battery.  The whole things needs to be on the board.  This is to prevent damage to the connect during crashes.  If you look at the FCB, the battery connector is not quite far enough onto the board.
 
 Section 10 of the voltage regulator data sheet has detailed instruction for layout your power supply. Follow them as closely as possible. Your 0805 caps are not quite small enough to do exactly what they request, but you can come close.  Eaglint requires the 1uF caps to be with in 5mm of the regulator, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.  The 47uF cap on the regulated side needs to be with 10mm.
 
-Be sure that the decoupling capacitors on the output of the voltage regulator are close to the regulator, close to each other, and connect directly to the `2V5` pour in layer 15 and all three `GND` pours (layers 1, 2, and 16) through vias situated close to the capacitor's SMDs.  You also want the traces from the capacitor terminals to the voltage regulator to be as short as possible.
+Be sure that the decoupling capacitors on the output of the voltage regulator are close to the regulator, close to each other, and connect directly to the `3V` pour in layer 15 and all three `GND` pours (layers 1, 2, and 16) through vias situated close to the capacitor's SMDs.  You also want the traces from the capacitor terminals to the voltage regulator to be as short as possible.
 
 Simultaneously satisfying all these constraints will require careful thought and planning. In particular, these constraint will affect how you layout the power and ground pours.
 
@@ -212,20 +212,20 @@ The design includes a wire bridge that connects `BAT_GND` to `GND`. The reason f
 
 To maximize thrust and responsiveness, you should keep the high-current (i.e., the mosfet, the motor pads, and flyback diode) components of each motor driver close together. `VBAT` should feed the into the controller directly from the `VBAT` power plane. Since the `VBAT` power plane is in Layer 15, and the pads are on Top, you’ll need at least one via, to connect the two. Consider using more than one via, to provide a wider conduction path. You can add all the vias you want using the `via` too.  The `fanout` tool will also add vias for you.
 
-The routing for the low-current components of the motor driver (i.e, the resistor, and the pull-down resistor) is less critical.
+The routing for the low-current components of the motor driver (i.e, the PWW line and the pull-down resistor) is less critical.
 
 ### Laying out the Radio
 
 The radio is one of the delicate parts of the board because it require special attention for good signal integrity. You should copy the layout on the remote as closely as you can. The key things you’ll need to get right are:
 
 1. You can ignore the grid requirements in placing these parts.  Matching the reference design is more important.  If eaglint complains, add a note of explanation.
-2. Except for the pad that is attached to the circuitry, the antenna should be mounted near the edge of the board without any metal nearby (i.e., there should be no metal in any layer in that area). 
+2. Except for the pad that is attached to the circuitry, the antenna should be mounted near the edge of the board without any metal nearby (i.e., there should be no metal in any layer in that area). Note that on the remote, the antenna is on it's own protrusion of the PCB far away from any metal.  You don't need a protrusion, but the lack of metal nearby is important.
 3. The two capacitors and the balun that make up the antenna driver should not have any other signals near them.
 4. The length of the traces from the micro controller to the balun should be as symmetric as possible: Equal length and mirrored geometry.
 5. All the wires in the antenna should be as short as reasonably possible.  This constraint, combined with the need for the antenna to be near the edge of the board constrains where you can place your microcontroller.
 6. The wire between the balun, the antenna, and the capacitor between them should be the same width as the antenna (50mil), and the wire should transition smoothly into the antenna. There should be no sharp corners.
 
-Enforcing all of these requirements will require applying multiple techniques. Begin by laying out the parts to match the layout on the red board. Then read on for tips on how to implement the rest of the requirements.
+Enforcing all of these requirements will require applying multiple techniques. Begin by laying out the parts to match the layout on the remote. Then read on for tips on how to implement the rest of the requirements.
 
 Just to drive home how delicate this part of the design is:  I have here on my desk a package containing 25 remote control boards that have a range of about 4 inches because I got overconfident about how much I could mess around with the antenna layout.  Don't do that :-(
 
@@ -233,7 +233,7 @@ Just to drive home how delicate this part of the design is:  I have here on my d
 
 Building good antennas and the circuits to drive them is a deep and interesting area of electrical engineering.  It's also beyond the scope of this course.
 
-To side-step that problem we are borrowing tested antenna design and layout.  You can use the FCB as a guide (the microcontroller is at the bottom the the antenna is at the top:
+To side-step that problem we are borrowing tested antenna design and layout.  You can use the remote or FCB as a guide (the microcontroller is at the bottom the the antenna is at the top:
 
 ![Antenna Layout](images/antenna-layout.png)
 
@@ -265,13 +265,13 @@ Finally, use the Change tool to put the signal between the balun and the antenna
 
 ### Laying out the IMU
 
-You need to add some additional bits to the IMU package.  You built your IMU package with rectangle in `tRestrict`, `bRestrict`, and `vRestrict` to prevent metal in the top and bottom layers, but there is no restrict layer for the internal layers.   You will need to add a "cutout" to make sure there are the appropriate holes in in your `2V5` and `GND` planes.
+You need to add some additional bits to the IMU package.  You built your IMU package with rectangle in `tRestrict`, `bRestrict`, and `vRestrict` to prevent metal in the top and bottom layers, but there is no restrict layer for the internal layers.   You will need to add a "cutout" to make sure there are the appropriate holes in in your `3V` and `GND` planes.
 
 To create a cutout, use the polygon tool, and check the 'cutout' box in the properties dialog.
 
-The IMU datasheet (`datasheets/LSM9DS1.pdf`) and a technical note (`datasheets/LSM9DS1_smd_tech_note.pdf`) provide guidelines for layout the IMU and its associated components. Follow them.
+The IMU datasheet and a technical note provide guidelines for layout the IMU and its associated components. Follow them.
 
-The caps for the IMU need to be as close to the IMU as possible, and the traces between the caps and the IMU need to be as short as possible.  For decoupling caps, the length of the `2v5` trace is most important.  Eaglint requires all these caps to be with in 7mm of the IMU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
+The caps for the IMU need to be as close to the IMU as possible, and the traces between the caps and the IMU need to be as short as possible.  For decoupling caps, the length of the `3V` trace is most important.  Eaglint requires all these caps to be with in 7mm of the IMU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
 
 ### Laying out and Labeling the Breakout Header
 
@@ -281,7 +281,7 @@ You should also think about where to put the breakout header.  Near the edge of 
 
 ### Laying out the IMU Rescue Header
 
-Position the IMU rescue header so that when you attach the breakout board (https://www.adafruit.com/product/3387), the IMU on the breakout board will roughly align with the center of your quadcopter.  It doesn't have to be perfect, but close is good.  Ideally, you should also align it so that the IMU on the breakout board will be oriented in the same way as the IMU on your board.  Then, the same software will work either way.
+Position the IMU rescue header so that when you attach the breakout board (https://www.adafruit.com/product/4438), the IMU on the breakout board will roughly align with the center of your quadcopter.  It doesn't have to be perfect, but close is good.  Ideally, you should also align it so that the IMU on the breakout board will be oriented in the same way as the IMU on your board.  Then, the same software will work either way.
 
 ### Laying out the Crystal
 
@@ -292,11 +292,11 @@ The crystal provides the clock to the MCU, and it's important that it be stable,
 
 ### Laying out the MCU
 
-The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible.  For decoupling caps, the length of the `2V5` trace is most important.  Eaglint requires all these caps to be with in 11mm of the MCU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
+The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible.  For decoupling caps, the length of the `3V` trace is most important.  Eaglint requires all these caps to be with in 11mm of the MCU, measured center-to-center.  You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
 
 ### Layer Labels
 
-To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt.lbr` for this purpose: `LAYER_LABELS`.  It's attached to the `DECORATION` device.  Use the `add` tool to add a copy to the schematic and it'll appear on the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
+To help prevent errors or delays during manufacturing, it's useful to make it completely clear which CAM file corresponds to which layer.  There's a special footprint in `quadparts_prebuilt_2022.lbr` for this purpose: `LAYER_LABELS`.  It's attached to the `DECORATION` device.  Use the `add` tool to add a copy to the schematic and it'll appear on the board layout.  It should be outside the boundary of your board.  It will cause the name of the layer to appear in the CAM file for that layer.
 
 ### Mouting holes for the test stand
 
@@ -351,7 +351,7 @@ The autorouter is a useful tool, but it is not a substitute for your judgement. 
 
 1.  Routing nets under your antenna driver.
 2.  Routing nets under your IMU.
-3.  Failing to utilize your pours.  This is a big one.  Most of your connections to `2V5`, `GND`, `VBAT`, and `BAT_GND` should use vias to connect components to the pour.  The pours are electrically better than traces and it also save space for routing other signals.  If you do `show 2V5` (or any other of these signals) you should see your pours, a bunch of short traces from SMDs to vias, and that's about it.  The `fanout` tool is a big help here. The `fanout` tool is good at helping to avoid this.
+3.  Failing to utilize your pours.  This is a big one.  Most of your connections to `3V`, `GND`, `VBAT`, and `BAT_GND` should use vias to connect components to the pour.  The pours are electrically better than traces and it also save space for routing other signals.  If you do `show 3V` (or any other of these signals) you should see your pours, a bunch of short traces from SMDs to vias, and that's about it.  The `fanout` tool is a big help here. The `fanout` tool is good at helping to avoid this.
 4.  Routing traces via needlessly long paths. 
 
 #### Rerouting with A Routing Script
