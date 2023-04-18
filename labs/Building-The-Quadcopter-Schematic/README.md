@@ -291,6 +291,23 @@ The footprints/devices you build need to meet all the standards described in `Bu
 
 Add an attribute called `CUSTOM` to the variants you create. It should be constant but without a value. This will ensure they get ordered.
 
+#### Reference design LEDs pad numbers (Optional)
+
+When you add your LEDs, you may want them to follow the same pinout as the FCB. From the "Programming the Hardware" "Blinking the LEDs" lab section, you know the pin numbers for addressing the LEDs in software, but you may not know the pins these pins are connected to in the schematic. Here is a table for reference:
+
+Individually addressed LEDs:
+| Ref NAME | Soft Pin (Arduino) | Pin (Sch) | Pad (Brd) |
+| -------- | ------- | -------- | ------- |
+| LED 1 (RED) | 16 | PG0(DIG3) | 14 |
+| LED 2 (GREEN) | 17 | PG1(DIG1) | 15 |
+| LED 3 (ORANGE) | 18 | PG2(ARM) | 16 |
+| LED 4 (BLUE) | 36 | PG3(TOSC2) | 17 |
+
+Group addressed LEDs using a single PWM (Pretty LEDs):
+| Ref NAME | Soft Pin (Arduino) | Pin (Sch) | Pad (Brd) |
+| -------- | ------- | -------- | ------- |
+| PRETTY_LEDS | 34 | PB6(OC1B/PCINT6) | 42 |
+
 ### Eaglint
 
 Your design needs to pass http://eaglint.nvsl.io, so commit your design, submit it, and fix the problems it finds. Remember, each time you run a full check with the tool it lowers your grade on the lab, so you need to check your design carefully before submitting.
