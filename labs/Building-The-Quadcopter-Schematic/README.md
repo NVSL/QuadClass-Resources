@@ -107,7 +107,7 @@ You should use the schematic as a guide for constructing the microcontroller por
 5.  You can use either variant for the `AVR_SPI...` header. The surfacemount one takes up more space (see it on your remote, under the LCD). The throughole one is more compact.
 6.  You won't need the FTDI portion of the design.
 7.  Do not connect the power pin on the ISP programmer/Bootloader header.
-8.
+8.  Reference designs use different voltages from what you may want to use. Use 3V instead of 3V3.
 
 You might notice that some of the symbols for the parts seem backwards. This is because they are 'mirrored'. There's a mirror tool or your can mirror parts by editing their properties with the `info` tool.
 
