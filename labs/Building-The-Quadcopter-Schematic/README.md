@@ -107,6 +107,7 @@ You should use the schematic as a guide for constructing the microcontroller por
 5.  You can use either variant for the `AVR_SPI...` header. The surfacemount one takes up more space (see it on your remote, under the LCD). The throughole one is more compact.
 6.  You won't need the FTDI portion of the design.
 7.  Do not connect the power pin on the ISP programmer/Bootloader header.
+8.
 
 You might notice that some of the symbols for the parts seem backwards. This is because they are 'mirrored'. There's a mirror tool or your can mirror parts by editing their properties with the `info` tool.
 
@@ -291,22 +292,20 @@ The footprints/devices you build need to meet all the standards described in `Bu
 
 Add an attribute called `CUSTOM` to the variants you create. It should be constant but without a value. This will ensure they get ordered.
 
-#### Reference design LEDs pad numbers (Optional)
+#### Reference design LEDs pin numbers
 
-When you add your LEDs, you may want them to follow the same pinout as the FCB. From the "Programming the Hardware" "Blinking the LEDs" lab section, you know the pin numbers for addressing the LEDs in software, but you may not know the pins these pins are connected to in the schematic. Here is a table for reference:
+When you add your LEDs, you may want them to follow the same pinout as the FCB. From the "Programming the Hardware" "Blinking the LEDs" lab section, you know the soft pin numbers for addressing the LEDs in software, but you may not know the pin and pad numbers these pins are connected to in the schematic and board. Below is a reference table for LEDs, we also added free PWM pins you can use:
 
-Individually addressed LEDs:
-| Ref NAME | Soft Pin (Arduino) | Pin (Sch) | Pad (Brd) |
-| -------- | ------- | -------- | ------- |
-| LED 1 (RED) | 16 | PG0(DIG3) | 14 |
-| LED 2 (GREEN) | 17 | PG1(DIG1) | 15 |
-| LED 3 (ORANGE) | 18 | PG2(ARM) | 16 |
-| LED 4 (BLUE) | 36 | PG3(TOSC2) | 17 |
-
-Group addressed LEDs using a single PWM (Pretty LEDs):
-| Ref NAME | Soft Pin (Arduino) | Pin (Sch) | Pad (Brd) |
-| -------- | ------- | -------- | ------- |
-| PRETTY_LEDS | 34 | PB6(OC1B/PCINT6) | 42 |
+| Ref NAME            | Type    | In FCB | Soft Pin (Arduino) | Pin (Sch)             | Pad (Brd) |
+| ------------------- | ------- | ------ | ------------------ | --------------------- | --------- |
+| LED 1 (RED)         | Digital | Yes    | 16                 | PG0(DIG3)             | 14        |
+| LED 2 (GREEN)       | Digital | Yes    | 17                 | PG1(DIG1)             | 15        |
+| LED 3 (ORANGE)      | Digital | Yes    | 18                 | PG2(ARM)              | 16        |
+| LED 4 (BLUE)        | Digital | Yes    | 36                 | PG3(TOSC2)            | 17        |
+| PWM 1 (PRETTY_LEDS) | Analog  | Yes    | 34                 | PB6(OC1B/PCINT6)      | 42        |
+| PWM 2 (FREE)        | Analog  | No     | 9                  | PB4(OC2A/PCINT4)      | 40        |
+| PWM 3 (FREE)        | Analog  | No     | 19                 | PG5(OC0B)             | 19        |
+| PWM 4 (FREE)        | Analog  | No     | 35                 | PB7(OC0A/OC1C/PCINT7) | 43        |
 
 ### Eaglint
 
