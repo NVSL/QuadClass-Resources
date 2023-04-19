@@ -51,7 +51,7 @@ For best results, set your serial port bit rate to 115200. This the argument to 
 
 I have been having some trouble getting the serial port to work at 115200. For unclear reasons sometimes it will only work up to 19200. 9600 always works, but it's slow, so the graph is not very responsive.
 
-Integrate the code from the example into your code for remote controlled motors from the last lab and have it plot the pitch euler angle and the pitch gyro outputs from your IMU.
+Integrate the code from the example into your code for remote controlled motors from the last lab and have it plot the pitch euler angle (`.pitch` in the `quad_data_t` struct) and the pitch rate (`.pitch_rate`) from your IMU.
 
 ### Dealing with Noise
 
