@@ -139,7 +139,7 @@ The IMU datasheet contains all the information you will need to use connect the 
 7. We aren't using the interrupt features, so you can leave `INT1` and `INT2` disconnected.
 8. Power supply voltage (`Vdd`) and IO voltage (`Vdd_IO`) will be 3.0V in our design, so connect both to `3V`.
 9. Connect `SDX` and `SCX` to GND.
-10. We want the I2C always active. Determine if `CS` (Chip Select) should be connected to 3V or GND by reading "Table 1. Pin Description" in the IMU datasheet.
+10. We want the I2C to be always enabled. Determine if `CS` (Chip Select) should be connected to 3V (1) or GND (0) by reading "Table 1. Pin Description" in the IMU datasheet. Keep in mind that the IMU can work in diferent modes, we want mode 1. 
 
 A thing to know about datasheets: They almost always (although, frustratingly, not always) tell you everything you need to know. They don't, however, make it easy. You need to read carefully and thoroughly. You can't skim the datasheet and expect to know the details of how to connect each of the pins to configure the IMU properly. You actually need to read through the tables and the text, there are specific answers to most questions you might have in there. Most facts appear exactly once in the datasheet -- it will be written in text or a table, but not both.
 
