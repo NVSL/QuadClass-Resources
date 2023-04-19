@@ -39,7 +39,7 @@ Verify that your FCB is working properly and that you can program it and that yo
 
 The IMU provides a 3-axis accelerometer and a 3-axis gyroscope. You won't use the accelerometer data directly. Instead, your code will use them to compute the pitch and roll angles. You installed the library for this in the previous lab (https://github.com/NVSL/QuadClass_AHRS).
 
-The key function in this library is: `Adafruit_Simple_AHRS::getQuad()` that fills in a new struct: `quad_data_t` with all the information you'll need: pitch and roll angles and the three axes of the gyro. There is also an example: `File->Examples->QuadClass AHRS->ahrs_quad.ino` that will print out these values.
+The key function in this library is: `Adafruit_Simple_AHRS::getQuadOrientation()` that fills in a new struct: `quad_data_t` with all the information you'll need: pitch and roll angles and the three axes of the gyro. There is also an example: `File->Examples->QuadClass AHRS->ahrs_quad_lsm6ds0.ino` that will print out these values.
 
 I believe that you should not need to modify any of these libraries. If you find that you do, go ahead, but please let me know (or submit a pull request!).
 
