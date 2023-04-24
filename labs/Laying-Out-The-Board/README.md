@@ -164,7 +164,7 @@ The `3V` pour should cover the rest of the board (except around the antenna. See
 
 There should should be a corresponding ground pour above these two pours (on layer 2). The `GND` pour should be same shape as the `3V` pour, and the `BAT_GND` pour should be the same shape as the `VBAT` pour.
 
-Note that none of these pours should not form a complete ring or "donut".
+Note that none of these pours should form a complete ring or "donut".
 
 The top and bottom layers should have a single, large pour of `GND` that covers everything except the area around the antenna.
 
