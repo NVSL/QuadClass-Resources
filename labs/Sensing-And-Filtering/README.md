@@ -145,7 +145,7 @@ Use `lsm.setGyroRange()` to adjust range of values the gyros measure to eliminat
 
 #### Adjust the Output Data Rate (ODR)
 
-Adjust the output data rate (ODR) so it's compatible with the rate at which you are sampling the data from the IMU. The ODR should be as closes as possible to how quickly you can sample (i.e., how frequently your `loop()` runs.)
+Adjust the output data rate (ODR) so it's higher than the rate at which you are sampling the data from the IMU. If the ODR is lower than your sampling rate, you'll read the same value repeatedly.
 
 The AHRS example prints the latency for each trip through the loop at the beginning of each line (usually ~4ms). Your sampling rate is 1/latency (e.g., 250Hz). You can set the ODR for both the gyro and the accelerometer using `lsm.setAccelDataRate()` and `lsm.setAccelDataRate()`. See Table 44 and Table 48 for selecting the ODR.
 
@@ -207,11 +207,6 @@ You'll need to experiment quite a bit to get good measurement. The more tuning y
 Commit your results:
 
 1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
-2. Include a file called `noise.txt` that lists these values:
-   1. How quickly you are reading data from the IMU
-   2. The register name for each IMU configuration register you modified and the value you set it to (expressed using `|` and human-readable macros, not in binary or hex.)
-   3. Your ODR and ODR ratio.
-   4. The cutoff frequencies for the accelerometer and gyro filters.
 
 Once you've committed everything, create a tag called "sensing-and-filtering" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 
