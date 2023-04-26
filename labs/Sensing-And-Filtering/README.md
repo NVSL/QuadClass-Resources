@@ -222,6 +222,8 @@ Once you've committed everything, create a tag called "sensing-and-filtering" Be
 
 ### Rubric
 
+For the demo be ready with the serial plotter showing the output of your complimentary filter and the raw gyroscope output.  Those are the only signals we need to say to grade the lab.
+
 Possible points: 10
 
 Check list
