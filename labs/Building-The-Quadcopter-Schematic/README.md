@@ -283,21 +283,6 @@ One thing to keep in mind is that most LEDs are extremely bright when driven at 
 
 It can be a little hard to tell from the datasheets how bright LEDs will be actually be.  There's often a "luminous intensity" entry in a table that measured in [millicandelas](https://en.wikipedia.org/wiki/Candela) (`mcd`).  The definiton of a candela is a little complicated.  There is usually a graph that related luminous intensity to current, but it's "relative" luminous intensity, so it just tells you how the brightness will vary with current.  It doesn't say how bright it will be.
 
-For comparison, the red and green indicator LEDs on the FCB (and their resistotrs) have the following characteristics:
-
-|               | Red               | Green | 
-|---------------|-------------------|-------|
-| Vfwd          | 2V                | 2V    |
-| resistor      | 100Ohms           | 100Ohms | 
-| supply voltage| 3V                | 3V |
-| current       | 10mA              | 10mA |
-| power         | 10mW              | 10mW |
-| Luminous Intensity | 45mcd        | 35mcd |
-
-(I've just realized that this exceeds the rating for the MCU pins...  Oops!)
-
-You'll note that those LEDs are pretty bright. 
-
 Once you have picked your LEDs, document your LED design using text in the `Info` layer in your schematic. For each type of LED, you should note its forward voltage, the resistance of the current limiting resistor, the current you expect to flow through the LED, and the power you expect it to disipate (power = current * voltage).
 
 Feel free to get creative with the LEDs! Smilely faces. Simulated space ship engines. Aircaft "running lights". Dance party. Ground effects.
