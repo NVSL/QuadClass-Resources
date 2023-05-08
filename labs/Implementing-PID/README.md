@@ -59,7 +59,7 @@ The mixer (which would be inside the "system" box in the diagram above) is respo
 
 A key consideration in the mixer is that the total angular speed of the propellers needs to remain constant.  That means that if you increase the speed of one counter-clockwise propeller you must decrease the speed of another one by the same amount.  This explain why propellers that are diagonally opposite one another rotate in the same direction.
 
-The simplest way to implement the mixer is something like this: `power = throttle + PID_output` for the front motors and `power = throttle - PID_output` for the back motors.  A potential problem is that the PID adjustment might be larger than the current throttle value or the throttle value maybe very close to the max motor power. In both of these cases, the quadcopter will be able to completely implement the output of the PID control. 
+The simplest way to implement the mixer is something like this: `power = throttle + PID_output` for the front motors and `power = throttle - PID_output` for the back motors.  A potential problem is that the PID adjustment might be larger than the current throttle value or the throttle value maybe very close to the max motor power. In both of these cases, the quadcopter will not be able to completely implement the output of the PID control. 
 
 Initially, you can ignore this problem: Test with your throttle in the middle or so.  You may need to compensate for this problem later, or you may not.
 
