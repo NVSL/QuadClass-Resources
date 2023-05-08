@@ -97,7 +97,7 @@ Another common problem:  If your Ki = 0, and the integral of error becomes large
 
 There are couple of solution to this:
 
-* You can have the integral decay over time.  For instance, instead computing `sum = sum + e` each iteration, you could do `sum = 3*sum/4 + e`.  The downside of this is that it will make your kI term's behavior more complex.  Complexity is your enemy.
+* You can have the integral decay over time.  For instance, instead computing `sum = sum + e` each iteration, you could do `sum = 3.0*sum/4.0 + e`.  The downside of this is that it will make your kI term's behavior more complex.  Complexity is your enemy.
 * You can also just bound the integral at some value. Some trial and error may be required to find a reasonable bound.  Same problem as above -- this introduces a discontinuity is the algorithm's behavior.
 * You can reset the integral when throttle is 0 or when `Ki` is zero.
 
@@ -127,7 +127,7 @@ The implementation can (and should) be pretty simple.  Trying to tweak the algor
 
 If you get strange behavior, make your implementation simpler rather than more complex.
 
-Pay attention to your PID update rate.  100Hz (10ms/iteration) is good.  The call to lsm.getQuad() takes about 1.8ms.  You will eventually have 3 PID loops. So that means you have about (10-1.8)/3 = 2.7ms per PID channel.  If you implementation is simple, this should not be a problem.
+Pay attention to your PID update rate.  100Hz (10ms/iteration) is good.  The call to lsm.getQuad() takes about 1.8ms.  You will eventually have 3 PID loops. So that means you have about (10-1.8)/3.0 = 2.7ms per PID channel.  If you implementation is simple, this should not be a problem.
 
 #### Your Mixer
 
@@ -152,7 +152,7 @@ When you encounter a problem in this lab, it really pays off to be methodical ab
 8.  Is your IMU calibrated correctly?  When it's sitting on a flat surface or "docked" on the test stand, does it show 0-degrees pitch and roll and 0 yaw rate?
 9.  Check your error calculation -- Does it change correctly when you tilt the FCB?  Does it change correctly when you move the pitch stick?
 10.  Do the motor outputs change as you expect as you move the platform (i.e., do the motors on the lower side get stronger)?  Do they get stronger more aggressively when you turn up kP?
-11.  Does it behave sensibly with just P?  Can I feel it trying to correct in the right direction?
+11.  Does it behave sensibly with just P?  Can you feel it trying to correct in the right direction?
 12.  Check your derivative calculation -- Does it match up with your error calculation?  Is `dT` in the right units (i.e., compute using the right time scale)?  Does `dErr` have the correct sign (i.e., when error is positive and decreasing is `dErr/dT` negative?  When error is negative and increasing, is `dErr/dT` positive?)
 13.  Does it behave sensibly with P and D?  Are your kD and KP reasonable values?
 14.  Check your integral calculation -- Do you handle wind up correctly?  Is `dT` in the right units?
@@ -160,7 +160,7 @@ When you encounter a problem in this lab, it really pays off to be methodical ab
 
 Almost always, overall PID problems are caused by something pretty early in this list.  It would be not be a bad idea to provide the means to run these tests quickly using the remote.  Then, if you have an error, you can quickly check whether all the underlying parts are working properly.
 
-Be assured that the first time you ask me or the TA for help, we will go through this list with you.  You can save us both time by checking these items yourself first.
+Be assured that the first time you ask me or the TA for help, we will go through this list (or something like it) with you.  You can save us both time by checking these items yourself first.
 
 Here are some implementation notes suggested by the above:
 
@@ -209,7 +209,7 @@ Flying it upside down means the harder you drive the motors, the more stable it
 gets in the pitch/roll directions.  Just keep in mind that it'll look like it's
 spinning backwards relative to what you do with the yaw stick.
 
-We've also included as "spinner".  If you put it between your quadcopter and
+To let the quadcopter spin freely, we have "spinners".  If you put it between your quadcopter and
 whatever it's hanging from, it'll let the quad spin freely without twisting the
 monofilament.
 
