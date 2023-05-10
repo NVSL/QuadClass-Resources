@@ -84,7 +84,7 @@ The filter's single parameter (called the _complementary gain_) ranges from 0 to
 Complementary filter (cf) equation:
 
 ```
-cf_angle = (gain)*(cf_angle + gyro_raw * RAD_TO_DEG * dt) + (1-gain)*(acc_angle)
+cf_ange = (gain) * (cf_angle + (gyro_raw * RAD_TO_DEG * dt)) + (1-gain) * (acc_angle)
 ```
 
 Where:
@@ -217,7 +217,7 @@ Once you've committed everything, create a tag called "sensing-and-filtering" Be
 
 ### Rubric
 
-For the demo be ready with the serial plotter showing the output of your complimentary filter and the raw gyroscope output.  Those are the only signals we need to say to grade the lab.
+For the demo be ready with the serial plotter showing the output of your complimentary filter and the raw gyroscope output. Those are the only signals we need to say to grade the lab.
 
 Possible points: 10
 
