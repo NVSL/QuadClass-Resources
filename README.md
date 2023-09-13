@@ -14,7 +14,7 @@ Please see the [course home page](https://sites.google.com/ucsd.edu/the-quadcopt
 
 ## A Note About Software Tool Names
 
-The PCB design software we use is called Fusion 360. It used to be known as "Eagle". I'm slowly updating the course materials to reflect this change. In the meantime when you see "Eagle" you should think "Fusion 360".
+The PCB design software we use is called Fusion 360. It used to be known as "Eagle". I've mostly updated the course materials to reflect this change.  If you see "Eagle" you should think "Fusion 360".
 
 ## Overview
 
@@ -42,7 +42,7 @@ In particular, you'll learn and/or practice these skills/topics:
 
 ## Labs
 
-There are 11 labs divided into four sections. Deadlines are on the course homepage.
+There are 10 labs divided into four sections. Deadlines are on the course homepage.
 
 The slides for each lab are in the directory with the lab description.
 
@@ -61,13 +61,14 @@ The slides for each lab are in the directory with the lab description.
 ### Software
 
 7. [Programming The Hardware](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Programming-The-Hardware)
-8. [Sensing and Filtering](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Sensing-And-Filtering)
-9. [Implementing PID](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Implementing-PID)
+8. [Sensing and Control](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Sensing-And-Control)
+<!-- 8. [Sensing and Filtering](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Sensing-And-Filtering)-->
+<!-- 9. [Implementing PID](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Implementing-PID)-->
 
 ### Flight
 
-10. [Flight](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Flight)
-11. [Cleanup](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Cleanup)
+9. [Flight](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Flight)
+10. [Cleanup](https://github.com/NVSL/QuadClass-Resources/tree/master/labs/Cleanup)
 
 ## Lab Equipment
 
