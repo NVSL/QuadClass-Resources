@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Fusion360 installed. Fusion360 is available on Windows and Mac!
-2. The [starter repo](https://classroom.github.com/a/K4L-LoDo) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/uwcJUD6D) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
@@ -30,11 +30,6 @@ Skills to Learn
 ### Complete the Responsibility Contract
 
 Go to https://envision-maker.ucsd.edu/access/responsibility.php, follow the instructions and complete the quiz. After completing the quiz **don't exit**, print page with the completion message box (it says something like "YOU PASSED!") to a pdf called `responsibility.pdf,` commit it to your repo.
-
-### Fill Out The Self Evaluation
-
-Login to your __@ucsd.edu__ gmail account and fill out [this survey](https://forms.gle/a6yFoNri79w6TF796). You will receive
-a copy of your responses via email. Print it to a pdf and include it in your repo as `survey.pdf`.
 
 ### Get set up on GitHub
 
