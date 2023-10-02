@@ -47,6 +47,8 @@ Install Fusion360 by following [this link](https://www.autodesk.com/education/ed
 
 Once you have verified your education status, return to the software list and find the Fusion360 card to download and install the program.
 
+*Note*: Some students get stuck in a loop of authenticating, open Fusion360, Fusion360 quits, and asks them to authorize again.  In this case, please try the solution [here](https://forums.autodesk.com/t5/fusion-360-support/cannot-launch-or-sign-into-fusion-360-error-occurs-across-many/td-p/11941944/page/2).
+
 ### Fusion360 Teams
 
 When first starting up Fusion360, you may be greeted with a window about forming teams. Fusion360 is able to manage shared versions of designs in the cloud, and the way that multiple people access a particular design is through a team. In this lab and the next we will not be using teams, so for now, you can create a new team with whatever name you prefer. In future labs, you and your partner will take advantage of this feature to manage shared copies of your board design!
