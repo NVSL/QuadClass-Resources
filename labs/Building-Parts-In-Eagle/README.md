@@ -45,7 +45,7 @@ Create footprints, symbols, and devices for the following electrical components.
 | 0805 0Ohm resistor       | 311-0.0ARCT-ND       | Build resistors by hand                                                                                                   |
 | Red Light emitting diode | 160-1178-1-ND        | Orientation is key <br/> Use the package generator for the LED                                                            |
 | N-Channel MOSFET         | SI2302CDS-T1-E3CT-ND | Pay close attention to the pads <br/> Use the package generator with a custom footprint for the MOSFET (or build by hand) |
-| LSM6DSOXTR 9-Axis IMU    | 497-18367-1-ND       | The package generator doesn't support this IMU, build the footprint by hand                                               |
+| LSM6DSOXTR 6-Axis IMU    | 497-18367-1-ND       | The package generator doesn't support this IMU, build the footprint by hand                                               |
 
 You can find information about the part by typing the Digikey part number into google. There will be a link to the datasheet.
 
