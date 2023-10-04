@@ -301,9 +301,9 @@ You'll need to mount your quadcopter to the test stand. The easiest way
 to do this is to replicate the whole pattern on the FCB, and then mount your
 quadcopter to the same plywood piece we attach to the FCB.
 
-The `MOUNTING_HOLE` device in `quadparts_prebuilt` has a `2-56` variant that you should use for this. There are four of them and they are centered on the board center of gravity (which should also be your IMU). They are located at +/-20mm and +/-11.5mm.
+The `MOUNTING_HOLE` device in `quadparts_prebuilt` has a `2-56` variant that you should use for this. There are four of them and they are centered on the board center of gravity (which should also be your IMU). They are located at +/-20mm and +/-11.5mm.  You can rotate the hole pattetrn by 90 degrees if you want.
 
-You can put them in different spots, but Eaglint will complain and you'll need to build your own adapter plate to attach it to the test stand. Depending on the size of your quad, drilling holes in the arms should work fine.
+You can put them in different spots, but it makes a lot of extra work for youn and Eaglint will complain.  You'll need to build your own adapter plate to attach it to the test stand. Depending on the size of your quad, drilling holes in the arms should work fine.
 
 ### Battery Voltage Meter
 
