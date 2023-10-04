@@ -13,7 +13,6 @@ Check the course schedule for due date(s).
 5. Use the autorouter.
 6. Protecting analog components from interference.
 7. Drawing a logo in Fusion360.
-8. Perform a design review on the above.
 
 ## Equipment, Supplies, Virtues, and Software You will Need
 
@@ -23,7 +22,7 @@ Check the course schedule for due date(s).
 4. Attention to detail.
 5. Read through the [Fusion Tricks Page](../../Fusion-Tricks.md) and skim the [Autodesk docs](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-PREPARE-LAYOUT) that go over the design tools you will use this lab.
 
-## Tasks To Perform (Part A)
+## Tasks To Perform
 
 ### Board Shape and Quadcopter Orientation
 
@@ -304,7 +303,7 @@ quadcopter to the same plywood piece we attach to the FCB.
 
 The `MOUNTING_HOLE` device in `quadparts_prebuilt` has a `2-56` variant that you should use for this. There are four of them and they are centered on the board center of gravity (which should also be your IMU). They are located at +/-20mm and +/-11.5mm.
 
-You can put them in different spots, but you'll need to build your own adapter plate to attach it to the test stand (or drill holes in plywood for the FCB). Depending on the size of your quad, drilling holes in the arms should work fine.
+You can put them in different spots, but Eaglint will complain and you'll need to build your own adapter plate to attach it to the test stand. Depending on the size of your quad, drilling holes in the arms should work fine.
 
 ### Battery Voltage Meter
 
@@ -382,7 +381,7 @@ You must run Fusion360's design rule checker (DRC). It checks for a bunch of com
 5.  "Width" -- A net is thinner than it should be. You'll get one of these between the antenna net and the balun. Usually they are not a good idea, but sometimes they are ok. For instance, the IMU datasheet says that narrow power/ground traces are fine for that part, so you could route those nets with thinner traces than the other power nets.
 6.  "Clearance" -- Two separate pieces of metal are too close. Generally, you should cannot ignore these, since the minimum spacing is manufacturing constraint.
 
-You can approve errors, but your peer reviewers (and me) will be looking at them closely. You should be skeptical about approving errors. They are called errors for a reason.
+You can approve errors, but I will be looking at them closely. You should be skeptical about approving errors. They are called errors for a reason.
 
 ### Generating Gerbers
 
@@ -403,128 +402,9 @@ Your .zip file needs to contain exactly the files required to build your board a
 9. `quadcopter.pls`
 10. `quadcopter.crm`
 
-## Task To Perform (Part B: Design Review)
-
-For this design review, you need to be careful, meticulous, and demanding. These are the hallmarks of a good design reviewer.
-
-Once assigned, your groups design review partners are listed on your Eaglint homepage.
-
-The reviewee needs to provide a zip file of their `hardware` directory (but not their entire github repo).
-
-After you have performed an initial, thorough review, you should meet with the other team to go over any questions you have.
-After that meeting you should produce a file called describing any problems you found. You'll commit this to your repo as `design_reviews/questions_about_their_board.txt`.
-
-You'll commit the corresponding file you receive as `design_reviews/questions_about_our_board.txt`. In it, you'll also provide your responses to your reviewer's comments. You should mark each comment as `fixed` or provide a carefully reasoned explanation of why you don't think it's problem.
-
-These file needs to include the following:
-
-1.  The reviewer team name (and student names/email addresses)
-2.  The reviewee team name (and sudent names/email addresses)
-3.  The date and time that you met face-to-face
-
-Please only list potential issues in the document. Do not remark on things that look good or seem ok, since doing so makes the reviews harder to read.
-
-### What To Check For
-
-As the reviewer, your job is spot potential problems with the design you are reviewing. Since you have built a very similar design, you are familiar with the various problems that can arise, hence you are an expert.
-
-Your review needs to include their schematic, their board layout, and the library entries they created and use.
-
-As you look over the design you should keep in mind the contents of:
-
-1.  The lab write ups
-2.  The lecture slides
-3.  What I said in class about the design.
-4.  What you have learned from the data sheets for the components.
-
-There is a (very incomplete) checklist of questions for you to consider below. But, ultimately, you are responsible for identifying any and all ways that the design you are reviewing fails to match the spec for the class.
-
-Your grade as the reviewer is based on how many errors I find in the design that you missed.
-
-### Sample Checklist
-
-Below is a check list of items you should consider during your design review.
-
-- Antenna and Antenna Driver
-
-  - Do all the traces for the antenna driver reside in layer 1?
-  - Is the trace between the balun and the antenna in the correct net class and the correct width?
-  - Are the other two capacitors close to the balun?
-  - Is the trace between the balun and the antenna short (no longer than the corresponding trace in the reference design)?
-  - Is there ample space around the antenna that is free of metal on all four layers?
-  - Does the layout roughly match the layout on the FCB?
-  - Are there any traces routed through the antenna driver area that are not related to the driver in any layer (there should not be)?
-
-- Power and Ground
-
-  - Does the `VBAT` power plane reach under all four motor drivers?
-  - Is the `VBAT` power plane wider than 3mm everywhere?
-  - Does the `2V5` power plane run under microcontroller and near the IMU’s power pins?
-  - Does the combination of the `BAT_GND` and `GND` ground plane extend to almost every area of the board (with the exception of the area round the antenna)?
-  - Are the `VBAT` and `2V5` power pours both in the same metal layer?
-  - Are there any parts of the power our ground pours that are very narrow? They should be no “necks” narrower than 1mm.
-  - Does the `VBAT` power plane extend to the battery connector?
-  - Are the pours in `Route2` and `Route15` cut into pieces by traces routed through them? They should not be.
-
-- IMU
-
-  - Is the IMU at the center of the board?
-  - Are the capacitors specified in the IMU datasheet located as close as is practical to the IMU?
-  - Is the IMU oriented so that the X and Y axes are aligned with the pitch and roll axis of the quadcopter?
-  - Are there any traces under the IMU? Is there anything under IMU?
-
-- Headers
-
-  - Is the FTDI header oriented so the silkscreen is labels for the pins are on the board and the pins will protrude off the board?
-
-- Microcontroller
-
-  - Is the layout of resonator and the associated caps similar to the layout of those parts on the red board?
-  - Do all the traces for the resonator and its associated caps lie in layer Top?
-  - Are the decoupling caps for the microcontroller located as close as possible to power pins of the microcontroller?
-
-- Power Supply
-
-  - Are the caps associated with the voltage regulator located near the regulator?
-  - Is the voltage regulator located near the battery connector?
-  - Does the `3V` power plane run underneath the voltage regulator?
-
-- Motor Drivers
-
-  - Are the traces that carry large currents thick enough?
-
-- Aesthetics
-
-  - Does does the layout look nice?
-  - Are nearby parts aligned?
-  - Are the reference designators arranged so they don’t overlap eachother or pads?
-
-- Mechanical
-
-  - Given the location of the motors, will the props clear the board (except for the arms)?
-  - Are the rings for grommets the right diameter?
-
-- LEDs
-
-  - Does the contents of their `led_notes.txt` make sense?
-
-- Checks
-
-  - Does DRC check pass without errors?
-  - If DRC doesn’t pass with no errors, does the team have good explanations for why the errors are ok?
-
-- Gerber Files (ignore for now)
-
-  - Are areas around the antenna clear in the gerber files?
-  - Are the power planes where you expect them to be in the gerber files?
-  - Are there any traces that cross in an unexpected way in the gerber files?
-  - Are there any elements that should be in the silkscreen that show up in metal layers?
-  - Are there any elements that should be in the metal layers but that show up on the silkscreen?
-  - Does the board outline match what was draw in the brd file?
-
 ## Turn in Your Work
 
-### Rubric Part A
+### Rubric
 
 “Perfect” score: 10
 
@@ -540,27 +420,6 @@ Submit the following to your github repo (you can leave other files in there. Th
 6. A files called quadcopter.cam.zip that contains the CAM files for the design.
    Submit it to Eaglint. The tool will not look at any other libraries, so if you use any other libraries the consistency checks will fail.
 
-For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
+Once it passes, create a tag called “board-layout” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&sa=D&sntz=1&usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
 
-Once it passes, create a tag called “board-layout-prereview” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&sa=D&sntz=1&usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
 
-### Rubric Part B
-
-“Perfect” score: 10
-
-Initial points: 14
-
-Commit the following:
-
-- The list of questions your reviewers had about your design as `design_reviews/questions_about_our_board.txt`.
-- The list of questions you had about the design you reviewed as `design_reviews/questions_about_their_board.txt`.
-- Your changes to your schematic, board, and libraries.
-
-Submit it to Eaglint.
-
-Once it passes and human review, tag your repo: 'board-layout-postreview'.
-
-Grading for the design reviews is in two parts:
-
-1. You will lose points for any problems I find in your reviewee’s design that you should have found.
-2. You will lose a point for each failed submission to Eaglint and human review.
