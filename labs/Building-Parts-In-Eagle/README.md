@@ -110,8 +110,9 @@ Each of your footprints should contain the following elements:
 10. Add lines on `tPlace` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
     1. For polarized components, draw with the positive terminal on the left.
     2. For polarized components, make the positive terminal the first terminal.
-    3. For polarized components, clearly mark the distinguished terminal with a dot or extra line. The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
-    4. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode). Design your footprint so that at least one polarity marker is visible when the part is installed (i.e. make sure all the polarity markers are not covered by the part.)
+    4. For polarized components, clearly mark the distinguished terminal with a dot or extra line. The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
+    5. For polarized componenst, make sure that the polarity marking will be visible when the part is installed (i.e., it should not be under the body of the part).
+    6. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode). Design your footprint so that at least one polarity marker is visible when the part is installed (i.e. make sure all the polarity markers are not covered by the part.)
 11. Make sure that the “>NAME” doesn’t overlap with the elements that show the orientation, placement, and alignment of the parts.
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the footprint.
