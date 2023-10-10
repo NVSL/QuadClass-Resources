@@ -49,7 +49,7 @@ The FCBs are provided for your use during the class.
 
 ### Install Arduino
 
-Install Arduino 2.0.4 or later. This is the only version we will be supporting in class.  
+Install Arduino 2.2.1 or later. This is the only version we will be supporting in class.  
 [Arduino Download](https://www.arduino.cc/en/software)
 
 ### Setup Your Firmware Development Environment
@@ -58,7 +58,7 @@ The repo you create and use for this lab will be the repository you use for your
 (`File->Preferences->Sketchbook location`).  
 Then, enter your github repo firmware folder path, example: `../<github_repo>/firmware`
 
-![Sketchbook Path](./images/introprog2.jpg)
+![Sketchbook Path](./images/FA23_path.png)
 
 #### Add Board Definition Files
 
@@ -66,7 +66,7 @@ This will let Arduino talk to all the [Atmega128RFA](https://www.digikey.com/en/
 
 - Clone the Arduino addon (https://github.com/NVSL/QuadClass_Atmega128RFA_Arduino_Addon) into `firmware/hardware`. You should end up with this directory `firmware/hardware/QuadClass_Atmega128RFA_Arduino_Addon/avr`.
 - Restart Arduino. Then, under `Tool->Board` you should see `Quad Class ATmega128RFA1 Boards`. Select that board.
-  ![Board Selection ](./images/introprog1.jpg)
+  ![Board Selection ](./images/FA23_board.png)
 - Select `Tools->Programmer->USBTinyISP`
 
 #### Install the Libraries
@@ -91,7 +91,7 @@ Here's the command sequence on my machine:
 ```
 
 Go to Library Manager and install "Adafruit LSM6DS". A pop-up window will show up, click "Install ALL".  
-![Install Adafruit LSM6DS](./images/introprog3.jpg)
+![Install Adafruit LSM6DS](./images/FA23_LSM6DS.png)
 
 
 When you're done, the top few levels of your repo should look like this:
@@ -124,7 +124,7 @@ When you're done, the top few levels of your repo should look like this:
 
 Restart Arduino and the bottom of your `Sketch->Include Library` menu should look something like this:
 
-![Libraries installed](images/installed_libraries.png)
+![Libraries installed](images/FA23_inlib.png)
 
 #### Getting Updates For the Starter Repo
 
@@ -170,7 +170,7 @@ Programming Arduino microcontrollers (i.e., transfering the compiled to the devi
 
 - Make sure you have the right board and programmer selected.
   - On a Mac, this will be something like `/dev/cu.usbserial-AG0JL8H4`. It is definitely not anything like `tty.usbserial-AG0JL8H4` or `cu.Bluetooth-Incoming-Port` or `cu.iPhone-WirelessiAPv2`.
-  - On a PC, it is probably the lowest-numbered "COM" port.
+  - On a PC, it is probably the highest-numbered "COM" port.
 - Try a different USB port. Laptops generally have multiple, internal USB hubs and some don’t play well with Arduino.
 - Try a USB 2.0 port. Sometimes programming doesn’t work over USB 3.0. If your computer has a USB 2.0 hub use it. If not, get a USB 2.0 hub and plug the Arduino into that. On some machines the blue USB ports are 3.0 and black ones are 2.0.
 - Unplug everything, quit Arduino, plug everything back in, restart Arduino.
@@ -334,7 +334,7 @@ There's some other fancy stuff you can do, too, like scrolling, changing the con
 ### Reading the Gimbals
 
 1. Write a function that reads values from the gimbals and use it to writes them to the serial port.
-   - Check out [analog_read()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
+   - Check out [analogRead()](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/).
    - The [Arduino Serial monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) will tell you how to get output to the serial port.
    - The function should go in your `firmware/remote_firmware/remote_firmware.ino`, which will slowly grow into your remote’s firmware.
 2. Does the value you read from the gimbals vary across the gimbals’ full range of motion? If not, let us know.
@@ -459,7 +459,7 @@ The FCB can be programmed via the remote control's USB-to-serial converter. The 
 
 ### Reading from the IMU
 
-Load, compile, and run `Open->Examples->QuadClass LSM9D6SOX Extended Library->quadclass_lsmd6sox` on the FCB. Open the serial monitor (You will probably need to adjust the BAUD rate to 115200 using the menu in the lower right), and you should see something like this:
+Load, compile, and run `Open->Examples->QuadClass LSM9D6SOX Extended Library->quadclass_lsmd6sox` on the FCB. Open the serial monitor (You will probably need to adjust the BAUD rate to 115200 using the menu in the top right corner), and you should see something like this:
 
 ![IMU Output](images/IMU_output.png)
 
