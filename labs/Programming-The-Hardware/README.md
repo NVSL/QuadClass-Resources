@@ -49,7 +49,7 @@ The FCBs are provided for your use during the class.
 
 ### Install Arduino
 
-Install Arduino 2.2.1 or later. This is the only version we will be supporting in class.  
+Install Arduino 2.2.1. This is the only version we will be supporting in class.  
 [Arduino Download](https://www.arduino.cc/en/software)
 
 ### Setup Your Firmware Development Environment
