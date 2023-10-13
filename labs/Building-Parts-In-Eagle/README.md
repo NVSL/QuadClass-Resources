@@ -213,6 +213,7 @@ The IMU has caused us significant problems in the past. Be careful with it. You 
   2.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `bRestrict` that covers the entire footprint.
   3.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `vRestrict` that covers the entire footprint.
   4.  You have to use the rectangle tool, because lines will only eliminate the line, not the interior.
+   In the symbol for the IMU, make sure that all the pin names are visible (i.e., not overlapping and with some some space between them).
 - ~~There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop` that covers the area under the footprint, but does not overlap the pins.~~
 - Include “IMU” in the name of the device you create.
 - You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents. You will need to read them quite carefully.
