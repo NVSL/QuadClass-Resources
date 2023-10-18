@@ -29,13 +29,13 @@ Check the course schedule for due date(s).
 The first step is to define the size, shape, and orientation of your quadcopter. There are several things you must take into account:
 
 1. You need places to attach four motors. We will use rubber grommets to attach the motors to your PCB just like we use them to attach the motors to the FCB's airframe. However, the grommets that fit on the PCB are much smaller. You will need a hole that is 12.2mm in diameter for each grommet, and the ring of PCB around the grommet must be at least 1.7mm wide.
-2. You should ensure that most of the area the propellers will sweep out as they spin will not be over the board. For instance, putting the motor at the end of an arm will accomplish this. The arm must be long enough, however. The diameter of the propellers is either 40mm or 55mm. Design for 55mm. You can add four `PROPELLER` devices to your schematic/board to see this in your design.
+2. You should ensure that most of the area the propellers will sweep out as they spin will not be over the board. For instance, putting the motor at the end of an arm will accomplish this. The arm must be long enough, however. The diameter of the propellers is either 40mm or 65mm. Design for 65mm. You can add four `PROPELLER` devices to your schematic/board to see this in your design.
 3. Your design must fit with a rectangle whose area is less than 19,354 sq mm. -- about 13.9cm square. This is pretty big. Don't feel the need to fill it. Heavier quadcopters are harder to get off the ground.
 4. The layout of the motors should be symmetric along the the x and y axes (i.e., the four motors should make a rectangle).
 5. I recommend centering your board shape on Fusion360's origin. It will make it easier to place parts symmetrically.
 6. The cutting tool the board uses is a 2mm in diameter. This means if you should corners that are less than 180 degrees (i.e., the corners point into the body of your quadcopter), they will be rounded.
 7. The cutting tool diameter also limits the smallest gap between two the board and itself. Openings must be at least 2mm wide. You can get a feel for this by doing `hole 2mm` which will give you 2mm circle that you can slide use to guage how the cutting tool will behave.
-8. The board manufacturer will not build boards with "ismuths" (i.e., narrow strips of PCB) narrower than 2mm. The guidance they give is not totally clear, but protrusions (i.e., pennisulas) seems to be OK, while narrow strisp between larger parts are not. If you want something unusual, we can always send it in and see what they say.
+8. The board manufacturer will not build boards with "ismuths" (i.e., narrow strips of PCB) narrower than 2mm. The guidance they give is not totally clear, but protrusions (i.e., pennisulas) seems to be OK, while narrow strips between larger parts are not. If you want something unusual, we can always send it in and see what they say.
 
 To verify that you have the dimensions correct, please add dimension elements to your board in `tDocu`. You need these four dimensions (all in mm, of course):
 
@@ -62,7 +62,7 @@ The next stage is to place all the parts on board. Placing most of the parts is 
    4. There needs to space on either the top or the bottom for the battery. There should be a roughly flat area (like there is on the FCB).
    5. The IMU should be at the center of your quad.
    6. Any other LEDs you added should placed in an artistic way (or to achieve whatever effect you are going for).
-   7. The 4-pin programming header should not be well-away from the propellers.
+   7. The 4-pin programming header should be well-away from the propellers.
    8. The location of the micro-controller is not, in itself, important, but it’s location does drive the location of the antenna and the crystal.
    9. The antenna needs to be close to the edge of the board and it needs a fair amount of metal-free space around it.
 2. You should mimic the layout of the FCB in places where signal integrity is important. This includes antenna (see below) and the crystal.
@@ -74,7 +74,7 @@ The next stage is to place all the parts on board. Placing most of the parts is 
 
 Eaglint will warn about most of these.
 
-1.  Align your parts to a 1mm grid. This will go a long way toward making your board look really good. The antenna and the capacitor attached to it are excepted, because signal integrity is more important. You can also bend the rules and use 0.5mm grid for placing caps need the IMU and MCU. Eaglint enforces the 0.5mm grid. If you have good reason violate the grid, you can explain it in Eaglint.
+1.  Align your parts to a 1mm grid. This will go a long way toward making your board look really good. The antenna and the capacitor attached to it don't need to be on the grid, because signal integrity is more important. You can also bend the rules and use 0.5mm grid for placing caps need the IMU and MCU. Eaglint enforces the 0.5mm grid. If you have good reason violate the grid, you can explain it in Eaglint.
 2.  Align your reference designators and values to a 0.5mm grid. Sometimes this is too restrictive. If you must, you can use 0.1mm. Eaglint will complain otherwise.
 3.  Allow 1-2mm between parts to make assembly easy. If you designed your `tKeepout` appropriately in the library, this should be no problem.
 4.  Orienting all your parts in the same direction makes assembly easier (notice this on the FCB and your remote board).
