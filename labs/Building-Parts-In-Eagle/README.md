@@ -45,7 +45,7 @@ Create footprints, symbols, and devices for the following electrical components.
 | 0805 0Ohm resistor       | 311-0.0ARCT-ND       | Build resistors by hand                                                                                                   |
 | Red Light emitting diode | 160-1178-1-ND        | Orientation is key <br/> Use the package generator for the LED                                                            |
 | N-Channel MOSFET         | SI2302CDS-T1-E3CT-ND | Pay close attention to the pads <br/> Use the package generator with a custom footprint for the MOSFET (or build by hand) |
-| LSM6DSOXTR 9-Axis IMU    | 497-18367-1-ND       | The package generator doesn't support this IMU, build the footprint by hand                                               |
+| LSM6DSOXTR 6-Axis IMU    | 497-18367-1-ND       | The package generator doesn't support this IMU, build the footprint by hand                                               |
 
 You can find information about the part by typing the Digikey part number into google. There will be a link to the datasheet.
 
@@ -110,8 +110,9 @@ Each of your footprints should contain the following elements:
 10. Add lines on `tPlace` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
     1. For polarized components, draw with the positive terminal on the left.
     2. For polarized components, make the positive terminal the first terminal.
-    3. For polarized components, clearly mark the distinguished terminal with a dot or extra line. The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
-    4. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode). Design your footprint so that at least one polarity marker is visible when the part is installed (i.e. make sure all the polarity markers are not covered by the part.)
+    4. For polarized components, clearly mark the distinguished terminal with a dot or extra line. The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
+    5. For polarized componenst, make sure that the polarity marking will be visible when the part is installed (i.e., it should not be under the body of the part).
+    6. When it makes sense, use familiar symbols to represent polarity (e.g., for a diode, you could use an triangle pointed toward the cathode). Design your footprint so that at least one polarity marker is visible when the part is installed (i.e. make sure all the polarity markers are not covered by the part.)
 11. Make sure that the “>NAME” doesn’t overlap with the elements that show the orientation, placement, and alignment of the parts.
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the footprint.
@@ -206,12 +207,13 @@ Your footprint should include some kind of marking that marks the SMD that shoul
 
 The IMU has caused us significant problems in the past. Be careful with it. You should read both the datasheet and the SMD tech note (look for `IMU_*` in `QuadClass-Resources/Datasheets`).
 
-- The main datasheet for the IMU is missing a value for the footprint. Use the footprint reference we created for the IMU `QuadClass-Resources/Datasheets/IMU_LSM6DSOX_Dimensions.pdf` to create the footprint. Use same orientation.
+
 - There should be no metal under the IMU. To enforce this, you should do the following
   1.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `tRestrict` that fills most of the space in under the footprint, but does not overlap any of the pins.
   2.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `bRestrict` that covers the entire footprint.
   3.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `vRestrict` that covers the entire footprint.
   4.  You have to use the rectangle tool, because lines will only eliminate the line, not the interior.
+   In the symbol for the IMU, make sure that all the pin names are visible (i.e., not overlapping and with some some space between them).
 - ~~There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop` that covers the area under the footprint, but does not overlap the pins.~~
 - Include “IMU” in the name of the device you create.
 - You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents. You will need to read them quite carefully.
