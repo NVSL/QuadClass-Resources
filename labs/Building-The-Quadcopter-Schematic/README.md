@@ -235,7 +235,7 @@ If you feel like being efficient, you can leave `SDA` and `SCL` off the signal b
 
 ### Battery Voltage Meter
 
-You can monitor the batteries voltage using a voltage divider and one of the MCU's analog pins (https://learn.sparkfun.com/tutorials/voltage-dividers/all). The basic idea is to divide the battery voltage (4.2V max) so that the maximum output of the divider is less than 1.8V. Then you can measure the that voltage with one of the MCU's analog inputs.
+You can monitor the batteries voltage using a voltage divider and one of the MCU's analog pins (https://learn.sparkfun.com/tutorials/voltage-dividers/all). The basic idea is to divide the battery voltage (4.2V max) so that the maximum output of the divider is less than 1.8V. Then you can measure the that voltage with one of the MCU's analog inputs.  Your divider should be between `VBAT` and `BAT_GND` (You can connect it to `GND` instead, if you like, but Eaglint will complain.).
 
 You should use large resistances in your divider (e.g., in the kOhms range) so that not much current flows through it.
 
