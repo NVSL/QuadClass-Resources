@@ -178,7 +178,7 @@ The power supply for quadcopter needs to contain the following parts:
 
 Check the votage regulator datasheet (in `Datasheets`) for guidance about what kind of capacitors to connect to the regulator and how. Wire the enable line to `VBAT` and don't connect anything to `NC/FB`.
 
-You will also incorporate a power switch for the quadcopter. The switch will connect the `EN` pin of the voltage regulator to `VBAT` when it's turned 'on' and connect `EN` to `GND` when its turned 'off''. Use the `-SMD-EDGE` variant of `POWER-SWITCH-MFS201N-9-Z` for the switch.
+You will also incorporate a power switch for the quadcopter. The switch will connect the `EN` pin of the voltage regulator to `VBAT` when it's turned 'on' and connect `EN` to `BAT_GND` when its turned 'off''. Use the `-SMD-EDGE` variant of `POWER-SWITCH-MFS201N-9-Z` for the switch.
 
 You'll note that the output of the voltage regulator has decoupling capacitors on. This keeps the voltage regulator stable and filters out noise on the output. Experience shows that quickly turning on the motors can causes the output of voltage regulator to drop enough to reboot the MCU. Add an additional 47uF decoupling cap (the same one we use for motors) to the output of the voltage regulator between `3V` and `GND` to prevent this. Note that the 47uF capacitor is polarized. The flat plate should connect to the positive voltage, and the curved plate to ground.
 
