@@ -229,7 +229,7 @@ quadcopters to fail. To guard against this, add a header that will
 allow you to connect this breakout board
 (https://www.adafruit.com/product/4438) to your quadcopter. You are only required to
 four pins: `3V`, `SCL`, `GND`, and `SDA` (not necessarily in that order. Look at the breakout board it must connect to to figure out the order.). These pins are conveniently
-located next to each other on the breakout board. Use the 4-pin female header in `quadparts_prebuilt_2022`.
+located next to each other on the breakout board. Use the 1x4 4-pin female header in `quadparts_prebuilt_2022` (not the `2x2`).
 
 If you feel like being efficient, you can leave `SDA` and `SCL` off the signal breakout header, since they are on the rescue header.
 
