@@ -262,6 +262,7 @@ You'll note there are a dizzying array of options (at this moment there are over
 1. Any LED you choose needs to be available in small quantities (the "minimum quantity" column should say "1").
 2. The need to be at least 0805 (1.25mm x 2mm).
 3. They need to be reasonably cheap: no more than $1 per LED.
+4. The LED needs to be available in quantities of 1 and it needs to be in stock.
 4. If you are going to drive the LEDs directly with a microcontroller pin, you must limit current to 8mA and you should make sure that the LED will actually light up with 8mA (many bright LEDs will not).
 5. They need to be compatible with the power supply you are going to use: 3.7-4.2V if you use the battery. 3.0V if you are going to drive them from the microcontroller.
 6. Their current draw needs to be within the limits of how you are powering them.
