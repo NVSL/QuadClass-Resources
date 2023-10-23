@@ -174,6 +174,15 @@ You can do all this tuning in a function similar to `setupSensor()` from the IMU
 
 In your code, you _must_ use the macros and constants defined in [QuadClass_LSM6DSOX.h](https://github.com/NVSL/QuadClass-LSM6DSOX/blob/main/QuadClass_LSM6DSOX.h) and [Adafruit_LSM6DS.h](https://github.com/adafruit/Adafruit_LSM6DS/blob/master/Adafruit_LSM6DS.h). If you show me code with magical hexadecimal values in it, I will tell you to go make your code readable first by using the macros and constants.
 
+#### Target Values
+
+You should configure the IMU's filters as follows:
+
+1. You need to set the both gyroscope's and accelerometer's range to avoid clipping.
+2. The ODR for both gyroscope and the accelerometer should be 208Hz.
+3. You should configure the accelerometer's LPF2's cut off frequency to be 10.4Hz.
+4. You should not use the gyroscope's LPF1 or HPF.
+
 ### What Your Output Should Look Like
 
 For the completion of this lab, your demo will be you wiggling the airframe on your test stand with your motors going full blast and the plotting curves moving responsively but smoothly in response.
