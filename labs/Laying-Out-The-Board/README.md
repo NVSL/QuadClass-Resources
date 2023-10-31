@@ -380,7 +380,8 @@ You must run Fusion360's design rule checker (DRC). It checks for a bunch of com
 4.  "Overlap" -- Two things (e.g., two different nets or a net and an SMD) overlap. Usually bad, but you'll probably see some for you bridge and the antenna triggers some as well, you can approve these particular ones.
 5.  "Width" -- A net is thinner than it should be. You'll get one of these between the antenna net and the balun. Usually they are not a good idea, but sometimes they are ok. For instance, the IMU datasheet says that narrow power/ground traces are fine for that part, so you could route those nets with thinner traces than the other power nets.
 6.  "Clearance" -- Two separate pieces of metal are too close. Generally, you should cannot ignore these, since the minimum spacing is manufacturing constraint.
-
+7.  "Smd,  - Net Class" -- Fusion360 is worried that a pad connected to a net is too small for the net's net class.  These tend to show up on the antenna driver.  You can approve these.
+    
 You can approve errors, but I will be looking at them closely. You should be skeptical about approving errors. They are called errors for a reason.
 
 #### Clearance Errors on the IMU
