@@ -383,6 +383,15 @@ You must run Fusion360's design rule checker (DRC). It checks for a bunch of com
 
 You can approve errors, but I will be looking at them closely. You should be skeptical about approving errors. They are called errors for a reason.
 
+#### Clearance Errors on the IMU
+
+You may find that you get clearance errors on the IMU pins.  We are faced with conflicting constraints:
+
+1.  The LGA soldering guidance document says the IMU pads on the board should be 0.1mm larger that the IMU pins on the package , but
+2.  The DRC check tells us that board manufacturer cannot manufacture boards with two pieces of metal less that 6mil (0.1524 mm) apart.
+
+The solution is to shrink the pads slightly in their narrow dimension.  This will resolve the DRC error.
+
 ### Generating Gerbers
 
 You will need to generate a zip file called `hardware/quadcopter.cam.zip` using `Eagle/CAM/pcbcart-4layer.cam`
