@@ -88,7 +88,7 @@ Here are the course style guidelines for schematics. Your schematics must adhere
 
 ### Selecting Parts
 
-The `quadparts_prebuilt_2022` library has lots of parts in it, many of which you won't use. I've provided specific guidance about which options to select below. For resistors and capacitors, you need to use 0805 parts not the smaller and harder-to-place 0603 parts. If the resistor you need is not available in 0805, you'll need to create it.
+The `quadparts_prebuilt_2022` library has lots of parts in it, many of which you won't use. I've provided specific guidance about which options to select below. For resistors and capacitors, you need to use 0805 parts not the smaller and harder-to-place 0603 parts.  You should also avoid the resistor packs.  They are hard to place and solder.  If the resistor you need is not available in 0805, you'll need to create it.
 
 ### The Microcontroller
 
