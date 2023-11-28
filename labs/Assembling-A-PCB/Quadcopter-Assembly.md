@@ -34,31 +34,6 @@ The second group is usually resistors and mosfets (e.g., to control LEDs).  Take
 
 For the third group, we have ordered parts from Digikey for you.  Each part will come in it's own bag with the "customer reference" field containing the list of reference designators that the parts correspond to.
 
-## Part Notes
-
-The quadcopters have a few parts that were not on the BBB.  Here they are (quantities are for the core design.  You may have other parts, depending on your LED design):
-
-### Surface Mounts Parts
-
-| Part              | Picture                                            |
-|-------------------|----------------------------------------------------|
-| MOSFET            | |   ![Mosfet](images/mosfet.jpg).                    |
-| IMU               | ![IMU](images/IMU.jpg).                            | 
-| 10KOhm Resistors  | ![Resistor](images/resistors.jpg).                 |
-| 220 uF Capacitor   |   ![Caps](images/big_cap_orientation.jpg)          |
-| 0.01uF Capacitor   | ![Capacitors](images/capacitors.jpg).              |
-| Diode               | ![Diode](images/diode_orientation.jpg).            | 
-| MCU.                 | ![MCU](images/MCU_alignment.jpg).                  |
-| Crystal              | ![Crystal](images/crystal.jpg).                    |
-| Balun                | ![Balun](images/balun_orientation.jpg).            |
-| LED Red &Green       | ![LED](images/led_orientation.jpg).                |
-| Voltage Regulator    | ![Vgg](images/voltage-regulator.jpg).              |
-
-### Through Hole Parts
-
-| Part              | Qty | Picture                                            |
-|-------------------|-----|----------------------------------------------------|
-| Screw Terminals   | 1   | ![Screw](images/battery_orientation.jpg).          |
 
 
 
@@ -194,6 +169,27 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 
 In the photos, I've highlighted the polarity markings on the board and the part.
 
+## Part Notes
+
+The quadcopters have a few parts that were not on the BBB.  Here they are (quantities are for the core design.  You may have other parts, depending on your LED design):
+
+### Surface Mounts Parts
+
+| Part              | Picture                                            |
+|-------------------|----------------------------------------------------|
+| 47 uF Capacitor   |   ![Caps](images/big_cap_orientation.jpg)          |
+| 0.01uF Capacitor   | ![Capacitors](images/capacitors.jpg).              |
+| MCU.                 | ![MCU](images/MCU_alignment.jpg).                  |
+| Crystal              | ![Crystal](images/crystal.jpg).                    |
+| Voltage Regulator    | ![Vgg](images/voltage-regulator.jpg).              |
+
+### Through Hole Parts
+
+| Part              | Qty | Picture                                            |
+|-------------------|-----|----------------------------------------------------|
+| Screw Terminals   | 1   | ![Screw](images/battery_orientation.jpg).          |
+
+
 #### Resistors
 
 ![Resistors](images/resistors.jpg)
@@ -205,6 +201,9 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 
 1.  The small caps are non-polarized, so direction doesn't matter. ![Capacitors](images/capacitors.jpg)
 2.  Align the big caps carefully.  If you get it wrong your board will look ugly.
+3.  Far the 47uf caps, orientation is important.  The end with the stripe of color goes in the "cup" on the footprint.
+
+![Caps](images/big_cap_orientation.jpg)  
 
 **Good Cap Placement**
 
