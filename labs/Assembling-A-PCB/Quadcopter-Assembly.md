@@ -159,21 +159,17 @@ You need a large, clear space to apply solder paste.
 
 ### Get Organized
 
-You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the BBB in 10 minutes.  You should not take more than an 45 minutes.  Getting organized will help you meet this goal.
+You need to place parts carefully and precisely.  You also need to work somewhat quickly.  With practice, you can place a board like the charger in 10 minutes.  You should not take more than an an hour to do your quadcopter.  Getting organized will help you meet this goal.
 
 1. Get _everything_ you need together at once.
-2. Collect all the parts you will need (see below).  For the BBB assembly, you will need 1 packet of each type of part.  They will be laid out for you.
+2. Collect all the parts you will need (see below). 
 3. Have a clean work area (preferably with a white surface).  The parts are _tiny_.  The less stuff there is around, the less likely you are to lose anything.
 3. Allow adequate time.  
     * Paste has a limited working time, and the course staff are not around forever.    
-    * For the BBB, Assembly will take ~0.5 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget an extra ~15min.  
-    * So, you shouldn't start assembly unless you have _at least_ 1 hour left in class.
-    * For quadcopter or the remote, allocate 2 hours.
+    * For the quadcopter, assembly will probably take ~1.5 hour.  Reflowing takes ~12 minutes.  Something will go wrong, budget an extra ~15min.  
+    * So, you need to start assembly at the beginning of class.
 5. Eat something before hand.  You need to patient and steady.
 
-Most of the parts come on paper or plastic tape.  We have cut the tape to the right length for you and labeled them.  There are part portions available in the size required for the BBB and for the typical number of parts needed for your quadcopters.  This means you should take 1 piece of tape for each type of part on your board.
-
-The throughhole parts are mostly loose.  Take just as many as you need.
 
 ### Placing Parts
 
@@ -184,8 +180,8 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 5.  Don't pick up the board.  You more likely to bump a part if you pick up the board.
 6.  Arrange your pile of parts at your board so you don't have to reach over the board, otherwise, you're more likely to bump parts.
 7.  Don't mess up.  If something goes significantly wrong, you have to start again.
-8.  Do one type of part at a time (e.g., 1uF caps).  For the BBB, you should have exactly the right number of them, so when they are gone, you're done.
-9.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board.   You can also say `show C*` to see where all the caps are.  For the BBB refer to the assembly drawings below.
+8.  Do one type of part at a time (e.g., 1uF caps).  You should have exactly the right number of them, so when they are gone, you're done.
+9.  Typing `show C1 C2 C3` in Eagle will highlight where `C1`, `C2`, and `C3` are on the board.   You can also say `show C*` to see where all the caps are.  
 10.  Place the parts very gently onto the board.  It should almost be like you are dropping them.  Do not press them down.  It'll displace the solder paste.
 11.  If you think you've messed things up, get the TA or prof.  They may be able to save you...or not.
 
@@ -193,8 +189,6 @@ The throughhole parts are mostly loose.  Take just as many as you need.
 ### Notes on Particular Parts
 
 I suggest you proceed in this order.  This is roughly from easiest to hardest.
-
-This list covers all the parts on the BBB, your quadcopter, and the quadcopter remote.  Some parts only apply to one or two of those boards.  The parts that are relevant for BBB assembly have a BBB assembly drawing showing where, exactly, those parts should go.
 
 Note that on the remote, there are many parts you will leave unpopulated. Only put parts where there is solder paste.   
 
@@ -206,9 +200,6 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 
 1. These are pretty easy -- a good warm-up.
 2. Make sure they are marking-side-up.
-
-
-
 
 #### Capacitors
 
@@ -232,8 +223,6 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 #### Button 
 
 ![Button](images/button.jpg)
-
-## Button
 
 
 1. Either orientation is ok.
@@ -286,6 +275,31 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 ![Good MCU Placement](images/MCU_alignment.jpg)
 
 
+
+#### Battery Terminals
+
+![battery orientation](images/battery_orientation.jpg)
+
+
+#### MOSFETs
+
+![MOSFET](images/mosfet.jpg)
+
+1. The correct orientation is obvious, since the package asymmetrical.
+2. You need to align the pins carefully.
+
+#### IMU 
+
+![IMU](images/IMU.jpg)
+
+1.  Similar to the microcontroller.
+2.  The dot goes near the dot. (see image above for MCU)
+3.  Use the silkscreen markers to align it and the "drop" it on.
+4.  The pads are smaller, so alignment is more important.
+5.  Don't fiddle!
+
+
+
 ## Reflow
 
 ### What You Need
@@ -316,29 +330,6 @@ In the photos, I've highlighted the polarity markings on the board and the part.
 ![Bad MCU Soldering](images/bad_mcu_soldering.jpg)
 
 1.  Similar to the headers, but orientation matters.  The holes on the side should point toward the '+' and '-' on the board.
-
-#### Battery Terminals
-
-![battery orientation](images/battery_orientation.jpg)
-
-
-#### MOSFETs
-
-![MOSFET](images/mosfet.jpg)
-
-1. The correct orientation is obvious, since the package asymmetrical.
-2. You need to align the pins carefully.
-
-#### IMU 
-
-![IMU](images/IMU.jpg)
-
-1.  Similar to the microcontroller.
-2.  The dot goes near the dot. (see image above for MCU)
-3.  Use the silkscreen markers to align it and the "drop" it on.
-4.  The pads are smaller, so alignment is more important.
-5.  Don't fiddle!
-
 
 ### Cleaning up Flux Residue
 
