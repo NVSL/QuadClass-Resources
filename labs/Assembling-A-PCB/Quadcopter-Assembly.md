@@ -169,26 +169,6 @@ Note that on the remote, there are many parts you will leave unpopulated. Only p
 
 In the photos, I've highlighted the polarity markings on the board and the part.
 
-## Part Notes
-
-The quadcopters have a few parts that were not on the BBB.  Here they are (quantities are for the core design.  You may have other parts, depending on your LED design):
-
-### Surface Mounts Parts
-
-| Part              | Picture                                            |
-|-------------------|----------------------------------------------------|
-| 47 uF Capacitor   |   ![Caps](images/big_cap_orientation.jpg)          |
-| 0.01uF Capacitor   | ![Capacitors](images/capacitors.jpg).              |
-| MCU.                 | ![MCU](images/MCU_alignment.jpg).                  |
-| Crystal              | ![Crystal](images/crystal.jpg).                    |
-| Voltage Regulator    | ![Vgg](images/voltage-regulator.jpg).              |
-
-### Through Hole Parts
-
-| Part              | Qty | Picture                                            |
-|-------------------|-----|----------------------------------------------------|
-| Screw Terminals   | 1   | ![Screw](images/battery_orientation.jpg).          |
-
 
 #### Resistors
 
@@ -210,13 +190,10 @@ The quadcopters have a few parts that were not on the BBB.  Here they are (quant
 ![Good cap placement](images/good_cap_placement.jpg)
 
 
-#### Voltage Regulator and Battery Charger.
-
+#### Voltage Regulator
 ![Voltage Regulator](images/voltage-regulator.jpg)
 
 1. Orientation is obvious (there's three pins on one side and 2 on the other)
-2. Be sure not to confuse these two if you are assembly a remote.
-3. Only the remote has a charger.
 
 
 #### Button 
