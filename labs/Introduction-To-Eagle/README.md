@@ -22,7 +22,7 @@ Skills to Learn
 ## Equipment, Supplies, and Software You Will Need
 
 1. A computer with Fusion360 installed. Fusion360 is available on Windows and Mac!
-2. The [starter repo](https://classroom.github.com/a/uwcJUD6D) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
+2. The [starter repo](https://classroom.github.com/a/v1mLjMod) for this lab (It's advised to work on Fusion360 and wait to clone the repo until the class starts, last minute changes are likely).
 3. The contents of the class materials Github repo: https://github.com/NVSL/QuadClass-Resources
 
 ## Tasks to Perform
