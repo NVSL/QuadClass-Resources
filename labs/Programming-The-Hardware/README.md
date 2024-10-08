@@ -20,14 +20,14 @@ You will work on this lab and all future labs in teams of two. You will need to 
 ## Equipment, Supplies, and Software You Will Need
 
 1. Create a team in eaglint. You _must_ do this before clicking the starter link below.
-2. The starter repo for this lab: https://classroom.github.com/a/uBXLQNdo.
-3. Test stand and remote control part kit.
-4. Laser-cut parts for a test stand and airframe.
-5. 1 micro USB cable.
-6. 1 flight control board (FCB).
-7. Three LiPo batteries.
-8. 1 set of motors.
-9. 1 set of matched propellers (2xCW, 2xCCW)
+2. The starter repo for this lab: https://classroom.github.com/a/a_OCsamt.
+4. Test stand and remote control part kit.
+5. Laser-cut parts for a test stand and airframe.
+6. 1 micro USB cable.
+7. 1 flight control board (FCB).
+8. Three LiPo batteries.
+9. 1 set of motors.
+10. 1 set of matched propellers (2xCW, 2xCCW)
 
 ### Your Remote Control
 
