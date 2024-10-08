@@ -101,13 +101,13 @@ Each of your footprints should contain the following elements:
 1. Choose a meaningful name: e.g, "0805_RESISTOR" or "0805_LED". Using the part number your are building for makes sense if there’s only one part that is that size, but for things like resistors, there are many parts (with different colors, resistances, etc.) that are the same size and you can reuse the footprint. Therefore, a name that reflects the type of footprint the part uses is appropriate (e.g., `0805_RESISTOR` is descriptive in this way).
 2. Draw a box in tDocu that matches the nominal dimensions of the part. For parts with leads that extend from the part’s footprint (e.g., the MOSFET), you can draw in the leads too, if you want. tDocu doesn’t show up on the board.
 3. Include a text item that displays the reference designator for the part. It should be on layer `tName` and the magic string “>NAME” is replaced with the reference designator.
-4. Include a text item that displays the value of the part. It should be on layer tValues. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
-5. Drawing elements on `tKeepout` showing the area in which other part are not allowed. This should include the physical extent of the device and other other areas that need to be kept clear. See the note below about how to structure your `tKeepout` lines.
-6. The text for the reference designator (which appears as '>NAME' in layer `tNames`) footprint name should be in the “vector” font and of size 0.9mm with a “ratio” of 8. This is not the default for text in the footprint editor (if you figure how to make it the default, let me know). These settings make the reference designators as small as possible while still be legible.
+4. Include a text item that displays the value of the part. It should be on layer tValues/ValuesTop. “>VALUE” is replaced with the value. This will show up in your assembly drawing to help ensure you install the right part.
+5. Drawing elements on `tKeepout/ComponentExcludeTop` showing the area in which other part are not allowed. This should include the physical extent of the device and other other areas that need to be kept clear. See the note below about how to structure your `tKeepout/ComponentExcludeTop` lines.
+6. The text for the reference designator (which appears as '>NAME' in layer `tNames/NamesTop`) footprint name should be in the “vector” font and of size 0.9mm with a “ratio” of 8. This is not the default for text in the footprint editor (if you figure how to make it the default, let me know). These settings make the reference designators as small as possible while still be legible.
 7. The text for the reference designator should not overlap with each other or the silkscreen for the device.
 8. The text for the reference designator should be aligned to 0.1mm grid (using a 0.5mm grid is better but not always possible).
-9. You should tnclude text with “>VALUE” in the the `tValues` layer if the part has a value (e.g., resistors and capacitors). Real-world designs don’t usually do this, but it makes hand assembly easier. ALl the boards for the class have values on the board. They should use the same font as the the reference designators (">NAME").
-10. Add lines on `tPlace` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
+9. You should tnclude text with “>VALUE” in the the `tValues/ValuesTop` layer if the part has a value (e.g., resistors and capacitors). Real-world designs don’t usually do this, but it makes hand assembly easier. ALl the boards for the class have values on the board. They should use the same font as the the reference designators (">NAME").
+10. Add lines on `tPlace/SilkscreenTop` that guide the orientation, placement, and alignment of the parts. There are many different styles to consider. Google for “Resistor silkscreen” etc. for inspiration. Follow these guidelines:
     1. For polarized components, draw with the positive terminal on the left.
     2. For polarized components, make the positive terminal the first terminal.
     4. For polarized components, clearly mark the distinguished terminal with a dot or extra line. The distinguished terminal is the one that is marked in some way on the actual device, so you can oriente the mark on the device with mark on the board.
@@ -117,18 +117,18 @@ Each of your footprints should contain the following elements:
 12. Make sure pads and SMDs are of uniform size, unless there’s an good reason not to.
 13. Make sure pads and SMDs are aligned vertically and horizontally in rows and columns as makes sense for the footprint.
 14. We may be soldering by hand, so you need to make sure the SMDs extend out from under the part. The SMDs should extend 0.5mm away from the edge of the footprint, except for the IMU.
-15. Include lines or symbols in `tPlace` to guide placement of the part. For parts like the IMU and MCU, this should make easy to precisely place the part by showing the correct, precise location of all four corners. For other parts an outine (or partial outline is sufficient).
+15. Include lines or symbols in `tPlace/SilkscreenTop` to guide placement of the part. For parts like the IMU and MCU, this should make easy to precisely place the part by showing the correct, precise location of all four corners. For other parts an outine (or partial outline is sufficient).
 16. Fusion360 includes a package generator (access it via the "new" button in the device window and select "Create with package generator"). You are welcome to use it, but the footprint it generates do not meet all of our requirements. You'll need to edit them a bit.
 
-#### The Courtyard and tKeepout
+#### The Courtyard and tKeepout/ComponentExcludeTop
 
 One of the goals of a good library is to make it easy to make sure your board looks good, is easy to assemble, and easy to verify. Part placement is a key part of all three, and the "courtyard" is the key to guiding how you place parts. The courtyard defines the area of the PCB that the part occupies. This includes the part physically and it's pads, but also include some extra space that makes it possible to place the part on the board. The size of the courtyard depends on how the board will be assembled. In our case, it's by hand, so we need a pretty big courtyard. I should suggest having the courtyard extend at least 1mm beyond the boundary of the part and its pads.
 
-Fusion360 use `tKeepout` to describe the courtyard. The rule is that if `tKeepout` for different parts overlap, it is an error that will be flagged during DRC. Unfortunately, this means that if you draw your courtyard on a consistent grid (which you should), then when two parts are perfectly placed next to eachother, the `tKeepout` defining their courtyards will overlap. There are two bad options: move the parts farther apart (which takes up space) or tolerate the DRC error (which will increase the possibility that you ignore real errors).
+Fusion360 use `tKeepout/ComponentExcludeTop` to describe the courtyard. The rule is that if `tKeepout/ComponentExcludeTop` for different parts overlap, it is an error that will be flagged during DRC. Unfortunately, this means that if you draw your courtyard on a consistent grid (which you should), then when two parts are perfectly placed next to eachother, the `tKeepout/ComponentExcludeTop` defining their courtyards will overlap. There are two bad options: move the parts farther apart (which takes up space) or tolerate the DRC error (which will increase the possibility that you ignore real errors).
 
 The third, preferable, option is to draw your courtyard on 0.5mm grid and then 'inset' them by 0.1mm. This will let you place parts close together without generating suprious DRC errors. The resulting board layouts are very tidy.
 
-The width of your `tKeepout` lines should be 0.05mm.
+The width of your `tKeepout/ComponentExcludeTop` lines should be 0.05mm.
 
 Note that the courtyard should not surround the `>NAME` and `>VALUE`. Two reasons:
 
@@ -200,8 +200,8 @@ Your footprint should include some kind of marking that marks the SMD that shoul
   - There are two aspects of SMD sizing you must address in this footprint. The first is the size of the metal SMD. The second is the hole in the solder mask, called the “stop mask” because it stops the solder mask. Normally, SMDs come with appropriate ‘stop’ by default. You’ll need to remove the default stop and add yours by hand.
   - Create the SMDs according to the guidance in the datasheet.
   - Use the info tool to edit each SMD, and uncheck ‘stop’.
-  - Draw in the stop by hand in layer `tStop` with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet.
-  - You will need to draw in rectangle on `tCream` as well (and disable the "Cream" check box in properties dialog). Your `tCream` can (and should) be identical to your `tStop`. `tCream` specifies where solder paste will be applied during assembly.
+  - Draw in the stop by hand in layer `tStop/SolderMaskTop` with the rectangle tool. The geometry of these rectangles should correspond to the “recommended minimum pads” in the datasheet.
+  - You will need to draw in rectangle on `tCream/StencilTop` as well (and disable the "Cream" check box in properties dialog). Your `tCream/StencilTop` can (and should) be identical to your `tStop/SolderMaskTop`. `tCream/StencilTop` specifies where solder paste will be applied during assembly.
 
 #### IMU
 
@@ -209,19 +209,19 @@ The IMU has caused us significant problems in the past. Be careful with it. You 
 
 
 - There should be no metal under the IMU. To enforce this, you should do the following
-  1.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `tRestrict` that fills most of the space in under the footprint, but does not overlap any of the pins.
-  2.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `bRestrict` that covers the entire footprint.
-  3.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `vRestrict` that covers the entire footprint.
+  1.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `tRestrict/RestrictTop` that fills most of the space in under the footprint, but does not overlap any of the pins.
+  2.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `bRestrict/RestrictBottom` that covers the entire footprint.
+  3.  Draw a rectangle (using the rectangle tool, not four lines in a rectangle) in `vRestrict/RestrictVias` that covers the entire footprint.
   4.  You have to use the rectangle tool, because lines will only eliminate the line, not the interior.
    In the symbol for the IMU, make sure that all the pin names are visible (i.e., not overlapping and with some some space between them).
-- ~~There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop` that covers the area under the footprint, but does not overlap the pins.~~
+- ~~There should be no solder mask under the middle of IMU. To enforce this, draw a rectangle of `tStop/SolderMaskTop` that covers the area under the footprint, but does not overlap the pins.~~
 - Include “IMU” in the name of the device you create.
 - You should compute the SMD width based on the IMU datasheet and the `Datasheets/IMU_Soldering\ guidance-{1,2}.pdf` documents. You will need to read them quite carefully.
 - The prefix for your IMU device should be “U” (that’s the conventional prefix for ICs).
 - Label the SMDs on the IMU using either the pin numbers or the names used in the datasheet. Some pads same replicated names. Use something like “GND1”, “GND2”, etc. to distinguish them.
 - Be sure to include a pin-1 indicator that will be visible when the IMU is installed.
 - There are a bunch notes in the technical notes about soldering guidance that say to not solder the pin-1 indicator. Our IMU does not have the kind of pin-1 indicator they are referring to, so that guidance does not apply.
-- ~~You will note that it appears that there will be no solder mask between the pads because the `tStop` for the pads overlap. The width of the automatically added `tStop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains. However, the DRU file doesn't affect how the `tStop` appears in the footprint editor.~~
+- ~~You will note that it appears that there will be no solder mask between the pads because the `tStop/SolderMaskTop` for the pads overlap. The width of the automatically added `tStop/SolderMaskTop` is controlled by the `.dru` file we use during board layout and our DRU file will ensure that solder mask remains. However, the DRU file doesn't affect how the `tStop/SolderMaskTop` appears in the footprint editor.~~
 
 ## Turn in Your Work
 

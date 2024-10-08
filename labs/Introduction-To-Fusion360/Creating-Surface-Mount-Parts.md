@@ -66,9 +66,9 @@ All pads need to have a number, which is used to know the orientation of the com
 
 Now it's time to add some silkscreen information. Silkscreen information are the white lines and text on top of the green soldermask. Can you omit the silkscreen information? Yes, but if you are soldering each component manually, as we will do, you will need to go through the PCB design component by component and figure out the values, names, and orientation of each component. Adding a visual reference in the PCB makes placement much easier, also make your board more repairable making others understand more about your design.
 
-There are three types of silkscreen information: Names, Values, and Placement & Orientation information. In Fusion 360 these layers are reserved as tNames & bNames, tValues & tValues, and tPlace & bPlace, where "t" stands for "Top of PCB" and "b" stands for "Bottom of PCB". Our design will place all components on top, so we only need to add information on the top. If you move components to the bottom in your PCB, Fusion 360 automatically switches the silkscreen layers.
+There are three types of silkscreen information: Names, Values, and Placement & Orientation information. In Fusion 360 these layers are reserved as tNames/NamesTop & bNames, tValues/ValuesTop & tValues/ValuesTop, and tPlace/SilkscreenTop & bPlace/SilkscreenBottom, where "t" stands for "Top of PCB" and "b" stands for "Bottom of PCB". Our design will place all components on top, so we only need to add information on the top. If you move components to the bottom in your PCB, Fusion 360 automatically switches the silkscreen layers.
 
-Now it's time to add placement information on the `tPlace` layer. We will draw a 2D representation of the push button to let us know that a push button goes there. Change to layer tPlace, and then draw a square in the middle of the pads that represented the case of the push button, it should look as follows:
+Now it's time to add placement information on the `tPlace/SilkscreenTop` layer. We will draw a 2D representation of the push button to let us know that a push button goes there. Change to layer tPlace/SilkscreenTop, and then draw a square in the middle of the pads that represented the case of the push button, it should look as follows:
 
 ![](./images/smdtutorial9.png)
 
@@ -92,7 +92,7 @@ Value information contains information such as the resistor and capacitor values
 
 ![](./images/smdtutorial14.png)
 
-Finally, change to the `tKeepout` layer and draw a box around the component using the line button. Make sure the lines start and end in the same coordinates. This Keepout layer is not common in designs, and it's not necessary when you know what you are doing, however it's useful for preventing you from placing components too close to each other. Also, by making this tkeepout box bigger or smaller you can indicate, for example, that you need extra space for manually soldering a particular component, and that you don't want other components close.
+Finally, change to the `tKeepout/ComponentExcludeTop` layer and draw a box around the component using the line button. Make sure the lines start and end in the same coordinates. This Keepout layer is not common in designs, and it's not necessary when you know what you are doing, however it's useful for preventing you from placing components too close to each other. Also, by making this tkeepout box bigger or smaller you can indicate, for example, that you need extra space for manually soldering a particular component, and that you don't want other components close.
 
 ![](./images/smdtutorial15.png)
 

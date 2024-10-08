@@ -76,7 +76,7 @@ Eaglint will warn about most of these.
 
 1.  Align your parts to a 1mm grid. This will go a long way toward making your board look really good. The antenna and the capacitor attached to it don't need to be on the grid, because signal integrity is more important. You can also bend the rules and use 0.5mm grid for placing caps need the IMU and MCU. Eaglint enforces the 0.5mm grid. If you have good reason violate the grid, you can explain it in Eaglint.
 2.  Align your reference designators and values to a 0.5mm grid. Sometimes this is too restrictive. If you must, you can use 0.1mm. Eaglint will complain otherwise.
-3.  Allow 1-2mm between parts to make assembly easy. If you designed your `tKeepout` appropriately in the library, this should be no problem.
+3.  Allow 1-2mm between parts to make assembly easy. If you designed your `tKeepout/ComponentExcludeTop` appropriately in the library, this should be no problem.
 4.  Orienting all your parts in the same direction makes assembly easier (notice this on the FCB and your remote board).
 5.  To be legible, any silkscreen text needs to be at least 0.9mm high, with a 'ratio' of 8%. You should use the `vector` font. Eaglint forces you to use exactly these settings on the reference designators.
 
@@ -262,7 +262,7 @@ Finally, use the Change tool to put the signal between the balun and the antenna
 
 ### Laying out the IMU
 
-You need to add some additional bits to the IMU package. You built your IMU package with rectangle in `tRestrict`, `bRestrict`, and `vRestrict` to prevent metal in the top and bottom layers, but there is no restrict layer for the internal layers. You will need to add a "cutout" to make sure there are the appropriate holes in in your `3V` and `GND` planes.
+You need to add some additional bits to the IMU package. You built your IMU package with rectangle in `tRestrict/RestrictTop`, `bRestrict/RestrictBottom`, and `vRestrict/RestrictVias` to prevent metal in the top and bottom layers, but there is no restrict layer for the internal layers. You will need to add a "cutout" to make sure there are the appropriate holes in in your `3V` and `GND` planes.
 
 To create a cutout, use the polygon tool, and check the 'cutout' box in the properties dialog.
 
@@ -272,7 +272,7 @@ The caps for the IMU need to be as close to the IMU as possible, and the traces 
 
 ### Laying out and Labeling the Breakout Header
 
-You should label each pin of your breakout header so you’ll know which pin is connected to which signal. The labels should go in `tPlace`.
+You should label each pin of your breakout header so you’ll know which pin is connected to which signal. The labels should go in `tPlace/SilkscreenTop`.
 
 You should also think about where to put the breakout header. Near the edge of the board is a good choice, since it will provide easy access to the pins. It’s not a bad idea to put silkscreen on the top and bottom for the breakout header. It needs to be out from under the props.
 
@@ -313,7 +313,7 @@ You should use large resistances in your divider (e.g., in the kOhms range) so t
 
 ### Routing the Board
 
-The final step is routing the board. The steps above have given the autorouter most of the information it needs to route your design. It will set the trace widths correctly and respect all the `t/bRestrict` information that you added.
+The final step is routing the board. The steps above have given the autorouter most of the information it needs to route your design. It will set the trace widths correctly and respect all the `t/bRestrict/RestrictBottom` information that you added.
 
 #### Hand Routing
 

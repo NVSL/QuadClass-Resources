@@ -96,7 +96,7 @@ Selecting one will highlight it in the board layout window.
 
 The black box shows where the error occurred and the black line from the upper left corner of the window is just to help you find the black box. Note that your indicators may not be black.
 
-The error names are cryptic, but there’s somewhat of explanation for them in the [Fusion360 Manual](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-DESIGN-RULES-REF). For instance, the error shown in the window above is a “Restrict” error which means there is some top or bottom copper in a region marked in the t/bRestrict layer (more on layers later). Another common error is “Stop mask” which usually means you have silkscreen running over a pad.
+The error names are cryptic, but there’s somewhat of explanation for them in the [Fusion360 Manual](https://help.autodesk.com/view/fusion360/ENU/?guid=ECD-DESIGN-RULES-REF). For instance, the error shown in the window above is a “Restrict” error which means there is some top or bottom copper in a region marked in the t/bRestrict/RestrictBottom layer (more on layers later). Another common error is “Stop mask” which usually means you have silkscreen running over a pad.
 
 Whether these errors are actually worrisome is sometimes hard to determine. For instance, “Stop mask” errors don’t seem to actually hurt anything because the board houses will just not print the silkscreen on the pad.
 
