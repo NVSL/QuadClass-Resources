@@ -49,7 +49,7 @@ The FCBs are provided for your use during the class.
 
 ### Install Arduino
 
-Install Arduino 2.2.1. This is the only version we will be supporting in class.  
+Install Arduino 2.3.3. This is the only version we will be supporting in class.  
 [Arduino Download](https://www.arduino.cc/en/software)
 
 ### Setup Your Firmware Development Environment
@@ -58,7 +58,7 @@ The repo you create and use for this lab will be the repository you use for your
 (`File->Preferences->Sketchbook location`).  
 Then, enter your github repo firmware folder path, example: `../<github_repo>/firmware`
 
-![Sketchbook Path](./images/FA23_path.png)
+![Sketchbook Path](./images/arduino_sketchbook_location.png)
 
 #### Add Board Definition Files
 
@@ -66,7 +66,7 @@ This will let Arduino talk to all the [Atmega128RFA](https://www.digikey.com/en/
 
 - Clone the Arduino addon (https://github.com/NVSL/QuadClass_Atmega128RFA_Arduino_Addon) into `firmware/hardware`. You should end up with this directory `firmware/hardware/QuadClass_Atmega128RFA_Arduino_Addon/avr`.
 - Restart Arduino. Then, under `Tool->Board` you should see `Quad Class ATmega128RFA1 Boards`. Select that board.
-  ![Board Selection ](./images/FA23_board.png)
+  ![Board Selection ](./images/arduino_board_selction.png)
 - Select `Tools->Programmer->USBTinyISP`
 
 #### Install the Libraries
@@ -91,7 +91,7 @@ Here's the command sequence on my machine:
 ```
 
 Go to Library Manager and install "Adafruit LSM6DS". A pop-up window will show up, click "Install ALL".  
-![Install Adafruit LSM6DS](./images/FA23_LSM6DS.png)
+![Install Adafruit LSM6DS](./images/arduino_LSM6DS_install.png)
 
 
 When you're done, the top few levels of your repo should look like this:
@@ -182,6 +182,7 @@ In rare cases, you may need to install drivers for the FTDI programming board. R
 
 Your first task to "bring up" your remote. This means verifying that all of it's components work and that you can successfully access them via software.
 
+**Note:** You don't need to assemble it anymore, we will provide an assembled remotes.
 ### Assembling the Remote
 
 Many of you will receive a partially assembled remote. Follow along in here to add the parts that are missing.
@@ -380,6 +381,8 @@ The test stand assembles without any tools, and should look like this when it's 
 
 It's easy to disassemble as well, although the corners are a bit sharp.
 
+**Note:** You don't need to assemble the FCB anymore, we will provide an assembled FCB.
+
 ### Assemble the FCB and Airframe
 
 ![Air frame](images/airframe.jpg)
@@ -551,29 +554,17 @@ gimbals, etc.
 
 ### Reading the Battery Voltage on The FCB
 
-Write a small function that uses `analogRead(BAT_SENSE_PIN)` to read the battery voltage, where `BAT_SENSE_PIN = A7`. Inside that function also print the battery voltage using `Serial.print()`.
+Write a small function that uses `analogRead(BAT_SENSE_PIN)` to read the battery voltage, where `BAT_SENSE_PIN = A7`.
 
 In the setup function set the voltage reference as `INTERNAL` with `analogReference(INTERNAL);`, and the pin mode of `BAT_SENSE_PIN` as `INPUT`.
 
-The range of potential values returned from `analogRead()` is 0-1023.  0 corresponds to 0 volts.  1023 corresponds to 1.8V.
+The range of potential values returned from `analogRead()` is 0-1023.
 
-A charged battery is about 4.2V an empty battery is about 3.7V.  Both of these values are above 1.8V, so we run the battery voltage through a [voltage divider](https://en.wikipedia.org/wiki/Voltage_divider).  Here's the relevant portion of the remote schematic:
+The values you read from analogRead() are different based on battery level, so you'll have range of interger number that map the percentage of battery level. Also, remotes and quads have different value range.
 
-![Battery sense schematic](images/battery_sense.png)
-￼
-The total resistance between `VBAT` and `GND` is 30K. 10K/30K = 0.33 of the resulting voltage drop `BAT_GND` and `BAT_SENSE`.  This has the effect of placing 0.33*`VBAT` on `BAT_SENSE`, so `BAT_SENSE` should vary between 0.33 * 3.7 - 0.33 * 4.2 = 1.2V - 1.38V.
+You need to measure a value when the battery is empty, then measure a number when the battery is full, that's the range of the battery in interger number, than you need map that to percentage.
 
-The resulting values from `analogRead()` should be between 1.2/1.8 * 1023 = 682 and 1.38/1.8 * 1023 = 784.  You can than convert that number back to battery voltage and print it out on the serial port.
-
-Optional:  
-If you turn the motors on at 30% can you see numbers decreasing faster? Can you find the min and max values and map these values to a percentage between 0% and 100%?
-
-Here's the schematic for the battery voltage circuit on the remote:
-
-![Battery sense schematic](images/battery_sense_remote.png)
-
-Note that the resistors have different values.  Repeat the calculation above and display the voltage of the remote battery on the display.
-
+**Note:** The battery voltage level is not stable, sometime it will change in a wired curve, the value you measured is only the rough reference of the battery level. And there are also variance between different batteries.
 
 ### Blinking the LEDS
 
