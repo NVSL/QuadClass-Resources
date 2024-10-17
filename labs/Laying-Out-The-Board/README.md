@@ -430,6 +430,5 @@ Submit the following to your github repo (you can leave other files in there. Th
 6. A files called quadcopter.cam.zip that contains the CAM files for the design.
    Submit it to Eaglint. The tool will not look at any other libraries, so if you use any other libraries the consistency checks will fail.
 
-Once it passes, create a tag called “board-layout” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&sa=D&sntz=1&usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
 
 
