@@ -100,7 +100,7 @@ Why did I give a picture of what you need to build? Because reference designs ar
 
 You should use the schematic as a guide for constructing the microcontroller portion of your schematic. Build it from parts from `quadparts_prebuilt_2022` libbrary:
 
-1.  Use one of the `ANT_PCB...` variants for the antenna. There's a left and right-handed version. Depending on your ultimate board design, you might want one or the other.
+1.  Use one of the `-BOARD...` variants for the antenna. There's a left and right-handed version. Depending on your ultimate board design, you might want one or the other.
 2.  `B1` is a 'balun'. Pay attention to the pin numbers.
 3.  Use the `0.45x0.45` button.
 4.  Replace one of the green LEDs with your red LED.
