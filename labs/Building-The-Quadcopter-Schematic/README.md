@@ -332,8 +332,6 @@ Submit it to Eaglint: http://eaglint.nvsl.io.
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
 
-Once it passes, create a tag called "initial-schematic" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
-
 ## Turn in Your Work
 
 "Perfect" score: 10
