@@ -467,8 +467,6 @@ Commit your results:
 
 1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
 
-Once you've committed everything, create a tag called "sensing-and-filtering" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
-
 #### Demo your work:
 
 1. Demo your clean orientation measurements for the TA.
