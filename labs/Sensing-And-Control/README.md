@@ -181,7 +181,6 @@ You should configure the IMU's filters as follows:
 1. You need to set the both gyroscope's and accelerometer's range to avoid clipping.
 2. The ODR for both gyroscope and the accelerometer should be 208Hz.
 3. You should configure the accelerometer's LPF2's cut off frequency to be 10.4Hz.
-4. You should not use the gyroscope's LPF1 or HPF.
 
 ### What Your Output Should Look Like
 
