@@ -339,7 +339,7 @@ The fanout tool has it's troubles. For instance, it will happily place vias for 
 
 You can use the change `change` command to adjust the trace width and via size `fanout` uses. Please note that the fanout tool is not works well with design rules. We recommend to use command to fanout by signal.
 
-For example, if you want to fanout signal VBAT, run `change WIDTH 30mil`, then run `change DRILL 24mil`, then run `fanout signal VBAT`. You need to change the width and drill to signals corresponding requirements every time befour you run the fanout commnad on that signal. Fusion doesnt't suppor fanout by net class.
+For example, if you want to fanout signal VBAT, run `change WIDTH 30mil`, then run `change DRILL 24mil`, then run `fanout signal VBAT`. You need to change the width and drill to signals corresponding requirements every time befour you run the fanout commnad on that signal. Fusion doesnt't support fanout by net class.
 
 #### Running the Autorouter
 
