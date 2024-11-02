@@ -22,8 +22,6 @@ Check the course schedule for due date(s).
 2. Updated version of `noise.txt` with updates filter configuration parameters
    (if you changed them), and the your PID and values for each axis.
 
-Once you’ve committed everything, create a tag called “PID-test-stand-2” Be sure to make it an “annotated” tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
-
 #### Demo your work:
 
 1. Demo your clean orientation measurements for the TA.

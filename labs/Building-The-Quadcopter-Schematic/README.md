@@ -100,7 +100,7 @@ Why did I give a picture of what you need to build? Because reference designs ar
 
 You should use the schematic as a guide for constructing the microcontroller portion of your schematic. Build it from parts from `quadparts_prebuilt_2022` libbrary:
 
-1.  Use one of the `ANT_PCB...` variants for the antenna. There's a left and right-handed version. Depending on your ultimate board design, you might want one or the other.
+1.  Use one of the `-BOARD...` variants for the antenna. There's a left and right-handed version. Depending on your ultimate board design, you might want one or the other.
 2.  `B1` is a 'balun'. Pay attention to the pin numbers.
 3.  Use the `0.45x0.45` button.
 4.  Replace one of the green LEDs with your red LED.
@@ -331,8 +331,6 @@ Feel free to consult [Lab 1](https://github.com/NVSL/QuadClass-Resources/tree/ma
 Submit it to Eaglint: http://eaglint.nvsl.io.
 
 For this part of the lab, human review will succeed instantly, if you have no errors or warnings.
-
-Once it passes, create a tag called "initial-schematic" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 
 ## Turn in Your Work
 

@@ -160,10 +160,6 @@ We want the accelerometer to be configured as a low-pass filter to reduce noise,
 
 You also need to set the cutoff for the low-pass filter of the composite filter, also referred as `LPF2`, by setting an ORD Ratio. The cutoff is set by dividing the ODR by the ODR ratio. For an ODR of 208 Hz and ODR/4, the low-pass cutoff is 52Hz.
 
-#### Setup Filters On the Gyroscope
-
-You want to let as much of the high-frequency signal from the gyroscope through as possible. Use `lsm.setGyroHPF()` to configure the Gyro HPF, use Table 62 for guidance.
-
 #### Adjust for Offsets
 
 When your FCB is still and level, it will probably not return zero pitch and zero pitch rate. When your FCB starts up (or maybe when you arm it) it should check the values coming from the IMU to see what offsets you are measuring. You should correct for these offsets so that the measured values are correct by subtracting the value measured at calibration, e.g. (`calibrated_angle = acc_angle - offset`). Do this for `acc_angle` and `gyro_raw`. Make the offsets variables global so that you can access them in all functions.
@@ -181,7 +177,7 @@ You should configure the IMU's filters as follows:
 1. You need to set the both gyroscope's and accelerometer's range to avoid clipping.
 2. The ODR for both gyroscope and the accelerometer should be 208Hz.
 3. You should configure the accelerometer's LPF2's cut off frequency to be 10.4Hz.
-4. You should not use the gyroscope's LPF1 or HPF.
+4. You should not use the HPF on the gyroscope.
 
 ### What Your Output Should Look Like
 
@@ -467,8 +463,6 @@ Much has been written about how to tune PID controllers. I have used these two t
 Commit your results:
 
 1. Commit an updated version of `quad_firmware.ino` and `remote_firmware.ino`.
-
-Once you've committed everything, create a tag called "sensing-and-filtering" Be sure to make it an "annotated" tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
 
 #### Demo your work:
 

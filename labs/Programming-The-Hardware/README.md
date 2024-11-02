@@ -652,8 +652,6 @@ Make sure of the following:
 2. Your quad firmware in `firmware/quad_firmware/quad_firmware.ino`.
 3. Any other code you created (e.g., a library with your radio packet format).
 
-Once you’ve committed everything, create a tag called “programming-the-hardware” Be sure to make it an “annotated” tag and push it to your repo (https://git-scm.com/book/en/v2/Git-Basics-Tagging). Verify that it is visible on github.
-
 ### Demo Your Code
 
 1. Demo your remote controlled motors.

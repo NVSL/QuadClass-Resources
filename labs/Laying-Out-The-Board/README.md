@@ -240,25 +240,25 @@ The antenna also needs a ground plane (https://www.electronics-notes.com/article
 
 By default, Fusion360 uses the narrowest wires allowed by the DRU file. For us, that’s 5mil (0.127mm). Narrower wires have higher resistance, and if a trace needs to carry a sensitive signal (e.g., to drive our antenna) or lots of current (e.g., to or from our motors), the trace will need to be wider.
 
-Fusion360 provides the notion of ‘net classes’ to specify different characteristics for different signals in your design. We will define two new net classes, one for the trace between the balun and the antenna and another for signals within the motor driver (We will deal with `VBAT` and `BAT_GND` separately).
+Fusion360 provides the notion of ‘net classes’ to specify different characteristics for different signals in your design. We will define three new net classes.
 
-To create or edit a net class, select `Rules ERC/DRC->Class`. The dialog box that appears will let you set width of nets in the class as well as the size of vias the class should use and the distance (“clearance”) between nets of different classes.
+To create or edit a net class, go to your schematic, select `VALIDATE->VALIDATE->Net Class`(You can also go to board file, selecet `RULES->PERFERENCES->Net Class`). If you want to create a new net class, click “Add” Button on the left bottom to add a class of net, give it a name, then choose nets from middle column, the chosen net will move from middle column to right column.
 
-First, enter “RFSIG” into box next to ‘1’ and enter ‘50mil’ (to match the width of the antenna) for the width. Leave the “drill” and clearance fields at ‘0’ (which mean use the defaults).
+First, create a net class called “RFSIG”. “RFSIG” should include signals between the balun and the antenna. Note that wires beteween the MCU and the balun can be in the default class. The width of them should be ‘50mil’.
 
-Next, enter "PWR" (or something similar) into box 2. This net class is for the regulated power and ground nets. They should be 10mil.
+Second, create a net class called “PWR”. “PWR” should indule all 3V and GND signals The width of them should be ‘10mil’.
 
-Then, enter “HIGHCURRENT” (or something similar) into box 3. This net class is going to be for wires that carry current to the motors, but how wide should those wires be? This depends how much current the wire will carry, how hot we are willing to let it get, how large a voltage drop we can tolerate, how long the wire is, and how thick the copper is. The calculation for this are complex, but fortunately, there are tools online to figure it out for you. [This is a good one](https://www.4pcb.com/trace-width-calculator.html).
+Third, create a net class called “HIGHCURRENT”. “HIGHCURRENT” should include all VBAT and BAT_GND signals. This net class is going to be for wires that carry current to the motors, but how wide should those wires be? This depends how much current the wire will carry, how hot we are willing to let it get, how large a voltage drop we can tolerate, how long the wire is, and how thick the copper is. The calculation for this are complex, but fortunately, there are tools online to figure it out for you. [This is a good one](https://www.4pcb.com/trace-width-calculator.html).
 
 Our motors can draw about 2A, so peak current is something over 8 amps. The batteries we use can deliver up to 9.5. We are using 1oz copper (which means one square foot of the copper foil weighs 1oz. This works out to 0.035mm). 10 degrees Celsius is a reasonable rise in temperature. Room temperature is 25 degrees C. The traces will be pretty short — probably less than 0.5in (or 12.7mm).
 
 These traces are probably going to be on the top or bottom layers (although you should check this is the case after you’ve routed the board), so we are worried about “external layers in air.” Given all that we, see that a trace 30mils (0.72mm) will work just fine.
 
-There will also be vias carrying these currents. We can increase the default via size for the next class to match the width of the trace. The diameter of a via is the drill size (which you can set in the `Net classes` dialog) plus an annular ring (which is the ring of copper you can see around the via). Our DRU file set the annular ring to be 25% of drill _radius_. Calculate a drill size that will give an annular ring diameter of 30mil and enter that value for the drill field for the “HIGHCURRENT” class.
+Then slect `RULES->Design rules->Custom Rules->Copper Width` in board file. Click the ‘+’ button. In the “Scope” section, in ‘Object 1’ selcet "In Net Classes", then selcet the net class you want to assign. In the “Parameters” section you can enter the Minimum and Prefered, just enter our requiared width in both boxes. 
+
+There will also be vias carrying these currents. We can increase the default via size for the next class to match the width of the trace. The diameter of a via is the drill size (which you can set in the `RULES->Design rules->Custom Rules->Drill Size`, same logic as trace width) plus an annular ring (which is the ring of copper you can see around the via). Our DRU file set the annular ring to be 25% of drill _radius_. Calculate a drill size that will give an annular ring diameter of 30mil and enter that value for the drill field for the “HIGHCURRENT” class.
 
 Now that we have established the net classes, we need to apply them to some nets. This is easiest in the schematic view using the "Change" tool. If you click on the Change tool, you’ll get a list options, select “Class” and then select “HIGHCURRENT”. Then, go click on all the wires connecting components of the four motor drivers. You can skip the signals through the pull-up resistor, if you want.
-
-Finally, use the Change tool to put the signal between the balun and the antenna in the “RFSIG” class. Note that wires beteween the MCU and the balun can be in the default class.
 
 ### Laying out the IMU
 
@@ -289,7 +289,7 @@ that run to two adjacent pins on the MCU. On either side of those pins are groun
 
 ### Laying out the MCU
 
-The caps for the MCU need to be as close to the IMU as possible, and the traces between the caps and the MCU need to be as short as possible. For decoupling caps, the length of the `3V` trace is most important. Eaglint requires all these caps to be with in 11mm of the MCU, measured center-to-center. You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
+The caps for the MCU need to be as close to the MCU as possible, and the traces between the caps and the MCU need to be as short as possible. For decoupling caps, the length of the `3V` trace is most important. Eaglint requires all these caps to be with in 11mm of the MCU, measured center-to-center. You can relax the grid to 0.5mm if needed -- just add a note explanation, if eaglint complains.
 
 ### Layer Labels
 
@@ -337,7 +337,9 @@ Next, you can use `fanout` tool. It has two good uses: 1) to draw short wires th
 
 The fanout tool has it's troubles. For instance, it will happily place vias for different nets on top of eachother. You can get around this by fiddling with the various options (`help fanout`). Once you have a sequence of `fanout` commands that seems to give good results, add it to your routing script (see below).
 
-You can use the change `change` command to adjust the trace width and via size `fanout` uses.
+You can use the change `change` command to adjust the trace width and via size `fanout` uses. Please note that the fanout tool is not works well with design rules. We recommend to use command to fanout by signal.
+
+For example, if you want to fanout signal VBAT, run `change WIDTH 30mil`, then run `change DRILL 24mil`, then run `fanout signal VBAT`. You need to change the width and drill to signals corresponding requirements every time befour you run the fanout commnad on that signal. Fusion doesnt't support fanout by net class.
 
 #### Running the Autorouter
 
@@ -430,6 +432,5 @@ Submit the following to your github repo (you can leave other files in there. Th
 6. A files called quadcopter.cam.zip that contains the CAM files for the design.
    Submit it to Eaglint. The tool will not look at any other libraries, so if you use any other libraries the consistency checks will fail.
 
-Once it passes, create a tag called “board-layout” Be sure to make it an “annotated” tag and push it to your repo ( [https://git-scm.com/book/en/v2/Git-Basics-Tagging](https://www.google.com/url?q=https%3A%2F%2Fgit-scm.com%2Fbook%2Fen%2Fv2%2FGit-Basics-Tagging&sa=D&sntz=1&usg=AFQjCNGOTg8gwVJ3tdWstD6PfspdhSq1Vg) ). Verify that it is visible on github.
 
 
