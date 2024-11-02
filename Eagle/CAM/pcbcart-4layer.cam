@@ -1,6 +1,6 @@
 {
     "author": {
-        "email": "swanson@eng.ucsd.edu",
+        "email": "swanson@cs.ucsd.edu",
         "name": "Steven Swanson"
     },
     "description": {
@@ -9,12 +9,38 @@
     "output_type": "zip",
     "outputs": [
         {
+            "compress_output": true,
+            "export_cad_netlist": true,
+            "export_eda_component_attributes": true,
+            "export_eda_data": true,
+            "export_eda_footprint_names": true,
+            "export_eda_net_attributes": true,
+            "export_job_name_instead_of_product_model_name": true,
+            "export_layer_features_count": true,
+            "export_neutral_net_names": false,
+            "export_step_profile_board_cutouts": true,
+            "export_step_profile_from_board_shape": true,
+            "export_text_attributes": true,
+            "export_unique_id": true,
+            "export_unit": true,
+            "filename_prefix": "CAMOutputs/ODBFiles",
+            "generate_job_file": true,
+            "odb_format_version": "V8.1+",
+            "output_name": "quadcopter_v1",
+            "output_type": "odb++",
+            "outputs": [
+            ],
+            "prepend_netattributes_with_numbersign": true,
+            "use_teamhub_location": false
+        },
+        {
             "filename_prefix": "outputs",
             "format_specifier": {
                 "decimal": 4,
                 "integer": 3
             },
             "generate_job_file": false,
+            "gerber_job_filepath": "%TEAMHUBNAME/%PROJECTNAME/%PREFIX/gerber_job.gbrjob",
             "output_type": "gerber",
             "outputs": [
                 {
@@ -128,7 +154,6 @@
                     },
                     "filename_format": "%N.pls",
                     "layers": [
-                        20,
                         22,
                         26,
                         28
@@ -146,14 +171,13 @@
                         "rotate": false,
                         "upside_down": false
                     },
-                    "board_outline": true,
+                    "board_outline": false,
                     "config": {
                         "description": "Silk screen CMP",
                         "file_function": "Other"
                     },
                     "filename_format": "%N.plc",
                     "layers": [
-                        20,
                         21,
                         25,
                         27
@@ -229,9 +253,41 @@
                     "name": "Stencil top",
                     "polarity": "positive",
                     "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": true,
+                    "config": {
+                        "file_function": "Profile",
+                        "plating": "plated"
+                    },
+                    "filename_format": "%N.profile",
+                    "layers": [
+                    ],
+                    "milling": true,
+                    "name": "profile",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
                 }
             ],
             "version": "RS274X"
+        },
+        {
+            "extension_type": "pdf",
+            "filename_prefix": "CAMOutputs/ImageFiles",
+            "fit_to_Page": true,
+            "monochrome": true,
+            "output_type": "image",
+            "outputs": [
+            ],
+            "page_size": "A4",
+            "pdf_filename": "%N"
         },
         {
             "format_specifier": {
@@ -275,7 +331,7 @@
             ]
         }
     ],
-    "timestamp": "2020-12-28T16:20:50",
+    "timestamp": "2024-11-01T23:28:48",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "8.6.1"
