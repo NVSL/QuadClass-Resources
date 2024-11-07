@@ -144,7 +144,7 @@ Generally, we would like the low-frequency information from the accelerometers a
 "Clipping" occurs when a measured value exceeds the range the IMU can handle. For the gyroscope, this means it rotates too quickly.
 Clipping will show up as a flat plateau where a maximum should be on a graph of the gyro output. This is bad, because we will be relying on the integral of the gyro data to approximate Euler angles.
 
-Use `lsm.setGyroRange()` to adjust range of values the gyros measure to eliminate the clipping. Use `lsm.setAccelRange()` to adjust the range of values for the accelerometer.
+Use `lsm.setGyroRange()` to adjust range of values the gyros measure to eliminate the clipping. Use `lsm.setAccelRange()` to adjust the range of values for the accelerometer so it can measure at least 1G.
 
 #### Adjust the Output Data Rate (ODR)
 
