@@ -438,6 +438,8 @@ Getting the props off can be hard. You have a little lever tool in your kit to h
 
 The FCB has three key hardware components you'll need to test: The microcontroller, the accelerometer, and the motors.
 
+**Note:**  Do _not_ call `quad_remote_setup()` in your quadcopter firmware.  It will mess everything up.
+
 ### Turning on the FCB
 
 To turn the FCB on you need to first connect the battery to the FCB and the then move the switch in the FCB from OFF to ON.
